@@ -10,14 +10,42 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *uib_menu;
+@property (weak, nonatomic) IBOutlet UIView *uiv_menuPanel;
+
 @end
 
 @implementation ViewController
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+    _uiv_menuPanel.transform = CGAffineTransformMakeTranslation(-388, 0.0);
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _uib_menu.hidden = YES;
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (IBAction)returnToRoot:(id)sender {
+    //Detail subview is set tag with 1000 in custom segue
+    _uib_menu.hidden = YES;
+    UIView *tmp = [self.view viewWithTag:1000];
+    [UIView animateWithDuration:0.33 animations:^{
+        tmp.alpha = 0.0;
+    } completion:^(BOOL finished){
+        [tmp removeFromSuperview];
+        __block UIView *tmp1 = [self.view viewWithTag:1000];
+        tmp1 = nil;
+    }];
 }
 
 - (void)didReceiveMemoryWarning
