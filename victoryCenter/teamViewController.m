@@ -154,6 +154,13 @@ static float kAnimaGap  = 0.2;
     }];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    for (UIView *tmp in [self.view subviews]) {
+        [tmp removeFromSuperview];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

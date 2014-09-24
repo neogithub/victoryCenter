@@ -33,7 +33,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jiS-UG-OXQ" kind="custom" identifier="gallerySegue" customClass="XHCustomSegue" id="psR-fU-0n5"/>
+                                    <segue destination="6qx-dr-uYK" kind="custom" identifier="gallerySegue" customClass="XHCustomSegue" id="Fnj-wf-SyK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U70-Ym-kl1">
@@ -123,27 +123,43 @@
             <point key="canvasLocation" x="-2488" y="537"/>
         </scene>
         <!--Gallery View Controller-->
-        <scene sceneID="G0G-Kc-QvT">
+        <scene sceneID="CYQ-tf-HS5">
             <objects>
-                <viewController id="jiS-UG-OXQ" customClass="galleryViewController" sceneMemberID="viewController">
+                <viewController id="6qx-dr-uYK" customClass="galleryViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L3n-re-byW"/>
-                        <viewControllerLayoutGuide type="bottom" id="T50-Oq-i4M"/>
+                        <viewControllerLayoutGuide type="top" id="dFo-hx-vfk"/>
+                        <viewControllerLayoutGuide type="bottom" id="yOm-LG-UBW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YpJ-OX-HjZ">
+                    <view key="view" contentMode="scaleToFill" id="IGm-jP-xSD">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ahN-nb-L9b">
-                                <rect key="frame" x="80" y="75" width="900" height="693"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QOc-VJ-8Dg">
+                                <rect key="frame" x="81" y="75" width="900" height="693"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="18" id="AQM-Is-WNq">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0jb-O3-iGe">
+                                    <size key="itemSize" width="285" height="285"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cvCell" reuseIdentifier="cvCell" id="imm-zp-9ai" customClass="CVCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="285"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="285" height="285"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="6qx-dr-uYK" id="OBq-UR-jJq"/>
+                                    <outlet property="delegate" destination="6qx-dr-uYK" id="B55-Ta-A2y"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,13 +169,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <connections>
-                        <outlet property="collectionView" destination="ahN-nb-L9b" id="ymw-SG-Ues"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="txF-g2-rhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Yi-dN-9NY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1163" y="-273"/>
+            <point key="canvasLocation" x="-1110" y="-509"/>
         </scene>
         <!--Team View Controller-->
         <scene sceneID="ku9-Uf-5h7">
@@ -256,7 +269,7 @@
     <resources>
         <image name="Building_bg.jpg" width="1024" height="768"/>
         <image name="Map_bg.jpg" width="1024" height="768"/>
-        <image name="Team_bg.jpg" width="1024" height="768"/>
+        <image name="Team_bg.jpg" width="893" height="670"/>
         <image name="grfx_helpIcon.png" width="36" height="36"/>
         <image name="grfx_menuIcon.png" width="44" height="43"/>
         <image name="grfx_menuImage.png" width="388" height="768"/>

@@ -33,6 +33,12 @@
 ========================================== */
     
 //Fade in destination view
+    //Add destination vc to source vc. Otherwise uicollectionview will crash!!
+    UIViewController *source = self.sourceViewController;
+    UIViewController *destination = self.destinationViewController;
+    
+    [source addChildViewController:destination];
+    
     uiv_dest.alpha = 0.0;
     [uiv_sour insertSubview:uiv_dest belowSubview:[uiv_sour viewWithTag:10]];
     [UIView animateWithDuration:0.33 animations:^{

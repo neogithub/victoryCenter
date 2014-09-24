@@ -1,44 +1,23 @@
 //
 //  CVCell.m
-//  CollectionViewExample
+//  victoryCenter
 //
-//  Created by Tim on 9/5/12.
-//  Copyright (c) 2012 Charismatic Megafauna Ltd. All rights reserved.
+//  Created by Xiaohe Hu on 9/24/14.
+//  Copyright (c) 2014 Neoscape. All rights reserved.
 //
 
 #import "CVCell.h"
 
 @implementation CVCell
-
 @synthesize titleLabel = _titleLabel;
 @synthesize cellThumb = _cellThumb;
-@synthesize countLabel = _countLabel;
-@synthesize imgFrame = _imgFrame;
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        _titleLabel.frame = CGRectMake((frame.size.width - 100)/2, frame.size.height-32, 100, 30);
-        
         // Initialization code
-        NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"CVCell" owner:self options:nil];
-        
-        if ([arrayOfViews count] < 1) {
-            return nil;
-        }
-        
-        if (![[arrayOfViews objectAtIndex:0] isKindOfClass:[UICollectionViewCell class]]) {
-            return nil;
-        }
-        
-        self = [arrayOfViews objectAtIndex:0];
-        
     }
-    
     return self;
-    
 }
 
 /*
