@@ -10,6 +10,10 @@
 
 @interface mapViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *uib_city;
+@property (weak, nonatomic) IBOutlet UIButton *uib_neighbor;
+@property (weak, nonatomic) IBOutlet UIButton *uib_site;
+
 @end
 
 @implementation mapViewController
@@ -32,6 +36,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+#pragma mark - Top 3 buttons (city, neighborhood and site) action
+
+- (IBAction)tapCityBtn:(id)sender {
+    UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:@"Tapped" message:@"City button is tapped!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+- (IBAction)tapNeighborhoodBtn:(id)sender {
+    UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:@"Tapped" message:@"Neighborhood button is tapped!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+- (IBAction)tapSiteBtn:(id)sender {
+    UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:@"Tapped" message:@"Site button is tapped!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
 }
 
 - (void)didReceiveMemoryWarning
