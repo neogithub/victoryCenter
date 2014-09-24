@@ -35,6 +35,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+//=====================Tap home button to remove the subview===================
+
 - (IBAction)returnToRoot:(id)sender {
     //Detail subview is set tag with 1000 in custom segue
     _uib_menu.hidden = YES;
@@ -47,6 +49,7 @@
         tmp1 = nil;
     }];
 }
+//=============================================================================
 
 - (void)didReceiveMemoryWarning
 {

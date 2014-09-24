@@ -44,6 +44,15 @@ static float kAnimaGap  = 0.2;
     // Do any additional setup after loading the view.
 }
 
+/*====================================
+ 
+    Create team member's card
+    
+    Need input:
+    1. logo image's name
+    2. Text image's name
+    3. card's x value      
+ */
 - (void)createItemBox:(NSString *)logoName andText:(NSString *)textName andX:(float)x_value
 {
     UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 180.0, 183.0, 428.0)];
@@ -84,6 +93,10 @@ static float kAnimaGap  = 0.2;
     [self performSelector:@selector(animateArray:) withObject:_arr_cards afterDelay:0.0];
     [self performSelector:@selector(showNeoLogo) withObject:nil afterDelay:kDropSpeed *5 - kAnimaGap];
 }
+//===========================================
+
+//=================Read all cards in the array by index==========================
+// Need input arrary of cards(uiview)
 
 -(void)animateArray:(NSMutableArray *)viewArray
 {
@@ -92,7 +105,22 @@ static float kAnimaGap  = 0.2;
         [self performSelector:@selector(animateCard:) withObject:tmpView afterDelay:(kAnimaGap*i)];
     }
 }
+//========================================================
 
+/*========================================================
+    Animate one card
+ 
+    input: UIView (team member's card)
+    
+    animtion order:
+    1. make the logo part alpha = 1.0
+ 
+    2. Make the card's container moving down to the correct Y value
+ 
+    3. Reveal text image view from back of the logo image
+ 
+    4. Call the function to animate the bar between logo and text
+*/
 - (void)animateCard:(UIView *)container
 {
     UIView *text = [container viewWithTag:2];
@@ -105,17 +133,24 @@ static float kAnimaGap  = 0.2;
     } completion:^(BOOL finished){
         [self performSelector:@selector(animateBar:) withObject:container afterDelay:kDropSpeed-kAnimaGap];
     }];
-//    [self performSelector:@selector(animateBarArray:) withObject:_arr_cards afterDelay:0.3];
 }
+//========================================================
 
-//- (void)animateBarArray:(NSMutableArray *)viewArray
-//{
-//    for (int i = 0; i < viewArray.count; i++) {
-//        UIView *tmpView = [viewArray objectAtIndex:i];
-//        [self performSelector:@selector(animateBar:) withObject:tmpView afterDelay:(0.2*(i + 1))];
-//    }
-//}
+/*========================================================
 
+    Animate the bar between logo and text image
+ 
+    input: UIView (team member's card)
+ 
+    animtion order:
+    1. change the order of views inside of the card's container:
+        a. logo -> bottom
+        b. bar -> middle
+        c. text -> top
+    
+    2. Move the bar to the correct position from back of text
+ 
+*/
 - (void)animateBar:(UIView *)container
 {
     UIView *logo = [container viewWithTag:1];
@@ -131,6 +166,10 @@ static float kAnimaGap  = 0.2;
         
     }];
 }
+//========================================================
+
+
+//=====================Add Neoscape's logo after all cards droping down===================================
 
 - (void)showNeoLogo
 {
@@ -153,6 +192,8 @@ static float kAnimaGap  = 0.2;
         uiv_neoContainer.transform = CGAffineTransformIdentity;
     }];
 }
+//========================================================
+
 
 - (void)viewWillDisappear:(BOOL)animated
 {

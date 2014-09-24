@@ -10,8 +10,15 @@
 #import "CVCell.h"
 
 @interface galleryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UICollectionView *myCollectionView;
+{
+    // gallery
+	NSString                *secTitle;
+	NSDictionary            *albumDict;
+	NSArray                 *albumSections;
+    int                     sectionIndex;
+    int                     sumOfSections;
+    NSMutableArray          *arr_AlbumData;
+}
 
 @end
 
@@ -34,9 +41,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadGalleryData];
     // Do any additional setup after loading the view.
 }
 
+//====================Prepare Collection View's data from plist===============================
+
+- (void)loadGalleryData
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:
+					  @"galleryData" ofType:@"plist"];
+	// Build the array from the plist
+	NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    sumOfSections = [array count];
+	NSMutableArray *array_1 = [[NSMutableArray alloc] init];
+    [array_1 addObject:[array objectAtIndex:sectionIndex]];
+	arr_AlbumData = array_1;
+	albumSections = arr_AlbumData;
+}
+//=================================================================
+
+#pragma mark - Collection Delegate Methods
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
@@ -44,7 +69,25 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 30;
+    NSDictionary *tempDic = [[NSDictionary alloc] initWithDictionary:[arr_AlbumData objectAtIndex:section]];
+    NSMutableArray *secInfo = [[NSMutableArray alloc] initWithArray:[tempDic objectForKey:@"sectioninfo"]];
+    int sumOfImg = 0;
+    NSString *typeOfFile = [[NSString alloc] init];
+    
+    for (int i = 0; i < [secInfo count]; i++) {
+        NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:secInfo[i]];
+        typeOfFile = [itemDic objectForKey:@"albumtype"];
+        if ([typeOfFile isEqualToString:@"image"]) {
+            NSMutableArray *imgArray = [[NSMutableArray alloc] initWithArray:[itemDic objectForKey:@"images"]];
+            sumOfImg = sumOfImg + [imgArray count];
+        }
+        else
+        {
+            sumOfImg++;
+        }
+        
+    }
+    return sumOfImg;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -53,9 +96,7 @@
     CVCell *myCell = [collectionView
                                     dequeueReusableCellWithReuseIdentifier:@"cvCell"
                                     forIndexPath:indexPath];
-    myCell.backgroundColor = [UIColor whiteColor];
     myCell.titleLabel.text = @"title";
-    NSLog(@"The cell is %@", myCell);
     return myCell;
 }
 
