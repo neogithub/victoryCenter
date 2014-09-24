@@ -38,7 +38,7 @@ static float kAnimaGap  = 0.2;
     [super viewDidLoad];
     _arr_cards = [[NSMutableArray alloc] init];
     for (int i = 0; i < 5; i++) {
-        [self createItemBox:@"team_logo.png" andText:@"team_Text.png" andX:(18.0 + i * (18.0 + 183.0))];
+        [self createItemBox:@"team_logo.png" andText:@"team_Text.png" andX:(25.5 + i * (12.0 + 183.0))];
     }
     
     // Do any additional setup after loading the view.
