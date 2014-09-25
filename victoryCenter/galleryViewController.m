@@ -82,6 +82,7 @@
                                     dequeueReusableCellWithReuseIdentifier:@"cvCell"
                                     forIndexPath:indexPath];
     galleryImageCell.titleLabel.text = @"title";
+    galleryImageCell.titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:15];
     return galleryImageCell;
 }
 
