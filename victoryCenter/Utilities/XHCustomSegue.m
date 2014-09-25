@@ -14,8 +14,8 @@
 	UIViewController *source = self.sourceViewController;
     UIViewController *destination = self.destinationViewController;
 	
-	UIView *uiv_sour = ((UIViewController *)self.sourceViewController).view;
-    UIView *uiv_dest = ((UIViewController *)self.destinationViewController).view;
+	UIView *uiv_sour = source.view;
+    UIView *uiv_dest = destination.view;
     
 /* Pop up destination view from bottom
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
@@ -42,10 +42,12 @@
     [source addChildViewController:destination];
     
     uiv_dest.alpha = 0.0;
+    // View with tag 10 bottom left buttons
     [uiv_sour insertSubview:uiv_dest belowSubview:[uiv_sour viewWithTag:10]];
     [UIView animateWithDuration:0.33 animations:^{
         uiv_dest.alpha = 1.0;
     } completion:^(BOOL finished){
+        //view with tag 11 is menu button
         [uiv_sour viewWithTag:11].hidden = NO;
         uiv_dest.tag = 1000;
     }];
