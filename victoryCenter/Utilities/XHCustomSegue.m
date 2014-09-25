@@ -11,7 +11,10 @@
 @implementation XHCustomSegue
 - (void)perform
 {
-    UIView *uiv_sour = ((UIViewController *)self.sourceViewController).view;
+	UIViewController *source = self.sourceViewController;
+    UIViewController *destination = self.destinationViewController;
+	
+	UIView *uiv_sour = ((UIViewController *)self.sourceViewController).view;
     UIView *uiv_dest = ((UIViewController *)self.destinationViewController).view;
     
 /* Pop up destination view from bottom
@@ -34,8 +37,7 @@
     
 //Fade in destination view
     //Add destination vc to source vc. Otherwise uicollectionview will crash!!
-    UIViewController *source = self.sourceViewController;
-    UIViewController *destination = self.destinationViewController;
+
     
     [source addChildViewController:destination];
     

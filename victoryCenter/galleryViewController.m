@@ -52,11 +52,9 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:
 					  @"galleryData" ofType:@"plist"];
 	// Build the array from the plist
-	NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:path];
-    sumOfSections = [array count];
-	NSMutableArray *array_1 = [[NSMutableArray alloc] init];
-    [array_1 addObject:[array objectAtIndex:sectionIndex]];
-	arr_AlbumData = array_1;
+	NSMutableArray *rawArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    sumOfSections = [rawArray count];
+    [arr_AlbumData addObject:[rawArray objectAtIndex:0]];
 	albumSections = arr_AlbumData;
 }
 //=================================================================

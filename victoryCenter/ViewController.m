@@ -10,8 +10,8 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *uib_menu;
-@property (weak, nonatomic) IBOutlet UIView *uiv_menuPanel;
+@property (weak, nonatomic) IBOutlet UIButton		*uib_menu;
+@property (weak, nonatomic) IBOutlet UIView			*uiv_menuPanel;
 
 @end
 
@@ -40,13 +40,13 @@
 - (IBAction)returnToRoot:(id)sender {
     //Detail subview is set tag with 1000 in custom segue
     _uib_menu.hidden = YES;
-    UIView *tmp = [self.view viewWithTag:1000];
+	
+    __block UIView *tmp = [self.view viewWithTag:1000];
     [UIView animateWithDuration:0.33 animations:^{
         tmp.alpha = 0.0;
     } completion:^(BOOL finished){
         [tmp removeFromSuperview];
-        __block UIView *tmp1 = [self.view viewWithTag:1000];
-        tmp1 = nil;
+        tmp = nil;
     }];
 }
 //=============================================================================
