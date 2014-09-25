@@ -23,7 +23,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+    self.view.frame = screenRect;
     _uiv_menuPanel.transform = CGAffineTransformMakeTranslation(-388, 0.0);
     [super viewWillAppear:animated];
 }

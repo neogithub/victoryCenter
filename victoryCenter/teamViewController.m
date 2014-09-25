@@ -10,7 +10,8 @@
 
 static float kDropSpeed		= 0.33;
 static float kAnimaDelay	= 0.2;
-
+static float kCardWidth     = 183.0;
+static float kCardsGap      = 12.0;
 @interface teamViewController ()
 
 @property (nonatomic, strong) NSMutableArray                *arr_cards;
@@ -19,18 +20,9 @@ static float kAnimaDelay	= 0.2;
 
 @implementation teamViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+    self.view.frame = screenRect;
 }
 
 - (void)viewDidLoad
@@ -38,15 +30,17 @@ static float kAnimaDelay	= 0.2;
     [super viewDidLoad];
     _arr_cards = [[NSMutableArray alloc] init];
     for (int i = 0; i < 5; i++) {
-        [self createItemBox:@"team_logo.png" andText:@"team_Text.png" andX:(25.5 + i * (12.0 + 183.0))];
+        // input parameters:
+        // 1. name of logo image
+        // 2. name of text image
+        // 3. x value of the card
+        [self createItemBox:@"team_logo.png" andText:@"team_Text.png" andX:(25.5 + i * (kCardsGap + kCardWidth))];
     }
     
     // Do any additional setup after loading the view.
 }
 
-/*====================================
- 
-    Create team member's card
+/*  Create team member's card
     
     Need input:
     1. logo image's name
@@ -55,21 +49,21 @@ static float kAnimaDelay	= 0.2;
  */
 - (void)createItemBox:(NSString *)logoName andText:(NSString *)textName andX:(float)x_value
 {
-    UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 180.0, 183.0, 428.0)];
+    UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 180.0, kCardWidth, 428.0)];
     
 	// 1. add logo
-    UIView *uiv_logo = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 183.0, 142.0)];
+    UIView *uiv_logo = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, kCardWidth, 142.0)];
     uiv_logo.tag = 1;
     UIImageView *uiiv_logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed: logoName]];
-    uiiv_logo.frame = CGRectMake(0.0, 0.0, 183.0, 142.0);
+    uiiv_logo.frame = CGRectMake(0.0, 0.0, kCardWidth, 142.0);
     [uiv_logo addSubview:uiiv_logo];
     [uiv_cardContainer insertSubview:uiv_logo atIndex:2];
     
 	// 2. add text
-    UIView *uiv_text = [[UIView alloc] initWithFrame:CGRectMake(0.0, 142.0, 183.0, 286.0)];
+    UIView *uiv_text = [[UIView alloc] initWithFrame:CGRectMake(0.0, 142.0, kCardWidth, 286.0)];
     uiv_text.tag = 2;
     UIImageView *uiiv_text = [[UIImageView alloc] initWithImage:[UIImage imageNamed: textName]];
-    uiiv_text.frame = CGRectMake(0.0, 0.0, 183.0, 286.0);
+    uiiv_text.frame = CGRectMake(0.0, 0.0, kCardWidth, 286.0);
     uiiv_text.tag = 1;
     [uiiv_text setTintColor:[UIColor lightGrayColor]];
     [uiv_text addSubview:uiiv_text];
@@ -78,10 +72,10 @@ static float kAnimaDelay	= 0.2;
     uiv_text.transform = CGAffineTransformTranslate(t1, 0.0, -427.0);
     
     
-    UIView *uiv_bar = [[UIView alloc] initWithFrame:CGRectMake(0.0, 124.0, 183.0, 18.0)];
+    UIView *uiv_bar = [[UIView alloc] initWithFrame:CGRectMake(0.0, 124.0, kCardWidth, 18.0)];
     uiv_bar.tag = 3;
     UIImageView *uiiv_bar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"team_logoBtmBar.png"]];
-    uiiv_bar.frame = CGRectMake(0.0, 0.0, 183.0, 18.0);
+    uiiv_bar.frame = CGRectMake(0.0, 0.0, kCardWidth, 18.0);
     [uiv_bar addSubview: uiiv_bar];
     uiv_bar.hidden = YES;
     [uiv_cardContainer addSubview: uiv_bar];
@@ -92,13 +86,13 @@ static float kAnimaDelay	= 0.2;
     uiv_cardContainer.transform = CGAffineTransformMakeTranslation(0.0, -40);
     [_arr_cards addObject:uiv_cardContainer];
     
-	//
+	// Do animiation by index order
     [self performSelector:@selector(animateArray:) withObject:_arr_cards afterDelay:0.0];
     [self performSelector:@selector(showNeoLogo) withObject:nil afterDelay:kDropSpeed *5 - kAnimaDelay];
 }
-//===========================================
 
-//=================Read all cards in the array by index==========================
+#pragma mark - Animate all cards by the order of the index
+//Read all cards in the array by index
 // Need input arrary of cards(uiview)
 
 -(void)animateArray:(NSMutableArray *)viewArray
@@ -108,10 +102,9 @@ static float kAnimaDelay	= 0.2;
         [self performSelector:@selector(animateCard:) withObject:tmpView afterDelay:(kAnimaDelay*i)];
     }
 }
-//========================================================
 
-/*========================================================
-    Animate one card
+
+/*  Animate one card
  
     input: UIView (team member's card)
     
@@ -137,11 +130,8 @@ static float kAnimaDelay	= 0.2;
         [self performSelector:@selector(animateBar:) withObject:container afterDelay:kDropSpeed-kAnimaDelay];
     }];
 }
-//========================================================
 
-/*========================================================
-
-    Animate the bar between logo and text image
+/*  Animate the bar between logo and text image
  
     input: UIView (team member's card)
  
@@ -169,10 +159,10 @@ static float kAnimaDelay	= 0.2;
         
     }];
 }
-//========================================================
 
 
-//=====================Add Neoscape's logo after all cards droping down===================================
+#pragma mark - Add neoscape label
+//add Neoscape's logo after all cards droping down
 
 - (void)showNeoLogo
 {
@@ -194,8 +184,6 @@ static float kAnimaDelay	= 0.2;
         uiv_neoContainer.transform = CGAffineTransformIdentity;
     }];
 }
-//========================================================
-
 
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -207,7 +195,6 @@ static float kAnimaDelay	= 0.2;
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

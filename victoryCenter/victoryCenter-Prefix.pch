@@ -14,3 +14,5 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define screenRect CGRectMake(0.0, 0.0, 1024.0, 768.0)

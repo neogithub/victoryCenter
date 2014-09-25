@@ -18,18 +18,9 @@
 
 @implementation mapViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+    self.view.frame = screenRect;;
 }
 
 - (void)viewDidLoad
