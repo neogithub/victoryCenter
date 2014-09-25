@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Neoscape. All rights reserved.
 //
 
-#import "CVCell.h"
+#import "galleryCVCell.h"
 
-@implementation CVCell
+@implementation galleryCVCell
 @synthesize titleLabel = _titleLabel;
 @synthesize cellThumb = _cellThumb;
 - (id)initWithFrame:(CGRect)frame

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CVCell : UICollectionViewCell
+@interface galleryCVCell : UICollectionViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *cellThumb;

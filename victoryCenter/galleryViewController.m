@@ -7,14 +7,13 @@
 //
 
 #import "galleryViewController.h"
-#import "CVCell.h"
+#import "galleryCVCell.h"
 
 @interface galleryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 {
     // gallery
 	NSString                *secTitle;
 	NSDictionary            *albumDict;
-	NSArray                 *albumSections;
     int                     sectionIndex;
     int                     sumOfSections;
     NSMutableArray          *arr_AlbumData;
@@ -24,29 +23,18 @@
 
 @implementation galleryViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+    self.view.frame = screenRect;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self loadGalleryData];
-    // Do any additional setup after loading the view.
 }
 
-//====================Prepare Collection View's data from plist===============================
-
+#pragma mark - Prepare collecion view data from plist
 - (void)loadGalleryData
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:
@@ -54,48 +42,47 @@
 	// Build the array from the plist
 	NSMutableArray *rawArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
     sumOfSections = [rawArray count];
+    arr_AlbumData = [[NSMutableArray alloc] init];
     [arr_AlbumData addObject:[rawArray objectAtIndex:0]];
-	albumSections = arr_AlbumData;
 }
-//=================================================================
 
 #pragma mark - Collection Delegate Methods
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 1;
+    return arr_AlbumData.count;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSDictionary *tempDic = [[NSDictionary alloc] initWithDictionary:[arr_AlbumData objectAtIndex:section]];
-    NSMutableArray *secInfo = [[NSMutableArray alloc] initWithArray:[tempDic objectForKey:@"sectioninfo"]];
-    int sumOfImg = 0;
+    NSDictionary *raw_Dict = [[NSDictionary alloc] initWithDictionary:[arr_AlbumData objectAtIndex:section]];
+    NSMutableArray *arr_secInfo = [[NSMutableArray alloc] initWithArray:[raw_Dict objectForKey:@"sectioninfo"]];
+    int sumOfItems = 0;
     NSString *typeOfFile = [[NSString alloc] init];
     
-    for (int i = 0; i < [secInfo count]; i++) {
-        NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:secInfo[i]];
+    for (int i = 0; i < [arr_secInfo count]; i++) {
+        NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[i]];
         typeOfFile = [itemDic objectForKey:@"albumtype"];
         if ([typeOfFile isEqualToString:@"image"]) {
             NSMutableArray *imgArray = [[NSMutableArray alloc] initWithArray:[itemDic objectForKey:@"images"]];
-            sumOfImg = sumOfImg + [imgArray count];
+            sumOfItems = sumOfItems + [imgArray count];
         }
         else
         {
-            sumOfImg++;
+            sumOfItems++;
         }
         
     }
-    return sumOfImg;
+    return sumOfItems;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CVCell *myCell = [collectionView
+    galleryCVCell *galleryImageCell = [collectionView
                                     dequeueReusableCellWithReuseIdentifier:@"cvCell"
                                     forIndexPath:indexPath];
-    myCell.titleLabel.text = @"title";
-    return myCell;
+    galleryImageCell.titleLabel.text = @"title";
+    return galleryImageCell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -107,7 +94,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
