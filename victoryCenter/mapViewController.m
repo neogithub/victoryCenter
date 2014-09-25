@@ -184,6 +184,10 @@ static CGFloat kMaxZoom                 = 2.0;
     
 }
 
+/*
+    1. Reset all top buttons
+    2. Make the tapped one (sender) selected
+ */
 - (void)updateTopBtns:(id)sender
 {
     UIButton *tappedBtn = sender;
@@ -204,8 +208,6 @@ static CGFloat kMaxZoom                 = 2.0;
     else {
         [self updateTopBtns:_uib_city];
         [self animationOfMaps:0];
-//    UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:@"Tapped" message:@"City button is tapped!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//    [alert show];
     }
 
 }
@@ -216,8 +218,6 @@ static CGFloat kMaxZoom                 = 2.0;
     else {
         [self updateTopBtns:_uib_neighbor];
         [self animationOfMaps:1];
-//    UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:@"Tapped" message:@"Neighborhood button is tapped!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//    [alert show];
     }
 }
 - (IBAction)tapSiteBtn:(id)sender {
@@ -227,8 +227,6 @@ static CGFloat kMaxZoom                 = 2.0;
     else {
         [self updateTopBtns:_uib_site];
         [self animationOfMaps:2];
-//    UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:@"Tapped" message:@"Site button is tapped!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//    [alert show];
     }
 }
 

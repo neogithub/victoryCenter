@@ -34,7 +34,7 @@ static float kCardsGap      = 12.0;
         // 1. name of logo image
         // 2. name of text image
         // 3. x value of the card
-        [self createItemBox:@"team_logo.png" andText:@"team_Text.png" andX:(25.5 + i * (kCardsGap + kCardWidth))];
+        [self createItemBox:@"team_logo.png" andText:@"team_Text.png" andX:(30 + i * (kCardsGap + kCardWidth))];
     }
     
     // Do any additional setup after loading the view.
