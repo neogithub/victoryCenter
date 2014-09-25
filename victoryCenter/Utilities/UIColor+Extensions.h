@@ -12,12 +12,12 @@
 
 + (UIColor *)colorWithHueDegrees:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness;
 + (UIColor *)colorWithR:(CGFloat)red G:(CGFloat)green B:(CGFloat)blue A:(CGFloat)alpha;
-+ (UIColor *)vpLightBlue;
-+ (UIColor *)vpDarkBlue;
-+ (UIColor *)vpShadowBlue;
-+ (UIColor *)vpYellow;
-+ (UIColor *)vpTextBlue;
-+ (UIColor *)randomColor;
-+ (UIColor *)vpBGBlue;
-+ (UIColor *)vpDirectionBlue;
++ (UIColor *)vcLightBlue;
++ (UIColor *)vcDarkBlue;
+//+ (UIColor *)vpShadowBlue;
+//+ (UIColor *)vpYellow;
+//+ (UIColor *)vpTextBlue;
+//+ (UIColor *)randomColor;
+//+ (UIColor *)vpBGBlue;
+//+ (UIColor *)vpDirectionBlue;
 @end

@@ -19,6 +19,15 @@
 		8224FE0919D47097002B1B44 /* Raleway-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8224FDFF19D47097002B1B44 /* Raleway-Regular.otf */; };
 		8224FE0A19D47097002B1B44 /* Raleway-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE0019D47097002B1B44 /* Raleway-SemiBold.otf */; };
 		8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE0119D47097002B1B44 /* Raleway-Thin.otf */; };
+		8224FE2519D48656002B1B44 /* MPAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8224FE1019D48656002B1B44 /* MPAnimation.m */; };
+		8224FE2619D48656002B1B44 /* MPFlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8224FE1319D48656002B1B44 /* MPFlipTransition.m */; };
+		8224FE2719D48656002B1B44 /* MPFoldTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8224FE1619D48656002B1B44 /* MPFoldTransition.m */; };
+		8224FE2819D48656002B1B44 /* MPTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8224FE1819D48656002B1B44 /* MPTransition.m */; };
+		8224FE2919D48656002B1B44 /* MPFlipSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8224FE1C19D48656002B1B44 /* MPFlipSegue.m */; };
+		8224FE2A19D48656002B1B44 /* MPFoldModalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8224FE1E19D48656002B1B44 /* MPFoldModalSegue.m */; };
+		8224FE2B19D48656002B1B44 /* MPFoldNavPopSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8224FE2019D48656002B1B44 /* MPFoldNavPopSegue.m */; };
+		8224FE2C19D48656002B1B44 /* MPFoldNavPushSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8224FE2219D48656002B1B44 /* MPFoldNavPushSegue.m */; };
+		8224FE2D19D48656002B1B44 /* MPFoldSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8224FE2419D48656002B1B44 /* MPFoldSegue.m */; };
 		824012E019D1AF5D00C501EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012DF19D1AF5D00C501EE /* Foundation.framework */; };
 		824012E219D1AF5D00C501EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012E119D1AF5D00C501EE /* CoreGraphics.framework */; };
 		824012E419D1AF5D00C501EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012E319D1AF5D00C501EE /* UIKit.framework */; };
@@ -87,6 +96,27 @@
 		8224FDFF19D47097002B1B44 /* Raleway-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.otf"; sourceTree = "<group>"; };
 		8224FE0019D47097002B1B44 /* Raleway-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.otf"; sourceTree = "<group>"; };
 		8224FE0119D47097002B1B44 /* Raleway-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.otf"; sourceTree = "<group>"; };
+		8224FE0F19D48656002B1B44 /* MPAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAnimation.h; sourceTree = "<group>"; };
+		8224FE1019D48656002B1B44 /* MPAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAnimation.m; sourceTree = "<group>"; };
+		8224FE1119D48656002B1B44 /* MPFlipEnumerations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFlipEnumerations.h; sourceTree = "<group>"; };
+		8224FE1219D48656002B1B44 /* MPFlipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFlipTransition.h; sourceTree = "<group>"; };
+		8224FE1319D48656002B1B44 /* MPFlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFlipTransition.m; sourceTree = "<group>"; };
+		8224FE1419D48656002B1B44 /* MPFoldEnumerations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFoldEnumerations.h; sourceTree = "<group>"; };
+		8224FE1519D48656002B1B44 /* MPFoldTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFoldTransition.h; sourceTree = "<group>"; };
+		8224FE1619D48656002B1B44 /* MPFoldTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFoldTransition.m; sourceTree = "<group>"; };
+		8224FE1719D48656002B1B44 /* MPTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTransition.h; sourceTree = "<group>"; };
+		8224FE1819D48656002B1B44 /* MPTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTransition.m; sourceTree = "<group>"; };
+		8224FE1919D48656002B1B44 /* MPTransitionEnumerations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTransitionEnumerations.h; sourceTree = "<group>"; };
+		8224FE1B19D48656002B1B44 /* MPFlipSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFlipSegue.h; sourceTree = "<group>"; };
+		8224FE1C19D48656002B1B44 /* MPFlipSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFlipSegue.m; sourceTree = "<group>"; };
+		8224FE1D19D48656002B1B44 /* MPFoldModalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFoldModalSegue.h; sourceTree = "<group>"; };
+		8224FE1E19D48656002B1B44 /* MPFoldModalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFoldModalSegue.m; sourceTree = "<group>"; };
+		8224FE1F19D48656002B1B44 /* MPFoldNavPopSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFoldNavPopSegue.h; sourceTree = "<group>"; };
+		8224FE2019D48656002B1B44 /* MPFoldNavPopSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFoldNavPopSegue.m; sourceTree = "<group>"; };
+		8224FE2119D48656002B1B44 /* MPFoldNavPushSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFoldNavPushSegue.h; sourceTree = "<group>"; };
+		8224FE2219D48656002B1B44 /* MPFoldNavPushSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFoldNavPushSegue.m; sourceTree = "<group>"; };
+		8224FE2319D48656002B1B44 /* MPFoldSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFoldSegue.h; sourceTree = "<group>"; };
+		8224FE2419D48656002B1B44 /* MPFoldSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFoldSegue.m; sourceTree = "<group>"; };
 		824012DC19D1AF5D00C501EE /* victoryCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victoryCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824012DF19D1AF5D00C501EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		824012E119D1AF5D00C501EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -209,6 +239,50 @@
 			path = Raleway;
 			sourceTree = "<group>";
 		};
+		8224FE0D19D48656002B1B44 /* Thrid_party */ = {
+			isa = PBXGroup;
+			children = (
+				8224FE0E19D48656002B1B44 /* MPFoldTransition */,
+			);
+			path = Thrid_party;
+			sourceTree = "<group>";
+		};
+		8224FE0E19D48656002B1B44 /* MPFoldTransition */ = {
+			isa = PBXGroup;
+			children = (
+				8224FE0F19D48656002B1B44 /* MPAnimation.h */,
+				8224FE1019D48656002B1B44 /* MPAnimation.m */,
+				8224FE1119D48656002B1B44 /* MPFlipEnumerations.h */,
+				8224FE1219D48656002B1B44 /* MPFlipTransition.h */,
+				8224FE1319D48656002B1B44 /* MPFlipTransition.m */,
+				8224FE1419D48656002B1B44 /* MPFoldEnumerations.h */,
+				8224FE1519D48656002B1B44 /* MPFoldTransition.h */,
+				8224FE1619D48656002B1B44 /* MPFoldTransition.m */,
+				8224FE1719D48656002B1B44 /* MPTransition.h */,
+				8224FE1819D48656002B1B44 /* MPTransition.m */,
+				8224FE1919D48656002B1B44 /* MPTransitionEnumerations.h */,
+				8224FE1A19D48656002B1B44 /* Segues */,
+			);
+			path = MPFoldTransition;
+			sourceTree = "<group>";
+		};
+		8224FE1A19D48656002B1B44 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				8224FE1B19D48656002B1B44 /* MPFlipSegue.h */,
+				8224FE1C19D48656002B1B44 /* MPFlipSegue.m */,
+				8224FE1D19D48656002B1B44 /* MPFoldModalSegue.h */,
+				8224FE1E19D48656002B1B44 /* MPFoldModalSegue.m */,
+				8224FE1F19D48656002B1B44 /* MPFoldNavPopSegue.h */,
+				8224FE2019D48656002B1B44 /* MPFoldNavPopSegue.m */,
+				8224FE2119D48656002B1B44 /* MPFoldNavPushSegue.h */,
+				8224FE2219D48656002B1B44 /* MPFoldNavPushSegue.m */,
+				8224FE2319D48656002B1B44 /* MPFoldSegue.h */,
+				8224FE2419D48656002B1B44 /* MPFoldSegue.m */,
+			);
+			path = Segues;
+			sourceTree = "<group>";
+		};
 		824012D319D1AF5D00C501EE = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +369,7 @@
 		8240131719D1B52800C501EE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8224FE0D19D48656002B1B44 /* Thrid_party */,
 				82DAB03019D1EBA000F23668 /* UIColor+Extensions.h */,
 				82DAB03119D1EBA000F23668 /* UIColor+Extensions.m */,
 				8240131819D1B58A00C501EE /* XHCustomSegue.h */,
@@ -484,13 +559,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8224FE2B19D48656002B1B44 /* MPFoldNavPopSegue.m in Sources */,
+				8224FE2619D48656002B1B44 /* MPFlipTransition.m in Sources */,
+				8224FE2819D48656002B1B44 /* MPTransition.m in Sources */,
+				8224FE2719D48656002B1B44 /* MPFoldTransition.m in Sources */,
 				82A805E419D2077300308BA1 /* buildingViewController.m in Sources */,
+				8224FE2D19D48656002B1B44 /* MPFoldSegue.m in Sources */,
 				82A44BF019D3416D004FAD58 /* galleryViewController.m in Sources */,
+				8224FE2A19D48656002B1B44 /* MPFoldModalSegue.m in Sources */,
+				8224FE2919D48656002B1B44 /* MPFlipSegue.m in Sources */,
 				8240131A19D1B58A00C501EE /* XHCustomSegue.m in Sources */,
 				82A805E119D2076300308BA1 /* mapViewController.m in Sources */,
 				824012F619D1AF5D00C501EE /* ViewController.m in Sources */,
+				8224FE2C19D48656002B1B44 /* MPFoldNavPushSegue.m in Sources */,
 				82DAB03219D1EBA000F23668 /* UIColor+Extensions.m in Sources */,
 				82DAB03519D1ED5B00F23668 /* teamViewController.m in Sources */,
+				8224FE2519D48656002B1B44 /* MPAnimation.m in Sources */,
 				824012F019D1AF5D00C501EE /* AppDelegate.m in Sources */,
 				82A44BA519D32D1C004FAD58 /* galleryCVCell.m in Sources */,
 				824012EC19D1AF5D00C501EE /* main.m in Sources */,
