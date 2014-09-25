@@ -10,15 +10,17 @@
 			<dict>
 				<key>albumtype</key>
 				<string>image</string>
-				<key>albumthumb</key>
-				<string>grfx_gallery_jahn_thumb.jpg</string>
-				<key>albumcaption</key>
-				<string>Early Design Concepts</string>
 				<key>images</key>
 				<array>
-					<string>grfx_Intro_01.jpg</string>
-					<string>grfx_Intro_02.jpg</string>
-					<string>grfx_Intro_03.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+				</array>
+				<key>frame</key>
+				<array>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
 				</array>
 				<key>captions</key>
 				<array>
@@ -29,40 +31,78 @@
 			</dict>
 			<dict>
 				<key>albumtype</key>
-				<string>image</string>
+				<string>film</string>
 				<key>albumthumb</key>
-				<string>grfx_gallery_jahnproj_thumb.jpg</string>
+				<string>Building_bg.jpg</string>
+				<key>albumframe</key>
+				<string>play_button.png</string>
 				<key>albumcaption</key>
-				<string>Noteworthy Projects</string>
+				<string>Film</string>
+				<key>film</key>
+				<string>RiverPoint_FineCut_HD.mov</string>
+			</dict>
+			<dict>
+				<key>albumtype</key>
+				<string>image</string>
 				<key>images</key>
 				<array>
-					<string>gallery_jahnProj_mj-1999K_006_cropped.jpg</string>
-					<string>gallery_jahnProj_mj-1999K_018.jpg</string>
-					<string>gallery_jahnProj_mj-1999K_020.jpg</string>
-					<string>gallery_jahnProj_LTP_10.jpg</string>
-					<string>gallery_jahnProj_LTP_18.jpg</string>
-					<string>gallery_jahnProj_LTP_30.jpg</string>
-					<string>gallery_jahnProj_sony-04.jpg</string>
-					<string>gallery_jahnProj_sony1.jpg</string>
-					<string>gallery_jahnProj_sony3.bmp</string>
-					<string>gallery_jahnProj_layout-skyline_10.jpg</string>
-					<string>gallery_jahnProj_layout-skyline_08.jpg</string>
-					<string>gallery_jahnProj_layout-skyline_07.jpg</string>
-					<string>gallery_jahnProj_posttower_17.jpg</string>
-					<string>gallery_jahnProj_posttower_24.jpg</string>
-					<string>gallery_jahnProj_posttower_26.jpg</string>
-					<string>gallery_jahnProj_HTp_200_Night_ht057b-lf_B.jpg</string>
-					<string>gallery_jahnProj_HTp_205_Night_ht165_B.jpg</string>
-					<string>gallery_jahnProj_HTp_317_detail_ht073b_1.jpg</string>
-					<string>gallery_jahnProj_sign_07.jpg</string>
-					<string>gallery_jahnProj_sign_09.jpg</string>
-					<string>gallery_jahnProj_sign_24.jpg</string>
-					<string>gallery_jahnProj_kranzlereck_5.jpg</string>
-					<string>gallery_jahnProj_kranzlereck-2.jpg</string>
-					<string>gallery_jahnProj_kranzlereck-3.jpg</string>
-					<string>gallery_jahnProj_JPT-Taisei_17.jpg</string>
-					<string>gallery_jahnProj_JPT-Taisei_27.jpg</string>
-					<string>gallery_jahnProj_JPT-Taisei_28.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+				</array>
+				<key>frame</key>
+				<array>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
 				</array>
 				<key>captions</key>
 				<array>

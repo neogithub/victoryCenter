@@ -15,7 +15,6 @@
 	NSString                *secTitle;
 	NSDictionary            *albumDict;
     int                     sectionIndex;
-    int                     sumOfSections;
     NSMutableArray          *arr_AlbumData;
 }
 
@@ -41,7 +40,6 @@
 					  @"galleryData" ofType:@"plist"];
 	// Build the array from the plist
 	NSMutableArray *rawArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
-    sumOfSections = [rawArray count];
     arr_AlbumData = [[NSMutableArray alloc] init];
     [arr_AlbumData addObject:[rawArray objectAtIndex:0]];
 }
@@ -81,8 +79,42 @@
     galleryCVCell *galleryImageCell = [collectionView
                                     dequeueReusableCellWithReuseIdentifier:@"cvCell"
                                     forIndexPath:indexPath];
-    galleryImageCell.titleLabel.text = @"title";
+    NSDictionary *tempDic = [[NSDictionary alloc] initWithDictionary:[arr_AlbumData objectAtIndex:indexPath.section]];
+    NSMutableArray *secInfo = [[NSMutableArray alloc] initWithArray:[tempDic objectForKey:@"sectioninfo"]];
+    
+    NSMutableArray *totalImg = [[NSMutableArray alloc] init];
+    NSMutableArray *totalCap = [[NSMutableArray alloc] init];
+    NSMutableArray *totalFrm = [[NSMutableArray alloc] init];
+    
+    NSString *typeOfCell = [[NSString alloc] init];
+    
+    for (int i = 0; i < [secInfo count]; i++) {
+        NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:[secInfo objectAtIndex:i]];
+        typeOfCell = [itemDic objectForKey:@"albumtype"];
+        
+        if ([typeOfCell isEqualToString:@"image"]) {
+            NSMutableArray *imgArray = [[NSMutableArray alloc] initWithArray:[itemDic objectForKey:@"images"]];
+            NSMutableArray *capArray = [[NSMutableArray alloc] initWithArray:[itemDic objectForKey:@"captions"]];
+            NSMutableArray *frmArray = [[NSMutableArray alloc] initWithArray:[itemDic objectForKey:@"frame"]];
+            [totalImg addObjectsFromArray:imgArray];
+            [totalCap addObjectsFromArray:capArray];
+            [totalFrm addObjectsFromArray:frmArray];
+        }
+        else
+        {
+            [totalImg addObject:[itemDic objectForKey:@"albumthumb"]];
+            [totalCap addObject:[itemDic objectForKey:@"albumcaption"]];
+            [totalFrm addObject:[itemDic objectForKey:@"albumframe"]];
+        }
+        
+    }
+
+    
+    
+    galleryImageCell.titleLabel.text = [totalCap objectAtIndex:indexPath.item];
     galleryImageCell.titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:15];
+    galleryImageCell.cellThumb.image = [UIImage imageNamed:[totalImg objectAtIndex:indexPath.item]];
+    galleryImageCell.cellFrame.image = [UIImage imageNamed:[totalFrm objectAtIndex:indexPath.item]];
     return galleryImageCell;
 }
 

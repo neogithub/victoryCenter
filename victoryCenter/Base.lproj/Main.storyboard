@@ -152,16 +152,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="285" height="285"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYd-b5-7mc">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYd-b5-7mc">
                                                     <rect key="frame" x="0.0" y="0.0" width="520" height="520"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIG-sA-2yj" userLabel="Image - frame">
                                                     <rect key="frame" x="0.0" y="0.0" width="301" height="285"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cap_bar_.png" translatesAutoresizingMaskIntoConstraints="NO" id="wjS-5r-haZ" userLabel="Image View - cap">
-                                                    <rect key="frame" x="0.0" y="245" width="285" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQ8-Sk-u0J">
@@ -332,7 +328,6 @@
         <image name="Building_bg.jpg" width="1024" height="768"/>
         <image name="Map_bg.jpg" width="1024" height="768"/>
         <image name="Team_bg.jpg" width="893" height="670"/>
-        <image name="cap_bar_.png" width="284" height="38"/>
         <image name="grfx_helpIcon.png" width="36" height="36"/>
         <image name="grfx_menuIcon.png" width="44" height="43"/>
         <image name="grfx_menuImage.png" width="388" height="768"/>
