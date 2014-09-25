@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *cellThumb;
+@property (weak, nonatomic) IBOutlet UIImageView *cellFrame;
 
 @end
