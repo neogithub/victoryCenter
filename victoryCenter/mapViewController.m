@@ -77,13 +77,13 @@ static CGFloat kMaxZoom                 = 2.0;
     _uiiv_mapImg.backgroundColor = [UIColor whiteColor];
 	switch (index % 3) {
 		case 0:
-            [_uiiv_mapImg setImage:[UIImage imageNamed:@"Map_bg.jpg"]];
+            [_uiiv_mapImg setImage:[UIImage imageNamed:@"City_base_map_.png"]];
 			break;
 		case 1:
-            [_uiiv_mapImg setImage:[UIImage imageNamed:@"Building_bg.jpg"]];
+            [_uiiv_mapImg setImage:[UIImage imageNamed:@"Access_overlay.png"]];
 			break;
 		case 2:
-            [_uiiv_mapImg setImage:[UIImage imageNamed:@"Team_bg.jpg"]];
+            [_uiiv_mapImg setImage:[UIImage imageNamed:@"Site_Base map.png"]];
 			break;
 		default:
 			break;
