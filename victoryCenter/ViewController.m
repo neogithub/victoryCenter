@@ -113,7 +113,7 @@
 	_arr_menuButtons = [[NSMutableArray alloc] init];
 	
 	NSArray *arr_MenuNames = @[@"Building",@"Location",@"Gallery",@"Team"];
-	NSArray *arr_MenuColors = @[[UIColor vcmediummenu],[UIColor vcdarkmenu],[UIColor vclightbluemenu],[UIColor vccyanmenu]];
+	NSArray *arr_MenuColors = @[[UIColor vcmediummenu],[UIColor vcdarkmenu],[UIColor vccyanmenu],[UIColor vclightbluemenu]];
 
 	_uiv_menuPanel = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 320)];
 	[_uiv_menuPanel setBackgroundColor:[UIColor clearColor]];

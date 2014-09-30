@@ -22,23 +22,23 @@
 }
 
 + (UIColor *)vcLightBlue {
-	return [UIColor colorWithRed: 0.0f/255.0f green: 96.0f/255.0f blue: 152.0f/255.0f alpha: 1];
+	return [UIColor colorWithRed: 0.0f/255.0f green: 98.0f/255.0f blue: 152.0f/255.0f alpha: 1];
 }
 
 + (UIColor *)vclightbluemenu {
-	return[UIColor colorWithRed:0.5216 green:0.6941 blue:0.8000 alpha:1.0];
-}
-
-+ (UIColor *)vcdarkmenu {
-	return[UIColor colorWithRed:0.1294 green:0.2471 blue:0.3882 alpha:1.0];
+	return[UIColor colorWithRed:0.5216 green:0.6941 blue:0.8000 alpha:0.90];
 }
 
 + (UIColor *)vccyanmenu {
-	return[UIColor colorWithRed:0.0000 green:0.4980 blue:0.6627 alpha:1.0];
+	return[UIColor colorWithRed:0.3373 green:0.6 blue:0.7294 alpha:0.92];
+}
+
++ (UIColor *)vcdarkmenu {
+	return[UIColor colorWithRed:0.0863 green:0.4627 blue:0.6275 alpha:0.96];
 }
 
 + (UIColor *)vcmediummenu {
-	return[UIColor colorWithRed:0.0000 green:0.4392 blue:0.6235 alpha:1.0];
+	return[UIColor colorWithRed:0.0000 green:0.4392 blue:0.6235 alpha:1];
 }
 
 + (UIColor *)vcDarkBlue {
