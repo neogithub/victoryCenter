@@ -25,6 +25,22 @@
 	return [UIColor colorWithRed: 0.0f/255.0f green: 96.0f/255.0f blue: 152.0f/255.0f alpha: 1];
 }
 
++ (UIColor *)vclightbluemenu {
+	return[UIColor colorWithRed:0.5216 green:0.6941 blue:0.8000 alpha:1.0];
+}
+
++ (UIColor *)vcdarkmenu {
+	return[UIColor colorWithRed:0.1294 green:0.2471 blue:0.3882 alpha:1.0];
+}
+
++ (UIColor *)vccyanmenu {
+	return[UIColor colorWithRed:0.0000 green:0.4980 blue:0.6627 alpha:1.0];
+}
+
++ (UIColor *)vcmediummenu {
+	return[UIColor colorWithRed:0.0000 green:0.4392 blue:0.6235 alpha:1.0];
+}
+
 + (UIColor *)vcDarkBlue {
 	return [UIColor colorWithRed: 31.0f/255.0f green: 53.0f/255.0f blue: 94.0f/255.0f alpha: 1];
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20F890C719DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20F890C519DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg */; };
+		20F890C819DA295C0074A3B7 /* Victory Center 02 W Hotel View@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20F890C619DA295C0074A3B7 /* Victory Center 02 W Hotel View@2x.jpg */; };
 		8224FDF119D46997002B1B44 /* galleryData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8224FDF019D46997002B1B44 /* galleryData.plist */; };
 		8224FDF519D46D90002B1B44 /* cap_bar_.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FDF319D46D90002B1B44 /* cap_bar_.png */; };
 		8224FDF619D46D90002B1B44 /* cap_bar_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FDF419D46D90002B1B44 /* cap_bar_@2x.png */; };
@@ -88,6 +90,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20F890C519DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Victory Center 02 W Hotel View.jpg"; path = "illustrations/Victory Center 02 W Hotel View.jpg"; sourceTree = "<group>"; };
+		20F890C619DA295C0074A3B7 /* Victory Center 02 W Hotel View@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Victory Center 02 W Hotel View@2x.jpg"; path = "illustrations/Victory Center 02 W Hotel View@2x.jpg"; sourceTree = "<group>"; };
 		8224FDF019D46997002B1B44 /* galleryData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = galleryData.plist; sourceTree = "<group>"; };
 		8224FDF319D46D90002B1B44 /* cap_bar_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cap_bar_.png; sourceTree = "<group>"; };
 		8224FDF419D46D90002B1B44 /* cap_bar_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cap_bar_@2x.png"; sourceTree = "<group>"; };
@@ -206,6 +210,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20F890C419DA294B0074A3B7 /* illustrations */ = {
+			isa = PBXGroup;
+			children = (
+				20F890C519DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg */,
+				20F890C619DA295C0074A3B7 /* Victory Center 02 W Hotel View@2x.jpg */,
+			);
+			name = illustrations;
+			sourceTree = "<group>";
+		};
 		8224FDEF19D46997002B1B44 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +408,7 @@
 		8240131B19D1C04800C501EE /* src */ = {
 			isa = PBXGroup;
 			children = (
+				20F890C419DA294B0074A3B7 /* illustrations */,
 				8224FDEF19D46997002B1B44 /* DataStore */,
 				8224FDF719D47097002B1B44 /* fonts */,
 				8224FDF219D46D90002B1B44 /* grfx */,
@@ -519,6 +533,7 @@
 				82A805D619D1FC1400308BA1 /* grfx_menuIcon.png in Resources */,
 				82A805ED19D2091D00308BA1 /* Building_bg@2x.jpg in Resources */,
 				82A805CE19D1F61E00308BA1 /* grfx_helpIcon.png in Resources */,
+				20F890C819DA295C0074A3B7 /* Victory Center 02 W Hotel View@2x.jpg in Resources */,
 				824012F819D1AF5D00C501EE /* Images.xcassets in Resources */,
 				826709E019D2147000B9ED87 /* team_logoBtmBar.png in Resources */,
 				82A805EC19D2091D00308BA1 /* Building_bg.jpg in Resources */,
@@ -542,6 +557,7 @@
 				82A805F019D2091D00308BA1 /* Team_bg.jpg in Resources */,
 				82A805D219D1F61E00308BA1 /* grfx_movieIcon.png in Resources */,
 				82A805DA19D1FE8100308BA1 /* grfx_menuImage.png in Resources */,
+				20F890C719DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg in Resources */,
 				8224FE3219D4BD6E002B1B44 /* normal_frame.png in Resources */,
 				8224FE0419D47097002B1B44 /* Raleway-ExtraBold.otf in Resources */,
 				826709DF19D2147000B9ED87 /* team_logo@2x.png in Resources */,

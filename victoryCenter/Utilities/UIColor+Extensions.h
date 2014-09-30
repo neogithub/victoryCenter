@@ -14,6 +14,10 @@
 + (UIColor *)colorWithR:(CGFloat)red G:(CGFloat)green B:(CGFloat)blue A:(CGFloat)alpha;
 + (UIColor *)vcLightBlue;
 + (UIColor *)vcDarkBlue;
++ (UIColor *)vclightbluemenu;
++ (UIColor *)vcdarkmenu;
++ (UIColor *)vccyanmenu;
++ (UIColor *)vcmediummenu;
 //+ (UIColor *)vpShadowBlue;
 //+ (UIColor *)vpYellow;
 //+ (UIColor *)vpTextBlue;
