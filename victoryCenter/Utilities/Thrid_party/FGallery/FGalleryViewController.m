@@ -126,8 +126,8 @@
 //            [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_bar_BG.png"] forBarPosition:UIBarPositionAny
 //                                                  barMetrics:UIBarMetricsDefault];
 //            [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
-            [[UINavigationBar appearance] setBackgroundColor:[UIColor skThemeBlue]];
-            [self.navigationController.navigationController.navigationBar setBarTintColor:[UIColor skThemeBlue]];
+            [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
+            [self.navigationController.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
         }
         else
         {
@@ -284,9 +284,7 @@
 {
     //    [self.navigationController popViewControllerAnimated:YES];
     //    [[NSNotificationCenter defaultCenter] postNotificationName:@"backToGallery" object:self];
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"unhideStar"
-     object:self];
+
     [self.parentViewController.view removeFromSuperview];
     float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (systemVersion >= 7.0)
@@ -564,7 +562,7 @@
 {
     
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"BACK TO GALLERY", @"") style: UIBarButtonItemStyleBordered target: self action: @selector(getBack) ];
-    [newBackButton setTitleTextAttributes:@{ UITextAttributeFont: [UIFont fontWithName:@"BrandonGrotesque-Medium" size:17.0], UITextAttributeTextColor: [UIColor blackColor]} forState:UIControlStateNormal];
+    [newBackButton setTitleTextAttributes:@{ UITextAttributeFont: [UIFont fontWithName:@"Raleway-Medium" size:17.0], UITextAttributeTextColor: [UIColor blackColor]} forState:UIControlStateNormal];
     //    [[self navigationItem] setBackBarButtonItem: newBackButton];
     UIBarButtonItem *leftSpacer = [[UIBarButtonItem alloc]
                                    initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
@@ -576,7 +574,7 @@
     UIButton *uib_back = [UIButton buttonWithType:UIButtonTypeCustom];
     [uib_back setFrame:CGRectMake(120.0, 17.0, 180.0, 20.0)];
     [uib_back setTitle:@"BACK TO GALLERY" forState:UIControlStateNormal];
-    uib_back.titleLabel.font = [UIFont fontWithName:@"BrandonGrotesque-Medium" size:17.0];
+    uib_back.titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:17.0];
     [uib_back setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [uib_back addTarget:self action:@selector(getBack) forControlEvents:UIControlEventTouchDown];
     [self.navigationController.navigationBar addSubview:uib_back];

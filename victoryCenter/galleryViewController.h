@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FGalleryViewController.h"
 
-@interface galleryViewController : UIViewController
-
+@interface galleryViewController : UIViewController <FGalleryViewControllerDelegate>
+{
+    // fgallery
+	FGalleryViewController	*localGallery;
+	NSArray					*localCaptions;
+    NSArray					*localImages;
+}
 @end

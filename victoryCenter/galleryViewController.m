@@ -120,7 +120,170 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"The tapped cell is no.%i", indexPath.item);
+//    NSLog(@"The tapped cell is no.%i", indexPath.item);
+    
+//    UIButton *tmp = [[UIButton alloc] init];
+//	int currentIndex = (int)indexPath.section;
+//	tmp.tag = indexPath.row;
+//    [self click2Open:tmp inSection:currentIndex];
+}
+
+#pragma mark - Thumbnail Action
+// Used in Photos Layout.
+// In Photos layout, tap on one thumbnail, photo gallery start at that index
+-(void)click2Open:(id)sender inSection:(int)section {
+	
+	NSMutableArray *imageArr = [[NSMutableArray alloc] init];
+	NSMutableArray *capArr = [[NSMutableArray alloc] init];
+    NSMutableArray *typeArr = [[NSMutableArray alloc] init];
+    NSMutableArray *fileArr = [[NSMutableArray alloc] init];
+    
+	NSDictionary *ggallDict = [arr_AlbumData objectAtIndex:section];
+	NSArray *ggalleryArray = [ggallDict objectForKey:@"sectioninfo"];
+    for (int i = 0; i < [ggalleryArray count]; i++) {
+        NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:ggalleryArray[i]];
+        
+        //Add all items' names into this array
+        if ([[itemDic objectForKey:@"albumtype"] isEqualToString:@"image"]) {
+            [fileArr addObjectsFromArray: [itemDic objectForKey:@"images"]];
+            [imageArr addObjectsFromArray: [itemDic objectForKey:@"images"]];
+            [capArr addObjectsFromArray: [itemDic objectForKey:@"captions"]];
+            
+            NSArray *tmpImgArr = [[NSArray alloc] initWithArray:[itemDic objectForKey:@"images"]];
+            for (int j = 0; j < [tmpImgArr count]; j++) {
+                [typeArr addObject:[itemDic objectForKey:@"albumtype"]];
+            }
+        }
+        if ([[itemDic objectForKey:@"albumtype"] isEqualToString:@"film"]) {
+            
+            [fileArr addObject:[itemDic objectForKey:@"film"]];
+            // Add item's type into this array
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"hideStar" object:self];
+            
+            [typeArr addObject:[itemDic objectForKey:@"albumtype"]];
+        }
+        if ([[itemDic objectForKey:@"albumtype"] isEqualToString:@"pdf"]) {
+            [fileArr addObject:[itemDic objectForKey:@"pdf"]];
+            // Add item's type into this array
+            [typeArr addObject:[itemDic objectForKey:@"albumtype"]];
+        }
+        if ([[itemDic objectForKey:@"albumtype"] isEqualToString:@"url"]) {
+            [fileArr addObject:[itemDic objectForKey:@"url"]];
+            // Add item's type into this array
+            [typeArr addObject:[itemDic objectForKey:@"albumtype"]];
+        }
+    }
+    //    NSLog(@"names: %@ =", fileArr);
+    //    NSLog(@"types: %@ =", typeArr);
+    NSMutableDictionary *typesAndNamesDict = [[NSMutableDictionary alloc] init];
+    [typesAndNamesDict setObject:typeArr forKey:@"types"];
+    [typesAndNamesDict setObject:fileArr forKey:@"fileName"];
+    
+	if ([[[typesAndNamesDict objectForKey:@"types"] objectAtIndex:[sender tag]]isEqualToString:@"film"]) {
+//		NSArray *tmpFile = [[NSArray alloc] initWithArray:[typesAndNamesDict objectForKey:@"fileName"]];
+//        
+//		NSString *fileString = [[[tmpFile objectAtIndex:[sender tag]] lastPathComponent] stringByDeletingPathExtension];
+//		NSString *extensionString = [[tmpFile objectAtIndex:[sender tag]] pathExtension];
+//		NSLog(@"%@.%@",fileString,extensionString);
+//        
+//		[self playMovie:fileString ofType:extensionString];
+		
+	} else if ([[[typesAndNamesDict objectForKey:@"types"] objectAtIndex:[sender tag]] isEqualToString:@"image"]) {
+//		NSLog(@"image %@ and %@", imageArr, capArr);
+		localImages =  imageArr;
+		localCaptions = [NSArray arrayWithArray:capArr];
+		//[self imageViewer:sender];
+        UINavigationController *fGalleryNavigationController = [[UINavigationController alloc] init];
+        fGalleryNavigationController.view.frame = self.view.frame;
+        //[fGalleryNavigationController setToolbarHidden:NO];
+        //        [fGalleryNavigationController.view setBackgroundColor:[UIColor clearColor]];
+		localGallery = [[FGalleryViewController alloc] initWithPhotoSource:self];
+        localGallery.startingIndex = [sender tag];
+        [fGalleryNavigationController addChildViewController:localGallery];
+        [fGalleryNavigationController.view addSubview:localGallery.view];
+        //		[self.navigationController pushViewController:localGallery animated:YES];
+        [self addChildViewController:fGalleryNavigationController];
+        [self.view addSubview:fGalleryNavigationController.view];
+        
+        
+	} else if ([[[typesAndNamesDict objectForKey:@"types"] objectAtIndex:[sender tag]] isEqualToString:@"pdf"]) {
+//        NSArray *tmpFile = [[NSArray alloc] initWithArray:[typesAndNamesDict objectForKey:@"fileName"]];
+//        [self viewPDF:[tmpFile objectAtIndex:[sender tag]]];
+		
+	}else if([[[typesAndNamesDict objectForKey:@"types"] objectAtIndex:[sender tag]]  isEqualToString:@"url"]){
+//        NSArray *tmpFile = [[NSArray alloc] initWithArray:[typesAndNamesDict objectForKey:@"fileName"]];
+//        NSString *theURL =[tmpFile objectAtIndex:[sender tag]];
+//        NSLog(@"the  url is %@", theURL);
+//        [self openWebPage:theURL];
+    }
+}
+
+#pragma mark - FGalleryViewControllerDelegate Methods
+- (int)numberOfPhotosForPhotoGallery:(FGalleryViewController *)gallery
+{
+    int num;
+    //    if( gallery == localGallery ) {
+    //		num = [localImages count];
+    //	}
+    //	else if( gallery == networkGallery ) {
+    //		num = [networkImages count];
+    //	}
+	num = [localImages count];
+	return num;
+}
+
+- (FGalleryPhotoSourceType)photoGallery:(FGalleryViewController *)gallery sourceTypeForPhotoAtIndex:(NSUInteger)index
+{
+	if( gallery == localGallery ) {
+		return FGalleryPhotoSourceTypeLocal;
+	}
+	else return FGalleryPhotoSourceTypeNetwork;
+}
+
+- (NSString*)photoGallery:(FGalleryViewController *)gallery captionForPhotoAtIndex:(NSUInteger)index
+{
+    NSString *caption;
+    if( gallery == localGallery ) {
+        caption = [localCaptions objectAtIndex:index];
+    }
+	//    else if( gallery == networkGallery ) {
+	//        caption = [networkCaptions objectAtIndex:index];
+	//    }
+	return caption;
+}
+
+- (NSString*)photoGallery:(FGalleryViewController*)gallery filePathForPhotoSize:(FGalleryPhotoSize)size atIndex:(NSUInteger)index {
+    return [localImages objectAtIndex:index];
+}
+
+- (void)handleTrashButtonTouch:(id)sender {
+    // here we could remove images from our local array storage and tell the gallery to remove that image
+    // ex:
+    //[localGallery removeImageAtIndex:[localGallery currentIndex]];
+}
+
+- (void)handleEditCaptionButtonTouch:(id)sender {
+    // here we could implement some code to change the caption for a stored image
+}
+
+-(void)imageViewer:(id)sender {
+	
+    //	UIButton *tmpBtn = (UIButton*)sender;
+    //
+    //	galleryNameString = tmpBtn.titleLabel.text;
+    //	tmpBtn.alpha = 0.6;
+    //
+    //	GalleryImagesViewController *vc = [[GalleryImagesViewController alloc] initWithGallery:[Gallery galleryNamed:galleryNameString]];
+    //	[vc goToPageAtIndex:0 animated:NO];
+    //
+    //	CATransition* transition = [CATransition animation];
+    //	transition.duration = 0.33;
+    //	transition.type = kCATransitionFade;
+    //	transition.subtype = kCATransitionFromTop;
+    //
+    //	[self.navigationController.view.layer
+    //	 addAnimation:transition forKey:kCATransition];
+    //	[self.navigationController pushViewController:vc animated:NO];
 }
 
 
