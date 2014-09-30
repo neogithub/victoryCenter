@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>SectionName</key>
-		<string>Rendering</string>
+		<string>Jahn Architects, LLC</string>
 		<key>sectioninfo</key>
 		<array>
 			<dict>
@@ -12,24 +12,12 @@
 				<string>image</string>
 				<key>images</key>
 				<array>
-					<string>highway B1.jpg</string>
-					<string>Street View B1.jpg</string>
-					<string>Victory Center 01 Highway View.jpg</string>
-					<string>Victory Center 02 W Hotel View.jpg</string>
-					<string>Victory Center 03 View from SE.jpg</string>
-					<string>Victory Center 04 Plaza View.jpg</string>
-					<string>Victory Center View from plaza edits-sm.jpg</string>
-					<string>NW-FINAL Lighting Concept2.jpg</string>
-					<string>SE-FINAL Lighting Concept2.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
 				</array>
 				<key>frame</key>
 				<array>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
@@ -39,43 +27,61 @@
 					<string>Image 11</string>
 					<string>Image 12</string>
 					<string>Image 13</string>
-					<string>Image 14</string>
-					<string>Image 15</string>
-					<string>Image 16</string>
-					<string>Image 17</string>
-					<string>Image 18</string>
-					<string>Image 19</string>
 				</array>
+			</dict>
+			<dict>
+				<key>albumtype</key>
+				<string>film</string>
+				<key>albumthumb</key>
+				<string>Building_bg.jpg</string>
+				<key>albumframe</key>
+				<string>play_button.png</string>
+				<key>albumcaption</key>
+				<string>Film</string>
+				<key>film</key>
+				<string>RiverPoint_FineCut_HD.mov</string>
 			</dict>
 			<dict>
 				<key>albumtype</key>
 				<string>image</string>
 				<key>images</key>
 				<array>
-					<string>20140716_view1_90 feet.jpg</string>
-					<string>20140716_view2_90 feet.jpg</string>
-					<string>20140802_downtown_100m_1pm.jpg</string>
-					<string>20140802_downtown_100m_1pm_high-res.jpg</string>
-					<string>20140802_downtown_100m_5pm.jpg</string>
-					<string>20140802_downtown_100m_5pm_high-res.jpg</string>
-					<string>20140802_downtown_100m_6pm.jpg</string>
-					<string>20140802_downtown_100m_6pm_high-res.jpg</string>
-					<string>20140802_downtown_60m_2pm.jpg</string>
-					<string>20140802_downtown_60m_2pm_high-res.jpg</string>
-					<string>20140802_view4_100m_01.jpg</string>
-					<string>20140802_view4_100m_05.jpg</string>
-					<string>20140802_view4_100m_06-small.jpg</string>
-					<string>20140802_view4_100m_06.jpg</string>
-					<string>20140802_view4_60m_02.jpg</string>
-					<string>20140811_view3_100m_01.jpg</string>
-					<string>20140811_view3_100m_02.jpg</string>
-					<string>20140811_view3_100m_03.jpg</string>
-					<string>20140811_view3_100m_04.jpg</string>
-					<string>victory_center_138feet.jpg</string>
-					<string>victory_center_278_feet.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
+					<string>Building_bg.jpg</string>
 				</array>
 				<key>frame</key>
 				<array>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
@@ -121,6 +127,12 @@
 					<string>Image 19</string>
 					<string>Image 20</string>
 					<string>Image 22</string>
+					<string>Image 23</string>
+					<string>Image 24</string>
+					<string>Image 25</string>
+					<string>Image 26</string>
+					<string>Image 27</string>
+					<string>Image 28</string>
 				</array>
 			</dict>
 		</array>
