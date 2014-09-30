@@ -214,7 +214,7 @@
     _captionContainer.hidden					= YES;
     _captionContainer.userInteractionEnabled	= NO;
     _captionContainer.exclusiveTouch			= YES;
-    _caption.font								= [UIFont fontWithName:@"BrandonGrotesque-Medium" size:14.0];
+    _caption.font								= [UIFont fontWithName:@"Raleway-Medium" size:14.0];
     _caption.textColor							= [UIColor whiteColor];
     _caption.backgroundColor					= [UIColor clearColor];
     _caption.textAlignment						= NSTextAlignmentLeft;
@@ -584,7 +584,7 @@
     if( self.navigationController ) {
         if (_useThumbnailView) {
             _uib_seeAllRightItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"SEE ALL", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(handleSeeAllTouch:)] autorelease];
-            [_uib_seeAllRightItem setTitleTextAttributes:@{ UITextAttributeFont: [UIFont fontWithName:@"BrandonGrotesque-Medium" size:17.0], UITextAttributeTextColor: [UIColor blackColor]} forState:UIControlStateNormal];
+            [_uib_seeAllRightItem setTitleTextAttributes:@{ UITextAttributeFont: [UIFont fontWithName:@"Raleway-Medium" size:17.0], UITextAttributeTextColor: [UIColor blackColor]} forState:UIControlStateNormal];
             UIBarButtonItem *rightSpacer = [[UIBarButtonItem alloc]
                                             initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                                             target:nil action:nil];
@@ -595,7 +595,7 @@
             _uib_seeAllButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [_uib_seeAllButton setFrame:CGRectMake(780, 17, 150, 20)];
             [_uib_seeAllButton setTitle:@"SEE ALL" forState:UIControlStateNormal];
-            _uib_seeAllButton.titleLabel.font = [UIFont fontWithName:@"BrandonGrotesque-Medium" size:17.0];
+            _uib_seeAllButton.titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:17.0];
             [_uib_seeAllButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_uib_seeAllButton addTarget:self action:@selector(handleSeeAllTouch:) forControlEvents:UIControlEventTouchDown];
             [self.navigationController.navigationBar addSubview:_uib_seeAllButton];
@@ -819,7 +819,7 @@
         titleLabel.adjustsFontSizeToFitWidth=YES;
         titleLabel.textAlignment= NSTextAlignmentCenter;
         [titleLabel sizeToFit];
-        titleLabel.font = [UIFont fontWithName:@"BrandonGrotesque-Medium" size:18.0];
+        titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:18.0];
         self.navigationItem.titleView=titleLabel;
         CGFloat verticalOffset = 3;
         [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:verticalOffset forBarMetrics:UIBarMetricsDefault];

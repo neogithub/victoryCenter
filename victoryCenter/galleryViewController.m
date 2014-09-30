@@ -122,10 +122,10 @@
 {
 //    NSLog(@"The tapped cell is no.%i", indexPath.item);
     
-//    UIButton *tmp = [[UIButton alloc] init];
-//	int currentIndex = (int)indexPath.section;
-//	tmp.tag = indexPath.row;
-//    [self click2Open:tmp inSection:currentIndex];
+    UIButton *tmp = [[UIButton alloc] init];
+	int currentIndex = (int)indexPath.section;
+	tmp.tag = indexPath.row;
+    [self click2Open:tmp inSection:currentIndex];
 }
 
 #pragma mark - Thumbnail Action
