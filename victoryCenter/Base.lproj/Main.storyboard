@@ -130,7 +130,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -261,7 +261,7 @@
         <image name="Building_bg.jpg" width="1024" height="768"/>
         <image name="Map_bg.jpg" width="1024" height="768"/>
         <image name="Team_bg.jpg" width="893" height="670"/>
-        <image name="Victory Center 02 W Hotel View.jpg" width="1024" height="768"/>
+        <image name="Victory Center 02 W Hotel View.jpg" width="1250" height="848"/>
         <image name="grfx_helpIcon.png" width="36" height="36"/>
         <image name="grfx_menuIcon.png" width="44" height="43"/>
         <image name="grfx_mialIcon.png" width="36" height="36"/>

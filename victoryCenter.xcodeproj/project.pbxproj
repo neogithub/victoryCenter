@@ -77,6 +77,42 @@
 		82A805F119D2091D00308BA1 /* Team_bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82A805EB19D2091D00308BA1 /* Team_bg@2x.jpg */; };
 		82DAB03219D1EBA000F23668 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAB03119D1EBA000F23668 /* UIColor+Extensions.m */; };
 		82DAB03519D1ED5B00F23668 /* teamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAB03419D1ED5B00F23668 /* teamViewController.m */; };
+		82DC11BF19DAEA940057AE4F /* 20140716_view1_90 feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A019DAEA940057AE4F /* 20140716_view1_90 feet.jpg */; };
+		82DC11C019DAEA940057AE4F /* 20140716_view2_90 feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A119DAEA940057AE4F /* 20140716_view2_90 feet.jpg */; };
+		82DC11C119DAEA940057AE4F /* 20140802_downtown_100m_1pm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A219DAEA940057AE4F /* 20140802_downtown_100m_1pm.jpg */; };
+		82DC11C219DAEA940057AE4F /* 20140802_downtown_100m_1pm_high-res.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A319DAEA940057AE4F /* 20140802_downtown_100m_1pm_high-res.jpg */; };
+		82DC11C319DAEA940057AE4F /* 20140802_downtown_100m_5pm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A419DAEA940057AE4F /* 20140802_downtown_100m_5pm.jpg */; };
+		82DC11C419DAEA940057AE4F /* 20140802_downtown_100m_5pm_high-res.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A519DAEA940057AE4F /* 20140802_downtown_100m_5pm_high-res.jpg */; };
+		82DC11C519DAEA940057AE4F /* 20140802_downtown_100m_6pm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A619DAEA940057AE4F /* 20140802_downtown_100m_6pm.jpg */; };
+		82DC11C619DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A719DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg */; };
+		82DC11C719DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A819DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg */; };
+		82DC11C819DAEA940057AE4F /* 20140802_downtown_60m_2pm_high-res.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A919DAEA940057AE4F /* 20140802_downtown_60m_2pm_high-res.jpg */; };
+		82DC11C919DAEA940057AE4F /* 20140802_view4_100m_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11AA19DAEA940057AE4F /* 20140802_view4_100m_01.jpg */; };
+		82DC11CA19DAEA940057AE4F /* 20140802_view4_100m_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11AB19DAEA940057AE4F /* 20140802_view4_100m_05.jpg */; };
+		82DC11CB19DAEA940057AE4F /* 20140802_view4_100m_06-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11AC19DAEA940057AE4F /* 20140802_view4_100m_06-small.jpg */; };
+		82DC11CC19DAEA940057AE4F /* 20140802_view4_100m_06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11AD19DAEA940057AE4F /* 20140802_view4_100m_06.jpg */; };
+		82DC11CD19DAEA940057AE4F /* 20140802_view4_60m_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11AE19DAEA940057AE4F /* 20140802_view4_60m_02.jpg */; };
+		82DC11CE19DAEA940057AE4F /* 20140811_view3_100m_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11AF19DAEA940057AE4F /* 20140811_view3_100m_01.jpg */; };
+		82DC11CF19DAEA940057AE4F /* 20140811_view3_100m_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B019DAEA940057AE4F /* 20140811_view3_100m_02.jpg */; };
+		82DC11D019DAEA940057AE4F /* 20140811_view3_100m_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B119DAEA940057AE4F /* 20140811_view3_100m_03.jpg */; };
+		82DC11D119DAEA940057AE4F /* 20140811_view3_100m_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B219DAEA940057AE4F /* 20140811_view3_100m_04.jpg */; };
+		82DC11D219DAEA940057AE4F /* victory_center_138feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B319DAEA940057AE4F /* victory_center_138feet.jpg */; };
+		82DC11D319DAEA940057AE4F /* victory_center_278_feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B419DAEA940057AE4F /* victory_center_278_feet.jpg */; };
+		82DC11D419DAEA940057AE4F /* highway B1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B619DAEA940057AE4F /* highway B1.jpg */; };
+		82DC11D519DAEA940057AE4F /* NW-FINAL Lighting Concept2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B719DAEA940057AE4F /* NW-FINAL Lighting Concept2.jpg */; };
+		82DC11D619DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B819DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg */; };
+		82DC11D719DAEA940057AE4F /* Street View B1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B919DAEA940057AE4F /* Street View B1.jpg */; };
+		82DC11D819DAEA940057AE4F /* Victory Center 01 Highway View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BA19DAEA940057AE4F /* Victory Center 01 Highway View.jpg */; };
+		82DC11D919DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BB19DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg */; };
+		82DC11DA19DAEA940057AE4F /* Victory Center 03 View from SE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BC19DAEA940057AE4F /* Victory Center 03 View from SE.jpg */; };
+		82DC11DB19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BD19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg */; };
+		82DC11DC19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BE19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg */; };
+		82DC11E519DAEE070057AE4F /* Access_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11DF19DAEE070057AE4F /* Access_overlay.png */; };
+		82DC11E619DAEE070057AE4F /* Access_overlay_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E019DAEE070057AE4F /* Access_overlay_@2x.png */; };
+		82DC11E719DAEE070057AE4F /* City_base_map_.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E119DAEE070057AE4F /* City_base_map_.png */; };
+		82DC11E819DAEE070057AE4F /* City_base_map_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E219DAEE070057AE4F /* City_base_map_@2x.png */; };
+		82DC11E919DAEE070057AE4F /* Site_Base map.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E319DAEE070057AE4F /* Site_Base map.png */; };
+		82DC11EA19DAEE070057AE4F /* Site_Base map_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E419DAEE070057AE4F /* Site_Base map_@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +220,42 @@
 		82DAB03119D1EBA000F23668 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		82DAB03319D1ED5B00F23668 /* teamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teamViewController.h; sourceTree = "<group>"; };
 		82DAB03419D1ED5B00F23668 /* teamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teamViewController.m; sourceTree = "<group>"; };
+		82DC11A019DAEA940057AE4F /* 20140716_view1_90 feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20140716_view1_90 feet.jpg"; sourceTree = "<group>"; };
+		82DC11A119DAEA940057AE4F /* 20140716_view2_90 feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20140716_view2_90 feet.jpg"; sourceTree = "<group>"; };
+		82DC11A219DAEA940057AE4F /* 20140802_downtown_100m_1pm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140802_downtown_100m_1pm.jpg; sourceTree = "<group>"; };
+		82DC11A319DAEA940057AE4F /* 20140802_downtown_100m_1pm_high-res.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20140802_downtown_100m_1pm_high-res.jpg"; sourceTree = "<group>"; };
+		82DC11A419DAEA940057AE4F /* 20140802_downtown_100m_5pm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140802_downtown_100m_5pm.jpg; sourceTree = "<group>"; };
+		82DC11A519DAEA940057AE4F /* 20140802_downtown_100m_5pm_high-res.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20140802_downtown_100m_5pm_high-res.jpg"; sourceTree = "<group>"; };
+		82DC11A619DAEA940057AE4F /* 20140802_downtown_100m_6pm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140802_downtown_100m_6pm.jpg; sourceTree = "<group>"; };
+		82DC11A719DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20140802_downtown_100m_6pm_high-res.jpg"; sourceTree = "<group>"; };
+		82DC11A819DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140802_downtown_60m_2pm.jpg; sourceTree = "<group>"; };
+		82DC11A919DAEA940057AE4F /* 20140802_downtown_60m_2pm_high-res.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20140802_downtown_60m_2pm_high-res.jpg"; sourceTree = "<group>"; };
+		82DC11AA19DAEA940057AE4F /* 20140802_view4_100m_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140802_view4_100m_01.jpg; sourceTree = "<group>"; };
+		82DC11AB19DAEA940057AE4F /* 20140802_view4_100m_05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140802_view4_100m_05.jpg; sourceTree = "<group>"; };
+		82DC11AC19DAEA940057AE4F /* 20140802_view4_100m_06-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20140802_view4_100m_06-small.jpg"; sourceTree = "<group>"; };
+		82DC11AD19DAEA940057AE4F /* 20140802_view4_100m_06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140802_view4_100m_06.jpg; sourceTree = "<group>"; };
+		82DC11AE19DAEA940057AE4F /* 20140802_view4_60m_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140802_view4_60m_02.jpg; sourceTree = "<group>"; };
+		82DC11AF19DAEA940057AE4F /* 20140811_view3_100m_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140811_view3_100m_01.jpg; sourceTree = "<group>"; };
+		82DC11B019DAEA940057AE4F /* 20140811_view3_100m_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140811_view3_100m_02.jpg; sourceTree = "<group>"; };
+		82DC11B119DAEA940057AE4F /* 20140811_view3_100m_03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140811_view3_100m_03.jpg; sourceTree = "<group>"; };
+		82DC11B219DAEA940057AE4F /* 20140811_view3_100m_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140811_view3_100m_04.jpg; sourceTree = "<group>"; };
+		82DC11B319DAEA940057AE4F /* victory_center_138feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = victory_center_138feet.jpg; sourceTree = "<group>"; };
+		82DC11B419DAEA940057AE4F /* victory_center_278_feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = victory_center_278_feet.jpg; sourceTree = "<group>"; };
+		82DC11B619DAEA940057AE4F /* highway B1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "highway B1.jpg"; sourceTree = "<group>"; };
+		82DC11B719DAEA940057AE4F /* NW-FINAL Lighting Concept2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "NW-FINAL Lighting Concept2.jpg"; sourceTree = "<group>"; };
+		82DC11B819DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SE-FINAL Lighting Concept2.jpg"; sourceTree = "<group>"; };
+		82DC11B919DAEA940057AE4F /* Street View B1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Street View B1.jpg"; sourceTree = "<group>"; };
+		82DC11BA19DAEA940057AE4F /* Victory Center 01 Highway View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 01 Highway View.jpg"; sourceTree = "<group>"; };
+		82DC11BB19DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 02 W Hotel View.jpg"; sourceTree = "<group>"; };
+		82DC11BC19DAEA940057AE4F /* Victory Center 03 View from SE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 03 View from SE.jpg"; sourceTree = "<group>"; };
+		82DC11BD19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 04 Plaza View.jpg"; sourceTree = "<group>"; };
+		82DC11BE19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center View from plaza edits-sm.jpg"; sourceTree = "<group>"; };
+		82DC11DF19DAEE070057AE4F /* Access_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Access_overlay.png; sourceTree = "<group>"; };
+		82DC11E019DAEE070057AE4F /* Access_overlay_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Access_overlay_@2x.png"; sourceTree = "<group>"; };
+		82DC11E119DAEE070057AE4F /* City_base_map_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = City_base_map_.png; sourceTree = "<group>"; };
+		82DC11E219DAEE070057AE4F /* City_base_map_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "City_base_map_@2x.png"; sourceTree = "<group>"; };
+		82DC11E319DAEE070057AE4F /* Site_Base map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Site_Base map.png"; sourceTree = "<group>"; };
+		82DC11E419DAEE070057AE4F /* Site_Base map_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Site_Base map_@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +480,8 @@
 		8240131B19D1C04800C501EE /* src */ = {
 			isa = PBXGroup;
 			children = (
+				82DC11DD19DAEE070057AE4F /* Location */,
+				82DC119E19DAEA940057AE4F /* Gallery */,
 				20F890C419DA294B0074A3B7 /* illustrations */,
 				8224FDEF19D46997002B1B44 /* DataStore */,
 				8224FDF719D47097002B1B44 /* fonts */,
@@ -452,6 +526,80 @@
 				826709DD19D2147000B9ED87 /* team_Text@2x.png */,
 			);
 			path = tmp;
+			sourceTree = "<group>";
+		};
+		82DC119E19DAEA940057AE4F /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				82DC119F19DAEA940057AE4F /* Drone_shots */,
+				82DC11B519DAEA940057AE4F /* Rendering */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		82DC119F19DAEA940057AE4F /* Drone_shots */ = {
+			isa = PBXGroup;
+			children = (
+				82DC11A019DAEA940057AE4F /* 20140716_view1_90 feet.jpg */,
+				82DC11A119DAEA940057AE4F /* 20140716_view2_90 feet.jpg */,
+				82DC11A219DAEA940057AE4F /* 20140802_downtown_100m_1pm.jpg */,
+				82DC11A319DAEA940057AE4F /* 20140802_downtown_100m_1pm_high-res.jpg */,
+				82DC11A419DAEA940057AE4F /* 20140802_downtown_100m_5pm.jpg */,
+				82DC11A519DAEA940057AE4F /* 20140802_downtown_100m_5pm_high-res.jpg */,
+				82DC11A619DAEA940057AE4F /* 20140802_downtown_100m_6pm.jpg */,
+				82DC11A719DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg */,
+				82DC11A819DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg */,
+				82DC11A919DAEA940057AE4F /* 20140802_downtown_60m_2pm_high-res.jpg */,
+				82DC11AA19DAEA940057AE4F /* 20140802_view4_100m_01.jpg */,
+				82DC11AB19DAEA940057AE4F /* 20140802_view4_100m_05.jpg */,
+				82DC11AC19DAEA940057AE4F /* 20140802_view4_100m_06-small.jpg */,
+				82DC11AD19DAEA940057AE4F /* 20140802_view4_100m_06.jpg */,
+				82DC11AE19DAEA940057AE4F /* 20140802_view4_60m_02.jpg */,
+				82DC11AF19DAEA940057AE4F /* 20140811_view3_100m_01.jpg */,
+				82DC11B019DAEA940057AE4F /* 20140811_view3_100m_02.jpg */,
+				82DC11B119DAEA940057AE4F /* 20140811_view3_100m_03.jpg */,
+				82DC11B219DAEA940057AE4F /* 20140811_view3_100m_04.jpg */,
+				82DC11B319DAEA940057AE4F /* victory_center_138feet.jpg */,
+				82DC11B419DAEA940057AE4F /* victory_center_278_feet.jpg */,
+			);
+			path = Drone_shots;
+			sourceTree = "<group>";
+		};
+		82DC11B519DAEA940057AE4F /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				82DC11B619DAEA940057AE4F /* highway B1.jpg */,
+				82DC11B719DAEA940057AE4F /* NW-FINAL Lighting Concept2.jpg */,
+				82DC11B819DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg */,
+				82DC11B919DAEA940057AE4F /* Street View B1.jpg */,
+				82DC11BA19DAEA940057AE4F /* Victory Center 01 Highway View.jpg */,
+				82DC11BB19DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg */,
+				82DC11BC19DAEA940057AE4F /* Victory Center 03 View from SE.jpg */,
+				82DC11BD19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg */,
+				82DC11BE19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		82DC11DD19DAEE070057AE4F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				82DC11DE19DAEE070057AE4F /* maps */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		82DC11DE19DAEE070057AE4F /* maps */ = {
+			isa = PBXGroup;
+			children = (
+				82DC11DF19DAEE070057AE4F /* Access_overlay.png */,
+				82DC11E019DAEE070057AE4F /* Access_overlay_@2x.png */,
+				82DC11E119DAEE070057AE4F /* City_base_map_.png */,
+				82DC11E219DAEE070057AE4F /* City_base_map_@2x.png */,
+				82DC11E319DAEE070057AE4F /* Site_Base map.png */,
+				82DC11E419DAEE070057AE4F /* Site_Base map_@2x.png */,
+			);
+			path = maps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,23 +678,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DC11D019DAEA940057AE4F /* 20140811_view3_100m_03.jpg in Resources */,
+				82DC11E919DAEE070057AE4F /* Site_Base map.png in Resources */,
 				82A805D619D1FC1400308BA1 /* grfx_menuIcon.png in Resources */,
 				82A805ED19D2091D00308BA1 /* Building_bg@2x.jpg in Resources */,
 				82A805CE19D1F61E00308BA1 /* grfx_helpIcon.png in Resources */,
 				20F890C819DA295C0074A3B7 /* Victory Center 02 W Hotel View@2x.jpg in Resources */,
+				82DC11CB19DAEA940057AE4F /* 20140802_view4_100m_06-small.jpg in Resources */,
+				82DC11C519DAEA940057AE4F /* 20140802_downtown_100m_6pm.jpg in Resources */,
 				824012F819D1AF5D00C501EE /* Images.xcassets in Resources */,
 				826709E019D2147000B9ED87 /* team_logoBtmBar.png in Resources */,
 				82A805EC19D2091D00308BA1 /* Building_bg.jpg in Resources */,
+				82DC11CF19DAEA940057AE4F /* 20140811_view3_100m_02.jpg in Resources */,
 				8224FE0919D47097002B1B44 /* Raleway-Regular.otf in Resources */,
+				82DC11E719DAEE070057AE4F /* City_base_map_.png in Resources */,
+				82DC11D919DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg in Resources */,
+				82DC11CA19DAEA940057AE4F /* 20140802_view4_100m_05.jpg in Resources */,
+				82DC11E519DAEE070057AE4F /* Access_overlay.png in Resources */,
+				82DC11E819DAEE070057AE4F /* City_base_map_@2x.png in Resources */,
+				82DC11D619DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg in Resources */,
 				826709E219D2147000B9ED87 /* team_Text.png in Resources */,
+				82DC11D819DAEA940057AE4F /* Victory Center 01 Highway View.jpg in Resources */,
+				82DC11EA19DAEE070057AE4F /* Site_Base map_@2x.png in Resources */,
+				82DC11D219DAEA940057AE4F /* victory_center_138feet.jpg in Resources */,
+				82DC11D419DAEA940057AE4F /* highway B1.jpg in Resources */,
+				82DC11C019DAEA940057AE4F /* 20140716_view2_90 feet.jpg in Resources */,
+				82DC11C219DAEA940057AE4F /* 20140802_downtown_100m_1pm_high-res.jpg in Resources */,
 				8224FE0619D47097002B1B44 /* Raleway-Heavy.otf in Resources */,
+				82DC11DB19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg in Resources */,
+				82DC11DA19DAEA940057AE4F /* Victory Center 03 View from SE.jpg in Resources */,
 				82A805D119D1F61E00308BA1 /* grfx_mialIcon@2x.png in Resources */,
 				8224FE0719D47097002B1B44 /* Raleway-Light.otf in Resources */,
 				8224FE0819D47097002B1B44 /* Raleway-Medium.otf in Resources */,
+				82DC11CE19DAEA940057AE4F /* 20140811_view3_100m_01.jpg in Resources */,
 				826709E119D2147000B9ED87 /* team_logoBtmBar@2x.png in Resources */,
+				82DC11C119DAEA940057AE4F /* 20140802_downtown_100m_1pm.jpg in Resources */,
 				824012EA19D1AF5D00C501EE /* InfoPlist.strings in Resources */,
 				8224FE0319D47097002B1B44 /* Raleway-Bold.otf in Resources */,
 				82A805EF19D2091D00308BA1 /* Map_bg@2x.jpg in Resources */,
+				82DC11DC19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg in Resources */,
 				8224FDF619D46D90002B1B44 /* cap_bar_@2x.png in Resources */,
 				82A805EE19D2091D00308BA1 /* Map_bg.jpg in Resources */,
 				826709DE19D2147000B9ED87 /* team_logo.png in Resources */,
@@ -554,25 +724,39 @@
 				8224FDF519D46D90002B1B44 /* cap_bar_.png in Resources */,
 				82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */,
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
+				82DC11C719DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg in Resources */,
+				82DC11E619DAEE070057AE4F /* Access_overlay_@2x.png in Resources */,
 				82A805F019D2091D00308BA1 /* Team_bg.jpg in Resources */,
+				82DC11C619DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg in Resources */,
 				82A805D219D1F61E00308BA1 /* grfx_movieIcon.png in Resources */,
 				82A805DA19D1FE8100308BA1 /* grfx_menuImage.png in Resources */,
 				20F890C719DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg in Resources */,
 				8224FE3219D4BD6E002B1B44 /* normal_frame.png in Resources */,
 				8224FE0419D47097002B1B44 /* Raleway-ExtraBold.otf in Resources */,
 				826709DF19D2147000B9ED87 /* team_logo@2x.png in Resources */,
+				82DC11C819DAEA940057AE4F /* 20140802_downtown_60m_2pm_high-res.jpg in Resources */,
+				82DC11D119DAEA940057AE4F /* 20140811_view3_100m_04.jpg in Resources */,
 				8224FE0519D47097002B1B44 /* Raleway-ExtraLight.otf in Resources */,
+				82DC11CC19DAEA940057AE4F /* 20140802_view4_100m_06.jpg in Resources */,
+				82DC11C419DAEA940057AE4F /* 20140802_downtown_100m_5pm_high-res.jpg in Resources */,
 				82A805D319D1F61E00308BA1 /* grfx_movieIcon@2x.png in Resources */,
+				82DC11BF19DAEA940057AE4F /* 20140716_view1_90 feet.jpg in Resources */,
 				82A805F119D2091D00308BA1 /* Team_bg@2x.jpg in Resources */,
 				8224FE3419D4BD6E002B1B44 /* play_button_@2x.png in Resources */,
 				82A805CF19D1F61E00308BA1 /* grfx_helpIcon@2x.png in Resources */,
 				8224FDF119D46997002B1B44 /* galleryData.plist in Resources */,
 				8224FE0A19D47097002B1B44 /* Raleway-SemiBold.otf in Resources */,
+				82DC11CD19DAEA940057AE4F /* 20140802_view4_60m_02.jpg in Resources */,
+				82DC11D719DAEA940057AE4F /* Street View B1.jpg in Resources */,
 				8224FE3319D4BD6E002B1B44 /* normal_frame@2x.png in Resources */,
+				82DC11C319DAEA940057AE4F /* 20140802_downtown_100m_5pm.jpg in Resources */,
+				82DC11C919DAEA940057AE4F /* 20140802_view4_100m_01.jpg in Resources */,
 				82A805D019D1F61E00308BA1 /* grfx_mialIcon.png in Resources */,
 				824012F319D1AF5D00C501EE /* Main.storyboard in Resources */,
+				82DC11D319DAEA940057AE4F /* victory_center_278_feet.jpg in Resources */,
 				8224FE3519D4BD6E002B1B44 /* play_button.png in Resources */,
 				826709E319D2147000B9ED87 /* team_Text@2x.png in Resources */,
+				82DC11D519DAEA940057AE4F /* NW-FINAL Lighting Concept2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
