@@ -80,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9qJ-h0-uZ8" userLabel="Button - ALL">
-                                <rect key="frame" x="224" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="225" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="ALL">
@@ -88,7 +88,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MsS-In-0zF" userLabel="Button - Renderings">
-                                <rect key="frame" x="356" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="358" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="RENDERINGS">
@@ -96,7 +96,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bIe-Wv-8Lt" userLabel="Button - Photo">
-                                <rect key="frame" x="488" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="491" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="PHOTOGRAPHY">
@@ -104,7 +104,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VEe-IM-fN7" userLabel="Button - Video">
-                                <rect key="frame" x="620" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="624" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="VIDEO">
@@ -226,29 +226,33 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nWL-wl-uQU" userLabel="Button - floor plan">
-                                <rect key="frame" x="224" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="225" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Floor Plan">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PTE-64-C6S" userLabel="Button - Bld stats">
-                                <rect key="frame" x="356" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="358" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Building stats">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MKa-pH-F8E" userLabel="Button - amenities">
-                                <rect key="frame" x="488" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="491" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Amenities">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kM8-2Q-ZIB" userLabel="Button - elevators">
-                                <rect key="frame" x="620" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="624" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Elevators">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -280,12 +284,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map_bg.jpg" id="ESz-b5-B9V">
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map_bg.jpg" id="ESz-b5-B9V">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hwA-zn-73q" userLabel="Button - CITY">
-                                <rect key="frame" x="224" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="225" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="CITY">
@@ -296,7 +300,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wia-uO-e2b" userLabel="Button - Neighborhood">
-                                <rect key="frame" x="356" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="358" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="NEIGHBORHOOD">
@@ -308,7 +312,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="z48-no-lx7" userLabel="Button - SITE">
-                                <rect key="frame" x="488" y="0.0" width="130" height="30"/>
+                                <rect key="frame" x="491" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="SITE">
@@ -320,13 +324,14 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="ORx-r5-sA3" userLabel="View - city sub menu">
-                                <rect key="frame" x="224" y="32" width="130" height="48"/>
+                                <rect key="frame" x="225" y="37" width="130" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0U1-SP-1zj" userLabel="Button - district">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="23"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="DISTRICTS">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -335,9 +340,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1fw-9r-gS7" userLabel="Button - city-access">
-                                        <rect key="frame" x="0.0" y="25" width="130" height="23"/>
+                                        <rect key="frame" x="0.0" y="31" width="130" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="ACCESS">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -349,11 +355,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="2n0-lb-9mC" userLabel="View - neighborhood sub menu">
-                                <rect key="frame" x="356" y="32" width="130" height="48"/>
+                                <rect key="frame" x="358" y="37" width="130" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mhU-Db-RU0" userLabel="Button - neighborhood-amenities">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="23"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="AMENITIES">
@@ -364,7 +370,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eKU-aZ-kDQ" userLabel="Button - neighborhood-access">
-                                        <rect key="frame" x="0.0" y="25" width="130" height="23"/>
+                                        <rect key="frame" x="0.0" y="31" width="130" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="ACCESS">
@@ -378,11 +384,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="YaE-Xm-ZB5" userLabel="View - site sub menu">
-                                <rect key="frame" x="488" y="32" width="130" height="73"/>
+                                <rect key="frame" x="491" y="37" width="130" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IkR-VA-LMI" userLabel="Button - site-overview">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="23"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="OVERVIEW">
@@ -393,7 +399,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BLQ-Pq-Jta" userLabel="Button - site-amenities">
-                                        <rect key="frame" x="0.0" y="25" width="130" height="23"/>
+                                        <rect key="frame" x="0.0" y="31" width="130" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="AMENITIES">
@@ -404,7 +410,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WD5-UV-5SU" userLabel="Button - site-access">
-                                        <rect key="frame" x="0.0" y="50" width="130" height="23"/>
+                                        <rect key="frame" x="0.0" y="62" width="130" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="ACCESS">
@@ -424,8 +430,18 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="uib_city" destination="hwA-zn-73q" id="Tg5-Ii-cjx"/>
+                        <outlet property="uib_cityAccess" destination="1fw-9r-gS7" id="OU7-s9-d1g"/>
+                        <outlet property="uib_cityDistricts" destination="0U1-SP-1zj" id="1dA-PE-m6f"/>
+                        <outlet property="uib_neighboorhoodAmenities" destination="mhU-Db-RU0" id="sgr-lZ-puR"/>
                         <outlet property="uib_neighbor" destination="wia-uO-e2b" id="kAT-i7-RFg"/>
+                        <outlet property="uib_neighborhoodAccess" destination="eKU-aZ-kDQ" id="job-hM-4m8"/>
                         <outlet property="uib_site" destination="z48-no-lx7" id="PSx-gA-Yno"/>
+                        <outlet property="uib_siteAccess" destination="WD5-UV-5SU" id="oRo-A6-k38"/>
+                        <outlet property="uib_siteAmenities" destination="BLQ-Pq-Jta" id="Eel-X2-oh5"/>
+                        <outlet property="uib_siteOverview" destination="IkR-VA-LMI" id="fpT-Mw-67N"/>
+                        <outlet property="uiv_citySubMenu" destination="ORx-r5-sA3" id="eWP-CT-JfV"/>
+                        <outlet property="uiv_neighborhoodSubMenu" destination="2n0-lb-9mC" id="E4p-99-dlg"/>
+                        <outlet property="uiv_siteSubMenu" destination="YaE-Xm-ZB5" id="PPJ-hN-AWU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mn5-5V-8rv" userLabel="First Responder" sceneMemberID="firstResponder"/>

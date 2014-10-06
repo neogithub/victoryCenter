@@ -16,10 +16,22 @@ static CGFloat kMinZoom                 = 1.0;
 static CGFloat kMaxZoom                 = 2.0;
 
 @interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
-
+//Top root menu
 @property (weak, nonatomic) IBOutlet UIButton           *uib_city;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_neighbor;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_site;
+//Sub menu container
+@property (weak, nonatomic) IBOutlet UIView             *uiv_citySubMenu;
+@property (weak, nonatomic) IBOutlet UIView             *uiv_neighborhoodSubMenu;
+@property (weak, nonatomic) IBOutlet UIView             *uiv_siteSubMenu;
+//Sub menu buttons
+@property (weak, nonatomic) IBOutlet UIButton           *uib_cityDistricts;
+@property (weak, nonatomic) IBOutlet UIButton           *uib_cityAccess;
+@property (weak, nonatomic) IBOutlet UIButton           *uib_neighboorhoodAmenities;
+@property (weak, nonatomic) IBOutlet UIButton           *uib_neighborhoodAccess;
+@property (weak, nonatomic) IBOutlet UIButton           *uib_siteOverview;
+@property (weak, nonatomic) IBOutlet UIButton           *uib_siteAmenities;
+@property (weak, nonatomic) IBOutlet UIButton           *uib_siteAccess;
 
 @property (nonatomic, strong) UIScrollView              *uis_zooming;
 @property (nonatomic, strong) UIView                    *uiv_mapContainer;
@@ -42,6 +54,7 @@ static CGFloat kMaxZoom                 = 2.0;
 {
     [super viewDidLoad];
     [self setTopButtons];
+    [self setSubMenus];
     [self setUpMapAnimation];
     [self initZoomingScrollView];
     // Do any additional setup after loading the view.
@@ -281,6 +294,85 @@ static CGFloat kMaxZoom                 = 2.0;
         [self updateTopBtns:_uib_site];
         [self animationOfMaps:2];
     }
+}
+
+- (void)setSubMenus
+{
+    [self setCitySubMenu];
+    [self setNeighborhoodSubMenu];
+    [self setSiteSubMenu];
+}
+
+- (void)setCitySubMenu
+{
+    [_uib_cityDistricts setTitle:@"DISTRICTS" forState:UIControlStateNormal];
+    [_uib_cityDistricts setTitle:@"DISTRICTS" forState:UIControlStateSelected];
+    [_uib_cityDistricts setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_uib_cityDistricts setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_uib_cityDistricts.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    _uib_cityDistricts.backgroundColor = [UIColor vcLightBlue];
+    _uib_cityDistricts.tag = 11;
+    _uib_cityDistricts.selected = NO;
+
+    [_uib_cityAccess setTitle:@"ACCESS" forState:UIControlStateNormal];
+    [_uib_cityAccess setTitle:@"ACCESS" forState:UIControlStateSelected];
+    [_uib_cityAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_uib_cityAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_uib_cityAccess.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    _uib_cityAccess.backgroundColor = [UIColor vcLightBlue];
+    _uib_cityAccess.tag = 12;
+    _uib_cityAccess.selected = NO;
+}
+
+- (void)setNeighborhoodSubMenu
+{
+    [_uib_neighboorhoodAmenities setTitle:@"AMENITIES" forState:UIControlStateNormal];
+    [_uib_neighboorhoodAmenities setTitle:@"AMENITIES" forState:UIControlStateSelected];
+    [_uib_neighboorhoodAmenities setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_uib_neighboorhoodAmenities setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_uib_neighboorhoodAmenities.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    _uib_neighboorhoodAmenities.backgroundColor = [UIColor vcLightBlue];
+    _uib_neighboorhoodAmenities.tag = 21;
+    _uib_neighboorhoodAmenities.selected = NO;
+    
+    [_uib_neighborhoodAccess setTitle:@"ACCESS" forState:UIControlStateNormal];
+    [_uib_neighborhoodAccess setTitle:@"ACCESS" forState:UIControlStateSelected];
+    [_uib_neighborhoodAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_uib_neighborhoodAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_uib_neighborhoodAccess.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    _uib_neighborhoodAccess.backgroundColor = [UIColor vcLightBlue];
+    _uib_neighborhoodAccess.tag = 22;
+    _uib_neighborhoodAccess.selected = NO;
+}
+
+- (void)setSiteSubMenu
+{
+    [_uib_siteOverview setTitle:@"OVERVIEW" forState:UIControlStateNormal];
+    [_uib_siteOverview setTitle:@"OVERVIEW" forState:UIControlStateSelected];
+    [_uib_siteOverview setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_uib_siteOverview setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_uib_siteOverview.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    _uib_siteOverview.backgroundColor = [UIColor vcLightBlue];
+    _uib_siteOverview.tag = 31;
+    _uib_siteOverview.selected = NO;
+    
+    [_uib_siteAmenities setTitle:@"AMENITIES" forState:UIControlStateNormal];
+    [_uib_siteAmenities setTitle:@"AMENITIES" forState:UIControlStateSelected];
+    [_uib_siteAmenities setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_uib_siteAmenities setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_uib_siteAmenities.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    _uib_siteAmenities.backgroundColor = [UIColor vcLightBlue];
+    _uib_siteAmenities.tag = 32;
+    _uib_siteAmenities.selected = NO;
+    
+    [_uib_siteAccess setTitle:@"ACCESS" forState:UIControlStateNormal];
+    [_uib_siteAccess setTitle:@"ACCESS" forState:UIControlStateSelected];
+    [_uib_siteAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_uib_siteAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_uib_siteAccess.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    _uib_siteAccess.backgroundColor = [UIColor vcLightBlue];
+    _uib_siteAccess.tag = 33;
+    _uib_siteAccess.selected = NO;
 }
 
 - (void)didReceiveMemoryWarning
