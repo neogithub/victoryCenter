@@ -122,6 +122,8 @@
 		82DC11FE19DAF2990057AE4F /* photo-gallery-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11F519DAF2990057AE4F /* photo-gallery-right.png */; };
 		82DC11FF19DAF2990057AE4F /* photo-gallery-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11F619DAF2990057AE4F /* photo-gallery-right@2x.png */; };
 		82DC120019DAF2990057AE4F /* photo-gallery-trashcan.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11F719DAF2990057AE4F /* photo-gallery-trashcan.png */; };
+		82EA38C019E304AC0027394F /* neoscape_bug.mov in Resources */ = {isa = PBXBuildFile; fileRef = 82EA38BF19E304AC0027394F /* neoscape_bug.mov */; };
+		82EA38C219E3058E0027394F /* neoscape_bug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82EA38C119E3058E0027394F /* neoscape_bug.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,6 +279,8 @@
 		82DC11F519DAF2990057AE4F /* photo-gallery-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-right.png"; sourceTree = "<group>"; };
 		82DC11F619DAF2990057AE4F /* photo-gallery-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-right@2x.png"; sourceTree = "<group>"; };
 		82DC11F719DAF2990057AE4F /* photo-gallery-trashcan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-trashcan.png"; sourceTree = "<group>"; };
+		82EA38BF19E304AC0027394F /* neoscape_bug.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = neoscape_bug.mov; sourceTree = "<group>"; };
+		82EA38C119E3058E0027394F /* neoscape_bug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = neoscape_bug.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -553,6 +557,7 @@
 		82DC119E19DAEA940057AE4F /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				82EA38BE19E304AC0027394F /* film */,
 				82DC119F19DAEA940057AE4F /* Drone_shots */,
 				82DC11B519DAEA940057AE4F /* Rendering */,
 			);
@@ -641,6 +646,15 @@
 				82DC11F719DAF2990057AE4F /* photo-gallery-trashcan.png */,
 			);
 			path = FGallery;
+			sourceTree = "<group>";
+		};
+		82EA38BE19E304AC0027394F /* film */ = {
+			isa = PBXGroup;
+			children = (
+				82EA38BF19E304AC0027394F /* neoscape_bug.mov */,
+				82EA38C119E3058E0027394F /* neoscape_bug.jpg */,
+			);
+			path = film;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -747,6 +761,7 @@
 				82DC11C219DAEA940057AE4F /* 20140802_downtown_100m_1pm_high-res.jpg in Resources */,
 				8224FE0619D47097002B1B44 /* Raleway-Heavy.otf in Resources */,
 				82DC11DB19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg in Resources */,
+				82EA38C219E3058E0027394F /* neoscape_bug.jpg in Resources */,
 				82DC11DA19DAEA940057AE4F /* Victory Center 03 View from SE.jpg in Resources */,
 				82A805D119D1F61E00308BA1 /* grfx_mialIcon@2x.png in Resources */,
 				8224FE0719D47097002B1B44 /* Raleway-Light.otf in Resources */,
@@ -762,6 +777,7 @@
 				82A805EE19D2091D00308BA1 /* Map_bg.jpg in Resources */,
 				826709DE19D2147000B9ED87 /* team_logo.png in Resources */,
 				82A805DB19D1FE8100308BA1 /* grfx_menuImage@2x.png in Resources */,
+				82EA38C019E304AC0027394F /* neoscape_bug.mov in Resources */,
 				8224FDF519D46D90002B1B44 /* cap_bar_.png in Resources */,
 				82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */,
 				82DC11FE19DAF2990057AE4F /* photo-gallery-right.png in Resources */,
