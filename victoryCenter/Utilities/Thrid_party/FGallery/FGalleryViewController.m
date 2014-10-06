@@ -431,11 +431,30 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [super viewWillDisappear:animated];
+    [super viewWillAppear:animated];
     
-	_isActive = NO;
+	self.view.frame = CGRectMake(0.0, 0.0, 1024, 768);
+    _isActive = YES;
     
-	[[UIApplication sharedApplication] setStatusBarStyle:_prevStatusStyle animated:animated];
+    self.useThumbnailView = _useThumbnailView;
+	
+    // toggle into the thumb view if we should start there
+    if (_beginsInThumbnailView && _useThumbnailView) {
+        [self showThumbnailViewWithAnimation:NO];
+        [self loadAllThumbViewPhotos];
+    }
+    
+	[self layoutViews];
+	
+	// update status bar to be see-through
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:animated];
+	[[UIApplication sharedApplication] setStatusBarHidden:YES];
+	// init with next on first run.
+	if( _currentIndex == -1 ) [self next];
+	else [self gotoImageByIndex:_currentIndex animated:NO];
+	
+	// eb addition
+	[self exitFullscreen];
 }
 
 
@@ -1296,7 +1315,6 @@
         }
     }
 }
-
 
 - (void)dealloc {
 	

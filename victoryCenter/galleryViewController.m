@@ -364,6 +364,24 @@
     //	[self.navigationController pushViewController:vc animated:NO];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [arr_AlbumData removeAllObjects];
+    arr_AlbumData = nil;
+    [arr_AlbumItems removeAllObjects];
+    arr_AlbumItems = nil;
+    [arr_AlbumFrame removeAllObjects];
+    arr_AlbumFrame = nil;
+    [arr_AlbumCaption removeAllObjects];
+    arr_AlbumCaption = nil;
+    [arr_AllImgs removeAllObjects];
+    arr_AllImgs = nil;
+    [arr_AllFlms removeAllObjects];
+    arr_AllFlms = nil;
+    
+    [_uic_gallery removeFromSuperview];
+    _uic_gallery = nil;
+}
 
 - (void)didReceiveMemoryWarning
 {
