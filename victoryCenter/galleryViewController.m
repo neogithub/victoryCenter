@@ -12,6 +12,8 @@
 
 @interface galleryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 {
+    // Button's Array
+    NSMutableArray          *arr_topBtnArray;
     // gallery
 	NSString                *secTitle;
 	NSDictionary            *albumDict;
@@ -50,6 +52,8 @@
 #pragma mark - Set top buttons
 - (void)setTopButtons
 {
+    arr_topBtnArray = [[NSMutableArray alloc] init];
+    
     [self initTopBtn:_uib_all withTitle:@"ALL" andTag:1 andSelected:YES];
     [self initTopBtn:_uib_render withTitle:@"RENDERING" andTag:2 andSelected:NO];
     [self initTopBtn:_uib_photo withTitle:@"PHOTOGRAPHY" andTag:3 andSelected:NO];
@@ -64,28 +68,24 @@
     [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [theBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
     theBtn.tag = index;
+    theBtn.selected = selected;
     if (selected) {
         theBtn.backgroundColor = [UIColor vcDarkBlue];
-        theBtn.selected = selected;
     }
     else{
         theBtn.backgroundColor = [UIColor vcLightBlue];
-        theBtn.selected = selected;
     }
+    [arr_topBtnArray addObject: theBtn];
     [theBtn addTarget:self action:@selector(tapOnTopBtns:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)tapOnTopBtns:(id)sender
 {
     UIButton *tappedBtn = sender;
-    _uib_all.selected = NO;
-    _uib_render.selected = NO;
-    _uib_photo.selected = NO;
-    _uib_video.selected = NO;
-    [_uib_all setBackgroundColor:[UIColor vcLightBlue]];
-    [_uib_render setBackgroundColor:[UIColor vcLightBlue]];
-    [_uib_photo setBackgroundColor:[UIColor vcLightBlue]];
-    [_uib_video setBackgroundColor:[UIColor vcLightBlue]];
+    for (UIButton *tmp in arr_topBtnArray) {
+        tmp.selected = NO;
+        [tmp setBackgroundColor:[UIColor vcLightBlue]];
+    }
     
     tappedBtn.selected = YES;
     tappedBtn.backgroundColor = [UIColor vcDarkBlue];
@@ -119,64 +119,18 @@
 
 - (void)updateGalleryData:(int)index
 {
-    [arr_AlbumItems removeAllObjects];
-    arr_AlbumItems = nil;
-    arr_AlbumItems = [[NSMutableArray alloc] init];
-    [arr_AlbumFrame removeAllObjects];
-    arr_AlbumFrame = nil;
-    arr_AlbumFrame = [[NSMutableArray alloc] init];
-    [arr_AlbumCaption removeAllObjects];
-    arr_AlbumCaption = nil;
-    arr_AlbumCaption = [[NSMutableArray alloc] init];
-    [arr_AllImgs removeAllObjects];
-    arr_AllImgs = nil;
-    arr_AllImgs = [[NSMutableArray alloc] init];
-    [arr_AllFlms removeAllObjects];
-    arr_AllFlms = nil;
-    arr_AllFlms = [[NSMutableArray alloc] init];
-    
+    [self clearAllDataCollection];
     NSDictionary *raw_Dict = [[NSDictionary alloc] initWithDictionary:[arr_AlbumData objectAtIndex:0]];
     NSMutableArray *arr_secInfo = [[NSMutableArray alloc] initWithArray:[raw_Dict objectForKey:@"sectioninfo"]];
-    switch (index) {
-        case 1: { // All Items
-            for (int i = 0; i < [arr_secInfo count]; i++) {
-                NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[i]];
-                [self addItemsAndFramesAndCapions:itemDic];
-            }
-            break;
+    if (index == 1) {
+        for (int i = 0; i < [arr_secInfo count]; i++) {
+            NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[i]];
+            [self addItemsAndFramesAndCapions:itemDic];
         }
-        case 2: { // Renderings
-            for (int i = 0; i < [arr_secInfo count]; i++) {
-                NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[i]];
-                // Check the category is "rendering" or not
-                if ([[itemDic objectForKey:@"category"] isEqualToString:@"rendering"]) {
-                    [self addItemsAndFramesAndCapions:itemDic];
-                }
-            }
-            break;
-        }
-        case 3: { // Photography
-            for (int i = 0; i < [arr_secInfo count]; i++) {
-                NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[i]];
-                // Check the category is "phototgraphy" or not
-                if ([[itemDic objectForKey:@"category"] isEqualToString:@"photography"]) {
-                    [self addItemsAndFramesAndCapions:itemDic];
-                }
-            }
-            break;
-        }
-        case 4: { // Video
-            for (int i = 0; i < [arr_secInfo count]; i++) {
-                NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[i]];
-                // Check the category is "video" or not
-                if ([[itemDic objectForKey:@"category"] isEqualToString:@"video"]) {
-                    [self addItemsAndFramesAndCapions:itemDic];
-                }
-            }
-            break;
-        }
-        default:
-            break;
+    }
+    else {
+        NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[index-2]];
+        [self addItemsAndFramesAndCapions:itemDic];
     }
 }
 
@@ -201,6 +155,25 @@
     if ([[itemDic objectForKey:@"albumtype"] isEqualToString:@"film"]) {
         [arr_AllFlms addObjectsFromArray:[itemDic objectForKey:@"items"]];
     }
+}
+
+- (void)clearAllDataCollection
+{
+    [arr_AlbumItems removeAllObjects];
+    arr_AlbumItems = nil;
+    arr_AlbumItems = [[NSMutableArray alloc] init];
+    [arr_AlbumFrame removeAllObjects];
+    arr_AlbumFrame = nil;
+    arr_AlbumFrame = [[NSMutableArray alloc] init];
+    [arr_AlbumCaption removeAllObjects];
+    arr_AlbumCaption = nil;
+    arr_AlbumCaption = [[NSMutableArray alloc] init];
+    [arr_AllImgs removeAllObjects];
+    arr_AllImgs = nil;
+    arr_AllImgs = [[NSMutableArray alloc] init];
+    [arr_AllFlms removeAllObjects];
+    arr_AllFlms = nil;
+    arr_AllFlms = [[NSMutableArray alloc] init];
 }
 
 #pragma mark - Collection Delegate Methods
@@ -350,19 +323,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [arr_AlbumData removeAllObjects];
-    arr_AlbumData = nil;
-    [arr_AlbumItems removeAllObjects];
-    arr_AlbumItems = nil;
-    [arr_AlbumFrame removeAllObjects];
-    arr_AlbumFrame = nil;
-    [arr_AlbumCaption removeAllObjects];
-    arr_AlbumCaption = nil;
-    [arr_AllImgs removeAllObjects];
-    arr_AllImgs = nil;
-    [arr_AllFlms removeAllObjects];
-    arr_AllFlms = nil;
-    
+[   self clearAllDataCollection];
     [_uic_gallery removeFromSuperview];
     _uic_gallery = nil;
 }
