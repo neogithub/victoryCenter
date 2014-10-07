@@ -17,6 +17,9 @@ static CGFloat kMaxZoom                 = 2.0;
 
 @interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 {
+    NSMutableArray          *arr_topBtnsArray;
+    NSMutableArray          *arr_subMenuArray;
+    
     UIView                  *uiv_cityAccPanel;
     UIView                  *uiv_neibAmePanel;
     UIView                  *uiv_neibAccPanel;
@@ -50,7 +53,7 @@ static CGFloat kMaxZoom                 = 2.0;
 
 @synthesize mode = _mode;
 @synthesize foldStyle = _foldStyle;
-@synthesize flipStyle = _flipStyle;
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -75,7 +78,6 @@ static CGFloat kMaxZoom                 = 2.0;
 - (void)setUpMapAnimation
 {
     _mode = MPTransitionModeFold;
-	_flipStyle = MPFlipStyleDefault;
     _foldStyle = MPFoldStyleHorizontal;
     [self isFold];
 }
@@ -138,16 +140,6 @@ static CGFloat kMaxZoom                 = 2.0;
 									  toView:nextView
 									duration:[MPFoldTransition defaultDuration]
 									   style:forwards? [self foldStyle]	: MPFoldStyleFlipFoldBit([self foldStyle])
-							transitionAction:MPTransitionActionAddRemove
-								  completion:^(BOOL finished) {   }
-		 ];
-	}
-	else
-	{
-		[MPFlipTransition transitionFromView:previousView
-									  toView:nextView
-									duration:[MPTransition defaultDuration]
-									   style:forwards? [self flipStyle]	: MPFlipStyleFlipDirectionBit([self flipStyle])
 							transitionAction:MPTransitionActionAddRemove
 								  completion:^(BOOL finished) {   }
 		 ];
@@ -235,6 +227,8 @@ static CGFloat kMaxZoom                 = 2.0;
 
 - (void)setTopButtons
 {
+    arr_topBtnsArray = [[NSMutableArray alloc] init];
+    
     [self initTopBtn:_uib_city withTitle:@"CITY" andTag:0 andSelected:YES];
     [self initTopBtn:_uib_neighbor withTitle:@"NEIGHBORHOOD" andTag:1 andSelected:NO];
     [self initTopBtn:_uib_site withTitle:@"SITE" andTag:2 andSelected:NO];
@@ -247,15 +241,24 @@ static CGFloat kMaxZoom                 = 2.0;
     [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [theBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
     theBtn.tag = index;
+    theBtn.selected = selected;
     if (selected) {
         theBtn.backgroundColor = [UIColor vcDarkBlue];
-        theBtn.selected = selected;
     }
     else{
         theBtn.backgroundColor = [UIColor vcLightBlue];
-        theBtn.selected = selected;
+    }
+    [arr_topBtnsArray addObject: theBtn];
+}
+
+- (void)resetTopBtns
+{
+    for (UIButton *tmp in arr_topBtnsArray) {
+        tmp.selected = NO;
+        tmp.backgroundColor = [UIColor vcLightBlue];
     }
 }
+
 /*
     1. Reset all top buttons
     2. Make the tapped one (sender) selected
@@ -264,12 +267,7 @@ static CGFloat kMaxZoom                 = 2.0;
 {
     // Reset all top buttons
     UIButton *tappedBtn = sender;
-    _uib_city.selected = NO;
-    _uib_city.backgroundColor = [UIColor vcLightBlue];
-    _uib_neighbor.selected = NO;
-    _uib_neighbor.backgroundColor = [UIColor vcLightBlue];
-    _uib_site.selected = NO;
-    _uib_site.backgroundColor = [UIColor vcLightBlue];
+    [self resetTopBtns];
     
     // Highlight the selected button
     tappedBtn.selected = YES;
@@ -353,6 +351,8 @@ static CGFloat kMaxZoom                 = 2.0;
     [self setCitySubMenu];
     [self setNeighborhoodSubMenu];
     [self setSiteSubMenu];
+    
+    arr_subMenuArray = [[NSMutableArray alloc] initWithObjects:_uiv_citySubMenu, _uiv_neighborhoodSubMenu, _uiv_siteSubMenu, nil];
 }
 
 - (void)setCitySubMenu
@@ -389,20 +389,12 @@ static CGFloat kMaxZoom                 = 2.0;
 
 - (void)resetSubMenus
 {
-    for (UIButton *tmp in [_uiv_citySubMenu subviews]) {
-        tmp.selected = NO;
-        tmp.backgroundColor = [UIColor vcLightBlue];
-        [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    }
-    for (UIButton *tmp in [_uiv_neighborhoodSubMenu subviews]) {
-        tmp.selected = NO;
-        tmp.backgroundColor = [UIColor vcLightBlue];
-        [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    }
-    for (UIButton *tmp in [_uiv_siteSubMenu subviews]) {
-        tmp.selected = NO;
-        tmp.backgroundColor = [UIColor vcLightBlue];
-        [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    for (UIView *tmpView in arr_subMenuArray) {
+        for (UIButton *tmp in [tmpView subviews]) {
+            tmp.selected = NO;
+            tmp.backgroundColor = [UIColor vcLightBlue];
+            [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+        }
     }
 }
 

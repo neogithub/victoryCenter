@@ -21,7 +21,6 @@ enum
 @property (assign, nonatomic) MPTransitionMode          mode;
 @property (assign, nonatomic) NSUInteger                style;
 @property (assign, nonatomic) MPFoldStyle               foldStyle;
-@property (assign, nonatomic) MPFlipStyle               flipStyle;
 @property (readonly, nonatomic) BOOL                    isFold;
 
 @end
