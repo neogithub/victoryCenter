@@ -11,10 +11,11 @@
 #import "MPFlipTransition.h"
 #import "UIColor+Extensions.h"
 
-static BOOL kMapCanZoom                 = YES;
-static CGFloat kMinZoom                 = 1.0;
-static CGFloat kMaxZoom                 = 2.0;
-
+static BOOL     kMapCanZoom                 = YES;
+static CGFloat  kMinZoom                    = 1.0;
+static CGFloat  kMaxZoom                    = 2.0;
+static float    panle_x                     = 733.0;
+static float    panle_w                     = 227.0;
 @interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 {
     NSMutableArray          *arr_topBtnsArray;
@@ -442,8 +443,6 @@ static CGFloat kMaxZoom                 = 2.0;
 
 - (void)addCityAccessPanel
 {
-    float panle_x = 733.0;
-    float panle_w = 227.0;
     float panle_h = 236.0;
     uiv_cityAccPanel = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 0.0, panle_w, panle_h)];
     uiv_cityAccPanel.backgroundColor = [UIColor whiteColor];
@@ -481,16 +480,38 @@ static CGFloat kMaxZoom                 = 2.0;
 - (void)handleNeibSubMenu:(id)sender
 {
     [self hiliteTappedButton:sender inView:_uiv_neighborhoodSubMenu];
+    [_uiiv_mapOverlay removeFromSuperview];
+    _uiiv_mapOverlay = nil;
+    [self removeAllPanels];
     
     int selectedIndex = (int)[sender tag]%10;
     if (selectedIndex == 1) { // Tapped Amenities
-        
+        [self addNeibAmenitiesPanel];
     }
     if (selectedIndex == 2) { // Tapped Access
         
     }
 }
 
+- (void)addNeibAmenitiesPanel
+{
+    float panle_h = 236.0;
+    uiv_neibAmePanel = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 0.0, panle_w, panle_h)];
+    uiv_neibAmePanel.backgroundColor = [UIColor whiteColor];
+    uiv_neibAmePanel.layer.borderWidth = 1.0;
+    uiv_neibAmePanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    
+    UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_PanelTitle.frame = CGRectMake(0.0, 0.0, panle_w, 46);
+    [uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
+    [uib_PanelTitle setTitle:@"Amenities" forState:UIControlStateNormal];
+    [uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
+    uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
+    [uiv_neibAmePanel addSubview: uib_PanelTitle];
+    
+    [self.view insertSubview:uiv_neibAmePanel belowSubview:_uiv_siteSubMenu];
+}
 
 #pragma mark - Site Submenu
 - (void)handleSiteSubMenu:(id)sender
@@ -498,6 +519,7 @@ static CGFloat kMaxZoom                 = 2.0;
     [self hiliteTappedButton:sender inView:_uiv_siteSubMenu];
     [_uiiv_mapOverlay removeFromSuperview];
     _uiiv_mapOverlay = nil;
+    [self removeAllPanels];
     
     int selectedIndex = (int)[sender tag]%10;
     if (selectedIndex == 1) { // Tapped Overview
