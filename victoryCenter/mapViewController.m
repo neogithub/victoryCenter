@@ -16,6 +16,13 @@ static CGFloat kMinZoom                 = 1.0;
 static CGFloat kMaxZoom                 = 2.0;
 
 @interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
+{
+    UIView                  *uiv_cityAccPanel;
+    UIView                  *uiv_neibAmePanel;
+    UIView                  *uiv_neibAccPanel;
+    UIView                  *uiv_siteAmePanel;
+    UIView                  *uiv_siteAccPanel;
+}
 //Top root menu
 @property (weak, nonatomic) IBOutlet UIButton           *uib_city;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_neighbor;
@@ -57,7 +64,11 @@ static CGFloat kMaxZoom                 = 2.0;
     [self setSubMenus];
     [self setUpMapAnimation];
     [self initZoomingScrollView];
-    // Do any additional setup after loading the view.
+    
+    //Hide all submenu's container at first
+    _uiv_citySubMenu.hidden = NO;
+    _uiv_neighborhoodSubMenu.hidden = YES;
+    _uiv_siteSubMenu.hidden = YES;
 }
 
 #pragma mark - Set up map's flod animation
@@ -251,6 +262,7 @@ static CGFloat kMaxZoom                 = 2.0;
  */
 - (void)updateTopBtns:(id)sender
 {
+    // Reset all top buttons
     UIButton *tappedBtn = sender;
     _uib_city.selected = NO;
     _uib_city.backgroundColor = [UIColor vcLightBlue];
@@ -258,6 +270,8 @@ static CGFloat kMaxZoom                 = 2.0;
     _uib_neighbor.backgroundColor = [UIColor vcLightBlue];
     _uib_site.selected = NO;
     _uib_site.backgroundColor = [UIColor vcLightBlue];
+    
+    // Highlight the selected button
     tappedBtn.selected = YES;
     tappedBtn.backgroundColor = [UIColor vcDarkBlue];
 }
@@ -267,8 +281,12 @@ static CGFloat kMaxZoom                 = 2.0;
         return;
     }
     else {
+        //remove all panels
+        [self removeAllPanels];
+        
         [self updateTopBtns:_uib_city];
         [self animationOfMaps:0];
+        [self updateSubMenu:0];
     }
 
 }
@@ -277,8 +295,12 @@ static CGFloat kMaxZoom                 = 2.0;
         return;
     }
     else {
+        //remove all panels
+        [self removeAllPanels];
+        
         [self updateTopBtns:_uib_neighbor];
         [self animationOfMaps:1];
+        [self updateSubMenu:1];
     }
 }
 - (IBAction)tapSiteBtn:(id)sender {
@@ -286,8 +308,41 @@ static CGFloat kMaxZoom                 = 2.0;
         return;
     }
     else {
+        //remove all panels
+        [self removeAllPanels];
+        
         [self updateTopBtns:_uib_site];
         [self animationOfMaps:2];
+        [self updateSubMenu:2];
+    }
+}
+
+- (void)updateSubMenu:(int)index
+{
+    [self resetSubMenus];
+    [_uiiv_mapOverlay removeFromSuperview];
+    _uiiv_mapOverlay = nil;
+    switch (index) {
+        case 0: { //Show City's sub menu
+            _uiv_citySubMenu.hidden = NO;
+            _uiv_neighborhoodSubMenu.hidden = YES;
+            _uiv_siteSubMenu.hidden = YES;
+            break;
+        }
+        case 1: { //Show Neighborhood's sub menu
+            _uiv_citySubMenu.hidden = YES;
+            _uiv_neighborhoodSubMenu.hidden = NO;
+            _uiv_siteSubMenu.hidden = YES;
+            break;
+        }
+        case 2: { //Show Site's sub menu
+            _uiv_citySubMenu.hidden = YES;
+            _uiv_neighborhoodSubMenu.hidden = YES;
+            _uiv_siteSubMenu.hidden = NO;
+            break;
+        }
+        default:
+            break;
     }
 }
 
@@ -329,6 +384,173 @@ static CGFloat kMaxZoom                 = 2.0;
     theBtn.backgroundColor = [UIColor vcLightBlue];
     theBtn.tag = index;
     theBtn.selected = selected;
+    [theBtn addTarget:self action:@selector(tapSubMenu:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)resetSubMenus
+{
+    for (UIButton *tmp in [_uiv_citySubMenu subviews]) {
+        tmp.selected = NO;
+        tmp.backgroundColor = [UIColor vcLightBlue];
+        [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    }
+    for (UIButton *tmp in [_uiv_neighborhoodSubMenu subviews]) {
+        tmp.selected = NO;
+        tmp.backgroundColor = [UIColor vcLightBlue];
+        [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    }
+    for (UIButton *tmp in [_uiv_siteSubMenu subviews]) {
+        tmp.selected = NO;
+        tmp.backgroundColor = [UIColor vcLightBlue];
+        [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    }
+}
+
+- (void)tapSubMenu:(id)sender
+{
+    UIButton *tappedBtn = sender;
+    int categoryIndx = (int)tappedBtn.tag/10;
+    switch (categoryIndx) {
+        case 1: { //Taped City's submenu
+            [self handleCitySubMenu:tappedBtn];
+            break;
+        }
+        case 2: { // Tapped Neighborhood's submenu
+            [self handleNeibSubMenu:tappedBtn];
+            break;
+        }
+        case 3: { // Tapped Site's submenu
+            [self handleSiteSubMenu:tappedBtn];
+            break;
+        }
+        default:
+            break;
+    }
+    
+}
+
+#pragma mark - City Submenu
+- (void)handleCitySubMenu:(id)sender
+{
+    [self hiliteTappedButton:sender inView:_uiv_citySubMenu];
+    [_uiiv_mapOverlay removeFromSuperview];
+    _uiiv_mapOverlay = nil;
+    [self removeAllPanels];
+    
+    int selectedIndex = (int)[sender tag]%10;
+    if (selectedIndex == 1) { // Tapped Districts
+        _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Districts_overlay.png"]];
+        _uiiv_mapOverlay.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+        [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
+    }
+    if (selectedIndex == 2) { // Tapped Access
+        [self addCityAccessPanel];
+    }
+}
+
+- (void)addCityAccessPanel
+{
+    float panle_x = 733.0;
+    float panle_w = 227.0;
+    float panle_h = 236.0;
+    uiv_cityAccPanel = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 0.0, panle_w, panle_h)];
+    uiv_cityAccPanel.backgroundColor = [UIColor whiteColor];
+    uiv_cityAccPanel.layer.borderWidth = 1.0;
+    uiv_cityAccPanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    
+    UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_PanelTitle.frame = CGRectMake(0.0, 0.0, panle_w, 46);
+    [uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
+    [uib_PanelTitle setTitle:@"ACCESS" forState:UIControlStateNormal];
+    [uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
+    uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
+    [uiv_cityAccPanel addSubview: uib_PanelTitle];
+    
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS NORTH TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
+    for (int i = 0; i < arr_buttonTitles.count; i++) {
+        UIButton *uib_accOption = [UIButton buttonWithType:UIButtonTypeCustom];
+        uib_accOption.frame = CGRectMake(0.0, 46+i*38.0, panle_w, 38.0);
+        uib_accOption.layer.borderWidth = 1.0;
+        uib_accOption.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+        [uib_accOption setTitle:arr_buttonTitles[i] forState:UIControlStateNormal];
+        [uib_accOption setTitleColor:[UIColor vcDarkBlue] forState:UIControlStateNormal];
+        [uib_accOption.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:12.0]];
+        uib_accOption.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        uib_accOption.titleEdgeInsets = UIEdgeInsetsMake(0.0, 15.0, 0.0, 0.0);
+        uib_accOption.tag = i;
+        [uiv_cityAccPanel addSubview: uib_accOption];
+    }
+    
+    [self.view insertSubview:uiv_cityAccPanel belowSubview:_uiv_siteSubMenu];
+}
+
+#pragma  mark - Neighborhood Submenu
+- (void)handleNeibSubMenu:(id)sender
+{
+    [self hiliteTappedButton:sender inView:_uiv_neighborhoodSubMenu];
+    
+    int selectedIndex = (int)[sender tag]%10;
+    if (selectedIndex == 1) { // Tapped Amenities
+        
+    }
+    if (selectedIndex == 2) { // Tapped Access
+        
+    }
+}
+
+
+#pragma mark - Site Submenu
+- (void)handleSiteSubMenu:(id)sender
+{
+    [self hiliteTappedButton:sender inView:_uiv_siteSubMenu];
+    [_uiiv_mapOverlay removeFromSuperview];
+    _uiiv_mapOverlay = nil;
+    
+    int selectedIndex = (int)[sender tag]%10;
+    if (selectedIndex == 1) { // Tapped Overview
+        _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_site_overview.jpg"]];
+        _uiiv_mapOverlay.frame = CGRectMake(77.0, 241.0, _uiiv_mapOverlay.frame.size.width, _uiiv_mapOverlay.frame.size.height);
+        [self.view insertSubview:_uiiv_mapOverlay belowSubview:_uib_city];
+        
+    }
+    if (selectedIndex == 2) { // Tapped Amenities
+        
+    }
+    if (selectedIndex == 3) { // Tapped Access
+        
+    }
+}
+
+- (void)hiliteTappedButton:(id)sender inView:(UIView *)container
+{
+    UIButton *tappedBtn = sender;
+    for (UIButton *tmp in [container subviews]) {
+        tmp.selected = NO;
+        tmp.backgroundColor = [UIColor vcLightBlue];
+        [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    }
+    tappedBtn.selected = YES;
+    [tappedBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-ExtraBold" size:15.0]];
+    tappedBtn.backgroundColor = [UIColor vcDarkBlue];
+}
+
+- (void)removeAllPanels
+{
+    [uiv_cityAccPanel removeFromSuperview];
+    uiv_cityAccPanel = nil;
+    
+    [uiv_neibAccPanel removeFromSuperview];
+    uiv_cityAccPanel = nil;
+    
+    [uiv_neibAmePanel removeFromSuperview];
+    uiv_neibAmePanel = nil;
+    
+    [uiv_siteAccPanel removeFromSuperview];
+    uiv_siteAccPanel = nil;
+    
+    [uiv_siteAmePanel removeFromSuperview];
+    uiv_siteAmePanel = nil;
 }
 
 - (void)didReceiveMemoryWarning

@@ -18,6 +18,7 @@
 + (UIColor *)vcdarkmenu;
 + (UIColor *)vccyanmenu;
 + (UIColor *)vcmediummenu;
++ (UIColor *)vcButtonBorder;
 //+ (UIColor *)vpShadowBlue;
 //+ (UIColor *)vpYellow;
 //+ (UIColor *)vpTextBlue;
