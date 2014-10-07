@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Neoscape. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RootViewController.h"
 #import "XHCustomSegue.h"
 #import "UIColor+Extensions.h"
 
-@interface ViewController ()
+@interface RootViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton			*uib_menu;
 @property (strong, nonatomic) IBOutlet UIView			*uiv_toolsPanel;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation ViewController
+@implementation RootViewController
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
@@ -29,50 +29,21 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.view.frame = screenRect;
-    //_uiv_menuPanel.transform = CGAffineTransformMakeTranslation(-388, 0.0);
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //_uib_menu.hidden = YES;
 	[self createMenuButtons];
-	// Do any additional setup after loading the view, typically from a nib.
 }
-
-//=====================Tap home button to remove the subview===================
 
 -(void)loadVC:(id)sender
 {
 	NSString *vcIdentifier;
-	NSString *segueIdentifier;
+    NSArray *arr_identifier = [[NSArray alloc] initWithObjects:@"buildingViewController", @"mapViewController", @"galleryViewController", @"teamViewController", nil];
 
-	switch ([sender tag]) {
-		case 1:
-			vcIdentifier = @"buildingViewController";
-			segueIdentifier =  @"buildingSegue";
-			break;
-			
-		case 2:
-			vcIdentifier = @"mapViewController";
-			segueIdentifier =  @"mapSegue";
-			break;
-			
-		case 3:
-			vcIdentifier = @"galleryViewController";
-			segueIdentifier =  @"gallerySegue";
-			break;
-			
-		case 4:
-			vcIdentifier = @"teamViewController";
-			segueIdentifier =  @"teamSegue";
-			break;
-			
-		default:
-			break;
-	}
-	
+    vcIdentifier = [arr_identifier objectAtIndex:[sender tag] - 1];
 	__block UIView *tmp = [self.view viewWithTag:1000];
     [UIView animateWithDuration:0.33 animations:^{
         tmp.alpha = 0.0;
@@ -82,7 +53,7 @@
     }];
 	
 	UIViewController *destination = [self.storyboard instantiateViewControllerWithIdentifier:vcIdentifier];
-	XHCustomSegue *segue = [[XHCustomSegue alloc] initWithIdentifier:segueIdentifier source:self destination:destination];
+	XHCustomSegue *segue = [[XHCustomSegue alloc] initWithIdentifier:nil source:self destination:destination];
 	[self prepareForSegue:segue sender:self];
 	[segue perform];
 	
@@ -101,7 +72,6 @@
         tmp = nil;
     }];
 }
-//=============================================================================
 
 -(IBAction)createMenuButtons
 {
@@ -176,7 +146,6 @@
 	NSLog(@"rewind");
 	[UIView animateWithDuration:0.33
 					 animations:^{
-						 //
 						 NSInteger ii = 0;
 						 for (int i=0; i<[_arr_menuButtons count]; i++) {
 							 
@@ -288,7 +257,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

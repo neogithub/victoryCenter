@@ -41,7 +41,7 @@
 		824012EC19D1AF5D00C501EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 824012EB19D1AF5D00C501EE /* main.m */; };
 		824012F019D1AF5D00C501EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 824012EF19D1AF5D00C501EE /* AppDelegate.m */; };
 		824012F319D1AF5D00C501EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 824012F119D1AF5D00C501EE /* Main.storyboard */; };
-		824012F619D1AF5D00C501EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824012F519D1AF5D00C501EE /* ViewController.m */; };
+		824012F619D1AF5D00C501EE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824012F519D1AF5D00C501EE /* RootViewController.m */; };
 		824012F819D1AF5D00C501EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824012F719D1AF5D00C501EE /* Images.xcassets */; };
 		824012FF19D1AF5D00C501EE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012FE19D1AF5D00C501EE /* XCTest.framework */; };
 		8240130019D1AF5D00C501EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012DF19D1AF5D00C501EE /* Foundation.framework */; };
@@ -193,8 +193,8 @@
 		824012EE19D1AF5D00C501EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		824012EF19D1AF5D00C501EE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		824012F219D1AF5D00C501EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		824012F419D1AF5D00C501EE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		824012F519D1AF5D00C501EE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		824012F419D1AF5D00C501EE /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		824012F519D1AF5D00C501EE /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		824012F719D1AF5D00C501EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		824012FD19D1AF5D00C501EE /* victoryCenterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = victoryCenterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		824012FE19D1AF5D00C501EE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -458,8 +458,8 @@
 				824012EE19D1AF5D00C501EE /* AppDelegate.h */,
 				824012EF19D1AF5D00C501EE /* AppDelegate.m */,
 				824012F119D1AF5D00C501EE /* Main.storyboard */,
-				824012F419D1AF5D00C501EE /* ViewController.h */,
-				824012F519D1AF5D00C501EE /* ViewController.m */,
+				824012F419D1AF5D00C501EE /* RootViewController.h */,
+				824012F519D1AF5D00C501EE /* RootViewController.m */,
 				82A44BEE19D3416D004FAD58 /* galleryViewController.h */,
 				82A44BEF19D3416D004FAD58 /* galleryViewController.m */,
 				82DAB03319D1ED5B00F23668 /* teamViewController.h */,
@@ -883,7 +883,7 @@
 				8224FE2919D48656002B1B44 /* MPFlipSegue.m in Sources */,
 				8240131A19D1B58A00C501EE /* XHCustomSegue.m in Sources */,
 				82A805E119D2076300308BA1 /* mapViewController.m in Sources */,
-				824012F619D1AF5D00C501EE /* ViewController.m in Sources */,
+				824012F619D1AF5D00C501EE /* RootViewController.m in Sources */,
 				8224FE2C19D48656002B1B44 /* MPFoldNavPushSegue.m in Sources */,
 				82DAB03219D1EBA000F23668 /* UIColor+Extensions.m in Sources */,
 				82DAB03519D1ED5B00F23668 /* teamViewController.m in Sources */,
