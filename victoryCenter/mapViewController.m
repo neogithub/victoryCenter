@@ -224,32 +224,27 @@ static CGFloat kMaxZoom                 = 2.0;
 
 - (void)setTopButtons
 {
-    [_uib_city setTitle:@"CITY" forState:UIControlStateNormal];
-    [_uib_city setTitle:@"CITY" forState:UIControlStateSelected];
-    [_uib_city setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_city setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_city.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
-    _uib_city.backgroundColor = [UIColor vcDarkBlue];
-    _uib_city.selected = YES;
-    
-    [_uib_neighbor setTitle:@"NEIGHBORHOOD" forState:UIControlStateNormal];
-    [_uib_neighbor setTitle:@"NEIGHBORHOOD" forState:UIControlStateSelected];
-    [_uib_neighbor setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_neighbor setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_neighbor.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
-    _uib_neighbor.backgroundColor = [UIColor vcLightBlue];
-    _uib_neighbor.selected = NO;
-    
-    [_uib_site setTitle:@"SITE" forState:UIControlStateNormal];
-    [_uib_site setTitle:@"SITE" forState:UIControlStateSelected];
-    [_uib_site setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_site setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_site.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
-    _uib_site.backgroundColor = [UIColor vcLightBlue];
-    _uib_site.selected = NO;
-    
+    [self initTopBtn:_uib_city withTitle:@"CITY" andTag:0 andSelected:YES];
+    [self initTopBtn:_uib_neighbor withTitle:@"NEIGHBORHOOD" andTag:1 andSelected:NO];
+    [self initTopBtn:_uib_site withTitle:@"SITE" andTag:2 andSelected:NO];
 }
-
+- (void)initTopBtn:(UIButton *)theBtn withTitle:(NSString *)title andTag:(int)index andSelected:(BOOL)selected
+{
+    [theBtn setTitle:title forState:UIControlStateNormal];
+    [theBtn setTitle:title forState:UIControlStateSelected];
+    [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [theBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
+    theBtn.tag = index;
+    if (selected) {
+        theBtn.backgroundColor = [UIColor vcDarkBlue];
+        theBtn.selected = selected;
+    }
+    else{
+        theBtn.backgroundColor = [UIColor vcLightBlue];
+        theBtn.selected = selected;
+    }
+}
 /*
     1. Reset all top buttons
     2. Make the tapped one (sender) selected
@@ -296,6 +291,8 @@ static CGFloat kMaxZoom                 = 2.0;
     }
 }
 
+#pragma mark - Set up submenus of each top button
+
 - (void)setSubMenus
 {
     [self setCitySubMenu];
@@ -305,74 +302,33 @@ static CGFloat kMaxZoom                 = 2.0;
 
 - (void)setCitySubMenu
 {
-    [_uib_cityDistricts setTitle:@"DISTRICTS" forState:UIControlStateNormal];
-    [_uib_cityDistricts setTitle:@"DISTRICTS" forState:UIControlStateSelected];
-    [_uib_cityDistricts setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_cityDistricts setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_cityDistricts.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    _uib_cityDistricts.backgroundColor = [UIColor vcLightBlue];
-    _uib_cityDistricts.tag = 11;
-    _uib_cityDistricts.selected = NO;
-
-    [_uib_cityAccess setTitle:@"ACCESS" forState:UIControlStateNormal];
-    [_uib_cityAccess setTitle:@"ACCESS" forState:UIControlStateSelected];
-    [_uib_cityAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_cityAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_cityAccess.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    _uib_cityAccess.backgroundColor = [UIColor vcLightBlue];
-    _uib_cityAccess.tag = 12;
-    _uib_cityAccess.selected = NO;
+    [self initSubMenuButton:_uib_cityDistricts withTitle:@"DISTRICTS" andTag:11 andSelected:NO];
+    [self initSubMenuButton:_uib_cityAccess withTitle:@"ACCESS" andTag:12 andSelected:NO];
 }
 
 - (void)setNeighborhoodSubMenu
 {
-    [_uib_neighboorhoodAmenities setTitle:@"AMENITIES" forState:UIControlStateNormal];
-    [_uib_neighboorhoodAmenities setTitle:@"AMENITIES" forState:UIControlStateSelected];
-    [_uib_neighboorhoodAmenities setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_neighboorhoodAmenities setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_neighboorhoodAmenities.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    _uib_neighboorhoodAmenities.backgroundColor = [UIColor vcLightBlue];
-    _uib_neighboorhoodAmenities.tag = 21;
-    _uib_neighboorhoodAmenities.selected = NO;
-    
-    [_uib_neighborhoodAccess setTitle:@"ACCESS" forState:UIControlStateNormal];
-    [_uib_neighborhoodAccess setTitle:@"ACCESS" forState:UIControlStateSelected];
-    [_uib_neighborhoodAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_neighborhoodAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_neighborhoodAccess.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    _uib_neighborhoodAccess.backgroundColor = [UIColor vcLightBlue];
-    _uib_neighborhoodAccess.tag = 22;
-    _uib_neighborhoodAccess.selected = NO;
+    [self initSubMenuButton:_uib_neighboorhoodAmenities withTitle:@"AMENITIES" andTag:21 andSelected:NO];
+    [self initSubMenuButton:_uib_neighborhoodAccess withTitle:@"ACCESS" andTag:22 andSelected:NO];
 }
 
 - (void)setSiteSubMenu
 {
-    [_uib_siteOverview setTitle:@"OVERVIEW" forState:UIControlStateNormal];
-    [_uib_siteOverview setTitle:@"OVERVIEW" forState:UIControlStateSelected];
-    [_uib_siteOverview setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_siteOverview setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_siteOverview.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    _uib_siteOverview.backgroundColor = [UIColor vcLightBlue];
-    _uib_siteOverview.tag = 31;
-    _uib_siteOverview.selected = NO;
-    
-    [_uib_siteAmenities setTitle:@"AMENITIES" forState:UIControlStateNormal];
-    [_uib_siteAmenities setTitle:@"AMENITIES" forState:UIControlStateSelected];
-    [_uib_siteAmenities setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_siteAmenities setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_siteAmenities.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    _uib_siteAmenities.backgroundColor = [UIColor vcLightBlue];
-    _uib_siteAmenities.tag = 32;
-    _uib_siteAmenities.selected = NO;
-    
-    [_uib_siteAccess setTitle:@"ACCESS" forState:UIControlStateNormal];
-    [_uib_siteAccess setTitle:@"ACCESS" forState:UIControlStateSelected];
-    [_uib_siteAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_siteAccess setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_siteAccess.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    _uib_siteAccess.backgroundColor = [UIColor vcLightBlue];
-    _uib_siteAccess.tag = 33;
-    _uib_siteAccess.selected = NO;
+    [self initSubMenuButton:_uib_siteOverview withTitle:@"OVERVIEW" andTag:31 andSelected:NO];
+    [self initSubMenuButton:_uib_siteAmenities withTitle:@"AMENITIES" andTag:32 andSelected:NO];
+    [self initSubMenuButton:_uib_siteAccess withTitle:@"ACCESS" andTag:33 andSelected:NO];
+}
+
+- (void)initSubMenuButton:(UIButton*)theBtn withTitle:(NSString *)title andTag:(int)index andSelected:(BOOL)selected
+{
+    [theBtn setTitle:title forState:UIControlStateNormal];
+    [theBtn setTitle:title forState:UIControlStateSelected];
+    [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [theBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    theBtn.backgroundColor = [UIColor vcLightBlue];
+    theBtn.tag = index;
+    theBtn.selected = selected;
 }
 
 - (void)didReceiveMemoryWarning

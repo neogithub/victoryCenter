@@ -50,45 +50,29 @@
 #pragma mark - Set top buttons
 - (void)setTopButtons
 {
-    [_uib_all setTitle:@"ALL" forState:UIControlStateNormal];
-    [_uib_all setTitle:@"ALL" forState:UIControlStateSelected];
-    [_uib_all setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_all setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_all.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
-    _uib_all.backgroundColor = [UIColor vcDarkBlue];
-    _uib_all.selected = YES;
-    _uib_all.tag = 1;
-    [_uib_all addTarget:self action:@selector(tapOnTopBtns:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [_uib_render setTitle:@"RENDERING" forState:UIControlStateNormal];
-    [_uib_render setTitle:@"RENDERING" forState:UIControlStateSelected];
-    [_uib_render setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_render setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_render.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
-    _uib_render.backgroundColor = [UIColor vcLightBlue];
-    _uib_render.selected = NO;
-    _uib_render.tag = 2;
-    [_uib_render addTarget:self action:@selector(tapOnTopBtns:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [_uib_photo setTitle:@"PHOTOGRAPHY" forState:UIControlStateNormal];
-    [_uib_photo setTitle:@"PHOTOGRAPHY" forState:UIControlStateSelected];
-    [_uib_photo setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_photo setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_photo.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
-    _uib_photo.backgroundColor = [UIColor vcLightBlue];
-    _uib_photo.selected = NO;
-    _uib_photo.tag = 3;
-    [_uib_photo addTarget:self action:@selector(tapOnTopBtns:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [_uib_video setTitle:@"VIDEO" forState:UIControlStateNormal];
-    [_uib_video setTitle:@"VIDEO" forState:UIControlStateSelected];
-    [_uib_video setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_uib_video setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [_uib_video.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
-    _uib_video.backgroundColor = [UIColor vcLightBlue];
-    _uib_video.selected = NO;
-    _uib_video.tag = 4;
-    [_uib_video addTarget:self action:@selector(tapOnTopBtns:) forControlEvents:UIControlEventTouchUpInside];
+    [self initTopBtn:_uib_all withTitle:@"ALL" andTag:1 andSelected:YES];
+    [self initTopBtn:_uib_render withTitle:@"RENDERING" andTag:2 andSelected:NO];
+    [self initTopBtn:_uib_photo withTitle:@"PHOTOGRAPHY" andTag:3 andSelected:NO];
+    [self initTopBtn:_uib_video withTitle:@"VIDEO" andTag:4 andSelected:NO];
+}
+
+- (void)initTopBtn:(UIButton *)theBtn withTitle:(NSString *)title andTag:(int)index andSelected:(BOOL)selected
+{
+    [theBtn setTitle:title forState:UIControlStateNormal];
+    [theBtn setTitle:title forState:UIControlStateSelected];
+    [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [theBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
+    theBtn.tag = index;
+    if (selected) {
+        theBtn.backgroundColor = [UIColor vcDarkBlue];
+        theBtn.selected = selected;
+    }
+    else{
+        theBtn.backgroundColor = [UIColor vcLightBlue];
+        theBtn.selected = selected;
+    }
+    [theBtn addTarget:self action:@selector(tapOnTopBtns:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)tapOnTopBtns:(id)sender
@@ -146,9 +130,9 @@
     arr_AlbumCaption = [[NSMutableArray alloc] init];
     [arr_AllImgs removeAllObjects];
     arr_AllImgs = nil;
+    arr_AllImgs = [[NSMutableArray alloc] init];
     [arr_AllFlms removeAllObjects];
     arr_AllFlms = nil;
-    arr_AllImgs = [[NSMutableArray alloc] init];
     arr_AllFlms = [[NSMutableArray alloc] init];
     
     NSDictionary *raw_Dict = [[NSDictionary alloc] initWithDictionary:[arr_AlbumData objectAtIndex:0]];
