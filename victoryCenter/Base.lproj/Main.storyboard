@@ -134,7 +134,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gIG-sA-2yj" userLabel="Image - frame">
-                                                    <rect key="frame" x="0.0" y="0.0" width="301" height="285"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="285"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dQ8-Sk-u0J">
@@ -335,9 +335,6 @@
                                         <state key="normal" title="DISTRICTS">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="tapCityBtn:" destination="GjW-bn-vvo" eventType="touchUpInside" id="kbp-Ed-nAE"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1fw-9r-gS7" userLabel="Button - city-access">
                                         <rect key="frame" x="0.0" y="31" width="130" height="28"/>
@@ -347,9 +344,6 @@
                                         <state key="normal" title="ACCESS">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="tapCityBtn:" destination="GjW-bn-vvo" eventType="touchUpInside" id="AgW-V1-Njy"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -365,9 +359,6 @@
                                         <state key="normal" title="AMENITIES">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="tapCityBtn:" destination="GjW-bn-vvo" eventType="touchUpInside" id="hjn-0O-Fv7"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eKU-aZ-kDQ" userLabel="Button - neighborhood-access">
                                         <rect key="frame" x="0.0" y="31" width="130" height="28"/>
@@ -376,9 +367,6 @@
                                         <state key="normal" title="ACCESS">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="tapCityBtn:" destination="GjW-bn-vvo" eventType="touchUpInside" id="Axp-LJ-esv"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -394,9 +382,6 @@
                                         <state key="normal" title="OVERVIEW">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="tapCityBtn:" destination="GjW-bn-vvo" eventType="touchUpInside" id="g8J-yg-2ZN"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BLQ-Pq-Jta" userLabel="Button - site-amenities">
                                         <rect key="frame" x="0.0" y="31" width="130" height="28"/>
@@ -405,9 +390,6 @@
                                         <state key="normal" title="AMENITIES">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="tapCityBtn:" destination="GjW-bn-vvo" eventType="touchUpInside" id="EWd-I6-tHX"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WD5-UV-5SU" userLabel="Button - site-access">
                                         <rect key="frame" x="0.0" y="62" width="130" height="28"/>
@@ -416,9 +398,6 @@
                                         <state key="normal" title="ACCESS">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="tapCityBtn:" destination="GjW-bn-vvo" eventType="touchUpInside" id="6nT-aH-e60"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
