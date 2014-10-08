@@ -9,6 +9,7 @@
 #import "galleryViewController.h"
 #import "galleryCVCell.h"
 #import "UIColor+Extensions.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface galleryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 {
@@ -33,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton               *uib_video;
 @property (weak, nonatomic) IBOutlet UICollectionView       *uic_gallery;
 
+@property (nonatomic, strong) MPMoviePlayerViewController   *playerViewController;
 @end
 
 @implementation galleryViewController
@@ -47,6 +49,8 @@
     [super viewDidLoad];
     [self loadGalleryData];
     [self setTopButtons];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doneButtonClick:) name:MPMoviePlayerPlaybackDidFinishNotification object:_playerViewController];
 }
 
 #pragma mark - Set top buttons
@@ -214,9 +218,33 @@
 - (void)openFilm:(int)index
 {
     NSString *oldfileName = [arr_AllFlms objectAtIndex: index];
-    NSString *name = [oldfileName substringWithRange:NSMakeRange(0, oldfileName.length-3)];
-    NSString *newFileName = [NSString stringWithFormat:@"%@mov",name];
-    NSLog(@"The film file's name is %@", newFileName);
+    NSString *name = [oldfileName substringWithRange:NSMakeRange(0, oldfileName.length-4)];
+//    NSString *newFileName = [NSString stringWithFormat:@"%@.mov",name];
+    NSString *url = [[NSBundle mainBundle]
+                     pathForResource:name
+                     ofType:@"mov"];
+//    NSLog(@"The film file's name is %@", newFileName);
+    
+    if (_playerViewController) {
+        [_playerViewController.view removeFromSuperview];
+        _playerViewController = nil;
+    }
+    
+    _playerViewController = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL fileURLWithPath:url]];
+    _playerViewController.view.frame = self.view.bounds;//CGRectMake(0, 0, 1024, 768);
+    _playerViewController.view.alpha=1.0;
+    _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
+    [_playerViewController.moviePlayer setAllowsAirPlay:YES];
+    _playerViewController.moviePlayer.repeatMode = MPMovieRepeatModeOne;
+    [self.view insertSubview:_playerViewController.view aboveSubview:_uic_gallery];
+    [_playerViewController.moviePlayer play];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+}
+
+-(void)doneButtonClick:(NSNotification*)aNotification{
+    [_playerViewController.view removeFromSuperview];
+    _playerViewController = nil;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
 }
 
 - (void)openFGallery:(int)index

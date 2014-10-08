@@ -36,6 +36,22 @@
 {
     [super viewDidLoad];
 	[self createMenuButtons];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideHomeBtn:) name:@"hideHomeButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unHideHomeBtn:) name:@"unhideHomeButton" object:nil];
+}
+
+#pragma mark - Deal with notificaiton
+- (void)hideHomeBtn:(NSNotification *)notification
+{
+    _uib_menu.hidden = YES;
+    _uiv_toolsPanel.hidden = YES;
+}
+
+- (void)unHideHomeBtn:(NSNotification *)notificaiton
+{
+    _uib_menu.hidden = NO;
+    _uiv_toolsPanel.hidden = NO;
 }
 
 -(void)loadVC:(id)sender
