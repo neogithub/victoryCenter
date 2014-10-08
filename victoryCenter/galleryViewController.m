@@ -354,6 +354,10 @@
 [   self clearAllDataCollection];
     [_uic_gallery removeFromSuperview];
     _uic_gallery = nil;
+    
+    [_playerViewController removeFromParentViewController];
+    [_playerViewController.view removeFromSuperview];
+    _playerViewController = nil;
 }
 
 - (void)didReceiveMemoryWarning

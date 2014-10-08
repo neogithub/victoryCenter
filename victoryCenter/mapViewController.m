@@ -417,7 +417,7 @@ static float    panle_w                     = 227.0;
     int selectedIndex = (int)[sender tag]%10;
     if (selectedIndex == 1) { // Tapped Districts
         _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Districts_overlay.png"]];
-        _uiiv_mapOverlay.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+        _uiiv_mapOverlay.frame = screenRect;
         [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
     }
     if (selectedIndex == 2) { // Tapped Access
@@ -612,6 +612,28 @@ static float    panle_w                     = 227.0;
     
     [uiv_siteAmePanel removeFromSuperview];
     uiv_siteAmePanel = nil;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self removeAllPanels];
+    
+    [_uib_city removeFromSuperview];
+    _uib_city = nil;
+    
+    [_uib_neighbor removeFromSuperview];
+    _uib_neighbor = nil;
+    
+    [_uib_site removeFromSuperview];
+    _uib_site = nil;
+    
+    [_uis_zooming removeFromSuperview];
+    _uis_zooming = nil;
+    
+    [_uiv_mapContainer removeFromSuperview];
+    _uiv_mapContainer = nil;
+    
+    self.view = nil;
 }
 
 - (void)didReceiveMemoryWarning

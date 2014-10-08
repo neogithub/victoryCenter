@@ -54,6 +54,7 @@
     _uiv_toolsPanel.hidden = NO;
 }
 
+#pragma mark - Load VC
 -(void)loadVC:(id)sender
 {
 	NSString *vcIdentifier;
@@ -76,19 +77,7 @@
 	[self rewindMenuOffScreen];
 }
 
-- (void)returnToRoot:(id)sender {
-    //Detail subview is set tag with 1000 in custom segue
-    _uib_menu.hidden = YES;
-	
-    __block UIView *tmp = [self.view viewWithTag:1000];
-    [UIView animateWithDuration:0.33 animations:^{
-        tmp.alpha = 0.0;
-    } completion:^(BOOL finished){
-        [tmp removeFromSuperview];
-        tmp = nil;
-    }];
-}
-
+#pragma mark - Create main menu's buttons
 -(IBAction)createMenuButtons
 {
 	if (_uiv_menuPanel) {

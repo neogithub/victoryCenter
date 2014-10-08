@@ -24,7 +24,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+    self.view.frame = screenRect;
 }
 
 - (void)viewDidLoad
@@ -101,6 +101,24 @@
         default:
             break;
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [_uiiv_bgImg removeFromSuperview];
+    _uiiv_bgImg = nil;
+    
+    [_uib_floorPlan removeFromSuperview];
+    _uib_floorPlan = nil;
+    
+    [_uib_bldgStats removeFromSuperview];
+    _uib_bldgStats = nil;
+    
+    [_uib_amenities removeFromSuperview];
+    _uib_amenities = nil;
+    
+    [_uib_elevators removeFromSuperview];
+    _uib_elevators = nil;
 }
 
 - (void)didReceiveMemoryWarning
