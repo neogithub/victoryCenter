@@ -295,9 +295,6 @@
                                 <state key="normal" title="CITY">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapCityBtn:" destination="GjW-bn-vvo" eventType="touchUpInside" id="n9B-CZ-oHL"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wia-uO-e2b" userLabel="Button - Neighborhood">
                                 <rect key="frame" x="358" y="0.0" width="130" height="34"/>
@@ -307,9 +304,6 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapNeighborhoodBtn:" destination="GjW-bn-vvo" eventType="touchUpInside" id="8Sw-Nr-Hqd"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="z48-no-lx7" userLabel="Button - SITE">
                                 <rect key="frame" x="491" y="0.0" width="130" height="34"/>
@@ -319,9 +313,6 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapSiteBtn:" destination="GjW-bn-vvo" eventType="touchUpInside" id="K7c-mz-kHp"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" id="ORx-r5-sA3" userLabel="View - city sub menu">
                                 <rect key="frame" x="225" y="37" width="130" height="62"/>

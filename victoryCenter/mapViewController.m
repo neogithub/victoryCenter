@@ -243,6 +243,7 @@ static float    panle_w                     = 227.0;
     [theBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
     theBtn.tag = index;
     theBtn.selected = selected;
+    [theBtn addTarget:self action:@selector(tapMapTopMenu:) forControlEvents:UIControlEventTouchUpInside];
     if (selected) {
         theBtn.backgroundColor = [UIColor vcDarkBlue];
     }
@@ -275,44 +276,20 @@ static float    panle_w                     = 227.0;
     tappedBtn.backgroundColor = [UIColor vcDarkBlue];
 }
 
-- (IBAction)tapCityBtn:(id)sender {
-    if (_uib_city.selected) {
+- (void)tapMapTopMenu:(id)sender
+{
+    UIButton *tappedBtn = sender;
+    if (tappedBtn.selected)
+    {
         return;
     }
-    else {
-        //remove all panels
+    else
+    {
+        // Remove all panels
         [self removeAllPanels];
-        
-        [self updateTopBtns:_uib_city];
-        [self animationOfMaps:0];
-        [self updateSubMenu:0];
-    }
-
-}
-- (IBAction)tapNeighborhoodBtn:(id)sender {
-    if (_uib_neighbor.selected) {
-        return;
-    }
-    else {
-        //remove all panels
-        [self removeAllPanels];
-        
-        [self updateTopBtns:_uib_neighbor];
-        [self animationOfMaps:1];
-        [self updateSubMenu:1];
-    }
-}
-- (IBAction)tapSiteBtn:(id)sender {
-    if (_uib_site.selected) {
-        return;
-    }
-    else {
-        //remove all panels
-        [self removeAllPanels];
-        
-        [self updateTopBtns:_uib_site];
-        [self animationOfMaps:2];
-        [self updateSubMenu:2];
+        [self updateTopBtns:tappedBtn];
+        [self animationOfMaps:(int)tappedBtn.tag];
+        [self updateSubMenu:(int)tappedBtn.tag];
     }
 }
 
@@ -382,7 +359,7 @@ static float    panle_w                     = 227.0;
     [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [theBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    theBtn.backgroundColor = [UIColor vcLightBlue];
+    theBtn.backgroundColor = [UIColor vcDarkBlue];
     theBtn.tag = index;
     theBtn.selected = selected;
     [theBtn addTarget:self action:@selector(tapSubMenu:) forControlEvents:UIControlEventTouchUpInside];
@@ -393,7 +370,7 @@ static float    panle_w                     = 227.0;
     for (UIView *tmpView in arr_subMenuArray) {
         for (UIButton *tmp in [tmpView subviews]) {
             tmp.selected = NO;
-            tmp.backgroundColor = [UIColor vcLightBlue];
+            tmp.backgroundColor = [UIColor vcDarkBlue];
             [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
         }
     }
@@ -402,6 +379,10 @@ static float    panle_w                     = 227.0;
 - (void)tapSubMenu:(id)sender
 {
     UIButton *tappedBtn = sender;
+    // Get the tag's ten digit to load correct sub menu
+    // 1* --> City's sub menu
+    // 2* --> Neighborhood's sub menu
+    // 3* --> Site's sub menu
     int categoryIndx = (int)tappedBtn.tag/10;
     switch (categoryIndx) {
         case 1: { //Taped City's submenu
@@ -423,13 +404,16 @@ static float    panle_w                     = 227.0;
 }
 
 #pragma mark - City Submenu
+#pragma mark - City Submenu
 - (void)handleCitySubMenu:(id)sender
 {
     [self hiliteTappedButton:sender inView:_uiv_citySubMenu];
     [_uiiv_mapOverlay removeFromSuperview];
     _uiiv_mapOverlay = nil;
     [self removeAllPanels];
-    
+    // Get -digit to detect which button is tapped
+    // *1 --> load overlay
+    // *2 --> load City's Access panel
     int selectedIndex = (int)[sender tag]%10;
     if (selectedIndex == 1) { // Tapped Districts
         _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Districts_overlay.png"]];
@@ -443,22 +427,154 @@ static float    panle_w                     = 227.0;
 
 - (void)addCityAccessPanel
 {
-    float panle_h = 236.0;
-    uiv_cityAccPanel = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 0.0, panle_w, panle_h)];
-    uiv_cityAccPanel.backgroundColor = [UIColor whiteColor];
-    uiv_cityAccPanel.layer.borderWidth = 1.0;
-    uiv_cityAccPanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    float panel_h = 236.0;
+    uiv_cityAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
+    
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS NORTH TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
+    [self createBtnsForPanel:uiv_cityAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"tappedBtn:" andEdgeInset:15.0];
+    [self.view insertSubview:uiv_cityAccPanel belowSubview:_uiv_siteSubMenu];
+}
+
+#pragma  mark - Neighborhood Submenu
+#pragma  mark - Neighborhood Submenu
+- (void)handleNeibSubMenu:(id)sender
+{
+    [self hiliteTappedButton:sender inView:_uiv_neighborhoodSubMenu];
+    [_uiiv_mapOverlay removeFromSuperview];
+    _uiiv_mapOverlay = nil;
+    [self removeAllPanels];
+    // Get -digit to detect which button is tapped
+    // *1 --> load Neighborhood's Amenities panel
+    // *2 --> load Neighborhood's Access panel
+    int selectedIndex = (int)[sender tag]%10;
+    if (selectedIndex == 1) { // Tapped Amenities
+        [self addNeibAmenitiesPanel];
+    }
+    if (selectedIndex == 2) { // Tapped Access
+        [self addNeibAccessPanel];
+    }
+}
+
+#pragma mark - Add panel for neighborhood amenities
+- (void)addNeibAmenitiesPanel
+{
+    float panel_h = 160.0;
+    uiv_neibAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATION", @"RESIDENTIAL", nil];
+    [self createBtnsForPanel:uiv_neibAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"tappedBtn:" andEdgeInset:45.0];
+    
+    [self.view insertSubview:uiv_neibAmePanel belowSubview:_uiv_siteSubMenu];
+}
+
+#pragma mark - Add panel for neighborhood access
+- (void)addNeibAccessPanel
+{
+    float panel_h = 236.0;
+    uiv_neibAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
+    
+    [self.view insertSubview:uiv_neibAccPanel belowSubview:_uiv_siteSubMenu];
+}
+
+#pragma mark - Site Submenu
+#pragma mark - Site Submenu
+- (void)handleSiteSubMenu:(id)sender
+{
+    [self hiliteTappedButton:sender inView:_uiv_siteSubMenu];
+    [_uiiv_mapOverlay removeFromSuperview];
+    _uiiv_mapOverlay = nil;
+    [self removeAllPanels];
+    // Get -digit to detect which button is tapped
+    // *1 --> load Site's Overview's overlay
+    // *2 --> load Site's Amenities panel
+    // *3 --> load Site's Access panel
+    int selectedIndex = (int)[sender tag]%10;
+    if (selectedIndex == 1) { // Tapped Overview
+        _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_site_overview.jpg"]];
+        _uiiv_mapOverlay.frame = CGRectMake(77.0, 241.0, _uiiv_mapOverlay.frame.size.width, _uiiv_mapOverlay.frame.size.height);
+        [self.view insertSubview:_uiiv_mapOverlay belowSubview:_uib_city];
+    }
+    if (selectedIndex == 2) { // Tapped Amenities
+        [self addSiteAmenitiesPanel];
+    }
+    if (selectedIndex == 3) { // Tapped Access
+        [self addSiteAccessPanel];
+    }
+}
+
+#pragma mark - Add panel for site amenities
+- (void)addSiteAmenitiesPanel
+{
+    float panel_h = 198.0;
+    uiv_siteAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RESTAURANT", @"RETAIL", @"RESIDENTIAL", @"RECREATION", nil];
+    [self createBtnsForPanel:uiv_siteAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"tappedBtn:" andEdgeInset:45.0];
+    
+    
+    [self.view insertSubview:uiv_siteAmePanel belowSubview:_uiv_siteSubMenu];
+}
+
+#pragma mark - Add panel for site access
+- (void)addSiteAccessPanel
+{
+    float panel_h = 236.0;
+    uiv_siteAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
+    
+    [self.view insertSubview:uiv_siteAccPanel belowSubview:_uiv_siteSubMenu];
+}
+
+#pragma mark - Highlight current tapped button of top menu
+- (void)hiliteTappedButton:(id)sender inView:(UIView *)container
+{
+    UIButton *tappedBtn = sender;
+    for (UIButton *tmp in [container subviews]) {
+        tmp.selected = NO;
+//        tmp.backgroundColor = [UIColor vcLightBlue];
+        [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    }
+    tappedBtn.selected = YES;
+    [tappedBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-ExtraBold" size:16.0]];
+//    tappedBtn.backgroundColor = [UIColor vcDarkBlue];
+}
+
+#pragma mark - create Panel
+/*
+ Required arguements:
+ 1. NSString panel's title
+ 2. float panel's height
+ */
+
+- (UIView *)createPanelWithTitle:(NSString *)title andHeight:(float)panel_h
+{
+    UIView* uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 0.0, panle_w, panel_h)];
+    uiv_panel.backgroundColor = [UIColor whiteColor];
+    uiv_panel.layer.borderWidth = 1.0;
+    uiv_panel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     
     UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
     uib_PanelTitle.frame = CGRectMake(0.0, 0.0, panle_w, 46);
     [uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
-    [uib_PanelTitle setTitle:@"ACCESS" forState:UIControlStateNormal];
+    [uib_PanelTitle setTitle:title forState:UIControlStateNormal];
     [uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
     uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
-    [uiv_cityAccPanel addSubview: uib_PanelTitle];
     
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS NORTH TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
+    [uiv_panel addSubview: uib_PanelTitle];
+    return uiv_panel;
+}
+
+#pragma mark - Create panel's content (Buttons)
+/*
+ Required arguements:
+ 1. UIView      the panel
+ 2. NSArray     array of content buttons' titles
+ 3. NSString    name of button's target selector
+ 4. float       left edge inset for button's title
+ */
+
+- (void)createBtnsForPanel:(UIView *)panle withTitleArray:(NSArray *)arr_buttonTitles andTargetSel:(NSString *)methodName andEdgeInset:(float)leftEdge
+{
+    SEL method = NSSelectorFromString(methodName);
+    
     for (int i = 0; i < arr_buttonTitles.count; i++) {
         UIButton *uib_accOption = [UIButton buttonWithType:UIButtonTypeCustom];
         uib_accOption.frame = CGRectMake(0.0, 46+i*38.0, panle_w, 38.0);
@@ -468,85 +584,16 @@ static float    panle_w                     = 227.0;
         [uib_accOption setTitleColor:[UIColor vcDarkBlue] forState:UIControlStateNormal];
         [uib_accOption.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:12.0]];
         uib_accOption.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        uib_accOption.titleEdgeInsets = UIEdgeInsetsMake(0.0, 15.0, 0.0, 0.0);
+        uib_accOption.titleEdgeInsets = UIEdgeInsetsMake(0.0, leftEdge, 0.0, 0.0);
         uib_accOption.tag = i;
-        [uiv_cityAccPanel addSubview: uib_accOption];
-    }
-    
-    [self.view insertSubview:uiv_cityAccPanel belowSubview:_uiv_siteSubMenu];
-}
-
-#pragma  mark - Neighborhood Submenu
-- (void)handleNeibSubMenu:(id)sender
-{
-    [self hiliteTappedButton:sender inView:_uiv_neighborhoodSubMenu];
-    [_uiiv_mapOverlay removeFromSuperview];
-    _uiiv_mapOverlay = nil;
-    [self removeAllPanels];
-    
-    int selectedIndex = (int)[sender tag]%10;
-    if (selectedIndex == 1) { // Tapped Amenities
-        [self addNeibAmenitiesPanel];
-    }
-    if (selectedIndex == 2) { // Tapped Access
-        
+        [uib_accOption addTarget:self action:method forControlEvents:UIControlEventTouchUpInside];
+        [panle addSubview: uib_accOption];
     }
 }
 
-- (void)addNeibAmenitiesPanel
+-(void)tappedBtn:(id)sender
 {
-    float panle_h = 236.0;
-    uiv_neibAmePanel = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 0.0, panle_w, panle_h)];
-    uiv_neibAmePanel.backgroundColor = [UIColor whiteColor];
-    uiv_neibAmePanel.layer.borderWidth = 1.0;
-    uiv_neibAmePanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
-    
-    UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
-    uib_PanelTitle.frame = CGRectMake(0.0, 0.0, panle_w, 46);
-    [uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
-    [uib_PanelTitle setTitle:@"Amenities" forState:UIControlStateNormal];
-    [uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
-    uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
-    [uiv_neibAmePanel addSubview: uib_PanelTitle];
-    
-    [self.view insertSubview:uiv_neibAmePanel belowSubview:_uiv_siteSubMenu];
-}
-
-#pragma mark - Site Submenu
-- (void)handleSiteSubMenu:(id)sender
-{
-    [self hiliteTappedButton:sender inView:_uiv_siteSubMenu];
-    [_uiiv_mapOverlay removeFromSuperview];
-    _uiiv_mapOverlay = nil;
-    [self removeAllPanels];
-    
-    int selectedIndex = (int)[sender tag]%10;
-    if (selectedIndex == 1) { // Tapped Overview
-        _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_site_overview.jpg"]];
-        _uiiv_mapOverlay.frame = CGRectMake(77.0, 241.0, _uiiv_mapOverlay.frame.size.width, _uiiv_mapOverlay.frame.size.height);
-        [self.view insertSubview:_uiiv_mapOverlay belowSubview:_uib_city];
-        
-    }
-    if (selectedIndex == 2) { // Tapped Amenities
-        
-    }
-    if (selectedIndex == 3) { // Tapped Access
-        
-    }
-}
-
-- (void)hiliteTappedButton:(id)sender inView:(UIView *)container
-{
-    UIButton *tappedBtn = sender;
-    for (UIButton *tmp in [container subviews]) {
-        tmp.selected = NO;
-        tmp.backgroundColor = [UIColor vcLightBlue];
-        [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    }
-    tappedBtn.selected = YES;
-    [tappedBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-ExtraBold" size:15.0]];
-    tappedBtn.backgroundColor = [UIColor vcDarkBlue];
+    NSLog(@"the tapped button is %i",(int)[sender tag]);
 }
 
 - (void)removeAllPanels
