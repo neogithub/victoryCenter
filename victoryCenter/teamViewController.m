@@ -7,14 +7,22 @@
 //
 
 #import "teamViewController.h"
+#import "UIColor+Extensions.h"
 
 static float kDropSpeed		= 0.33;
 static float kAnimaDelay	= 0.2;
 static float kCardWidth     = 183.0;
 static float kCardsGap      = 12.0;
+
 @interface teamViewController ()
 
+@property (nonatomic, strong) NSArray                       *arr_teamText;
+@property (nonatomic, strong) NSArray                       *arr_logoImg;
+@property (nonatomic, strong) NSMutableArray                *arr_teamTextView;
 @property (nonatomic, strong) NSMutableArray                *arr_cards;
+
+@property (nonatomic, strong) UIView                        *uiv_bluryView;
+@property (nonatomic, strong) UIView                        *uiv_teamDetailContainer;
 
 @end
 
@@ -29,17 +37,48 @@ static float kCardsGap      = 12.0;
 {
     [super viewDidLoad];
     _arr_cards = [[NSMutableArray alloc] init];
-    NSArray *arr_logoImg = [[NSArray alloc] initWithObjects:@"team_hines_logo.png", @"team_cushman_logo.png", @"team_duda_logo.png", @"team_hks_logo.png", @"team_cousins_logo.png", nil];
-    NSArray *arr_textImg = [[NSArray alloc] initWithObjects:@"team_hines_text.png", @"team_cushman_text.png", @"team_duda_text.png", @"team_hks_text.png", @"team_cousins_text.png", nil];
-    for (int i = 0; i < arr_logoImg.count; i++) {
+    _arr_logoImg = [[NSArray alloc] initWithObjects:@"team_hines_logo.png", @"team_cushman_logo.png", @"team_duda_logo.png", @"team_hks_logo.png", @"team_cousins_logo.png", nil];
+//    NSArray *arr_textImg = [[NSArray alloc] initWithObjects:@"team_hines_text.png", @"team_cushman_text.png", @"team_duda_text.png", @"team_hks_text.png", @"team_cousins_text.png", nil];
+    [self createTextViews];
+    for (int i = 0; i < _arr_logoImg.count; i++) {
         // input parameters:
         // 1. name of logo image
         // 2. name of text image
         // 3. x value of the card
-        [self createItemBox:arr_logoImg[i] andText:arr_textImg[i] andX:(30 + i * (kCardsGap + kCardWidth))];
+        [self createItemBox:_arr_logoImg[i] andText:_arr_teamTextView[i] andX:(30 + i * (kCardsGap + kCardWidth)) andTag:i];
     }
     
     // Do any additional setup after loading the view.
+}
+
+- (void)createTextViews
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"teamText" ofType:@"plist"];
+    _arr_teamText = [[NSArray alloc] initWithContentsOfFile:path];
+    _arr_teamTextView = [[NSMutableArray alloc] init];
+    for (int i = 0; i < _arr_teamText.count; i++) {
+        UIView *uiv_textContainer = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, kCardWidth, 286.0)];
+        uiv_textContainer.backgroundColor = [UIColor clearColor];
+        UITextView *uitv_teamText = [[UITextView alloc] initWithFrame:CGRectMake(5.0, 0.0, kCardWidth-10, 286.0)];
+        uitv_teamText.backgroundColor = [UIColor clearColor];
+        
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineHeightMultiple = 17.0f;
+        paragraphStyle.maximumLineHeight = 17.0f;
+        paragraphStyle.minimumLineHeight = 17.0f;
+        
+        NSDictionary *ats = @{
+                              NSFontAttributeName : [UIFont fontWithName:@"Raleway-Medium" size:9.0f],
+                              NSParagraphStyleAttributeName : paragraphStyle,
+                              };
+        NSString *text = _arr_teamText[i];
+        uitv_teamText.attributedText = [[NSAttributedString alloc] initWithString:text attributes:ats];
+        [uitv_teamText setTextColor:[UIColor vcDarkBlue]];
+        uitv_teamText.editable = NO;
+        uitv_teamText.selectable = NO;
+        [_arr_teamTextView addObject: uitv_teamText];
+        [uiv_textContainer addSubview:uitv_teamText];
+    }
 }
 
 /*  Create team member's card
@@ -49,13 +88,14 @@ static float kCardsGap      = 12.0;
     2. Text image's name
     3. card's x value      
  */
-- (void)createItemBox:(NSString *)logoName andText:(NSString *)textName andX:(float)x_value
+- (void)createItemBox:(NSString *)logoName andText:(UITextView *)textView andX:(float)x_value andTag:(int)index
 {
     UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 180.0, kCardWidth, 428.0)];
-    
+    uiv_cardContainer.tag = index+10;
 	// 1. add logo
     UIView *uiv_logo = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, kCardWidth, 142.0)];
     uiv_logo.tag = 1;
+    [uiv_logo setBackgroundColor:[UIColor vcTeamLogoBg]];
     UIImageView *uiiv_logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed: logoName]];
     uiiv_logo.frame = CGRectMake(0.0, 0.0, kCardWidth, 142.0);
     [uiv_logo addSubview:uiiv_logo];
@@ -64,11 +104,9 @@ static float kCardsGap      = 12.0;
 	// 2. add text
     UIView *uiv_text = [[UIView alloc] initWithFrame:CGRectMake(0.0, 142.0, kCardWidth, 286.0)];
     uiv_text.tag = 2;
-    UIImageView *uiiv_text = [[UIImageView alloc] initWithImage:[UIImage imageNamed: textName]];
-    uiiv_text.frame = CGRectMake(0.0, 0.0, kCardWidth, 286.0);
-    uiiv_text.tag = 1;
-    [uiiv_text setTintColor:[UIColor lightGrayColor]];
-    [uiv_text addSubview:uiiv_text];
+    uiv_text.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+    textView.tag = 1;
+    [uiv_text addSubview:textView];
     [uiv_cardContainer insertSubview:uiv_text belowSubview:uiv_logo];
     CGAffineTransform t1 = CGAffineTransformMakeScale(1.0, 0.5);
     uiv_text.transform = CGAffineTransformTranslate(t1, 0.0, -427.0);
@@ -88,9 +126,108 @@ static float kCardsGap      = 12.0;
     uiv_cardContainer.transform = CGAffineTransformMakeTranslation(0.0, -40);
     [_arr_cards addObject:uiv_cardContainer];
     
+    UITapGestureRecognizer *tapOnCard = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnCard:)];
+    tapOnCard.numberOfTapsRequired = 1;
+    [uiv_cardContainer addGestureRecognizer:tapOnCard];
+    
 	// Do animiation by index order
     [self performSelector:@selector(animateArray:) withObject:_arr_cards afterDelay:0.0];
     [self performSelector:@selector(showNeoLogo) withObject:nil afterDelay:kDropSpeed *5 - kAnimaDelay];
+}
+
+#pragma mark - Deal with Card's interaction
+- (void)tapOnCard:(UIGestureRecognizer *)gesture
+{
+    UIView *tmp = gesture.view;
+    int index = (int)tmp.tag%10;
+    
+    if (_uiv_teamDetailContainer) {
+        [_uiv_teamDetailContainer removeFromSuperview];
+        _uiv_teamDetailContainer = nil;
+        
+        [_uiv_bluryView removeFromSuperview];
+        _uiv_bluryView = nil;
+    }
+    
+    CGRect detailFrame = CGRectMake(68.0, 265.0, 888.0, 237.0);
+    CGRect detailLogoFrame = CGRectMake(10.0, 10.0, 218, 217);
+    CGRect detailTextFrame = CGRectMake(detailLogoFrame.origin.x + detailLogoFrame.size.width + 20, 10.0, detailFrame.size.width - detailLogoFrame.origin.x - detailLogoFrame.size.width - 30, detailFrame.size.height - 20);
+    
+    _uiv_bluryView = [[UIView alloc] initWithFrame:screenRect];
+    _uiv_bluryView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+    [self.view addSubview: _uiv_bluryView];
+    
+    _uiv_teamDetailContainer = [[UIView alloc] initWithFrame:detailFrame];
+    _uiv_teamDetailContainer.transform = CGAffineTransformMakeTranslation(0.0, -265-237);
+    _uiv_teamDetailContainer.backgroundColor = [UIColor whiteColor];
+    _uiv_teamDetailContainer.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    _uiv_teamDetailContainer.layer.borderWidth = 2.0;
+    [_uiv_teamDetailContainer addSubview: [self createDetailLogoFrame:detailLogoFrame andIndex:index]];
+    [_uiv_teamDetailContainer addSubview: [self createDetailTextFrame:detailTextFrame andIndex:index]];
+    [self.view addSubview: _uiv_teamDetailContainer];
+    
+    // Set the parameters to be passed into the animation
+    CGFloat duration = 0.8f;
+    CGFloat damping = 0.75;
+    CGFloat velocity = 0.5;
+    // int to hold UIViewAnimationOption
+    NSInteger option;
+    option = UIViewAnimationCurveEaseInOut;
+    
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+        _uiv_teamDetailContainer.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished){      }];
+    
+    UITapGestureRecognizer *tapOnDetail = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeDetailInfo:)];
+    tapOnDetail.numberOfTapsRequired = 1;
+    [_uiv_bluryView addGestureRecognizer:tapOnDetail];
+}
+
+- (UIView *)createDetailLogoFrame:(CGRect)frame andIndex:(int)index
+{
+    UIImageView *uiiv_detailLogo = [[UIImageView alloc] initWithFrame:frame];
+    [uiiv_detailLogo setImage:[UIImage imageNamed:_arr_logoImg[index]]];
+    uiiv_detailLogo.contentMode = UIViewContentModeScaleAspectFit;
+    uiiv_detailLogo.backgroundColor = [UIColor vcTeamLogoBg];
+    UIImageView *uiiv_btmBar = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, frame.size.height-18*1.2, frame.size.width, 18*1.2)];
+    uiiv_btmBar.image = [UIImage imageNamed:@"team_logoBtmBar.png"];
+    [uiiv_detailLogo addSubview: uiiv_btmBar];
+    return  uiiv_detailLogo;
+}
+
+- (UIView *)createDetailTextFrame:(CGRect)frame andIndex:(int)index
+{
+    UITextView *uitv_detailText = [[UITextView alloc] initWithFrame:frame];
+    uitv_detailText.backgroundColor = [UIColor whiteColor];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineHeightMultiple = 30.0f;
+    paragraphStyle.maximumLineHeight = 30.0f;
+    paragraphStyle.minimumLineHeight = 30.0f;
+    
+    NSDictionary *ats = @{
+                          NSFontAttributeName : [UIFont fontWithName:@"Raleway-Medium" size:15.0f],
+                          NSParagraphStyleAttributeName : paragraphStyle,
+                          };
+    NSString *text = _arr_teamText[index];
+    uitv_detailText.attributedText = [[NSAttributedString alloc] initWithString:text attributes:ats];
+    [uitv_detailText setTextColor:[UIColor vcDarkBlue]];
+    uitv_detailText.editable = NO;
+    uitv_detailText.selectable = NO;
+    
+    return  uitv_detailText;
+}
+
+- (void)removeDetailInfo:(UIGestureRecognizer *)gesture
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        _uiv_teamDetailContainer.transform = CGAffineTransformMakeTranslation(0.0, -265-237);
+    } completion:^(BOOL finished){
+        [_uiv_bluryView removeFromSuperview];
+        _uiv_bluryView = nil;
+        
+        [_uiv_teamDetailContainer removeFromSuperview];
+        _uiv_teamDetailContainer = nil;
+    }];
 }
 
 #pragma mark - Animate all cards by the order of the index

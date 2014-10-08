@@ -19,6 +19,7 @@
 + (UIColor *)vccyanmenu;
 + (UIColor *)vcmediummenu;
 + (UIColor *)vcButtonBorder;
++ (UIColor *)vcTeamLogoBg;
 //+ (UIColor *)vpShadowBlue;
 //+ (UIColor *)vpYellow;
 //+ (UIColor *)vpTextBlue;

@@ -49,6 +49,10 @@
     return [UIColor colorWithRed: 230.0f/255.0f green: 232.0f/255.0f blue: 237.0f/255.0f alpha: 1];
 }
 
++ (UIColor *)vcTeamLogoBg {
+    return [UIColor colorWithRed:204.0/255.0 green:194.0/255.0 blue:185.0/255.0 alpha:0.9];
+}
+
 + (UIColor *)vpYellow {
 	return [UIColor colorWithRed:235.0f/255.0f green:199.0f/255.0f blue:111.0f/255.0f alpha:1.0];
 }
