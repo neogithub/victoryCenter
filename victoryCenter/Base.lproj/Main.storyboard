@@ -270,6 +270,7 @@
                         <outlet property="uib_bldgStats" destination="PTE-64-C6S" id="Npd-WB-O5x"/>
                         <outlet property="uib_elevators" destination="kM8-2Q-ZIB" id="H5V-NJ-Ddv"/>
                         <outlet property="uib_floorPlan" destination="nWL-wl-uQU" id="ZDd-mc-ALv"/>
+                        <outlet property="uiiv_bgImg" destination="xmY-0i-m1z" id="F5S-ft-oDZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KH9-f0-tUk" userLabel="First Responder" sceneMemberID="firstResponder"/>

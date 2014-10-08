@@ -11,6 +11,8 @@
 
 @interface buildingViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *uiiv_bgImg;
+
 @property (weak, nonatomic) IBOutlet UIButton *uib_floorPlan;
 @property (weak, nonatomic) IBOutlet UIButton *uib_bldgStats;
 @property (weak, nonatomic) IBOutlet UIButton *uib_amenities;
@@ -34,7 +36,7 @@
 
 - (void)setTopButtons
 {
-    [self initTopBtn:_uib_floorPlan withTitle:@"FLOOR PLAN" andTag:1 andSelected:YES];
+    [self initTopBtn:_uib_floorPlan withTitle:@"FLOOR PLAN" andTag:1 andSelected:NO];
     [self initTopBtn:_uib_bldgStats withTitle:@"BUILDING STATS" andTag:2 andSelected:NO];
     [self initTopBtn:_uib_amenities withTitle:@"AMENITIES" andTag:3 andSelected:NO];
     [self initTopBtn:_uib_elevators withTitle:@"ELEVATORS" andTag:4 andSelected:NO];
@@ -73,6 +75,32 @@
     
     tappedBtn.selected = YES;
     tappedBtn.backgroundColor = [UIColor vcDarkBlue];
+    
+    [self updateContent:(int)tappedBtn.tag];
+}
+
+- (void)updateContent:(int)index
+{
+    switch (index) {
+        case 1: {
+            _uiiv_bgImg.image = [UIImage imageNamed:@"grfx_bldFloorPlan_bg.jpg"];
+            break;
+        }
+        case 2: {
+            _uiiv_bgImg.image = [UIImage imageNamed:@"grfx_bldStat_bg.jpg"];
+            break;
+        }
+        case 3: {
+            _uiiv_bgImg.image = [UIImage imageNamed:@"grfx_bldAmenities_bg.jpg"];
+            break;
+        }
+        case 4: {
+            _uiiv_bgImg.image = [UIImage imageNamed:@"grfx_bldElevator_bg.jpg"];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning
