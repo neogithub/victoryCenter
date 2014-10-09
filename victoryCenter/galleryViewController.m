@@ -352,7 +352,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-[   self clearAllDataCollection];
+    [self clearAllDataCollection];
+    
     [_uic_gallery removeFromSuperview];
     _uic_gallery = nil;
     
@@ -362,28 +363,11 @@
     
     [localGallery.view removeFromSuperview];
     localGallery.view = nil;
+    
     [localGallery removeFromParentViewController];
     localGallery = nil;
     
     localImages = nil;
-    
-    [arr_AlbumData removeAllObjects];
-    arr_AlbumData = nil;
-    
-    [arr_AlbumItems removeAllObjects];
-    arr_AlbumItems = nil;
-    
-    [arr_AlbumFrame removeAllObjects];
-    arr_AlbumFrame = nil;
-    
-    [arr_AlbumCaption removeAllObjects];
-    arr_AlbumCaption = nil;
-    
-    [arr_AllImgs removeAllObjects];
-    arr_AllImgs = nil;
-    
-    [arr_AllFlms removeAllObjects];
-    arr_AllImgs = nil;
 }
 
 - (void)didReceiveMemoryWarning

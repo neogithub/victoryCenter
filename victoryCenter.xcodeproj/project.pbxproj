@@ -124,6 +124,8 @@
 		82627E2619E702EC0062FC0C /* grfx_restaurant_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1E19E702EC0062FC0C /* grfx_restaurant_overlay@2x.png */; };
 		82627E2719E702EC0062FC0C /* grfx_retail_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1F19E702EC0062FC0C /* grfx_retail_overlay.png */; };
 		82627E2819E702EC0062FC0C /* grfx_retail_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E2019E702EC0062FC0C /* grfx_retail_overlay@2x.png */; };
+		82627E2B19E732870062FC0C /* Lightbox_overlay_BG_@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E2919E732870062FC0C /* Lightbox_overlay_BG_@2.png */; };
+		82627E2C19E732870062FC0C /* Lightbox_overlay_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E2A19E732870062FC0C /* Lightbox_overlay_BG.png */; };
 		82716A6819E434C10070A331 /* Districts_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6619E434C10070A331 /* Districts_overlay.png */; };
 		82716A6919E434C10070A331 /* Districts_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6719E434C10070A331 /* Districts_overlay@2x.png */; };
 		82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6A19E441390070A331 /* grfx_access_nav.png */; };
@@ -338,6 +340,8 @@
 		82627E1E19E702EC0062FC0C /* grfx_restaurant_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_restaurant_overlay@2x.png"; sourceTree = "<group>"; };
 		82627E1F19E702EC0062FC0C /* grfx_retail_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_retail_overlay.png; sourceTree = "<group>"; };
 		82627E2019E702EC0062FC0C /* grfx_retail_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_retail_overlay@2x.png"; sourceTree = "<group>"; };
+		82627E2919E732870062FC0C /* Lightbox_overlay_BG_@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lightbox_overlay_BG_@2.png"; sourceTree = "<group>"; };
+		82627E2A19E732870062FC0C /* Lightbox_overlay_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lightbox_overlay_BG.png; sourceTree = "<group>"; };
 		82716A6619E434C10070A331 /* Districts_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Districts_overlay.png; sourceTree = "<group>"; };
 		82716A6719E434C10070A331 /* Districts_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Districts_overlay@2x.png"; sourceTree = "<group>"; };
 		82716A6A19E441390070A331 /* grfx_access_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_access_nav.png; sourceTree = "<group>"; };
@@ -793,6 +797,8 @@
 		82DC119E19DAEA940057AE4F /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				82627E2919E732870062FC0C /* Lightbox_overlay_BG_@2.png */,
+				82627E2A19E732870062FC0C /* Lightbox_overlay_BG.png */,
 				824F366519E6C47500267B44 /* Drone_shots_thumb */,
 				824F367B19E6C47500267B44 /* Rendering_thumb */,
 				82EA38BE19E304AC0027394F /* film */,
@@ -1024,6 +1030,7 @@
 				824F368919E6C47500267B44 /* thumb_20140802_downtown_100m_5pm.jpg in Resources */,
 				82000B9F19E5963800AE2C70 /* team_hks_text.png in Resources */,
 				82DC11DA19DAEA940057AE4F /* Victory Center 03 View from SE.jpg in Resources */,
+				82627E2C19E732870062FC0C /* Lightbox_overlay_BG.png in Resources */,
 				82A805D119D1F61E00308BA1 /* grfx_mialIcon@2x.png in Resources */,
 				8224FE0719D47097002B1B44 /* Raleway-Light.otf in Resources */,
 				8224FE0819D47097002B1B44 /* Raleway-Medium.otf in Resources */,
@@ -1079,6 +1086,7 @@
 				82716A6919E434C10070A331 /* Districts_overlay@2x.png in Resources */,
 				82DC11D119DAEA940057AE4F /* 20140811_view3_100m_04.jpg in Resources */,
 				82000B7319E590AD00AE2C70 /* grfx_bldElevator_bg.jpg in Resources */,
+				82627E2B19E732870062FC0C /* Lightbox_overlay_BG_@2.png in Resources */,
 				8224FE0519D47097002B1B44 /* Raleway-ExtraLight.otf in Resources */,
 				82DC11CC19DAEA940057AE4F /* 20140802_view4_100m_06.jpg in Resources */,
 				82000B7A19E590AD00AE2C70 /* Team_bg@2x.jpg in Resources */,

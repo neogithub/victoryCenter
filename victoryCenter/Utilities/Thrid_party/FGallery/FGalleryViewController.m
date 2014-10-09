@@ -198,7 +198,7 @@
     _caption							= [[UILabel alloc] initWithFrame:CGRectZero];
     
     //    _toolbar.barStyle					= UIBarStyleBlackTranslucent;
-    _container.backgroundColor			= [UIColor whiteColor];
+    _container.backgroundColor			= [UIColor blackColor];
     
     // listen for container frame changes so we can properly update the layout during auto-rotation or going in and out of fullscreen
     [_container addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
@@ -236,6 +236,9 @@
 	self.view                                   = _container;
 	
 	// add items to their containers
+    UIImageView *uiiv_galleryBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lightbox_overlay_BG.png"]];
+    uiiv_galleryBg.frame = screenRect;
+    [_container addSubview: uiiv_galleryBg];
 	[_container addSubview:_innerContainer];
 	[_container addSubview:_thumbsView];
 	
