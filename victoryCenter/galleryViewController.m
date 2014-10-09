@@ -97,7 +97,6 @@
     int index = (int)tappedBtn.tag;
     [self updateGalleryData:index];
     
-    [_uic_gallery reloadData];
 	[_uic_gallery performBatchUpdates:^{
 		[_uic_gallery reloadSections:[NSIndexSet indexSetWithIndex:0]];
 	} completion:nil];
@@ -106,6 +105,7 @@
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
 	[_uic_gallery setCollectionViewLayout:flowLayout animated:YES];
     [_uic_gallery scrollRectToVisible:CGRectMake(0.0, 0.0, _uic_gallery.frame.size.width, _uic_gallery.frame.size.height) animated:YES];
+    [_uic_gallery reloadData];
 }
 
 #pragma mark - Prepare collecion view data from plist
