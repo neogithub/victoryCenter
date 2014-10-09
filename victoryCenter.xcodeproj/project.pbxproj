@@ -140,8 +140,6 @@
 		82A805D319D1F61E00308BA1 /* grfx_movieIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A805CD19D1F61E00308BA1 /* grfx_movieIcon@2x.png */; };
 		82A805D619D1FC1400308BA1 /* grfx_menuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A805D419D1FC1400308BA1 /* grfx_menuIcon.png */; };
 		82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A805D519D1FC1400308BA1 /* grfx_menuIcon@2x.png */; };
-		82A805DA19D1FE8100308BA1 /* grfx_menuImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A805D819D1FE8100308BA1 /* grfx_menuImage.png */; };
-		82A805DB19D1FE8100308BA1 /* grfx_menuImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A805D919D1FE8100308BA1 /* grfx_menuImage@2x.png */; };
 		82A805E119D2076300308BA1 /* mapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A805E019D2076300308BA1 /* mapViewController.m */; };
 		82A805E419D2077300308BA1 /* buildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A805E319D2077300308BA1 /* buildingViewController.m */; };
 		82DAB03219D1EBA000F23668 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAB03119D1EBA000F23668 /* UIColor+Extensions.m */; };
@@ -358,8 +356,6 @@
 		82A805CD19D1F61E00308BA1 /* grfx_movieIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_movieIcon@2x.png"; sourceTree = "<group>"; };
 		82A805D419D1FC1400308BA1 /* grfx_menuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_menuIcon.png; sourceTree = "<group>"; };
 		82A805D519D1FC1400308BA1 /* grfx_menuIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_menuIcon@2x.png"; sourceTree = "<group>"; };
-		82A805D819D1FE8100308BA1 /* grfx_menuImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_menuImage.png; sourceTree = "<group>"; };
-		82A805D919D1FE8100308BA1 /* grfx_menuImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_menuImage@2x.png"; sourceTree = "<group>"; };
 		82A805DF19D2076300308BA1 /* mapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapViewController.h; sourceTree = "<group>"; };
 		82A805E019D2076300308BA1 /* mapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapViewController.m; sourceTree = "<group>"; };
 		82A805E219D2077300308BA1 /* buildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buildingViewController.h; sourceTree = "<group>"; };
@@ -704,8 +700,6 @@
 				8224FDF719D47097002B1B44 /* fonts */,
 				8224FDF219D46D90002B1B44 /* grfx */,
 				82A805E519D2091D00308BA1 /* tmp */,
-				82A805D819D1FE8100308BA1 /* grfx_menuImage.png */,
-				82A805D919D1FE8100308BA1 /* grfx_menuImage@2x.png */,
 				82A805C719D1F61E00308BA1 /* UI */,
 			);
 			path = src;
@@ -1047,7 +1041,6 @@
 				824F369519E6C47500267B44 /* thumb_20140811_view3_100m_02.jpg in Resources */,
 				82627E2319E702EC0062FC0C /* grfx_residential_overlay.png in Resources */,
 				8224FDF619D46D90002B1B44 /* cap_bar_@2x.png in Resources */,
-				82A805DB19D1FE8100308BA1 /* grfx_menuImage@2x.png in Resources */,
 				824F369619E6C47500267B44 /* thumb_20140811_view3_100m_03.jpg in Resources */,
 				82EA38C019E304AC0027394F /* neoscape_bug.mov in Resources */,
 				82000B9E19E5963800AE2C70 /* team_duda_text@2x.png in Resources */,
@@ -1069,7 +1062,6 @@
 				82A805D219D1F61E00308BA1 /* grfx_movieIcon.png in Resources */,
 				82716A6D19E441390070A331 /* grfx_access_nav@2x.png in Resources */,
 				82000B7D19E590AD00AE2C70 /* team_logoBtmBar.png in Resources */,
-				82A805DA19D1FE8100308BA1 /* grfx_menuImage.png in Resources */,
 				20F890C719DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg in Resources */,
 				8224FE3219D4BD6E002B1B44 /* normal_frame.png in Resources */,
 				82000B7519E590AD00AE2C70 /* grfx_bldFloorPlan_bg.jpg in Resources */,
