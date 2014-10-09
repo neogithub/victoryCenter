@@ -53,6 +53,19 @@
     return [UIColor colorWithRed:204.0/255.0 green:194.0/255.0 blue:185.0/255.0 alpha:0.9];
 }
 
++ (UIColor *)vcSiteRestaurant {
+    return [UIColor colorWithRed:201.0/255.0 green:134.0/255.0 blue:56.0/255.0 alpha:0.9];
+}
++ (UIColor *)vcSiteRetail {
+    return [UIColor colorWithRed:210.0/255.0 green:134.0/255.0 blue:126.0/255.0 alpha:0.9];
+}
++ (UIColor *)vcSiteResidentail {
+    return [UIColor colorWithRed:247.0/255.0 green:184.0/255.0 blue:95.0/255.0 alpha:0.9];
+}
++ (UIColor *)vcSiteRecreation {
+    return [UIColor colorWithRed:157.0/255.0 green:159.0/255.0 blue:191.0/255.0 alpha:0.9];
+}
+
 + (UIColor *)vpYellow {
 	return [UIColor colorWithRed:235.0f/255.0f green:199.0f/255.0f blue:111.0f/255.0f alpha:1.0];
 }

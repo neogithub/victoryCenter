@@ -20,6 +20,10 @@
 + (UIColor *)vcmediummenu;
 + (UIColor *)vcButtonBorder;
 + (UIColor *)vcTeamLogoBg;
++ (UIColor *)vcSiteRestaurant;
++ (UIColor *)vcSiteRetail;
++ (UIColor *)vcSiteResidentail;
++ (UIColor *)vcSiteRecreation;
 //+ (UIColor *)vpShadowBlue;
 //+ (UIColor *)vpYellow;
 //+ (UIColor *)vpTextBlue;

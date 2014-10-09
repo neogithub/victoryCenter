@@ -163,7 +163,7 @@ static float kCardsGap      = 12.0;
     }];
     
     _uiv_teamDetailContainer = [[UIView alloc] initWithFrame:detailFrame];
-    _uiv_teamDetailContainer.transform = CGAffineTransformMakeTranslation(0.0, -detailFrame.origin.y - detailFrame.size.height -20);
+    _uiv_teamDetailContainer.transform = CGAffineTransformMakeTranslation(0.0, -detailFrame.origin.y - detailFrame.size.height - 30);
     _uiv_teamDetailContainer.backgroundColor = [UIColor whiteColor];
     _uiv_teamDetailContainer.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     _uiv_teamDetailContainer.layer.borderWidth = 2.0;

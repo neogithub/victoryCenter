@@ -20,12 +20,17 @@ static float    panle_w                     = 227.0;
 {
     NSMutableArray          *arr_topBtnsArray;
     NSMutableArray          *arr_subMenuArray;
+    NSMutableArray          *arr_panelBtnArray;
+    NSMutableArray          *arr_overlayArray;
+    NSMutableArray          *arr_indicatorColors;
     
     UIView                  *uiv_cityAccPanel;
     UIView                  *uiv_neibAmePanel;
     UIView                  *uiv_neibAccPanel;
     UIView                  *uiv_siteAmePanel;
     UIView                  *uiv_siteAccPanel;
+    
+    UIView                  *uiv_panelIndicator;
 }
 //Top root menu
 @property (weak, nonatomic) IBOutlet UIButton           *uib_city;
@@ -68,7 +73,6 @@ static float    panle_w                     = 227.0;
     [self setSubMenus];
     [self setUpMapAnimation];
     [self initZoomingScrollView];
-    
     //Hide all submenu's container at first
     _uiv_citySubMenu.hidden = NO;
     _uiv_neighborhoodSubMenu.hidden = YES;
@@ -416,9 +420,7 @@ static float    panle_w                     = 227.0;
     // *2 --> load City's Access panel
     int selectedIndex = (int)[sender tag]%10;
     if (selectedIndex == 1) { // Tapped Districts
-        _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Districts_overlay.png"]];
-        _uiiv_mapOverlay.frame = screenRect;
-        [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
+        [self updateOverlayImage:@"Districts_overlay.png"];
     }
     if (selectedIndex == 2) { // Tapped Access
         [self addCityAccessPanel];
@@ -507,10 +509,25 @@ static float    panle_w                     = 227.0;
     float panel_h = 198.0;
     uiv_siteAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RESTAURANT", @"RETAIL", @"RESIDENTIAL", @"RECREATION", nil];
-    [self createBtnsForPanel:uiv_siteAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"tappedBtn:" andEdgeInset:45.0];
-    
+    [self createBtnsForPanel:uiv_siteAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"tapSiteAmenities:" andEdgeInset:45.0];
     
     [self.view insertSubview:uiv_siteAmePanel belowSubview:_uiv_siteSubMenu];
+    
+    //Set up overlay's array
+    [arr_overlayArray removeAllObjects];
+    arr_overlayArray = nil;
+    arr_overlayArray = [[NSMutableArray alloc] initWithObjects:@"grfx_restaurant_overlay.png", @"grfx_retail_overlay.png", @"grfx_residential_overlay.png", @"grfx_recreationg_overlay.png", nil];
+    
+    //Set up indicator's color array
+    [arr_indicatorColors removeAllObjects];
+    arr_indicatorColors = nil;
+    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRestaurant], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRecreation], nil];
+}
+
+- (void)tapSiteAmenities:(id)sender
+{
+    [self hightLightPanelBtn:sender andIndicatorColor:[arr_indicatorColors objectAtIndex:[sender tag]]];
+    [self updateOverlayImage:[arr_overlayArray objectAtIndex:[sender tag]]];
 }
 
 #pragma mark - Add panel for site access
@@ -522,18 +539,28 @@ static float    panle_w                     = 227.0;
     [self.view insertSubview:uiv_siteAccPanel belowSubview:_uiv_siteSubMenu];
 }
 
-#pragma mark - Highlight current tapped button of top menu
+#pragma mark - Highlight current tapped button of top sub menu
 - (void)hiliteTappedButton:(id)sender inView:(UIView *)container
 {
     UIButton *tappedBtn = sender;
     for (UIButton *tmp in [container subviews]) {
         tmp.selected = NO;
-//        tmp.backgroundColor = [UIColor vcLightBlue];
+
         [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
     }
     tappedBtn.selected = YES;
     [tappedBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-ExtraBold" size:16.0]];
-//    tappedBtn.backgroundColor = [UIColor vcDarkBlue];
+}
+
+#pragma mark - update map's overlay
+
+- (void)updateOverlayImage:(NSString *)imageName
+{
+    [_uiiv_mapOverlay removeFromSuperview];
+    _uiiv_mapOverlay = nil;
+    _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    _uiiv_mapOverlay.frame = screenRect;
+    [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
 }
 
 #pragma mark - create Panel
@@ -562,6 +589,32 @@ static float    panle_w                     = 227.0;
     return uiv_panel;
 }
 
+- (void)hightLightPanelBtn:(id)sender andIndicatorColor:(UIColor *)color
+{
+    for (UIButton *tmp in arr_panelBtnArray) {
+        tmp.backgroundColor = [UIColor clearColor];
+        tmp.layer.borderWidth = 1.0;
+        tmp.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+    }
+    UIButton *tappedBtn = sender;
+    tappedBtn.backgroundColor = [UIColor vclightbluemenu];
+    tappedBtn.layer.borderWidth = 1.0;
+    tappedBtn.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    
+    [uiv_panelIndicator removeFromSuperview];
+    uiv_panelIndicator = nil;
+    CGRect frame = CGRectMake(19, tappedBtn.frame.origin.y + (tappedBtn.frame.size.height - 14)/2, 14, 14);
+    uiv_panelIndicator = [[UIView alloc] initWithFrame:frame];
+    uiv_panelIndicator.backgroundColor = color;
+    uiv_panelIndicator.layer.borderColor = [UIColor whiteColor].CGColor;
+    uiv_panelIndicator.layer.borderWidth = 2.0;
+    CGPoint savedCenter = uiv_panelIndicator.center;
+    uiv_panelIndicator.layer.cornerRadius = 14.0 / 2.0;
+    uiv_panelIndicator.center = savedCenter;
+    
+    [tappedBtn.superview addSubview: uiv_panelIndicator];
+}
+
 #pragma mark - Create panel's content (Buttons)
 /*
  Required arguements:
@@ -573,6 +626,10 @@ static float    panle_w                     = 227.0;
 
 - (void)createBtnsForPanel:(UIView *)panle withTitleArray:(NSArray *)arr_buttonTitles andTargetSel:(NSString *)methodName andEdgeInset:(float)leftEdge
 {
+    [arr_panelBtnArray removeAllObjects];
+    arr_panelBtnArray = nil;
+    arr_panelBtnArray = [[NSMutableArray alloc] init];
+    
     SEL method = NSSelectorFromString(methodName);
     
     for (int i = 0; i < arr_buttonTitles.count; i++) {
@@ -588,6 +645,7 @@ static float    panle_w                     = 227.0;
         uib_accOption.tag = i;
         [uib_accOption addTarget:self action:method forControlEvents:UIControlEventTouchUpInside];
         [panle addSubview: uib_accOption];
+        [arr_panelBtnArray addObject: uib_accOption];
     }
 }
 
