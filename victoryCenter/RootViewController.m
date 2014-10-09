@@ -65,10 +65,14 @@
     [UIView animateWithDuration:0.33 animations:^{
         tmp.alpha = 0.0;
     } completion:^(BOOL finished){
+        for (UIView __strong *tmpV in [tmp subviews]) {
+            [tmpV removeFromSuperview];
+            tmpV = nil;
+        }
         [tmp removeFromSuperview];
         tmp = nil;
     }];
-	
+
 	UIViewController *destination = [self.storyboard instantiateViewControllerWithIdentifier:vcIdentifier];
 	XHCustomSegue *segue = [[XHCustomSegue alloc] initWithIdentifier:nil source:self destination:destination];
 	[self prepareForSegue:segue sender:self];

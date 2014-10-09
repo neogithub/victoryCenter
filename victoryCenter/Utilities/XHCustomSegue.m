@@ -51,6 +51,10 @@
         [uiv_sour viewWithTag:11].alpha = 1.0;
         [uiv_sour viewWithTag:11].hidden = NO;
         [[uiv_sour viewWithTag:1000] removeFromSuperview];
+        for (UIView __strong *tmp in [uiv_sour viewWithTag:1000]) {
+            [tmp removeFromSuperview];
+            tmp = nil;
+        }
         uiv_dest.tag = 1000;
     }];
     

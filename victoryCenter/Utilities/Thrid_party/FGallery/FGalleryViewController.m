@@ -300,6 +300,7 @@
         [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:nil]  forBarMetrics:UIBarMetricsDefault];
         [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
     //[self removeFromParentViewController];
 }
 
@@ -455,6 +456,53 @@
 	
 	// eb addition
 	[self exitFullscreen];
+    
+    self.galleryID = nil;
+	
+	_photoSource = nil;
+	
+    [_caption release];
+    _caption = nil;
+	
+    [_captionContainer release];
+    _captionContainer = nil;
+	
+    [_container release];
+    _container = nil;
+	
+    [_innerContainer release];
+    _innerContainer = nil;
+	
+    [_toolbar release];
+    _toolbar = nil;
+	
+    [_thumbsView release];
+    _thumbsView = nil;
+	
+    [_scroller release];
+    _scroller = nil;
+	
+	[_photoLoaders removeAllObjects];
+    [_photoLoaders release];
+    _photoLoaders = nil;
+	
+	[_barItems removeAllObjects];
+	[_barItems release];
+	_barItems = nil;
+	
+	[_photoThumbnailViews removeAllObjects];
+    [_photoThumbnailViews release];
+    _photoThumbnailViews = nil;
+	
+	[_photoViews removeAllObjects];
+    [_photoViews release];
+    _photoViews = nil;
+	
+    [_nextButton release];
+    _nextButton = nil;
+	
+    [_prevButton release];
+    _prevButton = nil;
 }
 
 

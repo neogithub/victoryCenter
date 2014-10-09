@@ -250,7 +250,7 @@
 - (void)openFGallery:(int)index
 {
     localImages =  arr_AllImgs;
-    localCaptions = [NSArray arrayWithArray:[arr_AlbumCaption subarrayWithRange:NSMakeRange(0, arr_AllImgs.count-1)]];
+    localCaptions = [NSArray arrayWithArray:[arr_AlbumCaption subarrayWithRange:NSMakeRange(0, arr_AllImgs.count)]];
     //[self imageViewer:sender];
     UINavigationController *fGalleryNavigationController = [[UINavigationController alloc] init];
     fGalleryNavigationController.view.frame = self.view.frame;
@@ -260,6 +260,7 @@
     [fGalleryNavigationController.view addSubview:localGallery.view];
     [self addChildViewController:fGalleryNavigationController];
     [self.view addSubview:fGalleryNavigationController.view];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
 }
 
 // Used in Photos Layout.
@@ -358,6 +359,31 @@
     [_playerViewController removeFromParentViewController];
     [_playerViewController.view removeFromSuperview];
     _playerViewController = nil;
+    
+    [localGallery.view removeFromSuperview];
+    localGallery.view = nil;
+    [localGallery removeFromParentViewController];
+    localGallery = nil;
+    
+    localImages = nil;
+    
+    [arr_AlbumData removeAllObjects];
+    arr_AlbumData = nil;
+    
+    [arr_AlbumItems removeAllObjects];
+    arr_AlbumItems = nil;
+    
+    [arr_AlbumFrame removeAllObjects];
+    arr_AlbumFrame = nil;
+    
+    [arr_AlbumCaption removeAllObjects];
+    arr_AlbumCaption = nil;
+    
+    [arr_AllImgs removeAllObjects];
+    arr_AllImgs = nil;
+    
+    [arr_AllFlms removeAllObjects];
+    arr_AllImgs = nil;
 }
 
 - (void)didReceiveMemoryWarning

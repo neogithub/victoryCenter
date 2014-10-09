@@ -83,19 +83,23 @@
 {
     switch (index) {
         case 1: {
-            _uiiv_bgImg.image = [UIImage imageNamed:@"grfx_bldFloorPlan_bg.jpg"];
+            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldFloorPlan_bg" ofType:@"jpg"];
+            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
             break;
         }
         case 2: {
-            _uiiv_bgImg.image = [UIImage imageNamed:@"grfx_bldStat_bg.jpg"];
+            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldStat_bg" ofType:@"jpg"];
+            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
             break;
         }
         case 3: {
-            _uiiv_bgImg.image = [UIImage imageNamed:@"grfx_bldAmenities_bg.jpg"];
+            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldAmenities_bg" ofType:@"jpg"];
+            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
             break;
         }
         case 4: {
-            _uiiv_bgImg.image = [UIImage imageNamed:@"grfx_bldElevator_bg.jpg"];
+            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldElevator_bg" ofType:@"jpg"];
+            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
             break;
         }
         default:

@@ -691,7 +691,33 @@ static float    panle_w                     = 227.0;
     [_uiv_mapContainer removeFromSuperview];
     _uiv_mapContainer = nil;
     
-    self.view = nil;
+    [_uiiv_mapOverlay removeFromSuperview];
+    _uiiv_mapOverlay = nil;
+    
+    for (UIView *tmp in arr_topBtnsArray) {
+        [tmp removeFromSuperview];
+    }
+    [arr_indicatorColors removeAllObjects];
+    arr_indicatorColors = nil;
+    
+    for (UIView *tmp in arr_subMenuArray) {
+        [tmp removeFromSuperview];
+    }
+    [arr_subMenuArray removeAllObjects];
+    arr_subMenuArray = nil;
+    
+    for (UIView *tmp in arr_panelBtnArray) {
+        [tmp removeFromSuperview];
+    }
+    [arr_panelBtnArray removeAllObjects];
+    arr_panelBtnArray = nil;
+    
+    [arr_overlayArray removeAllObjects];
+    arr_overlayArray = nil;
+    
+    [arr_indicatorColors removeAllObjects];
+    arr_indicatorColors = nil;
+    
 }
 
 - (void)didReceiveMemoryWarning
