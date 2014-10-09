@@ -111,7 +111,7 @@ static float kCardsGap      = 12.0;
     CGAffineTransform t1 = CGAffineTransformMakeScale(1.0, 0.5);
     uiv_text.transform = CGAffineTransformTranslate(t1, 0.0, -427.0);
     
-    
+    // 3. add blue bar
     UIView *uiv_bar = [[UIView alloc] initWithFrame:CGRectMake(0.0, 124.0, kCardWidth, 18.0)];
     uiv_bar.tag = 3;
     UIImageView *uiiv_bar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"team_logoBtmBar.png"]];
@@ -148,17 +148,22 @@ static float kCardsGap      = 12.0;
         [_uiv_bluryView removeFromSuperview];
         _uiv_bluryView = nil;
     }
-    
+    // Define frame sizes for info panel, logo, and text view
     CGRect detailFrame = CGRectMake(68.0, 265.0, 888.0, 237.0);
     CGRect detailLogoFrame = CGRectMake(10.0, 10.0, 218, 217);
     CGRect detailTextFrame = CGRectMake(detailLogoFrame.origin.x + detailLogoFrame.size.width + 20, 10.0, detailFrame.size.width - detailLogoFrame.origin.x - detailLogoFrame.size.width - 30, detailFrame.size.height - 20);
     
+    // Create blury background view
     _uiv_bluryView = [[UIView alloc] initWithFrame:screenRect];
     _uiv_bluryView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+    _uiv_bluryView.alpha = 0.0;
     [self.view addSubview: _uiv_bluryView];
+    [UIView animateWithDuration:0.5 animations:^{
+        _uiv_bluryView.alpha = 1.0;
+    }];
     
     _uiv_teamDetailContainer = [[UIView alloc] initWithFrame:detailFrame];
-    _uiv_teamDetailContainer.transform = CGAffineTransformMakeTranslation(0.0, -detailFrame.origin.x - detailFrame.size.height);
+    _uiv_teamDetailContainer.transform = CGAffineTransformMakeTranslation(0.0, -detailFrame.origin.y - detailFrame.size.height -20);
     _uiv_teamDetailContainer.backgroundColor = [UIColor whiteColor];
     _uiv_teamDetailContainer.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     _uiv_teamDetailContainer.layer.borderWidth = 2.0;
@@ -225,6 +230,7 @@ static float kCardsGap      = 12.0;
 {
     [UIView animateWithDuration:0.5 animations:^{
         _uiv_teamDetailContainer.transform = CGAffineTransformMakeTranslation(0.0, -265-237);
+        _uiv_bluryView.alpha = 0.0;
     } completion:^(BOOL finished){
         [_uiv_bluryView removeFromSuperview];
         _uiv_bluryView = nil;
@@ -331,9 +337,26 @@ static float kCardsGap      = 12.0;
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    for (UIView *tmp in [self.view subviews]) {
+//    for (UIView *tmp in [self.view subviews]) {
+//        [tmp removeFromSuperview];
+//    }
+    _arr_teamText = nil;
+    
+    _arr_logoImg = nil;
+    
+    _arr_teamTextView = nil;
+    
+    for (UIView *tmp in _arr_cards) {
         [tmp removeFromSuperview];
     }
+    [_arr_cards removeAllObjects];
+    _arr_cards = nil;
+    
+    [_uiv_bluryView removeFromSuperview];
+    _uiv_bluryView = nil;
+    
+    [_uiv_teamDetailContainer removeFromSuperview];
+    _uiv_teamDetailContainer = nil;
 }
 
 - (void)didReceiveMemoryWarning
