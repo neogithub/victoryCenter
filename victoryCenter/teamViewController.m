@@ -91,7 +91,7 @@ static float kCardsGap      = 12.0;
 - (void)createItemBox:(NSString *)logoName andText:(UITextView *)textView andX:(float)x_value andTag:(int)index
 {
     UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 180.0, kCardWidth, 428.0)];
-    uiv_cardContainer.tag = index+10;
+    uiv_cardContainer.tag = index+50;
 	// 1. add logo
     UIView *uiv_logo = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, kCardWidth, 142.0)];
     uiv_logo.tag = 1;
@@ -139,7 +139,7 @@ static float kCardsGap      = 12.0;
 - (void)tapOnCard:(UIGestureRecognizer *)gesture
 {
     UIView *tmp = gesture.view;
-    int index = (int)tmp.tag%10;
+    int index = (int)tmp.tag%50;
     
     if (_uiv_teamDetailContainer) {
         [_uiv_teamDetailContainer removeFromSuperview];

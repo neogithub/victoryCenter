@@ -48,7 +48,9 @@
         uiv_dest.alpha = 1.0;
     } completion:^(BOOL finished){
         //view with tag 11 is menu button
+        [uiv_sour viewWithTag:11].alpha = 1.0;
         [uiv_sour viewWithTag:11].hidden = NO;
+        [[uiv_sour viewWithTag:1000] removeFromSuperview];
         uiv_dest.tag = 1000;
     }];
     
