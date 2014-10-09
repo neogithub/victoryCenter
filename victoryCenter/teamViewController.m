@@ -158,7 +158,7 @@ static float kCardsGap      = 12.0;
     [self.view addSubview: _uiv_bluryView];
     
     _uiv_teamDetailContainer = [[UIView alloc] initWithFrame:detailFrame];
-    _uiv_teamDetailContainer.transform = CGAffineTransformMakeTranslation(0.0, -265-237);
+    _uiv_teamDetailContainer.transform = CGAffineTransformMakeTranslation(0.0, -detailFrame.origin.x - detailFrame.size.height);
     _uiv_teamDetailContainer.backgroundColor = [UIColor whiteColor];
     _uiv_teamDetailContainer.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     _uiv_teamDetailContainer.layer.borderWidth = 2.0;
@@ -183,18 +183,22 @@ static float kCardsGap      = 12.0;
     [_uiv_bluryView addGestureRecognizer:tapOnDetail];
 }
 
+#pragma mark - Create logo image view of detail info's panel
 - (UIView *)createDetailLogoFrame:(CGRect)frame andIndex:(int)index
 {
     UIImageView *uiiv_detailLogo = [[UIImageView alloc] initWithFrame:frame];
     [uiiv_detailLogo setImage:[UIImage imageNamed:_arr_logoImg[index]]];
     uiiv_detailLogo.contentMode = UIViewContentModeScaleAspectFit;
     uiiv_detailLogo.backgroundColor = [UIColor vcTeamLogoBg];
+    
+    // Enlarge the bottom bar accroding to scale ratio
     UIImageView *uiiv_btmBar = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, frame.size.height-18*1.2, frame.size.width, 18*1.2)];
     uiiv_btmBar.image = [UIImage imageNamed:@"team_logoBtmBar.png"];
     [uiiv_detailLogo addSubview: uiiv_btmBar];
     return  uiiv_detailLogo;
 }
 
+#pragma mark - Create text view of detail info's panel
 - (UIView *)createDetailTextFrame:(CGRect)frame andIndex:(int)index
 {
     UITextView *uitv_detailText = [[UITextView alloc] initWithFrame:frame];

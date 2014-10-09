@@ -200,7 +200,7 @@
 
     galleryImageCell.titleLabel.text = [arr_AlbumCaption objectAtIndex:indexPath.item];
     galleryImageCell.titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:15];
-    galleryImageCell.cellThumb.image = [UIImage imageNamed:[arr_AlbumItems objectAtIndex:indexPath.item]];
+    galleryImageCell.cellThumb.image = [UIImage imageNamed:[NSString stringWithFormat:@"thumb_%@",[arr_AlbumItems objectAtIndex:indexPath.item]]];
     galleryImageCell.cellFrame.image = [UIImage imageNamed:[arr_AlbumFrame objectAtIndex:indexPath.item]];
     return galleryImageCell;
 }
