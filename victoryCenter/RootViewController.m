@@ -96,6 +96,8 @@
     [_uil_titleLabel setText:[arr_vcTitle objectAtIndex:[sender tag]-1]];
     
 	[self rewindMenuOffScreen];
+    
+    _uil_titleLabel.hidden = NO;
 }
 
 #pragma mark - Create main menu's buttons
@@ -213,9 +215,6 @@
 										  }
 										  completion:^(BOOL  completed){
 											  
-											  if ([self.view viewWithTag:1000]) {
-                                                  _uil_titleLabel.hidden = NO;
-                                              }
                                               
                                               
 										  }];
