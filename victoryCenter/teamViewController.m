@@ -344,10 +344,16 @@ static float kCardsGap      = 12.0;
     
     _arr_logoImg = nil;
     
+    for (UIView __strong *tmp in _arr_teamTextView) {
+        [tmp removeFromSuperview];
+        tmp = nil;
+    }
+    
     _arr_teamTextView = nil;
     
-    for (UIView *tmp in _arr_cards) {
+    for (UIView __strong *tmp in _arr_cards) {
         [tmp removeFromSuperview];
+        tmp = nil;
     }
     [_arr_cards removeAllObjects];
     _arr_cards = nil;

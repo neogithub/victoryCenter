@@ -557,9 +557,12 @@ static float    panle_w                     = 227.0;
 
 - (void)updateOverlayImage:(NSString *)imageName
 {
+    NSString *name = [imageName substringWithRange:NSMakeRange(0, imageName.length-4)];
+    NSString *extension = [imageName pathExtension];
+    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:extension];
     [_uiiv_mapOverlay removeFromSuperview];
     _uiiv_mapOverlay = nil;
-    _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
     _uiiv_mapOverlay.frame = screenRect;
     [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
 }
@@ -686,29 +689,32 @@ static float    panle_w                     = 227.0;
     [_uib_site removeFromSuperview];
     _uib_site = nil;
     
-    [_uis_zooming removeFromSuperview];
-    _uis_zooming = nil;
+    [_uiiv_mapOverlay removeFromSuperview];
+    _uiiv_mapOverlay = nil;
     
     [_uiv_mapContainer removeFromSuperview];
     _uiv_mapContainer = nil;
     
-    [_uiiv_mapOverlay removeFromSuperview];
-    _uiiv_mapOverlay = nil;
+    [_uis_zooming removeFromSuperview];
+    _uis_zooming = nil;
     
-    for (UIView *tmp in arr_topBtnsArray) {
+    for (UIView __strong *tmp in arr_topBtnsArray) {
         [tmp removeFromSuperview];
+        tmp = nil;
     }
     [arr_indicatorColors removeAllObjects];
     arr_indicatorColors = nil;
     
-    for (UIView *tmp in arr_subMenuArray) {
+    for (UIView __strong *tmp in arr_subMenuArray) {
         [tmp removeFromSuperview];
+        tmp = nil;
     }
     [arr_subMenuArray removeAllObjects];
     arr_subMenuArray = nil;
     
-    for (UIView *tmp in arr_panelBtnArray) {
+    for (UIView __strong *tmp in arr_panelBtnArray) {
         [tmp removeFromSuperview];
+        tmp = nil;
     }
     [arr_panelBtnArray removeAllObjects];
     arr_panelBtnArray = nil;
