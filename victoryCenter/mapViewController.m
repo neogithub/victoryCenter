@@ -111,7 +111,7 @@ static float    panle_w                     = 227.0;
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"City_base_map_.png"]];
 			break;
 		case 1:
-            [_uiiv_mapImg setImage:[UIImage imageNamed:@"Access_overlay.png"]];
+            [_uiiv_mapImg setImage:[UIImage imageNamed:@"Neighborhood_map.png"]];
 			break;
 		case 2:
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"Site_Base map.png"]];
@@ -423,6 +423,7 @@ static float    panle_w                     = 227.0;
         [self updateOverlayImage:@"Districts_overlay.png"];
     }
     if (selectedIndex == 2) { // Tapped Access
+        [self updateOverlayImage:@"Access_overlay.png"];
         [self addCityAccessPanel];
     }
 }
@@ -431,9 +432,9 @@ static float    panle_w                     = 227.0;
 {
     float panel_h = 236.0;
     uiv_cityAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
-    
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS NORTH TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
     [self createBtnsForPanel:uiv_cityAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"tappedBtn:" andEdgeInset:15.0];
+    
     [self.view insertSubview:uiv_cityAccPanel belowSubview:_uiv_siteSubMenu];
 }
 

@@ -144,6 +144,8 @@
 		82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A805D519D1FC1400308BA1 /* grfx_menuIcon@2x.png */; };
 		82A805E119D2076300308BA1 /* mapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A805E019D2076300308BA1 /* mapViewController.m */; };
 		82A805E419D2077300308BA1 /* buildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A805E319D2077300308BA1 /* buildingViewController.m */; };
+		82C3817319E81BAD006C7EC8 /* Access_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C3817119E81BAD006C7EC8 /* Access_overlay.png */; };
+		82C3817419E81BAD006C7EC8 /* Access_overlay_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C3817219E81BAD006C7EC8 /* Access_overlay_@2x.png */; };
 		82DAB03219D1EBA000F23668 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAB03119D1EBA000F23668 /* UIColor+Extensions.m */; };
 		82DAB03519D1ED5B00F23668 /* teamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAB03419D1ED5B00F23668 /* teamViewController.m */; };
 		82DC11BF19DAEA940057AE4F /* 20140716_view1_90 feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A019DAEA940057AE4F /* 20140716_view1_90 feet.jpg */; };
@@ -176,8 +178,8 @@
 		82DC11DA19DAEA940057AE4F /* Victory Center 03 View from SE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BC19DAEA940057AE4F /* Victory Center 03 View from SE.jpg */; };
 		82DC11DB19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BD19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg */; };
 		82DC11DC19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BE19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg */; };
-		82DC11E519DAEE070057AE4F /* Access_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11DF19DAEE070057AE4F /* Access_overlay.png */; };
-		82DC11E619DAEE070057AE4F /* Access_overlay_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E019DAEE070057AE4F /* Access_overlay_@2x.png */; };
+		82DC11E519DAEE070057AE4F /* Neighborhood_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11DF19DAEE070057AE4F /* Neighborhood_map.png */; };
+		82DC11E619DAEE070057AE4F /* Neighborhood_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E019DAEE070057AE4F /* Neighborhood_map@2x.png */; };
 		82DC11E719DAEE070057AE4F /* City_base_map_.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E119DAEE070057AE4F /* City_base_map_.png */; };
 		82DC11E819DAEE070057AE4F /* City_base_map_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E219DAEE070057AE4F /* City_base_map_@2x.png */; };
 		82DC11E919DAEE070057AE4F /* Site_Base map.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E319DAEE070057AE4F /* Site_Base map.png */; };
@@ -364,6 +366,8 @@
 		82A805E019D2076300308BA1 /* mapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapViewController.m; sourceTree = "<group>"; };
 		82A805E219D2077300308BA1 /* buildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buildingViewController.h; sourceTree = "<group>"; };
 		82A805E319D2077300308BA1 /* buildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buildingViewController.m; sourceTree = "<group>"; };
+		82C3817119E81BAD006C7EC8 /* Access_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Access_overlay.png; sourceTree = "<group>"; };
+		82C3817219E81BAD006C7EC8 /* Access_overlay_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Access_overlay_@2x.png"; sourceTree = "<group>"; };
 		82DAB03019D1EBA000F23668 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
 		82DAB03119D1EBA000F23668 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		82DAB03319D1ED5B00F23668 /* teamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teamViewController.h; sourceTree = "<group>"; };
@@ -398,8 +402,8 @@
 		82DC11BC19DAEA940057AE4F /* Victory Center 03 View from SE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 03 View from SE.jpg"; sourceTree = "<group>"; };
 		82DC11BD19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 04 Plaza View.jpg"; sourceTree = "<group>"; };
 		82DC11BE19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center View from plaza edits-sm.jpg"; sourceTree = "<group>"; };
-		82DC11DF19DAEE070057AE4F /* Access_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Access_overlay.png; sourceTree = "<group>"; };
-		82DC11E019DAEE070057AE4F /* Access_overlay_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Access_overlay_@2x.png"; sourceTree = "<group>"; };
+		82DC11DF19DAEE070057AE4F /* Neighborhood_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neighborhood_map.png; sourceTree = "<group>"; };
+		82DC11E019DAEE070057AE4F /* Neighborhood_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Neighborhood_map@2x.png"; sourceTree = "<group>"; };
 		82DC11E119DAEE070057AE4F /* City_base_map_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = City_base_map_.png; sourceTree = "<group>"; };
 		82DC11E219DAEE070057AE4F /* City_base_map_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "City_base_map_@2x.png"; sourceTree = "<group>"; };
 		82DC11E319DAEE070057AE4F /* Site_Base map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Site_Base map.png"; sourceTree = "<group>"; };
@@ -788,10 +792,20 @@
 		82A805E519D2091D00308BA1 /* tmp */ = {
 			isa = PBXGroup;
 			children = (
+				82C3817019E81BAD006C7EC8 /* map */,
 				82000B5B19E590AD00AE2C70 /* building */,
 				82000B6619E590AD00AE2C70 /* team */,
 			);
 			path = tmp;
+			sourceTree = "<group>";
+		};
+		82C3817019E81BAD006C7EC8 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				82C3817119E81BAD006C7EC8 /* Access_overlay.png */,
+				82C3817219E81BAD006C7EC8 /* Access_overlay_@2x.png */,
+			);
+			path = map;
 			sourceTree = "<group>";
 		};
 		82DC119E19DAEA940057AE4F /* Gallery */ = {
@@ -864,8 +878,8 @@
 		82DC11DE19DAEE070057AE4F /* maps */ = {
 			isa = PBXGroup;
 			children = (
-				82DC11DF19DAEE070057AE4F /* Access_overlay.png */,
-				82DC11E019DAEE070057AE4F /* Access_overlay_@2x.png */,
+				82DC11DF19DAEE070057AE4F /* Neighborhood_map.png */,
+				82DC11E019DAEE070057AE4F /* Neighborhood_map@2x.png */,
 				82DC11E119DAEE070057AE4F /* City_base_map_.png */,
 				82DC11E219DAEE070057AE4F /* City_base_map_@2x.png */,
 				82DC11E319DAEE070057AE4F /* Site_Base map.png */,
@@ -991,6 +1005,7 @@
 				82DC11C519DAEA940057AE4F /* 20140802_downtown_100m_6pm.jpg in Resources */,
 				824012F819D1AF5D00C501EE /* Images.xcassets in Resources */,
 				82DC11CF19DAEA940057AE4F /* 20140811_view3_100m_02.jpg in Resources */,
+				82C3817419E81BAD006C7EC8 /* Access_overlay_@2x.png in Resources */,
 				8224FE0919D47097002B1B44 /* Raleway-Regular.otf in Resources */,
 				82DC11E719DAEE070057AE4F /* City_base_map_.png in Resources */,
 				82DC11D919DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg in Resources */,
@@ -998,7 +1013,7 @@
 				824F36A019E6C47500267B44 /* thumb_Victory Center 03 View from SE.jpg in Resources */,
 				82000B7919E590AD00AE2C70 /* Team_bg.jpg in Resources */,
 				82DC11CA19DAEA940057AE4F /* 20140802_view4_100m_05.jpg in Resources */,
-				82DC11E519DAEE070057AE4F /* Access_overlay.png in Resources */,
+				82DC11E519DAEE070057AE4F /* Neighborhood_map.png in Resources */,
 				82DC11E819DAEE070057AE4F /* City_base_map_@2x.png in Resources */,
 				82DC11D619DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg in Resources */,
 				824F368C19E6C47500267B44 /* thumb_20140802_downtown_100m_6pm_high-res.jpg in Resources */,
@@ -1062,9 +1077,10 @@
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
 				82DC11C719DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg in Resources */,
 				82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */,
-				82DC11E619DAEE070057AE4F /* Access_overlay_@2x.png in Resources */,
+				82DC11E619DAEE070057AE4F /* Neighborhood_map@2x.png in Resources */,
 				824F368D19E6C47500267B44 /* thumb_20140802_downtown_60m_2pm.jpg in Resources */,
 				82DC11C619DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg in Resources */,
+				82C3817319E81BAD006C7EC8 /* Access_overlay.png in Resources */,
 				824F368519E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg in Resources */,
 				82A805D219D1F61E00308BA1 /* grfx_movieIcon.png in Resources */,
 				82716A6D19E441390070A331 /* grfx_access_nav@2x.png in Resources */,
