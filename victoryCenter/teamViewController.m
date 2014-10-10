@@ -228,7 +228,7 @@ static float kCardsGap      = 12.0;
 
 - (void)removeDetailInfo:(UIGestureRecognizer *)gesture
 {
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.33 animations:^{
         _uiv_teamDetailContainer.transform = CGAffineTransformMakeTranslation(0.0, -265-237);
         _uiv_bluryView.alpha = 0.0;
     } completion:^(BOOL finished){
