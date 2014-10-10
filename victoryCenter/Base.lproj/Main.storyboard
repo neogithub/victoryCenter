@@ -16,6 +16,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SZb-ak-fCC" userLabel="Label - Title">
+                                <rect key="frame" x="42" y="0.0" width="180" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view tag="10" contentMode="scaleToFill" id="him-ZN-xYh" userLabel="View - Bottom Panel">
                                 <rect key="frame" x="0.0" y="714" width="150" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -64,6 +71,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="uib_menu" destination="gBW-pQ-0as" id="9uN-2g-I38"/>
+                        <outlet property="uil_titleLabel" destination="SZb-ak-fCC" id="Sgy-WR-Dj0"/>
                         <outlet property="uiv_toolsPanel" destination="him-ZN-xYh" id="hCY-Y9-Mm6"/>
                     </connections>
                 </viewController>

@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton			*uib_menu;
 @property (strong, nonatomic) IBOutlet UIView			*uiv_toolsPanel;
+@property (weak, nonatomic) IBOutlet UILabel            *uil_titleLabel;
 @property (strong, nonatomic) UIView					*uiv_menuPanel;
 @property (strong, nonatomic) UIView					*uiv_leftFillerPanel;
 @property (strong, nonatomic) NSMutableArray			*arr_menuButtons;
@@ -36,7 +37,7 @@
 {
     [super viewDidLoad];
 	[self createMenuButtons];
-    
+    [self setTitleLabel];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideHomeBtn:) name:@"hideHomeButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unHideHomeBtn:) name:@"unhideHomeButton" object:nil];
 }
@@ -54,11 +55,25 @@
     _uiv_toolsPanel.hidden = NO;
 }
 
+#pragma mark - Style the title label
+
+- (void)setTitleLabel
+{
+    _uil_titleLabel.textColor = [UIColor vcDarkBlue];
+    [_uil_titleLabel setTextAlignment:NSTextAlignmentCenter];
+    _uil_titleLabel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    _uil_titleLabel.layer.borderWidth = 1.0;
+    _uil_titleLabel.backgroundColor = [UIColor whiteColor];
+    [_uil_titleLabel setFont:[UIFont fontWithName:@"Raleway-Medium" size:20]];
+    _uil_titleLabel.hidden = YES;
+}
+
 #pragma mark - Load VC
 -(void)loadVC:(id)sender
 {
 	NSString *vcIdentifier;
     NSArray *arr_identifier = [[NSArray alloc] initWithObjects:@"buildingViewController", @"mapViewController", @"galleryViewController", @"teamViewController", nil];
+    NSArray *arr_vcTitle = [[NSArray alloc] initWithObjects:@"BUILDING", @"LOCATION", @"GALLERY", @"TEAM", nil];
 
     vcIdentifier = [arr_identifier objectAtIndex:[sender tag] - 1];
 	__block UIView *tmp = [self.view viewWithTag:1000];
@@ -78,6 +93,8 @@
 	[self prepareForSegue:segue sender:self];
 	[segue perform];
 	
+    [_uil_titleLabel setText:[arr_vcTitle objectAtIndex:[sender tag]-1]];
+    
 	[self rewindMenuOffScreen];
 }
 
@@ -100,7 +117,7 @@
 	
 	_uiv_leftFillerPanel = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 80)];
 	[_uiv_leftFillerPanel setBackgroundColor:[UIColor vcmediummenu]];
-	[self.view addSubview:_uiv_leftFillerPanel];
+	[self.view insertSubview:_uiv_leftFillerPanel aboveSubview:_uil_titleLabel];
 	
 	for (int i=0; i<[arr_MenuNames count]; i++) {
 		UIButton *button = [UIButton buttonWithType: UIButtonTypeRoundedRect];
@@ -196,7 +213,11 @@
 										  }
 										  completion:^(BOOL  completed){
 											  
-											  
+											  if ([self.view viewWithTag:1000]) {
+                                                  _uil_titleLabel.hidden = NO;
+                                              }
+                                              
+                                              
 										  }];
 						 
 						 
