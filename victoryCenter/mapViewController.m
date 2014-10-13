@@ -6,6 +6,14 @@
 //  Copyright (c) 2014 Neoscape. All rights reserved.
 //
 
+
+/*
+    items tag list:
+ 
+    Access / Amenities's content:
+    Panel's title --> 101
+    Panel's option buttons' container --> 102
+ */
 #import "mapViewController.h"
 #import "MPFoldTransition.h"
 #import "MPFlipTransition.h"
@@ -434,8 +442,8 @@ static float    panle_w                     = 227.0;
     uiv_cityAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS NORTH TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
     [self createBtnsForPanel:uiv_cityAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"tappedBtn:" andEdgeInset:15.0];
-    
     [self.view insertSubview:uiv_cityAccPanel belowSubview:_uiv_siteSubMenu];
+    [self animateThePanel:uiv_cityAccPanel];
 }
 
 #pragma  mark - Neighborhood Submenu
@@ -465,8 +473,8 @@ static float    panle_w                     = 227.0;
     uiv_neibAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATION", @"RESIDENTIAL", nil];
     [self createBtnsForPanel:uiv_neibAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"tappedBtn:" andEdgeInset:45.0];
-    
     [self.view insertSubview:uiv_neibAmePanel belowSubview:_uiv_siteSubMenu];
+    [self animateThePanel:uiv_neibAmePanel];
 }
 
 #pragma mark - Add panel for neighborhood access
@@ -474,8 +482,8 @@ static float    panle_w                     = 227.0;
 {
     float panel_h = 236.0;
     uiv_neibAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
-    
     [self.view insertSubview:uiv_neibAccPanel belowSubview:_uiv_siteSubMenu];
+    [self animateThePanel:uiv_neibAccPanel];
 }
 
 #pragma mark - Site Submenu
@@ -525,9 +533,8 @@ static float    panle_w                     = 227.0;
     uiv_siteAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RESTAURANT", @"RETAIL", @"RESIDENTIAL", @"RECREATION", nil];
     [self createBtnsForPanel:uiv_siteAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"tapSiteAmenities:" andEdgeInset:45.0];
-    
     [self.view insertSubview:uiv_siteAmePanel belowSubview:_uiv_siteSubMenu];
-    
+    [self animateThePanel:uiv_siteAmePanel];
     //Set up overlay's array
     [arr_overlayArray removeAllObjects];
     arr_overlayArray = nil;
@@ -550,8 +557,8 @@ static float    panle_w                     = 227.0;
 {
     float panel_h = 236.0;
     uiv_siteAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
-    
     [self.view insertSubview:uiv_siteAccPanel belowSubview:_uiv_siteSubMenu];
+    [self animateThePanel:uiv_siteAccPanel];
 }
 
 #pragma mark - Highlight current tapped button of top sub menu
@@ -600,9 +607,7 @@ static float    panle_w                     = 227.0;
 - (UIView *)createPanelWithTitle:(NSString *)title andHeight:(float)panel_h
 {
     UIView* uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 0.0, panle_w, panel_h)];
-    uiv_panel.backgroundColor = [UIColor whiteColor];
-    uiv_panel.layer.borderWidth = 1.0;
-    uiv_panel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    uiv_panel.backgroundColor = [UIColor clearColor];
     
     UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
     uib_PanelTitle.frame = CGRectMake(0.0, 0.0, panle_w, 46);
@@ -611,7 +616,9 @@ static float    panle_w                     = 227.0;
     [uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
     uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
-    
+    uib_PanelTitle.tag = 101;
+    uib_PanelTitle.layer.borderWidth = 1.0;
+    uib_PanelTitle.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     [uiv_panel addSubview: uib_PanelTitle];
     return uiv_panel;
 }
@@ -657,14 +664,17 @@ static float    panle_w                     = 227.0;
     arr_panelBtnArray = nil;
     arr_panelBtnArray = [[NSMutableArray alloc] init];
     UIView *uiv_optionContainer = [[UIView alloc] init];
+    uiv_optionContainer.backgroundColor = [UIColor whiteColor];
+    uiv_optionContainer.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    uiv_optionContainer.layer.borderWidth = 1.0;
     uiv_optionContainer.frame = CGRectMake(0.0, 46.0, panle_w, panle.frame.size.height-46.0);
-    uiv_optionContainer.tag = 20;
+    uiv_optionContainer.tag = 102;
     
     SEL method = NSSelectorFromString(methodName);
     
     for (int i = 0; i < arr_buttonTitles.count; i++) {
         UIButton *uib_accOption = [UIButton buttonWithType:UIButtonTypeCustom];
-        uib_accOption.frame = CGRectMake(0.0, 46+i*38.0, panle_w, 38.0);
+        uib_accOption.frame = CGRectMake(0.0, i*38.0, panle_w, 38.0);
         uib_accOption.layer.borderWidth = 1.0;
         uib_accOption.layer.borderColor = [UIColor vcButtonBorder].CGColor;
         [uib_accOption setTitle:arr_buttonTitles[i] forState:UIControlStateNormal];
@@ -677,11 +687,38 @@ static float    panle_w                     = 227.0;
         [uiv_optionContainer addSubview: uib_accOption];
         [arr_panelBtnArray addObject: uib_accOption];
     }
+    [panle insertSubview: uiv_optionContainer belowSubview:[panle viewWithTag:101]];
 }
 
 -(void)tappedBtn:(id)sender
 {
     NSLog(@"the tapped button is %i",(int)[sender tag]);
+}
+
+#pragma mark - Animate the panel
+
+- (void)animateThePanel:(UIView *)panel
+{
+    panel.transform = CGAffineTransformMakeTranslation(0.0, -46*10);
+    [panel viewWithTag:101].transform = CGAffineTransformMakeTranslation(0.0, -46.0*5);
+    [panel viewWithTag:102].transform = CGAffineTransformMakeTranslation(0.0, -46*10);
+    
+    // Animation for the overview image
+    CGFloat duration = 0.5f;
+    CGFloat damping = 0.7f;
+    CGFloat velocity = 0.68f;
+    // int to hold UIViewAnimationOption
+    NSInteger option;
+    option = UIViewAnimationCurveEaseInOut;
+    
+    [UIView animateWithDuration:duration animations:^{
+        [panel viewWithTag:101].transform = CGAffineTransformIdentity;
+        [panel viewWithTag:102].transform = CGAffineTransformIdentity;
+    }];
+    
+    [UIView animateWithDuration:duration*1.5 delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+        panel.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished){      }];
 }
 
 - (void)removeAllPanels
