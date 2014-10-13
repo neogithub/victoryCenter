@@ -18,13 +18,17 @@
 #import "MPFoldTransition.h"
 #import "MPFlipTransition.h"
 #import "UIColor+Extensions.h"
+#import "embDrawPath.h"
+#import "embBezierPaths.h"
+#import "embDirections.h"
+#import "embBlockPaths.h"
 
 static BOOL     kMapCanZoom                 = YES;
 static CGFloat  kMinZoom                    = 1.0;
 static CGFloat  kMaxZoom                    = 2.0;
 static float    panle_x                     = 733.0;
 static float    panle_w                     = 227.0;
-@interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
+@interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, embDrawPathDelegate>
 {
     NSMutableArray          *arr_topBtnsArray;
     NSMutableArray          *arr_subMenuArray;
@@ -61,6 +65,12 @@ static float    panle_w                     = 227.0;
 @property (nonatomic, strong) UIView                    *uiv_mapContainer;
 @property (nonatomic, strong) UIImageView               *uiiv_mapImg;
 @property (nonatomic, strong) UIImageView               *uiiv_mapOverlay;
+
+@property (nonatomic, strong) embDrawPath               *embPath;
+@property (nonatomic, strong) embDrawPath				*embDirectionPath;
+@property (nonatomic, strong) embDrawPath				*embBlockPath;
+@property (nonatomic, strong) NSMutableArray			*dirpathsArray;
+@property (nonatomic, strong) NSMutableArray			*arr_pathItems;
 @end
 
 @implementation mapViewController
@@ -422,6 +432,7 @@ static float    panle_w                     = 227.0;
     [self hiliteTappedButton:sender inView:_uiv_citySubMenu];
     [_uiiv_mapOverlay removeFromSuperview];
     _uiiv_mapOverlay = nil;
+    [self removePaths];
     [self removeAllPanels];
     // Get -digit to detect which button is tapped
     // *1 --> load overlay
@@ -441,7 +452,7 @@ static float    panle_w                     = 227.0;
     float panel_h = 236.0;
     uiv_cityAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS NORTH TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
-    [self createBtnsForPanel:uiv_cityAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"tappedBtn:" andEdgeInset:15.0];
+    [self createBtnsForPanel:uiv_cityAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:15.0];
     [self.view insertSubview:uiv_cityAccPanel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:uiv_cityAccPanel];
 }
@@ -453,6 +464,7 @@ static float    panle_w                     = 227.0;
     [self hiliteTappedButton:sender inView:_uiv_neighborhoodSubMenu];
     [_uiiv_mapOverlay removeFromSuperview];
     _uiiv_mapOverlay = nil;
+    [self removePaths];
     [self removeAllPanels];
     // Get -digit to detect which button is tapped
     // *1 --> load Neighborhood's Amenities panel
@@ -482,6 +494,8 @@ static float    panle_w                     = 227.0;
 {
     float panel_h = 236.0;
     uiv_neibAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS NORTH TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
+    [self createBtnsForPanel:uiv_neibAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:15.0];
     [self.view insertSubview:uiv_neibAccPanel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:uiv_neibAccPanel];
 }
@@ -493,6 +507,7 @@ static float    panle_w                     = 227.0;
     [self hiliteTappedButton:sender inView:_uiv_siteSubMenu];
     [_uiiv_mapOverlay removeFromSuperview];
     _uiiv_mapOverlay = nil;
+    [self removePaths];
     [self removeAllPanels];
     // Get -digit to detect which button is tapped
     // *1 --> load Site's Overview's overlay
@@ -548,7 +563,7 @@ static float    panle_w                     = 227.0;
 
 - (void)tapSiteAmenities:(id)sender
 {
-    [self hightLightPanelBtn:sender andIndicatorColor:[arr_indicatorColors objectAtIndex:[sender tag]]];
+    [self hightLightPanelBtn:sender andIndicatorColor:[arr_indicatorColors objectAtIndex:[sender tag]] withIndicator:YES];
     [self updateOverlayImage:[arr_overlayArray objectAtIndex:[sender tag]]];
 }
 
@@ -557,6 +572,8 @@ static float    panle_w                     = 227.0;
 {
     float panel_h = 236.0;
     uiv_siteAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS NORTH TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
+    [self createBtnsForPanel:uiv_siteAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:15.0];
     [self.view insertSubview:uiv_siteAccPanel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:uiv_siteAccPanel];
 }
@@ -623,7 +640,7 @@ static float    panle_w                     = 227.0;
     return uiv_panel;
 }
 
-- (void)hightLightPanelBtn:(id)sender andIndicatorColor:(UIColor *)color
+- (void)hightLightPanelBtn:(id)sender andIndicatorColor:(UIColor *)color withIndicator:(BOOL)indicator
 {
     for (UIButton *tmp in arr_panelBtnArray) {
         tmp.backgroundColor = [UIColor clearColor];
@@ -637,16 +654,18 @@ static float    panle_w                     = 227.0;
     
     [uiv_panelIndicator removeFromSuperview];
     uiv_panelIndicator = nil;
-    CGRect frame = CGRectMake(19, tappedBtn.frame.origin.y + (tappedBtn.frame.size.height - 14)/2, 14, 14);
-    uiv_panelIndicator = [[UIView alloc] initWithFrame:frame];
-    uiv_panelIndicator.backgroundColor = color;
-    uiv_panelIndicator.layer.borderColor = [UIColor whiteColor].CGColor;
-    uiv_panelIndicator.layer.borderWidth = 2.0;
-    CGPoint savedCenter = uiv_panelIndicator.center;
-    uiv_panelIndicator.layer.cornerRadius = 14.0 / 2.0;
-    uiv_panelIndicator.center = savedCenter;
-    
-    [tappedBtn.superview addSubview: uiv_panelIndicator];
+    if (indicator) {
+        CGRect frame = CGRectMake(19, tappedBtn.frame.origin.y + (tappedBtn.frame.size.height - 14)/2, 14, 14);
+        uiv_panelIndicator = [[UIView alloc] initWithFrame:frame];
+        uiv_panelIndicator.backgroundColor = color;
+        uiv_panelIndicator.layer.borderColor = [UIColor whiteColor].CGColor;
+        uiv_panelIndicator.layer.borderWidth = 2.0;
+        CGPoint savedCenter = uiv_panelIndicator.center;
+        uiv_panelIndicator.layer.cornerRadius = 14.0 / 2.0;
+        uiv_panelIndicator.center = savedCenter;
+        
+        [tappedBtn.superview addSubview: uiv_panelIndicator];
+    }
 }
 
 #pragma mark - Create panel's content (Buttons)
@@ -719,6 +738,109 @@ static float    panle_w                     = 227.0;
     [UIView animateWithDuration:duration*1.5 delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
         panel.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished){      }];
+}
+
+#pragma mark - Draw Path
+-(void)drawPathsFromBezierClass:(id)sender
+{
+    [self hightLightPanelBtn:sender andIndicatorColor:[arr_indicatorColors objectAtIndex:[sender tag]] withIndicator:NO];
+    
+	_arr_pathItems = [[NSMutableArray alloc] init];
+	embBezierPaths *paths;
+	embDirections *dirpaths;
+    paths = [[embBezierPaths alloc] init];
+    _arr_pathItems = paths.bezierPaths;
+    dirpaths = [[embDirections alloc] init];
+    _arr_pathItems = dirpaths.bezierPaths;
+    
+    // clean up
+	[self removePaths];
+	
+	// actual drawpath function
+	_embDirectionPath = [[embDrawPath alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+	_embDirectionPath.delegate=self;
+	//[_uiv_mapContainer insertSubview:_embDirectionPath atIndex:2];
+	
+	if (_uiiv_mapOverlay) {
+		[_uiv_mapContainer insertSubview:_embDirectionPath aboveSubview:_uiiv_mapOverlay];
+	} else {
+		[_uiv_mapContainer insertSubview:_embDirectionPath aboveSubview:_uiv_mapContainer];
+	}
+    
+	//NSLog(@"%li",(long)currentHeaderIndex);
+    
+	// loop # paths in a group
+	int pathGrouping	= -1;
+	int indexStart		= -1;
+		switch ([sender tag]) {
+			case 0:
+				pathGrouping	= 1;
+				indexStart		= 0;
+				break;
+				
+			case 1:
+				pathGrouping	= 1;
+				indexStart		= 1;
+				break;
+				
+			case 2:
+				pathGrouping	= 1;
+				indexStart		= 2;
+				break;
+				
+			case 3:
+				pathGrouping	= 3;
+				indexStart		= 3;
+				break;
+				
+			case 4:
+				pathGrouping	= 1;
+				indexStart		= 6;
+				break;
+            case 5:
+				pathGrouping	= 3;
+				indexStart		= 0;
+				break;
+			default:
+				break;
+		}
+	
+	for (int i=0; i<pathGrouping; i++) {
+		embBezierPathItem *p = _arr_pathItems[indexStart+i];
+		_embDirectionPath.myPath = p.embPath;
+		_embDirectionPath.animationSpeed = 1.0;
+		_embDirectionPath.pathStrokeColor = p.pathColor;
+		_embDirectionPath.pathLineWidth = p.pathWidth;
+		_embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
+		_embDirectionPath.isTappable = NO;
+        //        _embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
+		if(!_dirpathsArray){
+			_dirpathsArray = [[NSMutableArray alloc] init];
+			[_dirpathsArray addObject:_embDirectionPath]; // for removal later
+		}
+		//[_dirpathsArray addObject:_embDirectionPath]; // for removal later
+		[_embDirectionPath startAnimationFromIndex:i afterDelay:p.pathDelay];
+	}
+}
+
+-(void)removePaths
+{
+	NSInteger i = 0;
+	for(embDrawPath *pathView in _dirpathsArray) {
+		if([pathView isKindOfClass:[embDrawPath class]]) {
+			UIViewAnimationOptions options = UIViewAnimationOptionAllowUserInteraction;
+			[UIView animateWithDuration:.2 delay:((0.05 * i) + 0.2) options:options
+							 animations:^{
+								 pathView.alpha = 0.0;
+							 }
+							 completion:^(BOOL finished){
+								 [pathView embDrawPathShouldRemove];
+							 }];
+			i += 1;
+		}
+	}
+	[_embDirectionPath removeFromSuperview];
+	_embDirectionPath=nil;
 }
 
 - (void)removeAllPanels
