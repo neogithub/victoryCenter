@@ -494,7 +494,21 @@ static float    panle_w                     = 227.0;
     if (selectedIndex == 1) { // Tapped Overview
         _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_site_overview.jpg"]];
         _uiiv_mapOverlay.frame = CGRectMake(77.0, 241.0, _uiiv_mapOverlay.frame.size.width, _uiiv_mapOverlay.frame.size.height);
+        _uiiv_mapOverlay.transform = CGAffineTransformMakeTranslation(0.0, -100);
+        _uiiv_mapOverlay.alpha = 0.0;
         [self.view insertSubview:_uiiv_mapOverlay belowSubview:_uib_city];
+        // Animation for the overview image
+        CGFloat duration = 0.33f;
+        CGFloat damping = 0.5f;
+        CGFloat velocity = 0.05f;
+        // int to hold UIViewAnimationOption
+        NSInteger option;
+        option = UIViewAnimationCurveEaseInOut;
+        
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+            _uiiv_mapOverlay.alpha = 1.0;
+            _uiiv_mapOverlay.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished){      }];
     }
     if (selectedIndex == 2) { // Tapped Amenities
         [self addSiteAmenitiesPanel];
@@ -560,11 +574,20 @@ static float    panle_w                     = 227.0;
     NSString *name = [imageName substringWithRange:NSMakeRange(0, imageName.length-4)];
     NSString *extension = [imageName pathExtension];
     NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:extension];
-    [_uiiv_mapOverlay removeFromSuperview];
-    _uiiv_mapOverlay = nil;
-    _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
-    _uiiv_mapOverlay.frame = screenRect;
-    [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        _uiiv_mapOverlay.alpha = 0.0;
+    } completion:^(BOOL finished){
+        [_uiiv_mapOverlay removeFromSuperview];
+        _uiiv_mapOverlay = nil;
+        _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
+        _uiiv_mapOverlay.frame = screenRect;
+        _uiiv_mapOverlay.alpha = 0.0;
+        [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
+        [UIView animateWithDuration:0.3 animations:^{
+            _uiiv_mapOverlay.alpha = 1.0;
+        }];
+    }];
 }
 
 #pragma mark - create Panel
@@ -633,6 +656,9 @@ static float    panle_w                     = 227.0;
     [arr_panelBtnArray removeAllObjects];
     arr_panelBtnArray = nil;
     arr_panelBtnArray = [[NSMutableArray alloc] init];
+    UIView *uiv_optionContainer = [[UIView alloc] init];
+    uiv_optionContainer.frame = CGRectMake(0.0, 46.0, panle_w, panle.frame.size.height-46.0);
+    uiv_optionContainer.tag = 20;
     
     SEL method = NSSelectorFromString(methodName);
     
@@ -648,7 +674,7 @@ static float    panle_w                     = 227.0;
         uib_accOption.titleEdgeInsets = UIEdgeInsetsMake(0.0, leftEdge, 0.0, 0.0);
         uib_accOption.tag = i;
         [uib_accOption addTarget:self action:method forControlEvents:UIControlEventTouchUpInside];
-        [panle addSubview: uib_accOption];
+        [uiv_optionContainer addSubview: uib_accOption];
         [arr_panelBtnArray addObject: uib_accOption];
     }
 }
