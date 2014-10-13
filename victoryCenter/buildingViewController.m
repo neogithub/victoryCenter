@@ -36,8 +36,8 @@
 
 - (void)setTopButtons
 {
-    [self initTopBtn:_uib_floorPlan withTitle:@"FLOOR PLAN" andTag:1 andSelected:NO];
-    [self initTopBtn:_uib_bldgStats withTitle:@"BUILDING STATS" andTag:2 andSelected:NO];
+    [self initTopBtn:_uib_floorPlan withTitle:@"BUILDING STATS" andTag:1 andSelected:NO];
+    [self initTopBtn:_uib_bldgStats withTitle:@"FLOOR PLAN" andTag:2 andSelected:NO];
     [self initTopBtn:_uib_amenities withTitle:@"AMENITIES" andTag:3 andSelected:NO];
     [self initTopBtn:_uib_elevators withTitle:@"ELEVATORS" andTag:4 andSelected:NO];
 }
@@ -83,12 +83,12 @@
 {
     switch (index) {
         case 1: {
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldFloorPlan_bg" ofType:@"jpg"];
+            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldStat_bg" ofType:@"jpg"];
             _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
             break;
         }
         case 2: {
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldStat_bg" ofType:@"jpg"];
+            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldFloorPlan_bg" ofType:@"jpg"];
             _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
             break;
         }
