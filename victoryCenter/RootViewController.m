@@ -9,16 +9,17 @@
 #import "RootViewController.h"
 #import "XHCustomSegue.h"
 #import "UIColor+Extensions.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface RootViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton			*uib_menu;
-@property (strong, nonatomic) IBOutlet UIView			*uiv_toolsPanel;
-@property (weak, nonatomic) IBOutlet UILabel            *uil_titleLabel;
-@property (strong, nonatomic) UIView					*uiv_menuPanel;
-@property (strong, nonatomic) UIView					*uiv_leftFillerPanel;
-@property (strong, nonatomic) NSMutableArray			*arr_menuButtons;
-
+@property (weak, nonatomic) IBOutlet UIButton                   *uib_menu;
+@property (strong, nonatomic) IBOutlet UIView                   *uiv_toolsPanel;
+@property (weak, nonatomic) IBOutlet UILabel                    *uil_titleLabel;
+@property (strong, nonatomic) UIView                            *uiv_menuPanel;
+@property (strong, nonatomic) UIView                            *uiv_leftFillerPanel;
+@property (strong, nonatomic) NSMutableArray                    *arr_menuButtons;
+@property (nonatomic, strong) MPMoviePlayerViewController       *playerViewController;
 @end
 
 @implementation RootViewController
@@ -40,6 +41,7 @@
     [self setTitleLabel];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideHomeBtn:) name:@"hideHomeButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unHideHomeBtn:) name:@"unhideHomeButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doneButtonClick:) name:MPMoviePlayerPlaybackDidFinishNotification object:_playerViewController];
 }
 
 #pragma mark - Deal with notificaiton
@@ -281,6 +283,40 @@
 					 completion:^(BOOL  completed){   }];
 }
 
+#pragma mark - Bottomleft buttons' actions
+- (IBAction)mailBtnTapped:(id)sender {
+
+}
+
+- (IBAction)movieBtnTapped:(id)sender {
+    
+    NSString *url = [[NSBundle mainBundle] pathForResource:@"neoscape_bug" ofType:@"mov"];
+    
+    if (_playerViewController) {
+        [_playerViewController.view removeFromSuperview];
+        _playerViewController = nil;
+    }
+    
+    _playerViewController = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL fileURLWithPath:url]];
+    _playerViewController.view.frame = self.view.bounds;//CGRectMake(0, 0, 1024, 768);
+    _playerViewController.view.alpha=1.0;
+    _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
+    [_playerViewController.moviePlayer setAllowsAirPlay:YES];
+    _playerViewController.moviePlayer.repeatMode = MPMovieRepeatModeOne;
+    [self.view insertSubview:_playerViewController.view aboveSubview:_uib_menu];
+    [_playerViewController.moviePlayer play];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+}
+
+-(void)doneButtonClick:(NSNotification*)aNotification{
+    [_playerViewController.view removeFromSuperview];
+    _playerViewController = nil;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
+}
+
+- (IBAction)helpBtnTapped:(id)sender {
+    
+}
 
 
 - (void)didReceiveMemoryWarning
