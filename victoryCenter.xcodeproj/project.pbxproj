@@ -127,6 +127,11 @@
 		82627E2B19E732870062FC0C /* Lightbox_overlay_BG_@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E2919E732870062FC0C /* Lightbox_overlay_BG_@2.png */; };
 		82627E2C19E732870062FC0C /* Lightbox_overlay_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E2A19E732870062FC0C /* Lightbox_overlay_BG.png */; };
 		8263B97F19ED6FFB00E70C1B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8263B97E19ED6FFB00E70C1B /* MapKit.framework */; };
+		8263B98219ED790C00E70C1B /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8263B98119ED790C00E70C1B /* MapViewAnnotation.m */; };
+		8263B98619EDAC8900E70C1B /* embMapHotspotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8263B98419EDAC8900E70C1B /* embMapHotspotListViewController.m */; };
+		8263B98719EDAC8900E70C1B /* embMapHotspotListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98519EDAC8900E70C1B /* embMapHotspotListViewController.xib */; };
+		8263B98B19EDACD700E70C1B /* embTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8263B98919EDACD700E70C1B /* embTableCell.m */; };
+		8263B98C19EDACD700E70C1B /* embTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98A19EDACD700E70C1B /* embTableCell.xib */; };
 		82716A6819E434C10070A331 /* Districts_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6619E434C10070A331 /* Districts_overlay.png */; };
 		82716A6919E434C10070A331 /* Districts_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6719E434C10070A331 /* Districts_overlay@2x.png */; };
 		82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6A19E441390070A331 /* grfx_access_nav.png */; };
@@ -355,6 +360,14 @@
 		82627E2919E732870062FC0C /* Lightbox_overlay_BG_@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lightbox_overlay_BG_@2.png"; sourceTree = "<group>"; };
 		82627E2A19E732870062FC0C /* Lightbox_overlay_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lightbox_overlay_BG.png; sourceTree = "<group>"; };
 		8263B97E19ED6FFB00E70C1B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8263B98019ED790C00E70C1B /* MapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewAnnotation.h; sourceTree = "<group>"; };
+		8263B98119ED790C00E70C1B /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
+		8263B98319EDAC8900E70C1B /* embMapHotspotListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embMapHotspotListViewController.h; sourceTree = "<group>"; };
+		8263B98419EDAC8900E70C1B /* embMapHotspotListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embMapHotspotListViewController.m; sourceTree = "<group>"; };
+		8263B98519EDAC8900E70C1B /* embMapHotspotListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = embMapHotspotListViewController.xib; sourceTree = "<group>"; };
+		8263B98819EDACD700E70C1B /* embTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embTableCell.h; sourceTree = "<group>"; };
+		8263B98919EDACD700E70C1B /* embTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embTableCell.m; sourceTree = "<group>"; };
+		8263B98A19EDACD700E70C1B /* embTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = embTableCell.xib; sourceTree = "<group>"; };
 		82716A6619E434C10070A331 /* Districts_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Districts_overlay.png; sourceTree = "<group>"; };
 		82716A6719E434C10070A331 /* Districts_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Districts_overlay@2x.png"; sourceTree = "<group>"; };
 		82716A6A19E441390070A331 /* grfx_access_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_access_nav.png; sourceTree = "<group>"; };
@@ -720,6 +733,14 @@
 				82DAB03119D1EBA000F23668 /* UIColor+Extensions.m */,
 				8240131819D1B58A00C501EE /* XHCustomSegue.h */,
 				8240131919D1B58A00C501EE /* XHCustomSegue.m */,
+				8263B98019ED790C00E70C1B /* MapViewAnnotation.h */,
+				8263B98119ED790C00E70C1B /* MapViewAnnotation.m */,
+				8263B98319EDAC8900E70C1B /* embMapHotspotListViewController.h */,
+				8263B98419EDAC8900E70C1B /* embMapHotspotListViewController.m */,
+				8263B98519EDAC8900E70C1B /* embMapHotspotListViewController.xib */,
+				8263B98819EDACD700E70C1B /* embTableCell.h */,
+				8263B98919EDACD700E70C1B /* embTableCell.m */,
+				8263B98A19EDACD700E70C1B /* embTableCell.xib */,
 				82A44BA319D32D1C004FAD58 /* galleryCVCell.h */,
 				82A44BA419D32D1C004FAD58 /* galleryCVCell.m */,
 			);
@@ -1094,6 +1115,7 @@
 				82DC11D419DAEA940057AE4F /* highway B1.jpg in Resources */,
 				82DC11C019DAEA940057AE4F /* 20140716_view2_90 feet.jpg in Resources */,
 				824F369C19E6C47500267B44 /* thumb_SE-FINAL Lighting Concept2.jpg in Resources */,
+				8263B98719EDAC8900E70C1B /* embMapHotspotListViewController.xib in Resources */,
 				824F369219E6C47500267B44 /* thumb_20140802_view4_100m_06.jpg in Resources */,
 				82000B8E19E592A800AE2C70 /* team_duda_logo@2x.png in Resources */,
 				82627E2519E702EC0062FC0C /* grfx_restaurant_overlay.png in Resources */,
@@ -1125,6 +1147,7 @@
 				8224FDF619D46D90002B1B44 /* cap_bar_@2x.png in Resources */,
 				824F369619E6C47500267B44 /* thumb_20140811_view3_100m_03.jpg in Resources */,
 				82EA38C019E304AC0027394F /* neoscape_bug.mov in Resources */,
+				8263B98C19EDACD700E70C1B /* embTableCell.xib in Resources */,
 				82000B9E19E5963800AE2C70 /* team_duda_text@2x.png in Resources */,
 				8224FDF519D46D90002B1B44 /* cap_bar_.png in Resources */,
 				82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */,
@@ -1230,6 +1253,7 @@
 				8224FE2B19D48656002B1B44 /* MPFoldNavPopSegue.m in Sources */,
 				8224FE2619D48656002B1B44 /* MPFlipTransition.m in Sources */,
 				82A29E3E19EC4ED300AFAE1E /* embBezierPathItem.m in Sources */,
+				8263B98619EDAC8900E70C1B /* embMapHotspotListViewController.m in Sources */,
 				82DC11FA19DAF2990057AE4F /* FGalleryViewController.m in Sources */,
 				8224FE2819D48656002B1B44 /* MPTransition.m in Sources */,
 				82A29E4019EC4ED300AFAE1E /* embBlockPaths.m in Sources */,
@@ -1253,7 +1277,9 @@
 				82A29E4219EC4ED300AFAE1E /* embDrawPath.m in Sources */,
 				82A44BA519D32D1C004FAD58 /* galleryCVCell.m in Sources */,
 				82DC11F819DAF2990057AE4F /* FGalleryPhoto.m in Sources */,
+				8263B98219ED790C00E70C1B /* MapViewAnnotation.m in Sources */,
 				824012EC19D1AF5D00C501EE /* main.m in Sources */,
+				8263B98B19EDACD700E70C1B /* embTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
