@@ -16,6 +16,8 @@ static float kCardsGap      = 12.0;
 
 @interface teamViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView            *uiiv_teamBg;
+
 @property (nonatomic, strong) NSArray                       *arr_teamText;
 @property (nonatomic, strong) NSArray                       *arr_logoImg;
 @property (nonatomic, strong) NSMutableArray                *arr_teamTextView;
@@ -352,6 +354,7 @@ static float kCardsGap      = 12.0;
     _arr_teamTextView = nil;
     
     for (UIView __strong *tmp in _arr_cards) {
+        
         [tmp removeFromSuperview];
         tmp = nil;
     }
@@ -363,6 +366,9 @@ static float kCardsGap      = 12.0;
     
     [_uiv_teamDetailContainer removeFromSuperview];
     _uiv_teamDetailContainer = nil;
+    
+    [_uiiv_teamBg removeFromSuperview];
+    _uiiv_teamBg = nil;
 }
 
 - (void)didReceiveMemoryWarning
