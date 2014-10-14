@@ -23,9 +23,12 @@
 #import "embDirections.h"
 #import "embBlockPaths.h"
 #import <MapKit/MapKit.h>
+#import "MapViewAnnotation.h"
+#import "embMapHotspotListViewController.h"
 
 #define METERS_PER_MILE 1609.344
 
+static CGFloat  kNeiAmenPanelHeight         = 114.0;
 static BOOL     kMapCanZoom                 = YES;
 static CGFloat  kMinZoom                    = 1.0;
 static CGFloat  kMaxZoom                    = 2.0;
@@ -84,6 +87,9 @@ static float    panle_w                     = 227.0;
 @property (nonatomic, strong) MKMapView                 *mapView;
 @property (nonatomic, strong) MKMapCamera				*mapCamera;
 @property (nonatomic, strong) UIView                    *uiv_appleMapContainer;
+//Hotspot's table view & hotspots
+@property (nonatomic, strong) UIView                            *uiv_tablePanel;
+@property (nonatomic, strong) embMapHotspotListViewController	*vc_hotspotList;
 @end
 
 @implementation mapViewController
@@ -501,9 +507,79 @@ static float    panle_w                     = 227.0;
     float panel_h = 160.0;
     uiv_neibAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATION", @"RESIDENTIAL", nil];
-    [self createBtnsForPanel:uiv_neibAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"tappedBtn:" andEdgeInset:45.0];
+    [self createBtnsForPanel:uiv_neibAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0];
     [self.view insertSubview:uiv_neibAmePanel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:uiv_neibAmePanel];
+    
+    //Set up indicator's color array
+    [arr_indicatorColors removeAllObjects];
+    arr_indicatorColors = nil;
+    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRestaurant], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRecreation], nil];
+}
+
+- (void)loadHotspotTable:(id)sender
+{
+    UIView *buttonContianer = [uiv_neibAmePanel viewWithTag:102];
+    if (buttonContianer.frame.size.height > kNeiAmenPanelHeight) {
+        CGRect frame = buttonContianer.frame;
+        frame.size.height = kNeiAmenPanelHeight;
+        [UIView animateWithDuration:0.33 animations:^{
+            for (UIButton *tmp in arr_panelBtnArray) {
+                uiv_neibAmePanel.frame = CGRectMake(panle_x, 0.0, panle_w, 160.0);
+                tmp.transform = CGAffineTransformIdentity;
+            }
+            buttonContianer.frame = frame;
+        } completion:^(BOOL finished){
+            [self expandAmenityPanel:sender];
+        }];
+    }
+    else {
+        [self expandAmenityPanel:sender];
+    }
+}
+
+- (void)expandAmenityPanel:(id)sender
+{
+    UIView *buttonContianer = [uiv_neibAmePanel viewWithTag:102];
+    
+    [_uiv_tablePanel removeFromSuperview];
+    _uiv_tablePanel = nil;
+    _uiv_tablePanel = [[UIView alloc] init];
+    UIButton *firstBtn = [arr_panelBtnArray objectAtIndex:0];
+    _uiv_tablePanel.frame = CGRectMake(0.0, 38.0*([sender tag] + 1), panle_w, 254 + 10);
+    _uiv_tablePanel.backgroundColor = [UIColor vcLightBlueAlpha];
+    
+    [buttonContianer insertSubview:_uiv_tablePanel aboveSubview:firstBtn];
+    
+    CGRect oldFrame = uiv_neibAmePanel.frame;
+    oldFrame.size.height = 414;
+    uiv_neibAmePanel.frame = oldFrame;
+    CGRect containerOldFrame = buttonContianer.frame;
+    containerOldFrame.size.height = 414-46;
+    
+    CGFloat duration = 0.5f;
+    CGFloat damping = 0.7f;
+    CGFloat velocity = 1.0f;
+    // int to hold UIViewAnimationOption
+    NSInteger option;
+    option = UIViewAnimationCurveEaseInOut;
+    
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+        buttonContianer.frame = containerOldFrame;
+        [self rearrangeBtns:[sender tag]];
+        [self hightLightPanelBtn:sender andIndicatorColor:[arr_indicatorColors objectAtIndex:[sender tag]] withIndicator:YES];
+    } completion:^(BOOL finished){      }];
+}
+
+- (void)rearrangeBtns:(int)index
+{
+    NSLog(@"The tapped index is %i", index);
+    
+    for (UIButton *tmp in arr_panelBtnArray) {
+        if (tmp.tag > index) {
+            tmp.transform = CGAffineTransformMakeTranslation(0.0, 254.0);
+        }
+    }
 }
 
 #pragma mark - Add panel for neighborhood access
@@ -538,9 +614,9 @@ static float    panle_w                     = 227.0;
         _uiiv_mapOverlay.alpha = 0.0;
         [self.view insertSubview:_uiiv_mapOverlay belowSubview:_uib_city];
         // Animation for the overview image
-        CGFloat duration = 0.33f;
+        CGFloat duration = 0.5f;
         CGFloat damping = 0.5f;
-        CGFloat velocity = 0.05f;
+        CGFloat velocity = 0.15f;
         // int to hold UIViewAnimationOption
         NSInteger option;
         option = UIViewAnimationCurveEaseInOut;
@@ -660,7 +736,7 @@ static float    panle_w                     = 227.0;
 - (void)hightLightPanelBtn:(id)sender andIndicatorColor:(UIColor *)color withIndicator:(BOOL)indicator
 {
     for (UIButton *tmp in arr_panelBtnArray) {
-        tmp.backgroundColor = [UIColor clearColor];
+        tmp.backgroundColor = [UIColor whiteColor];
         tmp.layer.borderWidth = 1.0;
         tmp.layer.borderColor = [UIColor vcButtonBorder].CGColor;
     }
@@ -705,12 +781,14 @@ static float    panle_w                     = 227.0;
     uiv_optionContainer.layer.borderWidth = 1.0;
     uiv_optionContainer.frame = CGRectMake(0.0, 46.0, panle_w, panle.frame.size.height-46.0);
     uiv_optionContainer.tag = 102;
+    uiv_optionContainer.clipsToBounds = YES;
     
     SEL method = NSSelectorFromString(methodName);
     
     for (int i = 0; i < arr_buttonTitles.count; i++) {
         UIButton *uib_accOption = [UIButton buttonWithType:UIButtonTypeCustom];
         uib_accOption.frame = CGRectMake(0.0, i*38.0, panle_w, 38.0);
+        uib_accOption.backgroundColor = [UIColor whiteColor];
         uib_accOption.layer.borderWidth = 1.0;
         uib_accOption.layer.borderColor = [UIColor vcButtonBorder].CGColor;
         [uib_accOption setTitle:arr_buttonTitles[i] forState:UIControlStateNormal];
@@ -724,11 +802,6 @@ static float    panle_w                     = 227.0;
         [arr_panelBtnArray addObject: uib_accOption];
     }
     [panle insertSubview: uiv_optionContainer belowSubview:[panle viewWithTag:101]];
-}
-
--(void)tappedBtn:(id)sender
-{
-    NSLog(@"the tapped button is %i",(int)[sender tag]);
 }
 
 #pragma mark - Animate the panel
@@ -789,7 +862,6 @@ static float    panle_w                     = 227.0;
 	// loop # paths in a group
 	int pathGrouping	= -1;
 	int indexStart		= -1;
-    NSLog(@"The tag is \n\n\n\n %i", (int)[sender tag]);
 		switch ([sender tag]) {
 			case 0:
 				pathGrouping	= 1;
@@ -911,7 +983,7 @@ static float    panle_w                     = 227.0;
             break;
         }
         case 43: {
-            
+            [self loadGoogleEarth];
             break;
         }
         default:
@@ -937,6 +1009,8 @@ static float    panle_w                     = 227.0;
     [_mapView setRegion:viewRegion animated:NO];
     [_uiv_appleMapContainer addSubview: _mapView];
     [self.view insertSubview:_uiv_appleMapContainer belowSubview:_uiv_mapSwitchContainer];
+    MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:@"Victory Park" andCoordinate:zoomLocation];
+    [self.mapView addAnnotation:newAnnotation];
 }
 
 - (void)mapView:(MKMapView *)mv didAddAnnotationViews:(NSArray *)views
@@ -965,6 +1039,28 @@ static float    panle_w                     = 227.0;
     _uiv_appleMapContainer = nil;
     [_mapView removeFromSuperview];
     _mapView = nil;
+}
+
+- (void)loadGoogleEarth
+{
+    NSURL *urlApp = [NSURL URLWithString:@"comgoogleearth://"];
+	BOOL canOpenApp = [[UIApplication sharedApplication] canOpenURL:urlApp];
+	printf("\n canOpenGoogleEarth:%i \n",canOpenApp);
+	
+	if (canOpenApp) {
+		[[UIApplication sharedApplication] canOpenURL:urlApp];
+		NSString *stringURL = @"comgoogleearth://";
+		NSURL *url = [NSURL URLWithString:stringURL];
+		[[UIApplication sharedApplication] openURL:url];
+	} else {
+		UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle: @"Sorry!"
+								   message: @"You need Google Earth installed."
+								  delegate: self
+						 cancelButtonTitle: @"Cancel"
+						 otherButtonTitles: @"Install",nil];
+		[alert show];
+	}
 }
 
 #pragma mark - Remove items and release memory
