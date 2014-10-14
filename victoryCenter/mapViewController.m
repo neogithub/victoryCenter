@@ -22,17 +22,21 @@
 #import "embBezierPaths.h"
 #import "embDirections.h"
 #import "embBlockPaths.h"
+#import <MapKit/MapKit.h>
+
+#define METERS_PER_MILE 1609.344
 
 static BOOL     kMapCanZoom                 = YES;
 static CGFloat  kMinZoom                    = 1.0;
 static CGFloat  kMaxZoom                    = 2.0;
 static float    panle_x                     = 733.0;
 static float    panle_w                     = 227.0;
-@interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, embDrawPathDelegate>
+@interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, embDrawPathDelegate, MKMapViewDelegate>
 {
     NSMutableArray          *arr_topBtnsArray;
     NSMutableArray          *arr_subMenuArray;
     NSMutableArray          *arr_panelBtnArray;
+    NSMutableArray          *arr_switcherArray;
     NSMutableArray          *arr_overlayArray;
     NSMutableArray          *arr_indicatorColors;
     
@@ -60,17 +64,26 @@ static float    panle_w                     = 227.0;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_siteOverview;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_siteAmenities;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_siteAccess;
-
+//Map switch container
+@property (weak, nonatomic) IBOutlet UIView             *uiv_mapSwitchContainer;
+@property (weak, nonatomic) IBOutlet UIButton           *uib_normalMap;
+@property (weak, nonatomic) IBOutlet UIButton           *uib_appleMap;
+@property (weak, nonatomic) IBOutlet UIButton           *uib_googleMap;
+//Zooming map images
 @property (nonatomic, strong) UIScrollView              *uis_zooming;
 @property (nonatomic, strong) UIView                    *uiv_mapContainer;
 @property (nonatomic, strong) UIImageView               *uiiv_mapImg;
 @property (nonatomic, strong) UIImageView               *uiiv_mapOverlay;
-
+//Draw path
 @property (nonatomic, strong) embDrawPath               *embPath;
 @property (nonatomic, strong) embDrawPath				*embDirectionPath;
 @property (nonatomic, strong) embDrawPath				*embBlockPath;
 @property (nonatomic, strong) NSMutableArray			*dirpathsArray;
 @property (nonatomic, strong) NSMutableArray			*arr_pathItems;
+//Map Types
+@property (nonatomic, strong) MKMapView                 *mapView;
+@property (nonatomic, strong) MKMapCamera				*mapCamera;
+@property (nonatomic, strong) UIView                    *uiv_appleMapContainer;
 @end
 
 @implementation mapViewController
@@ -91,6 +104,7 @@ static float    panle_w                     = 227.0;
     [self setSubMenus];
     [self setUpMapAnimation];
     [self initZoomingScrollView];
+    [self setUpSwitcherContainer];
     //Hide all submenu's container at first
     _uiv_citySubMenu.hidden = NO;
     _uiv_neighborhoodSubMenu.hidden = YES;
@@ -325,18 +339,21 @@ static float    panle_w                     = 227.0;
             _uiv_citySubMenu.hidden = NO;
             _uiv_neighborhoodSubMenu.hidden = YES;
             _uiv_siteSubMenu.hidden = YES;
+            _uiv_mapSwitchContainer.hidden = NO;
             break;
         }
         case 1: { //Show Neighborhood's sub menu
             _uiv_citySubMenu.hidden = YES;
             _uiv_neighborhoodSubMenu.hidden = NO;
             _uiv_siteSubMenu.hidden = YES;
+            _uiv_mapSwitchContainer.hidden = NO;
             break;
         }
         case 2: { //Show Site's sub menu
             _uiv_citySubMenu.hidden = YES;
             _uiv_neighborhoodSubMenu.hidden = YES;
             _uiv_siteSubMenu.hidden = NO;
+            _uiv_mapSwitchContainer.hidden = YES;
             break;
         }
         default:
@@ -772,6 +789,7 @@ static float    panle_w                     = 227.0;
 	// loop # paths in a group
 	int pathGrouping	= -1;
 	int indexStart		= -1;
+    NSLog(@"The tag is \n\n\n\n %i", (int)[sender tag]);
 		switch ([sender tag]) {
 			case 0:
 				pathGrouping	= 1;
@@ -795,10 +813,6 @@ static float    panle_w                     = 227.0;
 				
 			case 4:
 				pathGrouping	= 1;
-				indexStart		= 6;
-				break;
-            case 5:
-				pathGrouping	= 3;
 				indexStart		= 0;
 				break;
 			default:
@@ -843,6 +857,118 @@ static float    panle_w                     = 227.0;
 	_embDirectionPath=nil;
 }
 
+#pragma mark - Create map switcher container and buttons
+- (void)setUpSwitcherContainer
+{
+    arr_switcherArray = [[NSMutableArray alloc] init];
+    [self initSwitcherButton:_uib_normalMap andTitle:@"MAP" andTag:41 andSelected:YES];
+    [self initSwitcherButton:_uib_appleMap andTitle:@"APPLE MAP" andTag:42 andSelected:NO];
+    [self initSwitcherButton:_uib_googleMap andTitle:@"GOOGLE EARTH" andTag:43 andSelected:NO];
+}
+
+- (void)initSwitcherButton:(UIButton *)theBtn andTitle:(NSString *)title andTag:(int)index andSelected:(BOOL)selected
+{
+    [theBtn setTitle:title forState:UIControlStateNormal];
+    [theBtn setTitle:title forState:UIControlStateSelected];
+    [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [theBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
+    theBtn.tag = index;
+    theBtn.selected = selected;
+    [theBtn setContentEdgeInsets:UIEdgeInsetsMake(3, 0, 0, 0)];
+    [theBtn addTarget:self action:@selector(tapMapSwitcher:) forControlEvents:UIControlEventTouchUpInside];
+    if (selected) {
+        theBtn.backgroundColor = [UIColor vcDarkBlue];
+    }
+    else{
+        theBtn.backgroundColor = [UIColor vcLightBlueAlpha];
+    }
+    [arr_switcherArray addObject: theBtn];
+}
+
+- (void)tapMapSwitcher:(id)sender
+{
+    UIButton *tappedBtn = sender;
+    if (tappedBtn.selected) {
+        return;
+    }
+    
+    for (UIButton *tmp in arr_switcherArray) {
+        tmp.selected = NO;
+        tmp.backgroundColor = [UIColor vcLightBlueAlpha];
+    }
+    tappedBtn.selected = YES;
+    tappedBtn.backgroundColor = [UIColor vcDarkBlue];
+    
+    int index = (int)tappedBtn.tag;
+    switch (index) {
+        case 41: {
+            [self removeAppleMap];
+            break;
+        }
+        case 42: {
+            [self initAppleMap];
+            break;
+        }
+        case 43: {
+            
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)initAppleMap
+{
+    [self removeAppleMap];
+    _uiv_appleMapContainer = [[UIView alloc] initWithFrame:screenRect];
+    _mapView = [[MKMapView alloc] initWithFrame:screenRect];
+    _mapView.delegate = self;
+    _mapView.mapType = MKMapTypeStandard;
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 32.7906767;
+    zoomLocation.longitude= -96.8102789;
+    
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    
+    // 3
+    [_mapView setRegion:viewRegion animated:NO];
+    [_uiv_appleMapContainer addSubview: _mapView];
+    [self.view insertSubview:_uiv_appleMapContainer belowSubview:_uiv_mapSwitchContainer];
+}
+
+- (void)mapView:(MKMapView *)mv didAddAnnotationViews:(NSArray *)views
+{
+	MKAnnotationView *annotationView = [views objectAtIndex:0];
+	id <MKAnnotation> mp = [annotationView annotation];
+    MKCoordinateRegion region;
+	if (!_uiv_citySubMenu.hidden) {
+        region = MKCoordinateRegionMakeWithDistance([mp coordinate], 8500, 8500);
+    }
+    if (!_uiv_neighborhoodSubMenu.hidden) {
+        region = MKCoordinateRegionMakeWithDistance([mp coordinate], 5500, 5500);
+    }
+	[mv setRegion:region animated:YES];
+	[mv selectAnnotation:mp animated:YES];
+}
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    _mapView.centerCoordinate =
+	userLocation.location.coordinate;
+}
+
+- (void)removeAppleMap
+{
+    [_uiv_appleMapContainer removeFromSuperview];
+    _uiv_appleMapContainer = nil;
+    [_mapView removeFromSuperview];
+    _mapView = nil;
+}
+
+#pragma mark - Remove items and release memory
+
 - (void)removeAllPanels
 {
     [uiv_cityAccPanel removeFromSuperview];
@@ -864,6 +990,8 @@ static float    panle_w                     = 227.0;
 - (void)viewWillDisappear:(BOOL)animated
 {
     [self removeAllPanels];
+    
+    [self removeAppleMap];
     
     [_uib_city removeFromSuperview];
     _uib_city = nil;

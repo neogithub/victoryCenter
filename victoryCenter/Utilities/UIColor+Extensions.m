@@ -25,6 +25,10 @@
 	return [UIColor colorWithRed: 0.0f/255.0f green: 98.0f/255.0f blue: 152.0f/255.0f alpha: 1];
 }
 
++ (UIColor *)vcLightBlueAlpha {
+    return [UIColor colorWithRed: 0.0f/255.0f green: 98.0f/255.0f blue: 152.0f/255.0f alpha: 0.6];
+}
+
 + (UIColor *)vclightbluemenu {
 	return[UIColor colorWithRed:0.5216 green:0.6941 blue:0.8000 alpha:0.90];
 }

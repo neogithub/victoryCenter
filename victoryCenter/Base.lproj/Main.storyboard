@@ -206,7 +206,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEAM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hVE-SI-AB9">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEAM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hVE-SI-AB9">
                                 <rect key="frame" x="306" y="337" width="413" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -225,6 +225,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="uiiv_teamBg" destination="tdu-TB-CLv" id="x2W-uO-FFp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUD-Yh-5ae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,6 +245,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" id="gXB-A0-OBi" userLabel="View - Building">
+                                <rect key="frame" x="185" y="36" width="674" height="733"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grfx_bldImg.png" id="zNx-Kj-acJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="674" height="733"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="FAs-Xa-4zp" userLabel="View - Stats">
+                                <rect key="frame" x="-356" y="87" width="356" height="614"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grfx_bldStatsImg.png" id="XQi-qA-bAp">
+                                        <rect key="frame" x="0.0" y="0.0" width="356" height="614"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nWL-wl-uQU" userLabel="Button - floor plan">
                                 <rect key="frame" x="225" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -275,7 +300,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -288,6 +313,8 @@
                         <outlet property="uib_elevators" destination="kM8-2Q-ZIB" id="H5V-NJ-Ddv"/>
                         <outlet property="uib_floorPlan" destination="nWL-wl-uQU" id="ZDd-mc-ALv"/>
                         <outlet property="uiiv_bgImg" destination="xmY-0i-m1z" id="F5S-ft-oDZ"/>
+                        <outlet property="uiv_bldImgContainer" destination="gXB-A0-OBi" id="2jZ-Mg-Kcx"/>
+                        <outlet property="uiv_statImgContainer" destination="FAs-Xa-4zp" id="fj7-7K-0ta"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KH9-f0-tUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -411,23 +438,58 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" id="jR3-8g-6rt" userLabel="View － Map type's container">
+                                <rect key="frame" x="315" y="738" width="394" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="17m-6K-AOt" userLabel="Button - Normal">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="MAP">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="669-5r-r8m" userLabel="Button - Apple">
+                                        <rect key="frame" x="132" y="0.0" width="130" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="APPLE MAP">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qwe-Y7-UNR" userLabel="Button - Google">
+                                        <rect key="frame" x="264" y="0.0" width="130" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="GOOGLE EARTH">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="uib_appleMap" destination="669-5r-r8m" id="m62-hL-pXD"/>
                         <outlet property="uib_city" destination="hwA-zn-73q" id="Tg5-Ii-cjx"/>
                         <outlet property="uib_cityAccess" destination="1fw-9r-gS7" id="OU7-s9-d1g"/>
                         <outlet property="uib_cityDistricts" destination="0U1-SP-1zj" id="1dA-PE-m6f"/>
+                        <outlet property="uib_googleMap" destination="Qwe-Y7-UNR" id="qHb-Cn-PXR"/>
                         <outlet property="uib_neighboorhoodAmenities" destination="mhU-Db-RU0" id="sgr-lZ-puR"/>
                         <outlet property="uib_neighbor" destination="wia-uO-e2b" id="kAT-i7-RFg"/>
                         <outlet property="uib_neighborhoodAccess" destination="eKU-aZ-kDQ" id="job-hM-4m8"/>
+                        <outlet property="uib_normalMap" destination="17m-6K-AOt" id="28z-mK-cmj"/>
                         <outlet property="uib_site" destination="z48-no-lx7" id="PSx-gA-Yno"/>
                         <outlet property="uib_siteAccess" destination="WD5-UV-5SU" id="oRo-A6-k38"/>
                         <outlet property="uib_siteAmenities" destination="BLQ-Pq-Jta" id="Eel-X2-oh5"/>
                         <outlet property="uib_siteOverview" destination="IkR-VA-LMI" id="fpT-Mw-67N"/>
                         <outlet property="uiv_citySubMenu" destination="ORx-r5-sA3" id="eWP-CT-JfV"/>
+                        <outlet property="uiv_mapSwitchContainer" destination="jR3-8g-6rt" id="wvB-S9-g0G"/>
                         <outlet property="uiv_neighborhoodSubMenu" destination="2n0-lb-9mC" id="E4p-99-dlg"/>
                         <outlet property="uiv_siteSubMenu" destination="YaE-Xm-ZB5" id="PPJ-hN-AWU"/>
                     </connections>
@@ -441,6 +503,8 @@
         <image name="Map_bg.jpg" width="1024" height="768"/>
         <image name="Team_bg.jpg" width="893" height="670"/>
         <image name="Victory Center 02 W Hotel View.jpg" width="1250" height="848"/>
+        <image name="grfx_bldImg.png" width="674" height="733"/>
+        <image name="grfx_bldStatsImg.png" width="356" height="614"/>
         <image name="grfx_helpIcon.png" width="36" height="36"/>
         <image name="grfx_menuIcon.png" width="44" height="43"/>
         <image name="grfx_mialIcon.png" width="36" height="36"/>

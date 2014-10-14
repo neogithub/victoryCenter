@@ -24,6 +24,7 @@
 + (UIColor *)vcSiteRetail;
 + (UIColor *)vcSiteResidentail;
 + (UIColor *)vcSiteRecreation;
++ (UIColor *)vcLightBlueAlpha;
 //+ (UIColor *)vpShadowBlue;
 //+ (UIColor *)vpYellow;
 //+ (UIColor *)vpTextBlue;
