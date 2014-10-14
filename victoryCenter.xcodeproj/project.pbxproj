@@ -126,6 +126,7 @@
 		82627E2819E702EC0062FC0C /* grfx_retail_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E2019E702EC0062FC0C /* grfx_retail_overlay@2x.png */; };
 		82627E2B19E732870062FC0C /* Lightbox_overlay_BG_@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E2919E732870062FC0C /* Lightbox_overlay_BG_@2.png */; };
 		82627E2C19E732870062FC0C /* Lightbox_overlay_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E2A19E732870062FC0C /* Lightbox_overlay_BG.png */; };
+		8263B97F19ED6FFB00E70C1B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8263B97E19ED6FFB00E70C1B /* MapKit.framework */; };
 		82716A6819E434C10070A331 /* Districts_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6619E434C10070A331 /* Districts_overlay.png */; };
 		82716A6919E434C10070A331 /* Districts_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6719E434C10070A331 /* Districts_overlay@2x.png */; };
 		82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6A19E441390070A331 /* grfx_access_nav.png */; };
@@ -353,6 +354,7 @@
 		82627E2019E702EC0062FC0C /* grfx_retail_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_retail_overlay@2x.png"; sourceTree = "<group>"; };
 		82627E2919E732870062FC0C /* Lightbox_overlay_BG_@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lightbox_overlay_BG_@2.png"; sourceTree = "<group>"; };
 		82627E2A19E732870062FC0C /* Lightbox_overlay_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lightbox_overlay_BG.png; sourceTree = "<group>"; };
+		8263B97E19ED6FFB00E70C1B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		82716A6619E434C10070A331 /* Districts_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Districts_overlay.png; sourceTree = "<group>"; };
 		82716A6719E434C10070A331 /* Districts_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Districts_overlay@2x.png"; sourceTree = "<group>"; };
 		82716A6A19E441390070A331 /* grfx_access_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_access_nav.png; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8263B97F19ED6FFB00E70C1B /* MapKit.framework in Frameworks */,
 				82000BA219E5A02800AE2C70 /* MediaPlayer.framework in Frameworks */,
 				824012E219D1AF5D00C501EE /* CoreGraphics.framework in Frameworks */,
 				824012E419D1AF5D00C501EE /* UIKit.framework in Frameworks */,
@@ -645,6 +648,7 @@
 		824012DE19D1AF5D00C501EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8263B97E19ED6FFB00E70C1B /* MapKit.framework */,
 				82000BA119E5A02800AE2C70 /* MediaPlayer.framework */,
 				824012DF19D1AF5D00C501EE /* Foundation.framework */,
 				824012E119D1AF5D00C501EE /* CoreGraphics.framework */,
