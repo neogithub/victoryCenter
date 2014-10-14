@@ -132,6 +132,7 @@
 		8263B98719EDAC8900E70C1B /* embMapHotspotListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98519EDAC8900E70C1B /* embMapHotspotListViewController.xib */; };
 		8263B98B19EDACD700E70C1B /* embTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8263B98919EDACD700E70C1B /* embTableCell.m */; };
 		8263B98C19EDACD700E70C1B /* embTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98A19EDACD700E70C1B /* embTableCell.xib */; };
+		8263B98E19EDC7EF00E70C1B /* hotspots.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98D19EDC7EF00E70C1B /* hotspots.plist */; };
 		82716A6819E434C10070A331 /* Districts_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6619E434C10070A331 /* Districts_overlay.png */; };
 		82716A6919E434C10070A331 /* Districts_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6719E434C10070A331 /* Districts_overlay@2x.png */; };
 		82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6A19E441390070A331 /* grfx_access_nav.png */; };
@@ -368,6 +369,7 @@
 		8263B98819EDACD700E70C1B /* embTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embTableCell.h; sourceTree = "<group>"; };
 		8263B98919EDACD700E70C1B /* embTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embTableCell.m; sourceTree = "<group>"; };
 		8263B98A19EDACD700E70C1B /* embTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = embTableCell.xib; sourceTree = "<group>"; };
+		8263B98D19EDC7EF00E70C1B /* hotspots.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotspots.plist; sourceTree = "<group>"; };
 		82716A6619E434C10070A331 /* Districts_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Districts_overlay.png; sourceTree = "<group>"; };
 		82716A6719E434C10070A331 /* Districts_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Districts_overlay@2x.png"; sourceTree = "<group>"; };
 		82716A6A19E441390070A331 /* grfx_access_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_access_nav.png; sourceTree = "<group>"; };
@@ -549,6 +551,7 @@
 			children = (
 				8224FDF019D46997002B1B44 /* galleryData.plist */,
 				82000BA319E5BADC00AE2C70 /* teamText.plist */,
+				8263B98D19EDC7EF00E70C1B /* hotspots.plist */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -1175,6 +1178,7 @@
 				824F368B19E6C47500267B44 /* thumb_20140802_downtown_100m_6pm.jpg in Resources */,
 				82716A7119E45B940070A331 /* grfx_site_overview@2x.jpg in Resources */,
 				82000B7119E590AD00AE2C70 /* grfx_bldAmenities_bg.jpg in Resources */,
+				8263B98E19EDC7EF00E70C1B /* hotspots.plist in Resources */,
 				82000B8A19E592A800AE2C70 /* team_cousins_logo@2x.png in Resources */,
 				824F368E19E6C47500267B44 /* thumb_20140802_downtown_60m_2pm_high-res.jpg in Resources */,
 				82627E2819E702EC0062FC0C /* grfx_retail_overlay@2x.png in Resources */,

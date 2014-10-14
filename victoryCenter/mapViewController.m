@@ -28,13 +28,14 @@
 
 #define METERS_PER_MILE 1609.344
 
+static CGFloat  kTableHeight                = 254;
 static CGFloat  kNeiAmenPanelHeight         = 114.0;
 static BOOL     kMapCanZoom                 = YES;
 static CGFloat  kMinZoom                    = 1.0;
 static CGFloat  kMaxZoom                    = 2.0;
 static float    panle_x                     = 733.0;
 static float    panle_w                     = 227.0;
-@interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, embDrawPathDelegate, MKMapViewDelegate>
+@interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, embDrawPathDelegate, MKMapViewDelegate, embMapHotspotListViewControllerDelegate>
 {
     NSMutableArray          *arr_topBtnsArray;
     NSMutableArray          *arr_subMenuArray;
@@ -42,6 +43,9 @@ static float    panle_w                     = 227.0;
     NSMutableArray          *arr_switcherArray;
     NSMutableArray          *arr_overlayArray;
     NSMutableArray          *arr_indicatorColors;
+    //Hotspot data
+    NSMutableArray          *arr_HotSpotsRaw;
+    NSMutableArray          *arr_HotSpotCategories;
     
     UIView                  *uiv_cityAccPanel;
     UIView                  *uiv_neibAmePanel;
@@ -510,7 +514,7 @@ static float    panle_w                     = 227.0;
     [self createBtnsForPanel:uiv_neibAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0];
     [self.view insertSubview:uiv_neibAmePanel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:uiv_neibAmePanel];
-    
+    [self prepareHotspotData];
     //Set up indicator's color array
     [arr_indicatorColors removeAllObjects];
     arr_indicatorColors = nil;
@@ -546,9 +550,9 @@ static float    panle_w                     = 227.0;
     _uiv_tablePanel = nil;
     _uiv_tablePanel = [[UIView alloc] init];
     UIButton *firstBtn = [arr_panelBtnArray objectAtIndex:0];
-    _uiv_tablePanel.frame = CGRectMake(0.0, 38.0*([sender tag] + 1), panle_w, 254 + 10);
+    _uiv_tablePanel.frame = CGRectMake(0.0, 38.0*([sender tag] + 1), panle_w, kTableHeight + 10);
     _uiv_tablePanel.backgroundColor = [UIColor vcLightBlueAlpha];
-    
+    [self loadHotspotTableView:[sender tag]];
     [buttonContianer insertSubview:_uiv_tablePanel aboveSubview:firstBtn];
     
     CGRect oldFrame = uiv_neibAmePanel.frame;
@@ -577,9 +581,45 @@ static float    panle_w                     = 227.0;
     
     for (UIButton *tmp in arr_panelBtnArray) {
         if (tmp.tag > index) {
-            tmp.transform = CGAffineTransformMakeTranslation(0.0, 254.0);
+            tmp.transform = CGAffineTransformMakeTranslation(0.0, kTableHeight);
         }
     }
+}
+
+- (void) prepareHotspotData
+{
+    [arr_HotSpotsRaw removeAllObjects];
+    arr_HotSpotsRaw = nil;
+    [arr_HotSpotCategories removeAllObjects];
+    arr_HotSpotCategories = nil;
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"hotspots"
+													 ofType:@"plist"];
+    // Build the array from the plist
+	arr_HotSpotsRaw = [[NSMutableArray alloc] init];
+	arr_HotSpotsRaw = [[NSMutableArray alloc] initWithContentsOfFile:path];
+
+	// get all categories from array (use if needed)
+	arr_HotSpotCategories = [[NSMutableArray alloc] init];
+	for (NSDictionary *hotspotsDict in arr_HotSpotsRaw) { // iterate through the array
+		NSString *floorplan = [hotspotsDict valueForKeyPath:@"category"];
+		[arr_HotSpotCategories addObject:floorplan];
+	}
+    
+    _vc_hotspotList = [[embMapHotspotListViewController alloc] initWithNibName:nil bundle:nil];
+	_vc_hotspotList.delegate = self;
+}
+
+- (void)loadHotspotTableView:(int)index
+{
+    _vc_hotspotList.incomingData = arr_HotSpotsRaw;
+    _vc_hotspotList.category = arr_HotSpotCategories[index];
+    
+    CGRect frame = CGRectMake(0.0, 0.0, panle_w, kTableHeight);
+    _vc_hotspotList.view.frame = frame;
+    
+    [_uiv_tablePanel addSubview: _vc_hotspotList.view];
+    [_vc_hotspotList didMoveToParentViewController:self];
 }
 
 #pragma mark - Add panel for neighborhood access
