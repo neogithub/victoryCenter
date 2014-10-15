@@ -15,19 +15,19 @@
 @property (nonatomic, strong)       NSArray             *tableUnits;
 @property (nonatomic, strong)		NSMutableArray		*categoryHeaders;
 @property (nonatomic, strong)		UIColor				*rowHilite;
-@property (nonatomic, strong)		UIColor				*numColor;
 @property (nonatomic, strong)		UIImage             *numImg;
 @property (nonatomic, readwrite)	NSInteger			page;
 @property (nonatomic, readwrite)    BOOL                isLive;
 
 @end
 
-static CGFloat	kFontSize = 12.0f;
-static NSString *kFontName = @"Futura";
+static CGFloat	kFontSize = 13.0f;
+static NSString *kFontName = @"Raleway-Medium";
 
 extern NSArray *arrHotSpots;
 
 @implementation embMapHotspotListViewController
+@synthesize numColor;
 
 -(void)viewWillAppear:(BOOL)animated
 {	
@@ -44,17 +44,10 @@ extern NSArray *arrHotSpots;
 			[arrHotSpots addObject:[_hotspotsDict valueForKeyPath:@"hotspots"]];	// all hotspots arrays for category
 			for (NSDictionary *dict in arrHotSpots) {
 				_tableData=[dict valueForKey:@"name"];								// all hotspot names
-                if ([tmpStringCategory isEqualToString:@"Live"]) {
-                    _tableUnits = [dict valueForKey:@"units"];
-                    _isLive = YES;
-                }
-                else
-                    _isLive = NO;
 			}
 			[_categoryHeaders addObject:[_hotspotsDict valueForKey:@"category"]];	// all category names for table
 		}
 	}
-
 	[self vcInit];
 }
 
@@ -66,7 +59,7 @@ extern NSArray *arrHotSpots;
 	tableView.backgroundView = nil;
 	[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
-	_numColor = [UIColor vcSiteRetail];
+//	_numColor = [UIColor vcSiteRetail];
 	_rowHilite = [UIColor vcDarkBlue];
 }
 
@@ -101,91 +94,39 @@ extern NSArray *arrHotSpots;
 //    if ((px + width) > self.tableView.frame.size.width) {
 //        return 33;
 //    }
-//    
+    
+//    NSString *str = [_tableData objectAtIndex:indexPath.row];
+//    CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize] constrainedToSize:CGSizeMake(self.tableView.frame.size.width-50, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+//    NSLog(@"The height is %f", size.height);
+//    return size.height;
+    
     NSString *str = [_tableData objectAtIndex:indexPath.row];
-    CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize] constrainedToSize:CGSizeMake(self.tableView.frame.size.width-33, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-    NSLog(@"The height is %f", size.height);
-    return size.height;
-//   return 32;
+    CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize]];
+    if (size.width > self.tableView.frame.size.width - 50) {
+        return 35;
+    }
+    else
+        return 26;
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (_isLive)
-        return 2;
-    else
         return 1;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (_isLive)
-        return 20.0f;
-	else
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
         return 0.0;
 }
 
 - (UIView *) tableView:(UITableView *)ttableView viewForHeaderInSection:(NSInteger)section
 {
-    if (_isLive) {
-        headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ttableView.bounds.size.width, 20)];
-        [headerView setBackgroundColor:[UIColor vcLightBlueAlpha]];
-        
-         //Add the label
-            UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(7,
-                                                                            0,
-                                                                             ttableView.bounds.size.width,
-        																	20.0)];
-        headerLabel.backgroundColor = [UIColor clearColor];
-        
-        //	headerLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:22];
-        
-            // do whatever headerLabel configuration you want here
-        if (section == 0) {
-            [headerLabel setText:@"OPEN"];
-        }
-        if (section == 1) {
-            [headerLabel setText:@"NEW"];
-        }
-            [headerView addSubview:headerLabel];
-        
-        	NSDictionary *attribs = @{NSForegroundColorAttributeName: headerLabel.textColor,NSFontAttributeName: headerLabel.font};
-        //	NSRange textRange = [[_tableData objectAtIndex:indexPath.row] rangeOfString:[_tableData objectAtIndex:indexPath.row]];
-        	NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:headerLabel.text
-        																					   attributes:attribs];
-        	UIFont *font = [UIFont fontWithName:@"Futura" size:12];
-        //	[attributedText addAttribute:NSFontAttributeName value:font range:textRange];
-        
-            	[attributedText setAttributes:@{
-               NSForegroundColorAttributeName:[UIColor blackColor],
-            			  NSFontAttributeName:font}
-            							range:NSMakeRange(0,attributedText.length)];
-            headerLabel.attributedText = attributedText;
-        
-        return headerView;
-    }
-    else
         return nil;
-
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (_isLive) {
-        switch (section) {
-            case 0:
-                return 17;
-                break;
-            case 1:
-                return 5;
-                break;
-            default:
-                return [_tableData count];
-                break;
-        }
-    }
-    else
-    // Return the number of rows in the section.
     return [_tableData count];
 }
 
@@ -217,6 +158,7 @@ extern NSArray *arrHotSpots;
         cell.uil_tableLabel.numberOfLines = 0;
         cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
         cell.uil_tableLabel.font = [UIFont fontWithName:kFontName size:kFontSize];
+        cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
         [cell.uil_tableLabel sizeToFit];
     }
     else{
@@ -225,6 +167,7 @@ extern NSArray *arrHotSpots;
 //        cell.uil_tableLabel.numberOfLines = 0;
         if (indexPath.section == 0) {
             cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
+            cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
         }
         else {
             cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row+17];
@@ -255,9 +198,12 @@ extern NSArray *arrHotSpots;
 //    NSLog(@"%i",numOfRow);
     if (indexPath.section == 0) {
         cell.uil_tableIndex.text = [NSString stringWithFormat:@"%i.", numOfRow];
+        [cell.uil_tableIndex setFont:[UIFont fontWithName:kFontName size:kFontSize]];
+        [cell.uil_tableIndex setTextColor:numColor];
     }
     else {
         cell.uil_tableIndex.text = [NSString stringWithFormat:@"%i.", (numOfRow + 17)];
+        
     }
     
 
@@ -291,7 +237,7 @@ extern NSArray *arrHotSpots;
 	UIFont *font = [UIFont fontWithName:kFontName size:kFontSize];
 	
     	[attributedText setAttributes:@{
-       NSForegroundColorAttributeName:_numColor,
+       NSForegroundColorAttributeName:numColor,
     			  NSFontAttributeName:font}
     							range:NSMakeRange(0,numLabel.text.length)];
     numLabel.attributedText = attributedText;

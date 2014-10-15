@@ -507,11 +507,5 @@
 			</dict>
 		</array>
 	</dict>
-	<dict>
-		<key>category</key>
-		<string>Area</string>
-		<key>hotspots</key>
-		<array/>
-	</dict>
 </array>
 </plist>

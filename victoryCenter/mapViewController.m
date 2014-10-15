@@ -46,6 +46,9 @@ static float    panle_w                     = 227.0;
     //Hotspot data
     NSMutableArray          *arr_HotSpotsRaw;
     NSMutableArray          *arr_HotSpotCategories;
+    NSMutableArray          *arr_HotSpotData;
+    NSMutableArray          *arr_HotSpotXY;
+    NSMutableArray          *arr_HotSpotViewArray;
     
     UIView                  *uiv_cityAccPanel;
     UIView                  *uiv_neibAmePanel;
@@ -92,7 +95,8 @@ static float    panle_w                     = 227.0;
 @property (nonatomic, strong) MKMapCamera				*mapCamera;
 @property (nonatomic, strong) UIView                    *uiv_appleMapContainer;
 //Hotspot's table view & hotspots
-@property (nonatomic, strong) UIView                            *uiv_tablePanel;
+@property (nonatomic, strong) UIView                    *uiv_tablePanel;
+@property (nonatomic, strong) UIView                    *uiv_tappedHotspot;
 @property (nonatomic, strong) embMapHotspotListViewController	*vc_hotspotList;
 @end
 
@@ -551,8 +555,9 @@ static float    panle_w                     = 227.0;
     _uiv_tablePanel = [[UIView alloc] init];
     UIButton *firstBtn = [arr_panelBtnArray objectAtIndex:0];
     _uiv_tablePanel.frame = CGRectMake(0.0, 38.0*([sender tag] + 1), panle_w, kTableHeight + 10);
-    _uiv_tablePanel.backgroundColor = [UIColor vcLightBlueAlpha];
+    _uiv_tablePanel.backgroundColor = [UIColor colorWithRed:229.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1.0];
     [self loadHotspotTableView:[sender tag]];
+    [self createHotspots:[sender tag]];
     [buttonContianer insertSubview:_uiv_tablePanel aboveSubview:firstBtn];
     
     CGRect oldFrame = uiv_neibAmePanel.frame;
@@ -601,25 +606,139 @@ static float    panle_w                     = 227.0;
 
 	// get all categories from array (use if needed)
 	arr_HotSpotCategories = [[NSMutableArray alloc] init];
+    arr_HotSpotData = [[NSMutableArray alloc] init];
 	for (NSDictionary *hotspotsDict in arr_HotSpotsRaw) { // iterate through the array
 		NSString *floorplan = [hotspotsDict valueForKeyPath:@"category"];
 		[arr_HotSpotCategories addObject:floorplan];
+        
+        NSArray *hotspotData = [hotspotsDict valueForKeyPath:@"hotspots"];
+        [arr_HotSpotData addObject: hotspotData];
 	}
     
-    _vc_hotspotList = [[embMapHotspotListViewController alloc] initWithNibName:nil bundle:nil];
-	_vc_hotspotList.delegate = self;
 }
 
 - (void)loadHotspotTableView:(int)index
 {
+    [_vc_hotspotList.view removeFromSuperview];
+    _vc_hotspotList.view = nil;
+    [_vc_hotspotList removeFromParentViewController];
+    _vc_hotspotList = nil;
+    
+    _vc_hotspotList = [[embMapHotspotListViewController alloc] initWithNibName:nil bundle:nil];
+	_vc_hotspotList.delegate = self;
+    _vc_hotspotList.view.backgroundColor = [UIColor clearColor];
+    _vc_hotspotList.view.tag = index;
+    
     _vc_hotspotList.incomingData = arr_HotSpotsRaw;
     _vc_hotspotList.category = arr_HotSpotCategories[index];
+    _vc_hotspotList.numColor = arr_indicatorColors[index];
     
-    CGRect frame = CGRectMake(0.0, 0.0, panle_w, kTableHeight);
+    CGRect frame = CGRectMake(0.0, 10.0, panle_w, kTableHeight - 10);
     _vc_hotspotList.view.frame = frame;
     
     [_uiv_tablePanel addSubview: _vc_hotspotList.view];
     [_vc_hotspotList didMoveToParentViewController:self];
+}
+
+- (void)createHotspots:(int)index
+{
+    for (UIView *tmp in arr_HotSpotViewArray) {
+        [UIView animateWithDuration:0.2 animations:^{
+            tmp.alpha = 0.0;
+        } completion:^(BOOL finished){
+            [tmp removeFromSuperview];
+        }];
+    }
+    [arr_HotSpotViewArray removeAllObjects];
+    arr_HotSpotViewArray = nil;
+    [arr_HotSpotXY removeAllObjects];
+    arr_HotSpotXY = nil;
+    arr_HotSpotViewArray = [[NSMutableArray alloc] init];
+    arr_HotSpotXY = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *itemData in arr_HotSpotData[index]) {
+        [arr_HotSpotXY addObject: [itemData objectForKey:@"xy"]];
+    }
+    
+    for (int i =0; i < arr_HotSpotXY.count; i++) {
+        UIView *hotspotView = [[UIView alloc] init];
+        hotspotView.backgroundColor = [UIColor whiteColor];
+        CGPoint centerPoint = CGPointFromString([NSString stringWithFormat:@"{%@}", arr_HotSpotXY[i]]);
+        hotspotView.center = centerPoint;
+        UIColor *borderColor = [arr_indicatorColors objectAtIndex:index];
+        [self setRoundedView:hotspotView toDiameter:30 num:i+1 andColor:borderColor];
+        hotspotView.layer.borderWidth = 3.0;
+        hotspotView.layer.borderColor = borderColor.CGColor;
+        hotspotView.tag=i + 100*index;
+        [arr_HotSpotViewArray addObject: hotspotView];
+        [_uiiv_mapImg addSubview: hotspotView];
+    }
+    
+}
+
+- (void)setRoundedView:(UIView *)roundedView toDiameter:(float)newSize num:(int)i andColor:(UIColor *)textColor
+{
+    CGPoint saveCenter = roundedView.center;
+    CGRect newFrame = CGRectMake(roundedView.frame.origin.x, roundedView.frame.origin.y, newSize, newSize);
+    roundedView.frame = newFrame;
+    roundedView.layer.cornerRadius = newSize / 2.0;
+    roundedView.center = saveCenter;
+    
+    UILabel *numLabel = [[UILabel alloc] initWithFrame:roundedView.bounds];
+    numLabel.font = [UIFont boldSystemFontOfSize:12.0];
+    numLabel.backgroundColor = [UIColor clearColor];
+    numLabel.textAlignment = NSTextAlignmentCenter;
+    numLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    numLabel.textColor = textColor;
+	numLabel.text = [NSString stringWithFormat:@"%i",i%100];
+	[roundedView addSubview:numLabel];
+    
+    UITapGestureRecognizer *tapG = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hotspotTapped:)];
+	[tapG setNumberOfTapsRequired:1];
+	[tapG setDelegate:self];
+	[roundedView addGestureRecognizer:tapG];
+    roundedView.userInteractionEnabled = YES;
+    
+}
+
+- (void)hotspotTapped:(UIGestureRecognizer *)gesture
+{
+    int index = gesture.view.tag;
+    NSIndexPath *myIP;
+    myIP = [NSIndexPath indexPathForRow: index%100 inSection:0];
+    [_vc_hotspotList rowToSelect:myIP];
+    [self hiliteHotSpot: index];
+}
+
+- (void)hiliteHotSpot:(int)index
+{
+    if (_uiv_tappedHotspot) {
+        _uiv_tappedHotspot.backgroundColor = [UIColor whiteColor];
+        _uiv_tappedHotspot.layer.borderWidth = 3.0;
+        for (UIView *tmp in [_uiv_tappedHotspot subviews]) {
+            if ([tmp isKindOfClass:[UILabel class]]) {
+                UILabel *label = tmp;
+                label.textColor = [arr_indicatorColors objectAtIndex:index/100];
+            }
+        }
+    }
+    
+    _uiv_tappedHotspot = [arr_HotSpotViewArray objectAtIndex:index%100];
+    _uiv_tappedHotspot.backgroundColor = [arr_indicatorColors objectAtIndex:index/100];
+    _uiv_tappedHotspot.layer.borderWidth = 0.0;
+    for (UIView *tmp in [_uiv_tappedHotspot subviews]) {
+        if ([tmp isKindOfClass:[UILabel class]]) {
+            UILabel *label = tmp;
+            label.textColor = [UIColor whiteColor];
+        }
+    }
+}
+
+- (void)childViewController:(embMapHotspotListViewController*)viewController
+               didChooseRow:(NSInteger)rowIndex
+{
+    int index = _vc_hotspotList.view.tag;
+    [self hiliteHotSpot:rowIndex+index*100];
 }
 
 #pragma mark - Add panel for neighborhood access

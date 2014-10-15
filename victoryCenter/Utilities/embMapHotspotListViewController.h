@@ -17,8 +17,9 @@
 }
 @property (nonatomic, weak) id<embMapHotspotListViewControllerDelegate> delegate;
 
-@property (nonatomic, strong) NSString *category;
-@property (nonatomic, strong) NSArray *incomingData;
+@property (nonatomic, strong) NSString              *category;
+@property (nonatomic, strong) NSArray               *incomingData;
+@property (nonatomic, strong) UIColor				*numColor;
 -(void)rowToSelect:(NSIndexPath*)indexPath;
 @end
 
