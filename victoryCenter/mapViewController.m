@@ -497,6 +497,12 @@ static float    panle_w                     = 227.0;
     _uiiv_mapOverlay = nil;
     [self removePaths];
     [self removeAllPanels];
+    
+    for (UIView __strong *tmp in arr_HotSpotViewArray) {
+        [tmp removeFromSuperview];
+        tmp = nil;
+    }
+    
     // Get -digit to detect which button is tapped
     // *1 --> load Neighborhood's Amenities panel
     // *2 --> load Neighborhood's Access panel
@@ -556,6 +562,7 @@ static float    panle_w                     = 227.0;
     UIButton *firstBtn = [arr_panelBtnArray objectAtIndex:0];
     _uiv_tablePanel.frame = CGRectMake(0.0, 38.0*([sender tag] + 1), panle_w, kTableHeight + 10);
     _uiv_tablePanel.backgroundColor = [UIColor colorWithRed:229.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1.0];
+    
     [self loadHotspotTableView:[sender tag]];
     [self createHotspots:[sender tag]];
     [buttonContianer insertSubview:_uiv_tablePanel aboveSubview:firstBtn];
@@ -582,8 +589,6 @@ static float    panle_w                     = 227.0;
 
 - (void)rearrangeBtns:(int)index
 {
-    NSLog(@"The tapped index is %i", index);
-    
     for (UIButton *tmp in arr_panelBtnArray) {
         if (tmp.tag > index) {
             tmp.transform = CGAffineTransformMakeTranslation(0.0, kTableHeight);
@@ -715,22 +720,16 @@ static float    panle_w                     = 227.0;
     if (_uiv_tappedHotspot) {
         _uiv_tappedHotspot.backgroundColor = [UIColor whiteColor];
         _uiv_tappedHotspot.layer.borderWidth = 3.0;
-        for (UIView *tmp in [_uiv_tappedHotspot subviews]) {
-            if ([tmp isKindOfClass:[UILabel class]]) {
-                UILabel *label = tmp;
-                label.textColor = [arr_indicatorColors objectAtIndex:index/100];
-            }
+        for (UILabel *tmp in [_uiv_tappedHotspot subviews]) {
+            tmp.textColor = [arr_indicatorColors objectAtIndex:index/100];
         }
     }
     
     _uiv_tappedHotspot = [arr_HotSpotViewArray objectAtIndex:index%100];
     _uiv_tappedHotspot.backgroundColor = [arr_indicatorColors objectAtIndex:index/100];
     _uiv_tappedHotspot.layer.borderWidth = 0.0;
-    for (UIView *tmp in [_uiv_tappedHotspot subviews]) {
-        if ([tmp isKindOfClass:[UILabel class]]) {
-            UILabel *label = tmp;
-            label.textColor = [UIColor whiteColor];
-        }
+    for (UILabel *tmp in [_uiv_tappedHotspot subviews]) {
+        tmp.textColor = [UIColor whiteColor];
     }
 }
 
@@ -992,7 +991,7 @@ static float    panle_w                     = 227.0;
 #pragma mark - Draw Path
 -(void)drawPathsFromBezierClass:(id)sender
 {
-    [self hightLightPanelBtn:sender andIndicatorColor:[arr_indicatorColors objectAtIndex:[sender tag]] withIndicator:NO];
+    [self hightLightPanelBtn:sender andIndicatorColor:[UIColor clearColor] withIndicator:NO];
     
 	_arr_pathItems = [[NSMutableArray alloc] init];
 	embBezierPaths *paths;
@@ -1219,6 +1218,13 @@ static float    panle_w                     = 227.0;
 						 cancelButtonTitle: @"Cancel"
 						 otherButtonTitles: @"Install",nil];
 		[alert show];
+	}
+}
+
+- (void) alertView: (UIAlertView *)alertView clickedButtonAtIndex: (NSInteger) buttonIndex {
+    NSLog(@"foobage! %i", (int)buttonIndex);
+	if (buttonIndex==1) {
+		[[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"https://itunes.apple.com/us/app/google-earth/id293622097?mt=8"]];
 	}
 }
 
