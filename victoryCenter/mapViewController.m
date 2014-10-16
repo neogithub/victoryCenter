@@ -28,8 +28,8 @@
 
 #define METERS_PER_MILE 1609.344
 
-static CGFloat  kTableHeight                = 266;
-static CGFloat  kExpendedHeight             = 426;
+static CGFloat  kTableHeight                = 285;
+static CGFloat  kExpendedHeight             = 445;
 static CGFloat  kNeiAmenPanelHeight         = 114.0;
 static CGFloat  kPanelTitleHeight           = 46;
 static BOOL     kMapCanZoom                 = YES;
