@@ -103,7 +103,7 @@ extern NSArray *arrHotSpots;
     NSString *str = [_tableData objectAtIndex:indexPath.row];
     CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize]];
     if (size.width > self.tableView.frame.size.width - 50) {
-        return kCellHeight*1.3;
+        return kCellHeight*1.1;
     }
     else
         return kCellHeight;

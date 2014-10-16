@@ -29,7 +29,7 @@
 #define METERS_PER_MILE 1609.344
 
 static CGFloat  kTableHeight                = 285;
-static CGFloat  kExpendedHeight             = 445;
+static CGFloat  kExpendedHeight             = 445;//kTableHeight + 160;
 static CGFloat  kNeiAmenPanelHeight         = 114.0;
 static CGFloat  kPanelTitleHeight           = 46;
 static BOOL     kMapCanZoom                 = YES;
@@ -566,7 +566,7 @@ static float    panle_w                     = 227.0;
     _uiv_tablePanel = nil;
     _uiv_tablePanel = [[UIView alloc] init];
     UIButton *firstBtn = [arr_panelBtnArray objectAtIndex:0];
-    _uiv_tablePanel.frame = CGRectMake(0.0, 38.0*([sender tag] + 1), panle_w, kTableHeight + 10);
+    _uiv_tablePanel.frame = CGRectMake(0.0, 38.0*([sender tag] + 1), panle_w, kTableHeight);
     _uiv_tablePanel.backgroundColor = [UIColor colorWithRed:229.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1.0];
     
     //Update table view's content data
@@ -650,7 +650,7 @@ static float    panle_w                     = 227.0;
     _vc_hotspotList.category = arr_HotSpotCategories[index];
     _vc_hotspotList.numColor = arr_indicatorColors[index]; //Color for index label
     
-    CGRect frame = CGRectMake(0.0, 10.0, panle_w, kTableHeight - 10);
+    CGRect frame = CGRectMake(0.0, 7.0, panle_w, kTableHeight - 10);
     _vc_hotspotList.view.frame = frame;
     
     [_uiv_tablePanel addSubview: _vc_hotspotList.view];
