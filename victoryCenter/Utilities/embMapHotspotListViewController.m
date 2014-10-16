@@ -23,7 +23,7 @@
 
 static CGFloat	kFontSize = 13.0f;
 static NSString *kFontName = @"Raleway-Medium";
-
+static CGFloat  kCellHeight = 26.0;
 extern NSArray *arrHotSpots;
 
 @implementation embMapHotspotListViewController
@@ -103,10 +103,10 @@ extern NSArray *arrHotSpots;
     NSString *str = [_tableData objectAtIndex:indexPath.row];
     CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize]];
     if (size.width > self.tableView.frame.size.width - 50) {
-        return 35;
+        return kCellHeight*1.3;
     }
     else
-        return 26;
+        return kCellHeight;
 }
 
 
@@ -147,14 +147,10 @@ extern NSArray *arrHotSpots;
 
     }
     NSString *str = [_tableData objectAtIndex:indexPath.row];
-//    NSString *unitNum = [_tableUnits objectAtIndex:indexPath.row];
     CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize] constrainedToSize:CGSizeMake((ttableView.frame.size.width - cell.uil_tableLabel.frame.origin.x), MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-//    cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, size.height);
-//   cell.uil_tableLabel.frame = CGRectMake(cell.uil_tableLabel.frame.origin.x, cell.uil_tableLabel.frame.origin.y, size.width, size.height);
     if (size.height > 30) {
         cell.uil_tableLabel.frame = CGRectMake(cell.uil_tableLabel.frame.origin.x, cell.uil_tableLabel.frame.origin.y, size.width, size.height);
         cell.uil_tableLabel.lineBreakMode = NSLineBreakByWordWrapping;
-//        cell.uil_tableLabel.backgroundColor = [UIColor redColor];
         cell.uil_tableLabel.numberOfLines = 0;
         cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
         cell.uil_tableLabel.font = [UIFont fontWithName:kFontName size:kFontSize];
@@ -162,58 +158,20 @@ extern NSArray *arrHotSpots;
         [cell.uil_tableLabel sizeToFit];
     }
     else{
- //       cell.uil_tableIndex.frame = CGRectMake(cell.uil_tableIndex.frame.origin.x, cell.uil_tableIndex.frame.origin.y, cell.uil_tableLabel.frame.size.width, 8);
-//        cell.uil_tableLabel.lineBreakMode = NSLineBreakByWordWrapping;
-//        cell.uil_tableLabel.numberOfLines = 0;
-        if (indexPath.section == 0) {
-            cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
-            cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
-        }
-        else {
-            cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row+17];
-        }
+        cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
+        cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
         cell.uil_tableLabel.font = [UIFont fontWithName:kFontName size:kFontSize];
-        if (_tableUnits[0]==[NSNull null]) {
-            cell.uil_tableUnit.text = @"";
-            cell.uil_tableUnit.font = [UIFont fontWithName:kFontName size:kFontSize];
-        }
-        else
-        {
-            if (indexPath.section == 0) {
-                cell.uil_tableUnit.text = [_tableUnits objectAtIndex:indexPath.row];
-            }
-            else {
-                cell.uil_tableUnit.text = [_tableUnits objectAtIndex:indexPath.row +17];
-            }
-            
-            cell.uil_tableUnit.font = [UIFont fontWithName:kFontName size:kFontSize];
-        }
-        
+        cell.uil_tableUnit.text = @"";
+        cell.uil_tableUnit.font = [UIFont fontWithName:kFontName size:kFontSize];
      }
-    
     cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.uil_tableLabel.frame.size.height);
-
-//    [cell.uil_tableIndex sizeToFit];
     int numOfRow = (int)indexPath.row + 1;
-//    NSLog(@"%i",numOfRow);
-    if (indexPath.section == 0) {
-        cell.uil_tableIndex.text = [NSString stringWithFormat:@"%i.", numOfRow];
-        [cell.uil_tableIndex setFont:[UIFont fontWithName:kFontName size:kFontSize]];
-        [cell.uil_tableIndex setTextColor:numColor];
-    }
-    else {
-        cell.uil_tableIndex.text = [NSString stringWithFormat:@"%i.", (numOfRow + 17)];
-        
-    }
-    
-
+    cell.uil_tableIndex.text = [NSString stringWithFormat:@"%i.", numOfRow];
+    [cell.uil_tableIndex setFont:[UIFont fontWithName:kFontName size:kFontSize]];
+    [cell.uil_tableIndex setTextColor:numColor];
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [UIView new];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    NSLog(@"The frame of LABEL is %@ \n", [cell.uil_tableLabel description]);
-//    NSLog(@"The frame of CELL is %@ \n \n", [cell description]);
-    
-    
 	return cell;
 }
 

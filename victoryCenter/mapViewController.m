@@ -31,6 +31,7 @@
 static CGFloat  kTableHeight                = 266;
 static CGFloat  kExpendedHeight             = 426;
 static CGFloat  kNeiAmenPanelHeight         = 114.0;
+static CGFloat  kPanelTitleHeight           = 46;
 static BOOL     kMapCanZoom                 = YES;
 static CGFloat  kMinZoom                    = 1.0;
 static CGFloat  kMaxZoom                    = 2.0;
@@ -535,6 +536,8 @@ static float    panle_w                     = 227.0;
 - (void)loadHotspotTable:(id)sender
 {
     UIView *buttonContianer = [uiv_neibAmePanel viewWithTag:102];
+    //Check if panel is opened:
+    //Do the animation of shrink , change highlighted button and expension
     if (buttonContianer.frame.size.height > kNeiAmenPanelHeight) {
         CGRect frame = buttonContianer.frame;
         frame.size.height = kNeiAmenPanelHeight;
@@ -555,8 +558,10 @@ static float    panle_w                     = 227.0;
 
 - (void)expandAmenityPanel:(id)sender
 {
+    //Get button's contianer by tag 102
     UIView *buttonContianer = [uiv_neibAmePanel viewWithTag:102];
     
+    //Update position of table view's position
     [_uiv_tablePanel removeFromSuperview];
     _uiv_tablePanel = nil;
     _uiv_tablePanel = [[UIView alloc] init];
@@ -564,15 +569,19 @@ static float    panle_w                     = 227.0;
     _uiv_tablePanel.frame = CGRectMake(0.0, 38.0*([sender tag] + 1), panle_w, kTableHeight + 10);
     _uiv_tablePanel.backgroundColor = [UIColor colorWithRed:229.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1.0];
     
+    //Update table view's content data
     [self loadHotspotTableView:[sender tag]];
+    //Add hotspots accroding to index
     [self createHotspots:[sender tag]];
+    //Add table view under buttons' container
     [buttonContianer insertSubview:_uiv_tablePanel aboveSubview:firstBtn];
     
+    //Update Amenities panel's height
     CGRect oldFrame = uiv_neibAmePanel.frame;
     oldFrame.size.height = kExpendedHeight;
     uiv_neibAmePanel.frame = oldFrame;
     CGRect containerOldFrame = buttonContianer.frame;
-    containerOldFrame.size.height = kExpendedHeight-46;
+    containerOldFrame.size.height = kExpendedHeight-kPanelTitleHeight;
     
     CGFloat duration = 0.5f;
     CGFloat damping = 0.7f;
@@ -588,6 +597,7 @@ static float    panle_w                     = 227.0;
     } completion:^(BOOL finished){      }];
 }
 
+// Move all buttons have bigger index to bottom panel
 - (void)rearrangeBtns:(int)index
 {
     for (UIButton *tmp in arr_panelBtnArray) {
@@ -623,6 +633,7 @@ static float    panle_w                     = 227.0;
     
 }
 
+//Load & update hotspot table list
 - (void)loadHotspotTableView:(int)index
 {
     [_vc_hotspotList.view removeFromSuperview];
@@ -637,7 +648,7 @@ static float    panle_w                     = 227.0;
     
     _vc_hotspotList.incomingData = arr_HotSpotsRaw;
     _vc_hotspotList.category = arr_HotSpotCategories[index];
-    _vc_hotspotList.numColor = arr_indicatorColors[index];
+    _vc_hotspotList.numColor = arr_indicatorColors[index]; //Color for index label
     
     CGRect frame = CGRectMake(0.0, 10.0, panle_w, kTableHeight - 10);
     _vc_hotspotList.view.frame = frame;
@@ -662,6 +673,7 @@ static float    panle_w                     = 227.0;
     arr_HotSpotViewArray = [[NSMutableArray alloc] init];
     arr_HotSpotXY = [[NSMutableArray alloc] init];
     
+    //Get hotspots' x and y value and add to array
     for (NSDictionary *itemData in arr_HotSpotData[index]) {
         [arr_HotSpotXY addObject: [itemData objectForKey:@"xy"]];
     }
@@ -704,13 +716,13 @@ static float    panle_w                     = 227.0;
 	[tapG setDelegate:self];
 	[roundedView addGestureRecognizer:tapG];
     roundedView.userInteractionEnabled = YES;
-    
 }
 
 - (void)hotspotTapped:(UIGestureRecognizer *)gesture
 {
     int index = gesture.view.tag;
     NSIndexPath *myIP;
+    // index%100 is the index of the hotspot in array
     myIP = [NSIndexPath indexPathForRow: index%100 inSection:0];
     [_vc_hotspotList rowToSelect:myIP];
     [self hiliteHotSpot: index];
@@ -718,6 +730,8 @@ static float    panle_w                     = 227.0;
 
 - (void)hiliteHotSpot:(int)index
 {
+    // index%100 is the index of the hotspot in array
+    // index/100 is the index of amentites' section
     if (_uiv_tappedHotspot) {
         _uiv_tappedHotspot.backgroundColor = [UIColor whiteColor];
         _uiv_tappedHotspot.layer.borderWidth = 3.0;
@@ -734,9 +748,11 @@ static float    panle_w                     = 227.0;
     }
 }
 
+// Delegate method of class embMapHotspotListViewController
 - (void)childViewController:(embMapHotspotListViewController*)viewController
                didChooseRow:(NSInteger)rowIndex
 {
+    //Get current amenities' section index
     int index = _vc_hotspotList.view.tag;
     [self hiliteHotSpot:rowIndex+index*100];
 }
@@ -830,7 +846,12 @@ static float    panle_w                     = 227.0;
     [self animateThePanel:uiv_siteAccPanel];
 }
 
-#pragma mark - Highlight current tapped button of top sub menu
+#pragma mark - Highlight current tapped button of sub menu
+/*
+ Required Arguement:
+ 1. Tapped sub menu's button
+ 2. Button's superview --> sub menu's container
+ */
 - (void)hiliteTappedButton:(id)sender inView:(UIView *)container
 {
     UIButton *tappedBtn = sender;
@@ -844,7 +865,7 @@ static float    panle_w                     = 227.0;
 }
 
 #pragma mark - update map's overlay
-
+//Required Arguement: Overlay image file's name
 - (void)updateOverlayImage:(NSString *)imageName
 {
     NSString *name = [imageName substringWithRange:NSMakeRange(0, imageName.length-4)];
@@ -879,7 +900,7 @@ static float    panle_w                     = 227.0;
     uiv_panel.backgroundColor = [UIColor clearColor];
     
     UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
-    uib_PanelTitle.frame = CGRectMake(0.0, 0.0, panle_w, 46);
+    uib_PanelTitle.frame = CGRectMake(0.0, 0.0, panle_w, kPanelTitleHeight);
     [uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
     [uib_PanelTitle setTitle:title forState:UIControlStateNormal];
     [uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -891,6 +912,15 @@ static float    panle_w                     = 227.0;
     [uiv_panel addSubview: uib_PanelTitle];
     return uiv_panel;
 }
+
+/*
+ Highlighted selected panel buttons
+ 
+ Required arguemnets:
+ 1. Tapped panel button
+ 2. Indicator's color
+ 3. With/out indicator bool value
+ */
 
 - (void)hightLightPanelBtn:(id)sender andIndicatorColor:(UIColor *)color withIndicator:(BOOL)indicator
 {
@@ -938,7 +968,7 @@ static float    panle_w                     = 227.0;
     uiv_optionContainer.backgroundColor = [UIColor whiteColor];
     uiv_optionContainer.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     uiv_optionContainer.layer.borderWidth = 1.0;
-    uiv_optionContainer.frame = CGRectMake(0.0, 46.0, panle_w, panle.frame.size.height-46.0);
+    uiv_optionContainer.frame = CGRectMake(0.0, kPanelTitleHeight, panle_w, panle.frame.size.height-kPanelTitleHeight);
     uiv_optionContainer.tag = 102;
     uiv_optionContainer.clipsToBounds = YES;
     
@@ -964,12 +994,12 @@ static float    panle_w                     = 227.0;
 }
 
 #pragma mark - Animate the panel
-
+//Drop down the menu
 - (void)animateThePanel:(UIView *)panel
 {
-    panel.transform = CGAffineTransformMakeTranslation(0.0, -46*10);
-    [panel viewWithTag:101].transform = CGAffineTransformMakeTranslation(0.0, -46.0*5);
-    [panel viewWithTag:102].transform = CGAffineTransformMakeTranslation(0.0, -46*10);
+    panel.transform = CGAffineTransformMakeTranslation(0.0, - kPanelTitleHeight * 10);
+    [panel viewWithTag:101].transform = CGAffineTransformMakeTranslation(0.0, - kPanelTitleHeight * 5);
+    [panel viewWithTag:102].transform = CGAffineTransformMakeTranslation(0.0, - kPanelTitleHeight * 10);
     
     // Animation for the overview image
     CGFloat duration = 0.5f;
@@ -1216,11 +1246,6 @@ static float    panle_w                     = 227.0;
 						 otherButtonTitles: @"OK",nil];
         alert.tag = 1;
 		[alert show];
-        
-//		[[UIApplication sharedApplication] canOpenURL:urlApp];
-//		NSString *stringURL = @"comgoogleearth://";
-//		NSURL *url = [NSURL URLWithString:stringURL];
-//		[[UIApplication sharedApplication] openURL:url];
 	} else {
 		UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle: @"Sorry!"
