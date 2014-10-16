@@ -28,7 +28,8 @@
 
 #define METERS_PER_MILE 1609.344
 
-static CGFloat  kTableHeight                = 254;
+static CGFloat  kTableHeight                = 266;
+static CGFloat  kExpendedHeight             = 426;
 static CGFloat  kNeiAmenPanelHeight         = 114.0;
 static BOOL     kMapCanZoom                 = YES;
 static CGFloat  kMinZoom                    = 1.0;
@@ -568,10 +569,10 @@ static float    panle_w                     = 227.0;
     [buttonContianer insertSubview:_uiv_tablePanel aboveSubview:firstBtn];
     
     CGRect oldFrame = uiv_neibAmePanel.frame;
-    oldFrame.size.height = 414;
+    oldFrame.size.height = kExpendedHeight;
     uiv_neibAmePanel.frame = oldFrame;
     CGRect containerOldFrame = buttonContianer.frame;
-    containerOldFrame.size.height = 414-46;
+    containerOldFrame.size.height = kExpendedHeight-46;
     
     CGFloat duration = 0.5f;
     CGFloat damping = 0.7f;
@@ -953,7 +954,7 @@ static float    panle_w                     = 227.0;
         [uib_accOption setTitleColor:[UIColor vcDarkBlue] forState:UIControlStateNormal];
         [uib_accOption.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:12.0]];
         uib_accOption.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        uib_accOption.titleEdgeInsets = UIEdgeInsetsMake(0.0, leftEdge, 0.0, 0.0);
+        uib_accOption.titleEdgeInsets = UIEdgeInsetsMake(3.0, leftEdge, 0.0, 0.0);
         uib_accOption.tag = i;
         [uib_accOption addTarget:self action:method forControlEvents:UIControlEventTouchUpInside];
         [uiv_optionContainer addSubview: uib_accOption];
@@ -1157,8 +1158,8 @@ static float    panle_w                     = 227.0;
     _mapView.delegate = self;
     _mapView.mapType = MKMapTypeStandard;
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 32.7906767;
-    zoomLocation.longitude= -96.8102789;
+    zoomLocation.latitude = 32.7888204;
+    zoomLocation.longitude= -96.8118198;
     
     // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
@@ -1167,7 +1168,7 @@ static float    panle_w                     = 227.0;
     [_mapView setRegion:viewRegion animated:NO];
     [_uiv_appleMapContainer addSubview: _mapView];
     [self.view insertSubview:_uiv_appleMapContainer belowSubview:_uiv_mapSwitchContainer];
-    MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:@"Victory Park" andCoordinate:zoomLocation];
+    MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:@"Victory Center" andCoordinate:zoomLocation];
     [self.mapView addAnnotation:newAnnotation];
 }
 
@@ -1180,7 +1181,7 @@ static float    panle_w                     = 227.0;
         region = MKCoordinateRegionMakeWithDistance([mp coordinate], 8500, 8500);
     }
     if (!_uiv_neighborhoodSubMenu.hidden) {
-        region = MKCoordinateRegionMakeWithDistance([mp coordinate], 5500, 5500);
+        region = MKCoordinateRegionMakeWithDistance([mp coordinate], 3000, 3000);
     }
 	[mv setRegion:region animated:YES];
 	[mv selectAnnotation:mp animated:YES];
@@ -1206,10 +1207,20 @@ static float    panle_w                     = 227.0;
 	printf("\n canOpenGoogleEarth:%i \n",canOpenApp);
 	
 	if (canOpenApp) {
-		[[UIApplication sharedApplication] canOpenURL:urlApp];
-		NSString *stringURL = @"comgoogleearth://";
-		NSURL *url = [NSURL URLWithString:stringURL];
-		[[UIApplication sharedApplication] openURL:url];
+        
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle: @""
+								   message: @"You are leaving Victory Center to Google Earth."
+								  delegate: self
+						 cancelButtonTitle: @"Cancel"
+						 otherButtonTitles: @"OK",nil];
+        alert.tag = 1;
+		[alert show];
+        
+//		[[UIApplication sharedApplication] canOpenURL:urlApp];
+//		NSString *stringURL = @"comgoogleearth://";
+//		NSURL *url = [NSURL URLWithString:stringURL];
+//		[[UIApplication sharedApplication] openURL:url];
 	} else {
 		UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle: @"Sorry!"
@@ -1217,15 +1228,33 @@ static float    panle_w                     = 227.0;
 								  delegate: self
 						 cancelButtonTitle: @"Cancel"
 						 otherButtonTitles: @"Install",nil];
+        alert.tag = 2;
 		[alert show];
 	}
 }
 
 - (void) alertView: (UIAlertView *)alertView clickedButtonAtIndex: (NSInteger) buttonIndex {
     NSLog(@"foobage! %i", (int)buttonIndex);
-	if (buttonIndex==1) {
-		[[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"https://itunes.apple.com/us/app/google-earth/id293622097?mt=8"]];
-	}
+    if (alertView.tag == 1) {
+        if (buttonIndex==1) {
+            NSURL *urlApp = [NSURL URLWithString:@"comgoogleearth://"];
+            [[UIApplication sharedApplication] canOpenURL:urlApp];
+            NSString *stringURL = @"comgoogleearth://";
+            NSURL *url = [NSURL URLWithString:stringURL];
+            [[UIApplication sharedApplication] openURL:url];
+        }
+        if (buttonIndex == 0) {
+            [self tapMapSwitcher:_uib_normalMap];
+        }
+    }
+    else {
+        if (buttonIndex==1) {
+            [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"https://itunes.apple.com/us/app/google-earth/id293622097?mt=8"]];
+        }
+        if (buttonIndex == 0) {
+            [self tapMapSwitcher:_uib_normalMap];
+        }
+    }
 }
 
 #pragma mark - Remove items and release memory
