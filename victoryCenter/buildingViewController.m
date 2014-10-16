@@ -34,6 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setTopButtons];
+    [self setGestureToBldStats];
 }
 
 - (void)setTopButtons
@@ -63,9 +64,8 @@
     [theBtn addTarget:self action:@selector(tapOnTopBtns:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)tapOnTopBtns:(id)sender
+- (void)resetTopMenu
 {
-    UIButton *tappedBtn = sender;
     _uib_floorPlan.selected = NO;
     _uib_floorPlan.backgroundColor = [UIColor vcLightBlue];
     _uib_bldgStats.selected = NO;
@@ -74,6 +74,12 @@
     _uib_amenities.backgroundColor = [UIColor vcLightBlue];
     _uib_elevators.selected = NO;
     _uib_elevators.backgroundColor = [UIColor vcLightBlue];
+}
+
+- (void)tapOnTopBtns:(id)sender
+{
+    UIButton *tappedBtn = sender;
+    [self resetTopMenu];
     
     tappedBtn.selected = YES;
     tappedBtn.backgroundColor = [UIColor vcDarkBlue];
@@ -91,27 +97,7 @@
     _uiv_statImgContainer.transform = CGAffineTransformIdentity;
     switch (index) {
         case 1: {
-            _uiv_bldImgContainer.hidden = NO;
-            _uiv_statImgContainer.hidden = NO;
-            
-            // Animation for the building and stat image
-            CGFloat duration = 0.9f;
-            CGFloat damping = 0.6f;
-            CGFloat velocity = 0.7f;
-            // int to hold UIViewAnimationOption
-            NSInteger option;
-            option = UIViewAnimationCurveEaseInOut;
-            [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
-                _uiv_bldImgContainer.transform = CGAffineTransformMakeTranslation(197.0, 0.0);
-
-            } completion:^(BOOL finished){      }];
-            
-            [UIView animateWithDuration:duration*1.5 delay:0 usingSpringWithDamping:damping*0.8 initialSpringVelocity:velocity*0.8 options:option animations:^{
-                _uiv_statImgContainer.alpha = 1.0;
-                _uiv_statImgContainer.transform = CGAffineTransformMakeTranslation(356, 0.0);
-                
-            } completion:^(BOOL finished){      }];
-            
+            [self moveInBldStats];
             break;
         }
         case 2: {
@@ -136,6 +122,50 @@
             break;
     }
 }
+
+- (void)setGestureToBldStats
+{
+    UISwipeGestureRecognizer *swipeStatImg = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(resetBuildingImg:)];
+    swipeStatImg.direction = UISwipeGestureRecognizerDirectionLeft;
+    [_uiv_statImgContainer addGestureRecognizer: swipeStatImg];
+}
+
+- (void)resetBuildingImg:(UIGestureRecognizer *)gesture
+{
+    [UIView animateWithDuration:0.33 animations:^{
+        _uiv_bldImgContainer.transform = CGAffineTransformIdentity;
+        _uiv_statImgContainer.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished){
+        _uiv_statImgContainer.hidden = YES;
+        [self resetTopMenu];
+    }];
+}
+
+- (void)moveInBldStats
+{
+    _uiv_bldImgContainer.hidden = NO;
+    _uiv_statImgContainer.hidden = NO;
+    
+    // Animation for the building and stat image
+    CGFloat duration = 0.9f;
+    CGFloat damping = 0.6f;
+    CGFloat velocity = 0.7f;
+    // int to hold UIViewAnimationOption
+    NSInteger option;
+    option = UIViewAnimationCurveEaseInOut;
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+        _uiv_bldImgContainer.transform = CGAffineTransformMakeTranslation(197.0, 0.0);
+        
+    } completion:^(BOOL finished){      }];
+    
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping*1.0 initialSpringVelocity:velocity*0.8 options:option animations:^{
+        _uiv_statImgContainer.alpha = 1.0;
+        _uiv_statImgContainer.transform = CGAffineTransformMakeTranslation(356, 0.0);
+        
+    } completion:^(BOOL finished){      }];
+}
+
+
 
 - (void)viewWillDisappear:(BOOL)animated
 {
