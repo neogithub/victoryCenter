@@ -498,6 +498,27 @@
             </objects>
             <point key="canvasLocation" x="-1163" y="2832"/>
         </scene>
+        <!--Floor Plan View Controller-->
+        <scene sceneID="XQY-Aj-F9P">
+            <objects>
+                <viewController storyboardIdentifier="floorPlanViewController" id="gmA-Oa-YcQ" customClass="floorPlanViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KwA-Qf-Jzy">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fq7-C3-dXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="181" y="1776"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Map_bg.jpg" width="1024" height="768"/>

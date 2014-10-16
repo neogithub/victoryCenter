@@ -8,18 +8,19 @@
 
 #import "buildingViewController.h"
 #import "UIColor+Extensions.h"
-
+#import "floorPlanViewController.h"
 @interface buildingViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *uiiv_bgImg;
-@property (weak, nonatomic) IBOutlet UIView *uiv_bldImgContainer;
-@property (weak, nonatomic) IBOutlet UIView *uiv_statImgContainer;
+@property (weak, nonatomic) IBOutlet UIImageView            *uiiv_bgImg;
+@property (weak, nonatomic) IBOutlet UIView                 *uiv_bldImgContainer;
+@property (weak, nonatomic) IBOutlet UIView                 *uiv_statImgContainer;
 
-@property (weak, nonatomic) IBOutlet UIButton *uib_floorPlan;
-@property (weak, nonatomic) IBOutlet UIButton *uib_bldgStats;
-@property (weak, nonatomic) IBOutlet UIButton *uib_amenities;
-@property (weak, nonatomic) IBOutlet UIButton *uib_elevators;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_floorPlan;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_bldgStats;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_amenities;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_elevators;
 
+@property (nonatomic, strong) floorPlanViewController       *floorPlan;
 @end
 
 @implementation buildingViewController
@@ -95,15 +96,24 @@
     _uiv_statImgContainer.hidden = YES;
     _uiv_statImgContainer.alpha = 0.0;
     _uiv_statImgContainer.transform = CGAffineTransformIdentity;
+    
+    if (_floorPlan) {
+        [_floorPlan.view removeFromSuperview];
+        _floorPlan.view = nil;
+        [_floorPlan removeFromParentViewController];
+        _floorPlan = nil;
+    }
+    
     switch (index) {
         case 1: {
             [self moveInBldStats];
             break;
         }
         case 2: {
-            _uiiv_bgImg.hidden = NO;
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldFloorPlan_bg" ofType:@"jpg"];
-            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
+//            _uiiv_bgImg.hidden = NO;
+//            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldFloorPlan_bg" ofType:@"jpg"];
+//            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
+            [self loadFloorPlan];
             break;
         }
         case 3: {
@@ -165,7 +175,21 @@
     } completion:^(BOOL finished){      }];
 }
 
-
+#pragma mark - Set up Floor plan view
+- (void)loadFloorPlan
+{
+    if (_floorPlan) {
+        [_floorPlan.view removeFromSuperview];
+        _floorPlan.view = nil;
+        [_floorPlan removeFromParentViewController];
+        _floorPlan = nil;
+    }
+    
+    _floorPlan = [self.storyboard instantiateViewControllerWithIdentifier:@"floorPlanViewController"];;
+    _floorPlan.view.frame = screenRect;
+    [self addChildViewController:_floorPlan];
+    [self.view insertSubview:_floorPlan.view belowSubview:_uib_floorPlan];
+}
 
 - (void)viewWillDisappear:(BOOL)animated
 {
