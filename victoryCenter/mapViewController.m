@@ -566,8 +566,8 @@ static float    panle_w                     = 227.0;
     _uiv_tablePanel = nil;
     _uiv_tablePanel = [[UIView alloc] init];
     UIButton *firstBtn = [arr_panelBtnArray objectAtIndex:0];
-    _uiv_tablePanel.frame = CGRectMake(0.0, 38.0*([sender tag] + 1), panle_w, kTableHeight);
-    _uiv_tablePanel.backgroundColor = [UIColor colorWithRed:229.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1.0];
+    _uiv_tablePanel.frame = CGRectMake(0.0, 38.0*([sender tag] + 1), panle_w, kTableHeight+10);
+    _uiv_tablePanel.backgroundColor = [UIColor vcPanelBackgroundColor];
     
     //Update table view's content data
     [self loadHotspotTableView:[sender tag]];

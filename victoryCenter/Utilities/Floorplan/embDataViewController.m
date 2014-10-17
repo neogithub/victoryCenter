@@ -140,6 +140,19 @@
 	[_zoomingScroll resetScroll];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [_zoomingScroll removeFromSuperview];
+    _zoomingScroll = nil;
+    
+    _dict = nil;
+    
+    [_floorplan removeAllObjects];
+    _floorplan = nil;
+    
+    [_arr_floorplans removeAllObjects];
+    _arr_floorplans = nil;
+}
 
 - (void)didReceiveMemoryWarning
 {

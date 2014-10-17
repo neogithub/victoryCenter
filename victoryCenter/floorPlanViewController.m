@@ -181,6 +181,30 @@ static CGFloat  kPanelTitleHeight           = 46;
 }
 
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    _modelController = nil;
+    
+    _arr_pageData = nil;
+    
+    [_pageViewController.view removeFromSuperview];
+    _pageViewController.view = nil;
+    [_pageViewController removeFromParentViewController];
+    _pageViewController = nil;
+
+    [_uiv_panel removeFromSuperview];
+    _uiv_panel = nil;
+
+    [_uib_PanelTitle removeFromSuperview];
+    _uib_PanelTitle = nil;
+
+    [_uib_backBtn removeFromSuperview];
+    _uib_backBtn = nil;
+
+    [_uib_panoBtn removeFromSuperview];
+    _uib_backBtn = nil;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
