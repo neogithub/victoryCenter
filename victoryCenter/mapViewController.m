@@ -28,8 +28,8 @@
 
 #define METERS_PER_MILE 1609.344
 
-static CGFloat  kTableHeight                = 285;
-static CGFloat  kExpendedHeight             = 445;//kTableHeight + 160;
+static CGFloat  kTableHeight                = 273;
+static CGFloat  kExpendedHeight             = 433;//kTableHeight + 160;
 static CGFloat  kNeiAmenPanelHeight         = 114.0;
 static CGFloat  kPanelTitleHeight           = 46;
 static BOOL     kMapCanZoom                 = YES;
@@ -1302,11 +1302,37 @@ static float    panle_w                     = 227.0;
     uiv_siteAmePanel = nil;
 }
 
+- (void)removeHotspots
+{
+    [arr_HotSpotsRaw removeAllObjects];
+    arr_HotSpotsRaw = nil;
+    
+    [arr_HotSpotCategories removeAllObjects];
+    arr_HotSpotCategories = nil;
+    
+    [arr_HotSpotData removeAllObjects];
+    arr_HotSpotData = nil;
+    
+    [arr_HotSpotXY removeAllObjects];
+    arr_HotSpotXY = nil;
+    
+    for (UIView __strong *tmp in arr_HotSpotViewArray) {
+        [tmp removeFromSuperview];
+        tmp = nil;
+    }
+    [arr_HotSpotViewArray removeAllObjects];
+    arr_HotSpotViewArray = nil;
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [self removeAllPanels];
     
     [self removeAppleMap];
+    
+    [self removePaths];
+    
+    [self removeHotspots];
     
     [_uib_city removeFromSuperview];
     _uib_city = nil;
