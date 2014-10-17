@@ -95,18 +95,18 @@ extern NSArray *arrHotSpots;
 //        return 33;
 //    }
     
-//    NSString *str = [_tableData objectAtIndex:indexPath.row];
-//    CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize] constrainedToSize:CGSizeMake(self.tableView.frame.size.width-50, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-//    NSLog(@"The height is %f", size.height);
-//    return size.height;
-    
     NSString *str = [_tableData objectAtIndex:indexPath.row];
-    CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize]];
-    if (size.width > self.tableView.frame.size.width - 50) {
-        return kCellHeight*1.1;
-    }
-    else
-        return kCellHeight;
+    CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize] constrainedToSize:CGSizeMake(180, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+    NSLog(@"The height is %f", size.height);
+    return size.height+8;
+    
+//    NSString *str = [_tableData objectAtIndex:indexPath.row];
+//    CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize]];
+//    if (size.width > self.tableView.frame.size.width - 50) {
+//        return kCellHeight*1.1;
+//    }
+//    else
+//        return kCellHeight;
 }
 
 
@@ -148,22 +148,25 @@ extern NSArray *arrHotSpots;
     }
     NSString *str = [_tableData objectAtIndex:indexPath.row];
     CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize] constrainedToSize:CGSizeMake((ttableView.frame.size.width - cell.uil_tableLabel.frame.origin.x), MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-    if (size.height > 30) {
-        cell.uil_tableLabel.frame = CGRectMake(cell.uil_tableLabel.frame.origin.x, cell.uil_tableLabel.frame.origin.y, size.width, size.height);
+//    if (size.height > 30) {
+        cell.uil_tableLabel.frame = CGRectMake(cell.uil_tableLabel.frame.origin.x, cell.uil_tableLabel.frame.origin.y+4, size.width, size.height);
         cell.uil_tableLabel.lineBreakMode = NSLineBreakByWordWrapping;
         cell.uil_tableLabel.numberOfLines = 0;
         cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
         cell.uil_tableLabel.font = [UIFont fontWithName:kFontName size:kFontSize];
         cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
         [cell.uil_tableLabel sizeToFit];
-    }
-    else{
-        cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
-        cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
-        cell.uil_tableLabel.font = [UIFont fontWithName:kFontName size:kFontSize];
-        cell.uil_tableUnit.text = @"";
-        cell.uil_tableUnit.font = [UIFont fontWithName:kFontName size:kFontSize];
-     }
+//    }
+//    else{
+//        cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
+//        cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
+//        cell.uil_tableLabel.lineBreakMode = NSLineBreakByWordWrapping;
+//        cell.uil_tableLabel.lineBreakMode = NSLineBreakByWordWrapping;
+//        cell.uil_tableLabel.numberOfLines = 0;
+//        cell.uil_tableLabel.font = [UIFont fontWithName:kFontName size:kFontSize];
+//        cell.uil_tableUnit.text = @"";
+//        cell.uil_tableUnit.font = [UIFont fontWithName:kFontName size:kFontSize];
+//     }
     cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.uil_tableLabel.frame.size.height);
     int numOfRow = (int)indexPath.row + 1;
     cell.uil_tableIndex.text = [NSString stringWithFormat:@"%i.", numOfRow];
