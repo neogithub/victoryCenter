@@ -36,6 +36,27 @@
     // Do any additional setup after loading the view.
     [self setTopButtons];
     [self setGestureToBldStats];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeFloorPlan) name:@"removeFloorPlan" object:nil];
+}
+
+- (void)removeFloorPlan
+{
+    _uiiv_bgImg.hidden = YES;
+    _uiv_bldImgContainer.transform = CGAffineTransformIdentity;
+    _uiv_bldImgContainer.hidden = NO;
+    _uiv_statImgContainer.hidden = YES;
+    _uiv_statImgContainer.alpha = 0.0;
+    _uiv_statImgContainer.transform = CGAffineTransformIdentity;
+    
+    if (_floorPlan) {
+        [_floorPlan.view removeFromSuperview];
+        _floorPlan.view = nil;
+        [_floorPlan removeFromParentViewController];
+        _floorPlan = nil;
+    }
+    
+    [self resetTopMenu];
 }
 
 - (void)setTopButtons

@@ -519,6 +519,25 @@
             </objects>
             <point key="canvasLocation" x="181" y="1776"/>
         </scene>
+        <!--Emb Data View Controller-->
+        <scene sceneID="vgI-ng-Y55">
+            <objects>
+                <viewController storyboardIdentifier="embDataViewController" id="Z2Z-OF-JE3" customClass="embDataViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iIv-LG-WBb">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ete-dB-Ebh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="181" y="2832"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Map_bg.jpg" width="1024" height="768"/>
