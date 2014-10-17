@@ -70,6 +70,14 @@
     return [UIColor colorWithRed:157.0/255.0 green:159.0/255.0 blue:191.0/255.0 alpha:0.9];
 }
 
++ (UIColor *)vcBackGroundColor {
+    return [UIColor colorWithRed:243.0/255.0 green:240.0/255.0 blue:242.0/255.0 alpha:1.0];
+}
+
++ (UIColor *)vcPanelBackgroundColor {
+    return [UIColor colorWithRed:222.0/255.0 green:234.0/255.0 blue:242.0/255.0 alpha:1.0];
+}
+
 + (UIColor *)vpYellow {
 	return [UIColor colorWithRed:235.0f/255.0f green:199.0f/255.0f blue:111.0f/255.0f alpha:1.0];
 }

@@ -70,6 +70,8 @@
 		8224FE3319D4BD6E002B1B44 /* normal_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE2F19D4BD6E002B1B44 /* normal_frame@2x.png */; };
 		8224FE3419D4BD6E002B1B44 /* play_button_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE3019D4BD6E002B1B44 /* play_button_@2x.png */; };
 		8224FE3519D4BD6E002B1B44 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE3119D4BD6E002B1B44 /* play_button.png */; };
+		823D78A819F156830096E62C /* grfx_floorplan.png in Resources */ = {isa = PBXBuildFile; fileRef = 823D78A619F156830096E62C /* grfx_floorplan.png */; };
+		823D78A919F156830096E62C /* grfx_floorplan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 823D78A719F156830096E62C /* grfx_floorplan@2x.png */; };
 		824012E019D1AF5D00C501EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012DF19D1AF5D00C501EE /* Foundation.framework */; };
 		824012E219D1AF5D00C501EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012E119D1AF5D00C501EE /* CoreGraphics.framework */; };
 		824012E419D1AF5D00C501EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012E319D1AF5D00C501EE /* UIKit.framework */; };
@@ -305,6 +307,8 @@
 		8224FE2F19D4BD6E002B1B44 /* normal_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "normal_frame@2x.png"; sourceTree = "<group>"; };
 		8224FE3019D4BD6E002B1B44 /* play_button_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_button_@2x.png"; sourceTree = "<group>"; };
 		8224FE3119D4BD6E002B1B44 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
+		823D78A619F156830096E62C /* grfx_floorplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan.png; sourceTree = "<group>"; };
+		823D78A719F156830096E62C /* grfx_floorplan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorplan@2x.png"; sourceTree = "<group>"; };
 		824012DC19D1AF5D00C501EE /* victoryCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victoryCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824012DF19D1AF5D00C501EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		824012E119D1AF5D00C501EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -663,6 +667,15 @@
 			path = Segues;
 			sourceTree = "<group>";
 		};
+		823D78A519F156830096E62C /* floorplan */ = {
+			isa = PBXGroup;
+			children = (
+				823D78A619F156830096E62C /* grfx_floorplan.png */,
+				823D78A719F156830096E62C /* grfx_floorplan@2x.png */,
+			);
+			path = floorplan;
+			sourceTree = "<group>";
+		};
 		824012D319D1AF5D00C501EE = {
 			isa = PBXGroup;
 			children = (
@@ -897,6 +910,7 @@
 		82A805E519D2091D00308BA1 /* tmp */ = {
 			isa = PBXGroup;
 			children = (
+				823D78A519F156830096E62C /* floorplan */,
 				82C3817019E81BAD006C7EC8 /* map */,
 				82000B5B19E590AD00AE2C70 /* building */,
 				82000B6619E590AD00AE2C70 /* team */,
@@ -1141,6 +1155,7 @@
 				82DC11E519DAEE070057AE4F /* Neighborhood_map.png in Resources */,
 				82DC11E819DAEE070057AE4F /* City_base_map_@2x.png in Resources */,
 				82DC11D619DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg in Resources */,
+				823D78A819F156830096E62C /* grfx_floorplan.png in Resources */,
 				824F368C19E6C47500267B44 /* thumb_20140802_downtown_100m_6pm_high-res.jpg in Resources */,
 				82DC11D819DAEA940057AE4F /* Victory Center 01 Highway View.jpg in Resources */,
 				82DC11EA19DAEE070057AE4F /* Site_Base map_@2x.png in Resources */,
@@ -1202,6 +1217,7 @@
 				82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */,
 				82000BA019E5963800AE2C70 /* team_hks_text@2x.png in Resources */,
 				824F369B19E6C47500267B44 /* thumb_NW-FINAL Lighting Concept2.jpg in Resources */,
+				823D78A919F156830096E62C /* grfx_floorplan@2x.png in Resources */,
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
 				82DC11C719DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg in Resources */,
 				82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */,
