@@ -40,9 +40,11 @@
 			//_blurView.frame = CGRectInset(self.frame, 5*self.frame.size.width/100, 5*self.frame.size.height/100);
             
 			[_blurView setUserInteractionEnabled:YES];
-			[_blurView setContentMode:UIViewContentModeTop];
 			_blurView.image = thisImage;
 			[self zoomableScrollview:self withImage:_blurView];
+//            [_blurView setContentMode:UIViewContentModeTop];
+            _blurView.contentMode = UIViewContentModeLeft;
+            
             
 			if (zoomable==1) {
 				[self unlockZoom];
