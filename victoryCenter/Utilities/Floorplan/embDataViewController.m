@@ -67,9 +67,9 @@
 	if (!_zoomingScroll) {
 		// NSLog(@"running");
         CGRect theFrame = self.view.bounds;
-        theFrame.origin.x = 83;
+        theFrame.origin.x = 40;
         theFrame.origin.y = 64;
-        theFrame.size.width = 880;
+        theFrame.size.width = 944;
         theFrame.size.height = 682;
 		_zoomingScroll = [[ebZoomingScrollView alloc] initWithFrame:theFrame image:nil shouldZoom:YES];
 //		[self.view insertSubview:_zoomingScroll atIndex:1];
@@ -110,6 +110,11 @@
     uil_highMarketSt.layer.anchorPoint = CGPointMake(1.0, 1.0);
     uil_highMarketSt.frame = oldFrame;
     uil_highMarketSt.transform = CGAffineTransformMakeRotation(-M_PI_2);
+    
+    //Added compass image
+    UIImageView *uiiv_compass = [[UIImageView alloc] initWithFrame:CGRectMake(940, 670, 34, 34)];
+    [uiiv_compass setImage:[UIImage imageNamed:@"grfx_compass.png"]];
+    [self.view addSubview: uiiv_compass];
 }
 
 -(void)loadInImge:(NSString *)imageName
