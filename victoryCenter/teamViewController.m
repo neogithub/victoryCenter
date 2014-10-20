@@ -135,6 +135,7 @@ static float kCardsGap      = 12.0;
 	// Do animiation by index order
     [self performSelector:@selector(animateArray:) withObject:_arr_cards afterDelay:0.0];
     [self performSelector:@selector(showNeoLogo) withObject:nil afterDelay:kDropSpeed *5 - kAnimaDelay];
+    [self performSelector:@selector(setVersionLabel) withObject:nil afterDelay:kDropSpeed *5 - kAnimaDelay];
 }
 
 #pragma mark - Deal with Card's interaction
@@ -336,6 +337,27 @@ static float kCardsGap      = 12.0;
         uiv_neoContainer.transform = CGAffineTransformIdentity;
     }];
 }
+
+#pragma mark - Add version # label
+- (void)setVersionLabel
+{
+    UILabel *uil_version = [[UILabel alloc] initWithFrame:CGRectMake(690, 730, 70, 38)];
+    NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
+	//NSString * build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
+	
+	uil_version.text = [NSString stringWithFormat:@"2014 v%@",version];
+    uil_version.font = [UIFont fontWithName:@"Raleway-Medium" size:14.0];
+    uil_version.textColor = [UIColor colorWithWhite:0.5 alpha:0.5];
+    uil_version.textAlignment = NSTextAlignmentNatural;
+    uil_version.transform = CGAffineTransformMakeTranslation(0.0, uil_version.frame.size.width);
+    [self.view addSubview: uil_version];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        uil_version.transform = CGAffineTransformIdentity;
+    }];
+}
+
+#pragma mark - Memory cleaning & warning
 
 - (void)viewWillDisappear:(BOOL)animated
 {
