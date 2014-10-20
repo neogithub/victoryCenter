@@ -330,7 +330,7 @@ static float kCardsGap      = 12.0;
 	// uil_neoLogo.alpha = 0.7;
     [uiv_neoContainer addSubview: uil_neoLogo];
 
-    uiv_neoContainer.transform = CGAffineTransformMakeTranslation(0.0, uiv_neoContainer.frame.size.width);
+    uiv_neoContainer.transform = CGAffineTransformMakeTranslation(0.0, uiv_neoContainer.frame.size.height);
     [self.view addSubview: uiv_neoContainer];
     
     [UIView animateWithDuration:0.2 animations:^{
@@ -341,15 +341,18 @@ static float kCardsGap      = 12.0;
 #pragma mark - Add version # label
 - (void)setVersionLabel
 {
-    UILabel *uil_version = [[UILabel alloc] initWithFrame:CGRectMake(690, 730, 70, 38)];
+    UILabel *uil_version = [[UILabel alloc] initWithFrame:CGRectZero];
     NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
 	//NSString * build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
 	
 	uil_version.text = [NSString stringWithFormat:@"2014 v%@",version];
     uil_version.font = [UIFont fontWithName:@"Raleway-Medium" size:14.0];
     uil_version.textColor = [UIColor colorWithWhite:0.5 alpha:0.5];
-    uil_version.textAlignment = NSTextAlignmentNatural;
-    uil_version.transform = CGAffineTransformMakeTranslation(0.0, uil_version.frame.size.width);
+    uil_version.textAlignment = NSTextAlignmentRight;
+    CGSize size = [uil_version.text sizeWithAttributes:@{NSFontAttributeName:
+                                                             uil_version.font}];
+    uil_version.frame = CGRectMake(774-20-size.width, 730 + (38 - size.height)/2 - 2, size.width, size.height);
+    uil_version.transform = CGAffineTransformMakeTranslation(0.0, uil_version.frame.size.height);
     [self.view addSubview: uil_version];
     
     [UIView animateWithDuration:0.2 animations:^{
@@ -361,9 +364,6 @@ static float kCardsGap      = 12.0;
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-//    for (UIView *tmp in [self.view subviews]) {
-//        [tmp removeFromSuperview];
-//    }
     _arr_teamText = nil;
     
     _arr_logoImg = nil;
