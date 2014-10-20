@@ -131,9 +131,6 @@
             break;
         }
         case 2: {
-//            _uiiv_bgImg.hidden = NO;
-//            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldFloorPlan_bg" ofType:@"jpg"];
-//            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
             [self loadFloorPlan];
             break;
         }

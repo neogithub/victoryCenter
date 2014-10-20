@@ -132,9 +132,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     self.pageViewController.view.frame = self.view.bounds;
     [self.pageViewController didMoveToParentViewController:self];
     [self addChildViewController:self.pageViewController];
-//    [self.view insertSubview:self.pageViewController.view aboveSubview:_uiiv_bgImg];
     [self.view addSubview: self.pageViewController.view];
-//    self.pageViewController.view.alpha = 0.0;
     [self.pageViewController.view setBackgroundColor:[UIColor vcBackGroundColor]];
     
     [self loadPage:(int)index];

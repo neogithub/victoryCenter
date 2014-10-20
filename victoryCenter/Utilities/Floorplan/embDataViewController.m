@@ -56,7 +56,6 @@
     UIImageView *uiiv_bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_floorPlan_bg.jpg"]];
     [self.view insertSubview:uiiv_bgImage atIndex:0];
     self.view.backgroundColor = [UIColor vcBackGroundColor];
-//	[self shellButton];
     [self loadDataAndView];
 }
 
@@ -65,14 +64,12 @@
 {
 	_uii_Plan = [UIImage imageNamed:_floorplan[0]];
 	if (!_zoomingScroll) {
-		// NSLog(@"running");
         CGRect theFrame = self.view.bounds;
         theFrame.origin.x = 40;
         theFrame.origin.y = 64;
         theFrame.size.width = 944;
         theFrame.size.height = 682;
 		_zoomingScroll = [[ebZoomingScrollView alloc] initWithFrame:theFrame image:nil shouldZoom:YES];
-//		[self.view insertSubview:_zoomingScroll atIndex:1];
         [self.view addSubview:_zoomingScroll];
         _zoomingScroll.backgroundColor = [UIColor clearColor];
 		_zoomingScroll.delegate=self;
@@ -142,16 +139,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [_zoomingScroll removeFromSuperview];
-    _zoomingScroll = nil;
     
-    _dict = nil;
-    
-    [_floorplan removeAllObjects];
-    _floorplan = nil;
-    
-    [_arr_floorplans removeAllObjects];
-    _arr_floorplans = nil;
 }
 
 - (void)didReceiveMemoryWarning
