@@ -11,6 +11,8 @@
 #import "floorPlanViewController.h"
 @interface buildingViewController ()
 
+@property (nonatomic, strong) NSMutableArray                *arr_topBtnsArray;
+
 @property (weak, nonatomic) IBOutlet UIImageView            *uiiv_bgImg;
 @property (weak, nonatomic) IBOutlet UIView                 *uiv_bldImgContainer;
 @property (weak, nonatomic) IBOutlet UIView                 *uiv_statImgContainer;
@@ -36,11 +38,10 @@
     // Do any additional setup after loading the view.
     [self setTopButtons];
     [self setGestureToBldStats];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeFloorPlan) name:@"removeFloorPlan" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetBuilding) name:@"resetBuilding" object:nil];
 }
 
-- (void)removeFloorPlan
+- (void)resetBuilding
 {
     _uiiv_bgImg.hidden = YES;
     _uiv_bldImgContainer.transform = CGAffineTransformIdentity;
@@ -49,18 +50,14 @@
     _uiv_statImgContainer.alpha = 0.0;
     _uiv_statImgContainer.transform = CGAffineTransformIdentity;
     
-    if (_floorPlan) {
-        [_floorPlan.view removeFromSuperview];
-        _floorPlan.view = nil;
-        [_floorPlan removeFromParentViewController];
-        _floorPlan = nil;
-    }
-    
+    [self removeFloorPlan];
     [self resetTopMenu];
 }
 
 - (void)setTopButtons
 {
+    _arr_topBtnsArray = [[NSMutableArray alloc] init];
+    
     [self initTopBtn:_uib_floorPlan withTitle:@"BUILDING STATS" andTag:1 andSelected:NO];
     [self initTopBtn:_uib_bldgStats withTitle:@"FLOOR PLAN" andTag:2 andSelected:NO];
     [self initTopBtn:_uib_amenities withTitle:@"AMENITIES" andTag:3 andSelected:NO];
@@ -83,19 +80,16 @@
         theBtn.backgroundColor = [UIColor vcLightBlue];
         theBtn.selected = selected;
     }
+    [_arr_topBtnsArray addObject: theBtn];
     [theBtn addTarget:self action:@selector(tapOnTopBtns:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)resetTopMenu
 {
-    _uib_floorPlan.selected = NO;
-    _uib_floorPlan.backgroundColor = [UIColor vcLightBlue];
-    _uib_bldgStats.selected = NO;
-    _uib_bldgStats.backgroundColor = [UIColor vcLightBlue];
-    _uib_amenities.selected = NO;
-    _uib_amenities.backgroundColor = [UIColor vcLightBlue];
-    _uib_elevators.selected = NO;
-    _uib_elevators.backgroundColor = [UIColor vcLightBlue];
+    for (UIButton *tmp in _arr_topBtnsArray) {
+        tmp.selected = NO;
+        tmp.backgroundColor = [UIColor vcLightBlue];
+    }
 }
 
 - (void)tapOnTopBtns:(id)sender
@@ -118,12 +112,7 @@
     _uiv_statImgContainer.alpha = 0.0;
     _uiv_statImgContainer.transform = CGAffineTransformIdentity;
     
-    if (_floorPlan) {
-        [_floorPlan.view removeFromSuperview];
-        _floorPlan.view = nil;
-        [_floorPlan removeFromParentViewController];
-        _floorPlan = nil;
-    }
+    [self removeFloorPlan];
     
     switch (index) {
         case 1: {
@@ -196,18 +185,24 @@
 #pragma mark - Set up Floor plan view
 - (void)loadFloorPlan
 {
-    if (_floorPlan) {
-        [_floorPlan.view removeFromSuperview];
-        _floorPlan.view = nil;
-        [_floorPlan removeFromParentViewController];
-        _floorPlan = nil;
-    }
+    [self removeFloorPlan];
     
     _floorPlan = [self.storyboard instantiateViewControllerWithIdentifier:@"floorPlanViewController"];;
     _floorPlan.view.frame = screenRect;
     [self addChildViewController:_floorPlan];
     [self.view insertSubview:_floorPlan.view belowSubview:_uib_floorPlan];
 }
+
+- (void)removeFloorPlan {
+    if (_floorPlan) {
+        [_floorPlan.view removeFromSuperview];
+        _floorPlan.view = nil;
+        [_floorPlan removeFromParentViewController];
+        _floorPlan = nil;
+    }
+}
+
+#pragma mark - Memory cleaning & warning
 
 - (void)viewWillDisappear:(BOOL)animated
 {

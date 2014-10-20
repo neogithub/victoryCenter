@@ -106,7 +106,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 
 - (void)backBtnTapped:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"removeFloorPlan" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"resetBuilding" object:nil];
 }
 
 - (void)panoBtnTapped:(id)sender
