@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20F890C719DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20F890C519DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg */; };
 		20F890C819DA295C0074A3B7 /* Victory Center 02 W Hotel View@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20F890C619DA295C0074A3B7 /* Victory Center 02 W Hotel View@2x.jpg */; };
 		82000B6F19E590AD00AE2C70 /* Building_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82000B5C19E590AD00AE2C70 /* Building_bg.jpg */; };
 		82000B7019E590AD00AE2C70 /* Building_bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82000B5D19E590AD00AE2C70 /* Building_bg@2x.jpg */; };
@@ -234,7 +233,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20F890C519DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Victory Center 02 W Hotel View.jpg"; path = "illustrations/Victory Center 02 W Hotel View.jpg"; sourceTree = "<group>"; };
 		20F890C619DA295C0074A3B7 /* Victory Center 02 W Hotel View@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Victory Center 02 W Hotel View@2x.jpg"; path = "illustrations/Victory Center 02 W Hotel View@2x.jpg"; sourceTree = "<group>"; };
 		82000B5C19E590AD00AE2C70 /* Building_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Building_bg.jpg; sourceTree = "<group>"; };
 		82000B5D19E590AD00AE2C70 /* Building_bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Building_bg@2x.jpg"; sourceTree = "<group>"; };
@@ -520,7 +518,6 @@
 		20F890C419DA294B0074A3B7 /* illustrations */ = {
 			isa = PBXGroup;
 			children = (
-				20F890C519DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg */,
 				20F890C619DA295C0074A3B7 /* Victory Center 02 W Hotel View@2x.jpg */,
 			);
 			name = illustrations;
@@ -1237,7 +1234,6 @@
 				82A805D219D1F61E00308BA1 /* grfx_movieIcon.png in Resources */,
 				82716A6D19E441390070A331 /* grfx_access_nav@2x.png in Resources */,
 				82000B7D19E590AD00AE2C70 /* team_logoBtmBar.png in Resources */,
-				20F890C719DA295C0074A3B7 /* Victory Center 02 W Hotel View.jpg in Resources */,
 				8224FE3219D4BD6E002B1B44 /* normal_frame.png in Resources */,
 				82000B7519E590AD00AE2C70 /* grfx_bldFloorPlan_bg.jpg in Resources */,
 				8224FE0419D47097002B1B44 /* Raleway-ExtraBold.otf in Resources */,

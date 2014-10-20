@@ -23,7 +23,6 @@
 
 static CGFloat	kFontSize = 13.0f;
 static NSString *kFontName = @"Raleway-Medium";
-static CGFloat  kCellHeight = 26.0;
 extern NSArray *arrHotSpots;
 
 @implementation embMapHotspotListViewController
@@ -88,25 +87,14 @@ extern NSArray *arrHotSpots;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    embTableCell *customCell = (embTableCell*)[self.tableView cellForRowAtIndexPath:indexPath];
-//    CGFloat px = customCell.frame.origin.x;
-//    CGFloat width = customCell.frame.size.width;
-//    if ((px + width) > self.tableView.frame.size.width) {
-//        return 33;
-//    }
     
     NSString *str = [_tableData objectAtIndex:indexPath.row];
-    CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize] constrainedToSize:CGSizeMake(180, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-    NSLog(@"The height is %f", size.height);
+    CGRect textRect = [str boundingRectWithSize:CGSizeMake(180, MAXFLOAT)
+                                         options:NSStringDrawingUsesLineFragmentOrigin
+                                      attributes:@{NSFontAttributeName:[UIFont fontWithName:kFontName size:kFontSize]}
+                                         context:nil];
+    CGSize size = textRect.size;
     return size.height+8;
-    
-//    NSString *str = [_tableData objectAtIndex:indexPath.row];
-//    CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize]];
-//    if (size.width > self.tableView.frame.size.width - 50) {
-//        return kCellHeight*1.1;
-//    }
-//    else
-//        return kCellHeight;
 }
 
 
@@ -147,26 +135,19 @@ extern NSArray *arrHotSpots;
 
     }
     NSString *str = [_tableData objectAtIndex:indexPath.row];
-    CGSize size = [str sizeWithFont:[UIFont fontWithName:kFontName size:kFontSize] constrainedToSize:CGSizeMake((ttableView.frame.size.width - cell.uil_tableLabel.frame.origin.x), MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-//    if (size.height > 30) {
-        cell.uil_tableLabel.frame = CGRectMake(cell.uil_tableLabel.frame.origin.x, cell.uil_tableLabel.frame.origin.y+4, size.width, size.height);
-        cell.uil_tableLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        cell.uil_tableLabel.numberOfLines = 0;
-        cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
-        cell.uil_tableLabel.font = [UIFont fontWithName:kFontName size:kFontSize];
-        cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
-        [cell.uil_tableLabel sizeToFit];
-//    }
-//    else{
-//        cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
-//        cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
-//        cell.uil_tableLabel.lineBreakMode = NSLineBreakByWordWrapping;
-//        cell.uil_tableLabel.lineBreakMode = NSLineBreakByWordWrapping;
-//        cell.uil_tableLabel.numberOfLines = 0;
-//        cell.uil_tableLabel.font = [UIFont fontWithName:kFontName size:kFontSize];
-//        cell.uil_tableUnit.text = @"";
-//        cell.uil_tableUnit.font = [UIFont fontWithName:kFontName size:kFontSize];
-//     }
+    CGRect textRect = [str boundingRectWithSize:CGSizeMake(180, MAXFLOAT)
+                                        options:NSStringDrawingUsesLineFragmentOrigin
+                                     attributes:@{NSFontAttributeName:[UIFont fontWithName:kFontName size:kFontSize]}
+                                        context:nil];
+    CGSize size = textRect.size;
+    cell.uil_tableLabel.frame = CGRectMake(cell.uil_tableLabel.frame.origin.x, cell.uil_tableLabel.frame.origin.y+4, size.width, size.height);
+    cell.uil_tableLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.uil_tableLabel.numberOfLines = 0;
+    cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
+    cell.uil_tableLabel.font = [UIFont fontWithName:kFontName size:kFontSize];
+    cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
+    [cell.uil_tableLabel sizeToFit];
+
     cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.uil_tableLabel.frame.size.height);
     int numOfRow = (int)indexPath.row + 1;
     cell.uil_tableIndex.text = [NSString stringWithFormat:@"%i.", numOfRow];

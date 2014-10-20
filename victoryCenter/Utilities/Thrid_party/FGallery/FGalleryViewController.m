@@ -422,7 +422,7 @@
 	[self layoutViews];
 	
 	// update status bar to be see-through
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:animated];
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:animated];
 	[[UIApplication sharedApplication] setStatusBarHidden:YES];
 	// init with next on first run.
 	if( _currentIndex == -1 ) [self next];
@@ -451,7 +451,7 @@
 	[self layoutViews];
 	
 	// update status bar to be see-through
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:animated];
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:animated];
 	[[UIApplication sharedApplication] setStatusBarHidden:YES];
 	// init with next on first run.
 	if( _currentIndex == -1 ) [self next];
@@ -632,7 +632,7 @@
 {
     
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"BACK TO GALLERY", @"") style: UIBarButtonItemStyleBordered target: self action: @selector(getBack) ];
-    [newBackButton setTitleTextAttributes:@{ UITextAttributeFont: [UIFont fontWithName:@"Raleway-Medium" size:17.0], UITextAttributeTextColor: [UIColor blackColor]} forState:UIControlStateNormal];
+    [newBackButton setTitleTextAttributes:@{ NSFontAttributeName: [UIFont fontWithName:@"Raleway-Medium" size:17.0], NSForegroundColorAttributeName: [UIColor blackColor]} forState:UIControlStateNormal];
     //    [[self navigationItem] setBackBarButtonItem: newBackButton];
     UIBarButtonItem *leftSpacer = [[UIBarButtonItem alloc]
                                    initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
@@ -654,7 +654,7 @@
     if( self.navigationController ) {
         if (_useThumbnailView) {
             _uib_seeAllRightItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"SEE ALL", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(handleSeeAllTouch:)] autorelease];
-            [_uib_seeAllRightItem setTitleTextAttributes:@{ UITextAttributeFont: [UIFont fontWithName:@"Raleway-Medium" size:17.0], UITextAttributeTextColor: [UIColor blackColor]} forState:UIControlStateNormal];
+            [_uib_seeAllRightItem setTitleTextAttributes:@{ NSFontAttributeName: [UIFont fontWithName:@"Raleway-Medium" size:17.0], NSForegroundColorAttributeName: [UIColor blackColor]} forState:UIControlStateNormal];
             UIBarButtonItem *rightSpacer = [[UIBarButtonItem alloc]
                                             initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                                             target:nil action:nil];
@@ -845,7 +845,9 @@
 			if([caption length] > 0 )
 			{
 				float captionWidth = _container.frame.size.width-kCaptionPadding*2;
-				CGSize textSize = [caption sizeWithFont:_caption.font];
+                CGSize textSize = [caption sizeWithAttributes:
+                               @{NSFontAttributeName:
+                                     _caption.font}];
 				NSUInteger numLines = ceilf( textSize.width / captionWidth );
 				NSInteger height = ( textSize.height + kCaptionPadding ) * numLines;
 				
