@@ -142,6 +142,8 @@
 		82716A6D19E441390070A331 /* grfx_access_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6B19E441390070A331 /* grfx_access_nav@2x.png */; };
 		82716A7019E45B940070A331 /* grfx_site_overview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6E19E45B940070A331 /* grfx_site_overview.jpg */; };
 		82716A7119E45B940070A331 /* grfx_site_overview@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6F19E45B940070A331 /* grfx_site_overview@2x.jpg */; };
+		8297BD2A19F5760D0046CB65 /* grfx_galleryCap.png in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2819F5760D0046CB65 /* grfx_galleryCap.png */; };
+		8297BD2B19F5760D0046CB65 /* grfx_galleryCap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2919F5760D0046CB65 /* grfx_galleryCap@2x.png */; };
 		82A29E3E19EC4ED300AFAE1E /* embBezierPathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3519EC4ED300AFAE1E /* embBezierPathItem.m */; };
 		82A29E3F19EC4ED300AFAE1E /* embBezierPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3719EC4ED300AFAE1E /* embBezierPaths.m */; };
 		82A29E4019EC4ED300AFAE1E /* embBlockPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3919EC4ED300AFAE1E /* embBlockPaths.m */; };
@@ -389,6 +391,8 @@
 		82716A6B19E441390070A331 /* grfx_access_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_access_nav@2x.png"; sourceTree = "<group>"; };
 		82716A6E19E45B940070A331 /* grfx_site_overview.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_site_overview.jpg; sourceTree = "<group>"; };
 		82716A6F19E45B940070A331 /* grfx_site_overview@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_site_overview@2x.jpg"; sourceTree = "<group>"; };
+		8297BD2819F5760D0046CB65 /* grfx_galleryCap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_galleryCap.png; sourceTree = "<group>"; };
+		8297BD2919F5760D0046CB65 /* grfx_galleryCap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_galleryCap@2x.png"; sourceTree = "<group>"; };
 		82A29E3419EC4ED300AFAE1E /* embBezierPathItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBezierPathItem.h; sourceTree = "<group>"; };
 		82A29E3519EC4ED300AFAE1E /* embBezierPathItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embBezierPathItem.m; sourceTree = "<group>"; };
 		82A29E3619EC4ED300AFAE1E /* embBezierPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBezierPaths.h; sourceTree = "<group>"; };
@@ -585,6 +589,8 @@
 		8224FDF219D46D90002B1B44 /* grfx */ = {
 			isa = PBXGroup;
 			children = (
+				8297BD2819F5760D0046CB65 /* grfx_galleryCap.png */,
+				8297BD2919F5760D0046CB65 /* grfx_galleryCap@2x.png */,
 				823D78AA19F1AD500096E62C /* grfx_compass.png */,
 				823D78AB19F1AD500096E62C /* grfx_compass@2x.png */,
 				82716A6A19E441390070A331 /* grfx_access_nav.png */,
@@ -1133,6 +1139,7 @@
 			files = (
 				82DC11D019DAEA940057AE4F /* 20140811_view3_100m_03.jpg in Resources */,
 				82000B8D19E592A800AE2C70 /* team_duda_logo.png in Resources */,
+				8297BD2B19F5760D0046CB65 /* grfx_galleryCap@2x.png in Resources */,
 				824F368619E6C47500267B44 /* thumb_20140716_view2_90 feet.jpg in Resources */,
 				824F369119E6C47500267B44 /* thumb_20140802_view4_100m_06-small.jpg in Resources */,
 				82CE2FD819F06C79006F7B0E /* floorplanData.plist in Resources */,
@@ -1259,6 +1266,7 @@
 				824F36A419E6C56E00267B44 /* thumb_neoscape_bug.jpg in Resources */,
 				82A805D319D1F61E00308BA1 /* grfx_movieIcon@2x.png in Resources */,
 				82DC11BF19DAEA940057AE4F /* 20140716_view1_90 feet.jpg in Resources */,
+				8297BD2A19F5760D0046CB65 /* grfx_galleryCap.png in Resources */,
 				82716A6819E434C10070A331 /* Districts_overlay.png in Resources */,
 				82DC11FC19DAF2990057AE4F /* photo-gallery-left.png in Resources */,
 				82000B8C19E592A800AE2C70 /* team_cushman_logo@2x.png in Resources */,

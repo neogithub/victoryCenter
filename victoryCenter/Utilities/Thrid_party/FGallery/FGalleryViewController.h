@@ -46,6 +46,7 @@ typedef enum
 	UIScrollView *_scroller;
 	UIView *_captionContainer;
 	UILabel *_caption;
+    UIImageView *_captionBgImg;
 	
 	NSMutableDictionary *_photoLoaders;
 	NSMutableArray *_barItems;

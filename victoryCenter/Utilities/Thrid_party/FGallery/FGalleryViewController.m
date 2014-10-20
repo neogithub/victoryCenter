@@ -11,7 +11,7 @@
 #define kThumbnailSize 75
 #define kThumbnailSpacing 4
 #define kCaptionPadding 3
-#define kToolbarHeight 40
+#define kToolbarHeight 60
 
 
 @interface FGalleryViewController (Private)
@@ -196,8 +196,11 @@
     _toolbar							= [[UIToolbar alloc] initWithFrame:CGRectZero];
     _captionContainer					= [[UIView alloc] initWithFrame:CGRectZero];
     _caption							= [[UILabel alloc] initWithFrame:CGRectZero];
+    _captionBgImg                       = [[UIImageView alloc] initWithFrame:CGRectZero];
     
-    //    _toolbar.barStyle					= UIBarStyleBlackTranslucent;
+    _toolbar.barStyle					= UIBarStyleDefault;
+    _toolbar.translucent                = YES;
+    _toolbar.backgroundColor            = [UIColor clearColor];
     _container.backgroundColor			= [UIColor blackColor];
     
     // listen for container frame changes so we can properly update the layout during auto-rotation or going in and out of fullscreen
@@ -210,16 +213,17 @@
     _scroller.showsHorizontalScrollIndicator	= NO;
     
     // setup caption
-    _captionContainer.backgroundColor			= [UIColor colorWithRed:133.0/255.0 green:185.0/255.0 blue:217.0/255.0 alpha:1.0];
+    _captionContainer.backgroundColor			= [UIColor clearColor];
     _captionContainer.hidden					= YES;
     _captionContainer.userInteractionEnabled	= NO;
     _captionContainer.exclusiveTouch			= YES;
     _caption.font								= [UIFont fontWithName:@"Raleway-Medium" size:14.0];
     _caption.textColor							= [UIColor whiteColor];
     _caption.backgroundColor					= [UIColor clearColor];
-    _caption.textAlignment						= NSTextAlignmentLeft;
+    _caption.textAlignment						= NSTextAlignmentRight;
     _caption.shadowColor						= [UIColor clearColor];
     _caption.shadowOffset						= CGSizeMake( 1, 1 );
+    _captionBgImg.image                         = [UIImage imageNamed:@"grfx_galleryCap.png"];
     
     // make things flexible
     _container.autoresizesSubviews				= NO;
@@ -243,9 +247,10 @@
 	[_container addSubview:_thumbsView];
 	
 	[_innerContainer addSubview:_scroller];
-	[_innerContainer addSubview:_toolbar];
+//	[_innerContainer addSubview:_toolbar];
 	[_innerContainer addSubview:_captionContainer];
     //	[_toolbar addSubview:_captionContainer];
+    [_captionContainer addSubview:_captionBgImg];
 	[_captionContainer addSubview:_caption];
 	
 	// create buttons for toolbar
@@ -338,6 +343,7 @@
     //    [_toolbar release], _toolbar = nil;
     [_captionContainer release], _captionContainer = nil;
     [_caption release], _caption = nil;
+    [_captionBgImg release], _captionBgImg = nil;
     
     [_uib_seeAllButton release], _uib_seeAllButton = nil;
     [_uib_backButton release], _uib_backButton = nil;
@@ -473,6 +479,9 @@
     [_container release];
     _container = nil;
 	
+    [_captionBgImg release];
+    _captionBgImg = nil;
+    
     [_innerContainer release];
     _innerContainer = nil;
 	
@@ -735,6 +744,7 @@
 - (void)positionCaption
 {
     _captionContainer.frame = CGRectMake( 0, _scroller.frame.size.height-kToolbarHeight, _scroller.frame.size.width, kToolbarHeight );
+    _captionBgImg.frame = _captionContainer.bounds;
 }
 
 - (void)resizeThumbView
@@ -857,7 +867,7 @@
                 //				NSInteger containerHeight = height+kCaptionPadding*2;
                 //				_captionContainer.frame = CGRectMake(0, -containerHeight, _container.frame.size.width, containerHeight );
                 _captionContainer.frame = CGRectMake( 0, _scroller.frame.size.height-kToolbarHeight, _scroller.frame.size.width, kToolbarHeight );
-				_caption.frame = CGRectMake(125, (kToolbarHeight-height)/2, captionWidth, height );
+				_caption.frame = CGRectMake(-125, (kToolbarHeight-height)/2, captionWidth, height );
                 
 				// show caption bar
 				_captionContainer.hidden = NO;
