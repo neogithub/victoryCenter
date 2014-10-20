@@ -117,24 +117,9 @@
          _scroller.layer.borderWidth = 2.0;
          */
         
-        //        [self.navigationController.navigationBar setFrame:CGRectMake(0.0, 0.0, self.navigationController.navigationBar.frame.size.width, 35.0)];
-        self.navigationController.navigationBar.hidden = YES;
-        float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-        if (systemVersion >= 7.0)
-        {
-            self.edgesForExtendedLayout = UIRectEdgeNone;
-//            [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_bar_BG.png"] forBarPosition:UIBarPositionAny
-//                                                  barMetrics:UIBarMetricsDefault];
-//            [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
-            [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
-            [self.navigationController.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
-        }
-        else
-        {
-            [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_bar_BG.png"]  forBarMetrics:UIBarMetricsDefault];
-            [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
-        }
-        
+//        self.edgesForExtendedLayout = UIRectEdgeNone;
+//        [[UINavigationBar appearance] setBackgroundColor:[UIColor clearColor]];
+//        [self.navigationController.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
 	}
 	return self;
 }
@@ -436,6 +421,10 @@
 	
 	// eb addition
 	[self exitFullscreen];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
 }
 
 
@@ -640,21 +629,10 @@
 - (void)setUseThumbnailView:(BOOL)useThumbnailView
 {
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"BACK TO GALLERY", @"") style: UIBarButtonItemStyleBordered target: self action: @selector(getBack) ];
-    [newBackButton setTitleTextAttributes:@{ NSFontAttributeName: [UIFont fontWithName:@"Raleway-Medium" size:17.0], NSForegroundColorAttributeName: [UIColor blackColor]} forState:UIControlStateNormal];
-    //    [[self navigationItem] setBackBarButtonItem: newBackButton];
-    UIBarButtonItem *leftSpacer = [[UIBarButtonItem alloc]
-                                   initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                   target:nil action:nil];
-    leftSpacer.width = 100;
-    //    [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects:leftSpacer, newBackButton, nil] animated:NO];
-    //    [self.navigationItem setLeftBarButtonItem:newBackButton];
-    
     UIButton *uib_back = [UIButton buttonWithType:UIButtonTypeCustom];
-    [uib_back setFrame:CGRectMake(120.0, 17.0, 180.0, 20.0)];
-    [uib_back setTitle:@"BACK TO GALLERY" forState:UIControlStateNormal];
-    uib_back.titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:17.0];
-    [uib_back setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [uib_back setFrame:CGRectMake(0.0, 0.0, 44.0, 44.0)];
+    uib_back.backgroundColor = [UIColor whiteColor];
+    [uib_back setImage:[UIImage imageNamed:@"grfx_galleryBack.jpg"] forState:UIControlStateNormal];
     [uib_back addTarget:self action:@selector(getBack) forControlEvents:UIControlEventTouchDown];
     [self.navigationController.navigationBar addSubview:uib_back];
     
@@ -677,15 +655,13 @@
             _uib_seeAllButton.titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:17.0];
             [_uib_seeAllButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_uib_seeAllButton addTarget:self action:@selector(handleSeeAllTouch:) forControlEvents:UIControlEventTouchDown];
-            [self.navigationController.navigationBar addSubview:_uib_seeAllButton];
+//            [self.navigationController.navigationBar addSubview:_uib_seeAllButton];
             
         }
         else {
             [self.navigationItem setRightBarButtonItem:nil animated:NO];
         }
     }
-    
-    [newBackButton release];
 }
 
 
@@ -892,19 +868,22 @@
 - (void)updateTitle
 {
     if (!_hideTitle){
-        [self setTitle:[NSString stringWithFormat:@"%i %@ %i", (int)_currentIndex+1, NSLocalizedString(@"of", @"") , [_photoSource numberOfPhotosForPhotoGallery:self]]];
+        NSString *theTitle = [NSString stringWithFormat:@"%i %@ %i", (int)_currentIndex+1, NSLocalizedString(@"of", @"") , [_photoSource numberOfPhotosForPhotoGallery:self]];
+//        [self setTitle:[NSString stringWithFormat:@"%i %@ %i", (int)_currentIndex+1, NSLocalizedString(@"of", @"") , [_photoSource numberOfPhotosForPhotoGallery:self]]];
         
-        UILabel* titleLabel=[[UILabel alloc] initWithFrame:CGRectMake(0,0, 200, 40)];
-        titleLabel.text=self.navigationItem.title;
-        titleLabel.textColor=[UIColor blackColor];
-        titleLabel.backgroundColor =[UIColor clearColor];
+        UILabel* titleLabel=[[UILabel alloc] initWithFrame:CGRectMake(479, 13, 66, 30)];
+        titleLabel.text = theTitle;
+//        titleLabel.text=self.navigationItem.title;
+        titleLabel.textColor=[UIColor whiteColor];
+        titleLabel.backgroundColor =[UIColor vcDarkBlue];
         titleLabel.adjustsFontSizeToFitWidth=YES;
         titleLabel.textAlignment= NSTextAlignmentCenter;
-        [titleLabel sizeToFit];
-        titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:18.0];
-        self.navigationItem.titleView=titleLabel;
-        CGFloat verticalOffset = 3;
-        [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:verticalOffset forBarMetrics:UIBarMetricsDefault];
+//        [titleLabel sizeToFit];
+        titleLabel.font = [UIFont fontWithName:@"Raleway-Bold" size:16.0];
+        [self.view addSubview: titleLabel];
+//        self.navigationItem.titleView=titleLabel;
+//        CGFloat verticalOffset = 3;
+//        [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:verticalOffset forBarMetrics:UIBarMetricsDefault];
         
     }else{
         [self setTitle:@""];
