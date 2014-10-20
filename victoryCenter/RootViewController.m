@@ -284,10 +284,19 @@
 }
 
 #pragma mark - Bottomleft buttons' actions
+#pragma mark Mail Button Action
 - (IBAction)mailBtnTapped:(id)sender {
-
+    UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle: @""
+                               message: @"Mail Coming Soon"
+                              delegate: self
+                     cancelButtonTitle: @"OK"
+                     otherButtonTitles: nil];
+    alert.tag = 1;
+    [alert show];
 }
 
+#pragma mark Movie Button Action
 - (IBAction)movieBtnTapped:(id)sender {
     
     NSString *url = [[NSBundle mainBundle] pathForResource:@"neoscape_bug" ofType:@"mov"];
@@ -300,12 +309,18 @@
     _playerViewController = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL fileURLWithPath:url]];
     _playerViewController.view.frame = self.view.bounds;//CGRectMake(0, 0, 1024, 768);
     _playerViewController.view.alpha=1.0;
-    _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
+    _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleNone;
     [_playerViewController.moviePlayer setAllowsAirPlay:YES];
     _playerViewController.moviePlayer.repeatMode = MPMovieRepeatModeOne;
     [self.view insertSubview:_playerViewController.view aboveSubview:_uib_menu];
     [_playerViewController.moviePlayer play];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+    [self performSelector:@selector(setMovieControlAvailable) withObject:nil afterDelay:1.0];
+}
+
+- (void)setMovieControlAvailable
+{
+    _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
 }
 
 -(void)doneButtonClick:(NSNotification*)aNotification{
@@ -314,10 +329,19 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
 }
 
+#pragma mark Help Button Action
 - (IBAction)helpBtnTapped:(id)sender {
-    
+    UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle: @""
+                               message: @"Help Coming Soon"
+                              delegate: self
+                     cancelButtonTitle: @"OK"
+                     otherButtonTitles: nil];
+    alert.tag = 1;
+    [alert show];
 }
 
+#pragma mark - Memory Warning & Cleaning
 
 - (void)didReceiveMemoryWarning
 {
