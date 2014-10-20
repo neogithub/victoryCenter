@@ -75,6 +75,7 @@
 @synthesize startingIndex = _startingIndex;
 @synthesize beginsInThumbnailView = _beginsInThumbnailView;
 @synthesize hideTitle = _hideTitle;
+@synthesize galleryTitle = _galleryTitle;
 
 #pragma mark - Public Methods
 
@@ -270,7 +271,22 @@
     //    [_uib_seeAllButton addTarget:self action:@selector(seeThumbs) forControlEvents:UIControlEventTouchDown];
     
     [self enterFullscreen];
+    [self setUpTitleLabel];
     
+}
+
+- (void)setUpTitleLabel
+{
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(44.0, 0.0, 180.0, 44.0)];
+    titleLabel.backgroundColor = [UIColor whiteColor];
+    titleLabel.layer.borderWidth = 1.0;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor vcDarkBlue];
+    titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:20];
+    titleLabel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    titleLabel.text = _galleryTitle;
+    
+    [self.view addSubview: titleLabel];
 }
 
 -(void)getBack

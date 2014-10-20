@@ -255,6 +255,13 @@
 
 - (void)openFGallery:(int)index
 {
+    NSString *galleryTitle = [NSString new];
+    for (UIButton *tmp in arr_topBtnArray) {
+        if (tmp.selected) {
+            galleryTitle = tmp.titleLabel.text;
+        }
+    }
+    
     localImages =  arr_AllImgs;
     localCaptions = [NSArray arrayWithArray:[arr_AlbumCaption subarrayWithRange:NSMakeRange(0, arr_AllImgs.count)]];
     //[self imageViewer:sender];
@@ -262,6 +269,7 @@
     fGalleryNavigationController.view.frame = self.view.frame;
     localGallery = [[FGalleryViewController alloc] initWithPhotoSource:self];
     localGallery.startingIndex = index;
+    localGallery.galleryTitle = galleryTitle;
     [fGalleryNavigationController addChildViewController:localGallery];
     [fGalleryNavigationController.view addSubview:localGallery.view];
     [self addChildViewController:fGalleryNavigationController];
