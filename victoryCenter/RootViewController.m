@@ -49,12 +49,14 @@
 {
     _uib_menu.hidden = YES;
     _uiv_toolsPanel.hidden = YES;
+    _uil_titleLabel.hidden = YES;
 }
 
 - (void)unHideHomeBtn:(NSNotification *)notificaiton
 {
     _uib_menu.hidden = NO;
     _uiv_toolsPanel.hidden = NO;
+    _uil_titleLabel.hidden = NO;
 }
 
 #pragma mark - Style the title label

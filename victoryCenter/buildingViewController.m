@@ -41,6 +41,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetBuilding) name:@"resetBuilding" object:nil];
 }
 
+#pragma mark - Methods dealing with notifications
 - (void)resetBuilding
 {
     _uiiv_bgImg.hidden = YES;
@@ -53,6 +54,8 @@
     [self removeFloorPlan];
     [self resetTopMenu];
 }
+
+#pragma mark - Set up Top menu buttons
 
 - (void)setTopButtons
 {
@@ -83,7 +86,7 @@
     [_arr_topBtnsArray addObject: theBtn];
     [theBtn addTarget:self action:@selector(tapOnTopBtns:) forControlEvents:UIControlEventTouchUpInside];
 }
-
+#pragma mark Reset top Menu
 - (void)resetTopMenu
 {
     for (UIButton *tmp in _arr_topBtnsArray) {
@@ -91,7 +94,7 @@
         tmp.backgroundColor = [UIColor vcLightBlue];
     }
 }
-
+#pragma mark Actions of top menu
 - (void)tapOnTopBtns:(id)sender
 {
     UIButton *tappedBtn = sender;
@@ -139,6 +142,8 @@
             break;
     }
 }
+
+#pragma mark - Building Stats
 
 - (void)setGestureToBldStats
 {

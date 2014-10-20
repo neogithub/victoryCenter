@@ -233,12 +233,18 @@
     _playerViewController = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL fileURLWithPath:url]];
     _playerViewController.view.frame = self.view.bounds;//CGRectMake(0, 0, 1024, 768);
     _playerViewController.view.alpha=1.0;
-    _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
+    _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleNone;
     [_playerViewController.moviePlayer setAllowsAirPlay:YES];
     _playerViewController.moviePlayer.repeatMode = MPMovieRepeatModeOne;
     [self.view insertSubview:_playerViewController.view aboveSubview:_uic_gallery];
     [_playerViewController.moviePlayer play];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+    [self performSelector:@selector(setMovieControlAvailable) withObject:nil afterDelay:1.0];
+}
+
+- (void)setMovieControlAvailable
+{
+    _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
 }
 
 -(void)doneButtonClick:(NSNotification*)aNotification{
