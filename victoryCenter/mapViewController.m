@@ -327,7 +327,7 @@ static float    panle_w                     = 227.0;
     tappedBtn.selected = YES;
     tappedBtn.backgroundColor = [UIColor vcDarkBlue];
 }
-
+#pragma mark Top menu action
 - (void)tapMapTopMenu:(id)sender
 {
     UIButton *tappedBtn = sender;
@@ -431,6 +431,7 @@ static float    panle_w                     = 227.0;
     }
 }
 
+#pragma mark Sub menu's action
 - (void)tapSubMenu:(id)sender
 {
     UIButton *tappedBtn = sender;
@@ -459,7 +460,7 @@ static float    panle_w                     = 227.0;
 }
 
 #pragma mark - City Submenu
-#pragma mark - City Submenu
+
 - (void)handleCitySubMenu:(id)sender
 {
     [self hiliteTappedButton:sender inView:_uiv_citySubMenu];
@@ -491,7 +492,7 @@ static float    panle_w                     = 227.0;
 }
 
 #pragma  mark - Neighborhood Submenu
-#pragma  mark - Neighborhood Submenu
+
 - (void)handleNeibSubMenu:(id)sender
 {
     [self hiliteTappedButton:sender inView:_uiv_neighborhoodSubMenu];
@@ -517,7 +518,7 @@ static float    panle_w                     = 227.0;
     }
 }
 
-#pragma mark - Add panel for neighborhood amenities
+#pragma mark Add panel for neighborhood amenities
 - (void)addNeibAmenitiesPanel
 {
     float panel_h = 160.0;
@@ -532,7 +533,7 @@ static float    panle_w                     = 227.0;
     arr_indicatorColors = nil;
     arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRestaurant], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRecreation], nil];
 }
-
+#pragma mark Reset panel's size to load table view
 - (void)loadHotspotTable:(id)sender
 {
     UIView *buttonContianer = [uiv_neibAmePanel viewWithTag:102];
@@ -606,7 +607,7 @@ static float    panle_w                     = 227.0;
         }
     }
 }
-
+#pragma mark Load Hotspot data and hotspot view
 - (void) prepareHotspotData
 {
     [arr_HotSpotsRaw removeAllObjects];
@@ -684,7 +685,7 @@ static float    panle_w                     = 227.0;
         CGPoint centerPoint = CGPointFromString([NSString stringWithFormat:@"{%@}", arr_HotSpotXY[i]]);
         hotspotView.center = centerPoint;
         UIColor *borderColor = [arr_indicatorColors objectAtIndex:index];
-        [self setRoundedView:hotspotView toDiameter:30 num:i+1 andColor:borderColor];
+        [self setHotspotRoundedView:hotspotView toDiameter:30 num:i+1 andColor:borderColor];
         hotspotView.layer.borderWidth = 3.0;
         hotspotView.layer.borderColor = borderColor.CGColor;
         hotspotView.tag=i + 100*index;
@@ -694,7 +695,7 @@ static float    panle_w                     = 227.0;
     
 }
 
-- (void)setRoundedView:(UIView *)roundedView toDiameter:(float)newSize num:(int)i andColor:(UIColor *)textColor
+- (void)setHotspotRoundedView:(UIView *)roundedView toDiameter:(float)newSize num:(int)i andColor:(UIColor *)textColor
 {
     CGPoint saveCenter = roundedView.center;
     CGRect newFrame = CGRectMake(roundedView.frame.origin.x, roundedView.frame.origin.y, newSize, newSize);
@@ -747,7 +748,7 @@ static float    panle_w                     = 227.0;
         tmp.textColor = [UIColor whiteColor];
     }
 }
-
+#pragma mark Delegate method of embMapHotspotListViewController
 // Delegate method of class embMapHotspotListViewController
 - (void)childViewController:(embMapHotspotListViewController*)viewController
                didChooseRow:(NSInteger)rowIndex
@@ -757,7 +758,7 @@ static float    panle_w                     = 227.0;
     [self hiliteHotSpot:rowIndex+index*100];
 }
 
-#pragma mark - Add panel for neighborhood access
+#pragma mark Add panel for neighborhood access
 - (void)addNeibAccessPanel
 {
     float panel_h = 236.0;
@@ -809,7 +810,7 @@ static float    panle_w                     = 227.0;
     }
 }
 
-#pragma mark - Add panel for site amenities
+#pragma mark Add panel for site amenities
 - (void)addSiteAmenitiesPanel
 {
     float panel_h = 198.0;
@@ -828,14 +829,14 @@ static float    panle_w                     = 227.0;
     arr_indicatorColors = nil;
     arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRestaurant], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRecreation], nil];
 }
-
+#pragma mark Actions for site amenities' buttons
 - (void)tapSiteAmenities:(id)sender
 {
     [self hightLightPanelBtn:sender andIndicatorColor:[arr_indicatorColors objectAtIndex:[sender tag]] withIndicator:YES];
     [self updateOverlayImage:[arr_overlayArray objectAtIndex:[sender tag]]];
 }
 
-#pragma mark - Add panel for site access
+#pragma mark Add panel for site access
 - (void)addSiteAccessPanel
 {
     float panel_h = 236.0;
@@ -887,7 +888,7 @@ static float    panle_w                     = 227.0;
     }];
 }
 
-#pragma mark - create Panel
+#pragma mark - Create Panel
 /*
  Required arguements:
  1. NSString panel's title
@@ -1146,7 +1147,7 @@ static float    panle_w                     = 227.0;
     }
     [arr_switcherArray addObject: theBtn];
 }
-
+#pragma mark Actions of map switcher
 - (void)tapMapSwitcher:(id)sender
 {
     UIButton *tappedBtn = sender;
