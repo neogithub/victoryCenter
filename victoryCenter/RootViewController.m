@@ -10,8 +10,12 @@
 #import "XHCustomSegue.h"
 #import "UIColor+Extensions.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "contactViewController.h"
 
 @interface RootViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *uib_helpBtn;
+@property (weak, nonatomic) IBOutlet UIButton *uib_movieBtn;
+@property (weak, nonatomic) IBOutlet UIButton *uib_mailBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton                   *uib_menu;
 @property (strong, nonatomic) IBOutlet UIView                   *uiv_toolsPanel;
@@ -20,6 +24,7 @@
 @property (strong, nonatomic) UIView                            *uiv_leftFillerPanel;
 @property (strong, nonatomic) NSMutableArray                    *arr_menuButtons;
 @property (nonatomic, strong) MPMoviePlayerViewController       *playerViewController;
+@property (nonatomic, strong) contactViewController             *contactVC;
 @end
 
 @implementation RootViewController
@@ -41,12 +46,17 @@
     [self setTitleLabel];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideHomeBtn:) name:@"hideHomeButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unHideHomeBtn:) name:@"unhideHomeButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeContact:) name:@"removeContact" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doneButtonClick:) name:MPMoviePlayerPlaybackDidFinishNotification object:_playerViewController];
 }
 
 #pragma mark - Deal with notificaiton
 - (void)hideHomeBtn:(NSNotification *)notification
 {
+    if (_contactVC.view)
+    {
+        return;
+    }
     _uib_menu.hidden = YES;
     _uiv_toolsPanel.hidden = YES;
     _uil_titleLabel.hidden = YES;
@@ -54,9 +64,16 @@
 
 - (void)unHideHomeBtn:(NSNotification *)notificaiton
 {
-    _uib_menu.hidden = NO;
-    _uiv_toolsPanel.hidden = NO;
-    _uil_titleLabel.hidden = NO;
+    if (_contactVC.view)
+    {
+        return;
+    }
+    else
+    {
+        _uib_menu.hidden = NO;
+        _uiv_toolsPanel.hidden = NO;
+        _uil_titleLabel.hidden = NO;
+    }
 }
 
 #pragma mark - Style the title label
@@ -287,15 +304,38 @@
 
 #pragma mark - Bottomleft buttons' actions
 #pragma mark Mail Button Action
-- (IBAction)mailBtnTapped:(id)sender {
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle: @""
-                               message: @"Mail Coming Soon"
-                              delegate: self
-                     cancelButtonTitle: @"OK"
-                     otherButtonTitles: nil];
-    alert.tag = 1;
-    [alert show];
+- (IBAction)mailBtnTapped:(id)sender {   
+    _contactVC = [self.storyboard instantiateViewControllerWithIdentifier:@"contactViewController"];
+    CGRect frame = screenRect;
+    frame.origin.y = 768.0;
+    
+    if (_uiv_menuPanel) {
+        _uiv_menuPanel.hidden = YES;
+        _uiv_leftFillerPanel.hidden = YES;
+    }
+    
+    
+    [self.view insertSubview: _contactVC.view belowSubview:_uiv_toolsPanel];
+    _uib_menu.hidden = YES;
+    _uib_mailBtn.hidden = YES;
+    _contactVC.view.frame = frame;
+    [UIView animateWithDuration:0.33 animations:^{
+        _contactVC.view.frame = screenRect;
+    }];
+}
+
+- (void)removeContact:(NSNotification *)notification
+{
+    _uiv_menuPanel.hidden = NO;
+    _uiv_leftFillerPanel.hidden = NO;
+    _uib_menu.hidden = NO;
+    _uib_mailBtn.hidden = NO;
+    [UIView animateWithDuration:0.33 animations:^{
+        _contactVC.view.transform = CGAffineTransformMakeTranslation(0.0, 768);
+    } completion:^(BOOL finished){
+        [_contactVC.view removeFromSuperview];
+        _contactVC.view = nil;
+    }];
 }
 
 #pragma mark Movie Button Action
