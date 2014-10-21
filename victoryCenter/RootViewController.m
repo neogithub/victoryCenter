@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel                    *uil_titleLabel;
 @property (strong, nonatomic) UIView                            *uiv_menuPanel;
 @property (strong, nonatomic) UIView                            *uiv_leftFillerPanel;
+@property (strong, nonatomic) UIView                            *uiv_mainMenuContainer;
+@property (strong, nonatomic) UIButton                          *uib_resetBtn;
 @property (strong, nonatomic) NSMutableArray                    *arr_menuButtons;
 @property (nonatomic, strong) MPMoviePlayerViewController       *playerViewController;
 @property (nonatomic, strong) contactViewController             *contactVC;
@@ -134,20 +136,37 @@
 	NSArray *arr_MenuNames = @[@"Building",@"Location",@"Gallery",@"Team"];
 	NSArray *arr_MenuColors = @[[UIColor vcmediummenu],[UIColor vcdarkmenu],[UIColor vccyanmenu],[UIColor vclightbluemenu]];
 
+    _uiv_mainMenuContainer = [[UIView alloc] initWithFrame:screenRect];
+    if ([self.view viewWithTag:1000]) {
+        [_uiv_mainMenuContainer setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.6]];;
+    }
+    else {
+        [_uiv_mainMenuContainer setBackgroundColor:[UIColor clearColor]];
+    }
+    _uiv_mainMenuContainer.alpha = 0.0;
+    [self.view insertSubview:_uiv_mainMenuContainer belowSubview:_uiv_toolsPanel];
+    
 	_uiv_menuPanel = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 320)];
 	[_uiv_menuPanel setBackgroundColor:[UIColor clearColor]];
-	[self.view insertSubview:_uiv_menuPanel belowSubview:_uiv_toolsPanel];
+    [_uiv_mainMenuContainer addSubview: _uiv_menuPanel];
 	
 	_uiv_leftFillerPanel = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 80)];
 	[_uiv_leftFillerPanel setBackgroundColor:[UIColor vcmediummenu]];
-	[self.view insertSubview:_uiv_leftFillerPanel aboveSubview:_uil_titleLabel];
+    [_uiv_mainMenuContainer addSubview:_uiv_leftFillerPanel];
+    
+    _uib_resetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_resetBtn.frame = CGRectMake(0.0, 0.0, 45.0, 45.0);
+    [_uib_resetBtn setImage:[UIImage imageNamed:@"grfx_homeBtn.png"] forState:UIControlStateNormal];
+    [_uib_resetBtn addTarget:self action:@selector(resetApp) forControlEvents:UIControlEventTouchUpInside];
+    [_uiv_mainMenuContainer addSubview: _uib_resetBtn];
+    
 	
 	for (int i=0; i<[arr_MenuNames count]; i++) {
 		UIButton *button = [UIButton buttonWithType: UIButtonTypeRoundedRect];
 		CGRect frame = CGRectMake ( 6*i, 0, 800/10, 80 );
 		[button setFrame: frame];
 		button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-		[button.titleLabel setFont:[UIFont fontWithName:@"Futura" size:22.0]];
+		[button.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:22.0]];
 		[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		[button setBackgroundColor:arr_MenuColors[i]];
 		[button setTitle:[arr_MenuNames[i] uppercaseString]  forState:UIControlStateNormal];
@@ -170,6 +189,11 @@
 	_uiv_leftFillerPanel.transform = CGAffineTransformConcat(s, t);
 	
 	[self prepareMenuForAnimation];
+    
+    UITapGestureRecognizer *tapOnWhite = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rewindMenuOffScreen)];
+    tapOnWhite.numberOfTapsRequired = 1;
+    _uiv_mainMenuContainer.userInteractionEnabled = YES;
+    [_uiv_mainMenuContainer addGestureRecognizer:tapOnWhite];
 }
 
 -(void)prepareMenuForAnimation
@@ -258,14 +282,26 @@
 	
 	_uib_menu.transform = CGAffineTransformIdentity;
 	
-	[_uiv_leftFillerPanel removeFromSuperview];
-	_uiv_leftFillerPanel=nil;
-	[_uiv_menuPanel removeFromSuperview];
-	_uiv_menuPanel=nil;
+    [UIView animateWithDuration:0.2 animations:^{
+        _uiv_mainMenuContainer.alpha = 0.0;
+    } completion:^(BOOL finished){
+        [_uiv_mainMenuContainer removeFromSuperview];
+        _uiv_mainMenuContainer = nil;
+        [_uiv_leftFillerPanel removeFromSuperview];
+        _uiv_leftFillerPanel=nil;
+        [_uiv_menuPanel removeFromSuperview];
+        _uiv_menuPanel=nil;
+        [_uib_resetBtn removeFromSuperview];
+        _uib_resetBtn = nil;
+    }];
 }
 
 -(void)animateMenuOnScreen
 {
+    [UIView animateWithDuration:0.33 animations:^{
+        _uiv_mainMenuContainer.alpha = 1.0;
+    }];
+    
 	[UIView animateWithDuration:0.33
 					 animations:^{
 						 
@@ -300,6 +336,23 @@
 						 
 					 }
 					 completion:^(BOOL  completed){   }];
+}
+
+- (void)resetApp
+{
+    __block UIView *tmp = [self.view viewWithTag:1000];
+    [UIView animateWithDuration:0.33 animations:^{
+        tmp.alpha = 0.0;
+        _uiv_mainMenuContainer.backgroundColor = [UIColor clearColor];
+    } completion:^(BOOL finished){
+        for (UIView __strong *tmpV in [tmp subviews]) {
+            [tmpV removeFromSuperview];
+            tmpV = nil;
+        }
+        _uil_titleLabel.hidden = YES;
+        [tmp removeFromSuperview];
+        tmp = nil;
+    }];
 }
 
 #pragma mark - Bottomleft buttons' actions
