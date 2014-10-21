@@ -42,7 +42,7 @@
     [source addChildViewController:destination];
     
     uiv_dest.alpha = 0.0;
-    // View with tag 10 bottom left buttons
+    // View with tag 10 bottom left buttons and Top left title label
     [uiv_sour insertSubview:uiv_dest belowSubview:[uiv_sour viewWithTag:10]];
     [UIView animateWithDuration:0.33 animations:^{
         uiv_dest.alpha = 1.0;
