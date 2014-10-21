@@ -90,6 +90,8 @@
 		82459E7119F6916900E03A8D /* contactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82459E7019F6916900E03A8D /* contactViewController.m */; };
 		82459E7419F6974A00E03A8D /* grfx_contactClose.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82459E7219F6974A00E03A8D /* grfx_contactClose.jpg */; };
 		82459E7519F6974A00E03A8D /* grfx_contactClose@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82459E7319F6974A00E03A8D /* grfx_contactClose@2x.jpg */; };
+		82459E7819F6C4C200E03A8D /* embEmailData.m in Sources */ = {isa = PBXBuildFile; fileRef = 82459E7719F6C4C200E03A8D /* embEmailData.m */; };
+		82459E7A19F6C77D00E03A8D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82459E7919F6C77D00E03A8D /* MessageUI.framework */; };
 		824F368519E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F366619E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg */; };
 		824F368619E6C47500267B44 /* thumb_20140716_view2_90 feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F366719E6C47500267B44 /* thumb_20140716_view2_90 feet.jpg */; };
 		824F368719E6C47500267B44 /* thumb_20140802_downtown_100m_1pm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F366819E6C47500267B44 /* thumb_20140802_downtown_100m_1pm.jpg */; };
@@ -341,6 +343,9 @@
 		82459E7019F6916900E03A8D /* contactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = contactViewController.m; sourceTree = "<group>"; };
 		82459E7219F6974A00E03A8D /* grfx_contactClose.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_contactClose.jpg; sourceTree = "<group>"; };
 		82459E7319F6974A00E03A8D /* grfx_contactClose@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_contactClose@2x.jpg"; sourceTree = "<group>"; };
+		82459E7619F6C4C200E03A8D /* embEmailData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embEmailData.h; sourceTree = "<group>"; };
+		82459E7719F6C4C200E03A8D /* embEmailData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embEmailData.m; sourceTree = "<group>"; };
+		82459E7919F6C77D00E03A8D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		824F366619E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_20140716_view1_90 feet.jpg"; sourceTree = "<group>"; };
 		824F366719E6C47500267B44 /* thumb_20140716_view2_90 feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_20140716_view2_90 feet.jpg"; sourceTree = "<group>"; };
 		824F366819E6C47500267B44 /* thumb_20140802_downtown_100m_1pm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_20140802_downtown_100m_1pm.jpg; sourceTree = "<group>"; };
@@ -507,6 +512,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82459E7A19F6C77D00E03A8D /* MessageUI.framework in Frameworks */,
 				8263B97F19ED6FFB00E70C1B /* MapKit.framework in Frameworks */,
 				82000BA219E5A02800AE2C70 /* MediaPlayer.framework in Frameworks */,
 				824012E219D1AF5D00C501EE /* CoreGraphics.framework in Frameworks */,
@@ -712,6 +718,7 @@
 		824012DE19D1AF5D00C501EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82459E7919F6C77D00E03A8D /* MessageUI.framework */,
 				8263B97E19ED6FFB00E70C1B /* MapKit.framework */,
 				82000BA119E5A02800AE2C70 /* MediaPlayer.framework */,
 				824012DF19D1AF5D00C501EE /* Foundation.framework */,
@@ -791,6 +798,8 @@
 				8240131919D1B58A00C501EE /* XHCustomSegue.m */,
 				8263B98019ED790C00E70C1B /* MapViewAnnotation.h */,
 				8263B98119ED790C00E70C1B /* MapViewAnnotation.m */,
+				82459E7619F6C4C200E03A8D /* embEmailData.h */,
+				82459E7719F6C4C200E03A8D /* embEmailData.m */,
 				8263B98319EDAC8900E70C1B /* embMapHotspotListViewController.h */,
 				8263B98419EDAC8900E70C1B /* embMapHotspotListViewController.m */,
 				8263B98519EDAC8900E70C1B /* embMapHotspotListViewController.xib */,
@@ -1350,6 +1359,7 @@
 				82A44BF019D3416D004FAD58 /* galleryViewController.m in Sources */,
 				82DC11F919DAF2990057AE4F /* FGalleryPhotoView.m in Sources */,
 				8224FE2A19D48656002B1B44 /* MPFoldModalSegue.m in Sources */,
+				82459E7819F6C4C200E03A8D /* embEmailData.m in Sources */,
 				8224FE2919D48656002B1B44 /* MPFlipSegue.m in Sources */,
 				82459E7119F6916900E03A8D /* contactViewController.m in Sources */,
 				82CE2FD619F06434006F7B0E /* KSLabel.m in Sources */,
