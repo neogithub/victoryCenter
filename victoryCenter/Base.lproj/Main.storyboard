@@ -79,7 +79,10 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="uib_helpBtn" destination="1an-qf-H50" id="ifQ-CA-ymC"/>
+                        <outlet property="uib_mailBtn" destination="gzd-ze-aRE" id="MkP-hp-TlG"/>
                         <outlet property="uib_menu" destination="gBW-pQ-0as" id="9uN-2g-I38"/>
+                        <outlet property="uib_movieBtn" destination="j71-NV-ATp" id="hNo-x1-gYE"/>
                         <outlet property="uil_titleLabel" destination="SZb-ak-fCC" id="Sgy-WR-Dj0"/>
                         <outlet property="uiv_toolsPanel" destination="him-ZN-xYh" id="hCY-Y9-Mm6"/>
                     </connections>
@@ -87,6 +90,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2488" y="537"/>
+        </scene>
+        <!--Contact View Controller-->
+        <scene sceneID="SUa-Z5-G9S">
+            <objects>
+                <viewController storyboardIdentifier="contactViewController" id="gnG-9S-4TI" customClass="contactViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lJN-71-EH9">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Victory Center 01 Highway View.jpg" id="SyH-e2-EdK">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YCr-Yv-JKo">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="grfx_contactClose.jpg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeBtnTapped:" destination="gnG-9S-4TI" eventType="touchUpInside" id="FxC-dd-aau"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" id="REH-RY-HP1" userLabel="View - Title">
+                                <rect key="frame" x="752" y="0.0" width="213" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="FOR FURTHER INFORMATION ON THE BUILDING AND AVAILABLE SPACE, PLEASE CONTACT:" selectable="NO" id="7Yd-4L-xvr">
+                                        <rect key="frame" x="0.0" y="0.0" width="213" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team_logoBtmBar.png" id="ZrS-tR-KPa">
+                                        <rect key="frame" x="0.0" y="72" width="213" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.20784313725490194" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="uitv_titleText" destination="7Yd-4L-xvr" id="wfA-LI-5yA"/>
+                        <outlet property="uiv_titleContainer" destination="REH-RY-HP1" id="rCb-Ig-n1v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxF-m7-yKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1110" y="-1449"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="CYQ-tf-HS5">
@@ -542,13 +602,16 @@
     <resources>
         <image name="Map_bg.jpg" width="1024" height="768"/>
         <image name="Team_bg.jpg" width="893" height="670"/>
+        <image name="Victory Center 01 Highway View.jpg" width="1250" height="938"/>
         <image name="Victory Center 02 W Hotel View.jpg" width="1250" height="848"/>
         <image name="grfx_bldImg.png" width="674" height="733"/>
         <image name="grfx_bldStatsImg.png" width="356" height="614"/>
+        <image name="grfx_contactClose.jpg" width="44" height="44"/>
         <image name="grfx_helpIcon.png" width="36" height="36"/>
         <image name="grfx_menuIcon.png" width="44" height="43"/>
         <image name="grfx_mialIcon.png" width="36" height="36"/>
         <image name="grfx_movieIcon.png" width="36" height="36"/>
+        <image name="team_logoBtmBar.png" width="183" height="18"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
