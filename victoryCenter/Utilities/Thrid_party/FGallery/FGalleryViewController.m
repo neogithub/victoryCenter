@@ -286,7 +286,7 @@
     titleLabel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     titleLabel.text = _galleryTitle;
     
-    [self.view addSubview: titleLabel];
+    [self.navigationController.navigationBar addSubview: titleLabel];
 }
 
 -(void)getBack
@@ -896,7 +896,8 @@
         titleLabel.textAlignment= NSTextAlignmentCenter;
 //        [titleLabel sizeToFit];
         titleLabel.font = [UIFont fontWithName:@"Raleway-Bold" size:16.0];
-        [self.view addSubview: titleLabel];
+        [self.navigationController.navigationBar addSubview: titleLabel];
+//        [self.view addSubview: titleLabel];
 //        self.navigationItem.titleView=titleLabel;
 //        CGFloat verticalOffset = 3;
 //        [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:verticalOffset forBarMetrics:UIBarMetricsDefault];
