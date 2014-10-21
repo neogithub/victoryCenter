@@ -49,5 +49,7 @@
 		<string>Raleway-SemiBold.otf</string>
 		<string>Raleway-Thin.otf</string>
 	</array>
+	<key>UIViewEdgeAntialiasing</key>
+	<true/>
 </dict>
 </plist>

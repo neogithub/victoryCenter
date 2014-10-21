@@ -173,6 +173,8 @@
 		button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
 		[button addTarget: NULL action:@selector(loadVC:) forControlEvents:UIControlEventTouchUpInside];
 		[button setTag:i+1];
+        button.layer.borderColor = [UIColor clearColor].CGColor;
+        button.layer.borderWidth = 3;
 		[_arr_menuButtons addObject:button];
 		[_uiv_menuPanel insertSubview:button atIndex:0];
 		button.alpha = 0.0;
