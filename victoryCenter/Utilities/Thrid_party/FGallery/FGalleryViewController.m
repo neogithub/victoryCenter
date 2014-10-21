@@ -887,7 +887,7 @@
         NSString *theTitle = [NSString stringWithFormat:@"%i %@ %i", (int)_currentIndex+1, NSLocalizedString(@"of", @"") , [_photoSource numberOfPhotosForPhotoGallery:self]];
 //        [self setTitle:[NSString stringWithFormat:@"%i %@ %i", (int)_currentIndex+1, NSLocalizedString(@"of", @"") , [_photoSource numberOfPhotosForPhotoGallery:self]]];
         
-        UILabel* titleLabel=[[UILabel alloc] initWithFrame:CGRectMake(479, 13, 66, 30)];
+        UILabel* titleLabel=[[UILabel alloc] initWithFrame:CGRectMake(472, 13, 80, 30)];
         titleLabel.text = theTitle;
 //        titleLabel.text=self.navigationItem.title;
         titleLabel.textColor=[UIColor whiteColor];
