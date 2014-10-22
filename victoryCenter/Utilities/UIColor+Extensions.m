@@ -70,6 +70,10 @@
     return [UIColor colorWithRed:157.0/255.0 green:159.0/255.0 blue:191.0/255.0 alpha:0.9];
 }
 
++ (UIColor *)vcBldParking {
+    return [UIColor colorWithRed:224.0/255.0 green:224.0/255.0 blue:224.0/255.0 alpha:1.0];
+}
+
 + (UIColor *)vcBackGroundColor {
     return [UIColor colorWithRed:243.0/255.0 green:240.0/255.0 blue:242.0/255.0 alpha:1.0];
 }

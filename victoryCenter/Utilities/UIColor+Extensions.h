@@ -24,6 +24,7 @@
 + (UIColor *)vcSiteRetail;
 + (UIColor *)vcSiteResidentail;
 + (UIColor *)vcSiteRecreation;
++ (UIColor *)vcBldParking;
 + (UIColor *)vcLightBlueAlpha;
 + (UIColor *)vcBackGroundColor;
 + (UIColor *)vcPanelBackgroundColor;

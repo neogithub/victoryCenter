@@ -125,6 +125,16 @@
 		824F36A119E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F368319E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg */; };
 		824F36A219E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F368419E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg */; };
 		824F36A419E6C56E00267B44 /* thumb_neoscape_bug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */; };
+		825E5F7919F83CD200B77F7F /* grfx_elavators_stack_blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7719F83CD200B77F7F /* grfx_elavators_stack_blank.png */; };
+		825E5F7A19F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7819F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png */; };
+		825E5F8319F83FA300B77F7F /* grf_elavators_high_rise.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7B19F83FA300B77F7F /* grf_elavators_high_rise.png */; };
+		825E5F8419F83FA300B77F7F /* grf_elavators_high_rise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7C19F83FA300B77F7F /* grf_elavators_high_rise@2x.png */; };
+		825E5F8519F83FA300B77F7F /* grfx_elavators_lobby.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7D19F83FA300B77F7F /* grfx_elavators_lobby.png */; };
+		825E5F8619F83FA300B77F7F /* grfx_elavators_lobby@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7E19F83FA300B77F7F /* grfx_elavators_lobby@2x.png */; };
+		825E5F8719F83FA300B77F7F /* grfx_elavators_low_rise.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7F19F83FA300B77F7F /* grfx_elavators_low_rise.png */; };
+		825E5F8819F83FA300B77F7F /* grfx_elavators_low_rise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F8019F83FA300B77F7F /* grfx_elavators_low_rise@2x.png */; };
+		825E5F8919F83FA300B77F7F /* grfx_elavators_parking.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F8119F83FA300B77F7F /* grfx_elavators_parking.png */; };
+		825E5F8A19F83FA300B77F7F /* grfx_elavators_parking@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F8219F83FA300B77F7F /* grfx_elavators_parking@2x.png */; };
 		82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1919E702EC0062FC0C /* grfx_recreationg_overlay.png */; };
 		82627E2219E702EC0062FC0C /* grfx_recreationg_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1A19E702EC0062FC0C /* grfx_recreationg_overlay@2x.png */; };
 		82627E2319E702EC0062FC0C /* grfx_residential_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1B19E702EC0062FC0C /* grfx_residential_overlay.png */; };
@@ -381,6 +391,16 @@
 		824F368319E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center 04 Plaza View.jpg"; sourceTree = "<group>"; };
 		824F368419E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center View from plaza edits-sm.jpg"; sourceTree = "<group>"; };
 		824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_neoscape_bug.jpg; sourceTree = "<group>"; };
+		825E5F7719F83CD200B77F7F /* grfx_elavators_stack_blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elavators_stack_blank.png; sourceTree = "<group>"; };
+		825E5F7819F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elavators_stack_blank@2x.png"; sourceTree = "<group>"; };
+		825E5F7B19F83FA300B77F7F /* grf_elavators_high_rise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grf_elavators_high_rise.png; sourceTree = "<group>"; };
+		825E5F7C19F83FA300B77F7F /* grf_elavators_high_rise@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grf_elavators_high_rise@2x.png"; sourceTree = "<group>"; };
+		825E5F7D19F83FA300B77F7F /* grfx_elavators_lobby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elavators_lobby.png; sourceTree = "<group>"; };
+		825E5F7E19F83FA300B77F7F /* grfx_elavators_lobby@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elavators_lobby@2x.png"; sourceTree = "<group>"; };
+		825E5F7F19F83FA300B77F7F /* grfx_elavators_low_rise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elavators_low_rise.png; sourceTree = "<group>"; };
+		825E5F8019F83FA300B77F7F /* grfx_elavators_low_rise@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elavators_low_rise@2x.png"; sourceTree = "<group>"; };
+		825E5F8119F83FA300B77F7F /* grfx_elavators_parking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elavators_parking.png; sourceTree = "<group>"; };
+		825E5F8219F83FA300B77F7F /* grfx_elavators_parking@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elavators_parking@2x.png"; sourceTree = "<group>"; };
 		82627E1919E702EC0062FC0C /* grfx_recreationg_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_recreationg_overlay.png; sourceTree = "<group>"; };
 		82627E1A19E702EC0062FC0C /* grfx_recreationg_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_recreationg_overlay@2x.png"; sourceTree = "<group>"; };
 		82627E1B19E702EC0062FC0C /* grfx_residential_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_residential_overlay.png; sourceTree = "<group>"; };
@@ -918,6 +938,16 @@
 				82A29E4519EC60E000AFAE1E /* grfx_bldImg@2x.png */,
 				82A29E4619EC60E000AFAE1E /* grfx_bldStatsImg.png */,
 				82A29E4719EC60E000AFAE1E /* grfx_bldStatsImg@2x.png */,
+				825E5F7719F83CD200B77F7F /* grfx_elavators_stack_blank.png */,
+				825E5F7819F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png */,
+				825E5F7B19F83FA300B77F7F /* grf_elavators_high_rise.png */,
+				825E5F7C19F83FA300B77F7F /* grf_elavators_high_rise@2x.png */,
+				825E5F7D19F83FA300B77F7F /* grfx_elavators_lobby.png */,
+				825E5F7E19F83FA300B77F7F /* grfx_elavators_lobby@2x.png */,
+				825E5F7F19F83FA300B77F7F /* grfx_elavators_low_rise.png */,
+				825E5F8019F83FA300B77F7F /* grfx_elavators_low_rise@2x.png */,
+				825E5F8119F83FA300B77F7F /* grfx_elavators_parking.png */,
+				825E5F8219F83FA300B77F7F /* grfx_elavators_parking@2x.png */,
 			);
 			path = Building;
 			sourceTree = "<group>";
@@ -1211,12 +1241,16 @@
 				82459E7419F6974A00E03A8D /* grfx_contactClose.jpg in Resources */,
 				8263B98719EDAC8900E70C1B /* embMapHotspotListViewController.xib in Resources */,
 				824F369219E6C47500267B44 /* thumb_20140802_view4_100m_06.jpg in Resources */,
+				825E5F8919F83FA300B77F7F /* grfx_elavators_parking.png in Resources */,
+				825E5F7919F83CD200B77F7F /* grfx_elavators_stack_blank.png in Resources */,
 				82000B8E19E592A800AE2C70 /* team_duda_logo@2x.png in Resources */,
 				82627E2519E702EC0062FC0C /* grfx_restaurant_overlay.png in Resources */,
 				82627E2619E702EC0062FC0C /* grfx_restaurant_overlay@2x.png in Resources */,
+				825E5F8319F83FA300B77F7F /* grf_elavators_high_rise.png in Resources */,
 				824F369919E6C47500267B44 /* thumb_victory_center_278_feet.jpg in Resources */,
 				82DC11C219DAEA940057AE4F /* 20140802_downtown_100m_1pm_high-res.jpg in Resources */,
 				8224FE0619D47097002B1B44 /* Raleway-Heavy.otf in Resources */,
+				825E5F8819F83FA300B77F7F /* grfx_elavators_low_rise@2x.png in Resources */,
 				82DC11DB19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg in Resources */,
 				824F368919E6C47500267B44 /* thumb_20140802_downtown_100m_5pm.jpg in Resources */,
 				82000B9F19E5963800AE2C70 /* team_hks_text.png in Resources */,
@@ -1224,6 +1258,7 @@
 				82627E2C19E732870062FC0C /* Lightbox_overlay_BG.png in Resources */,
 				82A805D119D1F61E00308BA1 /* grfx_mialIcon@2x.png in Resources */,
 				8224FE0719D47097002B1B44 /* Raleway-Light.otf in Resources */,
+				825E5F7A19F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png in Resources */,
 				8224FE0819D47097002B1B44 /* Raleway-Medium.otf in Resources */,
 				82000B9B19E5963800AE2C70 /* team_cushman_text.png in Resources */,
 				824F369819E6C47500267B44 /* thumb_victory_center_138feet.jpg in Resources */,
@@ -1233,6 +1268,8 @@
 				82DC11C119DAEA940057AE4F /* 20140802_downtown_100m_1pm.jpg in Resources */,
 				824012EA19D1AF5D00C501EE /* InfoPlist.strings in Resources */,
 				8224FE0319D47097002B1B44 /* Raleway-Bold.otf in Resources */,
+				825E5F8619F83FA300B77F7F /* grfx_elavators_lobby@2x.png in Resources */,
+				825E5F8519F83FA300B77F7F /* grfx_elavators_lobby.png in Resources */,
 				824F369419E6C47500267B44 /* thumb_20140811_view3_100m_01.jpg in Resources */,
 				824F369E19E6C47500267B44 /* thumb_Victory Center 01 Highway View.jpg in Resources */,
 				82000B9D19E5963800AE2C70 /* team_duda_text.png in Resources */,
@@ -1257,6 +1294,7 @@
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
 				82DC11C719DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg in Resources */,
 				82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */,
+				825E5F8719F83FA300B77F7F /* grfx_elavators_low_rise.png in Resources */,
 				82DC11E619DAEE070057AE4F /* Neighborhood_map@2x.png in Resources */,
 				824F368D19E6C47500267B44 /* thumb_20140802_downtown_60m_2pm.jpg in Resources */,
 				8297BD2F19F589AD0046CB65 /* grfx_galleryBack@2x.jpg in Resources */,
@@ -1306,6 +1344,7 @@
 				82000B9C19E5963800AE2C70 /* team_cushman_text@2x.png in Resources */,
 				82DC120019DAF2990057AE4F /* photo-gallery-trashcan.png in Resources */,
 				82DC11CD19DAEA940057AE4F /* 20140802_view4_60m_02.jpg in Resources */,
+				825E5F8A19F83FA300B77F7F /* grfx_elavators_parking@2x.png in Resources */,
 				824F36A219E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg in Resources */,
 				82DC11D719DAEA940057AE4F /* Street View B1.jpg in Resources */,
 				82A29E4B19EC60E000AFAE1E /* grfx_bldStatsImg@2x.png in Resources */,
@@ -1320,6 +1359,7 @@
 				82DC11FF19DAF2990057AE4F /* photo-gallery-right@2x.png in Resources */,
 				82000B8919E592A800AE2C70 /* team_cousins_logo.png in Resources */,
 				82A805D019D1F61E00308BA1 /* grfx_mialIcon.png in Resources */,
+				825E5F8419F83FA300B77F7F /* grf_elavators_high_rise@2x.png in Resources */,
 				82000B7219E590AD00AE2C70 /* grfx_bldAmenities_bg@2x.jpg in Resources */,
 				82000BA419E5BADC00AE2C70 /* teamText.plist in Resources */,
 				824F369A19E6C47500267B44 /* thumb_highway B1.jpg in Resources */,
