@@ -306,15 +306,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="gXB-A0-OBi" userLabel="View - Building">
-                                <rect key="frame" x="185" y="36" width="674" height="733"/>
+                                <rect key="frame" x="185" y="36" width="780" height="733"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grfx_bldImg.png" id="zNx-Kj-acJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="674" height="733"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="780" height="733"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="FAs-Xa-4zp" userLabel="View - Stats">
                                 <rect key="frame" x="-356" y="87" width="356" height="614"/>
@@ -420,7 +420,7 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" id="ORx-r5-sA3" userLabel="View - city sub menu">
-                                <rect key="frame" x="225" y="37" width="130" height="62"/>
+                                <rect key="frame" x="225" y="37" width="130" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0U1-SP-1zj" userLabel="Button - district">
@@ -438,6 +438,15 @@
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="ACCESS">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gJa-lM-fQ3" userLabel="Button - city-amenities">
+                                        <rect key="frame" x="0.0" y="62" width="130" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="AMENITIES">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -538,6 +547,7 @@
                         <outlet property="uib_appleMap" destination="669-5r-r8m" id="m62-hL-pXD"/>
                         <outlet property="uib_city" destination="hwA-zn-73q" id="Tg5-Ii-cjx"/>
                         <outlet property="uib_cityAccess" destination="1fw-9r-gS7" id="OU7-s9-d1g"/>
+                        <outlet property="uib_cityAmenities" destination="gJa-lM-fQ3" id="j5l-6Y-5AA"/>
                         <outlet property="uib_cityDistricts" destination="0U1-SP-1zj" id="1dA-PE-m6f"/>
                         <outlet property="uib_googleMap" destination="Qwe-Y7-UNR" id="qHb-Cn-PXR"/>
                         <outlet property="uib_neighboorhoodAmenities" destination="mhU-Db-RU0" id="sgr-lZ-puR"/>
@@ -604,7 +614,7 @@
         <image name="Team_bg.jpg" width="893" height="670"/>
         <image name="Victory Center 01 Highway View.jpg" width="1250" height="938"/>
         <image name="Victory Center 02 W Hotel View.jpg" width="1250" height="848"/>
-        <image name="grfx_bldImg.png" width="674" height="733"/>
+        <image name="grfx_bldImg.png" width="780" height="733"/>
         <image name="grfx_bldStatsImg.png" width="356" height="614"/>
         <image name="grfx_contactClose.jpg" width="44" height="44"/>
         <image name="grfx_helpIcon.png" width="36" height="36"/>

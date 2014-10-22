@@ -116,11 +116,11 @@
 
 -(void)loadInImge:(NSString *)imageName
 {
-    [UIView animateWithDuration:0.33 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         _zoomingScroll.blurView.alpha = 0.0;
     } completion:^(BOOL finished){
         _zoomingScroll.blurView.image = [UIImage imageNamed:imageName];
-        [UIView animateWithDuration:0.33 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             _zoomingScroll.blurView.alpha = 1.0;
         }];
     }];

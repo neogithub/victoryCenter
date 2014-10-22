@@ -10,6 +10,10 @@
 #import "UIColor+Extensions.h"
 #import "floorPlanViewController.h"
 @interface buildingViewController ()
+{
+    BOOL        arr_statusOfBtns[4];
+    BOOL        arr_trackBtns[4];
+}
 
 @property (nonatomic, strong) NSMutableArray                *arr_topBtnsArray;
 
@@ -21,8 +25,12 @@
 @property (weak, nonatomic) IBOutlet UIButton               *uib_bldgStats;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_amenities;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_elevators;
-
+//Floor plan
 @property (nonatomic, strong) floorPlanViewController       *floorPlan;
+//Elevator
+@property (nonatomic, strong) UIView                        *uiv_elevatorContainer;
+@property (nonatomic, strong) NSMutableArray                *arr_eleBtnArray;
+@property (nonatomic, strong) NSArray                       *arr_elevatroImgs;
 @end
 
 @implementation buildingViewController
@@ -108,6 +116,8 @@
 
 - (void)updateContent:(int)index
 {
+    [_uiv_elevatorContainer removeFromSuperview];
+    _uiv_elevatorContainer = nil;
     _uiiv_bgImg.hidden = YES;
     _uiv_bldImgContainer.hidden = YES;
     _uiv_bldImgContainer.transform = CGAffineTransformIdentity;
@@ -133,9 +143,10 @@
             break;
         }
         case 4: {
-            _uiiv_bgImg.hidden = NO;
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldElevator_bg" ofType:@"jpg"];
-            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
+//            _uiiv_bgImg.hidden = NO;
+//            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldElevator_bg" ofType:@"jpg"];
+//            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
+            [self loadElevator];
             break;
         }
         default:
@@ -176,7 +187,7 @@
     NSInteger option;
     option = UIViewAnimationCurveEaseInOut;
     [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
-        _uiv_bldImgContainer.transform = CGAffineTransformMakeTranslation(197.0, 0.0);
+        _uiv_bldImgContainer.transform = CGAffineTransformMakeTranslation(140.0, 0.0);
         
     } completion:^(BOOL finished){      }];
     
@@ -205,6 +216,172 @@
         [_floorPlan removeFromParentViewController];
         _floorPlan = nil;
     }
+}
+
+#pragma mark - Set up elevator view
+
+- (void)loadElevator
+{
+    if (_uiv_elevatorContainer) {
+        [_uiv_elevatorContainer removeFromSuperview];
+        _uiv_elevatorContainer = nil;
+    }
+    _uiv_elevatorContainer = [[UIView alloc] initWithFrame:screenRect];
+    _uiv_elevatorContainer.backgroundColor = [UIColor clearColor];
+    [self loadElevatorCtrlPanel];
+    [self loadElevatorBldImg];
+    [self.view insertSubview:_uiv_elevatorContainer belowSubview:_uib_floorPlan];
+    
+}
+
+#pragma mark Set up building image
+- (void)loadElevatorBldImg
+{
+    UIImageView *uiiv_eleBldImg = [[UIImageView alloc] initWithFrame:CGRectMake(185, 36, 674, 733)];
+    uiiv_eleBldImg.image = [UIImage imageNamed:@"grfx_elavators_stack_blank.png"];
+    
+    UIImageView *uiiv_lowRiseEle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_low_rise.png"]];
+    uiiv_lowRiseEle.frame = CGRectMake(600, 328, uiiv_lowRiseEle.frame.size.width, uiiv_lowRiseEle.frame.size.height);
+    UIImageView *uiiv_highRiseEle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grf_elavators_high_rise.png"]];
+    uiiv_highRiseEle.frame = CGRectMake(500, 120, uiiv_highRiseEle.frame.size.width, uiiv_highRiseEle.frame.size.height);
+    UIImageView *uiiv_parking = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_parking.png"]];
+    uiiv_parking.frame = CGRectMake(240, 534, 578, 233);
+    UIImageView *uiiv_lobby = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_lobby.png"]];
+    uiiv_lobby.frame = CGRectMake(366, 649, 450, 146);
+    
+    [_uiv_elevatorContainer insertSubview:uiiv_parking atIndex:1];
+    [_uiv_elevatorContainer insertSubview:uiiv_lobby atIndex:2];
+    [_uiv_elevatorContainer insertSubview:uiiv_lowRiseEle atIndex:3];
+    [_uiv_elevatorContainer insertSubview:uiiv_highRiseEle atIndex:4];
+    [_uiv_elevatorContainer insertSubview:uiiv_eleBldImg atIndex:5];
+    
+    _arr_elevatroImgs = [[NSArray alloc] initWithObjects:uiiv_parking, uiiv_lobby, uiiv_lowRiseEle, uiiv_highRiseEle, nil];
+}
+
+
+#pragma mark Set up elevator control panel
+- (void)loadElevatorCtrlPanel
+{
+    UIView *uiv_ctrlPanel = [[UIView alloc] initWithFrame:CGRectMake(65.0, 95.0, 200.0, 206.0)];
+    uiv_ctrlPanel.backgroundColor = [UIColor clearColor];
+    
+    UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_PanelTitle.frame = CGRectMake(0.0, 0.0, 200.0, 46);
+    [uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
+    [uib_PanelTitle setTitle:@"KEY" forState:UIControlStateNormal];
+    [uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
+    uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
+    uib_PanelTitle.tag = 101;
+    [uiv_ctrlPanel addSubview: uib_PanelTitle];
+    
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"LOW-RISE ELEVATORS", @"HIGH-RISE ELEVATORS", @"PARKING", @"LOBBY", nil];
+    [uiv_ctrlPanel addSubview: [self loadPanelBtnsWithTitle:arr_buttonTitles]];
+    [_uiv_elevatorContainer addSubview: uiv_ctrlPanel];
+}
+
+- (UIView *)loadPanelBtnsWithTitle:(NSArray *)arr_title
+{
+    [_arr_eleBtnArray removeAllObjects];
+    _arr_eleBtnArray = nil;
+    _arr_eleBtnArray = [[NSMutableArray alloc] init];
+    
+    UIView *uiv_btnContainer = [[UIView alloc] initWithFrame:CGRectMake(0.0, 46.0, 200.0, 160.0)];
+    uiv_btnContainer.backgroundColor = [UIColor whiteColor];
+    uiv_btnContainer.layer.borderWidth = 1.0;
+    uiv_btnContainer.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    NSArray *arr_color = [[NSArray alloc] initWithObjects:[UIColor vcSiteResidentail], [UIColor vcSiteRecreation], [UIColor vcBldParking], [UIColor vcSiteRetail], nil];
+    
+    for (int i = 0; i < arr_title.count; i++) {
+        UIButton *uib_option = [UIButton buttonWithType:UIButtonTypeCustom];
+        uib_option.frame = CGRectMake(0.0, i*40, 200.0, 40);
+        uib_option.backgroundColor = [UIColor whiteColor];
+        uib_option.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+        uib_option.layer.borderWidth = 1.0;
+        [uib_option setTitle:arr_title[i] forState:UIControlStateNormal];
+        [uib_option setTitleColor:[UIColor vcDarkBlue] forState:UIControlStateNormal];
+        [uib_option.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:12.0]];
+        uib_option.tag = i;
+        uib_option.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        uib_option.titleEdgeInsets = UIEdgeInsetsMake(3.0, 45, 0.0, 0.0);
+        [uib_option addTarget:self action:@selector(tapOptions:) forControlEvents:UIControlEventTouchUpInside];
+        [uiv_btnContainer addSubview: uib_option];
+        
+        CGRect frame = CGRectMake(19, uib_option.frame.origin.y + (uib_option.frame.size.height - 14)/2, 14, 14);
+        UIView *uiv_Indicator = [[UIView alloc] initWithFrame:frame];
+        uiv_Indicator.backgroundColor = arr_color[i];
+        uiv_Indicator.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+        uiv_Indicator.layer.borderWidth = 2.0;
+        CGPoint savedCenter = uiv_Indicator.center;
+        uiv_Indicator.layer.cornerRadius = 14.0 / 2.0;
+        uiv_Indicator.center = savedCenter;
+        uiv_Indicator.tag = 500+i;
+        [uiv_btnContainer addSubview: uiv_Indicator];
+
+        [_arr_eleBtnArray addObject: uib_option];
+    }
+    return uiv_btnContainer;
+}
+
+- (void)tapOptions:(id)sender
+{
+//    BOOL tapped = YES;
+//    for (int i = 0; i < sizeof(arr_trackBtns); i++) {
+//        arr_trackBtns[i] = 0;
+//    }
+    
+    for (UIButton *tmp in _arr_eleBtnArray) {
+        tmp.backgroundColor = [UIColor whiteColor];
+        tmp.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+        tmp.layer.borderWidth = 1.0;
+        tmp.selected = NO;
+    }
+    UIButton *tappedBtn = sender;
+    tappedBtn.selected = YES;
+    tappedBtn.backgroundColor = [UIColor vclightbluemenu];
+    tappedBtn.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    tappedBtn.layer.borderWidth = 1.0;
+    
+//    int index = (int)tappedBtn.tag;
+//    arr_trackBtns[index] =  !arr_trackBtns[index];
+//    for (int i = 0; i < 4; i++) {
+//        arr_statusOfBtns[i] = arr_statusOfBtns[i] ^ arr_trackBtns[i];
+//        
+//        if (arr_statusOfBtns[i]) {
+//            if (tapped) {
+//                tapped = NO;
+//            }
+//        }
+//    }
+    
+    for (UIImageView *tmp in _arr_elevatroImgs) {
+        tmp.hidden =YES;
+    }
+    int changedIndex;
+    switch (tappedBtn.tag) {
+        case 0:
+            changedIndex = 2;
+            break;
+        case 1:
+            changedIndex = 3;
+            break;
+        case 2:
+            changedIndex = 0;
+            break;
+        case 3:
+            changedIndex = 1;
+            break;
+            
+        default:
+            break;
+    }
+    
+    UIImageView *uiiv_selectetd = _arr_elevatroImgs[changedIndex];
+    uiiv_selectetd.alpha = 0.0;
+    uiiv_selectetd.hidden = NO;
+    [UIView animateWithDuration:0.33 animations:^{
+        uiiv_selectetd.alpha = 1.0;
+    }];
 }
 
 #pragma mark - Memory cleaning & warning
