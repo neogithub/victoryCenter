@@ -10,4 +10,6 @@
 
 @interface floorPlanViewController : UIViewController
 
+@property (nonatomic, readwrite) int pageIndex;
+
 @end

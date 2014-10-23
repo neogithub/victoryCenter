@@ -133,7 +133,7 @@
             break;
         }
         case 2: {
-            [self loadFloorPlan];
+            [self loadFloorPlan:0];
             break;
         }
         case 3: {
@@ -143,9 +143,6 @@
             break;
         }
         case 4: {
-//            _uiiv_bgImg.hidden = NO;
-//            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldElevator_bg" ofType:@"jpg"];
-//            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
             [self loadElevator];
             break;
         }
@@ -199,12 +196,13 @@
 }
 
 #pragma mark - Set up Floor plan view
-- (void)loadFloorPlan
+- (void)loadFloorPlan:(int)pageIndex
 {
     [self removeFloorPlan];
     
     _floorPlan = [self.storyboard instantiateViewControllerWithIdentifier:@"floorPlanViewController"];;
     _floorPlan.view.frame = screenRect;
+    _floorPlan.pageIndex = pageIndex;
     [self addChildViewController:_floorPlan];
     [self.view insertSubview:_floorPlan.view belowSubview:_uib_floorPlan];
 }

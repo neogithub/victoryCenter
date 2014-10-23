@@ -30,21 +30,26 @@ static CGFloat  kPanelTitleHeight           = 46;
 @implementation floorPlanViewController
 
 @synthesize modelController = _modelController;
+@synthesize pageIndex;
+
+- (void)setPageIndex:(int)index
+{
+    pageIndex = index;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.view.frame = screenRect;
+    _modelController = [[embModelController alloc] init];
+    [self initPageView:pageIndex];
+    [self createPanel];
+    [self setCtrlBtns];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    _modelController = [[embModelController alloc] init];
-    [self initPageView:0];
-    [self createPanel];
-    [self setCtrlBtns];
 }
 
 #pragma mark - Set up side panel

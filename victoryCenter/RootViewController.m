@@ -390,6 +390,8 @@
     } completion:^(BOOL finished){
         [_contactVC.view removeFromSuperview];
         _contactVC.view = nil;
+        [_contactVC removeFromParentViewController];
+        _contactVC = nil;
     }];
 }
 
