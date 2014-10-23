@@ -212,7 +212,8 @@
 	} completion:^(BOOL completed)
 	 {
 		 // animate the menu buttons
-		 _uib_menu.transform = CGAffineTransformMakeTranslation(375, -50);
+		 _uib_menu.transform = CGAffineTransformMakeTranslation(370, -50);
+         [_uib_menu setImage:[UIImage imageNamed:@"grfx_openMenuIcon.png"] forState:UIControlStateNormal];
 	 }];
 }
 
@@ -254,7 +255,7 @@
 										  animations:^{
 											  
 											  
-											  _uib_menu.transform = CGAffineTransformMakeTranslation(375, -50);
+											  _uib_menu.transform = CGAffineTransformMakeTranslation(370, -50);
 											  
 											  
 											  
@@ -262,7 +263,7 @@
 										  }
 										  completion:^(BOOL  completed){
 											  
-                                              
+                                              [_uib_menu setImage:[UIImage imageNamed:@"grfx_menuIcon.png"] forState:UIControlStateNormal];
                                               
 										  }];
 						 
@@ -283,7 +284,7 @@
 	_uiv_leftFillerPanel.transform = CGAffineTransformConcat(s, t);
 	
 	_uib_menu.transform = CGAffineTransformIdentity;
-	
+    
     [UIView animateWithDuration:0.2 animations:^{
         _uiv_mainMenuContainer.alpha = 0.0;
     } completion:^(BOOL finished){
@@ -326,7 +327,7 @@
 											  completion:^(BOOL finished){
 												  
 												  [UIView animateWithDuration:0.3/1.5 animations:^{
-													  _uib_menu.transform = CGAffineTransformMakeTranslation(375, 0);
+													  _uib_menu.transform = CGAffineTransformMakeTranslation(370, 0);
 												  } completion:nil];
 												  
 												  

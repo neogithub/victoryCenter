@@ -188,6 +188,8 @@
 		82C3817419E81BAD006C7EC8 /* Access_overlay_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C3817219E81BAD006C7EC8 /* Access_overlay_@2x.png */; };
 		82CBD72219F96FA10001191F /* grfx_elevator_floorNum.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */; };
 		82CBD72319F96FA10001191F /* grfx_elevator_floorNum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */; };
+		82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72419F980800001191F /* grfx_openMenuIcon.png */; };
+		82CBD72719F980800001191F /* grfx_openMenuIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72519F980800001191F /* grfx_openMenuIcon@2x.png */; };
 		82CE2FC919F05D6D006F7B0E /* embDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FC619F05D6D006F7B0E /* embDataViewController.m */; };
 		82CE2FCA19F05D6D006F7B0E /* embModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FC819F05D6D006F7B0E /* embModelController.m */; };
 		82CE2FCD19F05EC3006F7B0E /* ebZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FCC19F05EC3006F7B0E /* ebZoomingScrollView.m */; };
@@ -468,6 +470,8 @@
 		82C3817219E81BAD006C7EC8 /* Access_overlay_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Access_overlay_@2x.png"; sourceTree = "<group>"; };
 		82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elevator_floorNum.png; sourceTree = "<group>"; };
 		82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elevator_floorNum@2x.png"; sourceTree = "<group>"; };
+		82CBD72419F980800001191F /* grfx_openMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_openMenuIcon.png; sourceTree = "<group>"; };
+		82CBD72519F980800001191F /* grfx_openMenuIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_openMenuIcon@2x.png"; sourceTree = "<group>"; };
 		82CE2FC519F05D6D006F7B0E /* embDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embDataViewController.h; sourceTree = "<group>"; };
 		82CE2FC619F05D6D006F7B0E /* embDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embDataViewController.m; sourceTree = "<group>"; };
 		82CE2FC719F05D6D006F7B0E /* embModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embModelController.h; sourceTree = "<group>"; };
@@ -965,6 +969,8 @@
 				82A805C919D1F61E00308BA1 /* grfx_helpIcon@2x.png */,
 				82A805D419D1FC1400308BA1 /* grfx_menuIcon.png */,
 				82A805D519D1FC1400308BA1 /* grfx_menuIcon@2x.png */,
+				82CBD72419F980800001191F /* grfx_openMenuIcon.png */,
+				82CBD72519F980800001191F /* grfx_openMenuIcon@2x.png */,
 				82A805CA19D1F61E00308BA1 /* grfx_mialIcon.png */,
 				82A805CB19D1F61E00308BA1 /* grfx_mialIcon@2x.png */,
 				82A805CC19D1F61E00308BA1 /* grfx_movieIcon.png */,
@@ -1249,6 +1255,7 @@
 				824F369219E6C47500267B44 /* thumb_20140802_view4_100m_06.jpg in Resources */,
 				825E5F8919F83FA300B77F7F /* grfx_elavators_parking.png in Resources */,
 				825E5F7919F83CD200B77F7F /* grfx_elavators_stack_blank.png in Resources */,
+				82CBD72719F980800001191F /* grfx_openMenuIcon@2x.png in Resources */,
 				82000B8E19E592A800AE2C70 /* team_duda_logo@2x.png in Resources */,
 				82627E2519E702EC0062FC0C /* grfx_restaurant_overlay.png in Resources */,
 				82627E2619E702EC0062FC0C /* grfx_restaurant_overlay@2x.png in Resources */,
@@ -1298,6 +1305,7 @@
 				82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */,
 				82000BA019E5963800AE2C70 /* team_hks_text@2x.png in Resources */,
 				824F369B19E6C47500267B44 /* thumb_NW-FINAL Lighting Concept2.jpg in Resources */,
+				82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */,
 				823D78A919F156830096E62C /* grfx_floorplan@2x.png in Resources */,
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
 				82DC11C719DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg in Resources */,
