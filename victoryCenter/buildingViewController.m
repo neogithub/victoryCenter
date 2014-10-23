@@ -278,6 +278,10 @@
     uil_lobby.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
     uil_lobby.textColor = [UIColor lightGrayColor];
     [_uiv_elevatorContainer addSubview: uil_lobby];
+    //Floor number image
+    UIImageView *uiiv_floorNum = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elevator_floorNum.png"]];
+    uiiv_floorNum.frame = CGRectMake(400, 98, uiiv_floorNum.frame.size.width, uiiv_floorNum.frame.size.height);
+    [_uiv_elevatorContainer addSubview: uiiv_floorNum];
 }
 
 
