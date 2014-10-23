@@ -320,6 +320,34 @@
                                         <rect key="frame" x="0.0" y="0.0" width="780" height="733"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5WN-3a-PmD" userLabel="Button - Button 18-23">
+                                        <rect key="frame" x="214" y="89" width="515" height="170"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5zO-ae-XqT" userLabel="Button - Button 16-17">
+                                        <rect key="frame" x="214" y="267" width="515" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bdz-Hg-TSR" userLabel="Button - Button 10-15">
+                                        <rect key="frame" x="214" y="325" width="515" height="135"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ylk-Q6-m2J" userLabel="Button - Button 8-9">
+                                        <rect key="frame" x="214" y="468" width="515" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -375,10 +403,14 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="uib_10_15" destination="bdz-Hg-TSR" id="EFl-DT-PjV"/>
+                        <outlet property="uib_16_17" destination="5zO-ae-XqT" id="8nV-Fh-xXn"/>
+                        <outlet property="uib_18_23" destination="5WN-3a-PmD" id="BKU-UK-o1b"/>
+                        <outlet property="uib_8_9" destination="ylk-Q6-m2J" id="RQB-dl-21X"/>
                         <outlet property="uib_amenities" destination="MKa-pH-F8E" id="gDq-st-HDt"/>
-                        <outlet property="uib_bldgStats" destination="PTE-64-C6S" id="Npd-WB-O5x"/>
+                        <outlet property="uib_bldgStats" destination="nWL-wl-uQU" id="bO4-vM-YRo"/>
                         <outlet property="uib_elevators" destination="kM8-2Q-ZIB" id="H5V-NJ-Ddv"/>
-                        <outlet property="uib_floorPlan" destination="nWL-wl-uQU" id="ZDd-mc-ALv"/>
+                        <outlet property="uib_floorPlan" destination="PTE-64-C6S" id="h5n-4N-74P"/>
                         <outlet property="uiiv_bgImg" destination="xmY-0i-m1z" id="F5S-ft-oDZ"/>
                         <outlet property="uiv_bldImgContainer" destination="gXB-A0-OBi" id="2jZ-Mg-Kcx"/>
                         <outlet property="uiv_statImgContainer" destination="FAs-Xa-4zp" id="fj7-7K-0ta"/>

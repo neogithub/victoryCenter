@@ -22,6 +22,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 // Side Panel
 @property (nonatomic, strong)   UIView                          *uiv_panel;
 @property (nonatomic, strong)   UIButton                        *uib_PanelTitle;
+@property (nonatomic, strong)   NSArray                         *arr_titleText;
 // Control Button
 @property (nonatomic, strong)   UIButton                        *uib_backBtn;
 @property (nonatomic, strong)   UIButton                        *uib_panoBtn;
@@ -40,6 +41,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 - (void)viewWillAppear:(BOOL)animated
 {
     self.view.frame = screenRect;
+    _arr_titleText = [[NSArray alloc] initWithObjects:@"FLOOR 18 - 23", @"FLOOR 16 - 17", @"FLOOR 10 - 15", @"FLOOR 8 - 9",nil];
     _modelController = [[embModelController alloc] init];
     [self initPageView:pageIndex];
     [self createPanel];
@@ -64,7 +66,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     _uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
     _uib_PanelTitle.frame = CGRectMake(0.0, 0.0, panle_w, kPanelTitleHeight);
     [_uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
-    [_uib_PanelTitle setTitle:@"FLOOR 18 - 23" forState:UIControlStateNormal];
+    [_uib_PanelTitle setTitle:_arr_titleText[pageIndex] forState:UIControlStateNormal];
     [_uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
     _uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 0);
@@ -168,7 +170,14 @@ static CGFloat  kPanelTitleHeight           = 46;
     }
     // This is where you would know the page number changed and handle it appropriately
     //    NSLog(@"new page");
-//    [self setPageIndex];
+    [self setpageIndex];
+}
+
+- (void) setpageIndex
+{
+    embDataViewController *theCurrentViewController = [self.pageViewController.viewControllers objectAtIndex:0];
+    int index = (int)[self.modelController indexOfViewController:theCurrentViewController];
+    [_uib_PanelTitle setTitle:_arr_titleText[index] forState:UIControlStateNormal];
 }
 
 #pragma mark set page index

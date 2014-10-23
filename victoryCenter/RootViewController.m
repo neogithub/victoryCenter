@@ -365,12 +365,10 @@
     CGRect frame = screenRect;
     frame.origin.y = 768.0;
     
-    if (_uiv_menuPanel) {
-        _uiv_menuPanel.hidden = YES;
-        _uiv_leftFillerPanel.hidden = YES;
-    }
-    
-    
+//    if (_uiv_menuPanel) {
+//        _uiv_menuPanel.hidden = YES;
+//        _uiv_leftFillerPanel.hidden = YES;
+//    }   
     [self.view insertSubview: _contactVC.view belowSubview:_uiv_toolsPanel];
     _uib_menu.hidden = YES;
     _uib_mailBtn.hidden = YES;

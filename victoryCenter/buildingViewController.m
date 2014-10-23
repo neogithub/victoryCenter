@@ -20,12 +20,18 @@
 @property (weak, nonatomic) IBOutlet UIView                 *uiv_bldImgContainer;
 @property (weak, nonatomic) IBOutlet UIView                 *uiv_statImgContainer;
 
-@property (weak, nonatomic) IBOutlet UIButton               *uib_floorPlan;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_bldgStats;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_floorPlan;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_amenities;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_elevators;
 //Floor plan
 @property (nonatomic, strong) floorPlanViewController       *floorPlan;
+
+@property (weak, nonatomic) IBOutlet UIButton *uib_18_23;
+@property (weak, nonatomic) IBOutlet UIButton *uib_16_17;
+@property (weak, nonatomic) IBOutlet UIButton *uib_10_15;
+@property (weak, nonatomic) IBOutlet UIButton *uib_8_9;
+@property (nonatomic, strong) NSArray                       *arr_floorBtns;
 //Elevator
 @property (nonatomic, strong) UIView                        *uiv_elevatorContainer;
 @property (nonatomic, strong) UIView                        *uiv_eleLayerConainer;
@@ -46,7 +52,35 @@
     // Do any additional setup after loading the view.
     [self setTopButtons];
     [self setGestureToBldStats];
+    [self groupBtns];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetBuilding) name:@"resetBuilding" object:nil];
+}
+
+#pragma mark - Add Button to building image
+
+- (void)groupBtns
+{
+    _uib_18_23.tag = 1;
+    _uib_16_17.tag = 2;
+    _uib_10_15.tag = 3;
+    _uib_8_9.tag = 4;
+    _arr_floorBtns = [[NSArray alloc] initWithObjects:_uib_18_23, _uib_16_17, _uib_10_15, _uib_8_9, nil];
+    
+    for (UIButton *tmp in _arr_floorBtns) {
+        [tmp addTarget:self action:@selector(floorBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+- (void)floorBtnTapped:(id)sender
+{
+    UIButton *tappedBtn = sender;
+    int index = (int)tappedBtn.tag - 1;
+    
+    [self loadFloorPlan:index];
+    
+    [self resetTopMenu];
+    _uib_floorPlan.backgroundColor = [UIColor vcDarkBlue];
+    _uib_floorPlan.selected = YES;
 }
 
 #pragma mark - Methods dealing with notifications
@@ -60,7 +94,6 @@
     _uiv_statImgContainer.transform = CGAffineTransformIdentity;
     
     [self removeFloorPlan];
-    [self resetTopMenu];
 }
 
 #pragma mark - Set up Top menu buttons
@@ -69,8 +102,8 @@
 {
     _arr_topBtnsArray = [[NSMutableArray alloc] init];
     
-    [self initTopBtn:_uib_floorPlan withTitle:@"BUILDING STATS" andTag:1 andSelected:NO];
-    [self initTopBtn:_uib_bldgStats withTitle:@"FLOOR PLAN" andTag:2 andSelected:NO];
+    [self initTopBtn:_uib_bldgStats withTitle:@"BUILDING STATS" andTag:1 andSelected:NO];
+    [self initTopBtn:_uib_floorPlan withTitle:@"FLOOR PLAN" andTag:2 andSelected:NO];
     [self initTopBtn:_uib_amenities withTitle:@"AMENITIES" andTag:3 andSelected:NO];
     [self initTopBtn:_uib_elevators withTitle:@"ELEVATORS" andTag:4 andSelected:NO];
 }
@@ -204,7 +237,7 @@
     _floorPlan.view.frame = screenRect;
     _floorPlan.pageIndex = pageIndex;
     [self addChildViewController:_floorPlan];
-    [self.view insertSubview:_floorPlan.view belowSubview:_uib_floorPlan];
+    [self.view insertSubview:_floorPlan.view belowSubview:_uib_bldgStats];
 }
 
 - (void)removeFloorPlan {
@@ -228,7 +261,7 @@
     _uiv_elevatorContainer.backgroundColor = [UIColor clearColor];
     [self loadElevatorBldImg];
     [self loadElevatorCtrlPanel];
-    [self.view insertSubview:_uiv_elevatorContainer belowSubview:_uib_floorPlan];
+    [self.view insertSubview:_uiv_elevatorContainer belowSubview:_uib_bldgStats];
     
 }
 
@@ -457,11 +490,11 @@
     [_uiiv_bgImg removeFromSuperview];
     _uiiv_bgImg = nil;
     
-    [_uib_floorPlan removeFromSuperview];
-    _uib_floorPlan = nil;
-    
     [_uib_bldgStats removeFromSuperview];
     _uib_bldgStats = nil;
+    
+    [_uib_floorPlan removeFromSuperview];
+    _uib_floorPlan = nil;
     
     [_uib_amenities removeFromSuperview];
     _uib_amenities = nil;
