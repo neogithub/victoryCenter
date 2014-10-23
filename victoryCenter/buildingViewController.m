@@ -390,8 +390,8 @@
     [panel viewWithTag:102].transform = CGAffineTransformMakeTranslation(0.0, -46.0);
     
     CGFloat duration = 0.5f;
-    CGFloat damping = 0.7f;
-    CGFloat velocity = 0.68f;
+    CGFloat damping = 0.6f;
+    CGFloat velocity = 0.6f;
     // int to hold UIViewAnimationOption
     NSInteger option;
     option = UIViewAnimationCurveEaseInOut;
