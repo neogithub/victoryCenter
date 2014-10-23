@@ -28,7 +28,6 @@
     // Configure the view for the selected state
     if (selected) {
         self.backgroundColor = [UIColor vcLightBlueAlpha];
-        NSLog(@"The Height is %@", [self description]);
     } else {
         self.backgroundColor = [UIColor clearColor];
     }

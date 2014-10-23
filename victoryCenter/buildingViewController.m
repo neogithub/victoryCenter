@@ -351,7 +351,7 @@
 
 - (void)animateCtrlPanel:(UIView *)panel
 {
-    panel.transform = CGAffineTransformMakeTranslation(0.0, -150.0);
+    panel.transform = CGAffineTransformMakeTranslation(0.0, -200.0);
     [panel viewWithTag:102].transform = CGAffineTransformMakeTranslation(0.0, -46.0);
     
     CGFloat duration = 0.5f;

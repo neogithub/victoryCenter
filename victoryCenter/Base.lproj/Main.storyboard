@@ -114,18 +114,25 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="REH-RY-HP1" userLabel="View - Title">
-                                <rect key="frame" x="752" y="0.0" width="213" height="93"/>
+                                <rect key="frame" x="752" y="0.0" width="233" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="FOR FURTHER INFORMATION ON THE BUILDING AND AVAILABLE SPACE, PLEASE CONTACT:" selectable="NO" id="7Yd-4L-xvr">
-                                        <rect key="frame" x="0.0" y="0.0" width="213" height="93"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" id="7Yd-4L-xvr">
+                                        <rect key="frame" x="0.0" y="0.0" width="233" height="93"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="FOR FURTHER INFORMATION ON THE BUILDING AND AVAILABLE SPACE, PLEASE CONTACT:">
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="20" maximumLineHeight="20"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team_logoBtmBar.png" id="ZrS-tR-KPa">
-                                        <rect key="frame" x="0.0" y="72" width="213" height="21"/>
+                                        <rect key="frame" x="0.0" y="72" width="233" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>

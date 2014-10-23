@@ -11,14 +11,15 @@
 #import <MessageUI/MessageUI.h>
 #import "embEmailData.h"
 
-static float kContactWidth = 213;
-static float kContactHeight = 85;
+static float kContactWidth = 233;
+static float kContactHeight = 100;
 static float kContactGap = 4;
 
 @interface contactViewController ()<MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
 {
     NSArray         *arr_names;
     NSArray         *arr_phone;
+    NSArray         *arr_mobile;
     NSArray         *arr_email;
 }
 @property (weak, nonatomic) IBOutlet UIView         *uiv_titleContainer;
@@ -55,7 +56,7 @@ static float kContactGap = 4;
     uil_titleLabel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     uil_titleLabel.text = @"CONTACT";
     uil_titleLabel.textAlignment = NSTextAlignmentCenter;
-    uil_titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:20];
+    uil_titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:22];
     uil_titleLabel.textColor = [UIColor vcDarkBlue];
     [self.view addSubview: uil_titleLabel];
 }
@@ -74,25 +75,26 @@ static float kContactGap = 4;
 - (void)setContactCardsGroup
 {
     _arr_contactCards = [[NSMutableArray alloc] init];
-    arr_names = [[NSArray alloc] initWithObjects:@"FIRST LAST", @"FIRST LAST", @"FIRST LAST", nil];
-    arr_phone = [[NSArray alloc] initWithObjects:@"000.000.0000", @"000.000.0000", @"000.000.0000", nil];
-    arr_email = [[NSArray alloc] initWithObjects:@"1xxx@hines.com", @"2xxx@hines.com", @"3xxx@hines.com", nil];
+    arr_names = [[NSArray alloc] initWithObjects:@"BILL BROKAW", @"CYNTHIA COWEN", @"MARK DICKENSON", nil];
+    arr_phone = [[NSArray alloc] initWithObjects:@"T: +1 (972) 663-9618", @"T: +1 (972) 663-9617", @"T: +1 (972) 663-9699", nil];
+    arr_mobile = [[NSArray alloc] initWithObjects:@"M: +1 (214) 802-2455", @"M: +1 (214) 538-2106", @"M: +1 (214) 796-1336", nil];
+    arr_email = [[NSArray alloc] initWithObjects:@"bill.brokaw@cushwake.com", @"cynthia.cowen@cushwake.com", @"mark.dickenson@cushwake.com", nil];
     
     for (int i = 0; i < arr_email.count; i++) {
-        [self createContactCardwithName:arr_names[i] andPhone:arr_phone[i] andEmail:arr_email[i] andTag:i];
+        [self createContactCardwithName:arr_names[i] andPhone:arr_phone[i] andMobile:arr_mobile[i] andEmail:arr_email[i] andTag:i];
     }
 }
 
 #pragma mark Init contact card view
 
-- (void)createContactCardwithName:(NSString *)name andPhone:(NSString *)phone andEmail:(NSString *)email andTag:(int)index
+- (void)createContactCardwithName:(NSString *)name andPhone:(NSString *)phone andMobile:(NSString *)mobile andEmail:(NSString *)email andTag:(int)index
 {
     UIView *uiv_contactCard = [[UIView alloc] initWithFrame:CGRectMake(752.0, 97.0 + (kContactGap + kContactHeight)*index, kContactWidth, kContactHeight)];
     uiv_contactCard.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
     uiv_contactCard.tag = index+1;
     
     UILabel *uil_name = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 10.0, kContactWidth - 15, 25.0)];
-    uil_name.text = name;
+    uil_name.text = name.uppercaseString;
     uil_name.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
     uil_name.textColor = [UIColor vcDarkBlue];
     uil_name.backgroundColor = [UIColor clearColor];
@@ -102,16 +104,24 @@ static float kContactGap = 4;
     UILabel *uil_phone = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 35.0, kContactWidth - 15, 18.0)];
     uil_phone.backgroundColor = [UIColor clearColor];
     uil_phone.text = phone;
-    uil_phone.font = [UIFont fontWithName:@"Raleway-Bold" size:12.0];
+    uil_phone.font = [UIFont fontWithName:@"Raleway-Medium" size:11.0];
     uil_phone.textColor = [UIColor vcDarkBlue];
     uil_phone.tag = 2;
     [uiv_contactCard addSubview: uil_phone];
     
-    UILabel *uil_email = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 53.0, kContactWidth - 15, 18.0)];
+    UILabel *uil_mobile = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 53.0, kContactWidth - 15, 18.0)];
+    uil_mobile.backgroundColor = [UIColor clearColor];
+    uil_mobile.text = mobile;
+    uil_mobile.textColor = [UIColor vcDarkBlue];
+    uil_mobile.font = [UIFont fontWithName:@"Raleway-Medium" size:11.0];
+    uil_mobile.tag = 3;
+    [uiv_contactCard addSubview: uil_mobile];
+    
+    UILabel *uil_email = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 71.0, kContactWidth - 15, 18.0)];
     uil_email.backgroundColor = [UIColor clearColor];
-    uil_email.text = email;
+    uil_email.text = email.uppercaseString;
     uil_email.textColor = [UIColor vcDarkBlue];
-    uil_email.font = [UIFont fontWithName:@"Raleway-Bold" size:12.0];
+    uil_email.font = [UIFont fontWithName:@"Raleway-Medium" size:11.0];
     uil_email.tag = 3;
     [uiv_contactCard addSubview: uil_email];
     [_arr_contactCards addObject:uiv_contactCard];
