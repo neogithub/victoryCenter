@@ -267,8 +267,8 @@ static float    kPanelBtnHeight             = 38.0;
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 	// for(UIView *subview in [_uis_zooming subviews]) {
-    for (UIView *dropPinView in _uiiv_mapImg.subviews) {
-        if (dropPinView.tag < 1000) {
+    for (UIView *dropPinView in _uiv_mapContainer.subviews) {
+        if (dropPinView.tag >= 100) {
             CGRect oldFrame = dropPinView.frame;
             // 0.5 means the anchor is centered on the x axis. 1 means the anchor is at the bottom of the view. If you comment out this line, the pin's center will stay where it is regardless of how much you zoom. I have it so that the bottom of the pin stays fixed. This should help user RomeoF.
             //[dropPinView.layer setAnchorPoint:CGPointMake(0.5, 1)];
@@ -623,6 +623,7 @@ static float    kPanelBtnHeight             = 38.0;
     [self createBtnsForPanel:uiv_siteAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"tapSiteAmenities:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:uiv_siteAmePanel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:uiv_siteAmePanel];
+    [self prepareHotspotData:@"site"];
     //Set up overlay's array
     [arr_overlayArray removeAllObjects];
     arr_overlayArray = nil;
@@ -636,17 +637,32 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark Actions for site amenities' buttons
 - (void)tapSiteAmenities:(id)sender
 {
+    
     UIButton *tappedBtn = sender;
     if (tappedBtn.selected) {
-        [self deHighLightPanelBtn:sender];
+        [self loadHotspotTable:sender];
         [UIView animateWithDuration:0.3 animations:^{
             _uiiv_mapOverlay.alpha = 0.0;
         }];
     }
     else {
-        [self highLightPanelBtn:sender andIndicatorColor:[arr_indicatorColors objectAtIndex:[sender tag]] withIndicator:YES];
+        [self loadHotspotTable:sender];
         [self updateOverlayImage:[arr_overlayArray objectAtIndex:[sender tag]]];
     }
+    
+    
+//========Overlay Only==========
+//    UIButton *tappedBtn = sender;
+//    if (tappedBtn.selected) {
+//        [self deHighLightPanelBtn:sender];
+//        [UIView animateWithDuration:0.3 animations:^{
+//            _uiiv_mapOverlay.alpha = 0.0;
+//        }];
+//    }
+//    else {
+//        [self highLightPanelBtn:sender andIndicatorColor:[arr_indicatorColors objectAtIndex:[sender tag]] withIndicator:YES];
+//        [self updateOverlayImage:[arr_overlayArray objectAtIndex:[sender tag]]];
+//    }
 }
 
 #pragma mark Add panel for site access
@@ -705,14 +721,17 @@ static float    kPanelBtnHeight             = 38.0;
             UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:finalImage];
+            _uiiv_mapOverlay.frame = screenRect;
+            _uiiv_mapOverlay.alpha = 0.0;
+            [_uiv_mapContainer insertSubview:_uiiv_mapOverlay atIndex:1];
         }
         else {
             _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
+            _uiiv_mapOverlay.frame = screenRect;
+            _uiiv_mapOverlay.alpha = 0.0;
+            [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
         }
         
-        _uiiv_mapOverlay.frame = screenRect;
-        _uiiv_mapOverlay.alpha = 0.0;
-        [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
         [UIView animateWithDuration:0.3 animations:^{
             _uiiv_mapOverlay.alpha = 1.0;
         }];
@@ -1081,9 +1100,9 @@ static float    kPanelBtnHeight             = 38.0;
         [self setHotspotRoundedView:hotspotView toDiameter:30 num:i+1 andColor:borderColor];
         hotspotView.layer.borderWidth = 3.0;
         hotspotView.layer.borderColor = borderColor.CGColor;
-        hotspotView.tag=i + 100*index;
+        hotspotView.tag=i + 100*(index+1);
         [arr_HotSpotViewArray addObject: hotspotView];
-        [_uiiv_mapImg addSubview: hotspotView];
+        [_uiv_mapContainer addSubview: hotspotView];
     }
     
 }
@@ -1130,12 +1149,12 @@ static float    kPanelBtnHeight             = 38.0;
         _uiv_tappedHotspot.backgroundColor = [UIColor whiteColor];
         _uiv_tappedHotspot.layer.borderWidth = 3.0;
         for (UILabel *tmp in [_uiv_tappedHotspot subviews]) {
-            tmp.textColor = [arr_indicatorColors objectAtIndex:index/100];
+            tmp.textColor = [arr_indicatorColors objectAtIndex:index/100-1];
         }
     }
     
     _uiv_tappedHotspot = [arr_HotSpotViewArray objectAtIndex:index%100];
-    _uiv_tappedHotspot.backgroundColor = [arr_indicatorColors objectAtIndex:index/100];
+    _uiv_tappedHotspot.backgroundColor = [arr_indicatorColors objectAtIndex:index/100-1];
     _uiv_tappedHotspot.layer.borderWidth = 0.0;
     for (UILabel *tmp in [_uiv_tappedHotspot subviews]) {
         tmp.textColor = [UIColor whiteColor];
@@ -1156,7 +1175,7 @@ static float    kPanelBtnHeight             = 38.0;
 {
     //Get current amenities' section index
     int index = (int)_vc_hotspotList.view.tag;
-    [self hiliteHotSpot:(int)rowIndex+index*100];
+    [self hiliteHotSpot:(int)rowIndex+(index+1)*100];
 }
 
 #pragma mark - Draw Path
