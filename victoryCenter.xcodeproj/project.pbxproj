@@ -190,6 +190,8 @@
 		82CBD72319F96FA10001191F /* grfx_elevator_floorNum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */; };
 		82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72419F980800001191F /* grfx_openMenuIcon.png */; };
 		82CBD72719F980800001191F /* grfx_openMenuIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72519F980800001191F /* grfx_openMenuIcon@2x.png */; };
+		82CBD72A19F995120001191F /* grfx_site_parking.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72819F995120001191F /* grfx_site_parking.png */; };
+		82CBD72B19F995120001191F /* grfx_site_parking@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72919F995120001191F /* grfx_site_parking@2x.png */; };
 		82CE2FC919F05D6D006F7B0E /* embDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FC619F05D6D006F7B0E /* embDataViewController.m */; };
 		82CE2FCA19F05D6D006F7B0E /* embModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FC819F05D6D006F7B0E /* embModelController.m */; };
 		82CE2FCD19F05EC3006F7B0E /* ebZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FCC19F05EC3006F7B0E /* ebZoomingScrollView.m */; };
@@ -472,6 +474,8 @@
 		82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elevator_floorNum@2x.png"; sourceTree = "<group>"; };
 		82CBD72419F980800001191F /* grfx_openMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_openMenuIcon.png; sourceTree = "<group>"; };
 		82CBD72519F980800001191F /* grfx_openMenuIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_openMenuIcon@2x.png"; sourceTree = "<group>"; };
+		82CBD72819F995120001191F /* grfx_site_parking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_site_parking.png; sourceTree = "<group>"; };
+		82CBD72919F995120001191F /* grfx_site_parking@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_site_parking@2x.png"; sourceTree = "<group>"; };
 		82CE2FC519F05D6D006F7B0E /* embDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embDataViewController.h; sourceTree = "<group>"; };
 		82CE2FC619F05D6D006F7B0E /* embDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embDataViewController.m; sourceTree = "<group>"; };
 		82CE2FC719F05D6D006F7B0E /* embModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embModelController.h; sourceTree = "<group>"; };
@@ -918,6 +922,8 @@
 				82627E1E19E702EC0062FC0C /* grfx_restaurant_overlay@2x.png */,
 				82627E1F19E702EC0062FC0C /* grfx_retail_overlay.png */,
 				82627E2019E702EC0062FC0C /* grfx_retail_overlay@2x.png */,
+				82CBD72819F995120001191F /* grfx_site_parking.png */,
+				82CBD72919F995120001191F /* grfx_site_parking@2x.png */,
 			);
 			path = overlays;
 			sourceTree = "<group>";
@@ -1236,6 +1242,7 @@
 				82DC11D819DAEA940057AE4F /* Victory Center 01 Highway View.jpg in Resources */,
 				824F369719E6C47500267B44 /* thumb_20140811_view3_100m_04.jpg in Resources */,
 				82627E2719E702EC0062FC0C /* grfx_retail_overlay.png in Resources */,
+				82CBD72A19F995120001191F /* grfx_site_parking.png in Resources */,
 				824F368F19E6C47500267B44 /* thumb_20140802_view4_100m_01.jpg in Resources */,
 				82A29E4A19EC60E000AFAE1E /* grfx_bldStatsImg.png in Resources */,
 				82000B7819E590AD00AE2C70 /* grfx_bldStat_bg@2x.jpg in Resources */,
@@ -1278,6 +1285,7 @@
 				82000B9B19E5963800AE2C70 /* team_cushman_text.png in Resources */,
 				824F369819E6C47500267B44 /* thumb_victory_center_138feet.jpg in Resources */,
 				82000B9A19E5963800AE2C70 /* team_cousins_text@2x.png in Resources */,
+				82CBD72B19F995120001191F /* grfx_site_parking@2x.png in Resources */,
 				823D78AC19F1AD500096E62C /* grfx_compass.png in Resources */,
 				82DC11CE19DAEA940057AE4F /* 20140811_view3_100m_01.jpg in Resources */,
 				82DC11C119DAEA940057AE4F /* 20140802_downtown_100m_1pm.jpg in Resources */,

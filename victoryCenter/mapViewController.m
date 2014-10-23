@@ -480,6 +480,7 @@ static float    kPanelBtnHeight             = 38.0;
     _uiiv_mapOverlay = nil;
     [self removePaths];
     [self removeAllPanels];
+    [self removeAllHotspots];
     // Get -digit to detect which button is tapped
     // *1 --> load overlay
     // *2 --> load City's Access panel
@@ -530,11 +531,7 @@ static float    kPanelBtnHeight             = 38.0;
     _uiiv_mapOverlay = nil;
     [self removePaths];
     [self removeAllPanels];
-    
-    for (UIView __strong *tmp in arr_HotSpotViewArray) {
-        [tmp removeFromSuperview];
-        tmp = nil;
-    }
+    [self removeAllHotspots];
     
     // Get -digit to detect which button is tapped
     // *1 --> load Neighborhood's Amenities panel
@@ -584,6 +581,7 @@ static float    kPanelBtnHeight             = 38.0;
     _uiiv_mapOverlay = nil;
     [self removePaths];
     [self removeAllPanels];
+    [self removeAllHotspots];
     // Get -digit to detect which button is tapped
     // *1 --> load Site's Overview's overlay
     // *2 --> load Site's Amenities panel
@@ -1123,6 +1121,14 @@ static float    kPanelBtnHeight             = 38.0;
     _uiv_tappedHotspot.layer.borderWidth = 0.0;
     for (UILabel *tmp in [_uiv_tappedHotspot subviews]) {
         tmp.textColor = [UIColor whiteColor];
+    }
+}
+
+- (void)removeAllHotspots
+{
+    for (UIView __strong *tmp in arr_HotSpotViewArray) {
+        [tmp removeFromSuperview];
+        tmp = nil;
     }
 }
 #pragma mark Delegate method of embMapHotspotListViewController
