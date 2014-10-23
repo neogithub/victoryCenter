@@ -11,8 +11,7 @@
 #import "floorPlanViewController.h"
 @interface buildingViewController ()
 {
-    BOOL        arr_statusOfBtns[4];
-    BOOL        arr_trackBtns[4];
+
 }
 
 @property (nonatomic, strong) NSMutableArray                *arr_topBtnsArray;
@@ -29,6 +28,7 @@
 @property (nonatomic, strong) floorPlanViewController       *floorPlan;
 //Elevator
 @property (nonatomic, strong) UIView                        *uiv_elevatorContainer;
+@property (nonatomic, strong) UIView                        *uiv_eleLayerConainer;
 @property (nonatomic, strong) NSMutableArray                *arr_eleBtnArray;
 @property (nonatomic, strong) NSArray                       *arr_elevatroImgs;
 @end
@@ -228,8 +228,8 @@
     }
     _uiv_elevatorContainer = [[UIView alloc] initWithFrame:screenRect];
     _uiv_elevatorContainer.backgroundColor = [UIColor clearColor];
-    [self loadElevatorCtrlPanel];
     [self loadElevatorBldImg];
+    [self loadElevatorCtrlPanel];
     [self.view insertSubview:_uiv_elevatorContainer belowSubview:_uib_floorPlan];
     
 }
@@ -237,25 +237,47 @@
 #pragma mark Set up building image
 - (void)loadElevatorBldImg
 {
-    UIImageView *uiiv_eleBldImg = [[UIImageView alloc] initWithFrame:CGRectMake(185, 36, 674, 733)];
+    UIImageView *uiiv_eleBldImg = [[UIImageView alloc] initWithFrame:CGRectMake(185, 36, 780, 733)];
     uiiv_eleBldImg.image = [UIImage imageNamed:@"grfx_elavators_stack_blank.png"];
     
+    if (_uiv_eleLayerConainer) {
+        [_uiv_eleLayerConainer removeFromSuperview];
+        _uiv_eleLayerConainer = nil;
+    }
+    _uiv_eleLayerConainer = [[UIView alloc] initWithFrame:screenRect];
+    _uiv_eleLayerConainer.backgroundColor = [UIColor clearColor];
     UIImageView *uiiv_lowRiseEle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_low_rise.png"]];
-    uiiv_lowRiseEle.frame = CGRectMake(600, 328, uiiv_lowRiseEle.frame.size.width, uiiv_lowRiseEle.frame.size.height);
+    uiiv_lowRiseEle.frame = CGRectMake(686, 328, uiiv_lowRiseEle.frame.size.width, uiiv_lowRiseEle.frame.size.height);
     UIImageView *uiiv_highRiseEle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grf_elavators_high_rise.png"]];
-    uiiv_highRiseEle.frame = CGRectMake(500, 120, uiiv_highRiseEle.frame.size.width, uiiv_highRiseEle.frame.size.height);
+    uiiv_highRiseEle.frame = CGRectMake(584, 121, uiiv_highRiseEle.frame.size.width, uiiv_highRiseEle.frame.size.height);
     UIImageView *uiiv_parking = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_parking.png"]];
-    uiiv_parking.frame = CGRectMake(240, 534, 578, 233);
+    uiiv_parking.frame = CGRectMake(247, 534, uiiv_parking.frame.size.width, uiiv_parking.frame.size.height);
     UIImageView *uiiv_lobby = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_lobby.png"]];
-    uiiv_lobby.frame = CGRectMake(366, 649, 450, 146);
+    uiiv_lobby.frame = CGRectMake(395, 650, uiiv_lobby.frame.size.width, uiiv_lobby.frame.size.height);
+    _arr_elevatroImgs = [[NSArray alloc] initWithObjects:uiiv_lowRiseEle, uiiv_highRiseEle, uiiv_parking, uiiv_lobby,nil];
     
-    [_uiv_elevatorContainer insertSubview:uiiv_parking atIndex:1];
-    [_uiv_elevatorContainer insertSubview:uiiv_lobby atIndex:2];
-    [_uiv_elevatorContainer insertSubview:uiiv_lowRiseEle atIndex:3];
-    [_uiv_elevatorContainer insertSubview:uiiv_highRiseEle atIndex:4];
-    [_uiv_elevatorContainer insertSubview:uiiv_eleBldImg atIndex:5];
+    [_uiv_eleLayerConainer insertSubview:uiiv_parking atIndex:1];
+    [_uiv_eleLayerConainer insertSubview:uiiv_lobby atIndex:2];
+    [_uiv_eleLayerConainer insertSubview:uiiv_lowRiseEle atIndex:3];
+    [_uiv_eleLayerConainer insertSubview:uiiv_highRiseEle atIndex:4];
     
-    _arr_elevatroImgs = [[NSArray alloc] initWithObjects:uiiv_parking, uiiv_lobby, uiiv_lowRiseEle, uiiv_highRiseEle, nil];
+    [_uiv_elevatorContainer insertSubview:_uiv_eleLayerConainer atIndex:1];
+    [_uiv_elevatorContainer insertSubview:uiiv_eleBldImg atIndex:2];
+    
+    //Label of "Parking" & "Lobby"
+    UILabel *uil_parking = [[UILabel alloc]initWithFrame:CGRectMake(770.0, 590.0, 100.0, 30.0)];
+    uil_parking.backgroundColor = [UIColor clearColor];
+    uil_parking.text = @"PARKING";
+    uil_parking.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
+    uil_parking.textColor = [UIColor lightGrayColor];
+    [_uiv_elevatorContainer addSubview: uil_parking];
+    
+    UILabel *uil_lobby = [[UILabel alloc]initWithFrame:CGRectMake(770.0, 700.0, 100.0, 30.0)];
+    uil_lobby.backgroundColor = [UIColor clearColor];
+    uil_lobby.text = @"LOBBY";
+    uil_lobby.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
+    uil_lobby.textColor = [UIColor lightGrayColor];
+    [_uiv_elevatorContainer addSubview: uil_lobby];
 }
 
 
@@ -304,6 +326,7 @@
         uib_option.tag = i;
         uib_option.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         uib_option.titleEdgeInsets = UIEdgeInsetsMake(3.0, 45, 0.0, 0.0);
+        uib_option.selected = NO;
         [uib_option addTarget:self action:@selector(tapOptions:) forControlEvents:UIControlEventTouchUpInside];
         [uiv_btnContainer addSubview: uib_option];
         
@@ -325,63 +348,68 @@
 
 - (void)tapOptions:(id)sender
 {
-//    BOOL tapped = YES;
-//    for (int i = 0; i < sizeof(arr_trackBtns); i++) {
-//        arr_trackBtns[i] = 0;
-//    }
-    
-    for (UIButton *tmp in _arr_eleBtnArray) {
-        tmp.backgroundColor = [UIColor whiteColor];
-        tmp.layer.borderColor = [UIColor vcButtonBorder].CGColor;
-        tmp.layer.borderWidth = 1.0;
-        tmp.selected = NO;
+    float delay = 0.0;
+    if ([self checkFirstTime]) {
+        [self hideAllEleImgs];
+        delay = 0.33;
     }
+    [self performSelector:@selector(animateElevator:) withObject:sender afterDelay:delay];
+}
+
+- (void)animateElevator:(id)sender
+{
     UIButton *tappedBtn = sender;
-    tappedBtn.selected = YES;
-    tappedBtn.backgroundColor = [UIColor vclightbluemenu];
-    tappedBtn.layer.borderColor = [UIColor vcDarkBlue].CGColor;
-    tappedBtn.layer.borderWidth = 1.0;
-    
-//    int index = (int)tappedBtn.tag;
-//    arr_trackBtns[index] =  !arr_trackBtns[index];
-//    for (int i = 0; i < 4; i++) {
-//        arr_statusOfBtns[i] = arr_statusOfBtns[i] ^ arr_trackBtns[i];
-//        
-//        if (arr_statusOfBtns[i]) {
-//            if (tapped) {
-//                tapped = NO;
-//            }
-//        }
-//    }
-    
-    for (UIImageView *tmp in _arr_elevatroImgs) {
-        tmp.hidden =YES;
+    int index = (int)tappedBtn.tag;
+    UIImageView *uiiv_selectetd = _arr_elevatroImgs[index];
+    if (tappedBtn.selected) {
+        tappedBtn.backgroundColor = [UIColor whiteColor];
+        tappedBtn.layer.borderWidth = 1.0;
+        tappedBtn.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+        [UIView animateWithDuration:0.33 animations:^{
+            uiiv_selectetd.alpha = 0.0;
+        }];
     }
-    int changedIndex;
-    switch (tappedBtn.tag) {
-        case 0:
-            changedIndex = 2;
-            break;
-        case 1:
-            changedIndex = 3;
-            break;
-        case 2:
-            changedIndex = 0;
-            break;
-        case 3:
-            changedIndex = 1;
-            break;
-            
-        default:
-            break;
-    }
-    
-    UIImageView *uiiv_selectetd = _arr_elevatroImgs[changedIndex];
-    uiiv_selectetd.alpha = 0.0;
-    uiiv_selectetd.hidden = NO;
-    [UIView animateWithDuration:0.33 animations:^{
+    else {
+        tappedBtn.backgroundColor = [UIColor vclightbluemenu];
+        tappedBtn.layer.borderWidth = 1.0;
+        uiiv_selectetd.transform = CGAffineTransformMakeTranslation(0.0, uiiv_selectetd.frame.size.height);
         uiiv_selectetd.alpha = 1.0;
-    }];
+        tappedBtn.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+        [UIView animateWithDuration:0.5 animations:^{
+            uiiv_selectetd.transform = CGAffineTransformIdentity;
+        }];
+    }
+    tappedBtn.selected = !tappedBtn.selected;
+}
+
+- (BOOL)checkFirstTime
+{
+    BOOL allBtns = NO;
+    BOOL allImgs = YES;
+    for (UIButton *tmp in _arr_eleBtnArray) {
+        if (tmp.selected) {
+            allBtns = YES;
+        }
+    }
+    for (UIImageView *tmp in _arr_elevatroImgs) {
+        if (tmp.alpha == 0) {
+            allImgs = NO;
+        }
+    }
+    
+    if ((allBtns == NO) && (allImgs == YES)) {
+        return YES;
+    }
+    return  NO;
+}
+
+- (void)hideAllEleImgs
+{
+    for (UIImageView *tmp in _arr_elevatroImgs) {
+        [UIView animateWithDuration:0.33 animations:^{
+            tmp.alpha = 0.0;
+        }];
+    }
 }
 
 #pragma mark - Memory cleaning & warning
