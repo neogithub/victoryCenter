@@ -286,6 +286,7 @@
 {
     UIView *uiv_ctrlPanel = [[UIView alloc] initWithFrame:CGRectMake(65.0, 95.0, 200.0, 206.0)];
     uiv_ctrlPanel.backgroundColor = [UIColor clearColor];
+    uiv_ctrlPanel.clipsToBounds = YES;
     
     UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
     uib_PanelTitle.frame = CGRectMake(0.0, 0.0, 200.0, 46);
@@ -301,6 +302,7 @@
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"LOW-RISE ELEVATORS", @"HIGH-RISE ELEVATORS", @"PARKING", @"LOBBY", nil];
     [uiv_ctrlPanel addSubview: [self loadPanelBtnsWithTitle:arr_buttonTitles]];
     [_uiv_elevatorContainer addSubview: uiv_ctrlPanel];
+    [self animateCtrlPanel:uiv_ctrlPanel];
 }
 
 - (UIView *)loadPanelBtnsWithTitle:(NSArray *)arr_title
@@ -345,6 +347,24 @@
         [_arr_eleBtnArray addObject: uib_option];
     }
     return uiv_btnContainer;
+}
+
+- (void)animateCtrlPanel:(UIView *)panel
+{
+    panel.transform = CGAffineTransformMakeTranslation(0.0, -150.0);
+    [panel viewWithTag:102].transform = CGAffineTransformMakeTranslation(0.0, -46.0);
+    
+    CGFloat duration = 0.5f;
+    CGFloat damping = 0.7f;
+    CGFloat velocity = 0.68f;
+    // int to hold UIViewAnimationOption
+    NSInteger option;
+    option = UIViewAnimationCurveEaseInOut;
+    
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+        panel.transform = CGAffineTransformIdentity;
+        [panel viewWithTag:102].transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished){      }];
 }
 
 - (void)tapOptions:(id)sender
