@@ -295,6 +295,7 @@
     [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
     uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
     uib_PanelTitle.tag = 101;
+    [uib_PanelTitle addTarget:self action:@selector(resetAllEleImgs) forControlEvents:UIControlEventTouchUpInside];
     [uiv_ctrlPanel addSubview: uib_PanelTitle];
     
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"LOW-RISE ELEVATORS", @"HIGH-RISE ELEVATORS", @"PARKING", @"LOBBY", nil];
@@ -409,6 +410,21 @@
         [UIView animateWithDuration:0.33 animations:^{
             tmp.alpha = 0.0;
         }];
+    }
+}
+
+- (void)resetAllEleImgs
+{
+    for (UIImageView *tmp in _arr_elevatroImgs) {
+        [UIView animateWithDuration:0.33 animations:^{
+            tmp.alpha = 1.0;
+        }];
+    }
+    for (UIButton *tmp in _arr_eleBtnArray) {
+        tmp.backgroundColor = [UIColor whiteColor];
+        tmp.layer.borderWidth = 1.0;
+        tmp.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+        tmp.selected = NO;
     }
 }
 
