@@ -691,7 +691,25 @@ static float    kPanelBtnHeight             = 38.0;
     } completion:^(BOOL finished){
         [_uiiv_mapOverlay removeFromSuperview];
         _uiiv_mapOverlay = nil;
-        _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
+        
+        //If in Site map merge overlay with parking
+        if (_uiv_siteSubMenu.hidden == NO) {
+            UIImage *normalLayer = [UIImage imageWithContentsOfFile:path];
+            UIImage *parkingLayer = [UIImage imageNamed:@"grfx_site_parking.png"];
+            CGSize size = screenRect.size;
+            UIGraphicsBeginImageContext(size);
+            
+            [normalLayer drawInRect:screenRect];
+            [parkingLayer drawInRect:screenRect];
+            
+            UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:finalImage];
+        }
+        else {
+            _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
+        }
+        
         _uiiv_mapOverlay.frame = screenRect;
         _uiiv_mapOverlay.alpha = 0.0;
         [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
