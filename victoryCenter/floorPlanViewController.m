@@ -41,7 +41,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 - (void)viewWillAppear:(BOOL)animated
 {
     self.view.frame = screenRect;
-    _arr_titleText = [[NSArray alloc] initWithObjects:@"FLOOR 18 - 23", @"FLOOR 16 - 17", @"FLOOR 10 - 15", @"FLOOR 8 - 9",nil];
+    _arr_titleText = [[NSArray alloc] initWithObjects:@"FLOOR 24", @"FLOOR 18 - 23", @"FLOOR 17", @"FLOOR 16", @"FLOOR 15", @"FLOOR 10 - 14", @"FLOOR 9", @"FLOOR 8",nil];
     _modelController = [[embModelController alloc] init];
     [self initPageView:pageIndex];
     [self createPanel];
@@ -57,7 +57,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 #pragma mark - Set up side panel
 - (void)createPanel
 {
-    _uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(817, 0.0, panle_w, 265)];
+    _uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(827, 0.0, panle_w, 265)];
     _uiv_panel.backgroundColor = [UIColor clearColor];
     _uiv_panel.layer.borderWidth = 1.0;
     _uiv_panel.layer.borderColor = [UIColor vcDarkBlue].CGColor;

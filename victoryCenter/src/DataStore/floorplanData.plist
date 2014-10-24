@@ -22,7 +22,7 @@
 				<string>31042</string>
 				<key>floorinfo</key>
 				<array>
-					<string>grfx_floorplan.png</string>
+					<string>grfx_floorplan24.png</string>
 				</array>
 				<key>testfits</key>
 				<dict>
@@ -77,7 +77,7 @@
 				<string>31042</string>
 				<key>floorinfo</key>
 				<array>
-					<string>grfx_floorplan.png</string>
+					<string>grfx_floorplan18-23.png</string>
 				</array>
 				<key>testfits</key>
 				<dict>
@@ -89,7 +89,7 @@
 					<key>testfitimages</key>
 					<array>
 						<array>
-							<string>grfx_floorplan.png</string>
+							<string>grfx_floorplan16.png</string>
 						</array>
 						<array>
 							<string>floorplan_6th_workstation_1_tenant.png</string>
@@ -132,7 +132,7 @@
 				<string>29885</string>
 				<key>floorinfo</key>
 				<array>
-					<string>grfx_floorplan.png</string>
+					<string>grfx_floorplan17.png</string>
 				</array>
 				<key>testfits</key>
 				<dict>
@@ -187,7 +187,219 @@
 				<string>22632</string>
 				<key>floorinfo</key>
 				<array>
-					<string>grfx_floorplan.png</string>
+					<string>grfx_floorplan16.png</string>
+				</array>
+				<key>testfits</key>
+				<dict>
+					<key>testfitinfo</key>
+					<array>
+						<string>grfx-fp-panel-TF-midrise-perimeter.png</string>
+						<string>grfx-fp-panel-TF-midrise-perimeter.png</string>
+					</array>
+					<key>testfitimages</key>
+					<array>
+						<array>
+							<string>grfx_floorplan.png</string>
+						</array>
+						<array>
+							<string>floorplan_2nd_workstation_1_tenant.png</string>
+							<string>floorplan_2nd_workstation_2_tenant.png</string>
+						</array>
+						<array>
+							<string>floorplan_2nd_benching_1_tenant.png</string>
+							<string>floorplan_2nd_benching_2_tenant.png</string>
+						</array>
+					</array>
+					<key>testfitcaptions</key>
+					<array>
+						<string>SHELL</string>
+						<string>WORKSTATION TEST FIT</string>
+						<string>BENCHING TEST FIT</string>
+					</array>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>FloorPlan</key>
+		<string>FLOOR</string>
+		<key>floorplaninfo</key>
+		<array>
+			<dict>
+				<key>floorplan</key>
+				<string>grfx_floorplan2.png</string>
+				<key>floorplancaption</key>
+				<string>4</string>
+				<key>floorplate</key>
+				<string></string>
+				<key>floorstack</key>
+				<string></string>
+				<key>pdf</key>
+				<string>local4.pdf</string>
+				<key>square</key>
+				<string>22632</string>
+				<key>floorinfo</key>
+				<array>
+					<string>grfx_floorplan15.png</string>
+				</array>
+				<key>testfits</key>
+				<dict>
+					<key>testfitinfo</key>
+					<array>
+						<string>grfx-fp-panel-TF-midrise-perimeter.png</string>
+						<string>grfx-fp-panel-TF-midrise-perimeter.png</string>
+					</array>
+					<key>testfitimages</key>
+					<array>
+						<array>
+							<string>grfx_floorplan.png</string>
+						</array>
+						<array>
+							<string>floorplan_2nd_workstation_1_tenant.png</string>
+							<string>floorplan_2nd_workstation_2_tenant.png</string>
+						</array>
+						<array>
+							<string>floorplan_2nd_benching_1_tenant.png</string>
+							<string>floorplan_2nd_benching_2_tenant.png</string>
+						</array>
+					</array>
+					<key>testfitcaptions</key>
+					<array>
+						<string>SHELL</string>
+						<string>WORKSTATION TEST FIT</string>
+						<string>BENCHING TEST FIT</string>
+					</array>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>FloorPlan</key>
+		<string>FLOOR</string>
+		<key>floorplaninfo</key>
+		<array>
+			<dict>
+				<key>floorplan</key>
+				<string>grfx_floorplan2.png</string>
+				<key>floorplancaption</key>
+				<string>4</string>
+				<key>floorplate</key>
+				<string></string>
+				<key>floorstack</key>
+				<string></string>
+				<key>pdf</key>
+				<string>local4.pdf</string>
+				<key>square</key>
+				<string>22632</string>
+				<key>floorinfo</key>
+				<array>
+					<string>grfx_floorplan10-14.png</string>
+				</array>
+				<key>testfits</key>
+				<dict>
+					<key>testfitinfo</key>
+					<array>
+						<string>grfx-fp-panel-TF-midrise-perimeter.png</string>
+						<string>grfx-fp-panel-TF-midrise-perimeter.png</string>
+					</array>
+					<key>testfitimages</key>
+					<array>
+						<array>
+							<string>grfx_floorplan.png</string>
+						</array>
+						<array>
+							<string>floorplan_2nd_workstation_1_tenant.png</string>
+							<string>floorplan_2nd_workstation_2_tenant.png</string>
+						</array>
+						<array>
+							<string>floorplan_2nd_benching_1_tenant.png</string>
+							<string>floorplan_2nd_benching_2_tenant.png</string>
+						</array>
+					</array>
+					<key>testfitcaptions</key>
+					<array>
+						<string>SHELL</string>
+						<string>WORKSTATION TEST FIT</string>
+						<string>BENCHING TEST FIT</string>
+					</array>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>FloorPlan</key>
+		<string>FLOOR</string>
+		<key>floorplaninfo</key>
+		<array>
+			<dict>
+				<key>floorplan</key>
+				<string>grfx_floorplan2.png</string>
+				<key>floorplancaption</key>
+				<string>4</string>
+				<key>floorplate</key>
+				<string></string>
+				<key>floorstack</key>
+				<string></string>
+				<key>pdf</key>
+				<string>local4.pdf</string>
+				<key>square</key>
+				<string>22632</string>
+				<key>floorinfo</key>
+				<array>
+					<string>grfx_floorplan9.png</string>
+				</array>
+				<key>testfits</key>
+				<dict>
+					<key>testfitinfo</key>
+					<array>
+						<string>grfx-fp-panel-TF-midrise-perimeter.png</string>
+						<string>grfx-fp-panel-TF-midrise-perimeter.png</string>
+					</array>
+					<key>testfitimages</key>
+					<array>
+						<array>
+							<string>grfx_floorplan.png</string>
+						</array>
+						<array>
+							<string>floorplan_2nd_workstation_1_tenant.png</string>
+							<string>floorplan_2nd_workstation_2_tenant.png</string>
+						</array>
+						<array>
+							<string>floorplan_2nd_benching_1_tenant.png</string>
+							<string>floorplan_2nd_benching_2_tenant.png</string>
+						</array>
+					</array>
+					<key>testfitcaptions</key>
+					<array>
+						<string>SHELL</string>
+						<string>WORKSTATION TEST FIT</string>
+						<string>BENCHING TEST FIT</string>
+					</array>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>FloorPlan</key>
+		<string>FLOOR</string>
+		<key>floorplaninfo</key>
+		<array>
+			<dict>
+				<key>floorplan</key>
+				<string>grfx_floorplan2.png</string>
+				<key>floorplancaption</key>
+				<string>4</string>
+				<key>floorplate</key>
+				<string></string>
+				<key>floorstack</key>
+				<string></string>
+				<key>pdf</key>
+				<string>local4.pdf</string>
+				<key>square</key>
+				<string>22632</string>
+				<key>floorinfo</key>
+				<array>
+					<string>grfx_floorplan8.png</string>
 				</array>
 				<key>testfits</key>
 				<dict>
