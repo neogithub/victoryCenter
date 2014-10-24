@@ -137,7 +137,7 @@ static float kContactGap = 4;
 
 - (void)tapOnCard:(UIGestureRecognizer *)gesture
 {
-    int index = gesture.view.tag;
+    int index = (int)gesture.view.tag;
     NSString *emailAddress = arr_email[index-1];
     
     _emailData = [[embEmailData alloc] init];

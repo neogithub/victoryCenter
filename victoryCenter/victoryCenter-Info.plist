@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>Neoscape.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.neoenterprise.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -24,6 +24,18 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Raleway-Bold.otf</string>
+		<string>Raleway-ExtraBold.otf</string>
+		<string>Raleway-ExtraLight.otf</string>
+		<string>Raleway-Heavy.otf</string>
+		<string>Raleway-Light.otf</string>
+		<string>Raleway-Medium.otf</string>
+		<string>Raleway-Regular.otf</string>
+		<string>Raleway-SemiBold.otf</string>
+		<string>Raleway-Thin.otf</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -36,18 +48,6 @@
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Raleway-Bold.otf</string>
-		<string>Raleway-ExtraBold.otf</string>
-		<string>Raleway-ExtraLight.otf</string>
-		<string>Raleway-Heavy.otf</string>
-		<string>Raleway-Light.otf</string>
-		<string>Raleway-Medium.otf</string>
-		<string>Raleway-Regular.otf</string>
-		<string>Raleway-SemiBold.otf</string>
-		<string>Raleway-Thin.otf</string>
 	</array>
 	<key>UIViewEdgeAntialiasing</key>
 	<true/>

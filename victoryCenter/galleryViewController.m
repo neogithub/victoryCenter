@@ -290,7 +290,7 @@
             [self openFGallery:rowIndex];
         }
         else {
-            [self openFilm:(rowIndex - arr_AllImgs.count)];
+            [self openFilm:((int)rowIndex - (int)arr_AllImgs.count)];
         }
     }
 	return;
@@ -306,7 +306,7 @@
     //	else if( gallery == networkGallery ) {
     //		num = [networkImages count];
     //	}
-	num = [localImages count];
+	num = (int)[localImages count];
 	return num;
 }
 

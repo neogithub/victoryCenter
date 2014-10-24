@@ -94,6 +94,10 @@
 		82459E7A19F6C77D00E03A8D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82459E7919F6C77D00E03A8D /* MessageUI.framework */; };
 		82459E7D19F6D4AE00E03A8D /* grfx_homeBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 82459E7B19F6D4AE00E03A8D /* grfx_homeBtn.png */; };
 		82459E7E19F6D4AE00E03A8D /* grfx_homeBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82459E7C19F6D4AE00E03A8D /* grfx_homeBtn@2x.png */; };
+		824C194E19FA938500EA7613 /* grfx_tredart_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 824C194A19FA938500EA7613 /* grfx_tredart_logo.png */; };
+		824C194F19FA938500EA7613 /* grfx_tredart_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 824C194B19FA938500EA7613 /* grfx_tredart_logo@2x.png */; };
+		824C195019FA938500EA7613 /* grfx_victorycenter_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 824C194C19FA938500EA7613 /* grfx_victorycenter_logo.png */; };
+		824C195119FA938500EA7613 /* grfx_victorycenter_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 824C194D19FA938500EA7613 /* grfx_victorycenter_logo@2x.png */; };
 		824F368519E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F366619E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg */; };
 		824F368619E6C47500267B44 /* thumb_20140716_view2_90 feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F366719E6C47500267B44 /* thumb_20140716_view2_90 feet.jpg */; };
 		824F368719E6C47500267B44 /* thumb_20140802_downtown_100m_1pm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F366819E6C47500267B44 /* thumb_20140802_downtown_100m_1pm.jpg */; };
@@ -366,6 +370,10 @@
 		82459E7919F6C77D00E03A8D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		82459E7B19F6D4AE00E03A8D /* grfx_homeBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_homeBtn.png; sourceTree = "<group>"; };
 		82459E7C19F6D4AE00E03A8D /* grfx_homeBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_homeBtn@2x.png"; sourceTree = "<group>"; };
+		824C194A19FA938500EA7613 /* grfx_tredart_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_tredart_logo.png; sourceTree = "<group>"; };
+		824C194B19FA938500EA7613 /* grfx_tredart_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_tredart_logo@2x.png"; sourceTree = "<group>"; };
+		824C194C19FA938500EA7613 /* grfx_victorycenter_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_victorycenter_logo.png; sourceTree = "<group>"; };
+		824C194D19FA938500EA7613 /* grfx_victorycenter_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_victorycenter_logo@2x.png"; sourceTree = "<group>"; };
 		824F366619E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_20140716_view1_90 feet.jpg"; sourceTree = "<group>"; };
 		824F366719E6C47500267B44 /* thumb_20140716_view2_90 feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_20140716_view2_90 feet.jpg"; sourceTree = "<group>"; };
 		824F366819E6C47500267B44 /* thumb_20140802_downtown_100m_1pm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_20140802_downtown_100m_1pm.jpg; sourceTree = "<group>"; };
@@ -632,6 +640,10 @@
 		8224FDF219D46D90002B1B44 /* grfx */ = {
 			isa = PBXGroup;
 			children = (
+				824C194A19FA938500EA7613 /* grfx_tredart_logo.png */,
+				824C194B19FA938500EA7613 /* grfx_tredart_logo@2x.png */,
+				824C194C19FA938500EA7613 /* grfx_victorycenter_logo.png */,
+				824C194D19FA938500EA7613 /* grfx_victorycenter_logo@2x.png */,
 				82459E7B19F6D4AE00E03A8D /* grfx_homeBtn.png */,
 				82459E7C19F6D4AE00E03A8D /* grfx_homeBtn@2x.png */,
 				82459E7219F6974A00E03A8D /* grfx_contactClose.jpg */,
@@ -1177,6 +1189,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Neoscape;
 				TargetAttributes = {
+					824012DB19D1AF5D00C501EE = {
+						DevelopmentTeam = 97VHU5A6BJ;
+					};
 					824012FC19D1AF5D00C501EE = {
 						TestTargetID = 824012DB19D1AF5D00C501EE;
 					};
@@ -1242,6 +1257,7 @@
 				82DC11D819DAEA940057AE4F /* Victory Center 01 Highway View.jpg in Resources */,
 				824F369719E6C47500267B44 /* thumb_20140811_view3_100m_04.jpg in Resources */,
 				82627E2719E702EC0062FC0C /* grfx_retail_overlay.png in Resources */,
+				824C195119FA938500EA7613 /* grfx_victorycenter_logo@2x.png in Resources */,
 				82CBD72A19F995120001191F /* grfx_site_parking.png in Resources */,
 				824F368F19E6C47500267B44 /* thumb_20140802_view4_100m_01.jpg in Resources */,
 				82A29E4A19EC60E000AFAE1E /* grfx_bldStatsImg.png in Resources */,
@@ -1287,6 +1303,7 @@
 				82000B9A19E5963800AE2C70 /* team_cousins_text@2x.png in Resources */,
 				82CBD72B19F995120001191F /* grfx_site_parking@2x.png in Resources */,
 				823D78AC19F1AD500096E62C /* grfx_compass.png in Resources */,
+				824C194F19FA938500EA7613 /* grfx_tredart_logo@2x.png in Resources */,
 				82DC11CE19DAEA940057AE4F /* 20140811_view3_100m_01.jpg in Resources */,
 				82DC11C119DAEA940057AE4F /* 20140802_downtown_100m_1pm.jpg in Resources */,
 				824012EA19D1AF5D00C501EE /* InfoPlist.strings in Resources */,
@@ -1343,6 +1360,7 @@
 				82627E2219E702EC0062FC0C /* grfx_recreationg_overlay@2x.png in Resources */,
 				82000B7E19E590AD00AE2C70 /* team_logoBtmBar@2x.png in Resources */,
 				824F369F19E6C47500267B44 /* thumb_Victory Center 02 W Hotel View.jpg in Resources */,
+				824C194E19FA938500EA7613 /* grfx_tredart_logo.png in Resources */,
 				82716A6919E434C10070A331 /* Districts_overlay@2x.png in Resources */,
 				82DC11D119DAEA940057AE4F /* 20140811_view3_100m_04.jpg in Resources */,
 				82000B7319E590AD00AE2C70 /* grfx_bldElevator_bg.jpg in Resources */,
@@ -1372,6 +1390,7 @@
 				824F36A219E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg in Resources */,
 				82DC11D719DAEA940057AE4F /* Street View B1.jpg in Resources */,
 				82A29E4B19EC60E000AFAE1E /* grfx_bldStatsImg@2x.png in Resources */,
+				824C195019FA938500EA7613 /* grfx_victorycenter_logo.png in Resources */,
 				82DC11FB19DAF2990057AE4F /* photo-gallery-edit-caption.png in Resources */,
 				824F36A119E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg in Resources */,
 				8224FE3319D4BD6E002B1B44 /* normal_frame@2x.png in Resources */,
@@ -1535,6 +1554,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "2f89ae26-efe9-4bd7-a84b-fc9c827a3fe4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1556,7 +1576,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Incorporated";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Incorporated";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1567,6 +1588,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "5DA75D41-A3E9-4CA0-84FE-F76E92D6BFA0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -1578,11 +1600,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "victoryCenter/victoryCenter-Prefix.pch";
 				INFOPLIST_FILE = "victoryCenter/victoryCenter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2f89ae26-efe9-4bd7-a84b-fc9c827a3fe4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1592,11 +1616,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Incorporated";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Incorporated";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "victoryCenter/victoryCenter-Prefix.pch";
 				INFOPLIST_FILE = "victoryCenter/victoryCenter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5DA75D41-A3E9-4CA0-84FE-F76E92D6BFA0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

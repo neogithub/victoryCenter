@@ -53,8 +53,6 @@
 	_floorplan = [_dict valueForKeyPath:@"floorplaninfo.floorplan"];
 	[_arr_floorplans addObject:[_floorplan objectAtIndex:0]];
 	
-    UIImageView *uiiv_bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_floorPlan_bg.jpg"]];
-    [self.view insertSubview:uiiv_bgImage atIndex:0];
     self.view.backgroundColor = [UIColor vcBackGroundColor];
     [self loadDataAndView];
 }

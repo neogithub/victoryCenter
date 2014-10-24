@@ -152,9 +152,9 @@
 + (BOOL)subView:(UIView *)subView1 isAboveSubView:(UIView *)subView2
 {
 	UIView *superview = [subView1 superview];
-	int index1 = [[superview subviews] indexOfObject:subView1];
-	int index2 = [[superview subviews] indexOfObject:subView2];
-	if (index2 == NSNotFound)
+	int index1 = (int)[[superview subviews] indexOfObject:subView1];
+	int index2 = (int)[[superview subviews] indexOfObject:subView2];
+	if (index2 == (int)NSNotFound)
 		[NSException raise:@"Invalid Operation" format:@"Both views must have the same superview"];
 	return index1 > index2;
 }

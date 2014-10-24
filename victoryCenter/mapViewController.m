@@ -89,6 +89,8 @@ static float    kPanelBtnHeight             = 38.0;
 @property (nonatomic, strong) UIView                    *uiv_mapContainer;
 @property (nonatomic, strong) UIImageView               *uiiv_mapImg;
 @property (nonatomic, strong) UIImageView               *uiiv_mapOverlay;
+@property (nonatomic, strong) UIImageView               *uiiv_vcLogo;
+@property (nonatomic, strong) UIImageView               *uiiv_tredartLogo;
 //Draw path
 @property (nonatomic, strong) embDrawPath               *embPath;
 @property (nonatomic, strong) embDrawPath				*embDirectionPath;
@@ -165,21 +167,36 @@ static float    kPanelBtnHeight             = 38.0;
 	[_uiiv_mapImg setContentMode:UIViewContentModeScaleAspectFit];
     _uiiv_mapImg.userInteractionEnabled = YES;
     _uiiv_mapImg.backgroundColor = [UIColor whiteColor];
+    
+    //Set up logos image
+    _uiiv_vcLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_victorycenter_logo.png"]];
+    _uiiv_tredartLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_tredart_logo.png"]];
 	switch (index % 3) {
 		case 0:
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"City_base_map_.png"]];
+            _uiiv_vcLogo.frame = CGRectMake(489.0, 374.0, _uiiv_vcLogo.frame.size.width, _uiiv_vcLogo.frame.size.height);
+            _uiiv_tredartLogo.frame = CGRectMake(456.0, 308.0, _uiiv_tredartLogo.frame.size.width, _uiiv_tredartLogo.frame.size.height);
 			break;
 		case 1:
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"Neighborhood_map.png"]];
+            _uiiv_vcLogo.frame = CGRectMake(480.0, 428.0, _uiiv_vcLogo.frame.size.width, _uiiv_vcLogo.frame.size.height);
+            _uiiv_tredartLogo.frame = CGRectMake(423.0, 288.0, _uiiv_tredartLogo.frame.size.width, _uiiv_tredartLogo.frame.size.height);
 			break;
 		case 2:
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"Site_Base map.png"]];
+            _uiiv_vcLogo.frame = CGRectZero;
+            _uiiv_tredartLogo.frame = CGRectZero;
 			break;
 		default:
 			break;
 	}
     
+    _uiiv_vcLogo.tag = 150;
+    _uiiv_tredartLogo.tag = 160;
+    
     [_uiv_mapContainer addSubview:_uiiv_mapImg];
+    [_uiv_mapContainer insertSubview:_uiiv_vcLogo atIndex:11];
+    [_uiv_mapContainer insertSubview:_uiiv_tredartLogo atIndex:12];
 	return _uiv_mapContainer;
 }
 
@@ -729,7 +746,7 @@ static float    kPanelBtnHeight             = 38.0;
             _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
             _uiiv_mapOverlay.frame = screenRect;
             _uiiv_mapOverlay.alpha = 0.0;
-            [_uiv_mapContainer addSubview: _uiiv_mapOverlay];
+            [_uiv_mapContainer insertSubview: _uiiv_mapOverlay belowSubview:_uiiv_vcLogo];
         }
         
         [UIView animateWithDuration:0.3 animations:^{
