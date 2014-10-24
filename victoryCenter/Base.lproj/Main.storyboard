@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Victory Center 02 W Hotel View.jpg" id="Iyi-gi-qCd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grfx_launching.png" id="Iyi-gi-qCd">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -684,11 +684,11 @@
         <image name="Map_bg.jpg" width="1024" height="768"/>
         <image name="Team_bg.jpg" width="893" height="670"/>
         <image name="Victory Center 01 Highway View.jpg" width="1250" height="938"/>
-        <image name="Victory Center 02 W Hotel View.jpg" width="1250" height="848"/>
         <image name="grfx_bldImg.png" width="780" height="733"/>
         <image name="grfx_bldStatsImg.png" width="356" height="614"/>
         <image name="grfx_contactClose.jpg" width="44" height="44"/>
         <image name="grfx_helpIcon.png" width="36" height="36"/>
+        <image name="grfx_launching.png" width="1024" height="768"/>
         <image name="grfx_menuIcon.png" width="44" height="43"/>
         <image name="grfx_mialIcon.png" width="36" height="36"/>
         <image name="grfx_movieIcon.png" width="36" height="36"/>
