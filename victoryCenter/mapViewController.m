@@ -528,7 +528,7 @@ static float    kPanelBtnHeight             = 38.0;
 {
     float panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
     uiv_cityAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"LIVE", @"DINING", @"STAY", @"PLAY", nil];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", nil];
     [self createBtnsForPanel:uiv_cityAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:uiv_cityAmePanel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:uiv_cityAmePanel];
@@ -567,7 +567,7 @@ static float    kPanelBtnHeight             = 38.0;
 {
     float panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
     uiv_neibAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATION", @"RESIDENTIAL", @"DINING", nil];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", nil];
     [self createBtnsForPanel:uiv_neibAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:uiv_neibAmePanel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:uiv_neibAmePanel];

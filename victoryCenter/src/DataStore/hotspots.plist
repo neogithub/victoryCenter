@@ -6,252 +6,252 @@
 	<array>
 		<dict>
 			<key>category</key>
-			<string>STAY</string>
+			<string>RECREATION</string>
 			<key>hotspots</key>
 			<array>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>537,348</string>
+					<string>768,357</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>W Dallas Hotel</string>
+					<string>MEYERSON CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>512,251</string>
+					<string>733,426</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Hyatt House Uptown Dallas</string>
+					<string>DALLAS MUSEUM OF ART</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>633,414</string>
+					<string>689,384</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>The Fairmont Hotel</string>
+					<string>KLYDE WARREN PARK</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>556,217</string>
+					<string>583,420</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Le Meridien /  The Stoneleigh  </string>
+					<string>PEROT MUSEUM</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>631,262</string>
+					<string>711,405</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Hotel ZaZa</string>
+					<string>NASHER SCULPTURE CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>604,296</string>
+					<string>488,326</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>The Ritz-Carlton</string>
+					<string>AMERICAN AIRLINES CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>602,270</string>
+					<string>569,574</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Rosewood Crescent Hotel</string>
+					<string>WESTEND MARKETPLACE</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>642,486</string>
+					<string>727,728</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>The Adolphus Hotel</string>
+					<string>DALLAS CONVENTION CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>593,578</string>
+					<string>623,505</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Omni Dallas</string>
+					<string>DALLAS WORLD AQUARIUM</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>717,387</string>
+					<string>536,602</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Marriott City Center</string>
+					<string>SIXTH FLOOR MUSEUM</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>531,701</string>
+					<key>background</key>
+					<string>hotspot_fine_dining_BG.png</string>
+					<key>name</key>
+					<string>REUNION TOWER</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>768,318</string>
+					<key>background</key>
+					<string>hotspot_fine_dining_BG.png</string>
+					<key>name</key>
+					<string>WINSPEAR OPERA HOUSE</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>566,449</string>
+					<key>background</key>
+					<string>hotspot_fine_dining_BG.png</string>
+					<key>name</key>
+					<string>HOUSE OF BLUES</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>category</key>
-			<string>PLAY</string>
+			<string>ACCOMMODATIONS</string>
 			<key>hotspots</key>
 			<array>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>667,332</string>
+					<string>524,397</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Meyerson Symphony Center</string>
+					<string>DALLAS MARRIOTT MARKET CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>635,373</string>
+					<string>535,223</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Dallas Museum of Art</string>
+					<string>HILTON GARDEN MARKET CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>643,340</string>
+					<string>682,457</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Klyde Warren Park</string>
+					<string>HILTON ANATOLE</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>590,358</string>
+					<string>575,169</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Perot Museum of Nature &amp; Science</string>
+					<string>MARRIOTT COURTYARD</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>658,368</string>
+					<string>704,228</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Nasher Sculpture Center</string>
+					<string>STONELEIGH</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>508,321</string>
+					<string>650,283</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>American Airlines Center</string>
+					<string>HYATT HOUSE</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>546,454</string>
+					<string>635,228</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Westend Marketplace</string>
+					<string>ROSEWOOD CRESCENT</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>654,598</string>
+					<string>722,586</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Dallas Convention Center</string>
+					<string>HOTEL ZAZA</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>581,447</string>
+					<string>643,715</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Dallas World Aquarium</string>
-				</dict>
-				<dict>
-					<key>type</key>
-					<string>static</string>
-					<key>xy</key>
-					<string>532,504</string>
-					<key>background</key>
-					<string>hotspot_causal_dinning_BG.png</string>
-					<key>name</key>
-					<string>Sixth Floor Museum (JFK)</string>
-				</dict>
-				<dict>
-					<key>type</key>
-					<string>static</string>
-					<key>xy</key>
-					<string>527,571</string>
-					<key>background</key>
-					<string>hotspot_causal_dinning_BG.png</string>
-					<key>name</key>
-					<string>Reunion Tower</string>
-				</dict>
-				<dict>
-					<key>type</key>
-					<string>static</string>
-					<key>xy</key>
-					<string>709,325</string>
-					<key>background</key>
-					<string>hotspot_causal_dinning_BG.png</string>
-					<key>name</key>
-					<string>AT&amp;T Performing Arts Center</string>
+					<string>RITZ CARLTON</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>category</key>
-			<string>LIVE</string>
+			<string>RESIDENTIAL</string>
 			<key>hotspots</key>
 			<array>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,359</string>
+					<string>527,388</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>W Dallas Residences</string>
+					<string>W DALLAS RESIDENCES</string>
 					<key>units</key>
 					<string>146</string>
 				</dict>
@@ -259,11 +259,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,379</string>
+					<string>527,417</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Vista</string>
+					<string>THE VISTA</string>
 					<key>units</key>
 					<string>129</string>
 				</dict>
@@ -271,11 +271,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,397</string>
+					<string>529,445</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Terrace</string>
+					<string>THE TERRACE</string>
 					<key>units</key>
 					<string>95</string>
 				</dict>
@@ -283,11 +283,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>529,425</string>
+					<string>538,483</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The House</string>
+					<string>THE HOUSE</string>
 					<key>units</key>
 					<string>133</string>
 				</dict>
@@ -295,11 +295,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>558,368</string>
+					<string>583,391</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Northend</string>
+					<string>NORTHEND</string>
 					<key>units</key>
 					<string>540</string>
 				</dict>
@@ -307,11 +307,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>534,338</string>
+					<string>548,339</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Cirque</string>
+					<string>THE CIRQUE</string>
 					<key>units</key>
 					<string>252</string>
 				</dict>
@@ -319,11 +319,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>507,293</string>
+					<string>503,256</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Magnolia Station</string>
+					<string>MAGNOLIA STATION</string>
 					<key>units</key>
 					<string>71</string>
 				</dict>
@@ -331,11 +331,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>425,239</string>
+					<string>511,469</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>1400 Highline</string>
+					<string>SKYHOUSE</string>
 					<key>units</key>
 					<string>314</string>
 				</dict>
@@ -343,11 +343,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>527,214</string>
+					<string>496,405</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Azure</string>
+					<string>ARPEGGIO</string>
 					<key>units</key>
 					<string>186</string>
 				</dict>
@@ -355,11 +355,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>549,239</string>
+					<string>551,300</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Glass House</string>
+					<string>MODA</string>
 					<key>units</key>
 					<string>375</string>
 				</dict>
@@ -367,11 +367,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>570,251</string>
+					<string>254,214</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Ashton</string>
+					<string>CAMDEN</string>
 					<key>units</key>
 					<string>267</string>
 				</dict>
@@ -379,11 +379,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>565,226</string>
+					<string>377,201</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Trianon</string>
+					<string>1400 HILINE</string>
 					<key>units</key>
 					<string>331</string>
 				</dict>
@@ -391,11 +391,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>582,357</string>
+					<string>553,187</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Gables Park 17</string>
+					<string>AZURE</string>
 					<key>units</key>
 					<string>292</string>
 				</dict>
@@ -403,11 +403,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>607,345</string>
+					<string>583,222</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>1900 Mckinney</string>
+					<string>GLASS HOUSE</string>
 					<key>units</key>
 					<string>250</string>
 				</dict>
@@ -415,11 +415,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>504,191</string>
+					<string>599,196</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Windsor at Turtle Creek</string>
+					<string>THE ASHTON</string>
 					<key>units</key>
 					<string>331</string>
 				</dict>
@@ -427,11 +427,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>605,296</string>
+					<string>581,171</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Ritz-Carlton</string>
+					<string>TRIANON</string>
 					<key>units</key>
 					<string>96</string>
 				</dict>
@@ -439,11 +439,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>653,349</string>
+					<string>667,349</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Museum Tower</string>
+					<string>1900 MCKINNEY</string>
 					<key>units</key>
 					<string>125</string>
 				</dict>
@@ -451,11 +451,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>459,209</string>
+					<string>511,117</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Alexan</string>
+					<string>WINDSOR AT TURTLE CREEK</string>
 					<key>units</key>
 					<string>365</string>
 				</dict>
@@ -463,11 +463,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>500,379</string>
+					<string>652,282</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Arpeggio</string>
+					<string>RESIDENCES AT THE RITZ</string>
 					<key>units</key>
 					<string>378</string>
 				</dict>
@@ -475,37 +475,13 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>485,305</string>
+					<string>731,360</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Camden</string>
+					<string>MUSEUM TOWER</string>
 					<key>units</key>
 					<string>425</string>
-				</dict>
-				<dict>
-					<key>type</key>
-					<string>static</string>
-					<key>xy</key>
-					<string>546,303</string>
-					<key>background</key>
-					<string>hotspot_hotel_BG.png</string>
-					<key>name</key>
-					<string>Moda</string>
-					<key>units</key>
-					<string>263</string>
-				</dict>
-				<dict>
-					<key>type</key>
-					<string>static</string>
-					<key>xy</key>
-					<string>551,400</string>
-					<key>background</key>
-					<string>hotspot_hotel_BG.png</string>
-					<key>name</key>
-					<string>Skyhouse</string>
-					<key>units</key>
-					<string>336</string>
 				</dict>
 			</array>
 		</dict>
@@ -518,11 +494,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,359</string>
+					<string>56,616</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>W Dallas Residences</string>
+					<string>LUCK</string>
 					<key>units</key>
 					<string>146</string>
 				</dict>
@@ -530,11 +506,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,379</string>
+					<string>106,547</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Vista</string>
+					<string>AMBER SAX</string>
 					<key>units</key>
 					<string>129</string>
 				</dict>
@@ -542,11 +518,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,397</string>
+					<string>106,581</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Terrace</string>
+					<string>KITCHEN LTO</string>
 					<key>units</key>
 					<string>95</string>
 				</dict>
@@ -554,11 +530,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>529,425</string>
+					<string>21,614</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The House</string>
+					<string>RESTO</string>
 					<key>units</key>
 					<string>133</string>
 				</dict>
@@ -566,11 +542,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>558,368</string>
+					<string>21,581</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Northend</string>
+					<string>ZOUK</string>
 					<key>units</key>
 					<string>540</string>
 				</dict>
@@ -578,11 +554,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>534,338</string>
+					<string>273,190</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Cirque</string>
+					<string>MEDDLESOME MOTH</string>
 					<key>units</key>
 					<string>252</string>
 				</dict>
@@ -590,11 +566,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>507,293</string>
+					<string>299,224</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Magnolia Station</string>
+					<string>PAKPAO</string>
 					<key>units</key>
 					<string>71</string>
 				</dict>
@@ -602,11 +578,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>425,239</string>
+					<string>284,254</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>1400 Highline</string>
+					<string>FT33</string>
 					<key>units</key>
 					<string>314</string>
 				</dict>
@@ -614,11 +590,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>527,214</string>
+					<string>334,480</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Azure</string>
+					<string>BRIDGE BISTRO</string>
 					<key>units</key>
 					<string>186</string>
 				</dict>
@@ -626,11 +602,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>549,239</string>
+					<string>318,193</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Glass House</string>
+					<string>OAK</string>
 					<key>units</key>
 					<string>375</string>
 				</dict>
@@ -638,11 +614,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>570,251</string>
+					<string>525,429</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Ashton</string>
+					<string>KENICHI</string>
 					<key>units</key>
 					<string>267</string>
 				</dict>
@@ -650,11 +626,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>565,226</string>
+					<string>510,360</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Trianon</string>
+					<string>VICTORY TAVERN</string>
 					<key>units</key>
 					<string>331</string>
 				</dict>
@@ -662,11 +638,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>582,357</string>
+					<string>520,392</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Gables Park 17</string>
+					<string>COOK HALL</string>
 					<key>units</key>
 					<string>292</string>
 				</dict>
@@ -674,11 +650,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>607,345</string>
+					<string>527,465</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>1900 Mckinney</string>
+					<string>NAGA THAI</string>
 					<key>units</key>
 					<string>250</string>
 				</dict>
@@ -686,11 +662,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>504,191</string>
+					<string>570,250</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Windsor at Turtle Creek</string>
+					<string>OCEAN PRIME</string>
 					<key>units</key>
 					<string>331</string>
 				</dict>
@@ -698,11 +674,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>605,296</string>
+					<string>574,282</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Ritz-Carlton</string>
+					<string>SAINT ANN</string>
 					<key>units</key>
 					<string>96</string>
 				</dict>
@@ -710,11 +686,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>653,349</string>
+					<string>607,245</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Museum Tower</string>
+					<string>NOBU</string>
 					<key>units</key>
 					<string>125</string>
 				</dict>
@@ -722,11 +698,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>459,209</string>
+					<string>632,277</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Alexan</string>
+					<string>PALOMINO</string>
 					<key>units</key>
 					<string>365</string>
 				</dict>
@@ -734,11 +710,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>500,379</string>
+					<string>632,180</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Arpeggio</string>
+					<string>OLD WARSAW</string>
 					<key>units</key>
 					<string>378</string>
 				</dict>
@@ -746,11 +722,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>485,305</string>
+					<string>626,134</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Camden</string>
+					<string>NICK &amp; SAMS GRILL</string>
 					<key>units</key>
 					<string>425</string>
 				</dict>
@@ -758,11 +734,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>546,303</string>
+					<string>657,205</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Moda</string>
+					<string>TRULUCK</string>
 					<key>units</key>
 					<string>263</string>
 				</dict>
@@ -770,11 +746,95 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>551,400</string>
+					<string>677,301</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Skyhouse</string>
+					<string>PERRY’S</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>657,240</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>CAPITAL GRILLE</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>683,271</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>FEARINGS</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>694,236</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>MORTON’S STEAKHOUSE</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>590,139</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>COMMON TABLE</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>642,377</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>STAMPEDE 66</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>677,343</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>LARK ON THE PARK</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>570,202</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>DEE LINCOLN BUBBLE BAR</string>
 					<key>units</key>
 					<string>336</string>
 				</dict>
@@ -785,252 +845,302 @@
 	<array>
 		<dict>
 			<key>category</key>
-			<string>STAY</string>
+			<string>RECREATION</string>
 			<key>hotspots</key>
 			<array>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>537,348</string>
+					<string>622,362</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>W Dallas Hotel</string>
+					<string>MEYERSON CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>512,251</string>
+					<string>613,400</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Hyatt House Uptown Dallas</string>
+					<string>DALLAS MUSEUM OF ART</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>633,414</string>
+					<string>587,377</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>The Fairmont Hotel</string>
+					<string>KLYDE WARREN PARK</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>556,217</string>
+					<string>540,374</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Le Meridien /  The Stoneleigh  </string>
+					<string>PEROT MUSEUM</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>631,262</string>
+					<string>600,388</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Hotel ZaZa</string>
+					<string>NASHER SCULPTURE CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>604,296</string>
+					<string>504,352</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>The Ritz-Carlton</string>
+					<string>AMERICAN AIRLINES CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>602,270</string>
+					<string>533,443</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Rosewood Crescent Hotel</string>
+					<string>WESTEND MARKETPLACE</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>642,486</string>
+					<string>586,527</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>The Adolphus Hotel</string>
+					<string>DALLAS CONVENTION CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>593,578</string>
+					<string>561,428</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Omni Dallas</string>
+					<string>DALLAS WORLD AQUARIUM</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>717,387</string>
+					<string>523,470</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Marriott City Center</string>
+					<string>SIXTH FLOOR MUSEUM</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>522,512</string>
+					<key>background</key>
+					<string>hotspot_fine_dining_BG.png</string>
+					<key>name</key>
+					<string>REUNION TOWER</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>627,342</string>
+					<key>background</key>
+					<string>hotspot_fine_dining_BG.png</string>
+					<key>name</key>
+					<string>WINSPEAR OPERA HOUSE</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>532,394</string>
+					<key>background</key>
+					<string>hotspot_fine_dining_BG.png</string>
+					<key>name</key>
+					<string>HOUSE OF BLUES</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>category</key>
-			<string>PLAY</string>
+			<string>ACCOMMODATIONS</string>
 			<key>hotspots</key>
 			<array>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>667,332</string>
+					<string>511,347</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Meyerson Symphony Center</string>
+					<string>DALLAS MARRIOTT MARKET CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>635,373</string>
+					<string>526,312</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Dallas Museum of Art</string>
+					<string>HILTON GARDEN MARKET CENTER</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>643,340</string>
+					<string>583,406</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Klyde Warren Park</string>
+					<string>HILTON ANATOLE</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>590,358</string>
+					<string>542,290</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Perot Museum of Nature &amp; Science</string>
+					<string>MARRIOTT COURTYARD</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>658,368</string>
+					<string>583,306</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Nasher Sculpture Center</string>
+					<string>STONELEIGH</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>508,321</string>
+					<string>563,333</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>American Airlines Center</string>
+					<string>HYATT HOUSE</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>546,454</string>
+					<string>560,304</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Westend Marketplace</string>
+					<string>ROSEWOOD CRESCENT</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>654,598</string>
+					<string>601,469</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Dallas Convention Center</string>
+					<string>HOTEL ZAZA</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>581,447</string>
+					<string>569,514</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Dallas World Aquarium</string>
+					<string>RITZ CARLTON</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,504</string>
+					<string>648,370</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Sixth Floor Museum (JFK)</string>
+					<string>W DALLAS</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>527,571</string>
+					<string>272,222</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Reunion Tower</string>
+					<string>FAIRMOUNT</string>
 				</dict>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>709,325</string>
+					<string>303,235</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>AT&amp;T Performing Arts Center</string>
+					<string>MARRIOTT CITY CENTER</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>347,246</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>ADOLPHUS</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>383,258</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>OMNI DALLAS</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>category</key>
-			<string>LIVE</string>
+			<string>RESIDENTIAL</string>
 			<key>hotspots</key>
 			<array>
 				<dict>
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,359</string>
+					<string>509,357</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>W Dallas Residences</string>
+					<string>W DALLAS RESIDENCES</string>
 					<key>units</key>
 					<string>146</string>
 				</dict>
@@ -1038,11 +1148,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,379</string>
+					<string>519,383</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Vista</string>
+					<string>THE VISTA</string>
 					<key>units</key>
 					<string>129</string>
 				</dict>
@@ -1050,11 +1160,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,397</string>
+					<string>523,409</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Terrace</string>
+					<string>THE TERRACE</string>
 					<key>units</key>
 					<string>95</string>
 				</dict>
@@ -1062,11 +1172,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>529,425</string>
+					<string>513,426</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The House</string>
+					<string>THE HOUSE</string>
 					<key>units</key>
 					<string>133</string>
 				</dict>
@@ -1074,11 +1184,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>558,368</string>
+					<string>536,368</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Northend</string>
+					<string>NORTHEND</string>
 					<key>units</key>
 					<string>540</string>
 				</dict>
@@ -1086,11 +1196,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>534,338</string>
+					<string>525,352</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Cirque</string>
+					<string>THE CIRQUE</string>
 					<key>units</key>
 					<string>252</string>
 				</dict>
@@ -1098,11 +1208,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>507,293</string>
+					<string>503,313</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Magnolia Station</string>
+					<string>MAGNOLIA STATION</string>
 					<key>units</key>
 					<string>71</string>
 				</dict>
@@ -1110,11 +1220,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>425,239</string>
+					<string>507,399</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>1400 Highline</string>
+					<string>SKYHOUSE</string>
 					<key>units</key>
 					<string>314</string>
 				</dict>
@@ -1122,11 +1232,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>527,214</string>
+					<string>502,376</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Azure</string>
+					<string>ARPEGGIO</string>
 					<key>units</key>
 					<string>186</string>
 				</dict>
@@ -1134,11 +1244,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>549,239</string>
+					<string>530,332</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Glass House</string>
+					<string>MODA</string>
 					<key>units</key>
 					<string>375</string>
 				</dict>
@@ -1146,11 +1256,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>570,251</string>
+					<string>401,291</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Ashton</string>
+					<string>CAMDEN</string>
 					<key>units</key>
 					<string>267</string>
 				</dict>
@@ -1158,11 +1268,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>565,226</string>
+					<string>435,311</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Trianon</string>
+					<string>1400 HILINE</string>
 					<key>units</key>
 					<string>331</string>
 				</dict>
@@ -1170,11 +1280,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>582,357</string>
+					<string>525,291</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Gables Park 17</string>
+					<string>AZURE</string>
 					<key>units</key>
 					<string>292</string>
 				</dict>
@@ -1182,11 +1292,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>607,345</string>
+					<string>554,289</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>1900 Mckinney</string>
+					<string>GLASS HOUSE</string>
 					<key>units</key>
 					<string>250</string>
 				</dict>
@@ -1194,11 +1304,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>504,191</string>
+					<string>554,287</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Windsor at Turtle Creek</string>
+					<string>THE ASHTON</string>
 					<key>units</key>
 					<string>331</string>
 				</dict>
@@ -1206,11 +1316,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>605,296</string>
+					<string>543,273</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Ritz-Carlton</string>
+					<string>TRIANON</string>
 					<key>units</key>
 					<string>96</string>
 				</dict>
@@ -1218,11 +1328,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>653,349</string>
+					<string>571,346</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Museum Tower</string>
+					<string>1900 MCKINNEY</string>
 					<key>units</key>
 					<string>125</string>
 				</dict>
@@ -1230,11 +1340,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>459,209</string>
+					<string>507,255</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Alexan</string>
+					<string>WINDSOR AT TURTLE CREEK</string>
 					<key>units</key>
 					<string>365</string>
 				</dict>
@@ -1242,11 +1352,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>500,379</string>
+					<string>571,323</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Arpeggio</string>
+					<string>RESIDENCES AT THE RITZ</string>
 					<key>units</key>
 					<string>378</string>
 				</dict>
@@ -1254,37 +1364,13 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>485,305</string>
+					<string>592,337</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Camden</string>
+					<string>MUSEUM TOWER</string>
 					<key>units</key>
 					<string>425</string>
-				</dict>
-				<dict>
-					<key>type</key>
-					<string>static</string>
-					<key>xy</key>
-					<string>546,303</string>
-					<key>background</key>
-					<string>hotspot_hotel_BG.png</string>
-					<key>name</key>
-					<string>Moda</string>
-					<key>units</key>
-					<string>263</string>
-				</dict>
-				<dict>
-					<key>type</key>
-					<string>static</string>
-					<key>xy</key>
-					<string>551,400</string>
-					<key>background</key>
-					<string>hotspot_hotel_BG.png</string>
-					<key>name</key>
-					<string>Skyhouse</string>
-					<key>units</key>
-					<string>336</string>
 				</dict>
 			</array>
 		</dict>
@@ -1297,11 +1383,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,359</string>
+					<string>322,470</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>W Dallas Residences</string>
+					<string>LUCK</string>
 					<key>units</key>
 					<string>146</string>
 				</dict>
@@ -1309,11 +1395,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,379</string>
+					<string>349,454</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Vista</string>
+					<string>AMBER SAX</string>
 					<key>units</key>
 					<string>129</string>
 				</dict>
@@ -1321,11 +1407,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>532,397</string>
+					<string>343,470</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Terrace</string>
+					<string>KITCHEN LTO</string>
 					<key>units</key>
 					<string>95</string>
 				</dict>
@@ -1333,11 +1419,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>529,425</string>
+					<string>299,470</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The House</string>
+					<string>RESTO</string>
 					<key>units</key>
 					<string>133</string>
 				</dict>
@@ -1345,11 +1431,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>558,368</string>
+					<string>284,462</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Northend</string>
+					<string>ZOUK</string>
 					<key>units</key>
 					<string>540</string>
 				</dict>
@@ -1357,11 +1443,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>534,338</string>
+					<string>397,285</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Cirque</string>
+					<string>MEDDLESOME MOTH</string>
 					<key>units</key>
 					<string>252</string>
 				</dict>
@@ -1369,11 +1455,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>507,293</string>
+					<string>414,317</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Magnolia Station</string>
+					<string>PAKPAO</string>
 					<key>units</key>
 					<string>71</string>
 				</dict>
@@ -1381,11 +1467,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>425,239</string>
+					<string>419,347</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>1400 Highline</string>
+					<string>FT33</string>
 					<key>units</key>
 					<string>314</string>
 				</dict>
@@ -1393,11 +1479,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>527,214</string>
+					<string>434,397</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Azure</string>
+					<string>BRIDGE BISTRO</string>
 					<key>units</key>
 					<string>186</string>
 				</dict>
@@ -1405,11 +1491,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>549,239</string>
+					<string>427,304</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Glass House</string>
+					<string>OAK</string>
 					<key>units</key>
 					<string>375</string>
 				</dict>
@@ -1417,11 +1503,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>570,251</string>
+					<string>518,396</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Ashton</string>
+					<string>KENICHI</string>
 					<key>units</key>
 					<string>267</string>
 				</dict>
@@ -1429,11 +1515,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>565,226</string>
+					<string>510,358</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Trianon</string>
+					<string>VICTORY TAVERN</string>
 					<key>units</key>
 					<string>331</string>
 				</dict>
@@ -1441,11 +1527,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>582,357</string>
+					<string>515,376</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Gables Park 17</string>
+					<string>COOK HALL</string>
 					<key>units</key>
 					<string>292</string>
 				</dict>
@@ -1453,11 +1539,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>607,345</string>
+					<string>518,414</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>1900 Mckinney</string>
+					<string>NAGA THAI</string>
 					<key>units</key>
 					<string>250</string>
 				</dict>
@@ -1465,11 +1551,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>504,191</string>
+					<string>529,307</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Windsor at Turtle Creek</string>
+					<string>OCEAN PRIME</string>
 					<key>units</key>
 					<string>331</string>
 				</dict>
@@ -1477,11 +1563,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>605,296</string>
+					<string>533,327</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Ritz-Carlton</string>
+					<string>SAINT ANN</string>
 					<key>units</key>
 					<string>96</string>
 				</dict>
@@ -1489,11 +1575,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>653,349</string>
+					<string>555,274</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Museum Tower</string>
+					<string>NOBU</string>
 					<key>units</key>
 					<string>125</string>
 				</dict>
@@ -1501,11 +1587,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>459,209</string>
+					<string>562,304</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Alexan</string>
+					<string>PALOMINO</string>
 					<key>units</key>
 					<string>365</string>
 				</dict>
@@ -1513,11 +1599,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>500,379</string>
+					<string>547,253</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Arpeggio</string>
+					<string>OLD WARSAW</string>
 					<key>units</key>
 					<string>378</string>
 				</dict>
@@ -1525,11 +1611,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>485,305</string>
+					<string>562,238</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Camden</string>
+					<string>NICK &amp; SAMS GRILL</string>
 					<key>units</key>
 					<string>425</string>
 				</dict>
@@ -1537,11 +1623,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>546,303</string>
+					<string>579,274</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Moda</string>
+					<string>TRULUCK</string>
 					<key>units</key>
 					<string>263</string>
 				</dict>
@@ -1549,11 +1635,95 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>551,400</string>
+					<string>559,345</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Skyhouse</string>
+					<string>PERRY’S</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>587,306</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>CAPITAL GRILLE</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>590,326</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>FEARINGS</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>611,297</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>MORTON’S STEAKHOUSE</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>529,244</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>COMMON TABLE</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>544,361</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>STAMPEDE 66</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>592,368</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>LARK ON THE PARK</string>
+					<key>units</key>
+					<string>336</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>518,278</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>DEE LINCOLN BUBBLE BAR</string>
 					<key>units</key>
 					<string>336</string>
 				</dict>
