@@ -89,7 +89,7 @@ extern NSArray *arrHotSpots;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *str = [_tableData objectAtIndex:indexPath.row];
-    CGRect textRect = [str boundingRectWithSize:CGSizeMake(180, MAXFLOAT)
+    CGRect textRect = [str boundingRectWithSize:CGSizeMake(170, MAXFLOAT)
                                          options:NSStringDrawingUsesLineFragmentOrigin
                                       attributes:@{NSFontAttributeName:[UIFont fontWithName:kFontName size:kFontSize]}
                                          context:nil];
@@ -135,7 +135,7 @@ extern NSArray *arrHotSpots;
 
     }
     NSString *str = [_tableData objectAtIndex:indexPath.row];
-    CGRect textRect = [str boundingRectWithSize:CGSizeMake(180, MAXFLOAT)
+    CGRect textRect = [str boundingRectWithSize:CGSizeMake(170, MAXFLOAT)
                                         options:NSStringDrawingUsesLineFragmentOrigin
                                      attributes:@{NSFontAttributeName:[UIFont fontWithName:kFontName size:kFontSize]}
                                         context:nil];

@@ -1119,7 +1119,7 @@ static float    kPanelBtnHeight             = 38.0;
         hotspotView.layer.borderColor = borderColor.CGColor;
         hotspotView.tag=i + 100*(index+1);
         [arr_HotSpotViewArray addObject: hotspotView];
-        [_uiv_mapContainer addSubview: hotspotView];
+        [_uiv_mapContainer insertSubview:hotspotView belowSubview:_uiiv_vcLogo];
     }
     
 }
