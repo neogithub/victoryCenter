@@ -41,6 +41,7 @@
 @property (nonatomic, strong) UIView                        *uiv_eleLayerConainer;
 @property (nonatomic, strong) NSMutableArray                *arr_eleBtnArray;
 @property (nonatomic, strong) NSArray                       *arr_elevatroImgs;
+@property (nonatomic, strong) NSMutableArray                *arr_eleIndArray;
 @end
 
 @implementation buildingViewController
@@ -327,7 +328,7 @@
 #pragma mark Set up elevator control panel
 - (void)loadElevatorCtrlPanel
 {
-    UIView *uiv_ctrlPanel = [[UIView alloc] initWithFrame:CGRectMake(65.0, 95.0, 200.0, 206.0)];
+    UIView *uiv_ctrlPanel = [[UIView alloc] initWithFrame:CGRectMake(65.0, 95.0, 200.0, 246.0)];
     uiv_ctrlPanel.backgroundColor = [UIColor clearColor];
     uiv_ctrlPanel.clipsToBounds = YES;
     
@@ -339,26 +340,41 @@
     [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
     uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
     uib_PanelTitle.tag = 101;
-    [uib_PanelTitle addTarget:self action:@selector(resetAllEleImgs) forControlEvents:UIControlEventTouchUpInside];
+//    [uib_PanelTitle addTarget:self action:@selector(resetAllEleImgs) forControlEvents:UIControlEventTouchUpInside];
     [uiv_ctrlPanel addSubview: uib_PanelTitle];
     
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"LOW-RISE ELEVATORS", @"HIGH-RISE ELEVATORS", @"PARKING", @"LOBBY", nil];
     [uiv_ctrlPanel addSubview: [self loadPanelBtnsWithTitle:arr_buttonTitles]];
+    
+    //Add Reset button to the panel
+    UIButton *uib_resetEle = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_resetEle.frame = CGRectMake(100.0, 206.0, 100.0, 40.0);
+    uib_resetEle.backgroundColor = [UIColor clearColor];
+    [uib_resetEle setTitle:@"RESET" forState:UIControlStateNormal];
+    [uib_resetEle setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [uib_resetEle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    [uib_resetEle setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 50, 10.0, 0.0)];
+    [uib_resetEle addTarget:self action:@selector(resetAllEleImgs) forControlEvents:UIControlEventTouchUpInside];
+    [uiv_ctrlPanel addSubview: uib_resetEle];
+    
     [_uiv_elevatorContainer addSubview: uiv_ctrlPanel];
     [self animateCtrlPanel:uiv_ctrlPanel];
 }
-
+#pragma mark Create panel's buttons
 - (UIView *)loadPanelBtnsWithTitle:(NSArray *)arr_title
 {
     [_arr_eleBtnArray removeAllObjects];
     _arr_eleBtnArray = nil;
     _arr_eleBtnArray = [[NSMutableArray alloc] init];
     
+    [_arr_eleIndArray removeAllObjects];
+    _arr_eleIndArray = nil;
+    _arr_eleIndArray = [[NSMutableArray alloc] init];
+    
     UIView *uiv_btnContainer = [[UIView alloc] initWithFrame:CGRectMake(0.0, 46.0, 200.0, 160.0)];
     uiv_btnContainer.backgroundColor = [UIColor whiteColor];
     uiv_btnContainer.layer.borderWidth = 1.0;
     uiv_btnContainer.layer.borderColor = [UIColor vcDarkBlue].CGColor;
-    NSArray *arr_color = [[NSArray alloc] initWithObjects:[UIColor vcSiteResidentail], [UIColor vcSiteRecreation], [UIColor vcBldParking], [UIColor vcSiteRetail], nil];
     
     for (int i = 0; i < arr_title.count; i++) {
         UIButton *uib_option = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -378,7 +394,7 @@
         
         CGRect frame = CGRectMake(19, uib_option.frame.origin.y + (uib_option.frame.size.height - 14)/2, 14, 14);
         UIView *uiv_Indicator = [[UIView alloc] initWithFrame:frame];
-        uiv_Indicator.backgroundColor = arr_color[i];
+        uiv_Indicator.backgroundColor = [UIColor clearColor];
         uiv_Indicator.layer.borderColor = [UIColor vcDarkBlue].CGColor;
         uiv_Indicator.layer.borderWidth = 2.0;
         CGPoint savedCenter = uiv_Indicator.center;
@@ -386,7 +402,7 @@
         uiv_Indicator.center = savedCenter;
         uiv_Indicator.tag = 500+i;
         [uiv_btnContainer addSubview: uiv_Indicator];
-
+        [_arr_eleIndArray addObject: uiv_Indicator];
         [_arr_eleBtnArray addObject: uib_option];
     }
     return uiv_btnContainer;
@@ -424,11 +440,17 @@
 {
     UIButton *tappedBtn = sender;
     int index = (int)tappedBtn.tag;
+    
+    UIView *buttonContainer = [tappedBtn superview];
+    UIView *indicator = [buttonContainer viewWithTag:(500+index)];
+    NSArray *arr_color = [[NSArray alloc] initWithObjects:[UIColor vcSiteResidentail], [UIColor vcSiteRecreation], [UIColor vcBldParking], [UIColor vcSiteRetail], nil];
+    
     UIImageView *uiiv_selectetd = _arr_elevatroImgs[index];
     if (tappedBtn.selected) {
         tappedBtn.backgroundColor = [UIColor whiteColor];
         tappedBtn.layer.borderWidth = 1.0;
         tappedBtn.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+        indicator.backgroundColor = [UIColor clearColor];
         [UIView animateWithDuration:0.33 animations:^{
             uiiv_selectetd.alpha = 0.0;
         }];
@@ -439,11 +461,11 @@
         uiiv_selectetd.transform = CGAffineTransformMakeTranslation(0.0, uiiv_selectetd.frame.size.height);
         uiiv_selectetd.alpha = 1.0;
         tappedBtn.layer.borderColor = [UIColor vcDarkBlue].CGColor;
-        
+        indicator.backgroundColor = arr_color[index];
         // Set the parameters to be passed into the animation
         CGFloat duration = 0.5f;
         CGFloat damping = 0.8;
-        CGFloat velocity = 0.5;
+        CGFloat velocity = 0.6;
         // int to hold UIViewAnimationOption
         NSInteger option;
         option = UIViewAnimationCurveEaseInOut;
@@ -451,10 +473,6 @@
         [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
             uiiv_selectetd.transform = CGAffineTransformIdentity;
         } completion:^(BOOL finished){      }];
-        
-//        [UIView animateWithDuration:0.5 animations:^{
-//            uiiv_selectetd.transform = CGAffineTransformIdentity;
-//        }];
     }
     tappedBtn.selected = !tappedBtn.selected;
 }
@@ -501,6 +519,9 @@
         tmp.layer.borderWidth = 1.0;
         tmp.layer.borderColor = [UIColor vcButtonBorder].CGColor;
         tmp.selected = NO;
+    }
+    for (UIView *tmp in _arr_eleIndArray) {
+        tmp.backgroundColor = [UIColor clearColor];
     }
 }
 
