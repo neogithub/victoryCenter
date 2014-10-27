@@ -387,6 +387,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="356" height="614"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="F2C-RW-H9k" userLabel="Button - Close">
+                                        <rect key="frame" x="310" y="283" width="46" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeBldStats:" destination="ses-ef-xgq" eventType="touchUpInside" id="lFP-fS-Qwh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -443,6 +454,7 @@
                         <outlet property="uib_bldgStats" destination="nWL-wl-uQU" id="bO4-vM-YRo"/>
                         <outlet property="uib_elevators" destination="kM8-2Q-ZIB" id="H5V-NJ-Ddv"/>
                         <outlet property="uib_floorPlan" destination="PTE-64-C6S" id="h5n-4N-74P"/>
+                        <outlet property="uib_statsClose" destination="F2C-RW-H9k" id="CYl-Au-IUN"/>
                         <outlet property="uiiv_bgImg" destination="xmY-0i-m1z" id="F5S-ft-oDZ"/>
                         <outlet property="uiv_bldImgContainer" destination="gXB-A0-OBi" id="2jZ-Mg-Kcx"/>
                         <outlet property="uiv_statImgContainer" destination="FAs-Xa-4zp" id="fj7-7K-0ta"/>

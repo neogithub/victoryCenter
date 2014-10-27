@@ -152,6 +152,7 @@ static int arwPic = 30;
 {
     [self setBackgroundColor:[UIColor clearColor]];
     [uiiv_hsImgView setImage:[UIImage imageNamed:hotspotBgName]];
+    [uiiv_hsImgView setContentMode:UIViewContentModeScaleAspectFit];
 }
 
 #pragma -mark Init Part

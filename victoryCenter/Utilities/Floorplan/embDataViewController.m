@@ -77,6 +77,12 @@
 	NSString *planName = _dict[@"floorplaninfo"][0][@"floorinfo"][0];
     [self loadInImge:planName];
     
+    // load plan's hotspot
+    NSArray *arr_hotspots = _dict[@"floorplaninfo"][0][@"hotspots"];
+    if (arr_hotspots.count) {
+        [self loadHospots:arr_hotspots];
+    }
+    
     //Added Road Names Labels
     UILabel *uil_victoryAve = [[UILabel alloc] initWithFrame:CGRectMake(150, 90, 130, 30)];
     [uil_victoryAve setText:@"VICTORY AVE"];
@@ -114,15 +120,42 @@
 
 -(void)loadInImge:(NSString *)imageName
 {
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.0 animations:^{
         _zoomingScroll.blurView.alpha = 0.0;
     } completion:^(BOOL finished){
         _zoomingScroll.blurView.image = [UIImage imageNamed:imageName];
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             _zoomingScroll.blurView.alpha = 1.0;
         }];
     }];
+}
+
+#pragma mark - Load hotspots & hotspot delegate method
+- (void)loadHospots:(NSArray *)arr_hotspots
+{
+    [_arr_hotspots removeAllObjects];
+    _arr_hotspots = nil;
     
+    for (int i = 0; i < arr_hotspots.count; i++) {
+        NSDictionary *dict_hs = arr_hotspots[i];
+        
+        CGPoint centerPoint = CGPointFromString([NSString stringWithFormat:@"{%@}", [dict_hs objectForKey:@"xy"]]);
+        
+        neoHotspotsView *myHotspot = [[neoHotspotsView alloc] initWithFrame:CGRectMake(centerPoint.x, centerPoint.y, 48, 48)];
+        
+        NSString *str_bgName = [[NSString alloc] initWithString:[dict_hs objectForKey:@"background"]];
+        myHotspot.hotspotBgName = str_bgName;
+        
+        myHotspot.delegate = self;
+        myHotspot.tagOfHs = i;
+        [_zoomingScroll.blurView addSubview: myHotspot];
+        [_arr_hotspots addObject: myHotspot];
+    }
+}
+
+- (void)neoHotspotsView:(neoHotspotsView *)hotspot didSelectItemAtIndex:(NSInteger)index
+{
+    NSLog(@"Tapped hotspot is %i", (int)index);
 }
 
 #pragma mark - BOILERPLATE

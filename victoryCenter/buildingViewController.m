@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView            *uiiv_bgImg;
 @property (weak, nonatomic) IBOutlet UIView                 *uiv_bldImgContainer;
 @property (weak, nonatomic) IBOutlet UIView                 *uiv_statImgContainer;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_statsClose;
 
 @property (weak, nonatomic) IBOutlet UIButton               *uib_bldgStats;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_floorPlan;
@@ -194,6 +195,9 @@
 }
 
 #pragma mark - Building Stats
+- (IBAction)closeBldStats:(id)sender {
+    [self resetBuildingImg:nil];
+}
 
 - (void)setGestureToBldStats
 {
