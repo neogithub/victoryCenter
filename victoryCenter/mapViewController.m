@@ -61,6 +61,7 @@ static float    kPanelBtnHeight             = 38.0;
     UIView                  *uiv_siteAccPanel;
     
     UIView                  *uiv_panelIndicator;
+    UIButton                *uib_bldBtn;
 }
 //Top root menu
 @property (weak, nonatomic) IBOutlet UIButton           *uib_city;
@@ -378,6 +379,7 @@ static float    kPanelBtnHeight             = 38.0;
     [self resetSubMenus];
     [_uiiv_mapOverlay removeFromSuperview];
     _uiiv_mapOverlay = nil;
+    [self removeBldBtn];
     switch (index) {
         case 0: { //Show City's sub menu
             _uiv_citySubMenu.hidden = NO;
@@ -398,6 +400,7 @@ static float    kPanelBtnHeight             = 38.0;
             _uiv_neighborhoodSubMenu.hidden = YES;
             _uiv_siteSubMenu.hidden = NO;
             _uiv_mapSwitchContainer.hidden = YES;
+            [self creatBuildingBtn];
             break;
         }
         default:
@@ -691,6 +694,32 @@ static float    kPanelBtnHeight             = 38.0;
     [self createBtnsForPanel:uiv_siteAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:uiv_siteAccPanel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:uiv_siteAccPanel];
+}
+
+#pragma mark Add building button and it's action
+
+- (void)creatBuildingBtn
+{
+    uib_bldBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_bldBtn.frame = CGRectMake(499.0, 546.0, 206.0, 144.0);
+    uib_bldBtn.backgroundColor = [UIColor clearColor];
+    [_uiv_mapContainer addSubview: uib_bldBtn];
+    [uib_bldBtn addTarget:self action:@selector(tapBldBtn:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)tapBldBtn:(id)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Jump to Building Details"]
+                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
+- (void)removeBldBtn
+{
+    if (uib_bldBtn) {
+        [uib_bldBtn removeFromSuperview];
+        uib_bldBtn = nil;
+    }
 }
 
 #pragma mark - Highlight current tapped button of sub menu
@@ -1171,6 +1200,8 @@ static float    kPanelBtnHeight             = 38.0;
     }
     
     _uiv_tappedHotspot = [arr_HotSpotViewArray objectAtIndex:index%100];
+    [_uiv_tappedHotspot removeFromSuperview];
+    [_uiv_mapContainer insertSubview:_uiv_tappedHotspot belowSubview:_uiiv_vcLogo];
     _uiv_tappedHotspot.backgroundColor = [arr_indicatorColors objectAtIndex:index/100-1];
     _uiv_tappedHotspot.layer.borderWidth = 0.0;
     for (UILabel *tmp in [_uiv_tappedHotspot subviews]) {
