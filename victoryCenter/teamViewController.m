@@ -174,6 +174,12 @@ static float kCardsGap      = 12.0;
     [_uiv_teamDetailContainer addSubview: [self createDetailTextFrame:detailTextFrame andIndex:index]];
     [self.view addSubview: _uiv_teamDetailContainer];
     
+    //Add tap gesture to detail panel
+    UITapGestureRecognizer *tapOnDetailPanel = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(removeDetailInfo:)];
+    tapOnDetailPanel.numberOfTapsRequired = 1;
+    _uiv_teamDetailContainer.userInteractionEnabled = YES;
+    [_uiv_teamDetailContainer addGestureRecognizer:tapOnDetailPanel];
+    
     // Set the parameters to be passed into the animation
     CGFloat duration = 0.8f;
     CGFloat damping = 0.75;
