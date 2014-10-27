@@ -28,14 +28,14 @@
 //Floor plan
 @property (nonatomic, strong) floorPlanViewController       *floorPlan;
 
-@property (weak, nonatomic) IBOutlet UIButton *uib_24;
-@property (weak, nonatomic) IBOutlet UIButton *uib_18_23;
-@property (weak, nonatomic) IBOutlet UIButton *uib_17;
-@property (weak, nonatomic) IBOutlet UIButton *uib_16;
-@property (weak, nonatomic) IBOutlet UIButton *uib_15;
-@property (weak, nonatomic) IBOutlet UIButton *uib_10_14;
-@property (weak, nonatomic) IBOutlet UIButton *uib_9;
-@property (weak, nonatomic) IBOutlet UIButton *uib_8;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_24;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_18_23;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_17;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_16;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_15;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_10_14;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_9;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_8;
 @property (nonatomic, strong) NSArray                       *arr_floorBtns;
 //Elevator
 @property (nonatomic, strong) UIView                        *uiv_elevatorContainer;
@@ -111,7 +111,6 @@
 - (void)setTopButtons
 {
     _arr_topBtnsArray = [[NSMutableArray alloc] init];
-    
     [self initTopBtn:_uib_bldgStats withTitle:@"BUILDING STATS" andTag:1 andSelected:NO];
     [self initTopBtn:_uib_floorPlan withTitle:@"FLOOR PLAN" andTag:2 andSelected:NO];
     [self initTopBtn:_uib_amenities withTitle:@"AMENITIES" andTag:3 andSelected:NO];
@@ -167,7 +166,6 @@
     _uiv_statImgContainer.hidden = YES;
     _uiv_statImgContainer.alpha = 0.0;
     _uiv_statImgContainer.transform = CGAffineTransformIdentity;
-    
     [self removeFloorPlan];
     
     switch (index) {
@@ -344,7 +342,6 @@
     [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
     uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
     uib_PanelTitle.tag = 101;
-//    [uib_PanelTitle addTarget:self action:@selector(resetAllEleImgs) forControlEvents:UIControlEventTouchUpInside];
     [uiv_ctrlPanel addSubview: uib_PanelTitle];
     
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"LOW-RISE ELEVATORS", @"HIGH-RISE ELEVATORS", @"PARKING", @"LOBBY", nil];
@@ -429,11 +426,13 @@
         [panel viewWithTag:102].transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished){      }];
 }
-
+#pragma mark - interaction of ctrl panel
 - (void)tapOptions:(id)sender
 {
     float delay = 0.0;
+    // If first time laod, fade in all images
     if ([self checkFirstTime]) {
+        // if first time hide all images and then do fade in aniamtion
         [self hideAllEleImgs];
         delay = 0.33;
     }
@@ -485,11 +484,13 @@
 {
     BOOL allBtns = NO;
     BOOL allImgs = YES;
+    // check if any button in panel is selected
     for (UIButton *tmp in _arr_eleBtnArray) {
         if (tmp.selected) {
             allBtns = YES;
         }
     }
+    // Check if all elevators' images are shown
     for (UIImageView *tmp in _arr_elevatroImgs) {
         if (tmp.alpha == 0) {
             allImgs = NO;
@@ -553,6 +554,22 @@
     
     [_uiv_statImgContainer removeFromSuperview];
     _uiv_statImgContainer = nil;
+    
+    [_uiv_elevatorContainer removeFromSuperview];
+    _uiv_elevatorContainer = nil;
+    
+    [_uiv_eleLayerConainer removeFromSuperview];
+    _uiv_eleLayerConainer = nil;
+    
+    for (UIButton __strong *tmp in _arr_eleBtnArray) {
+        [tmp removeFromSuperview];
+        tmp = nil;
+    }
+    
+    for (UIView __strong *tmp in _arr_eleIndArray) {
+        [tmp removeFromSuperview];
+        tmp = nil;
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -173,6 +173,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     [self setpageIndex];
 }
 
+//Up date panel's title text
 - (void) setpageIndex
 {
     embDataViewController *theCurrentViewController = [self.pageViewController.viewControllers objectAtIndex:0];
@@ -192,6 +193,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     return _modelController;
 }
 
+#pragma mark - Remove items from view and cleaning memory
 
 - (void)viewWillDisappear:(BOOL)animated
 {

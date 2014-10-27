@@ -219,11 +219,9 @@
 {
     NSString *oldfileName = [arr_AllFlms objectAtIndex: index];
     NSString *name = [oldfileName substringWithRange:NSMakeRange(0, oldfileName.length-4)];
-//    NSString *newFileName = [NSString stringWithFormat:@"%@.mov",name];
     NSString *url = [[NSBundle mainBundle]
                      pathForResource:name
                      ofType:@"mov"];
-//    NSLog(@"The film file's name is %@", newFileName);
     
     if (_playerViewController) {
         [_playerViewController.view removeFromSuperview];

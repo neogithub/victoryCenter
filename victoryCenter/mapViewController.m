@@ -1044,7 +1044,7 @@ static float    kPanelBtnHeight             = 38.0;
         }
     }
 }
-
+// Move indicators to correct position
 - (void)rearrangeIndicator:(int)index andInContainer:(UIView *)container
 {
     for (UIView *tmp in [[container viewWithTag:102] subviews]) {
@@ -1262,8 +1262,6 @@ static float    kPanelBtnHeight             = 38.0;
 	} else {
 		[_uiv_mapContainer insertSubview:_embDirectionPath aboveSubview:_uiv_mapContainer];
 	}
-    
-	//NSLog(@"%li",(long)currentHeaderIndex);
     
 	// loop # paths in a group
 	int pathGrouping	= -1;
