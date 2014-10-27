@@ -206,6 +206,8 @@
 		82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A805D519D1FC1400308BA1 /* grfx_menuIcon@2x.png */; };
 		82A805E119D2076300308BA1 /* mapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A805E019D2076300308BA1 /* mapViewController.m */; };
 		82A805E419D2077300308BA1 /* buildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A805E319D2077300308BA1 /* buildingViewController.m */; };
+		82AB933D19FE83B600DD0B30 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AB933C19FE83B600DD0B30 /* CoreMotion.framework */; };
+		82AB934019FE83DB00DD0B30 /* xhPanoramicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AB933F19FE83DB00DD0B30 /* xhPanoramicView.m */; };
 		82C3817319E81BAD006C7EC8 /* Access_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C3817119E81BAD006C7EC8 /* Access_overlay.png */; };
 		82C3817419E81BAD006C7EC8 /* Access_overlay_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C3817219E81BAD006C7EC8 /* Access_overlay_@2x.png */; };
 		82CBD72219F96FA10001191F /* grfx_elevator_floorNum.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */; };
@@ -512,6 +514,9 @@
 		82A805E019D2076300308BA1 /* mapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapViewController.m; sourceTree = "<group>"; };
 		82A805E219D2077300308BA1 /* buildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buildingViewController.h; sourceTree = "<group>"; };
 		82A805E319D2077300308BA1 /* buildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buildingViewController.m; sourceTree = "<group>"; };
+		82AB933C19FE83B600DD0B30 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		82AB933E19FE83DB00DD0B30 /* xhPanoramicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xhPanoramicView.h; sourceTree = "<group>"; };
+		82AB933F19FE83DB00DD0B30 /* xhPanoramicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xhPanoramicView.m; sourceTree = "<group>"; };
 		82C3817119E81BAD006C7EC8 /* Access_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Access_overlay.png; sourceTree = "<group>"; };
 		82C3817219E81BAD006C7EC8 /* Access_overlay_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Access_overlay_@2x.png"; sourceTree = "<group>"; };
 		82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elevator_floorNum.png; sourceTree = "<group>"; };
@@ -592,6 +597,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82AB933D19FE83B600DD0B30 /* CoreMotion.framework in Frameworks */,
 				82459E7A19F6C77D00E03A8D /* MessageUI.framework in Frameworks */,
 				8263B97F19ED6FFB00E70C1B /* MapKit.framework in Frameworks */,
 				82000BA219E5A02800AE2C70 /* MediaPlayer.framework in Frameworks */,
@@ -804,6 +810,7 @@
 		824012DE19D1AF5D00C501EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82AB933C19FE83B600DD0B30 /* CoreMotion.framework */,
 				82459E7919F6C77D00E03A8D /* MessageUI.framework */,
 				8263B97E19ED6FFB00E70C1B /* MapKit.framework */,
 				82000BA119E5A02800AE2C70 /* MediaPlayer.framework */,
@@ -894,6 +901,8 @@
 				8263B98A19EDACD700E70C1B /* embTableCell.xib */,
 				82A44BA319D32D1C004FAD58 /* galleryCVCell.h */,
 				82A44BA419D32D1C004FAD58 /* galleryCVCell.m */,
+				82AB933E19FE83DB00DD0B30 /* xhPanoramicView.h */,
+				82AB933F19FE83DB00DD0B30 /* xhPanoramicView.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1549,6 +1558,7 @@
 				82DC11F819DAF2990057AE4F /* FGalleryPhoto.m in Sources */,
 				8263B98219ED790C00E70C1B /* MapViewAnnotation.m in Sources */,
 				824012EC19D1AF5D00C501EE /* main.m in Sources */,
+				82AB934019FE83DB00DD0B30 /* xhPanoramicView.m in Sources */,
 				8263B98B19EDACD700E70C1B /* embTableCell.m in Sources */,
 				82CE2FD019F05EEB006F7B0E /* neoHotspotsView.m in Sources */,
 			);

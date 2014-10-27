@@ -439,9 +439,22 @@
         uiiv_selectetd.transform = CGAffineTransformMakeTranslation(0.0, uiiv_selectetd.frame.size.height);
         uiiv_selectetd.alpha = 1.0;
         tappedBtn.layer.borderColor = [UIColor vcDarkBlue].CGColor;
-        [UIView animateWithDuration:0.5 animations:^{
+        
+        // Set the parameters to be passed into the animation
+        CGFloat duration = 0.5f;
+        CGFloat damping = 0.8;
+        CGFloat velocity = 0.5;
+        // int to hold UIViewAnimationOption
+        NSInteger option;
+        option = UIViewAnimationCurveEaseInOut;
+        
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
             uiiv_selectetd.transform = CGAffineTransformIdentity;
-        }];
+        } completion:^(BOOL finished){      }];
+        
+//        [UIView animateWithDuration:0.5 animations:^{
+//            uiiv_selectetd.transform = CGAffineTransformIdentity;
+//        }];
     }
     tappedBtn.selected = !tappedBtn.selected;
 }
