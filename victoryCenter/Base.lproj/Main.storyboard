@@ -472,7 +472,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map_bg.jpg" id="ESz-b5-B9V">
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ESz-b5-B9V">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -693,7 +693,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Map_bg.jpg" width="1024" height="768"/>
         <image name="Team_bg.jpg" width="893" height="670"/>
         <image name="Victory Center 01 Highway View.jpg" width="1250" height="938"/>
         <image name="grfx_bldImg.png" width="780" height="733"/>
