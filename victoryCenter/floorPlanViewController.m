@@ -25,7 +25,6 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   NSArray                         *arr_titleText;
 // Control Button
 @property (nonatomic, strong)   UIButton                        *uib_backBtn;
-@property (nonatomic, strong)   UIButton                        *uib_panoBtn;
 @end
 
 @implementation floorPlanViewController
@@ -99,33 +98,12 @@ static CGFloat  kPanelTitleHeight           = 46;
     [_uib_backBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
     [_uib_backBtn addTarget:self action:@selector(backBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
     [uiv_btnContainer addSubview: _uib_backBtn];
-    
-    _uib_panoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _uib_panoBtn.frame = CGRectMake(0.0, _uib_backBtn.frame.size.height + 3, panle_w, 33);
-    _uib_panoBtn.backgroundColor = [UIColor vcLightBlue];
-    [_uib_panoBtn setTitle:@"VIEW PANO" forState:UIControlStateNormal];
-    [_uib_panoBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
-    [uiv_btnContainer addSubview: _uib_panoBtn];
-    [_uib_panoBtn addTarget:self action:@selector(panoBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
-    
     [self.view addSubview: uiv_btnContainer];
 }
 
 - (void)backBtnTapped:(id)sender
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"resetBuilding" object:nil];
-}
-
-- (void)panoBtnTapped:(id)sender
-{
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle: @""
-                               message: @"LOAD PANO IMAGE"
-                              delegate: self
-                     cancelButtonTitle: @"OK"
-                     otherButtonTitles: nil];
-    alert.tag = 1;
-    [alert show];
 }
 
 #pragma mark - Set up page view
@@ -213,9 +191,6 @@ static CGFloat  kPanelTitleHeight           = 46;
     _uib_PanelTitle = nil;
 
     [_uib_backBtn removeFromSuperview];
-    _uib_backBtn = nil;
-
-    [_uib_panoBtn removeFromSuperview];
     _uib_backBtn = nil;
 }
 
