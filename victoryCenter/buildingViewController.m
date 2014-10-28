@@ -60,6 +60,25 @@
     [self setGestureToBldStats];
     [self groupBtns];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetBuilding) name:@"resetBuilding" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideBuildingMenu) name:@"hideBuildingTopMenu" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unhideBuildingMenu) name:@"unhideBuildingTopMenu" object:nil];
+}
+
+#pragma mark - Hide & unhide top menu 
+
+- (void)hideBuildingMenu
+{
+    for (UIButton *tmp in _arr_topBtnsArray) {
+        tmp.hidden = YES;
+    }
+}
+
+- (void)unhideBuildingMenu
+{
+    for (UIButton *tmp in _arr_topBtnsArray) {
+        tmp.hidden = NO;
+    }
+
 }
 
 #pragma mark - Add Button to building image

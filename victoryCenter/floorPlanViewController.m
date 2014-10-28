@@ -67,7 +67,33 @@ static CGFloat  kPanelTitleHeight           = 46;
         _uiv_panoramicView = nil;
     }
     _uiv_panoramicView = [[xhPanoramicView alloc] initWithFrame:self.view.bounds andImageName:imageName];
+    [self setPanoClose];
     [self.view addSubview:_uiv_panoramicView];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideBuildingTopMenu" object:nil];
+}
+
+- (void)setPanoClose
+{
+    UIButton *uib_panoClose = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_panoClose.frame = CGRectMake(0.0, 0.0, 44.0, 44.0);
+    [uib_panoClose setBackgroundImage:[UIImage imageNamed:@"grfx_contactClose.jpg"] forState:UIControlStateNormal];
+    [uib_panoClose addTarget:self action:@selector(removePano:) forControlEvents:UIControlEventTouchUpInside];
+    [_uiv_panoramicView addSubview: uib_panoClose];
+}
+
+- (void)removePano:(id)sender
+{
+    if (_uiv_panoramicView) {
+        [UIView animateWithDuration:0.2 animations:^{
+            _uiv_panoramicView.alpha = 0.0;
+        } completion:^(BOOL finished){
+            [_uiv_panoramicView removeFromSuperview];
+            _uiv_panoramicView = nil;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideBuildingTopMenu" object:nil];
+        }];
+    }
 }
 
 #pragma mark - Set up side panel
