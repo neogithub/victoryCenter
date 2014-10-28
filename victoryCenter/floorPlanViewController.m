@@ -99,7 +99,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 #pragma mark - Set up side panel
 - (void)createPanel
 {
-    _uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(827, 0.0, panle_w, 265)];
+    _uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(850, 0.0, panle_w, 265)];
     _uiv_panel.backgroundColor = [UIColor clearColor];
     _uiv_panel.layer.borderWidth = 1.0;
     _uiv_panel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
