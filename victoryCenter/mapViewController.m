@@ -679,9 +679,10 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (void)tapBldBtn:(id)sender
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Jump to Building Details"]
-                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Jump to Building Details"]
+//                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+//    [alert show];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"switchToBuilding" object:nil];
 }
 
 - (void)removeBldBtn

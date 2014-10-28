@@ -62,6 +62,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unHideHomeBtn:) name:@"unhideHomeButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeContact:) name:@"removeContact" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doneButtonClick:) name:MPMoviePlayerPlaybackDidFinishNotification object:_playerViewController];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(swithToBuilding) name:@"switchToBuilding" object:nil];
 }
 
 #pragma mark - Deal with notificaiton
@@ -88,6 +89,13 @@
         _uiv_toolsPanel.hidden = NO;
         _uil_titleLabel.hidden = NO;
     }
+}
+
+- (void)swithToBuilding
+{
+    UIButton *tmp = [UIButton new];
+    tmp.tag = 1;
+    [self loadVC:tmp];
 }
 
 #pragma mark - Style the title label
