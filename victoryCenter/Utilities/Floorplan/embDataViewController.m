@@ -64,7 +64,7 @@
 	_uii_Plan = [UIImage imageNamed:_floorplan[0]];
 	if (!_zoomingScroll) {
         CGRect theFrame = self.view.bounds;
-        theFrame.origin.x = 62;
+        theFrame.origin.x = 35;
         theFrame.origin.y = 64;
         theFrame.size.width = 900;
         theFrame.size.height = 682;
@@ -85,7 +85,7 @@
     }
     
     //Added Road Names Labels
-    UILabel *uil_victoryAve = [[UILabel alloc] initWithFrame:CGRectMake(840,260, 130, 30)];
+    UILabel *uil_victoryAve = [[UILabel alloc] initWithFrame:CGRectMake(830,260, 130, 30)];
     [uil_victoryAve setText:@"VICTORY AVE"];
     uil_victoryAve.backgroundColor = [UIColor vcBackGroundColor];
     [uil_victoryAve setFont:[UIFont fontWithName:@"Raleway-Medium" size:12]];
