@@ -118,7 +118,7 @@
 //    uil_highMarketSt.transform = CGAffineTransformMakeRotation(-M_PI_2);
     
     //Added compass image
-    UIImageView *uiiv_compass = [[UIImageView alloc] initWithFrame:CGRectMake(940, 670, 34, 34)];
+    UIImageView *uiiv_compass = [[UIImageView alloc] initWithFrame:CGRectMake(940, 670, 31, 41)];
     [uiiv_compass setImage:[UIImage imageNamed:@"grfx_compass.png"]];
     [self.view addSubview: uiiv_compass];
 }

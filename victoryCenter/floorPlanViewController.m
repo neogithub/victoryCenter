@@ -17,6 +17,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 @interface floorPlanViewController ()<UIPageViewControllerDelegate>
 
 // Page View
+@property (nonatomic, readwrite)        NSInteger               currentPage;
 @property (readonly, strong, nonatomic) embModelController		*modelController;
 @property (readonly, strong, nonatomic) NSArray					*arr_pageData;
 @property (strong, nonatomic)           UIPageViewController	*pageViewController;
@@ -46,6 +47,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     _arr_titleText = [[NSArray alloc] initWithObjects:@"FLOOR 24", @"FLOOR 18 - 23", @"FLOOR 17", @"FLOOR 16", @"FLOOR 15", @"FLOOR 10 - 14", @"FLOOR 9", @"FLOOR 8",nil];
     _modelController = [[embModelController alloc] init];
     [self initPageView:pageIndex];
+    _currentPage = pageIndex;
     [self createPanel];
     [self setCtrlBtns];
 }
@@ -133,7 +135,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 - (void)setCtrlBtns
 {
     UIView *uiv_btnContainer = [[UIView alloc] initWithFrame:CGRectMake(_uiv_panel.frame.origin.x, _uiv_panel.frame.size.height+3, panle_w, 83)];
-    
+    uiv_btnContainer.backgroundColor = [UIColor clearColor];
     _uib_backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _uib_backBtn.frame = CGRectMake(0.0, 0.0, panle_w, 33.0);
     _uib_backBtn.backgroundColor = [UIColor vcLightBlue];
@@ -141,7 +143,57 @@ static CGFloat  kPanelTitleHeight           = 46;
     [_uib_backBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
     [_uib_backBtn addTarget:self action:@selector(backBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
     [uiv_btnContainer addSubview: _uib_backBtn];
+    
+    UIButton *uib_upArrow = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_upArrow.frame = CGRectMake(0.0, 38, 74, 45);
+    [uib_upArrow setBackgroundImage:[UIImage imageNamed:@"grfx_floorUp.png"] forState:UIControlStateNormal];
+    uib_upArrow.tag = 7;
+    [uib_upArrow addTarget:self action:@selector(tapArrowBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [uiv_btnContainer addSubview: uib_upArrow];
+    
+    UIButton *uib_downArrow = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_downArrow.frame = CGRectMake(80.0, 38, 74, 45);
+    [uib_downArrow setBackgroundImage:[UIImage imageNamed:@"grfx_floorDwon.png"] forState:UIControlStateNormal];
+    [uib_downArrow addTarget:self action:@selector(tapArrowBtn:) forControlEvents:UIControlEventTouchUpInside];
+    uib_downArrow.tag = 8;
+    [uiv_btnContainer addSubview: uib_downArrow];
+    
     [self.view addSubview: uiv_btnContainer];
+}
+
+- (void)tapArrowBtn:(id)sender
+{
+    UIButton *tappedBtn = sender;
+    int btnIndex = (int)tappedBtn.tag;
+    
+    if (btnIndex == 7) {
+        if (_currentPage == 0) {
+            return;
+        }
+        _currentPage--;
+        embDataViewController *startingViewController = [self.modelController viewControllerAtIndex:_currentPage storyboard:self.storyboard];
+        
+        NSArray *viewControllers = @[startingViewController];
+        
+        [self.pageViewController setViewControllers:viewControllers
+                                          direction:UIPageViewControllerNavigationDirectionReverse
+                                           animated:YES
+                                         completion:nil];
+    }
+    if (btnIndex == 8) {
+        if (_currentPage == _arr_titleText.count-1) {
+            return;
+        }
+        _currentPage++;
+        embDataViewController *startingViewController = [self.modelController viewControllerAtIndex:_currentPage storyboard:self.storyboard];
+        
+        NSArray *viewControllers = @[startingViewController];
+        
+        [self.pageViewController setViewControllers:viewControllers
+                                          direction:UIPageViewControllerNavigationDirectionForward
+                                           animated:YES
+                                         completion:nil];
+    }
 }
 
 - (void)backBtnTapped:(id)sender
@@ -199,6 +251,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 {
     embDataViewController *theCurrentViewController = [self.pageViewController.viewControllers objectAtIndex:0];
     int index = (int)[self.modelController indexOfViewController:theCurrentViewController];
+    _currentPage = index;
     [_uib_PanelTitle setTitle:_arr_titleText[index] forState:UIControlStateNormal];
 }
 
