@@ -10,6 +10,7 @@
 #import "embModelController.h"
 #import "embDataViewController.h"
 #import "UIColor+Extensions.h"
+#import "xhPanoramicView.h"
 
 static float    panle_w                     = 156;
 static CGFloat  kPanelTitleHeight           = 46;
@@ -25,6 +26,8 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   NSArray                         *arr_titleText;
 // Control Button
 @property (nonatomic, strong)   UIButton                        *uib_backBtn;
+// Pano image
+@property (nonatomic, strong)   xhPanoramicView                 *uiv_panoramicView;
 @end
 
 @implementation floorPlanViewController
@@ -51,6 +54,20 @@ static CGFloat  kPanelTitleHeight           = 46;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadPano:) name:@"loadPanoImage" object:nil];
+}
+
+#pragma mark - Prepare pano image
+- (void)loadPano:(NSNotification *)notification
+{
+    NSDictionary *dict = notification.userInfo;
+    NSString *imageName = [dict objectForKey:@"imageName"];
+    if (_uiv_panoramicView) {
+        [_uiv_panoramicView removeFromSuperview];
+        _uiv_panoramicView = nil;
+    }
+    _uiv_panoramicView = [[xhPanoramicView alloc] initWithFrame:self.view.bounds andImageName:imageName];
+    [self.view addSubview:_uiv_panoramicView];
 }
 
 #pragma mark - Set up side panel

@@ -35,6 +35,7 @@
 @property (nonatomic, strong) UIButton						*uib_ShellBtn;
 @property (nonatomic, strong) NSMutableArray                *arr_testFitSubMenu;
 @property (nonatomic, strong) NSMutableArray                *arr_testFitTenant;
+@property (nonatomic, strong) NSMutableArray                *arr_hotspotImg;
 
 @end
 
@@ -135,12 +136,14 @@
 {
     [_arr_hotspots removeAllObjects];
     _arr_hotspots = nil;
-    
+    [_arr_hotspotImg removeAllObjects];
+    _arr_hotspotImg = nil;
+    _arr_hotspotImg = [[NSMutableArray alloc] init];
     for (int i = 0; i < arr_hotspots.count; i++) {
         NSDictionary *dict_hs = arr_hotspots[i];
         
         CGPoint centerPoint = CGPointFromString([NSString stringWithFormat:@"{%@}", [dict_hs objectForKey:@"xy"]]);
-        
+        NSString *imageName = [dict_hs objectForKey:@"fileName"];
         neoHotspotsView *myHotspot = [[neoHotspotsView alloc] initWithFrame:CGRectMake(centerPoint.x, centerPoint.y, 48, 48)];
         
         NSString *str_bgName = [[NSString alloc] initWithString:[dict_hs objectForKey:@"background"]];
@@ -150,12 +153,17 @@
         myHotspot.tagOfHs = i;
         [_zoomingScroll.blurView addSubview: myHotspot];
         [_arr_hotspots addObject: myHotspot];
+        [_arr_hotspotImg addObject:imageName];
     }
 }
 
 - (void)neoHotspotsView:(neoHotspotsView *)hotspot didSelectItemAtIndex:(NSInteger)index
 {
-    NSLog(@"Tapped hotspot is %i", (int)index);
+//    NSLog(@"Tapped hotspot is %i", (int)index);
+    NSDictionary* dict = [NSDictionary dictionaryWithObject:_arr_hotspotImg[index] forKey:@"imageName"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"loadPanoImage"
+                                                        object:self
+                                                      userInfo:dict];
 }
 
 #pragma mark - BOILERPLATE
