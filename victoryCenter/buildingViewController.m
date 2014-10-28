@@ -290,12 +290,20 @@
     _uiv_eleLayerConainer.backgroundColor = [UIColor clearColor];
     UIImageView *uiiv_lowRiseEle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_low_rise.png"]];
     uiiv_lowRiseEle.frame = CGRectMake(686, 328, uiiv_lowRiseEle.frame.size.width, uiiv_lowRiseEle.frame.size.height);
+    uiiv_lowRiseEle.transform = CGAffineTransformMakeTranslation(0.0, uiiv_lowRiseEle.frame.size.height);
+    
     UIImageView *uiiv_highRiseEle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grf_elavators_high_rise.png"]];
     uiiv_highRiseEle.frame = CGRectMake(584, 121, uiiv_highRiseEle.frame.size.width, uiiv_highRiseEle.frame.size.height);
+    uiiv_highRiseEle.transform = CGAffineTransformMakeTranslation(0.0, uiiv_highRiseEle.frame.size.height);
+    
     UIImageView *uiiv_parking = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_parking.png"]];
     uiiv_parking.frame = CGRectMake(247, 534, uiiv_parking.frame.size.width, uiiv_parking.frame.size.height);
+    uiiv_parking.transform = CGAffineTransformMakeTranslation(0.0, uiiv_parking.frame.size.height);
+    
     UIImageView *uiiv_lobby = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_lobby.png"]];
     uiiv_lobby.frame = CGRectMake(395, 650, uiiv_lobby.frame.size.width, uiiv_lobby.frame.size.height);
+    uiiv_lobby.transform = CGAffineTransformMakeTranslation(0.0, uiiv_lobby.frame.size.height);
+    
     _arr_elevatroImgs = [[NSArray alloc] initWithObjects:uiiv_lowRiseEle, uiiv_highRiseEle, uiiv_parking, uiiv_lobby,nil];
     
     [_uiv_eleLayerConainer insertSubview:uiiv_parking atIndex:1];
@@ -357,6 +365,16 @@
     [uib_resetEle setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 50, 10.0, 0.0)];
     [uib_resetEle addTarget:self action:@selector(resetAllEleImgs) forControlEvents:UIControlEventTouchUpInside];
     [uiv_ctrlPanel addSubview: uib_resetEle];
+    
+    UIButton *uib_showAll = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_showAll.frame = CGRectMake(0.0, 206.0, 100.0, 40.0);
+    uib_showAll.backgroundColor = [UIColor clearColor];
+    [uib_showAll setTitle:@"ALL" forState:UIControlStateNormal];
+    [uib_showAll setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [uib_showAll.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    [uib_showAll setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 10.0, 60.0)];
+    [uib_showAll addTarget:self action:@selector(showAllEleImg) forControlEvents:UIControlEventTouchUpInside];
+    [uiv_ctrlPanel addSubview: uib_showAll];
     
     [_uiv_elevatorContainer addSubview: uiv_ctrlPanel];
     [self animateCtrlPanel:uiv_ctrlPanel];
@@ -430,12 +448,6 @@
 - (void)tapOptions:(id)sender
 {
     float delay = 0.0;
-    // If first time laod, fade in all images
-    if ([self checkFirstTime]) {
-        // if first time hide all images and then do fade in aniamtion
-        [self hideAllEleImgs];
-        delay = 0.33;
-    }
     [self performSelector:@selector(animateElevator:) withObject:sender afterDelay:delay];
 }
 
@@ -454,14 +466,22 @@
         tappedBtn.layer.borderWidth = 1.0;
         tappedBtn.layer.borderColor = [UIColor vcButtonBorder].CGColor;
         indicator.backgroundColor = [UIColor clearColor];
-        [UIView animateWithDuration:0.33 animations:^{
-            uiiv_selectetd.alpha = 0.0;
-        }];
+        // Set the parameters to be passed into the animation
+        CGFloat duration = 0.5f;
+        CGFloat damping = 0.8;
+        CGFloat velocity = 0.6;
+        // int to hold UIViewAnimationOption
+        NSInteger option;
+        option = UIViewAnimationCurveEaseInOut;
+        
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+            uiiv_selectetd.transform = CGAffineTransformMakeTranslation(0.0, uiiv_selectetd.frame.size.height);
+        } completion:^(BOOL finished){      }];
+
     }
     else {
         tappedBtn.backgroundColor = [UIColor vclightbluemenu];
         tappedBtn.layer.borderWidth = 1.0;
-        uiiv_selectetd.transform = CGAffineTransformMakeTranslation(0.0, uiiv_selectetd.frame.size.height);
         uiiv_selectetd.alpha = 1.0;
         tappedBtn.layer.borderColor = [UIColor vcDarkBlue].CGColor;
         indicator.backgroundColor = arr_color[index];
@@ -480,44 +500,20 @@
     tappedBtn.selected = !tappedBtn.selected;
 }
 
-- (BOOL)checkFirstTime
-{
-    BOOL allBtns = NO;
-    BOOL allImgs = YES;
-    // check if any button in panel is selected
-    for (UIButton *tmp in _arr_eleBtnArray) {
-        if (tmp.selected) {
-            allBtns = YES;
-        }
-    }
-    // Check if all elevators' images are shown
-    for (UIImageView *tmp in _arr_elevatroImgs) {
-        if (tmp.alpha == 0) {
-            allImgs = NO;
-        }
-    }
-    
-    if ((allBtns == NO) && (allImgs == YES)) {
-        return YES;
-    }
-    return  NO;
-}
-
-- (void)hideAllEleImgs
-{
-    for (UIImageView *tmp in _arr_elevatroImgs) {
-        [UIView animateWithDuration:0.33 animations:^{
-            tmp.alpha = 0.0;
-        }];
-    }
-}
-
 - (void)resetAllEleImgs
 {
     for (UIImageView *tmp in _arr_elevatroImgs) {
-        [UIView animateWithDuration:0.33 animations:^{
-            tmp.alpha = 1.0;
-        }];
+        // Set the parameters to be passed into the animation
+        CGFloat duration = 0.5f;
+        CGFloat damping = 0.8;
+        CGFloat velocity = 0.6;
+        // int to hold UIViewAnimationOption
+        NSInteger option;
+        option = UIViewAnimationCurveEaseInOut;
+        
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+            tmp.transform = CGAffineTransformMakeTranslation(0.0, tmp.frame.size.height);
+        } completion:^(BOOL finished){      }];
     }
     for (UIButton *tmp in _arr_eleBtnArray) {
         tmp.backgroundColor = [UIColor whiteColor];
@@ -527,6 +523,34 @@
     }
     for (UIView *tmp in _arr_eleIndArray) {
         tmp.backgroundColor = [UIColor clearColor];
+    }
+}
+
+- (void)showAllEleImg
+{
+    for (UIImageView *tmp in _arr_elevatroImgs) {
+        // Set the parameters to be passed into the animation
+        CGFloat duration = 0.5f;
+        CGFloat damping = 0.8;
+        CGFloat velocity = 0.6;
+        // int to hold UIViewAnimationOption
+        NSInteger option;
+        option = UIViewAnimationCurveEaseInOut;
+        
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+            tmp.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished){      }];
+    }
+    for (UIButton *tmp in _arr_eleBtnArray) {
+        tmp.backgroundColor = [UIColor vclightbluemenu];
+        tmp.layer.borderWidth = 1.0;
+        tmp.alpha = 1.0;
+        tmp.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+        tmp.selected = YES;
+    }
+    NSArray *arr_color = [[NSArray alloc] initWithObjects:[UIColor vcSiteResidentail], [UIColor vcSiteRecreation], [UIColor vcBldParking], [UIColor vcSiteRetail], nil];
+    for (UIView *tmp in _arr_eleIndArray) {
+        tmp.backgroundColor = arr_color[[_arr_eleIndArray indexOfObject:tmp]];
     }
 }
 
