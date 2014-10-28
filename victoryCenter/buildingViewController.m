@@ -379,7 +379,7 @@
     uib_resetEle.frame = CGRectMake(100.0, 206.0, 100.0, 40.0);
     uib_resetEle.backgroundColor = [UIColor clearColor];
     [uib_resetEle setTitle:@"RESET" forState:UIControlStateNormal];
-    [uib_resetEle setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [uib_resetEle setTitleColor:[UIColor vcLightBlue] forState:UIControlStateNormal];
     [uib_resetEle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
     [uib_resetEle setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 50, 10.0, 0.0)];
     [uib_resetEle addTarget:self action:@selector(resetAllEleImgs) forControlEvents:UIControlEventTouchUpInside];
@@ -389,7 +389,7 @@
     uib_showAll.frame = CGRectMake(0.0, 206.0, 100.0, 40.0);
     uib_showAll.backgroundColor = [UIColor clearColor];
     [uib_showAll setTitle:@"ALL" forState:UIControlStateNormal];
-    [uib_showAll setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [uib_showAll setTitleColor:[UIColor vcLightBlue                                                                                                                                                         ] forState:UIControlStateNormal];
     [uib_showAll.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
     [uib_showAll setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 10.0, 60.0)];
     [uib_showAll addTarget:self action:@selector(showAllEleImg) forControlEvents:UIControlEventTouchUpInside];
