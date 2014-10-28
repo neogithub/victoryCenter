@@ -78,6 +78,10 @@
 		823DE6EE19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 823DE6EA19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on@2x.png */; };
 		823DE6F119FFE95A0016CD3A /* pano_opportunity_local_nav_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 823DE6EF19FFE95A0016CD3A /* pano_opportunity_local_nav_frame.png */; };
 		823DE6F219FFE95A0016CD3A /* pano_opportunity_local_nav_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 823DE6F019FFE95A0016CD3A /* pano_opportunity_local_nav_frame@2x.png */; };
+		823DE6F71A0031CA0016CD3A /* grfx_floorDwon.png in Resources */ = {isa = PBXBuildFile; fileRef = 823DE6F31A0031CA0016CD3A /* grfx_floorDwon.png */; };
+		823DE6F81A0031CA0016CD3A /* grfx_floorDwon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 823DE6F41A0031CA0016CD3A /* grfx_floorDwon@2x.png */; };
+		823DE6F91A0031CA0016CD3A /* grfx_floorUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 823DE6F51A0031CA0016CD3A /* grfx_floorUp.png */; };
+		823DE6FA1A0031CA0016CD3A /* grfx_floorUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 823DE6F61A0031CA0016CD3A /* grfx_floorUp@2x.png */; };
 		824012E019D1AF5D00C501EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012DF19D1AF5D00C501EE /* Foundation.framework */; };
 		824012E219D1AF5D00C501EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012E119D1AF5D00C501EE /* CoreGraphics.framework */; };
 		824012E419D1AF5D00C501EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824012E319D1AF5D00C501EE /* UIKit.framework */; };
@@ -380,6 +384,10 @@
 		823DE6EA19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pano_opportunity_local_button_gesture_on@2x.png"; sourceTree = "<group>"; };
 		823DE6EF19FFE95A0016CD3A /* pano_opportunity_local_nav_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pano_opportunity_local_nav_frame.png; sourceTree = "<group>"; };
 		823DE6F019FFE95A0016CD3A /* pano_opportunity_local_nav_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pano_opportunity_local_nav_frame@2x.png"; sourceTree = "<group>"; };
+		823DE6F31A0031CA0016CD3A /* grfx_floorDwon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorDwon.png; sourceTree = "<group>"; };
+		823DE6F41A0031CA0016CD3A /* grfx_floorDwon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorDwon@2x.png"; sourceTree = "<group>"; };
+		823DE6F51A0031CA0016CD3A /* grfx_floorUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorUp.png; sourceTree = "<group>"; };
+		823DE6F61A0031CA0016CD3A /* grfx_floorUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorUp@2x.png"; sourceTree = "<group>"; };
 		824012DC19D1AF5D00C501EE /* victoryCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victoryCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824012DF19D1AF5D00C501EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		824012E119D1AF5D00C501EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -710,6 +718,10 @@
 		8224FDF219D46D90002B1B44 /* grfx */ = {
 			isa = PBXGroup;
 			children = (
+				823DE6F31A0031CA0016CD3A /* grfx_floorDwon.png */,
+				823DE6F41A0031CA0016CD3A /* grfx_floorDwon@2x.png */,
+				823DE6F51A0031CA0016CD3A /* grfx_floorUp.png */,
+				823DE6F61A0031CA0016CD3A /* grfx_floorUp@2x.png */,
 				824C194A19FA938500EA7613 /* grfx_tredart_logo.png */,
 				824C194B19FA938500EA7613 /* grfx_tredart_logo@2x.png */,
 				824C194C19FA938500EA7613 /* grfx_victorycenter_logo.png */,
@@ -1352,6 +1364,7 @@
 				82DC11E919DAEE070057AE4F /* Site_Base map.png in Resources */,
 				82A805D619D1FC1400308BA1 /* grfx_menuIcon.png in Resources */,
 				82A805CE19D1F61E00308BA1 /* grfx_helpIcon.png in Resources */,
+				823DE6F71A0031CA0016CD3A /* grfx_floorDwon.png in Resources */,
 				824F369D19E6C47500267B44 /* thumb_Street View B1.jpg in Resources */,
 				82A29E4819EC60E000AFAE1E /* grfx_bldImg.png in Resources */,
 				82A29E4919EC60E000AFAE1E /* grfx_bldImg@2x.png in Resources */,
@@ -1379,6 +1392,7 @@
 				824F368C19E6C47500267B44 /* thumb_20140802_downtown_100m_6pm_high-res.jpg in Resources */,
 				8297BD2E19F589AD0046CB65 /* grfx_galleryBack.jpg in Resources */,
 				82DC11D819DAEA940057AE4F /* Victory Center 01 Highway View.jpg in Resources */,
+				823DE6F81A0031CA0016CD3A /* grfx_floorDwon@2x.png in Resources */,
 				824F369719E6C47500267B44 /* thumb_20140811_view3_100m_04.jpg in Resources */,
 				82627E2719E702EC0062FC0C /* grfx_retail_overlay.png in Resources */,
 				824C195119FA938500EA7613 /* grfx_victorycenter_logo@2x.png in Resources */,
@@ -1425,6 +1439,7 @@
 				82DC11DA19DAEA940057AE4F /* Victory Center 03 View from SE.jpg in Resources */,
 				82627E2C19E732870062FC0C /* Lightbox_overlay_BG.png in Resources */,
 				82A805D119D1F61E00308BA1 /* grfx_mialIcon@2x.png in Resources */,
+				823DE6FA1A0031CA0016CD3A /* grfx_floorUp@2x.png in Resources */,
 				824C197119FAA3D700EA7613 /* grfx_floorplan24.png in Resources */,
 				8224FE0719D47097002B1B44 /* Raleway-Light.otf in Resources */,
 				823DE6EE19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on@2x.png in Resources */,
@@ -1552,6 +1567,7 @@
 				82AB935119FEC97B00DD0B30 /* grfx_west_hs@2x.png in Resources */,
 				82000B8919E592A800AE2C70 /* team_cousins_logo.png in Resources */,
 				82A805D019D1F61E00308BA1 /* grfx_mialIcon.png in Resources */,
+				823DE6F91A0031CA0016CD3A /* grfx_floorUp.png in Resources */,
 				825E5F8419F83FA300B77F7F /* grf_elavators_high_rise@2x.png in Resources */,
 				82000B7219E590AD00AE2C70 /* grfx_bldAmenities_bg@2x.jpg in Resources */,
 				82000BA419E5BADC00AE2C70 /* teamText.plist in Resources */,
