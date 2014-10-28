@@ -51,7 +51,6 @@
     uis_panoramic.showsHorizontalScrollIndicator = NO;
     uis_panoramic.delegate = self;
     
-//    NSLog(@"The uis is %@", uis_panoramic);
     UIImageView *content = [[UIImageView alloc]initWithImage:_contentImage];
     content.frame = CGRectMake(0.0, 0.0, imageWidth, uis_panoramic.frame.size.height);
     [uis_panoramic addSubview: content];
@@ -63,7 +62,6 @@
 -(void)initIndicator
 {
     _uiv_indicatorContainer = [[UIView alloc] initWithFrame:CGRectMake(888, 60.0, 91, 31)];
-//    _uiv_indicatorContainer.backgroundColor = [UIColor redColor];
     [self insertSubview:_uiv_indicatorContainer aboveSubview:uis_panoramic];
     
     _uiiv_smallFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pano_opportunity_local_nav_frame.png"]];
@@ -98,7 +96,6 @@
     else {
         [self stopMotionManager];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideTextBox" object:self];
 }
 #pragma mark - Motion Manger Controller
 -(void)startMotionManager {
@@ -176,8 +173,7 @@
     _uiiv_smallFrame.transform = CGAffineTransformMakeTranslation(indicatorMove, 0.0);
 }
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideTextBox" object:self];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideNaviMenu" object:self];
+
 }
 /*
 // Only override drawRect: if you perform custom drawing.

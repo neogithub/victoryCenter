@@ -519,22 +519,12 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (void)addCityAccessPanel
 {
-    float panel_h = 5*kPanelBtnHeight + kPanelTitleHeight;
-    uiv_cityAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS N. TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
-    [self createBtnsForPanel:uiv_cityAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:45.0 withIdicator:YES];
-    [self.view insertSubview:uiv_cityAccPanel belowSubview:_uiv_siteSubMenu];
-    [self animateThePanel:uiv_cityAccPanel];
+    uiv_cityAccPanel = [self setUpAccessPanel];
 }
 
 - (void)addCityAmeniteisPanel
 {
-    float panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
-    uiv_cityAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", nil];
-    [self createBtnsForPanel:uiv_cityAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0 withIdicator:YES];
-    [self.view insertSubview:uiv_cityAmePanel belowSubview:_uiv_siteSubMenu];
-    [self animateThePanel:uiv_cityAmePanel];
+    uiv_cityAmePanel = [self setUpAmenitiesPanel];
     [self prepareHotspotData:@"city"];
     //Set up indicator's color array
     [arr_indicatorColors removeAllObjects];
@@ -568,12 +558,7 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark Add panel for neighborhood amenities
 - (void)addNeibAmenitiesPanel
 {
-    float panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
-    uiv_neibAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", nil];
-    [self createBtnsForPanel:uiv_neibAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0 withIdicator:YES];
-    [self.view insertSubview:uiv_neibAmePanel belowSubview:_uiv_siteSubMenu];
-    [self animateThePanel:uiv_neibAmePanel];
+    uiv_neibAccPanel = [self setUpAmenitiesPanel];
     [self prepareHotspotData:@"neighborhood"];
     //Set up indicator's color array
     [arr_indicatorColors removeAllObjects];
@@ -584,12 +569,7 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark Add panel for neighborhood access
 - (void)addNeibAccessPanel
 {
-    float panel_h = 5*kPanelBtnHeight + kPanelTitleHeight;
-    uiv_neibAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS N. TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
-    [self createBtnsForPanel:uiv_neibAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:45.0 withIdicator:YES];
-    [self.view insertSubview:uiv_neibAccPanel belowSubview:_uiv_siteSubMenu];
-    [self animateThePanel:uiv_neibAccPanel];
+    uiv_neibAccPanel = [self setUpAccessPanel];
 }
 
 #pragma mark - Site Submenu
@@ -637,12 +617,7 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark Add panel for site amenities
 - (void)addSiteAmenitiesPanel
 {
-    float panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
-    uiv_siteAmePanel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"DINING", @"RETAIL", @"RESIDENTIAL", @"RECREATION", nil];
-    [self createBtnsForPanel:uiv_siteAmePanel withTitleArray:arr_buttonTitles andTargetSel:@"tapSiteAmenities:" andEdgeInset:45.0 withIdicator:YES];
-    [self.view insertSubview:uiv_siteAmePanel belowSubview:_uiv_siteSubMenu];
-    [self animateThePanel:uiv_siteAmePanel];
+    uiv_siteAccPanel = [self setUpAmenitiesPanel];
     [self prepareHotspotData:@"site"];
     //Set up overlay's array
     [arr_overlayArray removeAllObjects];
@@ -688,12 +663,7 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark Add panel for site access
 - (void)addSiteAccessPanel
 {
-    float panel_h = 5*kPanelBtnHeight + kPanelTitleHeight;
-    uiv_siteAccPanel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS N. TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
-    [self createBtnsForPanel:uiv_siteAccPanel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:45.0 withIdicator:YES];
-    [self.view insertSubview:uiv_siteAccPanel belowSubview:_uiv_siteSubMenu];
-    [self animateThePanel:uiv_siteAccPanel];
+    uiv_siteAccPanel = [self setUpAccessPanel];
 }
 
 #pragma mark Add building button and it's action
@@ -722,6 +692,29 @@ static float    kPanelBtnHeight             = 38.0;
     }
 }
 
+#pragma mark - Create Access & Amenities panel
+
+- (UIView *)setUpAccessPanel
+{
+    float panel_h = 5*kPanelBtnHeight + kPanelTitleHeight;
+    UIView *panel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS N. TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
+    [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:45.0 withIdicator:YES];
+    [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
+    [self animateThePanel:panel];
+    return panel;
+}
+
+- (UIView *)setUpAmenitiesPanel
+{
+    float panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
+    UIView *panel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", nil];
+    [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0 withIdicator:YES];
+    [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
+    [self animateThePanel:panel];
+    return panel;
+}
 #pragma mark - Highlight current tapped button of sub menu
 /*
  Required Arguement:

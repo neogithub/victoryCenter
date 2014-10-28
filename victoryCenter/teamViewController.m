@@ -40,7 +40,6 @@ static float kCardsGap      = 12.0;
     [super viewDidLoad];
     _arr_cards = [[NSMutableArray alloc] init];
     _arr_logoImg = [[NSArray alloc] initWithObjects:@"team_hines_logo.png", @"team_cushman_logo.png", @"team_duda_logo.png", @"team_hks_logo.png", @"team_cousins_logo.png", nil];
-//    NSArray *arr_textImg = [[NSArray alloc] initWithObjects:@"team_hines_text.png", @"team_cushman_text.png", @"team_duda_text.png", @"team_hks_text.png", @"team_cousins_text.png", nil];
     [self createTextViews];
     for (int i = 0; i < _arr_logoImg.count; i++) {
         // input parameters:
@@ -49,8 +48,6 @@ static float kCardsGap      = 12.0;
         // 3. x value of the card
         [self createItemBox:_arr_logoImg[i] andText:_arr_teamTextView[i] andX:(30 + i * (kCardsGap + kCardWidth)) andTag:i];
     }
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)createTextViews
