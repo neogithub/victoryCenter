@@ -71,6 +71,7 @@
 		8239ED0F1A0168ED00B25EA2 /* siteOverview.m in Sources */ = {isa = PBXBuildFile; fileRef = 8239ED0E1A0168ED00B25EA2 /* siteOverview.m */; };
 		8239ED121A016FAC00B25EA2 /* grfx_victoryPark_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8239ED101A016FAC00B25EA2 /* grfx_victoryPark_logo.png */; };
 		8239ED131A016FAC00B25EA2 /* grfx_victoryPark_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8239ED111A016FAC00B25EA2 /* grfx_victoryPark_logo@2x.png */; };
+		8239ED171A01863300B25EA2 /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8239ED161A01863300B25EA2 /* CMPopTipView.m */; };
 		823D78A819F156830096E62C /* grfx_floorplan.png in Resources */ = {isa = PBXBuildFile; fileRef = 823D78A619F156830096E62C /* grfx_floorplan.png */; };
 		823D78A919F156830096E62C /* grfx_floorplan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 823D78A719F156830096E62C /* grfx_floorplan@2x.png */; };
 		823D78AC19F1AD500096E62C /* grfx_compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 823D78AA19F1AD500096E62C /* grfx_compass.png */; };
@@ -383,6 +384,8 @@
 		8239ED0E1A0168ED00B25EA2 /* siteOverview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = siteOverview.m; sourceTree = "<group>"; };
 		8239ED101A016FAC00B25EA2 /* grfx_victoryPark_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_victoryPark_logo.png; sourceTree = "<group>"; };
 		8239ED111A016FAC00B25EA2 /* grfx_victoryPark_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_victoryPark_logo@2x.png"; sourceTree = "<group>"; };
+		8239ED151A01863300B25EA2 /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPopTipView.h; sourceTree = "<group>"; };
+		8239ED161A01863300B25EA2 /* CMPopTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPopTipView.m; sourceTree = "<group>"; };
 		823D78A619F156830096E62C /* grfx_floorplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan.png; sourceTree = "<group>"; };
 		823D78A719F156830096E62C /* grfx_floorplan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorplan@2x.png"; sourceTree = "<group>"; };
 		823D78AA19F1AD500096E62C /* grfx_compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_compass.png; sourceTree = "<group>"; };
@@ -792,6 +795,7 @@
 		8224FE0D19D48656002B1B44 /* Thrid_party */ = {
 			isa = PBXGroup;
 			children = (
+				8239ED141A01863300B25EA2 /* PopTips */,
 				82DC11EB19DAF2990057AE4F /* FGallery */,
 				8224FE0E19D48656002B1B44 /* MPFoldTransition */,
 			);
@@ -832,6 +836,15 @@
 				8224FE2419D48656002B1B44 /* MPFoldSegue.m */,
 			);
 			path = Segues;
+			sourceTree = "<group>";
+		};
+		8239ED141A01863300B25EA2 /* PopTips */ = {
+			isa = PBXGroup;
+			children = (
+				8239ED151A01863300B25EA2 /* CMPopTipView.h */,
+				8239ED161A01863300B25EA2 /* CMPopTipView.m */,
+			);
+			path = PopTips;
 			sourceTree = "<group>";
 		};
 		823D78A519F156830096E62C /* floorplan */ = {
@@ -1649,6 +1662,7 @@
 				82A805E119D2076300308BA1 /* mapViewController.m in Sources */,
 				824012F619D1AF5D00C501EE /* RootViewController.m in Sources */,
 				8224FE2C19D48656002B1B44 /* MPFoldNavPushSegue.m in Sources */,
+				8239ED171A01863300B25EA2 /* CMPopTipView.m in Sources */,
 				82DAB03219D1EBA000F23668 /* UIColor+Extensions.m in Sources */,
 				82DAB03519D1ED5B00F23668 /* teamViewController.m in Sources */,
 				82A29E4119EC4ED300AFAE1E /* embDirections.m in Sources */,
