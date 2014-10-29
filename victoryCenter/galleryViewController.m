@@ -13,6 +13,16 @@
 
 @interface galleryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 {
+    UIScreen                    *external_disp;
+    UIWindow                    *external_wind;
+    // movie stuff
+	UIView                      *mpControlsView;
+	UIView                      *mpBackingView;
+	UIButton                    *closeMovieButton;
+	NSTimeInterval              totalVideoTime;
+    NSTimeInterval				totalElapsedTime;
+	UISlider                    *progressIndicator;
+    
     // Button's Array
     NSMutableArray          *arr_topBtnArray;
     // gallery
@@ -234,10 +244,69 @@
     _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleNone;
     [_playerViewController.moviePlayer setAllowsAirPlay:YES];
     _playerViewController.moviePlayer.repeatMode = MPMovieRepeatModeOne;
-    [self.view insertSubview:_playerViewController.view aboveSubview:_uic_gallery];
-    [_playerViewController.moviePlayer play];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
-    [self performSelector:@selector(setMovieControlAvailable) withObject:nil afterDelay:1.0];
+//    [self.view insertSubview:_playerViewController.view aboveSubview:_uic_gallery];
+//    [_playerViewController.moviePlayer play];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+//    [self performSelector:@selector(setMovieControlAvailable) withObject:nil afterDelay:1.0];
+    if (!external_wind) {
+        [self setupExternalScreen];
+    }
+    
+    if (external_wind) {
+        
+        _playerViewController.view.frame = [external_disp bounds];
+        [external_wind addSubview:_playerViewController.view];
+        
+        CGRect extbounds = external_wind.bounds;
+        
+        UILabel *helpLabel = [[UILabel alloc] initWithFrame:CGRectMake(extbounds.size.width-320, extbounds.size.height-40, 300, 30)];
+        
+        [external_wind addSubview:helpLabel];
+        
+        helpLabel.text = @"Movie Controls on iPad";
+        helpLabel.textColor = [UIColor whiteColor];
+        helpLabel.textAlignment = NSTextAlignmentRight;
+        helpLabel.backgroundColor = [UIColor clearColor];
+        helpLabel.font = [UIFont fontWithName:@"Helvetica" size:10.0];
+        helpLabel.highlighted = YES;
+        helpLabel.highlightedTextColor = [UIColor whiteColor];
+        
+        // fade
+        CABasicAnimation* animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+        animation.fromValue = [NSNumber numberWithFloat:0.7];
+        animation.toValue = [NSNumber numberWithFloat:0.35];
+        animation.fillMode = kCAFillModeForwards;
+        animation.removedOnCompletion = NO;
+        animation.duration = 1.33;
+        [helpLabel.layer addAnimation:animation forKey:@"opacity"];
+        
+        [self useCustomMovieControls];
+        
+    } else {
+        [self.view insertSubview:_playerViewController.view aboveSubview:_uic_gallery];
+        [_playerViewController.moviePlayer play];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+        [self performSelector:@selector(setMovieControlAvailable) withObject:nil afterDelay:1.0];
+    }
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:_playerViewController
+                                                    name:MPMoviePlayerPlaybackDidFinishNotification
+                                                  object:_playerViewController.moviePlayer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(movieFinishedCallback:)
+                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+                                               object:_playerViewController.moviePlayer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fullscreenControlsNotification)
+                                                 name:MPMoviePlayerLoadStateDidChangeNotification
+                                               object:_playerViewController.moviePlayer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDurationAvailableNotification)
+                                                 name:MPMovieDurationAvailableNotification
+                                               object:_playerViewController.moviePlayer];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 
 - (void)setMovieControlAvailable
@@ -250,6 +319,265 @@
     _playerViewController = nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
 }
+
+- (void)handleDurationAvailableNotification
+{
+	totalVideoTime = _playerViewController.moviePlayer.duration;
+	_playerViewController.moviePlayer.currentPlaybackTime = 0;
+	[_playerViewController.moviePlayer play];
+}
+
+- (void)fullscreenControlsNotification {
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+													name:MPMoviePlayerNowPlayingMovieDidChangeNotification
+												  object:_playerViewController];
+	_playerViewController.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
+	[[UIApplication sharedApplication] setStatusBarHidden:YES];
+}
+
+#pragma mark Movie Notifications
+- (void)movieFinishedCallback:(NSNotification*)aNotification {
+	
+	// Obtain the reason why the movie playback finished
+    NSNumber *finishReason = [[aNotification userInfo] objectForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey];
+    
+	// Dismiss the view controller ONLY when the reason is not "playback ended"
+    if ([finishReason intValue] != MPMovieFinishReasonPlaybackEnded)
+    {
+        MPMoviePlayerController *moviePlayer = [aNotification object];
+        // Remove this class from the observers
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:MPMoviePlayerPlaybackDidFinishNotification
+                                                      object:moviePlayer];
+        // Dismiss the view controller
+		[_playerViewController.view removeFromSuperview];
+		_playerViewController = nil;
+		
+		[[NSNotificationCenter defaultCenter]
+		 postNotificationName:@"unhideMenu"
+		 object:self];
+        
+    } else {
+		[_playerViewController.view removeFromSuperview];
+		_playerViewController = nil;
+	}
+	
+	if (external_wind) {
+		// Hide and then delete the window.
+		external_wind.hidden = YES;
+		external_wind = nil;
+		[mpControlsView removeFromSuperview];
+		[[NSNotificationCenter defaultCenter] removeObserver:self
+														name:MPMovieDurationAvailableNotification
+													  object:_playerViewController.moviePlayer];
+	} else {
+		[_playerViewController.view removeFromSuperview];
+		_playerViewController = nil;
+	}
+}
+
+- (void)moviePlaybackComplete:(NSNotification *)notification
+{
+	MPMoviePlayerController *moviePlayerController = [notification object];
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+													name:MPMoviePlayerPlaybackDidFinishNotification
+												  object:moviePlayerController];
+}
+
+- (void)monitorPlaybackTime
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:_playerViewController
+													name:MPMovieDurationAvailableNotification
+												  object:_playerViewController.moviePlayer];
+    
+    //	[progressIndicator addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:NULL];
+    
+	
+	progressIndicator.value = _playerViewController.moviePlayer.currentPlaybackTime / totalVideoTime;
+	totalElapsedTime = progressIndicator.value;
+	
+	CGFloat t = _playerViewController.moviePlayer.currentPlaybackTime;
+	
+	NSMutableDictionary* userInfo = [NSMutableDictionary dictionary];
+	[userInfo setObject:[NSNumber numberWithInt:t] forKey:@"slidevalue"];
+	
+	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+	[nc postNotificationName:@"eRXReceived" object:self userInfo:userInfo];
+	
+	//constantly keep checking if at the end of video:
+	if (totalVideoTime != 0 && _playerViewController.moviePlayer.currentPlaybackTime >= totalVideoTime - 0.1)
+	{
+		//-------- rewind code:
+		_playerViewController.moviePlayer.currentPlaybackTime = 0;
+		[_playerViewController.moviePlayer pause];
+	}
+	else
+	{
+		[self performSelector:@selector(monitorPlaybackTime) withObject:nil afterDelay:0.5];
+	}
+}
+
+#pragma mark movie control on ipad
+- (void)useCustomMovieControls
+{
+	[mpControlsView removeFromSuperview];
+	[mpBackingView removeFromSuperview];
+	
+    //	if (external_wind) {
+    //		uib_film.enabled = NO;
+    //	}
+	
+	// Create a category view and add it to the window.
+	if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+		mpControlsView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 435, 88)];
+		mpBackingView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 1024, 768)];
+	}
+	
+	//mpBackingView.center = self.view.center;
+	
+	[mpBackingView setBackgroundColor: [UIColor whiteColor]];
+	mpBackingView.alpha = 0.0;
+	[self.view addSubview:mpBackingView];
+	[mpBackingView setUserInteractionEnabled:YES];
+	
+	CGPoint center = [self.view convertPoint:self.view.center fromView: self.view.superview];
+	mpControlsView.center = center;
+	
+	[mpControlsView setBackgroundColor: [UIColor whiteColor]];
+	mpControlsView.alpha = 0.0;
+	[self.view addSubview:mpControlsView];
+	
+	[UIView animateWithDuration:0.33
+					 animations:^{
+						 //mpControlsView.transform = CGAffineTransformMakeTranslation(0, 100);
+						 mpControlsView.alpha = 1.0;
+						 mpBackingView.alpha = 0.5;
+					 }
+					 completion:^(BOOL  completed){
+						 [UIView animateWithDuration:0.3
+										  animations:^{ }
+										  completion:^(BOOL  completed){  }];}];
+	
+	closeMovieButton = [UIButton buttonWithType: UIButtonTypeCustom];
+	[closeMovieButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[closeMovieButton setBackgroundColor:[UIColor darkGrayColor]];
+	[closeMovieButton setTitle:@"PAUSE" forState:UIControlStateNormal];
+	CGRect frame = CGRectMake (20, 30, 92, 32);
+	[closeMovieButton setFrame: frame];
+	[closeMovieButton addTarget:self action:@selector(playbackToggle) forControlEvents:UIControlEventTouchUpInside];
+	[mpControlsView addSubview:closeMovieButton];
+	
+	UIButton* closeMe = [UIButton buttonWithType: UIButtonTypeCustom];
+	[closeMe setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[closeMe setBackgroundColor:[UIColor darkGrayColor]];
+	
+	[closeMe setTitle:@"CLOSE" forState:UIControlStateNormal];
+	frame = CGRectMake (320, 30, 92, 32);
+	[closeMe setFrame: frame];
+	[closeMe addTarget:self action:@selector(removeExternalScreen) forControlEvents:UIControlEventTouchUpInside];
+	[mpControlsView addSubview:closeMe];
+	
+	// info label for external screen
+	UILabel *uil_movieOnExternal = [[UILabel alloc] initWithFrame:CGRectMake(mpControlsView.frame.size.width-312, mpControlsView.frame.size.height-28, 200, 30)];
+	uil_movieOnExternal.text = @"Movie is on External Monitor";
+	uil_movieOnExternal.textColor = [UIColor darkGrayColor];
+	uil_movieOnExternal.textAlignment = NSTextAlignmentCenter;
+	uil_movieOnExternal.alpha = 0.75;
+	uil_movieOnExternal.font = [UIFont fontWithName:@"Helvetica" size:10.0];
+	[mpControlsView addSubview:uil_movieOnExternal];
+	
+	frame = CGRectMake(128.0, 27.0, 170, 40.0);
+    progressIndicator = [[UISlider alloc] initWithFrame:frame];
+    [progressIndicator addTarget:self action:@selector(playbackScrubber:) forControlEvents:UIControlEventValueChanged];
+    [progressIndicator setBackgroundColor:[UIColor clearColor]];
+	progressIndicator.tintColor = [UIColor darkGrayColor];
+    progressIndicator.continuous = YES;
+	[mpControlsView addSubview:progressIndicator];
+	
+	[self monitorPlaybackTime];
+}
+
+
+-(void)playbackToggle {
+	if (_playerViewController.moviePlayer.playbackState == MPMoviePlaybackStatePlaying) {
+		[_playerViewController.moviePlayer pause];
+	} else {
+		[_playerViewController.moviePlayer play];
+		[self monitorPlaybackTime];
+	}
+}
+
+- (void)playbackScrubber: (UISlider*)sender
+{
+	_playerViewController.moviePlayer.currentPlaybackTime = totalVideoTime*progressIndicator.value;
+}
+
+#pragma mark - External Screen
+- (void)setupExternalScreen
+{
+	if ([[UIScreen screens] count] > 1)
+    {
+		[self setUpScreenConnectionNotificationHandlers];
+        // Get the screen object that represents the external display.
+        external_disp = [[UIScreen screens] objectAtIndex:1];
+        // Get the screen's bounds so that you can create a window of the correct size.
+        CGRect screenBounds = external_disp.bounds;
+		
+        external_wind = [[UIWindow alloc] initWithFrame:screenBounds];
+        external_wind.screen = external_disp;
+        external_wind.hidden = NO;
+    }
+}
+
+#pragma mark External Screen Clear
+-(void)removeExternalScreen {
+	if (external_wind) {
+		// Hide and then delete the window.
+		[_playerViewController.moviePlayer pause];
+		external_wind.hidden = YES;
+		external_wind = nil;
+		[mpControlsView removeFromSuperview];
+		[mpBackingView removeFromSuperview];
+		[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(monitorPlaybackTime) object:nil];
+		_playerViewController=nil;
+	}
+}
+
+#pragma mark External Screen Connection
+- (void)setUpScreenConnectionNotificationHandlers
+{
+    //    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    //
+    //    [center addObserver:self selector:@selector(handleScreenDidConnectNotification:)
+    //				   name:UIScreenDidConnectNotification object:nil];
+    //    [center addObserver:self selector:@selector(handleScreenDidDisconnectNotification:)
+    //				   name:UIScreenDidDisconnectNotification object:nil];
+}
+
+- (void)handleScreenDidConnectNotification:(NSNotification*)aNotification
+{
+    //    UIScreen *newScreen = [aNotification object];
+    //    CGRect screenBounds = newScreen.bounds;
+    //
+    //    if (!external_wind)
+    //    {
+    //        external_wind = [[UIWindow alloc] initWithFrame:screenBounds];
+    //        external_wind.screen = newScreen;
+    //        // Set the initial UI for the window.
+    //    }
+}
+
+- (void)handleScreenDidDisconnectNotification:(NSNotification*)aNotification
+{
+    //    if (external_wind)
+    //    {
+    //        // Hide and then delete the window.
+    //        external_wind.hidden = YES;
+    //        external_wind = nil;
+    //    }
+}
+
+
 
 - (void)openFGallery:(int)index
 {
