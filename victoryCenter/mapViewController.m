@@ -25,6 +25,7 @@
 #import <MapKit/MapKit.h>
 #import "MapViewAnnotation.h"
 #import "embMapHotspotListViewController.h"
+#import "siteOverview.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -45,6 +46,7 @@ static float    kPanelBtnHeight             = 38.0;
     NSMutableArray          *arr_switcherArray;
     NSMutableArray          *arr_overlayArray;
     NSMutableArray          *arr_indicatorColors;
+    NSMutableArray          *arr_cells;
     //Hotspot data
     NSDictionary            *dict_HotSpotsRaw;
     NSMutableArray          *arr_HotSpotsRaw;
@@ -107,6 +109,8 @@ static float    kPanelBtnHeight             = 38.0;
 @property (nonatomic, strong) UIView                    *uiv_tablePanel;
 @property (nonatomic, strong) UIView                    *uiv_tappedHotspot;
 @property (nonatomic, strong) embMapHotspotListViewController	*vc_hotspotList;
+//Site map overview
+@property (nonatomic, strong) siteOverview              *uiv_siteOverview;
 @end
 
 @implementation mapViewController
@@ -369,6 +373,7 @@ static float    kPanelBtnHeight             = 38.0;
     {
         // Remove all panels
         [self removeAllPanels];
+        [self removeOverviewPanel];
         [self updateTopBtns:tappedBtn];
         [self animationOfMaps:(int)tappedBtn.tag];
         [self updateSubMenu:(int)tappedBtn.tag];
@@ -587,17 +592,22 @@ static float    kPanelBtnHeight             = 38.0;
     [self removePaths];
     [self removeAllPanels];
     [self removeAllHotspots];
+    [self removeOverviewPanel];
     // Get -digit to detect which button is tapped
     // *1 --> load Site's Overview's overlay
     // *2 --> load Site's Amenities panel
     // *3 --> load Site's Access panel
     int selectedIndex = (int)[sender tag]%10;
     if (selectedIndex == 1) { // Tapped Overview
-        _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_site_overview.jpg"]];
-        _uiiv_mapOverlay.frame = CGRectMake(77.0, 241.0, _uiiv_mapOverlay.frame.size.width, _uiiv_mapOverlay.frame.size.height);
-        _uiiv_mapOverlay.transform = CGAffineTransformMakeTranslation(0.0, -100);
-        _uiiv_mapOverlay.alpha = 0.0;
-        [self.view insertSubview:_uiiv_mapOverlay belowSubview:_uib_city];
+        if (_uiv_siteOverview) {
+            [self removeOverviewPanel];
+        }
+        
+        _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 360.0)];
+        _uiv_siteOverview.transform = CGAffineTransformMakeTranslation(0.0, -100);
+        _uiv_siteOverview.alpha = 0.0;
+        [self addCell];
+        [self.view addSubview: _uiv_siteOverview];
         // Animation for the overview image
         CGFloat duration = 0.5f;
         CGFloat damping = 0.5f;
@@ -607,8 +617,8 @@ static float    kPanelBtnHeight             = 38.0;
         option = UIViewAnimationCurveEaseInOut;
         
         [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
-            _uiiv_mapOverlay.alpha = 1.0;
-            _uiiv_mapOverlay.transform = CGAffineTransformIdentity;
+            _uiv_siteOverview.alpha = 1.0;
+            _uiv_siteOverview.transform = CGAffineTransformIdentity;
         } completion:^(BOOL finished){      }];
     }
     if (selectedIndex == 2) { // Tapped Amenities
@@ -617,6 +627,35 @@ static float    kPanelBtnHeight             = 38.0;
     if (selectedIndex == 3) { // Tapped Access
         [self addSiteAccessPanel];
     }
+}
+
+#pragma mark Create cells in overview panel
+- (void)addCell
+{
+    [arr_cells removeAllObjects];
+    arr_cells = nil;
+    arr_cells = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 4; i++) {
+        UIButton *uib_cell = [self createCellwithFrame:CGRectMake(41 + i*(25 + 184), 220, 184, 117) andImage:@"grfx_compass.png" andTag:i];
+        [arr_cells addObject: uib_cell];
+        [_uiv_siteOverview addSubview: uib_cell];
+    }
+}
+
+- (UIButton *)createCellwithFrame:(CGRect)frame andImage:(NSString *)imageName andTag:(int)index
+{
+    UIButton *uib_cell = [UIButton buttonWithType: UIButtonTypeCustom];
+    uib_cell.backgroundColor = [UIColor redColor];
+    uib_cell.frame = frame;
+    [uib_cell setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    uib_cell.tag = index;
+    [uib_cell addTarget:self action:@selector(tapCell:) forControlEvents:UIControlEventTouchUpInside];
+    return  uib_cell;
+}
+
+- (void)tapCell:(id)sender
+{
+    NSLog(@"The tapped cell is No.%i", (int)[sender tag]);
 }
 
 #pragma mark Add panel for site amenities
@@ -1496,6 +1535,12 @@ static float    kPanelBtnHeight             = 38.0;
 }
 
 #pragma mark - Remove items and release memory
+
+- (void)removeOverviewPanel
+{
+    [_uiv_siteOverview removeFromSuperview];
+    _uiv_siteOverview = nil;
+}
 
 - (void)removeAllPanels
 {
