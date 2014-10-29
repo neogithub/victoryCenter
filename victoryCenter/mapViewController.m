@@ -523,12 +523,38 @@ static float    kPanelBtnHeight             = 38.0;
         [self addCityAmeniteisPanel];
     }
 }
-
+#pragma mark City Accesss panel
 - (void)addCityAccessPanel
 {
     uiv_cityAccPanel = [self setUpAccessPanel];
+    [self addCityAccInfo];
 }
 
+- (void)addCityAccInfo
+{
+    UILabel *uil_toLoveField = [[UILabel alloc] initWithFrame:CGRectMake(uiv_cityAccPanel.frame.origin.x, uiv_cityAccPanel.frame.size.height+15, uiv_cityAccPanel.frame.size.width, 40)];
+    uil_toLoveField.backgroundColor = [UIColor vcDarkBlue];
+    uil_toLoveField.text = @"Victory Center to Love Field: 8 miles, 13-15 minutes";
+    uil_toLoveField.textColor = [UIColor whiteColor];
+    [uil_toLoveField setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
+    [uil_toLoveField setLineBreakMode:NSLineBreakByWordWrapping];
+    uil_toLoveField.numberOfLines = 0;
+    [uil_toLoveField setTextAlignment:NSTextAlignmentCenter];
+    
+    UILabel *uil_toDall = [[UILabel alloc] initWithFrame:CGRectMake(uil_toLoveField.frame.origin.x, uil_toLoveField.frame.origin.y + uil_toLoveField.frame.size.height +  5, uil_toLoveField.frame.size.width, 40)];
+    uil_toDall.backgroundColor = [UIColor vcDarkBlue];
+    uil_toDall.text = @"Victory Center to Dall/Fort Worth International: 21 miles, 25-28 minutes";
+    uil_toDall.textColor = [UIColor whiteColor];
+    [uil_toDall setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
+    [uil_toDall setLineBreakMode:NSLineBreakByWordWrapping];
+    uil_toDall.numberOfLines = 0;
+    [uil_toDall setTextAlignment:NSTextAlignmentCenter];
+    
+    [self.view insertSubview:uil_toLoveField belowSubview:uiv_cityAccPanel];
+    [self.view insertSubview:uil_toDall belowSubview:uiv_cityAccPanel];
+}
+
+#pragma mark City Amenities panel
 - (void)addCityAmeniteisPanel
 {
     uiv_cityAmePanel = [self setUpAmenitiesPanel];
