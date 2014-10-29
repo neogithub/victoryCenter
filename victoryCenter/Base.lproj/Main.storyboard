@@ -16,6 +16,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grfx_logo.png" id="Ltm-cH-X4c">
+                                <rect key="frame" x="779" y="32" width="163" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SZb-ak-fCC" userLabel="Label - Title">
                                 <rect key="frame" x="42" y="0.0" width="180" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -700,6 +704,7 @@
         <image name="grfx_contactClose.jpg" width="44" height="44"/>
         <image name="grfx_helpIcon.png" width="36" height="36"/>
         <image name="grfx_launching.png" width="1024" height="768"/>
+        <image name="grfx_logo.png" width="163" height="60"/>
         <image name="grfx_menuIcon.png" width="44" height="43"/>
         <image name="grfx_mialIcon.png" width="36" height="36"/>
         <image name="grfx_movieIcon.png" width="36" height="36"/>
