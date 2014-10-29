@@ -7,6 +7,7 @@
 //
 
 #import "xhPanoramicView.h"
+#import "UIColor+Extensions.h"
 @interface xhPanoramicView ()
 
 @property (nonatomic, strong) UIImage           *contentImage;
@@ -43,7 +44,7 @@
 
 -(void)initScrollView {
     uis_panoramic = [[UIScrollView alloc] initWithFrame:self.bounds];
-    uis_panoramic.backgroundColor = [UIColor whiteColor];
+    uis_panoramic.backgroundColor = [UIColor vcBackGroundColor];
     uis_panoramic.contentSize = CGSizeMake(imageWidth, imageHeight);
     uis_panoramic.pagingEnabled = NO;
     uis_panoramic.clipsToBounds = YES;
@@ -52,7 +53,8 @@
     uis_panoramic.delegate = self;
     
     UIImageView *content = [[UIImageView alloc]initWithImage:_contentImage];
-    content.frame = CGRectMake(0.0, 0.0, imageWidth, uis_panoramic.frame.size.height);
+    content.frame = CGRectMake(0.0, (768 - imageHeight)/2, imageWidth, imageHeight);
+    content.contentMode = UIViewContentModeScaleAspectFill;
     [uis_panoramic addSubview: content];
     
     [self addSubview: uis_panoramic];
@@ -61,16 +63,34 @@
 #pragma mark - Init Topright indicator
 -(void)initIndicator
 {
-    _uiv_indicatorContainer = [[UIView alloc] initWithFrame:CGRectMake(888, 60.0, 91, 31)];
+    _uiv_indicatorContainer = [[UIView alloc] initWithFrame:CGRectMake(888, 50.0, 91, 68)];
     [self insertSubview:_uiv_indicatorContainer aboveSubview:uis_panoramic];
     
+    _uiiv_smallPano = [[UIImageView alloc] initWithImage:[self adjustImageSizeWhenCropping:_contentImage]];
+    _uiiv_smallPano.frame = CGRectMake(0.0, abs(68 - _uiiv_smallPano.frame.size.height)/2, _uiiv_smallPano.frame.size.width, _uiiv_smallPano.frame.size.height);
     _uiiv_smallFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pano_opportunity_local_nav_frame.png"]];
-    _uiiv_smallFrame.frame = CGRectMake(0.0, 0.0, _uiiv_smallFrame.frame.size.width, _uiiv_smallFrame.frame.size.height);
-    _uiiv_smallPano = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pano_opportunity_local_nav_bar.png"]];
-    _uiiv_smallPano.frame = CGRectMake(0.0, 7.5, _uiiv_smallPano.frame.size.width, _uiiv_smallPano.frame.size.height);
+    _uiiv_smallFrame.frame = CGRectMake(0.0, (68 - _uiiv_smallFrame.frame.size.height)/2, _uiiv_smallFrame.frame.size.width, _uiiv_smallFrame.frame.size.height);
     
     [_uiv_indicatorContainer addSubview:_uiiv_smallPano];
     [_uiv_indicatorContainer addSubview:_uiiv_smallFrame];
+}
+
+#pragma mark - Resize the image to fit top indicator
+-(UIImage *)adjustImageSizeWhenCropping:(UIImage *)image
+{
+    float actualHeight = image.size.height;
+    float actualWidth = image.size.width;
+    
+    float ratio=90/actualWidth;
+    actualHeight = actualHeight*ratio;
+    
+    CGRect rect = CGRectMake(0.0, 0.0, 90, actualHeight);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 1.0);
+    [image drawInRect:rect];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return img;
 }
 
 #pragma mark - Init Control Buttons
@@ -131,7 +151,7 @@
 
 -(void)changeScrollViewOffset1:(CMAcceleration)acceleration {
     CGPoint offset = uis_panoramic.contentOffset;
-    NSLog(@"%f",acceleration.y);
+//    NSLog(@"%f",acceleration.y);
     
     offset.x = offset.x+acceleration.y*5;
     
@@ -143,12 +163,12 @@
     }
     [uis_panoramic setContentOffset:offset];
     
-   float indicatorMove =  (offset.x /self.uis_panoramic.contentSize.width * 65);
+   float indicatorMove =  (offset.x /imageWidth) * _uiiv_smallPano.frame.size.width *2;
     _uiiv_smallFrame.transform = CGAffineTransformMakeTranslation(indicatorMove, 0.0);
 }
 -(void)changeScrollViewOffset2:(CMRotationRate)rotation {
     CGPoint offset = uis_panoramic.contentOffset;
-    NSLog(@"%f",rotation.x);
+//    NSLog(@"%f",rotation.x);
     
     offset.x = offset.x+rotation.x*5;
     
@@ -161,7 +181,7 @@
     
     [uis_panoramic setContentOffset:offset];
     
-    float indicatorMove =  (offset.x /self.uis_panoramic.contentSize.width * 65);
+    float indicatorMove =  (offset.x /imageWidth) * _uiiv_smallPano.frame.size.width *2;
     _uiiv_smallFrame.transform = CGAffineTransformMakeTranslation(indicatorMove, 0.0);
 }
 
@@ -169,7 +189,8 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGPoint offset = uis_panoramic.contentOffset;
-    float indicatorMove =  (offset.x /self.uis_panoramic.contentSize.width * 65);
+    float indicatorMove =  (offset.x /imageWidth) * _uiiv_smallPano.frame.size.width *2;
+    NSLog(@"The offset is %f", indicatorMove);
     _uiiv_smallFrame.transform = CGAffineTransformMakeTranslation(indicatorMove, 0.0);
 }
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
