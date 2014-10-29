@@ -541,11 +541,19 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="2n0-lb-9mC" userLabel="View - neighborhood sub menu">
-                                <rect key="frame" x="358" y="37" width="130" height="59"/>
+                                <rect key="frame" x="358" y="37" width="130" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mhU-Db-RU0" userLabel="Button - neighborhood-amenities">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OUI-qd-H4n" userLabel="Button - neighborhood-Districts">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="DISRICTS">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mhU-Db-RU0" userLabel="Button - neighborhood-amenities">
+                                        <rect key="frame" x="0.0" y="62" width="130" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="AMENITIES">
@@ -576,7 +584,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BLQ-Pq-Jta" userLabel="Button - site-amenities">
-                                        <rect key="frame" x="0.0" y="31" width="130" height="28"/>
+                                        <rect key="frame" x="0.0" y="62" width="130" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="AMENITIES">
@@ -584,7 +592,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WD5-UV-5SU" userLabel="Button - site-access">
-                                        <rect key="frame" x="0.0" y="62" width="130" height="28"/>
+                                        <rect key="frame" x="0.0" y="31" width="130" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="ACCESS">
@@ -640,6 +648,7 @@
                         <outlet property="uib_neighboorhoodAmenities" destination="mhU-Db-RU0" id="sgr-lZ-puR"/>
                         <outlet property="uib_neighbor" destination="wia-uO-e2b" id="kAT-i7-RFg"/>
                         <outlet property="uib_neighborhoodAccess" destination="eKU-aZ-kDQ" id="job-hM-4m8"/>
+                        <outlet property="uib_neighborhoodDistricts" destination="OUI-qd-H4n" id="T6y-a9-4zx"/>
                         <outlet property="uib_normalMap" destination="17m-6K-AOt" id="28z-mK-cmj"/>
                         <outlet property="uib_site" destination="z48-no-lx7" id="PSx-gA-Yno"/>
                         <outlet property="uib_siteAccess" destination="WD5-UV-5SU" id="oRo-A6-k38"/>

@@ -75,6 +75,7 @@ static float    kPanelBtnHeight             = 38.0;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_cityDistricts;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_cityAmenities;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_cityAccess;
+@property (weak, nonatomic) IBOutlet UIButton           *uib_neighborhoodDistricts;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_neighboorhoodAmenities;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_neighborhoodAccess;
 @property (weak, nonatomic) IBOutlet UIButton           *uib_siteOverview;
@@ -428,6 +429,7 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (void)setNeighborhoodSubMenu
 {
+    [self initSubMenuButton:_uib_neighborhoodDistricts withTitle:@"DISTRICTS" andTag:23 andSelected:NO];
     [self initSubMenuButton:_uib_neighboorhoodAmenities withTitle:@"AMENITIES" andTag:21 andSelected:NO];
     [self initSubMenuButton:_uib_neighborhoodAccess withTitle:@"ACCESS" andTag:22 andSelected:NO];
 }
@@ -552,6 +554,9 @@ static float    kPanelBtnHeight             = 38.0;
     }
     if (selectedIndex == 2) { // Tapped Access
         [self addNeibAccessPanel];
+    }
+    if (selectedIndex == 3) { // Tapped Districits
+        [self updateOverlayImage:@"Districts_overlay.png"];
     }
 }
 
