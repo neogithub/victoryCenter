@@ -40,7 +40,7 @@
 
 - (void)addVpText
 {
-    UITextView *uitv_vpText = [[UITextView alloc] initWithFrame:CGRectMake(190.0, 50.0, 680.0, 160.0)];
+    UITextView *uitv_vpText = [[UITextView alloc] initWithFrame:CGRectMake(190.0, 50.0, 630.0, 160.0)];
     uitv_vpText.backgroundColor = [UIColor whiteColor];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineHeightMultiple = 30.0f;

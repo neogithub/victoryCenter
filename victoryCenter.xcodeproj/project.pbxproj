@@ -203,6 +203,10 @@
 		8297BD2F19F589AD0046CB65 /* grfx_galleryBack@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2D19F589AD0046CB65 /* grfx_galleryBack@2x.jpg */; };
 		82A21F621A028F3A00BE8706 /* gfrx_all_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F601A028F3A00BE8706 /* gfrx_all_overlay.png */; };
 		82A21F631A028F3A00BE8706 /* gfrx_all_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F611A028F3A00BE8706 /* gfrx_all_overlay@2x.png */; };
+		82A21F661A02B30A00BE8706 /* Access_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F641A02B30A00BE8706 /* Access_overlay.png */; };
+		82A21F671A02B30A00BE8706 /* Access_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F651A02B30A00BE8706 /* Access_overlay@2x.png */; };
+		82A21F6A1A02C5D300BE8706 /* grfx_bldstat_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F681A02C5D300BE8706 /* grfx_bldstat_close.png */; };
+		82A21F6B1A02C5D300BE8706 /* grfx_bldstat_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F691A02C5D300BE8706 /* grfx_bldstat_close@2x.png */; };
 		82A29E3E19EC4ED300AFAE1E /* embBezierPathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3519EC4ED300AFAE1E /* embBezierPathItem.m */; };
 		82A29E3F19EC4ED300AFAE1E /* embBezierPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3719EC4ED300AFAE1E /* embBezierPaths.m */; };
 		82A29E4019EC4ED300AFAE1E /* embBlockPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3919EC4ED300AFAE1E /* embBlockPaths.m */; };
@@ -234,8 +238,6 @@
 		82AB934F19FEC97B00DD0B30 /* grfx_south_hs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82AB934719FEC97B00DD0B30 /* grfx_south_hs@2x.png */; };
 		82AB935019FEC97B00DD0B30 /* grfx_west_hs.png in Resources */ = {isa = PBXBuildFile; fileRef = 82AB934819FEC97B00DD0B30 /* grfx_west_hs.png */; };
 		82AB935119FEC97B00DD0B30 /* grfx_west_hs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82AB934919FEC97B00DD0B30 /* grfx_west_hs@2x.png */; };
-		82C3817319E81BAD006C7EC8 /* Access_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C3817119E81BAD006C7EC8 /* Access_overlay.png */; };
-		82C3817419E81BAD006C7EC8 /* Access_overlay_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C3817219E81BAD006C7EC8 /* Access_overlay_@2x.png */; };
 		82CBD72219F96FA10001191F /* grfx_elevator_floorNum.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */; };
 		82CBD72319F96FA10001191F /* grfx_elevator_floorNum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */; };
 		82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72419F980800001191F /* grfx_openMenuIcon.png */; };
@@ -530,6 +532,10 @@
 		8297BD2D19F589AD0046CB65 /* grfx_galleryBack@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_galleryBack@2x.jpg"; sourceTree = "<group>"; };
 		82A21F601A028F3A00BE8706 /* gfrx_all_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gfrx_all_overlay.png; sourceTree = "<group>"; };
 		82A21F611A028F3A00BE8706 /* gfrx_all_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gfrx_all_overlay@2x.png"; sourceTree = "<group>"; };
+		82A21F641A02B30A00BE8706 /* Access_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Access_overlay.png; sourceTree = "<group>"; };
+		82A21F651A02B30A00BE8706 /* Access_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Access_overlay@2x.png"; sourceTree = "<group>"; };
+		82A21F681A02C5D300BE8706 /* grfx_bldstat_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_bldstat_close.png; sourceTree = "<group>"; };
+		82A21F691A02C5D300BE8706 /* grfx_bldstat_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_bldstat_close@2x.png"; sourceTree = "<group>"; };
 		82A29E3419EC4ED300AFAE1E /* embBezierPathItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBezierPathItem.h; sourceTree = "<group>"; };
 		82A29E3519EC4ED300AFAE1E /* embBezierPathItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embBezierPathItem.m; sourceTree = "<group>"; };
 		82A29E3619EC4ED300AFAE1E /* embBezierPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBezierPaths.h; sourceTree = "<group>"; };
@@ -571,8 +577,6 @@
 		82AB934719FEC97B00DD0B30 /* grfx_south_hs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_south_hs@2x.png"; sourceTree = "<group>"; };
 		82AB934819FEC97B00DD0B30 /* grfx_west_hs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_west_hs.png; sourceTree = "<group>"; };
 		82AB934919FEC97B00DD0B30 /* grfx_west_hs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_west_hs@2x.png"; sourceTree = "<group>"; };
-		82C3817119E81BAD006C7EC8 /* Access_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Access_overlay.png; sourceTree = "<group>"; };
-		82C3817219E81BAD006C7EC8 /* Access_overlay_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Access_overlay_@2x.png"; sourceTree = "<group>"; };
 		82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elevator_floorNum.png; sourceTree = "<group>"; };
 		82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elevator_floorNum@2x.png"; sourceTree = "<group>"; };
 		82CBD72419F980800001191F /* grfx_openMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_openMenuIcon.png; sourceTree = "<group>"; };
@@ -1070,6 +1074,8 @@
 		82716A6519E434C10070A331 /* overlays */ = {
 			isa = PBXGroup;
 			children = (
+				82A21F641A02B30A00BE8706 /* Access_overlay.png */,
+				82A21F651A02B30A00BE8706 /* Access_overlay@2x.png */,
 				82716A6619E434C10070A331 /* Districts_overlay.png */,
 				82716A6719E434C10070A331 /* Districts_overlay@2x.png */,
 				82627E1919E702EC0062FC0C /* grfx_recreationg_overlay.png */,
@@ -1131,6 +1137,8 @@
 		82A805C719D1F61E00308BA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				82A21F681A02C5D300BE8706 /* grfx_bldstat_close.png */,
+				82A21F691A02C5D300BE8706 /* grfx_bldstat_close@2x.png */,
 				823DE6E719FFE8E10016CD3A /* pano_opportunity_local_button_gesture_off.png */,
 				823DE6E819FFE8E10016CD3A /* pano_opportunity_local_button_gesture_off@2x.png */,
 				823DE6E919FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on.png */,
@@ -1155,7 +1163,6 @@
 			isa = PBXGroup;
 			children = (
 				823D78A519F156830096E62C /* floorplan */,
-				82C3817019E81BAD006C7EC8 /* map */,
 				82000B5B19E590AD00AE2C70 /* building */,
 				82000B6619E590AD00AE2C70 /* team */,
 			);
@@ -1175,15 +1182,6 @@
 				82AB934919FEC97B00DD0B30 /* grfx_west_hs@2x.png */,
 			);
 			path = floorplan_hotspot;
-			sourceTree = "<group>";
-		};
-		82C3817019E81BAD006C7EC8 /* map */ = {
-			isa = PBXGroup;
-			children = (
-				82C3817119E81BAD006C7EC8 /* Access_overlay.png */,
-				82C3817219E81BAD006C7EC8 /* Access_overlay_@2x.png */,
-			);
-			path = map;
 			sourceTree = "<group>";
 		};
 		82CE2FC419F05D6D006F7B0E /* Floorplan */ = {
@@ -1408,7 +1406,6 @@
 				82DC11C519DAEA940057AE4F /* 20140802_downtown_100m_6pm.jpg in Resources */,
 				824012F819D1AF5D00C501EE /* Images.xcassets in Resources */,
 				82DC11CF19DAEA940057AE4F /* 20140811_view3_100m_02.jpg in Resources */,
-				82C3817419E81BAD006C7EC8 /* Access_overlay_@2x.png in Resources */,
 				8224FE0919D47097002B1B44 /* Raleway-Regular.otf in Resources */,
 				82DC11E719DAEE070057AE4F /* City_base_map_.png in Resources */,
 				82DC11D919DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg in Resources */,
@@ -1424,6 +1421,7 @@
 				824C196419FA9DC400EA7613 /* grfx_floorplan15@2x.png in Resources */,
 				826078121A0130CA000DF24F /* grfx_logo.png in Resources */,
 				82DC11E819DAEE070057AE4F /* City_base_map_@2x.png in Resources */,
+				82A21F671A02B30A00BE8706 /* Access_overlay@2x.png in Resources */,
 				82DC11D619DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg in Resources */,
 				823D78A819F156830096E62C /* grfx_floorplan.png in Resources */,
 				824F368C19E6C47500267B44 /* thumb_20140802_downtown_100m_6pm_high-res.jpg in Resources */,
@@ -1459,10 +1457,12 @@
 				825E5F8919F83FA300B77F7F /* grfx_elavators_parking.png in Resources */,
 				825E5F7919F83CD200B77F7F /* grfx_elavators_stack_blank.png in Resources */,
 				82CBD72719F980800001191F /* grfx_openMenuIcon@2x.png in Resources */,
+				82A21F6B1A02C5D300BE8706 /* grfx_bldstat_close@2x.png in Resources */,
 				82000B8E19E592A800AE2C70 /* team_duda_logo@2x.png in Resources */,
 				82627E2519E702EC0062FC0C /* grfx_restaurant_overlay.png in Resources */,
 				82627E2619E702EC0062FC0C /* grfx_restaurant_overlay@2x.png in Resources */,
 				825E5F8319F83FA300B77F7F /* grf_elavators_high_rise.png in Resources */,
+				82A21F661A02B30A00BE8706 /* Access_overlay.png in Resources */,
 				824F369919E6C47500267B44 /* thumb_victory_center_278_feet.jpg in Resources */,
 				8239ED121A016FAC00B25EA2 /* grfx_victoryPark_logo.png in Resources */,
 				82DC11C219DAEA940057AE4F /* 20140802_downtown_100m_1pm_high-res.jpg in Resources */,
@@ -1531,7 +1531,6 @@
 				8297BD2F19F589AD0046CB65 /* grfx_galleryBack@2x.jpg in Resources */,
 				82DC11C619DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg in Resources */,
 				824C196A19FA9DC400EA7613 /* grfx_floorplan18-23@2x.png in Resources */,
-				82C3817319E81BAD006C7EC8 /* Access_overlay.png in Resources */,
 				82AB934D19FEC97B00DD0B30 /* grfx_north_hs@2x.png in Resources */,
 				824F368519E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg in Resources */,
 				82A805D219D1F61E00308BA1 /* grfx_movieIcon.png in Resources */,
@@ -1601,6 +1600,7 @@
 				8224FE3319D4BD6E002B1B44 /* normal_frame@2x.png in Resources */,
 				82DC11FD19DAF2990057AE4F /* photo-gallery-left@2x.png in Resources */,
 				82000B7F19E590AD00AE2C70 /* team_hines_text.png in Resources */,
+				82A21F6A1A02C5D300BE8706 /* grfx_bldstat_close.png in Resources */,
 				823DE6F119FFE95A0016CD3A /* pano_opportunity_local_nav_frame.png in Resources */,
 				82DC11C319DAEA940057AE4F /* 20140802_downtown_100m_5pm.jpg in Resources */,
 				82000B7419E590AD00AE2C70 /* grfx_bldElevator_bg@2x.jpg in Resources */,
@@ -1815,12 +1815,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "victoryCenter/victoryCenter-Prefix.pch";
 				INFOPLIST_FILE = "victoryCenter/victoryCenter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2f89ae26-efe9-4bd7-a84b-fc9c827a3fe4";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1830,14 +1831,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Incorporated";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Incorporated";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "victoryCenter/victoryCenter-Prefix.pch";
 				INFOPLIST_FILE = "victoryCenter/victoryCenter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5DA75D41-A3E9-4CA0-84FE-F76E92D6BFA0";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
