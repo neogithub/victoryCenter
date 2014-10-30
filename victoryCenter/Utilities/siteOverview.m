@@ -34,14 +34,16 @@
 - (void)addVpLogo
 {
     UIImageView *uiiv_logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_victoryPark_logo.png"]];
-    uiiv_logo.frame = CGRectMake(50.0, 36.0, uiiv_logo.frame.size.width, uiiv_logo.frame.size.height);
+    uiiv_logo.frame = CGRectMake(62.0, 47.0, 41, 125);
+    uiiv_logo.backgroundColor = [UIColor clearColor];
+    uiiv_logo.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview: uiiv_logo];
 }
 
 - (void)addVpText
 {
-    UITextView *uitv_vpText = [[UITextView alloc] initWithFrame:CGRectMake(190.0, 50.0, 630.0, 160.0)];
-    uitv_vpText.backgroundColor = [UIColor whiteColor];
+    UITextView *uitv_vpText = [[UITextView alloc] initWithFrame:CGRectMake(174.0, 45.0, 630.0, 160.0)];
+    uitv_vpText.backgroundColor = [UIColor clearColor];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineHeightMultiple = 30.0f;
     paragraphStyle.maximumLineHeight = 30.0f;
