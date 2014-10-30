@@ -43,9 +43,9 @@
 }
 
 -(void)initScrollView {
-    uis_panoramic = [[UIScrollView alloc] initWithFrame:self.bounds];
+    uis_panoramic = [[UIScrollView alloc] initWithFrame:screenRect];
     uis_panoramic.backgroundColor = [UIColor vcBackGroundColor];
-    uis_panoramic.contentSize = CGSizeMake(imageWidth, imageHeight);
+    uis_panoramic.contentSize = CGSizeMake(imageWidth*(768/imageHeight), 768);
     uis_panoramic.pagingEnabled = NO;
     uis_panoramic.clipsToBounds = YES;
     uis_panoramic.showsVerticalScrollIndicator = NO;
@@ -53,8 +53,8 @@
     uis_panoramic.delegate = self;
     
     UIImageView *content = [[UIImageView alloc]initWithImage:_contentImage];
-    content.frame = CGRectMake(0.0, (768 - imageHeight)/2, imageWidth, imageHeight);
-    content.contentMode = UIViewContentModeScaleAspectFill;
+    content.frame = CGRectMake(0.0, 0.0, uis_panoramic.contentSize.width, uis_panoramic.contentSize.height);
+    content.contentMode = UIViewContentModeScaleToFill;
     [uis_panoramic addSubview: content];
     
     [self addSubview: uis_panoramic];
@@ -163,7 +163,7 @@
     }
     [uis_panoramic setContentOffset:offset];
     
-   float indicatorMove =  (offset.x /imageWidth) * _uiiv_smallPano.frame.size.width *2;
+   float indicatorMove =  (offset.x /uis_panoramic.contentSize.width) * _uiiv_smallPano.frame.size.width *2;
     _uiiv_smallFrame.transform = CGAffineTransformMakeTranslation(indicatorMove, 0.0);
 }
 -(void)changeScrollViewOffset2:(CMRotationRate)rotation {
@@ -181,7 +181,7 @@
     
     [uis_panoramic setContentOffset:offset];
     
-    float indicatorMove =  (offset.x /imageWidth) * _uiiv_smallPano.frame.size.width *2;
+    float indicatorMove =  (offset.x /uis_panoramic.contentSize.width) * _uiiv_smallPano.frame.size.width *2;
     _uiiv_smallFrame.transform = CGAffineTransformMakeTranslation(indicatorMove, 0.0);
 }
 
@@ -189,7 +189,7 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGPoint offset = uis_panoramic.contentOffset;
-    float indicatorMove =  (offset.x /imageWidth) * _uiiv_smallPano.frame.size.width *2;
+    float indicatorMove =  (offset.x /uis_panoramic.contentSize.width) * _uiiv_smallPano.frame.size.width;
 //    NSLog(@"The offset is %f", indicatorMove);
     _uiiv_smallFrame.transform = CGAffineTransformMakeTranslation(indicatorMove, 0.0);
 }
