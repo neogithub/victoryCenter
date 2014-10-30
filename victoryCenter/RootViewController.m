@@ -109,6 +109,15 @@
     _uil_titleLabel.backgroundColor = [UIColor whiteColor];
     [_uil_titleLabel setFont:[UIFont fontWithName:@"Raleway-Medium" size:20]];
     _uil_titleLabel.hidden = YES;
+    
+    UITapGestureRecognizer *tapOnTitle = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTitle:)];
+    [_uil_titleLabel addGestureRecognizer: tapOnTitle];
+    _uil_titleLabel.userInteractionEnabled = YES;
+}
+
+- (void)tapTitle:(UIGestureRecognizer *)gesture
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"tapOnTitle" object:nil];
 }
 
 #pragma mark - Load VC
