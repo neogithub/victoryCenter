@@ -62,6 +62,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetBuilding) name:@"resetBuilding" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideBuildingMenu) name:@"hideBuildingTopMenu" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unhideBuildingMenu) name:@"unhideBuildingTopMenu" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetBuilding) name:@"tapOnTitle" object:nil];
 }
 
 #pragma mark - Hide & unhide top menu 
@@ -364,7 +365,7 @@
     UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
     uib_PanelTitle.frame = CGRectMake(0.0, 0.0, 200.0, 46);
     [uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
-    [uib_PanelTitle setTitle:@"KEY" forState:UIControlStateNormal];
+    [uib_PanelTitle setTitle:@"ELEVATORS" forState:UIControlStateNormal];
     [uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
     uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
