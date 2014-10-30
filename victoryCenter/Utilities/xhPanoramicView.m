@@ -190,7 +190,7 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGPoint offset = uis_panoramic.contentOffset;
     float indicatorMove =  (offset.x /imageWidth) * _uiiv_smallPano.frame.size.width *2;
-    NSLog(@"The offset is %f", indicatorMove);
+//    NSLog(@"The offset is %f", indicatorMove);
     _uiiv_smallFrame.transform = CGAffineTransformMakeTranslation(indicatorMove, 0.0);
 }
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

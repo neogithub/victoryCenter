@@ -64,6 +64,8 @@ static float    kPanelBtnHeight             = 38.0;
     
     UIView                  *uiv_panelIndicator;
     UIButton                *uib_bldBtn;
+    
+    UIView                  *uiv_distanceInfoContainer;
 }
 //Top root menu
 @property (weak, nonatomic) IBOutlet UIButton           *uib_city;
@@ -527,31 +529,74 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)addCityAccessPanel
 {
     uiv_cityAccPanel = [self setUpAccessPanel];
-    [self addCityAccInfo];
+    [self addDistanceInfo];
 }
 
-- (void)addCityAccInfo
+- (void)addDistanceInfo
 {
-    UILabel *uil_toLoveField = [[UILabel alloc] initWithFrame:CGRectMake(uiv_cityAccPanel.frame.origin.x, uiv_cityAccPanel.frame.size.height+15, uiv_cityAccPanel.frame.size.width, 40)];
-    uil_toLoveField.backgroundColor = [UIColor vcDarkBlue];
-    uil_toLoveField.text = @"Victory Center to Love Field: 8 miles, 13-15 minutes";
+    uiv_distanceInfoContainer = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 5*kPanelBtnHeight + kPanelTitleHeight+15, panle_w, 85)];
+    uiv_distanceInfoContainer.backgroundColor = [UIColor clearColor];
+    
+    UIView *uiv_toLoveField = [[UIView alloc] initWithFrame:CGRectMake(0, 0, panle_w, 40)];
+    uiv_toLoveField.backgroundColor = [UIColor vcDarkBlue];
+    UILabel *uil_toLoveField = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, panle_w - 20, 20)];
+    uil_toLoveField.backgroundColor = [UIColor clearColor];
+    uil_toLoveField.text = @"Victory Center to Love Field:";
     uil_toLoveField.textColor = [UIColor whiteColor];
     [uil_toLoveField setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
-    [uil_toLoveField setLineBreakMode:NSLineBreakByWordWrapping];
-    uil_toLoveField.numberOfLines = 0;
-    [uil_toLoveField setTextAlignment:NSTextAlignmentCenter];
+    [uil_toLoveField setTextAlignment:NSTextAlignmentLeft];
     
-    UILabel *uil_toDall = [[UILabel alloc] initWithFrame:CGRectMake(uil_toLoveField.frame.origin.x, uil_toLoveField.frame.origin.y + uil_toLoveField.frame.size.height +  5, uil_toLoveField.frame.size.width, 40)];
+    UILabel *uil_toLoveField1 = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 18.0, panle_w - 20, 20)];
+    uil_toLoveField1.backgroundColor = [UIColor clearColor];
+    uil_toLoveField1.text = @"8 miles, 13-15 minutes";
+    uil_toLoveField1.textColor = [UIColor whiteColor];
+    [uil_toLoveField1 setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
+    [uil_toLoveField1 setTextAlignment:NSTextAlignmentLeft];
+    
+    [uiv_toLoveField addSubview: uil_toLoveField];
+    [uiv_toLoveField addSubview: uil_toLoveField1];
+    
+    UIView *uiv_toDall = [[UIView alloc] initWithFrame:CGRectMake(0, uiv_toLoveField.frame.size.height +  5, panle_w, 40)];
+    uiv_toDall.backgroundColor = [UIColor vcDarkBlue];
+    
+    UILabel *uil_toDall = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, panle_w - 20, 20)];
     uil_toDall.backgroundColor = [UIColor vcDarkBlue];
-    uil_toDall.text = @"Victory Center to Dall/Fort Worth International: 21 miles, 25-28 minutes";
+    uil_toDall.text = @"Victory Center to Dall/Fort Worth";
     uil_toDall.textColor = [UIColor whiteColor];
     [uil_toDall setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
-    [uil_toDall setLineBreakMode:NSLineBreakByWordWrapping];
-    uil_toDall.numberOfLines = 0;
-    [uil_toDall setTextAlignment:NSTextAlignmentCenter];
+    [uil_toDall setTextAlignment:NSTextAlignmentLeft];
     
-    [self.view insertSubview:uil_toLoveField belowSubview:uiv_cityAccPanel];
-    [self.view insertSubview:uil_toDall belowSubview:uiv_cityAccPanel];
+    UILabel *uil_toDall1 = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 18.0, panle_w - 20, 20)];
+    uil_toDall1.backgroundColor = [UIColor vcDarkBlue];
+    uil_toDall1.text = @"International: 21 miles, 25-28 minutes";
+    uil_toDall1.textColor = [UIColor whiteColor];
+    [uil_toDall1 setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
+    [uil_toDall1 setTextAlignment:NSTextAlignmentLeft];
+    
+    [uiv_toDall addSubview: uil_toDall];
+    [uiv_toDall addSubview: uil_toDall1];
+    
+    [uiv_distanceInfoContainer addSubview: uiv_toLoveField];
+    [uiv_distanceInfoContainer addSubview: uiv_toDall];
+    if (uiv_cityAccPanel) {
+        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_cityAccPanel];
+    }
+    if (uiv_neibAccPanel) {
+        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_neibAccPanel];
+    }
+    
+    uiv_distanceInfoContainer.transform = CGAffineTransformMakeTranslation(0, -500);
+    CGFloat duration = 1.0f;
+    CGFloat damping = 0.8f;
+    CGFloat velocity = 0.5f;
+    // int to hold UIViewAnimationOption
+    NSInteger option;
+    option = UIViewAnimationCurveEaseInOut;
+    
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+        uiv_distanceInfoContainer.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished){      }];
+
 }
 
 #pragma mark City Amenities panel
@@ -585,6 +630,7 @@ static float    kPanelBtnHeight             = 38.0;
     }
     if (selectedIndex == 2) { // Tapped Access
         [self addNeibAccessPanel];
+        [self addDistanceInfo];
     }
     if (selectedIndex == 3) { // Tapped Districits
         [self updateOverlayImage:@"Districts_overlay.png"];
@@ -1587,6 +1633,9 @@ static float    kPanelBtnHeight             = 38.0;
     
     [uiv_siteAmePanel removeFromSuperview];
     uiv_siteAmePanel = nil;
+    
+    [uiv_distanceInfoContainer removeFromSuperview];
+    uiv_distanceInfoContainer = nil;
 }
 
 - (void)removeHotspots

@@ -338,14 +338,14 @@
     uil_parking.backgroundColor = [UIColor clearColor];
     uil_parking.text = @"PARKING";
     uil_parking.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
-    uil_parking.textColor = [UIColor lightGrayColor];
+    uil_parking.textColor = [UIColor vcDarkBlue];
     [_uiv_elevatorContainer addSubview: uil_parking];
     
     UILabel *uil_lobby = [[UILabel alloc]initWithFrame:CGRectMake(770.0, 700.0, 100.0, 30.0)];
     uil_lobby.backgroundColor = [UIColor clearColor];
     uil_lobby.text = @"LOBBY";
     uil_lobby.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
-    uil_lobby.textColor = [UIColor lightGrayColor];
+    uil_lobby.textColor = [UIColor vcDarkBlue];
     [_uiv_elevatorContainer addSubview: uil_lobby];
     //Floor number image
     UIImageView *uiiv_floorNum = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elevator_floorNum.png"]];
