@@ -40,6 +40,8 @@ static float    panle_w                     = 227.0;
 static float    kPanelBtnHeight             = 38.0;
 @interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, embDrawPathDelegate, MKMapViewDelegate, embMapHotspotListViewControllerDelegate>
 {
+    float                   panel_h;
+    
     NSMutableArray          *arr_topBtnsArray;
     NSMutableArray          *arr_subMenuArray;
     NSMutableArray          *arr_panelBtnArray;
@@ -733,32 +735,79 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark Add panel for site amenities
 - (void)addSiteAmenitiesPanel
 {
-    uiv_siteAccPanel = [self setUpAmenitiesPanel];
+    uiv_siteAmePanel = [self createSiteAmenitiesPanel];
     [self prepareHotspotData:@"site"];
     //Set up overlay's array
     [arr_overlayArray removeAllObjects];
     arr_overlayArray = nil;
-    arr_overlayArray = [[NSMutableArray alloc] initWithObjects:@"grfx_restaurant_overlay.png", @"grfx_retail_overlay.png", @"grfx_residential_overlay.png", @"grfx_recreationg_overlay.png", nil];
+    arr_overlayArray = [[NSMutableArray alloc] initWithObjects:@"grfx_restaurant_overlay.png", @"grfx_retail_overlay.png", @"grfx_residential_overlay.png", @"grfx_recreationg_overlay.png", @"gfrx_all_overlay.png", nil];
     
     //Set up indicator's color array
     [arr_indicatorColors removeAllObjects];
     arr_indicatorColors = nil;
-    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRestaurant], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRecreation], nil];
+    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRestaurant], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRecreation], [UIColor vcDarkBlue], nil];
 }
+
+#pragma mark Create Site Amenities' panel
+
+- (UIView *)createSiteAmenitiesPanel
+{
+    panel_h = 5*kPanelBtnHeight + kPanelTitleHeight;
+    UIView *panel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING",  @"VIEW ALL", nil];
+    
+    [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"tapSiteAmenities:" andEdgeInset:45.0 withIdicator:YES];
+    [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
+    [self animateThePanel:panel];
+    return panel;
+}
+
 #pragma mark Actions for site amenities' buttons
 - (void)tapSiteAmenities:(id)sender
 {
-    
+    UIView *buttonContianer = [uiv_siteAmePanel viewWithTag:102];
+    CGRect oriFrame = buttonContianer.frame;
+    oriFrame.size.height = panel_h - kPanelTitleHeight;
     UIButton *tappedBtn = sender;
-    if (tappedBtn.selected) {
-        [self loadHotspotTable:sender];
-        [UIView animateWithDuration:0.3 animations:^{
-            _uiiv_mapOverlay.alpha = 0.0;
-        }];
+    if (tappedBtn.tag < 4) {
+        if (tappedBtn.selected) {
+            [self loadHotspotTable:sender];
+            [UIView animateWithDuration:0.3 animations:^{
+                _uiiv_mapOverlay.alpha = 0.0;
+            }];
+        }
+        else {
+            [self loadHotspotTable:sender];
+            [self updateOverlayImage:[arr_overlayArray objectAtIndex:[sender tag]]];
+        }
     }
     else {
-        [self loadHotspotTable:sender];
-        [self updateOverlayImage:[arr_overlayArray objectAtIndex:[sender tag]]];
+        for (UIView __strong *tmp in arr_HotSpotViewArray) {
+            [tmp removeFromSuperview];
+            tmp = nil;
+        }
+        if (tappedBtn.selected) {
+            [self deHighLightPanelBtn:tappedBtn];
+            [UIView animateWithDuration:0.33 animations:^{
+                buttonContianer.frame = oriFrame;
+                [self resetButtonsAndIndicators:uiv_siteAmePanel];
+                _uiiv_mapOverlay.alpha = 0.0;
+            } completion:^(BOOL finished){
+                [self deHighLightPanelBtn:sender];
+            }];
+
+        }
+        else {
+            [UIView animateWithDuration:0.33 animations:^{
+                buttonContianer.frame = oriFrame;
+                [self resetButtonsAndIndicators:uiv_siteAmePanel];
+            } completion:^(BOOL finished){
+                [self highLightPanelBtn:tappedBtn andIndicatorColor:[arr_indicatorColors objectAtIndex:tappedBtn.tag] withIndicator:YES];
+                [self updateOverlayImage:[arr_overlayArray objectAtIndex:[sender tag]]];
+                [_uiv_tablePanel removeFromSuperview];
+                _uiv_tablePanel = nil;
+            }];
+        }
     }
     
     
@@ -813,7 +862,7 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (UIView *)setUpAccessPanel
 {
-    float panel_h = 5*kPanelBtnHeight + kPanelTitleHeight;
+    panel_h = 5*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS N. TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:45.0 withIdicator:YES];
@@ -824,9 +873,10 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (UIView *)setUpAmenitiesPanel
 {
-    float panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
+    panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", nil];
+    
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:panel];
@@ -901,9 +951,9 @@ static float    kPanelBtnHeight             = 38.0;
  2. float panel's height
  */
 
-- (UIView *)createPanelWithTitle:(NSString *)title andHeight:(float)panel_h
+- (UIView *)createPanelWithTitle:(NSString *)title andHeight:(float)panelH
 {
-    UIView* uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 0.0, panle_w, panel_h)];
+    UIView* uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 0.0, panle_w, panelH)];
     uiv_panel.backgroundColor = [UIColor clearColor];
     
     UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1070,7 +1120,7 @@ static float    kPanelBtnHeight             = 38.0;
     UIView *thePanel = buttonContianer.superview;
     if (tappedBtn.selected) {
         CGRect frame = buttonContianer.frame;
-        frame.size.height = 4*kPanelBtnHeight;
+        frame.size.height = panel_h - kPanelTitleHeight;//4*kPanelBtnHeight;
         [UIView animateWithDuration:0.33 animations:^{
             [self resetButtonsAndIndicators:thePanel];
             buttonContianer.frame = frame;
@@ -1086,7 +1136,7 @@ static float    kPanelBtnHeight             = 38.0;
         //Do the animation of shrink , change highlighted button and expension
         if (buttonContianer.frame.size.height > 4*kPanelBtnHeight) {
             CGRect frame = buttonContianer.frame;
-            frame.size.height = 4*kPanelBtnHeight;
+            frame.size.height = panel_h - kPanelTitleHeight;//4*kPanelBtnHeight;
             [UIView animateWithDuration:0.33 animations:^{
                 [self resetButtonsAndIndicators:thePanel];
                 buttonContianer.frame = frame;
@@ -1168,7 +1218,7 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (void)resetButtonsAndIndicators:(UIView *)panel
 {
-    panel.frame = CGRectMake(panle_x, 0.0, panle_w, 4*kPanelBtnHeight + kPanelTitleHeight);
+    panel.frame = CGRectMake(panle_x, 0.0, panle_w, panel_h);
     for (UIButton *tmp in arr_panelBtnArray) {
         tmp.transform = CGAffineTransformIdentity;
     }
