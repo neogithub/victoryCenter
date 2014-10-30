@@ -201,6 +201,8 @@
 		8297BD2B19F5760D0046CB65 /* grfx_galleryCap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2919F5760D0046CB65 /* grfx_galleryCap@2x.png */; };
 		8297BD2E19F589AD0046CB65 /* grfx_galleryBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2C19F589AD0046CB65 /* grfx_galleryBack.jpg */; };
 		8297BD2F19F589AD0046CB65 /* grfx_galleryBack@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2D19F589AD0046CB65 /* grfx_galleryBack@2x.jpg */; };
+		82A21F621A028F3A00BE8706 /* gfrx_all_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F601A028F3A00BE8706 /* gfrx_all_overlay.png */; };
+		82A21F631A028F3A00BE8706 /* gfrx_all_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F611A028F3A00BE8706 /* gfrx_all_overlay@2x.png */; };
 		82A29E3E19EC4ED300AFAE1E /* embBezierPathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3519EC4ED300AFAE1E /* embBezierPathItem.m */; };
 		82A29E3F19EC4ED300AFAE1E /* embBezierPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3719EC4ED300AFAE1E /* embBezierPaths.m */; };
 		82A29E4019EC4ED300AFAE1E /* embBlockPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3919EC4ED300AFAE1E /* embBlockPaths.m */; };
@@ -526,6 +528,8 @@
 		8297BD2919F5760D0046CB65 /* grfx_galleryCap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_galleryCap@2x.png"; sourceTree = "<group>"; };
 		8297BD2C19F589AD0046CB65 /* grfx_galleryBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_galleryBack.jpg; sourceTree = "<group>"; };
 		8297BD2D19F589AD0046CB65 /* grfx_galleryBack@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_galleryBack@2x.jpg"; sourceTree = "<group>"; };
+		82A21F601A028F3A00BE8706 /* gfrx_all_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gfrx_all_overlay.png; sourceTree = "<group>"; };
+		82A21F611A028F3A00BE8706 /* gfrx_all_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gfrx_all_overlay@2x.png"; sourceTree = "<group>"; };
 		82A29E3419EC4ED300AFAE1E /* embBezierPathItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBezierPathItem.h; sourceTree = "<group>"; };
 		82A29E3519EC4ED300AFAE1E /* embBezierPathItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embBezierPathItem.m; sourceTree = "<group>"; };
 		82A29E3619EC4ED300AFAE1E /* embBezierPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBezierPaths.h; sourceTree = "<group>"; };
@@ -1078,6 +1082,8 @@
 				82627E2019E702EC0062FC0C /* grfx_retail_overlay@2x.png */,
 				82CBD72819F995120001191F /* grfx_site_parking.png */,
 				82CBD72919F995120001191F /* grfx_site_parking@2x.png */,
+				82A21F601A028F3A00BE8706 /* gfrx_all_overlay.png */,
+				82A21F611A028F3A00BE8706 /* gfrx_all_overlay@2x.png */,
 			);
 			path = overlays;
 			sourceTree = "<group>";
@@ -1520,6 +1526,7 @@
 				82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */,
 				825E5F8719F83FA300B77F7F /* grfx_elavators_low_rise.png in Resources */,
 				82DC11E619DAEE070057AE4F /* Neighborhood_map@2x.png in Resources */,
+				82A21F631A028F3A00BE8706 /* gfrx_all_overlay@2x.png in Resources */,
 				824F368D19E6C47500267B44 /* thumb_20140802_downtown_60m_2pm.jpg in Resources */,
 				8297BD2F19F589AD0046CB65 /* grfx_galleryBack@2x.jpg in Resources */,
 				82DC11C619DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg in Resources */,
@@ -1562,6 +1569,7 @@
 				8224FE0519D47097002B1B44 /* Raleway-ExtraLight.otf in Resources */,
 				82DC11CC19DAEA940057AE4F /* 20140802_view4_100m_06.jpg in Resources */,
 				82000B7A19E590AD00AE2C70 /* Team_bg@2x.jpg in Resources */,
+				82A21F621A028F3A00BE8706 /* gfrx_all_overlay.png in Resources */,
 				82DC11C419DAEA940057AE4F /* 20140802_downtown_100m_5pm_high-res.jpg in Resources */,
 				824F36A419E6C56E00267B44 /* thumb_neoscape_bug.jpg in Resources */,
 				82A805D319D1F61E00308BA1 /* grfx_movieIcon@2x.png in Resources */,
