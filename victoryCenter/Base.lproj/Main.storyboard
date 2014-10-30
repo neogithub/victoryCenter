@@ -383,7 +383,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" id="FAs-Xa-4zp" userLabel="View - Stats">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" id="FAs-Xa-4zp" userLabel="View - Stats">
                                 <rect key="frame" x="-356" y="87" width="356" height="614"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -392,10 +392,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="F2C-RW-H9k" userLabel="Button - Close">
-                                        <rect key="frame" x="310" y="283" width="46" height="46"/>
+                                        <rect key="frame" x="327" y="-6" width="29" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal">
+                                        <state key="normal" image="grfx_bldstat_close.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -710,6 +709,7 @@
         <image name="Victory Center 01 Highway View.jpg" width="1250" height="938"/>
         <image name="grfx_bldImg.png" width="780" height="733"/>
         <image name="grfx_bldStatsImg.png" width="356" height="614"/>
+        <image name="grfx_bldstat_close.png" width="29" height="56"/>
         <image name="grfx_contactClose.jpg" width="44" height="44"/>
         <image name="grfx_helpIcon.png" width="36" height="36"/>
         <image name="grfx_launching.png" width="1024" height="768"/>
