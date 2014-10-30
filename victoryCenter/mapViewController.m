@@ -114,6 +114,7 @@ static float    kPanelBtnHeight             = 38.0;
 @property (nonatomic, strong) UIView                    *uiv_tappedHotspot;
 @property (nonatomic, strong) embMapHotspotListViewController	*vc_hotspotList;
 //Site map overview
+@property (nonatomic, strong) UIView                    *uiv_overviewContainer;
 @property (nonatomic, strong) siteOverview              *uiv_siteOverview;
 @end
 
@@ -411,6 +412,7 @@ static float    kPanelBtnHeight             = 38.0;
             _uiv_siteSubMenu.hidden = NO;
             _uiv_mapSwitchContainer.hidden = YES;
             [self creatBuildingBtn];
+            [self performSelector:@selector(tapSubMenu:) withObject:_uib_siteOverview afterDelay:0.4];
             break;
         }
         default:
@@ -673,27 +675,7 @@ static float    kPanelBtnHeight             = 38.0;
     // *3 --> load Site's Access panel
     int selectedIndex = (int)[sender tag]%10;
     if (selectedIndex == 1) { // Tapped Overview
-        if (_uiv_siteOverview) {
-            [self removeOverviewPanel];
-        }
-        
-        _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 360.0)];
-        _uiv_siteOverview.transform = CGAffineTransformMakeTranslation(0.0, -100);
-        _uiv_siteOverview.alpha = 0.0;
-        [self addCell];
-        [self.view addSubview: _uiv_siteOverview];
-        // Animation for the overview image
-        CGFloat duration = 0.5f;
-        CGFloat damping = 0.5f;
-        CGFloat velocity = 0.15f;
-        // int to hold UIViewAnimationOption
-        NSInteger option;
-        option = UIViewAnimationCurveEaseInOut;
-        
-        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
-            _uiv_siteOverview.alpha = 1.0;
-            _uiv_siteOverview.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished){      }];
+        [self loadSiteOverview];
     }
     if (selectedIndex == 2) { // Tapped Amenities
         [self addSiteAmenitiesPanel];
@@ -701,6 +683,49 @@ static float    kPanelBtnHeight             = 38.0;
     if (selectedIndex == 3) { // Tapped Access
         [self addSiteAccessPanel];
     }
+}
+
+#pragma mark Load Over view
+ - (void)loadSiteOverview
+{
+    if (_uiv_siteOverview) {
+        [self removeOverviewPanel];
+    }
+    _uiv_overviewContainer = [[UIView alloc] initWithFrame:screenRect];
+    _uiv_overviewContainer.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4];
+    UITapGestureRecognizer *tapOnOverview = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(moveOutOverview:)];
+    [_uiv_overviewContainer addGestureRecognizer: tapOnOverview];
+    _uiv_overviewContainer.userInteractionEnabled = YES;
+    
+    //        _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 360.0)];
+    _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 260.0)];
+    _uiv_siteOverview.transform = CGAffineTransformMakeTranslation(0.0, -100);
+    _uiv_siteOverview.alpha = 0.0;
+    [_uiv_overviewContainer addSubview: _uiv_siteOverview];
+    //        [self addCell];
+    [self.view addSubview: _uiv_overviewContainer];
+    // Animation for the overview image
+    CGFloat duration = 0.5f;
+    CGFloat damping = 0.5f;
+    CGFloat velocity = 0.15f;
+    // int to hold UIViewAnimationOption
+    NSInteger option;
+    option = UIViewAnimationCurveEaseInOut;
+    
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+        _uiv_siteOverview.alpha = 1.0;
+        _uiv_siteOverview.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished){      }];
+}
+
+- (void)moveOutOverview:(UIGestureRecognizer *)gesture
+{
+    [UIView animateWithDuration:0.33 animations:^{
+        _uiv_siteOverview.transform = CGAffineTransformMakeTranslation(0.0, -350);
+    } completion:^(BOOL finished){
+        [self removeOverviewPanel];
+        [self resetSubMenus];
+    }];
 }
 
 #pragma mark Create cells in overview panel
@@ -1660,8 +1685,8 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (void)removeOverviewPanel
 {
-    [_uiv_siteOverview removeFromSuperview];
-    _uiv_siteOverview = nil;
+    [_uiv_overviewContainer removeFromSuperview];
+    _uiv_overviewContainer = nil;
 }
 
 - (void)removeAllPanels
