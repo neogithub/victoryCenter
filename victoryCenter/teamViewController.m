@@ -89,7 +89,8 @@ static float kCardsGap      = 12.0;
  */
 - (void)createItemBox:(NSString *)logoName andText:(UITextView *)textView andX:(float)x_value andTag:(int)index
 {
-    UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 180.0, kCardWidth, 428.0)];
+    //UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 180.0, kCardWidth, 428.0)];
+    UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 300.0, kCardWidth, 428.0)];
     uiv_cardContainer.tag = index+50;
 	// 1. add logo
     UIView *uiv_logo = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, kCardWidth, 142.0)];
@@ -101,19 +102,19 @@ static float kCardsGap      = 12.0;
     [uiv_cardContainer insertSubview:uiv_logo atIndex:2];
     
 	// 2. add text
-    UIView *uiv_text = [[UIView alloc] initWithFrame:CGRectMake(0.0, 142.0, kCardWidth, 286.0)];
-    uiv_text.tag = 2;
-    uiv_text.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
-    textView.tag = 1;
-    [uiv_text addSubview:textView];
-    [uiv_cardContainer insertSubview:uiv_text belowSubview:uiv_logo];
-    CGAffineTransform t1 = CGAffineTransformMakeScale(1.0, 0.5);
-    uiv_text.transform = CGAffineTransformTranslate(t1, 0.0, -427.0);
+//    UIView *uiv_text = [[UIView alloc] initWithFrame:CGRectMake(0.0, 142.0, kCardWidth, 286.0)];
+//    uiv_text.tag = 2;
+//    uiv_text.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+//    textView.tag = 1;
+//    [uiv_text addSubview:textView];
+//    [uiv_cardContainer insertSubview:uiv_text belowSubview:uiv_logo];
+//    CGAffineTransform t1 = CGAffineTransformMakeScale(1.0, 0.5);
+//    uiv_text.transform = CGAffineTransformTranslate(t1, 0.0, -427.0);
     
     // 3. add blue bar
     UIView *uiv_bar = [[UIView alloc] initWithFrame:CGRectMake(0.0, 124.0, kCardWidth, 18.0)];
     uiv_bar.tag = 3;
-    UIImageView *uiiv_bar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"team_logoBtmBar.png"]];
+    UIImageView *uiiv_bar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"team_logoBtmBar_withPlus.png"]];
     uiiv_bar.frame = CGRectMake(0.0, 0.0, kCardWidth, 18.0);
     [uiv_bar addSubview: uiiv_bar];
     uiv_bar.hidden = YES;

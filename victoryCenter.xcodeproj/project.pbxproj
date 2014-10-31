@@ -207,6 +207,8 @@
 		82A21F671A02B30A00BE8706 /* Access_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F651A02B30A00BE8706 /* Access_overlay@2x.png */; };
 		82A21F6A1A02C5D300BE8706 /* grfx_bldstat_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F681A02C5D300BE8706 /* grfx_bldstat_close.png */; };
 		82A21F6B1A02C5D300BE8706 /* grfx_bldstat_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F691A02C5D300BE8706 /* grfx_bldstat_close@2x.png */; };
+		82A21F6E1A02D3DE00BE8706 /* team_logoBtmBar_withPlus.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F6C1A02D3DE00BE8706 /* team_logoBtmBar_withPlus.png */; };
+		82A21F6F1A02D3DE00BE8706 /* team_logoBtmBar_withPlus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F6D1A02D3DE00BE8706 /* team_logoBtmBar_withPlus@2x.png */; };
 		82A29E3E19EC4ED300AFAE1E /* embBezierPathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3519EC4ED300AFAE1E /* embBezierPathItem.m */; };
 		82A29E3F19EC4ED300AFAE1E /* embBezierPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3719EC4ED300AFAE1E /* embBezierPaths.m */; };
 		82A29E4019EC4ED300AFAE1E /* embBlockPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A29E3919EC4ED300AFAE1E /* embBlockPaths.m */; };
@@ -536,6 +538,8 @@
 		82A21F651A02B30A00BE8706 /* Access_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Access_overlay@2x.png"; sourceTree = "<group>"; };
 		82A21F681A02C5D300BE8706 /* grfx_bldstat_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_bldstat_close.png; sourceTree = "<group>"; };
 		82A21F691A02C5D300BE8706 /* grfx_bldstat_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_bldstat_close@2x.png"; sourceTree = "<group>"; };
+		82A21F6C1A02D3DE00BE8706 /* team_logoBtmBar_withPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = team_logoBtmBar_withPlus.png; sourceTree = "<group>"; };
+		82A21F6D1A02D3DE00BE8706 /* team_logoBtmBar_withPlus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "team_logoBtmBar_withPlus@2x.png"; sourceTree = "<group>"; };
 		82A29E3419EC4ED300AFAE1E /* embBezierPathItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBezierPathItem.h; sourceTree = "<group>"; };
 		82A29E3519EC4ED300AFAE1E /* embBezierPathItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embBezierPathItem.m; sourceTree = "<group>"; };
 		82A29E3619EC4ED300AFAE1E /* embBezierPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBezierPaths.h; sourceTree = "<group>"; };
@@ -712,6 +716,8 @@
 				82000B8819E592A800AE2C70 /* team_hks_logo@2x.png */,
 				82000B6B19E590AD00AE2C70 /* team_logoBtmBar.png */,
 				82000B6C19E590AD00AE2C70 /* team_logoBtmBar@2x.png */,
+				82A21F6C1A02D3DE00BE8706 /* team_logoBtmBar_withPlus.png */,
+				82A21F6D1A02D3DE00BE8706 /* team_logoBtmBar_withPlus@2x.png */,
 				82000B6D19E590AD00AE2C70 /* team_hines_text.png */,
 				82000B6E19E590AD00AE2C70 /* team_hines_text@2x.png */,
 				82000B9119E5963800AE2C70 /* team_cousins_text.png */,
@@ -1398,6 +1404,7 @@
 				82DC11E919DAEE070057AE4F /* Site_Base map.png in Resources */,
 				82A805D619D1FC1400308BA1 /* grfx_menuIcon.png in Resources */,
 				82A805CE19D1F61E00308BA1 /* grfx_helpIcon.png in Resources */,
+				82A21F6F1A02D3DE00BE8706 /* team_logoBtmBar_withPlus@2x.png in Resources */,
 				823DE6F71A0031CA0016CD3A /* grfx_floorDwon.png in Resources */,
 				824F369D19E6C47500267B44 /* thumb_Street View B1.jpg in Resources */,
 				82A29E4819EC60E000AFAE1E /* grfx_bldImg.png in Resources */,
@@ -1527,6 +1534,7 @@
 				825E5F8719F83FA300B77F7F /* grfx_elavators_low_rise.png in Resources */,
 				82DC11E619DAEE070057AE4F /* Neighborhood_map@2x.png in Resources */,
 				82A21F631A028F3A00BE8706 /* gfrx_all_overlay@2x.png in Resources */,
+				82A21F6E1A02D3DE00BE8706 /* team_logoBtmBar_withPlus.png in Resources */,
 				824F368D19E6C47500267B44 /* thumb_20140802_downtown_60m_2pm.jpg in Resources */,
 				8297BD2F19F589AD0046CB65 /* grfx_galleryBack@2x.jpg in Resources */,
 				82DC11C619DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg in Resources */,
