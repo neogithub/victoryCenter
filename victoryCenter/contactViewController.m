@@ -128,7 +128,7 @@ static float kContactGap = 4;
     uiv_contactCard.transform = CGAffineTransformMakeTranslation(0.0, -uiv_contactCard.frame.size.height - uiv_contactCard.frame.origin.y);
     
     UIImageView *uiiv_mailIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_mailIcon.png"]];
-    uiiv_mailIcon.frame = CGRectMake(200, 17, uiiv_mailIcon.frame.size.width, uiiv_mailIcon.frame.size.height);
+    uiiv_mailIcon.frame = CGRectMake(200, 15, uiiv_mailIcon.frame.size.width, uiiv_mailIcon.frame.size.height);
     [uiv_contactCard addSubview:uiiv_mailIcon];
     
     UITapGestureRecognizer *tapOnCard = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnCard:)];
