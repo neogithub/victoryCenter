@@ -702,13 +702,13 @@ static float    kPanelBtnHeight             = 38.0;
     
     //        _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 360.0)];
     _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 260.0)];
-    _uiv_siteOverview.transform = CGAffineTransformMakeTranslation(0.0, -100);
+    _uiv_siteOverview.transform = CGAffineTransformMakeTranslation(0.0, -500);
     _uiv_siteOverview.alpha = 0.0;
     [_uiv_overviewContainer addSubview: _uiv_siteOverview];
     //        [self addCell];
     [self.view addSubview: _uiv_overviewContainer];
     // Animation for the overview image
-    CGFloat duration = 0.5f;
+    CGFloat duration = 0.8f;
     CGFloat damping = 0.5f;
     CGFloat velocity = 0.15f;
     // int to hold UIViewAnimationOption
@@ -724,7 +724,7 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)moveOutOverview:(UIGestureRecognizer *)gesture
 {
     [UIView animateWithDuration:0.33 animations:^{
-        _uiv_siteOverview.transform = CGAffineTransformMakeTranslation(0.0, -350);
+        _uiv_siteOverview.transform = CGAffineTransformMakeTranslation(0.0, -450);
     } completion:^(BOOL finished){
         [self removeOverviewPanel];
         [self resetSubMenus];
