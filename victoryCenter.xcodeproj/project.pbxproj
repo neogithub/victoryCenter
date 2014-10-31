@@ -220,6 +220,8 @@
 		82A29E4B19EC60E000AFAE1E /* grfx_bldStatsImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A29E4719EC60E000AFAE1E /* grfx_bldStatsImg@2x.png */; };
 		82A44BA519D32D1C004FAD58 /* galleryCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A44BA419D32D1C004FAD58 /* galleryCVCell.m */; };
 		82A44BF019D3416D004FAD58 /* galleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A44BEF19D3416D004FAD58 /* galleryViewController.m */; };
+		82A4EF561A03D013004D22EE /* grfx_mailIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A4EF541A03D013004D22EE /* grfx_mailIcon.png */; };
+		82A4EF571A03D013004D22EE /* grfx_mailIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A4EF551A03D013004D22EE /* grfx_mailIcon@2x.png */; };
 		82A805CE19D1F61E00308BA1 /* grfx_helpIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A805C819D1F61E00308BA1 /* grfx_helpIcon.png */; };
 		82A805CF19D1F61E00308BA1 /* grfx_helpIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A805C919D1F61E00308BA1 /* grfx_helpIcon@2x.png */; };
 		82A805D019D1F61E00308BA1 /* grfx_mialIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A805CA19D1F61E00308BA1 /* grfx_mialIcon.png */; };
@@ -558,6 +560,8 @@
 		82A44BA419D32D1C004FAD58 /* galleryCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = galleryCVCell.m; sourceTree = "<group>"; };
 		82A44BEE19D3416D004FAD58 /* galleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = galleryViewController.h; sourceTree = "<group>"; };
 		82A44BEF19D3416D004FAD58 /* galleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = galleryViewController.m; sourceTree = "<group>"; };
+		82A4EF541A03D013004D22EE /* grfx_mailIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_mailIcon.png; sourceTree = "<group>"; };
+		82A4EF551A03D013004D22EE /* grfx_mailIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_mailIcon@2x.png"; sourceTree = "<group>"; };
 		82A805C819D1F61E00308BA1 /* grfx_helpIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_helpIcon.png; sourceTree = "<group>"; };
 		82A805C919D1F61E00308BA1 /* grfx_helpIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_helpIcon@2x.png"; sourceTree = "<group>"; };
 		82A805CA19D1F61E00308BA1 /* grfx_mialIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_mialIcon.png; sourceTree = "<group>"; };
@@ -746,6 +750,8 @@
 		8224FDF219D46D90002B1B44 /* grfx */ = {
 			isa = PBXGroup;
 			children = (
+				82A4EF541A03D013004D22EE /* grfx_mailIcon.png */,
+				82A4EF551A03D013004D22EE /* grfx_mailIcon@2x.png */,
 				8239ED101A016FAC00B25EA2 /* grfx_victoryPark_logo.png */,
 				8239ED111A016FAC00B25EA2 /* grfx_victoryPark_logo@2x.png */,
 				826078101A0130CA000DF24F /* grfx_logo.png */,
@@ -1423,6 +1429,7 @@
 				82CBD72319F96FA10001191F /* grfx_elevator_floorNum@2x.png in Resources */,
 				824F36A019E6C47500267B44 /* thumb_Victory Center 03 View from SE.jpg in Resources */,
 				82000B7919E590AD00AE2C70 /* Team_bg.jpg in Resources */,
+				82A4EF571A03D013004D22EE /* grfx_mailIcon@2x.png in Resources */,
 				82DC11CA19DAEA940057AE4F /* 20140802_view4_100m_05.jpg in Resources */,
 				82DC11E519DAEE070057AE4F /* Neighborhood_map.png in Resources */,
 				824C196419FA9DC400EA7613 /* grfx_floorplan15@2x.png in Resources */,
@@ -1592,6 +1599,7 @@
 				8224FDF119D46997002B1B44 /* galleryData.plist in Resources */,
 				82627E2419E702EC0062FC0C /* grfx_residential_overlay@2x.png in Resources */,
 				824C196B19FA9DC400EA7613 /* grfx_floorplan8.png in Resources */,
+				82A4EF561A03D013004D22EE /* grfx_mailIcon.png in Resources */,
 				8224FE0A19D47097002B1B44 /* Raleway-SemiBold.otf in Resources */,
 				82000B7C19E590AD00AE2C70 /* team_hines_logo@2x.png in Resources */,
 				82000B9C19E5963800AE2C70 /* team_cushman_text@2x.png in Resources */,
