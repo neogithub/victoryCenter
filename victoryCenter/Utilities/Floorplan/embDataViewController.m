@@ -13,9 +13,9 @@
 //#import "motionImageViewController.h"
 
 @interface embDataViewController () <neoHotspotsViewDelegate> {
-	int iTotalButtons;
-	UIView *uiv_testFitButtonHOlder;
-    UIView *uiv_testFitSubMenuContainer;
+	int                             iTotalButtons;
+	UIView                          *uiv_testFitButtonHolder;
+    NSMutableArray                  *arr_testFitBtnArray;
 }
 
 @property (nonatomic, strong) neoHotspotsView				*myHotspots;
@@ -56,6 +56,8 @@
 	
     self.view.backgroundColor = [UIColor vcBackGroundColor];
     [self loadDataAndView];
+    
+    [self loadTestFitBtns];
 }
 
 #pragma mark - LAYOUT FLOOR PLAN DATA
@@ -168,6 +170,47 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"loadPanoImage"
                                                         object:self
                                                       userInfo:dict];
+}
+
+#pragma mark - Load Test fit buttons
+
+- (void)loadTestFitBtns
+{
+    uiv_testFitButtonHolder = [[UIView alloc] initWithFrame:CGRectMake(280.0, 710.0, 470.0, 40.0)];
+    NSArray *arr_btnTitles = [[NSArray alloc] initWithObjects:@"CORE & SHELL", @"OPEN PLAN", @"OFFICE PLAN", nil];
+    CGFloat btnWidth = 156;
+    [arr_testFitBtnArray removeAllObjects];
+    arr_testFitBtnArray = nil;
+    arr_testFitBtnArray = [[NSMutableArray alloc] init];
+    for (int i = 0; i < arr_btnTitles.count; i++) {
+        UIButton *uib_testfit = [UIButton buttonWithType:UIButtonTypeCustom];
+        uib_testfit.frame = CGRectMake((156+1)*i, 0.0, btnWidth, 40);
+        [uib_testfit setBackgroundColor:[UIColor vcLightBlue]];
+        [uib_testfit setTitle:arr_btnTitles[i] forState:UIControlStateNormal];
+        [uib_testfit setTitle:arr_btnTitles[i] forState:UIControlStateSelected];
+        [uib_testfit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [uib_testfit setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        [uib_testfit.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+        uib_testfit.tag = i;
+        
+        if (i == 0) {
+            uib_testfit.backgroundColor = [UIColor vcDarkBlue];
+        }
+        
+        [uib_testfit addTarget: self action:@selector(tapTestFit:) forControlEvents:UIControlEventTouchUpInside];
+        [arr_testFitBtnArray addObject: uib_testfit];
+        [uiv_testFitButtonHolder addSubview: uib_testfit];
+    }
+    [self.view addSubview: uiv_testFitButtonHolder];
+}
+
+- (void)tapTestFit:(id)sender
+{
+    for (UIButton *tmp in arr_testFitBtnArray) {
+        tmp.backgroundColor = [UIColor vcLightBlue];
+    }
+    UIButton *tappedBtn = sender;
+    tappedBtn.backgroundColor = [UIColor vcDarkBlue];
 }
 
 #pragma mark - BOILERPLATE
