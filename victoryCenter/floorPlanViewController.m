@@ -68,11 +68,14 @@ static CGFloat  kPanelTitleHeight           = 46;
         [_uiv_panoramicView removeFromSuperview];
         _uiv_panoramicView = nil;
     }
-    _uiv_panoramicView = [[xhPanoramicView alloc] initWithFrame:self.view.bounds andImageName:imageName];
-    [self setPanoClose];
-    [self.view addSubview:_uiv_panoramicView];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideBuildingTopMenu" object:nil];
+    
+    if (imageName) {
+        _uiv_panoramicView = [[xhPanoramicView alloc] initWithFrame:self.view.bounds andImageName:imageName];
+        [self setPanoClose];
+        [self.view addSubview:_uiv_panoramicView];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"hideBuildingTopMenu" object:nil];
+    }
 }
 
 - (void)setPanoClose

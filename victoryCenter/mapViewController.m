@@ -1024,6 +1024,7 @@ static float    kPanelBtnHeight             = 38.0;
     uib_PanelTitle.tag = 101;
     uib_PanelTitle.layer.borderWidth = 1.0;
     uib_PanelTitle.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    uib_PanelTitle.userInteractionEnabled = NO;
     [uiv_panel addSubview: uib_PanelTitle];
     return uiv_panel;
 }
