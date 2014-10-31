@@ -68,6 +68,8 @@ static float    kPanelBtnHeight             = 38.0;
     UIButton                *uib_bldBtn;
     
     UIView                  *uiv_distanceInfoContainer;
+    
+    UIView                  *uiv_siteAmenInfo;
 }
 //Top root menu
 @property (weak, nonatomic) IBOutlet UIButton           *uib_city;
@@ -679,6 +681,7 @@ static float    kPanelBtnHeight             = 38.0;
     }
     if (selectedIndex == 2) { // Tapped Amenities
         [self addSiteAmenitiesPanel];
+        [self createBottomInfoBox];
     }
     if (selectedIndex == 3) { // Tapped Access
         [self addSiteAccessPanel];
@@ -785,6 +788,36 @@ static float    kPanelBtnHeight             = 38.0;
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:panel];
     return panel;
+}
+
+#pragma mark Create bottom info box of site's amenities
+
+- (void)createBottomInfoBox
+{
+    uiv_siteAmenInfo = [[UIView alloc] initWithFrame:CGRectMake(200.0, 700.0, 300.0, 55.0)];
+    uiv_siteAmenInfo.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview: uiv_siteAmenInfo];
+    
+    UILabel *uil_existing =[[UILabel alloc] initWithFrame:CGRectMake(10.0, 5.0, 260, 15)];
+    uil_existing.backgroundColor = [UIColor clearColor];
+    [uil_existing setText:@"E - EXISTING"];
+    [uil_existing setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
+    [uil_existing setTextColor:[UIColor vcDarkBlue]];
+    [uiv_siteAmenInfo addSubview: uil_existing];
+    
+    UILabel *uil_changing = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 20.0, 260, 15)];
+    uil_changing.backgroundColor = [UIColor clearColor];
+    [uil_changing setText:@"E* - CONFIGURATION & RETAILER MAY CHANGE"];
+    [uil_changing setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
+    [uil_changing setTextColor:[UIColor vcDarkBlue]];
+    [uiv_siteAmenInfo addSubview: uil_changing];
+    
+    UILabel *uil_planing = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 35.0, 260, 15)];
+    uil_planing.backgroundColor = [UIColor clearColor];
+    [uil_planing setText:@"PL - PLANNED"];
+    [uil_planing setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
+    [uil_planing setTextColor:[UIColor vcDarkBlue]];
+    [uiv_siteAmenInfo addSubview: uil_planing];
 }
 
 #pragma mark Actions for site amenities' buttons
@@ -1711,6 +1744,9 @@ static float    kPanelBtnHeight             = 38.0;
     
     [uiv_distanceInfoContainer removeFromSuperview];
     uiv_distanceInfoContainer = nil;
+    
+    [uiv_siteAmenInfo removeFromSuperview];
+    uiv_siteAmenInfo = nil;
 }
 
 - (void)removeHotspots
