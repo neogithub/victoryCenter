@@ -176,7 +176,7 @@
 
 - (void)loadTestFitBtns
 {
-    uiv_testFitButtonHolder = [[UIView alloc] initWithFrame:CGRectMake(280.0, 710.0, 470.0, 40.0)];
+    uiv_testFitButtonHolder = [[UIView alloc] initWithFrame:CGRectMake(272.0, 710.0, 470.0, 40.0)];
     NSArray *arr_btnTitles = [[NSArray alloc] initWithObjects:@"CORE & SHELL", @"OPEN PLAN", @"OFFICE PLAN", nil];
     CGFloat btnWidth = 156;
     [arr_testFitBtnArray removeAllObjects];

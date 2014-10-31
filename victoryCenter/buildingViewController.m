@@ -370,6 +370,7 @@
     [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
     uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 100);
     uib_PanelTitle.tag = 101;
+    uib_PanelTitle.userInteractionEnabled = NO;
     [uiv_ctrlPanel addSubview: uib_PanelTitle];
     
     NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"LOW-RISE ELEVATORS", @"HIGH-RISE ELEVATORS", @"PARKING", @"LOBBY", nil];
