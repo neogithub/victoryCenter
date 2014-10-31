@@ -120,6 +120,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     _uib_PanelTitle.tag = 101;
     _uib_PanelTitle.layer.borderWidth = 1.0;
     _uib_PanelTitle.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    _uib_PanelTitle.userInteractionEnabled = NO;
     [_uiv_panel addSubview: _uib_PanelTitle];
     
     [self createPanelContent];

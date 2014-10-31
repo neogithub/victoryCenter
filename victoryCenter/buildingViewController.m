@@ -124,6 +124,12 @@
     _uiv_statImgContainer.transform = CGAffineTransformIdentity;
     
     [self removeFloorPlan];
+    
+    [_uiv_elevatorContainer removeFromSuperview];
+    _uiv_elevatorContainer = nil;
+    
+    [_uiv_eleLayerConainer removeFromSuperview];
+    _uiv_eleLayerConainer = nil;
 }
 
 #pragma mark - Set up Top menu buttons
