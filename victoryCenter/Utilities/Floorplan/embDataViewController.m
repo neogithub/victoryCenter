@@ -213,6 +213,26 @@
     }
     UIButton *tappedBtn = sender;
     tappedBtn.backgroundColor = [UIColor vcDarkBlue];
+    
+    switch ((int)tappedBtn.tag) {
+        case 0:{
+            NSString *planName = _dict[@"floorplaninfo"][0][@"floorinfo"][0];
+            [self loadInImge:planName];
+            break;
+        }
+        case 1:{
+            NSString *planName = _dict[@"floorplaninfo"][0][@"testfits"][0];
+            [self loadInImge:planName];
+            break;
+        }
+        case 2:{
+            NSString *planName = _dict[@"floorplaninfo"][0][@"testfits"][1];
+            [self loadInImge:planName];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 #pragma mark - BOILERPLATE
