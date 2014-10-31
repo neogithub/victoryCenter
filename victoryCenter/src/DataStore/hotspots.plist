@@ -1859,7 +1859,7 @@
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>W Dallas Residences</string>
+					<string>The Cirque</string>
 					<key>units</key>
 					<string>146</string>
 				</dict>
@@ -1871,7 +1871,7 @@
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Vista</string>
+					<string>W Hotel Residences</string>
 					<key>units</key>
 					<string>129</string>
 				</dict>
@@ -1883,7 +1883,7 @@
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Terrace</string>
+					<string>Northend</string>
 					<key>units</key>
 					<string>95</string>
 				</dict>
@@ -1895,7 +1895,7 @@
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The House</string>
+					<string>The Vista</string>
 					<key>units</key>
 					<string>133</string>
 				</dict>
@@ -1907,7 +1907,7 @@
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Northend</string>
+					<string>Sky House Dallas</string>
 					<key>units</key>
 					<string>540</string>
 				</dict>
@@ -1919,7 +1919,7 @@
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>The Cirque</string>
+					<string>The Terrace</string>
 					<key>units</key>
 					<string>252</string>
 				</dict>
@@ -1931,7 +1931,7 @@
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Magnolia Station</string>
+					<string>The House</string>
 					<key>units</key>
 					<string>71</string>
 				</dict>
@@ -1943,7 +1943,7 @@
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>1400 Highline</string>
+					<string>Mill Creek Apts</string>
 					<key>units</key>
 					<string>314</string>
 				</dict>
@@ -1955,7 +1955,7 @@
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>Skyhouse</string>
+					<string>TBD</string>
 					<key>units</key>
 					<string>336</string>
 				</dict>
