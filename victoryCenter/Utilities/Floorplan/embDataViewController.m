@@ -87,7 +87,7 @@
     }
     
     //Added Road Names Labels
-    UILabel *uil_victoryAve = [[UILabel alloc] initWithFrame:CGRectMake(830,260, 130, 30)];
+    UILabel *uil_victoryAve = [[UILabel alloc] initWithFrame:CGRectMake(830, 140, 130, 30)];
     [uil_victoryAve setText:@"VICTORY AVE"];
     uil_victoryAve.backgroundColor = [UIColor vcBackGroundColor];
     [uil_victoryAve setFont:[UIFont fontWithName:@"Raleway-Medium" size:12]];
@@ -103,7 +103,7 @@
     uil_victoryAve.frame = oldFrame;
     uil_victoryAve.transform = CGAffineTransformMakeRotation(M_PI_2);
     
-    UILabel *uil_highMarketSt = [[UILabel alloc] initWithFrame:CGRectMake(700.0, 200, 130, 30)];
+    UILabel *uil_highMarketSt = [[UILabel alloc] initWithFrame:CGRectMake(700.0, 80, 130, 30)];
     [uil_highMarketSt setText:@"HIGH MARKET ST"];
     uil_highMarketSt.backgroundColor = [UIColor vcBackGroundColor];
     [uil_highMarketSt setFont:[UIFont fontWithName:@"Raleway-Medium" size:12]];
@@ -165,11 +165,13 @@
 
 - (void)neoHotspotsView:(neoHotspotsView *)hotspot didSelectItemAtIndex:(NSInteger)index
 {
-//    NSLog(@"Tapped hotspot is %i", (int)index);
-    NSDictionary* dict = [NSDictionary dictionaryWithObject:_arr_hotspotImg[index] forKey:@"imageName"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"loadPanoImage"
-                                                        object:self
-                                                      userInfo:dict];
+    NSString *image = _arr_hotspotImg[index];
+    if ([image length]) {
+        NSDictionary* dict = [NSDictionary dictionaryWithObject:_arr_hotspotImg[index] forKey:@"imageName"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadPanoImage"
+                                                            object:self
+                                                          userInfo:dict];
+    }
 }
 
 #pragma mark - Load Test fit buttons
