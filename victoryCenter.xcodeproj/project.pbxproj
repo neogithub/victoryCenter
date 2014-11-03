@@ -197,6 +197,10 @@
 		82716A6D19E441390070A331 /* grfx_access_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6B19E441390070A331 /* grfx_access_nav@2x.png */; };
 		82716A7019E45B940070A331 /* grfx_site_overview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6E19E45B940070A331 /* grfx_site_overview.jpg */; };
 		82716A7119E45B940070A331 /* grfx_site_overview@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6F19E45B940070A331 /* grfx_site_overview@2x.jpg */; };
+		828041F61A07C1CF00847A80 /* tmp_testfit1.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F21A07C1CF00847A80 /* tmp_testfit1.png */; };
+		828041F71A07C1CF00847A80 /* tmp_testfit1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */; };
+		828041F81A07C1CF00847A80 /* tmp_testfit2.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F41A07C1CF00847A80 /* tmp_testfit2.png */; };
+		828041F91A07C1CF00847A80 /* tmp_testfit2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F51A07C1CF00847A80 /* tmp_testfit2@2x.png */; };
 		8297BD2A19F5760D0046CB65 /* grfx_galleryCap.png in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2819F5760D0046CB65 /* grfx_galleryCap.png */; };
 		8297BD2B19F5760D0046CB65 /* grfx_galleryCap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2919F5760D0046CB65 /* grfx_galleryCap@2x.png */; };
 		8297BD2E19F589AD0046CB65 /* grfx_galleryBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2C19F589AD0046CB65 /* grfx_galleryBack.jpg */; };
@@ -530,6 +534,10 @@
 		82716A6B19E441390070A331 /* grfx_access_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_access_nav@2x.png"; sourceTree = "<group>"; };
 		82716A6E19E45B940070A331 /* grfx_site_overview.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_site_overview.jpg; sourceTree = "<group>"; };
 		82716A6F19E45B940070A331 /* grfx_site_overview@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_site_overview@2x.jpg"; sourceTree = "<group>"; };
+		828041F21A07C1CF00847A80 /* tmp_testfit1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_testfit1.png; sourceTree = "<group>"; };
+		828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp_testfit1@2x.png"; sourceTree = "<group>"; };
+		828041F41A07C1CF00847A80 /* tmp_testfit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_testfit2.png; sourceTree = "<group>"; };
+		828041F51A07C1CF00847A80 /* tmp_testfit2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp_testfit2@2x.png"; sourceTree = "<group>"; };
 		8297BD2819F5760D0046CB65 /* grfx_galleryCap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_galleryCap.png; sourceTree = "<group>"; };
 		8297BD2919F5760D0046CB65 /* grfx_galleryCap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_galleryCap@2x.png"; sourceTree = "<group>"; };
 		8297BD2C19F589AD0046CB65 /* grfx_galleryBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_galleryBack.jpg; sourceTree = "<group>"; };
@@ -1034,6 +1042,10 @@
 				824C195E19FA9DC400EA7613 /* grfx_floorplan8@2x.png */,
 				824C195F19FA9DC400EA7613 /* grfx_floorplan9.png */,
 				824C196019FA9DC400EA7613 /* grfx_floorplan9@2x.png */,
+				828041F21A07C1CF00847A80 /* tmp_testfit1.png */,
+				828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */,
+				828041F41A07C1CF00847A80 /* tmp_testfit2.png */,
+				828041F51A07C1CF00847A80 /* tmp_testfit2@2x.png */,
 				82AB934119FEC97B00DD0B30 /* floorplan_hotspot */,
 			);
 			path = floorplan;
@@ -1455,6 +1467,7 @@
 				82000B8B19E592A800AE2C70 /* team_cushman_logo.png in Resources */,
 				824C196619FA9DC400EA7613 /* grfx_floorplan16@2x.png in Resources */,
 				826078131A0130CA000DF24F /* grfx_logo@2x.png in Resources */,
+				828041F81A07C1CF00847A80 /* tmp_testfit2.png in Resources */,
 				824F369019E6C47500267B44 /* thumb_20140802_view4_100m_05.jpg in Resources */,
 				82DC11D219DAEA940057AE4F /* victory_center_138feet.jpg in Resources */,
 				824F368A19E6C47500267B44 /* thumb_20140802_downtown_100m_5pm_high-res.jpg in Resources */,
@@ -1502,6 +1515,7 @@
 				824F369819E6C47500267B44 /* thumb_victory_center_138feet.jpg in Resources */,
 				82000B9A19E5963800AE2C70 /* team_cousins_text@2x.png in Resources */,
 				82CBD72B19F995120001191F /* grfx_site_parking@2x.png in Resources */,
+				828041F91A07C1CF00847A80 /* tmp_testfit2@2x.png in Resources */,
 				823D78AC19F1AD500096E62C /* grfx_compass.png in Resources */,
 				824C194F19FA938500EA7613 /* grfx_tredart_logo@2x.png in Resources */,
 				82DC11CE19DAEA940057AE4F /* 20140811_view3_100m_01.jpg in Resources */,
@@ -1530,6 +1544,7 @@
 				824C196D19FA9DC400EA7613 /* grfx_floorplan9.png in Resources */,
 				82000B7B19E590AD00AE2C70 /* team_hines_logo.png in Resources */,
 				82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */,
+				828041F61A07C1CF00847A80 /* tmp_testfit1.png in Resources */,
 				82000BA019E5963800AE2C70 /* team_hks_text@2x.png in Resources */,
 				824F369B19E6C47500267B44 /* thumb_NW-FINAL Lighting Concept2.jpg in Resources */,
 				824C196119FA9DC400EA7613 /* grfx_floorplan10-14.png in Resources */,
@@ -1547,6 +1562,7 @@
 				82DC11C619DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg in Resources */,
 				824C196A19FA9DC400EA7613 /* grfx_floorplan18-23@2x.png in Resources */,
 				82AB934D19FEC97B00DD0B30 /* grfx_north_hs@2x.png in Resources */,
+				828041F71A07C1CF00847A80 /* tmp_testfit1@2x.png in Resources */,
 				824F368519E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg in Resources */,
 				82A805D219D1F61E00308BA1 /* grfx_movieIcon.png in Resources */,
 				82716A6D19E441390070A331 /* grfx_access_nav@2x.png in Resources */,

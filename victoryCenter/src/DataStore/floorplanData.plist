@@ -26,8 +26,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string></string>
-					<string></string>
+					<string>tmp_testfit1.png</string>
+					<string>tmp_testfit2.png</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -123,8 +123,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string></string>
-					<string></string>
+					<string>tmp_testfit1.png</string>
+					<string>tmp_testfit2.png</string>
 				</array>
 			</dict>
 		</array>
@@ -153,8 +153,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string></string>
-					<string></string>
+					<string>tmp_testfit1.png</string>
+					<string>tmp_testfit2.png</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -250,8 +250,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string></string>
-					<string></string>
+					<string>tmp_testfit1.png</string>
+					<string>tmp_testfit2.png</string>
 				</array>
 			</dict>
 		</array>
@@ -280,8 +280,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string></string>
-					<string></string>
+					<string>tmp_testfit1.png</string>
+					<string>tmp_testfit2.png</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -377,8 +377,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string></string>
-					<string></string>
+					<string>tmp_testfit1.png</string>
+					<string>tmp_testfit2.png</string>
 				</array>
 			</dict>
 		</array>
@@ -407,8 +407,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string></string>
-					<string></string>
+					<string>tmp_testfit1.png</string>
+					<string>tmp_testfit2.png</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -504,8 +504,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string></string>
-					<string></string>
+					<string>tmp_testfit1.png</string>
+					<string>tmp_testfit2.png</string>
 				</array>
 			</dict>
 		</array>
