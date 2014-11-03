@@ -58,16 +58,16 @@
 }
 
 + (UIColor *)vcSiteRestaurant {
-    return [UIColor colorWithRed:201.0/255.0 green:134.0/255.0 blue:56.0/255.0 alpha:0.9];
+    return [UIColor colorWithRed:188.0/255.0 green:196.0/255.0 blue:185.0/255.0 alpha:0.9];
 }
 + (UIColor *)vcSiteRetail {
-    return [UIColor colorWithRed:210.0/255.0 green:134.0/255.0 blue:126.0/255.0 alpha:0.9];
+    return [UIColor colorWithRed:225.0/255.0 green:188.0/255.0 blue:175.0/255.0 alpha:0.9];
 }
 + (UIColor *)vcSiteResidentail {
-    return [UIColor colorWithRed:247.0/255.0 green:184.0/255.0 blue:95.0/255.0 alpha:0.9];
+    return [UIColor colorWithRed:184.0/255.0 green:206.0/255.0 blue:208.0/255.0 alpha:0.9];
 }
 + (UIColor *)vcSiteRecreation {
-    return [UIColor colorWithRed:157.0/255.0 green:159.0/255.0 blue:191.0/255.0 alpha:0.9];
+    return [UIColor colorWithRed:200.0/255.0 green:176.0/255.0 blue:187.0/255.0 alpha:0.9];
 }
 
 + (UIColor *)vcBldParking {

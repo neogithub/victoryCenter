@@ -197,6 +197,8 @@
 		82716A6D19E441390070A331 /* grfx_access_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6B19E441390070A331 /* grfx_access_nav@2x.png */; };
 		82716A7019E45B940070A331 /* grfx_site_overview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6E19E45B940070A331 /* grfx_site_overview.jpg */; };
 		82716A7119E45B940070A331 /* grfx_site_overview@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6F19E45B940070A331 /* grfx_site_overview@2x.jpg */; };
+		827492DD1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492DB1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay.png */; };
+		827492DE1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492DC1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png */; };
 		828041F61A07C1CF00847A80 /* tmp_testfit1.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F21A07C1CF00847A80 /* tmp_testfit1.png */; };
 		828041F71A07C1CF00847A80 /* tmp_testfit1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */; };
 		828041F81A07C1CF00847A80 /* tmp_testfit2.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F41A07C1CF00847A80 /* tmp_testfit2.png */; };
@@ -534,6 +536,8 @@
 		82716A6B19E441390070A331 /* grfx_access_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_access_nav@2x.png"; sourceTree = "<group>"; };
 		82716A6E19E45B940070A331 /* grfx_site_overview.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_site_overview.jpg; sourceTree = "<group>"; };
 		82716A6F19E45B940070A331 /* grfx_site_overview@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_site_overview@2x.jpg"; sourceTree = "<group>"; };
+		827492DB1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neighborhood_Districts_Overlay.png; sourceTree = "<group>"; };
+		827492DC1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Neighborhood_Districts_Overlay@2x.png"; sourceTree = "<group>"; };
 		828041F21A07C1CF00847A80 /* tmp_testfit1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_testfit1.png; sourceTree = "<group>"; };
 		828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp_testfit1@2x.png"; sourceTree = "<group>"; };
 		828041F41A07C1CF00847A80 /* tmp_testfit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_testfit2.png; sourceTree = "<group>"; };
@@ -1102,6 +1106,8 @@
 				82A21F651A02B30A00BE8706 /* Access_overlay@2x.png */,
 				82716A6619E434C10070A331 /* Districts_overlay.png */,
 				82716A6719E434C10070A331 /* Districts_overlay@2x.png */,
+				827492DB1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay.png */,
+				827492DC1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png */,
 				82627E1919E702EC0062FC0C /* grfx_recreationg_overlay.png */,
 				82627E1A19E702EC0062FC0C /* grfx_recreationg_overlay@2x.png */,
 				82627E1B19E702EC0062FC0C /* grfx_residential_overlay.png */,
@@ -1447,6 +1453,7 @@
 				824C196419FA9DC400EA7613 /* grfx_floorplan15@2x.png in Resources */,
 				826078121A0130CA000DF24F /* grfx_logo.png in Resources */,
 				82DC11E819DAEE070057AE4F /* City_base_map_@2x.png in Resources */,
+				827492DD1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay.png in Resources */,
 				82A21F671A02B30A00BE8706 /* Access_overlay@2x.png in Resources */,
 				82DC11D619DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg in Resources */,
 				823D78A819F156830096E62C /* grfx_floorplan.png in Resources */,
@@ -1526,6 +1533,7 @@
 				825E5F8619F83FA300B77F7F /* grfx_elavators_lobby@2x.png in Resources */,
 				825E5F8519F83FA300B77F7F /* grfx_elavators_lobby.png in Resources */,
 				824F369419E6C47500267B44 /* thumb_20140811_view3_100m_01.jpg in Resources */,
+				827492DE1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png in Resources */,
 				824F369E19E6C47500267B44 /* thumb_Victory Center 01 Highway View.jpg in Resources */,
 				82000B9D19E5963800AE2C70 /* team_duda_text.png in Resources */,
 				82DC11DC19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg in Resources */,

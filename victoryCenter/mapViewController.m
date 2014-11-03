@@ -639,7 +639,7 @@ static float    kPanelBtnHeight             = 38.0;
         [self addDistanceInfo];
     }
     if (selectedIndex == 3) { // Tapped Districits
-        [self updateOverlayImage:@"Districts_overlay.png"];
+        [self updateOverlayImage:@"Neighborhood_Districts_Overlay.png"];
     }
 }
 
@@ -768,12 +768,12 @@ static float    kPanelBtnHeight             = 38.0;
     //Set up overlay's array
     [arr_overlayArray removeAllObjects];
     arr_overlayArray = nil;
-    arr_overlayArray = [[NSMutableArray alloc] initWithObjects:@"grfx_restaurant_overlay.png", @"grfx_retail_overlay.png", @"grfx_residential_overlay.png", @"grfx_recreationg_overlay.png", @"gfrx_all_overlay.png", nil];
+    arr_overlayArray = [[NSMutableArray alloc] initWithObjects:@"grfx_recreationg_overlay.png", @"grfx_retail_overlay.png", @"grfx_residential_overlay.png", @"grfx_restaurant_overlay.png", @"gfrx_all_overlay.png", nil];
     
     //Set up indicator's color array
     [arr_indicatorColors removeAllObjects];
     arr_indicatorColors = nil;
-    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRestaurant], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRecreation], [UIColor vcDarkBlue], nil];
+    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRecreation], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRestaurant], [UIColor vcDarkBlue], nil];
 }
 
 #pragma mark Create Site Amenities' panel
