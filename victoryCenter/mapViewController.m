@@ -646,8 +646,9 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark Add panel for neighborhood amenities
 - (void)addNeibAmenitiesPanel
 {
-    uiv_neibAccPanel = [self setUpAmenitiesPanel];
+    uiv_neibAmePanel = [self setUpAmenitiesPanel];
     [self prepareHotspotData:@"neighborhood"];
+    uiv_neibAmePanel.alpha = 0.8;
     //Set up indicator's color array
     [arr_indicatorColors removeAllObjects];
     arr_indicatorColors = nil;
@@ -765,6 +766,7 @@ static float    kPanelBtnHeight             = 38.0;
 {
     uiv_siteAmePanel = [self createSiteAmenitiesPanel];
     [self prepareHotspotData:@"site"];
+    uiv_siteAmePanel.alpha =  0.8;
     //Set up overlay's array
     [arr_overlayArray removeAllObjects];
     arr_overlayArray = nil;
