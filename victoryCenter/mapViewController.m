@@ -798,21 +798,25 @@ static float    kPanelBtnHeight             = 38.0;
     uiv_siteAmenInfo.backgroundColor = [UIColor whiteColor];
     [self.view addSubview: uiv_siteAmenInfo];
     
-    UILabel *uil_existing =[[UILabel alloc] initWithFrame:CGRectMake(10.0, 5.0, 260, 15)];
+    UIView *uiv_leftBar = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 10.0, 55.0)];
+    uiv_leftBar.backgroundColor = [UIColor vcDarkBlue];
+    [uiv_siteAmenInfo addSubview: uiv_leftBar];
+    
+    UILabel *uil_existing =[[UILabel alloc] initWithFrame:CGRectMake(15.0, 5.0, 260, 15)];
     uil_existing.backgroundColor = [UIColor clearColor];
     [uil_existing setText:@"E - EXISTING"];
     [uil_existing setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
     [uil_existing setTextColor:[UIColor vcDarkBlue]];
     [uiv_siteAmenInfo addSubview: uil_existing];
     
-    UILabel *uil_changing = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 20.0, 260, 15)];
+    UILabel *uil_changing = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 20.0, 260, 15)];
     uil_changing.backgroundColor = [UIColor clearColor];
     [uil_changing setText:@"E* - CONFIGURATION & RETAILER MAY CHANGE"];
     [uil_changing setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
     [uil_changing setTextColor:[UIColor vcDarkBlue]];
     [uiv_siteAmenInfo addSubview: uil_changing];
     
-    UILabel *uil_planing = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 35.0, 260, 15)];
+    UILabel *uil_planing = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 35.0, 260, 15)];
     uil_planing.backgroundColor = [UIColor clearColor];
     [uil_planing setText:@"PL - PLANNED"];
     [uil_planing setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
