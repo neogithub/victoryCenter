@@ -894,7 +894,7 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)creatBuildingBtn
 {
     uib_bldBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    uib_bldBtn.frame = CGRectMake(499.0, 546.0, 206.0, 144.0);
+    uib_bldBtn.frame = CGRectMake(500.0, 545.0, 206.0, 144.0);
     uib_bldBtn.backgroundColor = [UIColor clearColor];
     [_uiv_mapContainer addSubview: uib_bldBtn];
     [uib_bldBtn addTarget:self action:@selector(tapBldBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -973,28 +973,28 @@ static float    kPanelBtnHeight             = 38.0;
         _uiiv_mapOverlay = nil;
         
         //If in Site map merge overlay with parking
-        if (_uiv_siteSubMenu.hidden == NO) {
-            UIImage *normalLayer = [UIImage imageWithContentsOfFile:path];
-            UIImage *parkingLayer = [UIImage imageNamed:@"grfx_site_parking.png"];
-            CGSize size = screenRect.size;
-            UIGraphicsBeginImageContext(size);
-            
-            [normalLayer drawInRect:screenRect];
-            [parkingLayer drawInRect:screenRect];
-            
-            UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:finalImage];
-            _uiiv_mapOverlay.frame = screenRect;
-            _uiiv_mapOverlay.alpha = 0.0;
-            [_uiv_mapContainer insertSubview:_uiiv_mapOverlay atIndex:1];
-        }
-        else {
+//        if (_uiv_siteSubMenu.hidden == NO) {
+//            UIImage *normalLayer = [UIImage imageWithContentsOfFile:path];
+//            UIImage *parkingLayer = [UIImage imageNamed:@"grfx_site_parking.png"];
+//            CGSize size = screenRect.size;
+//            UIGraphicsBeginImageContext(size);
+//            
+//            [normalLayer drawInRect:screenRect];
+//            [parkingLayer drawInRect:screenRect];
+//            
+//            UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+//            UIGraphicsEndImageContext();
+//            _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:finalImage];
+//            _uiiv_mapOverlay.frame = screenRect;
+//            _uiiv_mapOverlay.alpha = 0.0;
+//            [_uiv_mapContainer insertSubview:_uiiv_mapOverlay atIndex:1];
+//        }
+//        else {
             _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
             _uiiv_mapOverlay.frame = screenRect;
             _uiiv_mapOverlay.alpha = 0.0;
             [_uiv_mapContainer insertSubview: _uiiv_mapOverlay belowSubview:_uiiv_vcLogo];
-        }
+//        }
         
         [UIView animateWithDuration:0.3 animations:^{
             _uiiv_mapOverlay.alpha = 1.0;
