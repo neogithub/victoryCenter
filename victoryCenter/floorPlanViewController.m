@@ -25,6 +25,8 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   UIView                          *uiv_panel;
 @property (nonatomic, strong)   UIButton                        *uib_PanelTitle;
 @property (nonatomic, strong)   NSArray                         *arr_titleText;
+@property (nonatomic, strong)   UIImageView                     *uiiv_smallStack;
+@property (nonatomic, strong)   UIView                          *uiv_btnContainer;
 // Control Button
 @property (nonatomic, strong)   UIButton                        *uib_backBtn;
 // Pano image
@@ -50,6 +52,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     _currentPage = pageIndex;
     [self createPanel];
     [self setCtrlBtns];
+    [self createKeyPanel];
 }
 
 - (void)viewDidLoad
@@ -64,6 +67,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 {
     NSDictionary *dict = notification.userInfo;
     NSString *imageName = [dict objectForKey:@"imageName"];
+    NSString *panoTitle = [dict objectForKey:@"title"];
     if (_uiv_panoramicView) {
         [_uiv_panoramicView removeFromSuperview];
         _uiv_panoramicView = nil;
@@ -71,20 +75,30 @@ static CGFloat  kPanelTitleHeight           = 46;
     
     if (imageName) {
         _uiv_panoramicView = [[xhPanoramicView alloc] initWithFrame:self.view.bounds andImageName:imageName];
-        [self setPanoClose];
+        [self setPanoCloseAndTitle:panoTitle];
         [self.view addSubview:_uiv_panoramicView];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"hideBuildingTopMenu" object:nil];
     }
 }
 
-- (void)setPanoClose
+- (void)setPanoCloseAndTitle:(NSString *)title
 {
     UIButton *uib_panoClose = [UIButton buttonWithType:UIButtonTypeCustom];
     uib_panoClose.frame = CGRectMake(0.0, 0.0, 44.0, 44.0);
     [uib_panoClose setBackgroundImage:[UIImage imageNamed:@"grfx_contactClose.jpg"] forState:UIControlStateNormal];
     [uib_panoClose addTarget:self action:@selector(removePano:) forControlEvents:UIControlEventTouchUpInside];
     [_uiv_panoramicView addSubview: uib_panoClose];
+    
+    UILabel *uil_title = [[UILabel alloc] initWithFrame:CGRectMake(42.0, 0.0, 180.0, 44.0)];
+    uil_title.text = title;
+    uil_title.textColor = [UIColor vcDarkBlue];
+    [uil_title setTextAlignment:NSTextAlignmentCenter];
+    uil_title.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    uil_title.layer.borderWidth = 1.0;
+    uil_title.backgroundColor = [UIColor whiteColor];
+    [uil_title setFont:[UIFont fontWithName:@"Raleway-Bold" size:20]];
+    [_uiv_panoramicView addSubview: uil_title];
 }
 
 - (void)removePano:(id)sender
@@ -101,10 +115,19 @@ static CGFloat  kPanelTitleHeight           = 46;
     }
 }
 
+#pragma mark - Set up Keys panel
+
+- (void)createKeyPanel
+{
+    UIImageView *uiiv_keyPanel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_floorplan_keys.png"]];
+    uiiv_keyPanel.frame = CGRectMake(_uiv_btnContainer.frame.origin.x, _uiv_btnContainer.frame.origin.y + _uiv_btnContainer.frame.size.height+30, uiiv_keyPanel.frame.size.width, uiiv_keyPanel.frame.size.height);
+    [self.view addSubview: uiiv_keyPanel];
+}
+
 #pragma mark - Set up side panel
 - (void)createPanel
 {
-    _uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(850, 0.0, panle_w, 150)];
+    _uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(850, 0.0, panle_w, 185)];
     _uiv_panel.backgroundColor = [UIColor clearColor];
     _uiv_panel.layer.borderWidth = 1.0;
     _uiv_panel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
@@ -130,39 +153,45 @@ static CGFloat  kPanelTitleHeight           = 46;
 
 - (void)createPanelContent
 {
-    UIImageView *uiiv_panelBld = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, kPanelTitleHeight, panle_w, 150)];
+    UIImageView *uiiv_panelBld = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, kPanelTitleHeight, panle_w, 185-kPanelTitleHeight)];
     uiiv_panelBld.backgroundColor = [UIColor vcPanelBackgroundColor];
+    
+    _uiiv_smallStack = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, kPanelTitleHeight, panle_w, 185 - kPanelTitleHeight)];
+    _uiiv_smallStack.image = [UIImage imageNamed:@"grfx_smallStack.png"];
+    _uiiv_smallStack.contentMode = UIViewContentModeScaleAspectFit;
+    
     [_uiv_panel addSubview: uiiv_panelBld];
+    [_uiv_panel addSubview: _uiiv_smallStack];
 }
 
 #pragma mark - Set up control Buttons
 - (void)setCtrlBtns
 {
-    UIView *uiv_btnContainer = [[UIView alloc] initWithFrame:CGRectMake(_uiv_panel.frame.origin.x, _uiv_panel.frame.size.height, panle_w, 83)];
-    uiv_btnContainer.backgroundColor = [UIColor clearColor];
+    _uiv_btnContainer = [[UIView alloc] initWithFrame:CGRectMake(_uiv_panel.frame.origin.x, _uiv_panel.frame.size.height, panle_w, 83)];
+    _uiv_btnContainer.backgroundColor = [UIColor clearColor];
     _uib_backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _uib_backBtn.frame = CGRectMake(0.0, 0.0, panle_w, 33.0);
     _uib_backBtn.backgroundColor = [UIColor vcLightBlue];
     [_uib_backBtn setTitle:@"BACK TO STACK" forState:UIControlStateNormal];
     [_uib_backBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14]];
     [_uib_backBtn addTarget:self action:@selector(backBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [uiv_btnContainer addSubview: _uib_backBtn];
+    [_uiv_btnContainer addSubview: _uib_backBtn];
     
     UIButton *uib_upArrow = [UIButton buttonWithType:UIButtonTypeCustom];
     uib_upArrow.frame = CGRectMake(0.0, 38, 74, 45);
     [uib_upArrow setBackgroundImage:[UIImage imageNamed:@"grfx_floorUp.png"] forState:UIControlStateNormal];
     uib_upArrow.tag = 7;
     [uib_upArrow addTarget:self action:@selector(tapArrowBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [uiv_btnContainer addSubview: uib_upArrow];
+    [_uiv_btnContainer addSubview: uib_upArrow];
     
     UIButton *uib_downArrow = [UIButton buttonWithType:UIButtonTypeCustom];
     uib_downArrow.frame = CGRectMake(80.0, 38, 74, 45);
     [uib_downArrow setBackgroundImage:[UIImage imageNamed:@"grfx_floorDwon.png"] forState:UIControlStateNormal];
     [uib_downArrow addTarget:self action:@selector(tapArrowBtn:) forControlEvents:UIControlEventTouchUpInside];
     uib_downArrow.tag = 8;
-    [uiv_btnContainer addSubview: uib_downArrow];
+    [_uiv_btnContainer addSubview: uib_downArrow];
     
-    [self.view addSubview: uiv_btnContainer];
+    [self.view addSubview: _uiv_btnContainer];
 }
 
 - (void)tapArrowBtn:(id)sender

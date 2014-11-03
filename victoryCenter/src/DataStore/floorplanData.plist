@@ -37,7 +37,7 @@
 						<key>background</key>
 						<string>grfx_east_hs.png</string>
 						<key>xy</key>
-						<string>770,300</string>
+						<string>750,350</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -69,7 +69,7 @@
 						<key>background</key>
 						<string>grfx_west_hs.png</string>
 						<key>xy</key>
-						<string>70,300</string>
+						<string>70,350</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -164,7 +164,7 @@
 						<key>background</key>
 						<string>grfx_east_hs.png</string>
 						<key>xy</key>
-						<string>665,130</string>
+						<string>750,350</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -172,7 +172,7 @@
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string></string>
+						<string>20140802_downtown_100m_5pm.jpg</string>
 					</dict>
 					<dict>
 						<key>type</key>
@@ -180,7 +180,7 @@
 						<key>background</key>
 						<string>grfx_south_hs.png</string>
 						<key>xy</key>
-						<string>465,130</string>
+						<string>465,530</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -188,7 +188,7 @@
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string></string>
+						<string>20140811_view3_100m_01.jpg</string>
 					</dict>
 					<dict>
 						<key>type</key>
@@ -196,7 +196,7 @@
 						<key>background</key>
 						<string>grfx_west_hs.png</string>
 						<key>xy</key>
-						<string>665,230</string>
+						<string>70,350</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -212,7 +212,7 @@
 						<key>background</key>
 						<string>grfx_north_hs.png</string>
 						<key>xy</key>
-						<string>465,230</string>
+						<string>465,110</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -291,7 +291,7 @@
 						<key>background</key>
 						<string>grfx_east_hs.png</string>
 						<key>xy</key>
-						<string>665,130</string>
+						<string>750,350</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -299,7 +299,7 @@
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string></string>
+						<string>20140802_downtown_100m_5pm.jpg</string>
 					</dict>
 					<dict>
 						<key>type</key>
@@ -307,7 +307,7 @@
 						<key>background</key>
 						<string>grfx_south_hs.png</string>
 						<key>xy</key>
-						<string>465,130</string>
+						<string>465,530</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -315,7 +315,7 @@
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string></string>
+						<string>20140811_view3_100m_01.jpg</string>
 					</dict>
 					<dict>
 						<key>type</key>
@@ -323,7 +323,7 @@
 						<key>background</key>
 						<string>grfx_west_hs.png</string>
 						<key>xy</key>
-						<string>665,230</string>
+						<string>70,350</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -339,7 +339,7 @@
 						<key>background</key>
 						<string>grfx_north_hs.png</string>
 						<key>xy</key>
-						<string>465,230</string>
+						<string>465,110</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -418,7 +418,7 @@
 						<key>background</key>
 						<string>grfx_east_hs.png</string>
 						<key>xy</key>
-						<string>665,130</string>
+						<string>750,350</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -426,7 +426,7 @@
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string></string>
+						<string>20140802_downtown_100m_5pm.jpg</string>
 					</dict>
 					<dict>
 						<key>type</key>
@@ -434,7 +434,7 @@
 						<key>background</key>
 						<string>grfx_south_hs.png</string>
 						<key>xy</key>
-						<string>465,130</string>
+						<string>465,530</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -442,7 +442,7 @@
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string></string>
+						<string>20140811_view3_100m_01.jpg</string>
 					</dict>
 					<dict>
 						<key>type</key>
@@ -450,7 +450,7 @@
 						<key>background</key>
 						<string>grfx_west_hs.png</string>
 						<key>xy</key>
-						<string>665,230</string>
+						<string>70,350</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
@@ -466,7 +466,7 @@
 						<key>background</key>
 						<string>grfx_north_hs.png</string>
 						<key>xy</key>
-						<string>465,230</string>
+						<string>465,110</string>
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>

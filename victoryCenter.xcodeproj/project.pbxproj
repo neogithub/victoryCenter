@@ -199,6 +199,10 @@
 		82716A7119E45B940070A331 /* grfx_site_overview@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6F19E45B940070A331 /* grfx_site_overview@2x.jpg */; };
 		827492DD1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492DB1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay.png */; };
 		827492DE1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492DC1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png */; };
+		827492E11A080C7F00F949E5 /* grfx_smallStack.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492DF1A080C7F00F949E5 /* grfx_smallStack.png */; };
+		827492E21A080C7F00F949E5 /* grfx_smallStack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E01A080C7F00F949E5 /* grfx_smallStack@2x.png */; };
+		827492E51A0818F500F949E5 /* grfx_floorplan_keys.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E31A0818F500F949E5 /* grfx_floorplan_keys.png */; };
+		827492E61A0818F500F949E5 /* grfx_floorplan_keys@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E41A0818F500F949E5 /* grfx_floorplan_keys@2x.png */; };
 		828041F61A07C1CF00847A80 /* tmp_testfit1.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F21A07C1CF00847A80 /* tmp_testfit1.png */; };
 		828041F71A07C1CF00847A80 /* tmp_testfit1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */; };
 		828041F81A07C1CF00847A80 /* tmp_testfit2.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F41A07C1CF00847A80 /* tmp_testfit2.png */; };
@@ -538,6 +542,10 @@
 		82716A6F19E45B940070A331 /* grfx_site_overview@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_site_overview@2x.jpg"; sourceTree = "<group>"; };
 		827492DB1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neighborhood_Districts_Overlay.png; sourceTree = "<group>"; };
 		827492DC1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Neighborhood_Districts_Overlay@2x.png"; sourceTree = "<group>"; };
+		827492DF1A080C7F00F949E5 /* grfx_smallStack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_smallStack.png; sourceTree = "<group>"; };
+		827492E01A080C7F00F949E5 /* grfx_smallStack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_smallStack@2x.png"; sourceTree = "<group>"; };
+		827492E31A0818F500F949E5 /* grfx_floorplan_keys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan_keys.png; sourceTree = "<group>"; };
+		827492E41A0818F500F949E5 /* grfx_floorplan_keys@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorplan_keys@2x.png"; sourceTree = "<group>"; };
 		828041F21A07C1CF00847A80 /* tmp_testfit1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_testfit1.png; sourceTree = "<group>"; };
 		828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp_testfit1@2x.png"; sourceTree = "<group>"; };
 		828041F41A07C1CF00847A80 /* tmp_testfit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_testfit2.png; sourceTree = "<group>"; };
@@ -790,12 +798,16 @@
 				82716A6B19E441390070A331 /* grfx_access_nav@2x.png */,
 				82716A6E19E45B940070A331 /* grfx_site_overview.jpg */,
 				82716A6F19E45B940070A331 /* grfx_site_overview@2x.jpg */,
+				827492DF1A080C7F00F949E5 /* grfx_smallStack.png */,
+				827492E01A080C7F00F949E5 /* grfx_smallStack@2x.png */,
 				8224FDF319D46D90002B1B44 /* cap_bar_.png */,
 				8224FDF419D46D90002B1B44 /* cap_bar_@2x.png */,
 				8224FE2E19D4BD6E002B1B44 /* normal_frame.png */,
 				8224FE2F19D4BD6E002B1B44 /* normal_frame@2x.png */,
 				8224FE3019D4BD6E002B1B44 /* play_button_@2x.png */,
 				8224FE3119D4BD6E002B1B44 /* play_button.png */,
+				827492E31A0818F500F949E5 /* grfx_floorplan_keys.png */,
+				827492E41A0818F500F949E5 /* grfx_floorplan_keys@2x.png */,
 			);
 			path = grfx;
 			sourceTree = "<group>";
@@ -1418,6 +1430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827492E51A0818F500F949E5 /* grfx_floorplan_keys.png in Resources */,
 				82DC11D019DAEA940057AE4F /* 20140811_view3_100m_03.jpg in Resources */,
 				82459E7519F6974A00E03A8D /* grfx_contactClose@2x.jpg in Resources */,
 				82000B8D19E592A800AE2C70 /* team_duda_logo.png in Resources */,
@@ -1440,6 +1453,7 @@
 				8224FE0919D47097002B1B44 /* Raleway-Regular.otf in Resources */,
 				82DC11E719DAEE070057AE4F /* City_base_map_.png in Resources */,
 				82DC11D919DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg in Resources */,
+				827492E21A080C7F00F949E5 /* grfx_smallStack@2x.png in Resources */,
 				82AB934C19FEC97B00DD0B30 /* grfx_north_hs.png in Resources */,
 				824C196219FA9DC400EA7613 /* grfx_floorplan10-14@2x.png in Resources */,
 				82459E7E19F6D4AE00E03A8D /* grfx_homeBtn@2x.png in Resources */,
@@ -1497,6 +1511,7 @@
 				82627E2619E702EC0062FC0C /* grfx_restaurant_overlay@2x.png in Resources */,
 				825E5F8319F83FA300B77F7F /* grf_elavators_high_rise.png in Resources */,
 				82A21F661A02B30A00BE8706 /* Access_overlay.png in Resources */,
+				827492E61A0818F500F949E5 /* grfx_floorplan_keys@2x.png in Resources */,
 				824F369919E6C47500267B44 /* thumb_victory_center_278_feet.jpg in Resources */,
 				8239ED121A016FAC00B25EA2 /* grfx_victoryPark_logo.png in Resources */,
 				82DC11C219DAEA940057AE4F /* 20140802_downtown_100m_1pm_high-res.jpg in Resources */,
@@ -1530,6 +1545,7 @@
 				824012EA19D1AF5D00C501EE /* InfoPlist.strings in Resources */,
 				82AB934E19FEC97B00DD0B30 /* grfx_south_hs.png in Resources */,
 				8224FE0319D47097002B1B44 /* Raleway-Bold.otf in Resources */,
+				827492E11A080C7F00F949E5 /* grfx_smallStack.png in Resources */,
 				825E5F8619F83FA300B77F7F /* grfx_elavators_lobby@2x.png in Resources */,
 				825E5F8519F83FA300B77F7F /* grfx_elavators_lobby.png in Resources */,
 				824F369419E6C47500267B44 /* thumb_20140811_view3_100m_01.jpg in Resources */,
@@ -1808,7 +1824,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2f89ae26-efe9-4bd7-a84b-fc9c827a3fe4";
+				PROVISIONING_PROFILE = "27682FC5-0FF3-4F01-9785-612973FD11E0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1861,7 +1877,7 @@
 				INFOPLIST_FILE = "victoryCenter/victoryCenter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "27682FC5-0FF3-4F01-9785-612973FD11E0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1871,14 +1887,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Incorporated";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Incorporated";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "victoryCenter/victoryCenter-Prefix.pch";
 				INFOPLIST_FILE = "victoryCenter/victoryCenter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5DA75D41-A3E9-4CA0-84FE-F76E92D6BFA0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

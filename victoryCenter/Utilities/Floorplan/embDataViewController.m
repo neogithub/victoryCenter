@@ -166,8 +166,26 @@
 - (void)neoHotspotsView:(neoHotspotsView *)hotspot didSelectItemAtIndex:(NSInteger)index
 {
     NSString *image = _arr_hotspotImg[index];
+    NSString *title = [NSString new];
+    switch (index) {
+        case 0:
+            title = @"EAST VIEW";
+            break;
+        case 1:
+            title = @"SOUTH VIEW";
+            break;
+        case 2:
+            title = @"WEST VIEW";
+            break;
+        case 3:
+            title = @"NORTH VIEW";
+            break;
+        default:
+            break;
+    }
+    
     if ([image length]) {
-        NSDictionary* dict = [NSDictionary dictionaryWithObject:_arr_hotspotImg[index] forKey:@"imageName"];
+        NSDictionary* dict = [NSDictionary dictionaryWithObjects:@[_arr_hotspotImg[index],title] forKeys:@[@"imageName" ,@"title"]];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"loadPanoImage"
                                                             object:self
                                                           userInfo:dict];
