@@ -104,7 +104,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 #pragma mark - Set up side panel
 - (void)createPanel
 {
-    _uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(850, 0.0, panle_w, 265)];
+    _uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(850, 0.0, panle_w, 150)];
     _uiv_panel.backgroundColor = [UIColor clearColor];
     _uiv_panel.layer.borderWidth = 1.0;
     _uiv_panel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
@@ -138,7 +138,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 #pragma mark - Set up control Buttons
 - (void)setCtrlBtns
 {
-    UIView *uiv_btnContainer = [[UIView alloc] initWithFrame:CGRectMake(_uiv_panel.frame.origin.x, _uiv_panel.frame.size.height+3, panle_w, 83)];
+    UIView *uiv_btnContainer = [[UIView alloc] initWithFrame:CGRectMake(_uiv_panel.frame.origin.x, _uiv_panel.frame.size.height, panle_w, 83)];
     uiv_btnContainer.backgroundColor = [UIColor clearColor];
     _uib_backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _uib_backBtn.frame = CGRectMake(0.0, 0.0, panle_w, 33.0);
