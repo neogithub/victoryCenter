@@ -36,7 +36,7 @@
 @property (nonatomic, strong) NSMutableArray                *arr_testFitSubMenu;
 @property (nonatomic, strong) NSMutableArray                *arr_testFitTenant;
 @property (nonatomic, strong) NSMutableArray                *arr_hotspotImg;
-
+@property (nonatomic, strong) NSMutableArray                *arr_hotspotCaption;
 @end
 
 @implementation embDataViewController
@@ -145,6 +145,9 @@
     [_arr_hotspotImg removeAllObjects];
     _arr_hotspotImg = nil;
     _arr_hotspotImg = [[NSMutableArray alloc] init];
+    [_arr_hotspotCaption removeAllObjects];
+    _arr_hotspotCaption = nil;
+    _arr_hotspotCaption = [[NSMutableArray alloc] init];
     for (int i = 0; i < arr_hotspots.count; i++) {
         NSDictionary *dict_hs = arr_hotspots[i];
         
@@ -155,37 +158,22 @@
         NSString *str_bgName = [[NSString alloc] initWithString:[dict_hs objectForKey:@"background"]];
         myHotspot.hotspotBgName = str_bgName;
         
+        NSString *str_caption = [[NSString alloc] initWithString:[dict_hs objectForKey:@"caption"]];
+        
         myHotspot.delegate = self;
         myHotspot.tagOfHs = i;
         [_zoomingScroll.blurView addSubview: myHotspot];
         [_arr_hotspots addObject: myHotspot];
         [_arr_hotspotImg addObject:imageName];
+        [_arr_hotspotCaption addObject: str_caption];
     }
 }
 
 - (void)neoHotspotsView:(neoHotspotsView *)hotspot didSelectItemAtIndex:(NSInteger)index
 {
     NSString *image = _arr_hotspotImg[index];
-    NSString *title = [NSString new];
-    switch (index) {
-        case 0:
-            title = @"EAST VIEW";
-            break;
-        case 1:
-            title = @"SOUTH VIEW";
-            break;
-        case 2:
-            title = @"WEST VIEW";
-            break;
-        case 3:
-            title = @"NORTH VIEW";
-            break;
-        default:
-            break;
-    }
-    
     if ([image length]) {
-        NSDictionary* dict = [NSDictionary dictionaryWithObjects:@[_arr_hotspotImg[index],title] forKeys:@[@"imageName" ,@"title"]];
+        NSDictionary* dict = [NSDictionary dictionaryWithObjects:@[_arr_hotspotImg[index],_arr_hotspotCaption[index]] forKeys:@[@"imageName" ,@"title"]];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"loadPanoImage"
                                                             object:self
                                                           userInfo:dict];

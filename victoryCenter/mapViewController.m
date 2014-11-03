@@ -768,21 +768,21 @@ static float    kPanelBtnHeight             = 38.0;
     //Set up overlay's array
     [arr_overlayArray removeAllObjects];
     arr_overlayArray = nil;
-    arr_overlayArray = [[NSMutableArray alloc] initWithObjects:@"grfx_recreationg_overlay.png", @"grfx_retail_overlay.png", @"grfx_residential_overlay.png", @"grfx_restaurant_overlay.png", @"gfrx_all_overlay.png", nil];
+    arr_overlayArray = [[NSMutableArray alloc] initWithObjects:@"grfx_recreationg_overlay.png", @"grfx_retail_overlay.png", @"grfx_residential_overlay.png", @"grfx_restaurant_overlay.png", @"grfx_site_parking.png", @"gfrx_all_overlay.png", nil];
     
     //Set up indicator's color array
     [arr_indicatorColors removeAllObjects];
     arr_indicatorColors = nil;
-    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRecreation], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRestaurant], [UIColor vcDarkBlue], nil];
+    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRecreation], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRestaurant], [UIColor vcDarkBlue], [UIColor vcDarkBlue], nil];
 }
 
 #pragma mark Create Site Amenities' panel
 
 - (UIView *)createSiteAmenitiesPanel
 {
-    panel_h = 5*kPanelBtnHeight + kPanelTitleHeight;
+    panel_h = 6*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING",  @"VIEW ALL", nil];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", @"PARKING", @"VIEW ALL", nil];
     
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"tapSiteAmenities:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
@@ -839,8 +839,8 @@ static float    kPanelBtnHeight             = 38.0;
             }];
         }
         else {
-            [self loadHotspotTable:sender];
             [self updateOverlayImage:[arr_overlayArray objectAtIndex:[sender tag]]];
+            [self loadHotspotTable:sender];
         }
     }
     else {
@@ -977,29 +977,25 @@ static float    kPanelBtnHeight             = 38.0;
         _uiiv_mapOverlay = nil;
         
         //If in Site map merge overlay with parking
-//        if (_uiv_siteSubMenu.hidden == NO) {
-//            UIImage *normalLayer = [UIImage imageWithContentsOfFile:path];
-//            UIImage *parkingLayer = [UIImage imageNamed:@"grfx_site_parking.png"];
-//            CGSize size = screenRect.size;
-//            UIGraphicsBeginImageContext(size);
-//            
-//            [normalLayer drawInRect:screenRect];
-//            [parkingLayer drawInRect:screenRect];
-//            
-//            UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
-//            UIGraphicsEndImageContext();
-//            _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:finalImage];
-//            _uiiv_mapOverlay.frame = screenRect;
-//            _uiiv_mapOverlay.alpha = 0.0;
-//            [_uiv_mapContainer insertSubview:_uiiv_mapOverlay atIndex:1];
-//        }
-//        else {
+        if (_uiv_siteSubMenu.hidden == NO) {
+            UIImage *normalLayer = [UIImage imageWithContentsOfFile:path];
+            CGSize size = screenRect.size;
+            UIGraphicsBeginImageContext(size);
+            
+            [normalLayer drawInRect:screenRect];
+            
+            _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:normalLayer];
+            _uiiv_mapOverlay.frame = screenRect;
+            _uiiv_mapOverlay.alpha = 0.0;
+            [_uiv_mapContainer insertSubview:_uiiv_mapOverlay atIndex:1];
+        }
+        else {
             _uiiv_mapOverlay = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
             _uiiv_mapOverlay.frame = screenRect;
             _uiiv_mapOverlay.alpha = 0.0;
             [_uiv_mapContainer insertSubview: _uiiv_mapOverlay belowSubview:_uiiv_vcLogo];
-//        }
-        
+        }
+     
         [UIView animateWithDuration:0.3 animations:^{
             _uiiv_mapOverlay.alpha = 1.0;
         }];
@@ -1186,6 +1182,9 @@ static float    kPanelBtnHeight             = 38.0;
         frame.size.height = panel_h - kPanelTitleHeight;//4*kPanelBtnHeight;
         [UIView animateWithDuration:0.33 animations:^{
             [self resetButtonsAndIndicators:thePanel];
+            for (UIView *tmp in arr_HotSpotViewArray) {
+                tmp.alpha = 0.0;
+            }
             buttonContianer.frame = frame;
         } completion:^(BOOL finished){
             [self deHighLightPanelBtn:sender];
