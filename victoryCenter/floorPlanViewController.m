@@ -227,6 +227,8 @@ static CGFloat  kPanelTitleHeight           = 46;
                                            animated:YES
                                          completion:nil];
     }
+    
+    [self setpageIndex];
 }
 
 - (void)backBtnTapped:(id)sender
