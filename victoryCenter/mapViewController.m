@@ -1491,7 +1491,7 @@ static float    kPanelBtnHeight             = 38.0;
 	int pathGrouping	= -1;
 	int indexStart		= -1;
     
-    if (_uiv_citySubMenu.hidden == NO) {
+//    if (_uiv_citySubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
 				pathGrouping	= 1;
@@ -1520,69 +1520,69 @@ static float    kPanelBtnHeight             = 38.0;
 			default:
 				break;
 		}
-    }
-    
-    if (_uiv_neighborhoodSubMenu.hidden == NO) {
-        switch ([sender tag]) {
-			case 0:
-				pathGrouping	= 3;
-				indexStart		= 0;
-				break;
-				
-			case 1:
-				pathGrouping	= 3;
-				indexStart		= 3;
-				break;
-				
-			case 2:
-				pathGrouping	= 2;
-				indexStart		= 6;
-				break;
-				
-			case 3:
-				pathGrouping	= 3;
-				indexStart		= 8;
-				break;
-				
-			case 4:
-				pathGrouping	= 1;
-				indexStart		= 6;
-				break;
-			default:
-				break;
-		}
-    }
-	
-    if (_uiv_siteSubMenu.hidden == NO) {
-        switch ([sender tag]) {
-			case 0:
-				pathGrouping	= 3;
-				indexStart		= 0;
-				break;
-				
-			case 1:
-				pathGrouping	= 3;
-				indexStart		= 3;
-				break;
-				
-			case 2:
-				pathGrouping	= 2;
-				indexStart		= 6;
-				break;
-				
-			case 3:
-				pathGrouping	= 3;
-				indexStart		= 8;
-				break;
-				
-			case 4:
-				pathGrouping	= 1;
-				indexStart		= 6;
-				break;
-			default:
-				break;
-		}
-    }
+//    }
+//    
+//    if (_uiv_neighborhoodSubMenu.hidden == NO) {
+//        switch ([sender tag]) {
+//			case 0:
+//				pathGrouping	= 3;
+//				indexStart		= 0;
+//				break;
+//				
+//			case 1:
+//				pathGrouping	= 3;
+//				indexStart		= 3;
+//				break;
+//				
+//			case 2:
+//				pathGrouping	= 2;
+//				indexStart		= 6;
+//				break;
+//				
+//			case 3:
+//				pathGrouping	= 3;
+//				indexStart		= 8;
+//				break;
+//				
+//			case 4:
+//				pathGrouping	= 1;
+//				indexStart		= 6;
+//				break;
+//			default:
+//				break;
+//		}
+//    }
+//	
+//    if (_uiv_siteSubMenu.hidden == NO) {
+//        switch ([sender tag]) {
+//			case 0:
+//				pathGrouping	= 3;
+//				indexStart		= 0;
+//				break;
+//				
+//			case 1:
+//				pathGrouping	= 3;
+//				indexStart		= 3;
+//				break;
+//				
+//			case 2:
+//				pathGrouping	= 2;
+//				indexStart		= 6;
+//				break;
+//				
+//			case 3:
+//				pathGrouping	= 3;
+//				indexStart		= 8;
+//				break;
+//				
+//			case 4:
+//				pathGrouping	= 1;
+//				indexStart		= 6;
+//				break;
+//			default:
+//				break;
+//		}
+//    }
     
 	for (int i=0; i<pathGrouping; i++) {
 		embBezierPathItem *p = _arr_pathItems[indexStart+i];
