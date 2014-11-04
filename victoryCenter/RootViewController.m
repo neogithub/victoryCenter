@@ -154,6 +154,11 @@
 #pragma mark - Load VC
 -(void)loadVC:(id)sender
 {
+    if (self.kenView) {
+        [self.kenView removeFromSuperview];
+        self.kenView = nil;
+    }
+    
 	NSString *vcIdentifier;
     NSArray *arr_identifier = [[NSArray alloc] initWithObjects:@"buildingViewController", @"mapViewController", @"galleryViewController", @"teamViewController", nil];
     NSArray *arr_vcTitle = [[NSArray alloc] initWithObjects:@"BUILDING", @"LOCATION", @"GALLERY", @"TEAM", nil];
@@ -415,6 +420,9 @@
         _uil_titleLabel.hidden = YES;
         [tmp removeFromSuperview];
         tmp = nil;
+        
+        [self createKenBurnView];
+        
     }];
 }
 
