@@ -27,6 +27,8 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   NSArray                         *arr_titleText;
 @property (nonatomic, strong)   UIImageView                     *uiiv_smallStack;
 @property (nonatomic, strong)   UIView                          *uiv_btnContainer;
+@property (nonatomic, strong)   UIView                          *uiv_floorIndicator;
+@property (nonatomic, strong)   NSMutableArray                  *arr_indicatorFrames;
 // Control Button
 @property (nonatomic, strong)   UIButton                        *uib_backBtn;
 // Pano image
@@ -46,7 +48,17 @@ static CGFloat  kPanelTitleHeight           = 46;
 - (void)viewWillAppear:(BOOL)animated
 {
     self.view.frame = screenRect;
-    _arr_titleText = [[NSArray alloc] initWithObjects:@"FLOOR 24", @"FLOOR 18 - 23", @"FLOOR 17", @"FLOOR 16", @"FLOOR 15", @"FLOOR 10 - 14", @"FLOOR 9", @"FLOOR 8",nil];
+    _arr_titleText = [[NSArray alloc] initWithObjects: @"FLOOR 18 - 23", @"FLOOR 17", @"FLOOR 16", @"FLOOR 15", @"FLOOR 10 - 14", @"FLOOR 9", @"FLOOR 8",nil];
+    
+    CGRect frame_18_23 = CGRectMake(42.0, 18.0, 93.0, 30.0);
+    CGRect frame_17 = CGRectMake(42.0, 50.0, 93.0, 4.0);
+    CGRect frame_16 = CGRectMake(42.0, 55.0, 93.0, 4.0);
+    CGRect frame_15 = CGRectMake(42.0, 60.0, 93.0, 4.0);
+    CGRect frame_14_10 = CGRectMake(42.0, 65.0, 93.0, 24.0);
+    CGRect frame_9 = CGRectMake(42.0, 88.0, 93.0, 4.0);
+    CGRect frame_8 = CGRectMake(16.0, 93.0, 118.0, 4.0);
+    _arr_indicatorFrames = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:frame_18_23], [NSValue valueWithCGRect:frame_17], [NSValue valueWithCGRect:frame_16], [NSValue valueWithCGRect:frame_15], [NSValue valueWithCGRect:frame_14_10], [NSValue valueWithCGRect:frame_9], [NSValue valueWithCGRect:frame_8], nil];
+    
     _modelController = [[embModelController alloc] init];
     [self initPageView:pageIndex];
     _currentPage = pageIndex;
@@ -160,8 +172,13 @@ static CGFloat  kPanelTitleHeight           = 46;
     _uiiv_smallStack.image = [UIImage imageNamed:@"grfx_smallStack.png"];
     _uiiv_smallStack.contentMode = UIViewContentModeScaleAspectFit;
     
+    _uiv_floorIndicator = [[UIView alloc] initWithFrame:CGRectZero];
+    _uiv_floorIndicator.backgroundColor = [UIColor vcDarkBlue];
+    _uiv_floorIndicator.frame = [[_arr_indicatorFrames objectAtIndex:pageIndex] CGRectValue];
+    
     [_uiv_panel addSubview: uiiv_panelBld];
     [_uiv_panel addSubview: _uiiv_smallStack];
+    [_uiiv_smallStack addSubview: _uiv_floorIndicator];
 }
 
 #pragma mark - Set up control Buttons
@@ -288,6 +305,9 @@ static CGFloat  kPanelTitleHeight           = 46;
     int index = (int)[self.modelController indexOfViewController:theCurrentViewController];
     _currentPage = index;
     [_uib_PanelTitle setTitle:_arr_titleText[index] forState:UIControlStateNormal];
+    [UIView animateWithDuration:0.33 animations:^{
+        _uiv_floorIndicator.frame = [[_arr_indicatorFrames objectAtIndex:_currentPage] CGRectValue];
+    }];
 }
 
 #pragma mark set page index
