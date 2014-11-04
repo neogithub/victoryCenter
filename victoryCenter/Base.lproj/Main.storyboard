@@ -168,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9qJ-h0-uZ8" userLabel="Button - ALL">
-                                <rect key="frame" x="225" y="0.0" width="130" height="34"/>
+                                <rect key="frame" x="624" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="ALL">
@@ -176,7 +176,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MsS-In-0zF" userLabel="Button - Renderings">
-                                <rect key="frame" x="358" y="0.0" width="130" height="34"/>
+                                <rect key="frame" x="225" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="RENDERINGS">
@@ -184,7 +184,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bIe-Wv-8Lt" userLabel="Button - Photo">
-                                <rect key="frame" x="491" y="0.0" width="130" height="34"/>
+                                <rect key="frame" x="358" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="PHOTOGRAPHY">
@@ -192,7 +192,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VEe-IM-fN7" userLabel="Button - Video">
-                                <rect key="frame" x="624" y="0.0" width="130" height="34"/>
+                                <rect key="frame" x="491" y="0.0" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="VIDEO">
@@ -324,13 +324,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="780" height="733"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pnF-TU-07B" userLabel="Button - Button 24">
-                                        <rect key="frame" x="214" y="20" width="457" height="61"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5WN-3a-PmD" userLabel="Button - Button 18-23">
                                         <rect key="frame" x="214" y="91" width="515" height="168"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -450,7 +443,6 @@
                         <outlet property="uib_16" destination="WGN-u8-D7U" id="NOY-Lr-wyU"/>
                         <outlet property="uib_17" destination="5zO-ae-XqT" id="tzH-Oj-X5F"/>
                         <outlet property="uib_18_23" destination="5WN-3a-PmD" id="hGg-M9-V3Y"/>
-                        <outlet property="uib_24" destination="pnF-TU-07B" id="0Fh-nE-Oq7"/>
                         <outlet property="uib_8" destination="18P-BW-yUW" id="40x-PY-Nmx"/>
                         <outlet property="uib_9" destination="ylk-Q6-m2J" id="Ipa-uP-XS3"/>
                         <outlet property="uib_amenities" destination="MKa-pH-F8E" id="gDq-st-HDt"/>
@@ -602,7 +594,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="jR3-8g-6rt" userLabel="View － Map type's container">
-                                <rect key="frame" x="272" y="710" width="470" height="40"/>
+                                <rect key="frame" x="277" y="710" width="470" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="17m-6K-AOt" userLabel="Button - Normal">

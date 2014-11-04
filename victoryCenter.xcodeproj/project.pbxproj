@@ -161,6 +161,7 @@
 		824F36A119E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F368319E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg */; };
 		824F36A219E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F368419E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg */; };
 		824F36A419E6C56E00267B44 /* thumb_neoscape_bug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */; };
+		8253976A1A097AA6000B6B7C /* embKenBurns.m in Sources */ = {isa = PBXBuildFile; fileRef = 825397691A097AA6000B6B7C /* embKenBurns.m */; };
 		825E5F7919F83CD200B77F7F /* grfx_elavators_stack_blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7719F83CD200B77F7F /* grfx_elavators_stack_blank.png */; };
 		825E5F7A19F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7819F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png */; };
 		825E5F8319F83FA300B77F7F /* grf_elavators_high_rise.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7B19F83FA300B77F7F /* grf_elavators_high_rise.png */; };
@@ -501,6 +502,8 @@
 		824F368319E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center 04 Plaza View.jpg"; sourceTree = "<group>"; };
 		824F368419E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center View from plaza edits-sm.jpg"; sourceTree = "<group>"; };
 		824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_neoscape_bug.jpg; sourceTree = "<group>"; };
+		825397681A097AA6000B6B7C /* embKenBurns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embKenBurns.h; sourceTree = "<group>"; };
+		825397691A097AA6000B6B7C /* embKenBurns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embKenBurns.m; sourceTree = "<group>"; };
 		825E5F7719F83CD200B77F7F /* grfx_elavators_stack_blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elavators_stack_blank.png; sourceTree = "<group>"; };
 		825E5F7819F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elavators_stack_blank@2x.png"; sourceTree = "<group>"; };
 		825E5F7B19F83FA300B77F7F /* grf_elavators_high_rise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grf_elavators_high_rise.png; sourceTree = "<group>"; };
@@ -1017,6 +1020,8 @@
 				82AB933F19FE83DB00DD0B30 /* xhPanoramicView.m */,
 				8239ED0D1A0168ED00B25EA2 /* siteOverview.h */,
 				8239ED0E1A0168ED00B25EA2 /* siteOverview.m */,
+				825397681A097AA6000B6B7C /* embKenBurns.h */,
+				825397691A097AA6000B6B7C /* embKenBurns.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1738,6 +1743,7 @@
 				82DC11F819DAF2990057AE4F /* FGalleryPhoto.m in Sources */,
 				8263B98219ED790C00E70C1B /* MapViewAnnotation.m in Sources */,
 				824012EC19D1AF5D00C501EE /* main.m in Sources */,
+				8253976A1A097AA6000B6B7C /* embKenBurns.m in Sources */,
 				82AB934019FE83DB00DD0B30 /* xhPanoramicView.m in Sources */,
 				8263B98B19EDACD700E70C1B /* embTableCell.m in Sources */,
 				82CE2FD019F05EEB006F7B0E /* neoHotspotsView.m in Sources */,

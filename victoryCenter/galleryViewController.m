@@ -68,10 +68,10 @@
 {
     arr_topBtnArray = [[NSMutableArray alloc] init];
     
-    [self initTopBtn:_uib_all withTitle:@"ALL" andTag:1 andSelected:YES];
-    [self initTopBtn:_uib_render withTitle:@"RENDERING" andTag:2 andSelected:NO];
-    [self initTopBtn:_uib_photo withTitle:@"PHOTOGRAPHY" andTag:3 andSelected:NO];
-    [self initTopBtn:_uib_video withTitle:@"VIDEO" andTag:4 andSelected:NO];
+    [self initTopBtn:_uib_all withTitle:@"ALL" andTag:4 andSelected:NO];
+    [self initTopBtn:_uib_render withTitle:@"RENDERING" andTag:1 andSelected:YES];
+    [self initTopBtn:_uib_photo withTitle:@"PHOTOGRAPHY" andTag:2 andSelected:NO];
+    [self initTopBtn:_uib_video withTitle:@"VIDEO" andTag:3 andSelected:NO];
 }
 
 - (void)initTopBtn:(UIButton *)theBtn withTitle:(NSString *)title andTag:(int)index andSelected:(BOOL)selected
@@ -136,14 +136,14 @@
     [self clearAllDataCollection];
     NSDictionary *raw_Dict = [[NSDictionary alloc] initWithDictionary:[arr_AlbumData objectAtIndex:0]];
     NSMutableArray *arr_secInfo = [[NSMutableArray alloc] initWithArray:[raw_Dict objectForKey:@"sectioninfo"]];
-    if (index == 1) {
+    if (index == 4) {
         for (int i = 0; i < [arr_secInfo count]; i++) {
             NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[i]];
             [self addItemsAndFramesAndCapions:itemDic];
         }
     }
     else {
-        NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[index-2]];
+        NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[index-1]];
         [self addItemsAndFramesAndCapions:itemDic];
     }
 }

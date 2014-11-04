@@ -11,6 +11,7 @@
 #import "UIColor+Extensions.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "contactViewController.h"
+#import "embKenBurns.h"
 
 @interface RootViewController ()
 {
