@@ -28,7 +28,6 @@
 //Floor plan
 @property (nonatomic, strong) floorPlanViewController       *floorPlan;
 
-@property (weak, nonatomic) IBOutlet UIButton               *uib_24;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_18_23;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_17;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_16;
@@ -86,15 +85,14 @@
 
 - (void)groupBtns
 {
-    _uib_24.tag = 1;
-    _uib_18_23.tag = 2;
-    _uib_17.tag = 3;
-    _uib_16.tag = 4;
-    _uib_15.tag = 5;
-    _uib_10_14.tag = 6;
-    _uib_9.tag = 7;
-    _uib_8.tag = 8;
-    _arr_floorBtns = [[NSArray alloc] initWithObjects:_uib_24, _uib_18_23, _uib_17, _uib_16, _uib_15, _uib_10_14, _uib_9, _uib_8, nil];
+    _uib_18_23.tag = 1;
+    _uib_17.tag = 2;
+    _uib_16.tag = 3;
+    _uib_15.tag = 4;
+    _uib_10_14.tag = 5;
+    _uib_9.tag = 6;
+    _uib_8.tag = 7;
+    _arr_floorBtns = [[NSArray alloc] initWithObjects:_uib_18_23, _uib_17, _uib_16, _uib_15, _uib_10_14, _uib_9, _uib_8, nil];
 
     for (UIButton *tmp in _arr_floorBtns) {
         [tmp addTarget:self action:@selector(floorBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -174,8 +172,13 @@
 - (void)tapOnTopBtns:(id)sender
 {
     UIButton *tappedBtn = sender;
-    [self resetTopMenu];
     
+    if (tappedBtn.selected && tappedBtn.tag == 1) {
+        [self resetBuildingImg:nil];
+        return;
+    }
+    
+    [self resetTopMenu];
     tappedBtn.selected = YES;
     tappedBtn.backgroundColor = [UIColor vcDarkBlue];
     
