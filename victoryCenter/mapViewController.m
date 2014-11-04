@@ -1490,7 +1490,9 @@ static float    kPanelBtnHeight             = 38.0;
 	// loop # paths in a group
 	int pathGrouping	= -1;
 	int indexStart		= -1;
-		switch ([sender tag]) {
+    
+    if (_uiv_citySubMenu.hidden == NO) {
+        switch ([sender tag]) {
 			case 0:
 				pathGrouping	= 1;
 				indexStart		= 0;
@@ -1513,12 +1515,75 @@ static float    kPanelBtnHeight             = 38.0;
 				
 			case 4:
 				pathGrouping	= 1;
-				indexStart		= 0;
+				indexStart		= 6;
 				break;
 			default:
 				break;
 		}
+    }
+    
+    if (_uiv_neighborhoodSubMenu.hidden == NO) {
+        switch ([sender tag]) {
+			case 0:
+				pathGrouping	= 3;
+				indexStart		= 0;
+				break;
+				
+			case 1:
+				pathGrouping	= 3;
+				indexStart		= 3;
+				break;
+				
+			case 2:
+				pathGrouping	= 2;
+				indexStart		= 6;
+				break;
+				
+			case 3:
+				pathGrouping	= 3;
+				indexStart		= 8;
+				break;
+				
+			case 4:
+				pathGrouping	= 1;
+				indexStart		= 6;
+				break;
+			default:
+				break;
+		}
+    }
 	
+    if (_uiv_siteSubMenu.hidden == NO) {
+        switch ([sender tag]) {
+			case 0:
+				pathGrouping	= 3;
+				indexStart		= 0;
+				break;
+				
+			case 1:
+				pathGrouping	= 3;
+				indexStart		= 3;
+				break;
+				
+			case 2:
+				pathGrouping	= 2;
+				indexStart		= 6;
+				break;
+				
+			case 3:
+				pathGrouping	= 3;
+				indexStart		= 8;
+				break;
+				
+			case 4:
+				pathGrouping	= 1;
+				indexStart		= 6;
+				break;
+			default:
+				break;
+		}
+    }
+    
 	for (int i=0; i<pathGrouping; i++) {
 		embBezierPathItem *p = _arr_pathItems[indexStart+i];
 		_embDirectionPath.myPath = p.embPath;
@@ -1581,7 +1646,7 @@ static float    kPanelBtnHeight             = 38.0;
         theBtn.backgroundColor = [UIColor vcDarkBlue];
     }
     else{
-        theBtn.backgroundColor = [UIColor vcLightBlueAlpha];
+        theBtn.backgroundColor = [UIColor vcLightBlue];
     }
     [arr_switcherArray addObject: theBtn];
 }
