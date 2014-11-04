@@ -13,7 +13,7 @@
 #import "contactViewController.h"
 #import "embKenBurns.h"
 
-@interface RootViewController ()
+@interface RootViewController () <embKenBurnsDelegate>
 {
     UIScreen				*external_disp;
     UIWindow				*external_wind;
@@ -25,9 +25,11 @@
     NSTimeInterval				totalElapsedTime;
 	UISlider                    *progressIndicator;
 }
-@property (weak, nonatomic) IBOutlet UIButton *uib_helpBtn;
-@property (weak, nonatomic) IBOutlet UIButton *uib_movieBtn;
-@property (weak, nonatomic) IBOutlet UIButton *uib_mailBtn;
+@property (weak, nonatomic) IBOutlet UIImageView                *uiiv_bgImg;
+@property (weak, nonatomic) IBOutlet UIImageView                *uiiv_vcLogo;
+@property (weak, nonatomic) IBOutlet UIButton                   *uib_helpBtn;
+@property (weak, nonatomic) IBOutlet UIButton                   *uib_movieBtn;
+@property (weak, nonatomic) IBOutlet UIButton                   *uib_mailBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton                   *uib_menu;
 @property (strong, nonatomic) IBOutlet UIView                   *uiv_toolsPanel;
@@ -40,6 +42,7 @@
 @property (nonatomic, strong) MPMoviePlayerViewController       *playerViewController;
 @property (nonatomic, strong) contactViewController             *contactVC;
 
+@property (nonatomic, retain) embKenBurns                       *kenView;
 @end
 
 @implementation RootViewController
@@ -52,6 +55,7 @@
 {
     self.view.frame = screenRect;
     [super viewWillAppear:animated];
+    [self createKenBurnView];
 }
 
 - (void)viewDidLoad
@@ -64,6 +68,32 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeContact:) name:@"removeContact" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doneButtonClick:) name:MPMoviePlayerPlaybackDidFinishNotification object:_playerViewController];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(swithToBuilding) name:@"switchToBuilding" object:nil];
+}
+
+#pragma mark - Create KenBurn view
+
+- (void) createKenBurnView
+{
+    self.kenView = [[embKenBurns alloc]initWithFrame:self.view.bounds];
+    self.kenView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+	self.kenView.delegate = self;
+	self.kenView.alpha=0.0;
+	
+	[self.view insertSubview:self.kenView belowSubview:_uiiv_vcLogo];
+	
+    UIImage *image = [UIImage imageNamed:@"grfx_launching.png"];
+    
+    NSArray *arr_images = [[NSArray alloc] initWithObjects:image, nil];
+    
+	[UIView animateWithDuration:0.33
+					 animations:^{  self.kenView.alpha=1.0;  }
+					 completion:^(BOOL  completed){
+						 [self.kenView animateWithImages:arr_images
+									  transitionDuration:12
+													loop:YES
+											 isLandscape:YES];
+                         }];
 }
 
 #pragma mark - Deal with notificaiton

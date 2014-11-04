@@ -87,6 +87,8 @@
                         <outlet property="uib_mailBtn" destination="gzd-ze-aRE" id="MkP-hp-TlG"/>
                         <outlet property="uib_menu" destination="gBW-pQ-0as" id="9uN-2g-I38"/>
                         <outlet property="uib_movieBtn" destination="j71-NV-ATp" id="hNo-x1-gYE"/>
+                        <outlet property="uiiv_bgImg" destination="Iyi-gi-qCd" id="xcT-kJ-GJL"/>
+                        <outlet property="uiiv_vcLogo" destination="Ltm-cH-X4c" id="C8J-Fi-F2q"/>
                         <outlet property="uil_titleLabel" destination="SZb-ak-fCC" id="Sgy-WR-Dj0"/>
                         <outlet property="uiv_toolsPanel" destination="him-ZN-xYh" id="hCY-Y9-Mm6"/>
                     </connections>
