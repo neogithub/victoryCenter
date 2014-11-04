@@ -151,6 +151,19 @@ static float    kPanelBtnHeight             = 38.0;
     _uiv_citySubMenu.hidden = NO;
     _uiv_neighborhoodSubMenu.hidden = YES;
     _uiv_siteSubMenu.hidden = YES;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetLocation) name:@"tapOnTitle" object:nil];
+}
+
+- (void)resetLocation
+{
+    [self removeAllHotspots];
+    [self removeAllPanels];
+    [self tapMapTopMenu:_uib_city];
+    [self removeOverlay];
+    for (UIButton *tmp in [_uiv_citySubMenu subviews]) {
+        tmp.selected = NO;
+    }
 }
 
 #pragma mark - Set up map's flod animation
@@ -390,8 +403,7 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)updateSubMenu:(int)index
 {
     [self resetSubMenus];
-    [_uiiv_mapOverlay removeFromSuperview];
-    _uiiv_mapOverlay = nil;
+    [self removeOverlay];
     [self removeBldBtn];
     switch (index) {
         case 0: { //Show City's sub menu
@@ -511,8 +523,7 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)handleCitySubMenu:(id)sender
 {
     [self hiliteSubMenuTappedButton:sender inView:_uiv_citySubMenu];
-    [_uiiv_mapOverlay removeFromSuperview];
-    _uiiv_mapOverlay = nil;
+    [self removeOverlay];
     [self removePaths];
     [self removeAllPanels];
     [self removeAllHotspots];
@@ -621,8 +632,7 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)handleNeibSubMenu:(id)sender
 {
     [self hiliteSubMenuTappedButton:sender inView:_uiv_neighborhoodSubMenu];
-    [_uiiv_mapOverlay removeFromSuperview];
-    _uiiv_mapOverlay = nil;
+    [self removeOverlay];
     [self removePaths];
     [self removeAllPanels];
     [self removeAllHotspots];
@@ -666,8 +676,7 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)handleSiteSubMenu:(id)sender
 {
     [self hiliteSubMenuTappedButton:sender inView:_uiv_siteSubMenu];
-    [_uiiv_mapOverlay removeFromSuperview];
-    _uiiv_mapOverlay = nil;
+    [self removeOverlay];
     [self removePaths];
     [self removeAllPanels];
     [self removeAllHotspots];
@@ -1793,6 +1802,12 @@ static float    kPanelBtnHeight             = 38.0;
     _uiv_overviewContainer = nil;
 }
 
+- (void)removeOverlay
+{
+    [_uiiv_mapOverlay removeFromSuperview];
+    _uiiv_mapOverlay = nil;
+}
+
 - (void)removeAllPanels
 {
     [uiv_cityAccPanel removeFromSuperview];
@@ -1852,6 +1867,8 @@ static float    kPanelBtnHeight             = 38.0;
     
     [self removeHotspots];
     
+    [self removeOverlay];
+    
     [_uib_city removeFromSuperview];
     _uib_city = nil;
     
@@ -1861,8 +1878,6 @@ static float    kPanelBtnHeight             = 38.0;
     [_uib_site removeFromSuperview];
     _uib_site = nil;
     
-    [_uiiv_mapOverlay removeFromSuperview];
-    _uiiv_mapOverlay = nil;
     
     [_uiv_mapContainer removeFromSuperview];
     _uiv_mapContainer = nil;
