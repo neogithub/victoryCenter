@@ -26,6 +26,8 @@ static float kCardsGap      = 12.0;
 @property (nonatomic, strong) UIView                        *uiv_bluryView;
 @property (nonatomic, strong) UIView                        *uiv_teamDetailContainer;
 
+@property (nonatomic, strong) UILabel                       *uil_close;
+
 @end
 
 @implementation teamViewController
@@ -172,6 +174,8 @@ static float kCardsGap      = 12.0;
     [_uiv_teamDetailContainer addSubview: [self createDetailTextFrame:detailTextFrame andIndex:index]];
     [self.view addSubview: _uiv_teamDetailContainer];
     
+    [self addCloseLabelToDetail];
+    
     //Add tap gesture to detail panel
     UITapGestureRecognizer *tapOnDetailPanel = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(removeDetailInfo:)];
     tapOnDetailPanel.numberOfTapsRequired = 1;
@@ -231,6 +235,20 @@ static float kCardsGap      = 12.0;
     uitv_detailText.selectable = NO;
     
     return  uitv_detailText;
+}
+
+- (void)addCloseLabelToDetail
+{
+    if (_uil_close) {
+        [_uil_close removeFromSuperview];
+        _uil_close = nil;
+    }
+    _uil_close = [[UILabel alloc] initWithFrame:CGRectMake(788.0, 200.0, 100.0, 37.0)];
+    _uil_close.backgroundColor = [UIColor lightGrayColor];
+    [_uil_close setText:@"CLOSE"];
+    [_uil_close setTextAlignment:NSTextAlignmentCenter];
+    _uil_close.textColor = [UIColor whiteColor];
+    [_uiv_teamDetailContainer addSubview: _uil_close];
 }
 
 - (void)removeDetailInfo:(UIGestureRecognizer *)gesture
