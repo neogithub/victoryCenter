@@ -458,7 +458,7 @@ static float    kPanelBtnHeight             = 38.0;
 {
     [theBtn setTitle:title forState:UIControlStateNormal];
     [theBtn setTitle:title forState:UIControlStateSelected];
-    [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [theBtn setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.5] forState:UIControlStateNormal];
     [theBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [theBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
     theBtn.backgroundColor = [UIColor vcDarkBlue];

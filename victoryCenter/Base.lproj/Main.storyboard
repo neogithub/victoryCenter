@@ -614,7 +614,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="669-5r-r8m" userLabel="Button - Apple">
-                                        <rect key="frame" x="157" y="0.0" width="156" height="39"/>
+                                        <rect key="frame" x="157" y="0.0" width="156" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.82123237640000002" blue="0.109268954" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="APPLE MAP">
