@@ -411,7 +411,7 @@
 {
     _uiv_menuPanel.hidden = NO;
     _uiv_leftFillerPanel.hidden = NO;
-    _uib_menu.enabled = NO;
+    _uib_menu.hidden = NO;
     _uib_mailBtn.enabled = YES;
     [UIView animateWithDuration:0.33 animations:^{
         _contactVC.view.transform = CGAffineTransformMakeTranslation(0.0, 768);
