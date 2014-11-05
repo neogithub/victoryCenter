@@ -51,7 +51,7 @@
 			</dict>
 			<dict>
 				<key>albumtype</key>
-				<string>image</string>
+				<string>photo</string>
 				<key>category</key>
 				<string>photography</string>
 				<key>items</key>

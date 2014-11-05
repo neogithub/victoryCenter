@@ -10,6 +10,7 @@
 #import "galleryCVCell.h"
 #import "UIColor+Extensions.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "xhPanoramicView.h"
 
 @interface galleryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 {
@@ -36,6 +37,7 @@
     NSMutableArray          *arr_AlbumCaption;
     //Data for tapping on cells
     NSMutableArray          *arr_AllImgs;
+    NSMutableArray          *arr_AllPhotos;
     NSMutableArray          *arr_AllFlms;
 }
 @property (weak, nonatomic) IBOutlet UIButton               *uib_all;
@@ -45,6 +47,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView       *uic_gallery;
 
 @property (nonatomic, strong) MPMoviePlayerViewController   *playerViewController;
+// Pano image
+@property (nonatomic, strong)   xhPanoramicView             *uiv_panoramicView; 
 @end
 
 @implementation galleryViewController
@@ -127,7 +131,7 @@
 	NSMutableArray *rawArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
     arr_AlbumData = [[NSMutableArray alloc] init];
     [arr_AlbumData addObject:[rawArray objectAtIndex:0]];
-    [self updateGalleryData:1];//Init with all items of gallery
+    [self updateGalleryData:1];//Init with Rendering images
     [_uic_gallery reloadData];
 }
 
@@ -162,9 +166,11 @@
 
 - (void)prepareDetailData:(NSDictionary *)itemDic
 {
-
     if ([[itemDic objectForKey:@"albumtype"] isEqualToString:@"image"]) {
         [arr_AllImgs addObjectsFromArray:[itemDic objectForKey:@"items"]];
+    }
+    if ([[itemDic objectForKey:@"albumtype"] isEqualToString:@"photo"]) {
+        [arr_AllPhotos addObjectsFromArray:[itemDic objectForKey:@"items"]];
     }
     if ([[itemDic objectForKey:@"albumtype"] isEqualToString:@"film"]) {
         [arr_AllFlms addObjectsFromArray:[itemDic objectForKey:@"items"]];
@@ -188,6 +194,9 @@
     [arr_AllFlms removeAllObjects];
     arr_AllFlms = nil;
     arr_AllFlms = [[NSMutableArray alloc] init];
+    [arr_AllPhotos removeAllObjects];
+    arr_AllPhotos = nil;
+    arr_AllPhotos = [[NSMutableArray alloc] init];
 }
 
 #pragma mark - Collection Delegate Methods
@@ -577,8 +586,56 @@
     //    }
 }
 
+#pragma mark - Prepare Pano image
 
+- (void)loadPanoImage:(int)index
+{
+    if (_uiv_panoramicView) {
+        [_uiv_panoramicView removeFromSuperview];
+        _uiv_panoramicView = nil;
+    }
+    NSString *imageName = [arr_AllPhotos objectAtIndex: index];
+    if (imageName) {
+        _uiv_panoramicView = [[xhPanoramicView alloc] initWithFrame:self.view.bounds andImageName:imageName];
+        [self setPanoCloseAndTitle:nil];
+        [self.view addSubview:_uiv_panoramicView];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+    }
+}
 
+- (void)setPanoCloseAndTitle:(NSString *)title
+{
+    UIButton *uib_panoClose = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_panoClose.frame = CGRectMake(0.0, 0.0, 44.0, 44.0);
+    [uib_panoClose setBackgroundImage:[UIImage imageNamed:@"grfx_contactClose.jpg"] forState:UIControlStateNormal];
+    [uib_panoClose addTarget:self action:@selector(removePano:) forControlEvents:UIControlEventTouchUpInside];
+    [_uiv_panoramicView addSubview: uib_panoClose];
+    
+//    UILabel *uil_title = [[UILabel alloc] initWithFrame:CGRectMake(42.0, 0.0, 180.0, 44.0)];
+//    uil_title.text = title;
+//    uil_title.textColor = [UIColor vcDarkBlue];
+//    [uil_title setTextAlignment:NSTextAlignmentCenter];
+//    uil_title.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+//    uil_title.layer.borderWidth = 1.0;
+//    uil_title.backgroundColor = [UIColor whiteColor];
+//    [uil_title setFont:[UIFont fontWithName:@"Raleway-Bold" size:20]];
+//    [_uiv_panoramicView addSubview: uil_title];
+}
+
+- (void)removePano:(id)sender
+{
+    if (_uiv_panoramicView) {
+        [UIView animateWithDuration:0.2 animations:^{
+            _uiv_panoramicView.alpha = 0.0;
+        } completion:^(BOOL finished){
+            [_uiv_panoramicView removeFromSuperview];
+            _uiv_panoramicView = nil;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
+        }];
+    }
+}
+
+#pragma mark - Load FGallery
 - (void)openFGallery:(int)index
 {
     NSString *galleryTitle = [NSString new];
@@ -606,20 +663,35 @@
 // Used in Photos Layout.
 // In Photos layout, tap on one thumbnail, photo gallery start at that index
 -(void)click2Open:(id)sender inSection:(int)section {
-    
     int rowIndex = (int)[sender tag];
-    if (arr_AllImgs.count == 0) {
-        [self openFilm:rowIndex];
-    }
-    else {
+    if (_uib_all.selected) {
         if (rowIndex < arr_AllImgs.count) {
             [self openFGallery:rowIndex];
+            return;
+        }
+        if (rowIndex >= arr_AllImgs.count && rowIndex < (arr_AllPhotos.count + arr_AllImgs.count)) {
+            [self loadPanoImage:rowIndex - arr_AllImgs.count];
+//            NSLog(@"The tapped index is %i and all index is %i", rowIndex, arr_AllImgs.count + arr_AllPhotos.count);
+            return;
         }
         else {
-            [self openFilm:((int)rowIndex - (int)arr_AllImgs.count)];
+            [self openFilm:rowIndex - arr_AllImgs.count - arr_AllPhotos.count];
+            return;
         }
     }
-	return;
+    
+    if (_uib_render.selected) {
+        [self openFGallery:rowIndex];
+    }
+    
+    if (_uib_photo.selected) {
+//        NSLog(@"\n\n PHOTOGRAPHY");
+        [self loadPanoImage:rowIndex];
+    }
+    
+    if (_uib_video.selected) {
+        [self openFilm:rowIndex];
+    }
 }
 
 #pragma mark - FGalleryViewControllerDelegate Methods
