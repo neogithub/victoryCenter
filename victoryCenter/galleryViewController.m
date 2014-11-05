@@ -670,12 +670,11 @@
             return;
         }
         if (rowIndex >= arr_AllImgs.count && rowIndex < (arr_AllPhotos.count + arr_AllImgs.count)) {
-            [self loadPanoImage:rowIndex - arr_AllImgs.count];
-//            NSLog(@"The tapped index is %i and all index is %i", rowIndex, arr_AllImgs.count + arr_AllPhotos.count);
+            [self loadPanoImage:rowIndex - (int)arr_AllImgs.count];
             return;
         }
         else {
-            [self openFilm:rowIndex - arr_AllImgs.count - arr_AllPhotos.count];
+            [self openFilm:rowIndex - (int)arr_AllImgs.count - (int)arr_AllPhotos.count];
             return;
         }
     }
