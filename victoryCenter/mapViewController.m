@@ -29,7 +29,7 @@
 
 #define METERS_PER_MILE 1609.344
 
-static CGFloat  kTableHeight                = 280;
+//static CGFloat  kTableHeight                = 280;
 //static CGFloat  kExpendedHeight             = 433;//kTableHeight + 160;
 static CGFloat  kPanelTitleHeight           = 46;
 static BOOL     kMapCanZoom                 = YES;
@@ -41,6 +41,7 @@ static float    kPanelBtnHeight             = 38.0;
 @interface mapViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, embDrawPathDelegate, MKMapViewDelegate, embMapHotspotListViewControllerDelegate>
 {
     float                   panel_h;
+    CGFloat                 kTableHeight;
     
     NSMutableArray          *arr_topBtnsArray;
     NSMutableArray          *arr_subMenuArray;
@@ -1231,6 +1232,16 @@ static float    kPanelBtnHeight             = 38.0;
     //Get the current panel
     UIView *thePanel = buttonContianer.superview;
     
+    //Add hotspots accroding to index
+    [self createHotspots:(int)[sender tag]];
+    
+    if (arr_HotSpotXY.count >= 9) {
+        kTableHeight = 280.0;
+    }
+    else {
+        kTableHeight = 150.0;
+    }
+    
     //Update position of table view's position
     [_uiv_tablePanel removeFromSuperview];
     _uiv_tablePanel = nil;
@@ -1241,9 +1252,9 @@ static float    kPanelBtnHeight             = 38.0;
     
     //Update table view's content data
     [self loadHotspotTableView:(int)[sender tag]];
-    //Add hotspots accroding to index
-    [self createHotspots:(int)[sender tag]];
     //Add table view under buttons' container
+    
+    
     [buttonContianer insertSubview:_uiv_tablePanel aboveSubview:firstBtn];
     
     //Update Amenities panel's height
