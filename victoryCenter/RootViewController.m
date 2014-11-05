@@ -74,6 +74,11 @@
 
 - (void) createKenBurnView
 {
+    if (self.kenView) {
+        [self.kenView removeFromSuperview];
+        self.kenView = nil;
+    }
+    
     self.kenView = [[embKenBurns alloc]initWithFrame:self.view.bounds];
     self.kenView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
@@ -155,8 +160,12 @@
 -(void)loadVC:(id)sender
 {
     if (self.kenView) {
-        [self.kenView removeFromSuperview];
-        self.kenView = nil;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.kenView.alpha = 0.0;
+        } completion:^(BOOL finished){
+            [self.kenView removeFromSuperview];
+            self.kenView = nil;
+        }];
     }
     
 	NSString *vcIdentifier;
