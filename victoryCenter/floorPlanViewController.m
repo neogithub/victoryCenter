@@ -25,10 +25,15 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   UIView                          *uiv_panel;
 @property (nonatomic, strong)   UIButton                        *uib_PanelTitle;
 @property (nonatomic, strong)   NSArray                         *arr_titleText;
+@property (nonatomic, strong)   NSArray                         *arr_squareFeet;
 @property (nonatomic, strong)   UIImageView                     *uiiv_smallStack;
 @property (nonatomic, strong)   UIView                          *uiv_btnContainer;
 @property (nonatomic, strong)   UIView                          *uiv_floorIndicator;
 @property (nonatomic, strong)   NSMutableArray                  *arr_indicatorFrames;
+// Floor num & RSF. labels
+@property (nonatomic, strong)   UIView                          *uiv_labelsContainer;
+@property (nonatomic, strong)   UILabel                         *uil_floorNum;
+@property (nonatomic, strong)   UILabel                         *uil_floorRsf;
 // Control Button
 @property (nonatomic, strong)   UIButton                        *uib_backBtn;
 // Pano image
@@ -49,6 +54,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 {
     self.view.frame = screenRect;
     _arr_titleText = [[NSArray alloc] initWithObjects: @"FLOOR 18 - 23", @"FLOOR 17", @"FLOOR 16", @"FLOOR 15", @"FLOOR 10 - 14", @"FLOOR 9", @"FLOOR 8",nil];
+    _arr_squareFeet = [[NSArray alloc] initWithObjects:@"100.0", @"101.0", @"102.0", @"103.0", @"104.0", @"105.0", @"106.0", @"107.0", nil];
     
     CGRect frame_18_23 = CGRectMake(42.0, 18.0, 93.0, 30.0);
     CGRect frame_17 = CGRectMake(42.0, 50.0, 93.0, 4.0);
@@ -65,6 +71,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     [self createPanel];
     [self setCtrlBtns];
     [self createKeyPanel];
+    [self createFloorPlanAndRsfLabels];
 }
 
 - (void)viewDidLoad
@@ -179,6 +186,29 @@ static CGFloat  kPanelTitleHeight           = 46;
     [_uiv_panel addSubview: uiiv_panelBld];
     [_uiv_panel addSubview: _uiiv_smallStack];
     [_uiiv_smallStack addSubview: _uiv_floorIndicator];
+}
+
+#pragma mark - Set up floor RSF labels
+
+- (void)createFloorPlanAndRsfLabels
+{
+    _uiv_labelsContainer = [[UIView alloc] initWithFrame:CGRectMake(45.0, 90.0, 200, 80)];
+    _uiv_labelsContainer.backgroundColor = [UIColor vcLightBlueAlpha];
+    [self.view addSubview: _uiv_labelsContainer];
+    
+    _uil_floorNum = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, 150.0, 40.0)];
+    _uil_floorNum.backgroundColor = [UIColor clearColor];
+    _uil_floorNum.text = _arr_titleText[pageIndex];
+    _uil_floorNum.textColor = [UIColor whiteColor];
+    _uil_floorNum.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
+    [_uiv_labelsContainer addSubview: _uil_floorNum];
+    
+    _uil_floorRsf = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 40.0, 150.0, 40.0)];
+    _uil_floorRsf.backgroundColor = [UIColor clearColor];
+    _uil_floorRsf.text = _arr_squareFeet[pageIndex];
+    _uil_floorRsf.textColor = [UIColor whiteColor];
+    _uil_floorRsf.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
+    [_uiv_labelsContainer addSubview: _uil_floorRsf];
 }
 
 #pragma mark - Set up control Buttons
@@ -308,6 +338,9 @@ static CGFloat  kPanelTitleHeight           = 46;
     [UIView animateWithDuration:0.33 animations:^{
         _uiv_floorIndicator.frame = [[_arr_indicatorFrames objectAtIndex:_currentPage] CGRectValue];
     }];
+    
+    _uil_floorRsf.text = _arr_squareFeet[index];
+    _uil_floorNum.text = _arr_titleText[index];
 }
 
 #pragma mark set page index
