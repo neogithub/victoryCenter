@@ -8,13 +8,14 @@
 
 #import "teamViewController.h"
 #import "UIColor+Extensions.h"
+#import "CMPopTipView.h"
 
 static float kDropSpeed		= 0.33;
 static float kAnimaDelay	= 0.2;
 static float kCardWidth     = 183.0;
 static float kCardsGap      = 12.0;
 
-@interface teamViewController ()
+@interface teamViewController ()<CMPopTipViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView            *uiiv_teamBg;
 
@@ -25,9 +26,11 @@ static float kCardsGap      = 12.0;
 
 @property (nonatomic, strong) UIView                        *uiv_bluryView;
 @property (nonatomic, strong) UIView                        *uiv_teamDetailContainer;
-
 @property (nonatomic, strong) UILabel                       *uil_close;
-
+// Help tip view
+@property (nonatomic, strong) NSMutableArray                *arr_helpText;
+@property (nonatomic, strong) NSMutableArray                *visiblePopTipViews;
+@property (nonatomic, strong) NSMutableArray                *arr_helpTargetViews;
 @end
 
 @implementation teamViewController
@@ -35,6 +38,8 @@ static float kCardsGap      = 12.0;
 - (void)viewWillAppear:(BOOL)animated
 {
     self.view.frame = screenRect;
+    [self prepareHlepData];
+    [self loadHelpView];
 }
 
 - (void)viewDidLoad
@@ -380,6 +385,85 @@ static float kCardsGap      = 12.0;
     [UIView animateWithDuration:0.2 animations:^{
         uil_version.transform = CGAffineTransformIdentity;
     }];
+}
+
+#pragma mark - Add Help view
+- (void)prepareHlepData
+{
+    [_arr_helpText removeAllObjects];
+    _arr_helpText = nil;
+    _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                     @"Tap menu button to load main menu.",
+                     @"Tap cell to load more detail info.",
+                     nil];
+    
+    [_arr_helpTargetViews removeAllObjects];
+    _arr_helpTargetViews = nil;
+    UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, _arr_cards[2],  nil];
+}
+
+- (void)dismissAllPopTipViews
+{
+//	while ([self.visiblePopTipViews count] > 0) {
+//		CMPopTipView *popTipView = [self.visiblePopTipViews objectAtIndex:0];
+//		[popTipView dismissAnimated:YES];
+//		[self.visiblePopTipViews removeObjectAtIndex:0];
+//	}
+    
+    for (CMPopTipView *popTipView in self.visiblePopTipViews) {
+        [popTipView dismissAnimated:YES];
+        [self.visiblePopTipViews removeObject:popTipView];
+    }
+}
+
+- (void)loadHelpView
+{
+	[self dismissAllPopTipViews];
+    for (int i = 0; i < _arr_helpText.count; i++) {
+        NSString *contentMessage = nil;
+        contentMessage = _arr_helpText[i];
+        UIColor *backgroundColor = [UIColor redColor];
+        UIColor *textColor = [UIColor whiteColor];
+        
+        CMPopTipView *popTipView;
+        popTipView = [[CMPopTipView alloc] initWithMessage:contentMessage];
+        popTipView.delegate = self;
+        
+        /* Some options to try.
+         */
+        //popTipView.disableTapToDismiss = YES;
+        //popTipView.preferredPointDirection = PointDirectionUp;
+        //popTipView.hasGradientBackground = NO;
+        //popTipView.cornerRadius = 2.0;
+        //popTipView.sidePadding = 30.0f;
+        //popTipView.topMargin = 20.0f;
+        //popTipView.pointerSize = 50.0f;
+        popTipView.hasShadow = NO;
+        
+        if (backgroundColor && ![backgroundColor isEqual:[NSNull null]]) {
+            popTipView.backgroundColor = backgroundColor;
+        }
+        if (textColor && ![textColor isEqual:[NSNull null]]) {
+            popTipView.textColor = textColor;
+        }
+        
+        popTipView.animation = arc4random() % 2;
+        popTipView.has3DStyle = NO;
+        
+        popTipView.dismissTapAnywhere = YES;
+//        [popTipView autoDismissAnimated:NO atTimeInterval:3.0];
+        [popTipView presentPointingAtView:_arr_helpTargetViews[i] inView:self.view animated:YES];
+        
+        [self.visiblePopTipViews addObject:popTipView];
+    }
+}
+
+#pragma mark - CMPopTipViewDelegate methods
+
+- (void)popTipViewWasDismissedByUser:(CMPopTipView *)popTipView
+{
+	[self.visiblePopTipViews removeObject:popTipView];
 }
 
 #pragma mark - Memory cleaning & warning
