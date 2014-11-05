@@ -50,7 +50,7 @@
 
 -(void)pathTappedAtIndex:(int)i
 {
-	NSLog(@"should %i", i);
+//	NSLog(@"should %i", i);
 	if ([delegate respondsToSelector:@selector(embDrawPath:indexOfTapped:)]) {
 		[self fadePaths];
 		[delegate embDrawPath:self indexOfTapped:i];
@@ -87,7 +87,7 @@
 
 - (void)startAnimationFromIndex:(int)index afterDelay:(CGFloat)afterDelay
 {	
-	NSLog(@"startAnimationFromIndex in embdrawpath");
+//	NSLog(@"startAnimationFromIndex in embdrawpath");
 	CAShapeLayer *shapeLayer = [CAShapeLayer layer];
 	//shapeLayer.path = [self buildPath].CGPath;
 	UIBezierPath *myStr = _myPath;

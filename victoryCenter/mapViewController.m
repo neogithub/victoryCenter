@@ -1484,14 +1484,17 @@ static float    kPanelBtnHeight             = 38.0;
     }
     
     [self highLightPanelBtn:sender andIndicatorColor:[UIColor redColor] withIndicator:YES];
-    
+    [_arr_pathItems removeAllObjects];
+    _arr_pathItems = nil;
 	_arr_pathItems = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_directionItems = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_directionItems2 = [[NSMutableArray alloc] init];
 	embBezierPaths *paths;
 	embDirections *dirpaths;
     paths = [[embBezierPaths alloc] init];
-    _arr_pathItems = paths.bezierPaths;
+    arr_directionItems2 = paths.bezierPaths;
     dirpaths = [[embDirections alloc] init];
-    _arr_pathItems = dirpaths.bezierPaths;
+    arr_directionItems = dirpaths.bezierPaths;
     
     // clean up
 	[self removePaths];
@@ -1504,14 +1507,14 @@ static float    kPanelBtnHeight             = 38.0;
 	if (_uiiv_mapOverlay) {
 		[_uiv_mapContainer insertSubview:_embDirectionPath aboveSubview:_uiiv_mapOverlay];
 	} else {
-		[_uiv_mapContainer insertSubview:_embDirectionPath aboveSubview:_uiv_mapContainer];
+		[_uiv_mapContainer insertSubview:_embDirectionPath belowSubview:_uiiv_vcLogo];
 	}
     
 	// loop # paths in a group
 	int pathGrouping	= -1;
 	int indexStart		= -1;
     
-//    if (_uiv_citySubMenu.hidden == NO) {
+    if (_uiv_citySubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
 				pathGrouping	= 1;
@@ -1540,70 +1543,73 @@ static float    kPanelBtnHeight             = 38.0;
 			default:
 				break;
 		}
-//    }
-//    
-//    if (_uiv_neighborhoodSubMenu.hidden == NO) {
-//        switch ([sender tag]) {
-//			case 0:
-//				pathGrouping	= 3;
-//				indexStart		= 0;
-//				break;
-//				
-//			case 1:
-//				pathGrouping	= 3;
-//				indexStart		= 3;
-//				break;
-//				
-//			case 2:
-//				pathGrouping	= 2;
-//				indexStart		= 6;
-//				break;
-//				
-//			case 3:
-//				pathGrouping	= 3;
-//				indexStart		= 8;
-//				break;
-//				
-//			case 4:
-//				pathGrouping	= 1;
-//				indexStart		= 6;
-//				break;
-//			default:
-//				break;
-//		}
-//    }
-//	
-//    if (_uiv_siteSubMenu.hidden == NO) {
-//        switch ([sender tag]) {
-//			case 0:
-//				pathGrouping	= 3;
-//				indexStart		= 0;
-//				break;
-//				
-//			case 1:
-//				pathGrouping	= 3;
-//				indexStart		= 3;
-//				break;
-//				
-//			case 2:
-//				pathGrouping	= 2;
-//				indexStart		= 6;
-//				break;
-//				
-//			case 3:
-//				pathGrouping	= 3;
-//				indexStart		= 8;
-//				break;
-//				
-//			case 4:
-//				pathGrouping	= 1;
-//				indexStart		= 6;
-//				break;
-//			default:
-//				break;
-//		}
-//    }
-    
+        _arr_pathItems = arr_directionItems;
+    }
+
+    if (_uiv_neighborhoodSubMenu.hidden == NO) {
+        switch ([sender tag]) {
+			case 0:
+				pathGrouping	= 1;
+				indexStart		= 0;
+				break;
+				
+			case 1:
+				pathGrouping	= 3;
+				indexStart		= 3;
+				break;
+				
+			case 2:
+				pathGrouping	= 1;
+				indexStart		= 2;
+				break;
+				
+			case 3:
+				pathGrouping	= 3;
+				indexStart		= 3;
+				break;
+				
+			case 4:
+				pathGrouping	= 1;
+				indexStart		= 6;
+				break;
+			default:
+				break;
+		}
+        _arr_pathItems = arr_directionItems;
+    }
+
+    if (_uiv_siteSubMenu.hidden == NO) {
+        switch ([sender tag]) {
+			case 0:
+				pathGrouping	= 3;
+				indexStart		= 0;
+				break;
+				
+			case 1:
+				pathGrouping	= 3;
+				indexStart		= 3;
+				break;
+				
+			case 2:
+				pathGrouping	= 2;
+				indexStart		= 6;
+				break;
+				
+			case 3:
+				pathGrouping	= 3;
+				indexStart		= 8;
+				break;
+				
+			case 4:
+				pathGrouping	= 3;
+				indexStart		= 0;
+				break;
+			default:
+				break;
+		}
+        _arr_pathItems = arr_directionItems2;
+    }
+
 	for (int i=0; i<pathGrouping; i++) {
 		embBezierPathItem *p = _arr_pathItems[indexStart+i];
 		_embDirectionPath.myPath = p.embPath;
