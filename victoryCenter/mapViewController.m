@@ -523,6 +523,16 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (void)handleCitySubMenu:(id)sender
 {
+    UIButton *tappedBtn = sender;
+    if (tappedBtn.selected) {
+        [self deHiliteSubMenu:_uiv_citySubMenu];
+        [self removeOverlay];
+        [self removePaths];
+        [self removeAllPanels];
+        [self removeAllHotspots];
+        return;
+    }
+    
     [self hiliteSubMenuTappedButton:sender inView:_uiv_citySubMenu];
     [self removeOverlay];
     [self removePaths];
@@ -632,6 +642,16 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (void)handleNeibSubMenu:(id)sender
 {
+    UIButton *tappedBtn = sender;
+    if (tappedBtn.selected) {
+        [self deHiliteSubMenu:_uiv_neighborhoodSubMenu];
+        [self removeOverlay];
+        [self removePaths];
+        [self removeAllPanels];
+        [self removeAllHotspots];
+        return;
+    }
+    
     [self hiliteSubMenuTappedButton:sender inView:_uiv_neighborhoodSubMenu];
     [self removeOverlay];
     [self removePaths];
@@ -676,6 +696,16 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark Site Submenu
 - (void)handleSiteSubMenu:(id)sender
 {
+    UIButton *tappedBtn = sender;
+    if (tappedBtn.selected) {
+        [self deHiliteSubMenu:_uiv_siteSubMenu];
+        [self removeOverlay];
+        [self removePaths];
+        [self removeAllPanels];
+        [self removeAllHotspots];
+        return;
+    }
+    
     [self hiliteSubMenuTappedButton:sender inView:_uiv_siteSubMenu];
     [self removeOverlay];
     [self removePaths];
@@ -956,7 +986,7 @@ static float    kPanelBtnHeight             = 38.0;
     [self animateThePanel:panel];
     return panel;
 }
-#pragma mark - Highlight current tapped button of sub menu
+#pragma mark - Highlight & Dehightlight current tapped button of sub menu
 /*
  Required Arguement:
  1. Tapped sub menu's button
@@ -972,6 +1002,15 @@ static float    kPanelBtnHeight             = 38.0;
     }
     tappedBtn.selected = YES;
     [tappedBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-ExtraBold" size:16.0]];
+}
+
+- (void)deHiliteSubMenu:(UIView *)container
+{
+    for (UIButton *tmp in [container subviews]) {
+        tmp.selected = NO;
+        
+        [tmp.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+    }
 }
 
 #pragma mark - update map's overlay
