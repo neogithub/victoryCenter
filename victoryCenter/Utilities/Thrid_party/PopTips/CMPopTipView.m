@@ -10,10 +10,10 @@
 //  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 //  copies of the Software, and to permit persons to whom the Software is
 //  furnished to do so, subject to the following conditions:
-//  
+//
 //  The above copyright notice and this permission notice shall be included in
 //  all copies or substantial portions of the Software.
-//  
+//
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -76,7 +76,7 @@
 {
 	CGRect bubbleRect = [self bubbleFrame];
 	
-	CGContextRef c = UIGraphicsGetCurrentContext(); 
+	CGContextRef c = UIGraphicsGetCurrentContext();
     
     CGContextSetRGBStrokeColor(c, 0.0, 0.0, 0.0, 1.0);	// black
 	CGContextSetLineWidth(c, self.borderWidth);
@@ -133,7 +133,7 @@
     CGContextSaveGState(c);
 	CGContextAddPath(c, bubblePath);
 	CGContextClip(c);
-
+    
     if (self.hasGradientBackground == NO) {
         // Fill with solid color
         CGContextSetFillColorWithColor(c, [self.backgroundColor CGColor]);
@@ -172,7 +172,7 @@
             alpha = components[3];
         }
         CGFloat colorList[] = {
-            //red, green, blue, alpha 
+            //red, green, blue, alpha
             red*1.16+colourHL, green*1.16+colourHL, blue*1.16+colourHL, alpha,
             red*1.16+colourHL, green*1.16+colourHL, blue*1.16+colourHL, alpha,
             red*1.08+colourHL, green*1.08+colourHL, blue*1.08+colourHL, alpha,
@@ -223,7 +223,7 @@
     }
 	
 	CGContextRestoreGState(c);
-
+    
     //Draw Border
     if (self.borderWidth > 0) {
         size_t numBorderComponents = CGColorGetNumberOfComponents([self.borderColor CGColor]);
@@ -270,17 +270,17 @@
             
         }
         else {
-
+            
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
+            
             [self.title drawInRect:titleFrame
                           withFont:self.titleFont
                      lineBreakMode:NSLineBreakByClipping
                          alignment:self.titleAlignment];
-
+            
 #pragma clang diagnostic pop
-
+            
         }
     }
 	
@@ -294,7 +294,7 @@
             if ([self.title respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
                 NSMutableParagraphStyle *titleParagraphStyle = [[NSMutableParagraphStyle alloc] init];
                 titleParagraphStyle.lineBreakMode = NSLineBreakByClipping;
-
+                
                 textFrame.origin.y += [self.title boundingRectWithSize:CGSizeMake(textFrame.size.width, 99999.0)
                                                                options:kNilOptions
                                                             attributes:@{
@@ -304,16 +304,16 @@
                                                                context:nil].size.height;
             }
             else {
-
+                
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
+                
                 textFrame.origin.y += [self.title sizeWithFont:self.titleFont
                                              constrainedToSize:CGSizeMake(textFrame.size.width, 99999.0)
                                                  lineBreakMode:NSLineBreakByClipping].height;
-
+                
 #pragma clang diagnostic pop
-
+                
             }
         }
         
@@ -331,17 +331,17 @@
                                context:nil];
         }
         else {
-
+            
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
+            
             [self.message drawInRect:textFrame
                             withFont:self.textFont
                        lineBreakMode:NSLineBreakByWordWrapping
                            alignment:self.textAlignment];
-
+            
 #pragma clang diagnostic pop
-
+            
         }
     }
 }
@@ -394,7 +394,7 @@
             rectWidth = (int)(containerView.frame.size.width*2/3);
         }
     }
-
+    
 	CGSize textSize = CGSizeZero;
     
     if (self.message!=nil) {
@@ -402,7 +402,7 @@
             NSMutableParagraphStyle *textParagraphStyle = [[NSMutableParagraphStyle alloc] init];
             textParagraphStyle.alignment = self.textAlignment;
             textParagraphStyle.lineBreakMode  =NSLineBreakByWordWrapping;
-
+            
             textSize = [self.message boundingRectWithSize:CGSizeMake(rectWidth, 99999.0)
                                                   options:NSStringDrawingUsesLineFragmentOrigin
                                                attributes:@{
@@ -412,16 +412,16 @@
                                                   context:nil].size;
         }
         else {
-
+            
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
+            
             textSize = [self.message sizeWithFont:self.textFont
                                 constrainedToSize:CGSizeMake(rectWidth, 99999.0)
                                     lineBreakMode:NSLineBreakByWordWrapping];
-
+            
 #pragma clang diagnostic pop
-        
+            
         }
     }
     if (self.customView != nil) {
@@ -429,11 +429,11 @@
     }
     if (self.title != nil) {
         CGSize titleSize;
-
+        
         if ([self.title respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
             NSMutableParagraphStyle *titleParagraphStyle = [[NSMutableParagraphStyle alloc] init];
             titleParagraphStyle.lineBreakMode = NSLineBreakByClipping;
-
+            
             titleSize = [self.title boundingRectWithSize:CGSizeMake(rectWidth, 99999.0)
                                                  options:kNilOptions
                                               attributes:@{
@@ -443,18 +443,18 @@
                                                  context:nil].size;
         }
         else {
-
+            
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
+            
             titleSize = [self.title sizeWithFont:self.titleFont
                                constrainedToSize:CGSizeMake(rectWidth, 99999.0)
                                    lineBreakMode:NSLineBreakByClipping];
-
+            
 #pragma clang diagnostic pop
-        
+            
         }
-
+        
         if (titleSize.width > textSize.width) textSize.width = titleSize.width;
         textSize.height += titleSize.height;
     }
@@ -505,7 +505,7 @@
     
 	CGFloat W = containerView.bounds.size.width;
 	
-	CGPoint p = [targetView.superview convertPoint:targetView.center toView:containerView];
+	CGPoint p = targetView.frame.origin;//[targetView.superview convertPoint:targetView.center toView:containerView];
 	CGFloat x_p = p.x;
 	CGFloat x_b = x_p - roundf(_bubbleSize.width/2);
 	if (x_b < _sidePadding) {
@@ -597,7 +597,7 @@
 
 - (void)finaliseDismiss {
 	[self.autoDismissTimer invalidate]; self.autoDismissTimer = nil;
-
+    
     if (self.dismissTarget) {
         [self.dismissTarget removeFromSuperview];
 		self.dismissTarget = nil;
@@ -658,7 +658,7 @@
 		[super touchesBegan:touches withEvent:event];
 		return;
 	}
-
+    
 	[self dismissByUser];
 }
 
@@ -691,7 +691,7 @@
     if ((self = [super initWithFrame:frame])) {
         // Initialization code
 		self.opaque = NO;
-
+        
 		_topMargin = 2.0;
 		_pointerSize = 12.0;
 		_sidePadding = 2.0;
@@ -717,7 +717,7 @@
 {
     if (hasShadow != _hasShadow) {
         _hasShadow = hasShadow;
-
+        
         if (hasShadow) {
             self.layer.shadowOffset = CGSizeMake(0, 3);
             self.layer.shadowRadius = 2.0;
@@ -731,7 +731,7 @@
 
 - (PointDirection) getPointDirection
 {
-  return _pointDirection;
+    return _pointDirection;
 }
 
 - (id)initWithTitle:(NSString *)titleToShow message:(NSString *)messageToShow

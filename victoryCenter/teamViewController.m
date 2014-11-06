@@ -31,6 +31,7 @@ static float kCardsGap      = 12.0;
 @property (nonatomic, strong) NSMutableArray                *arr_helpText;
 @property (nonatomic, strong) NSMutableArray                *visiblePopTipViews;
 @property (nonatomic, strong) NSMutableArray                *arr_helpTargetViews;
+@property (nonatomic, strong) UIView                        *uiv_helpContianer;
 @end
 
 @implementation teamViewController
@@ -39,7 +40,6 @@ static float kCardsGap      = 12.0;
 {
     self.view.frame = screenRect;
     [self prepareHlepData];
-    [self loadHelpView];
 }
 
 - (void)viewDidLoad
@@ -55,6 +55,8 @@ static float kCardsGap      = 12.0;
         // 3. x value of the card
         [self createItemBox:_arr_logoImg[i] andText:_arr_teamTextView[i] andX:(30 + i * (kCardsGap + kCardWidth)) andTag:i];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
 }
 
 - (void)createTextViews
@@ -97,7 +99,7 @@ static float kCardsGap      = 12.0;
 - (void)createItemBox:(NSString *)logoName andText:(UITextView *)textView andX:(float)x_value andTag:(int)index
 {
     //UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 180.0, kCardWidth, 428.0)];
-    UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 300.0, kCardWidth, 428.0)];
+    UIView *uiv_cardContainer = [[UIView alloc] initWithFrame:CGRectMake(x_value, 300.0, kCardWidth, 142.0)];
     uiv_cardContainer.tag = index+50;
 	// 1. add logo
     UIView *uiv_logo = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, kCardWidth, 142.0)];
@@ -388,6 +390,16 @@ static float kCardsGap      = 12.0;
 }
 
 #pragma mark - Add Help view
+- (void)hideAndUnhideHelp:(NSNotification *)pNotification
+{
+    if (_uiv_helpContianer) {
+        [self fadeOutPopViews:nil];
+    }
+    else {
+        [self loadHelpView];
+    }
+}
+
 - (void)prepareHlepData
 {
     [_arr_helpText removeAllObjects];
@@ -400,7 +412,10 @@ static float kCardsGap      = 12.0;
     [_arr_helpTargetViews removeAllObjects];
     _arr_helpTargetViews = nil;
     UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
-    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, _arr_cards[2],  nil];
+    UIView *tmp = _arr_cards[2];
+    CGRect frame = CGRectMake(tmp.frame.origin.x + tmp.frame.size.width/2, tmp.frame.origin.y + tmp.frame.size.height/4, tmp.frame.size.width, tmp.frame.size.height);
+    UIView *tmp2 = [[UIView alloc] initWithFrame:frame];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp2, nil];
 }
 
 - (void)dismissAllPopTipViews
@@ -410,7 +425,8 @@ static float kCardsGap      = 12.0;
 //		[popTipView dismissAnimated:YES];
 //		[self.visiblePopTipViews removeObjectAtIndex:0];
 //	}
-    
+    [_uiv_helpContianer removeFromSuperview];
+    _uiv_helpContianer = nil;
     for (CMPopTipView *popTipView in self.visiblePopTipViews) {
         [popTipView dismissAnimated:YES];
         [self.visiblePopTipViews removeObject:popTipView];
@@ -420,6 +436,8 @@ static float kCardsGap      = 12.0;
 - (void)loadHelpView
 {
 	[self dismissAllPopTipViews];
+    _uiv_helpContianer = [[UIView alloc] initWithFrame:screenRect];
+    _uiv_helpContianer.alpha = 0.0;
     for (int i = 0; i < _arr_helpText.count; i++) {
         NSString *contentMessage = nil;
         contentMessage = _arr_helpText[i];
@@ -451,12 +469,29 @@ static float kCardsGap      = 12.0;
         popTipView.animation = arc4random() % 2;
         popTipView.has3DStyle = NO;
         
-        popTipView.dismissTapAnywhere = YES;
+        popTipView.dismissTapAnywhere = NO;
 //        [popTipView autoDismissAnimated:NO atTimeInterval:3.0];
-        [popTipView presentPointingAtView:_arr_helpTargetViews[i] inView:self.view animated:YES];
+        [popTipView presentPointingAtView:_arr_helpTargetViews[i] inView:_uiv_helpContianer animated:YES];
         
         [self.visiblePopTipViews addObject:popTipView];
     }
+    [self.view addSubview: _uiv_helpContianer];
+    UITapGestureRecognizer *tapOnHelp = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fadeOutPopViews:)];
+    tapOnHelp.numberOfTapsRequired = 1;
+    _uiv_helpContianer.userInteractionEnabled = YES;
+    [_uiv_helpContianer addGestureRecognizer: tapOnHelp];
+    [UIView animateWithDuration:0.33 animations:^{
+        _uiv_helpContianer.alpha = 1.0;
+    }];
+}
+
+- (void)fadeOutPopViews:(UIGestureRecognizer *)gesture
+{
+    [UIView animateWithDuration:0.33 animations:^{
+        _uiv_helpContianer.alpha = 0.0;
+    } completion:^(BOOL finished){
+        [self dismissAllPopTipViews];
+    }];
 }
 
 #pragma mark - CMPopTipViewDelegate methods

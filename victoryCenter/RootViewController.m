@@ -759,14 +759,16 @@
 
 #pragma mark Help Button Action
 - (IBAction)helpBtnTapped:(id)sender {
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle: @""
-                               message: @"Help Coming Soon"
-                              delegate: self
-                     cancelButtonTitle: @"OK"
-                     otherButtonTitles: nil];
-    alert.tag = 1;
-    [alert show];
+//    UIAlertView *alert =
+//    [[UIAlertView alloc] initWithTitle: @""
+//                               message: @"Help Coming Soon"
+//                              delegate: self
+//                     cancelButtonTitle: @"OK"
+//                     otherButtonTitles: nil];
+//    alert.tag = 1;
+//    [alert show];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideAndUnhideHelp" object:nil];
 }
 
 #pragma mark - External Screen
