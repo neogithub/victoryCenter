@@ -68,8 +68,9 @@
     
     _uiiv_smallPano = [[UIImageView alloc] initWithImage:[self adjustImageSizeWhenCropping:_contentImage]];
     _uiiv_smallPano.frame = CGRectMake(0.0, abs(68 - _uiiv_smallPano.frame.size.height)/2, _uiiv_smallPano.frame.size.width, _uiiv_smallPano.frame.size.height);
-    _uiiv_smallFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pano_opportunity_local_nav_frame.png"]];
-    _uiiv_smallFrame.frame = CGRectMake(0.0, (68 - _uiiv_smallFrame.frame.size.height)/2, _uiiv_smallFrame.frame.size.width, _uiiv_smallFrame.frame.size.height);
+//    _uiiv_smallFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pano_opportunity_local_nav_frame.png"]];
+    _uiiv_smallFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Tilit_Icon_Off.png"]];
+    _uiiv_smallFrame.frame = CGRectMake(-21.0, (68 - _uiiv_smallFrame.frame.size.height)/2, _uiiv_smallFrame.frame.size.width, _uiiv_smallFrame.frame.size.height);
     
     [_uiv_indicatorContainer addSubview:_uiiv_smallPano];
     [_uiv_indicatorContainer addSubview:_uiiv_smallFrame];
