@@ -388,6 +388,11 @@ static float    kPanelBtnHeight             = 38.0;
     UIButton *tappedBtn = sender;
     if (tappedBtn.selected)
     {
+        [self removeOverviewPanel];
+        [self removeOverlay];
+        [self removeAllPanels];
+        [self removeHotspots];
+        [self resetSubMenus];
         return;
     }
     else
