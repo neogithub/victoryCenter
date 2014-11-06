@@ -266,6 +266,13 @@
 		82CE2FD319F06350006F7B0E /* floorPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FD219F06350006F7B0E /* floorPlanViewController.m */; };
 		82CE2FD619F06434006F7B0E /* KSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FD519F06434006F7B0E /* KSLabel.m */; };
 		82CE2FD819F06C79006F7B0E /* floorplanData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82CE2FD719F06C79006F7B0E /* floorplanData.plist */; };
+		82D54B431A0BEE5B0055F338 /* neoCalendarUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D54B421A0BEE5B0055F338 /* neoCalendarUtilities.m */; };
+		82D54B461A0BF0EC0055F338 /* grfx_launching_night.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D54B441A0BF0EC0055F338 /* grfx_launching_night.png */; };
+		82D54B471A0BF0EC0055F338 /* grfx_launching_night@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D54B451A0BF0EC0055F338 /* grfx_launching_night@2x.png */; };
+		82D54B4C1A0BFD6C0055F338 /* Tilit_Icon_Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D54B481A0BFD6C0055F338 /* Tilit_Icon_Off.png */; };
+		82D54B4D1A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D54B491A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png */; };
+		82D54B4E1A0BFD6C0055F338 /* Tilit_Icon_On.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D54B4A1A0BFD6C0055F338 /* Tilit_Icon_On.png */; };
+		82D54B4F1A0BFD6C0055F338 /* Tilit_Icon_On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D54B4B1A0BFD6C0055F338 /* Tilit_Icon_On@2x.png */; };
 		82DAB03219D1EBA000F23668 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAB03119D1EBA000F23668 /* UIColor+Extensions.m */; };
 		82DAB03519D1ED5B00F23668 /* teamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAB03419D1ED5B00F23668 /* teamViewController.m */; };
 		82DC11BF19DAEA940057AE4F /* 20140716_view1_90 feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11A019DAEA940057AE4F /* 20140716_view1_90 feet.jpg */; };
@@ -627,6 +634,14 @@
 		82CE2FD419F06434006F7B0E /* KSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSLabel.h; sourceTree = "<group>"; };
 		82CE2FD519F06434006F7B0E /* KSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSLabel.m; sourceTree = "<group>"; };
 		82CE2FD719F06C79006F7B0E /* floorplanData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = floorplanData.plist; sourceTree = "<group>"; };
+		82D54B411A0BEE5B0055F338 /* neoCalendarUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neoCalendarUtilities.h; sourceTree = "<group>"; };
+		82D54B421A0BEE5B0055F338 /* neoCalendarUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = neoCalendarUtilities.m; sourceTree = "<group>"; };
+		82D54B441A0BF0EC0055F338 /* grfx_launching_night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_launching_night.png; sourceTree = "<group>"; };
+		82D54B451A0BF0EC0055F338 /* grfx_launching_night@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_launching_night@2x.png"; sourceTree = "<group>"; };
+		82D54B481A0BFD6C0055F338 /* Tilit_Icon_Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tilit_Icon_Off.png; sourceTree = "<group>"; };
+		82D54B491A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tilit_Icon_Off@2x.png"; sourceTree = "<group>"; };
+		82D54B4A1A0BFD6C0055F338 /* Tilit_Icon_On.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tilit_Icon_On.png; sourceTree = "<group>"; };
+		82D54B4B1A0BFD6C0055F338 /* Tilit_Icon_On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tilit_Icon_On@2x.png"; sourceTree = "<group>"; };
 		82DAB03019D1EBA000F23668 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
 		82DAB03119D1EBA000F23668 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		82DAB03319D1ED5B00F23668 /* teamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teamViewController.h; sourceTree = "<group>"; };
@@ -1022,6 +1037,8 @@
 				8239ED0E1A0168ED00B25EA2 /* siteOverview.m */,
 				825397681A097AA6000B6B7C /* embKenBurns.h */,
 				825397691A097AA6000B6B7C /* embKenBurns.m */,
+				82D54B411A0BEE5B0055F338 /* neoCalendarUtilities.h */,
+				82D54B421A0BEE5B0055F338 /* neoCalendarUtilities.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1031,6 +1048,8 @@
 			children = (
 				824C197319FAE5F600EA7613 /* grfx_launching.png */,
 				824C197419FAE5F600EA7613 /* grfx_launching@2x.png */,
+				82D54B441A0BF0EC0055F338 /* grfx_launching_night.png */,
+				82D54B451A0BF0EC0055F338 /* grfx_launching_night@2x.png */,
 				824C195219FA9DC400EA7613 /* floorplan */,
 				82A29E4319EC60E000AFAE1E /* Building */,
 				82DC11DD19DAEE070057AE4F /* Location */,
@@ -1184,6 +1203,10 @@
 		82A805C719D1F61E00308BA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				82D54B481A0BFD6C0055F338 /* Tilit_Icon_Off.png */,
+				82D54B491A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png */,
+				82D54B4A1A0BFD6C0055F338 /* Tilit_Icon_On.png */,
+				82D54B4B1A0BFD6C0055F338 /* Tilit_Icon_On@2x.png */,
 				82A21F681A02C5D300BE8706 /* grfx_bldstat_close.png */,
 				82A21F691A02C5D300BE8706 /* grfx_bldstat_close@2x.png */,
 				823DE6E719FFE8E10016CD3A /* pano_opportunity_local_button_gesture_off.png */,
@@ -1456,6 +1479,7 @@
 				824012F819D1AF5D00C501EE /* Images.xcassets in Resources */,
 				82DC11CF19DAEA940057AE4F /* 20140811_view3_100m_02.jpg in Resources */,
 				8224FE0919D47097002B1B44 /* Raleway-Regular.otf in Resources */,
+				82D54B4F1A0BFD6C0055F338 /* Tilit_Icon_On@2x.png in Resources */,
 				82DC11E719DAEE070057AE4F /* City_base_map_.png in Resources */,
 				82DC11D919DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg in Resources */,
 				827492E21A080C7F00F949E5 /* grfx_smallStack@2x.png in Resources */,
@@ -1503,6 +1527,7 @@
 				82DC11C019DAEA940057AE4F /* 20140716_view2_90 feet.jpg in Resources */,
 				824F369C19E6C47500267B44 /* thumb_SE-FINAL Lighting Concept2.jpg in Resources */,
 				82459E7419F6974A00E03A8D /* grfx_contactClose.jpg in Resources */,
+				82D54B4E1A0BFD6C0055F338 /* Tilit_Icon_On.png in Resources */,
 				8263B98719EDAC8900E70C1B /* embMapHotspotListViewController.xib in Resources */,
 				824C196819FA9DC400EA7613 /* grfx_floorplan17@2x.png in Resources */,
 				824F369219E6C47500267B44 /* thumb_20140802_view4_100m_06.jpg in Resources */,
@@ -1579,6 +1604,7 @@
 				824C196119FA9DC400EA7613 /* grfx_floorplan10-14.png in Resources */,
 				82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */,
 				823D78A919F156830096E62C /* grfx_floorplan@2x.png in Resources */,
+				82D54B4C1A0BFD6C0055F338 /* Tilit_Icon_Off.png in Resources */,
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
 				82DC11C719DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg in Resources */,
 				82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */,
@@ -1635,6 +1661,7 @@
 				82DC11BF19DAEA940057AE4F /* 20140716_view1_90 feet.jpg in Resources */,
 				8297BD2A19F5760D0046CB65 /* grfx_galleryCap.png in Resources */,
 				82716A6819E434C10070A331 /* Districts_overlay.png in Resources */,
+				82D54B471A0BF0EC0055F338 /* grfx_launching_night@2x.png in Resources */,
 				82DC11FC19DAF2990057AE4F /* photo-gallery-left.png in Resources */,
 				82000B8C19E592A800AE2C70 /* team_cushman_logo@2x.png in Resources */,
 				8224FE3419D4BD6E002B1B44 /* play_button_@2x.png in Resources */,
@@ -1651,6 +1678,7 @@
 				82DC120019DAF2990057AE4F /* photo-gallery-trashcan.png in Resources */,
 				82DC11CD19DAEA940057AE4F /* 20140802_view4_60m_02.jpg in Resources */,
 				825E5F8A19F83FA300B77F7F /* grfx_elavators_parking@2x.png in Resources */,
+				82D54B4D1A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png in Resources */,
 				824F36A219E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg in Resources */,
 				82DC11D719DAEA940057AE4F /* Street View B1.jpg in Resources */,
 				82A29E4B19EC60E000AFAE1E /* grfx_bldStatsImg@2x.png in Resources */,
@@ -1663,6 +1691,7 @@
 				82000B7F19E590AD00AE2C70 /* team_hines_text.png in Resources */,
 				82A21F6A1A02C5D300BE8706 /* grfx_bldstat_close.png in Resources */,
 				823DE6F119FFE95A0016CD3A /* pano_opportunity_local_nav_frame.png in Resources */,
+				82D54B461A0BF0EC0055F338 /* grfx_launching_night.png in Resources */,
 				82DC11C319DAEA940057AE4F /* 20140802_downtown_100m_5pm.jpg in Resources */,
 				82000B7419E590AD00AE2C70 /* grfx_bldElevator_bg@2x.jpg in Resources */,
 				82DC11C919DAEA940057AE4F /* 20140802_view4_100m_01.jpg in Resources */,
@@ -1723,6 +1752,7 @@
 				82A44BF019D3416D004FAD58 /* galleryViewController.m in Sources */,
 				82DC11F919DAF2990057AE4F /* FGalleryPhotoView.m in Sources */,
 				8224FE2A19D48656002B1B44 /* MPFoldModalSegue.m in Sources */,
+				82D54B431A0BEE5B0055F338 /* neoCalendarUtilities.m in Sources */,
 				82459E7819F6C4C200E03A8D /* embEmailData.m in Sources */,
 				8224FE2919D48656002B1B44 /* MPFlipSegue.m in Sources */,
 				82459E7119F6916900E03A8D /* contactViewController.m in Sources */,

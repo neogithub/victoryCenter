@@ -12,6 +12,10 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "contactViewController.h"
 #import "embKenBurns.h"
+#import "neoCalendarUtilities.h"
+
+static int morningTime = 5;
+static int eveningTime = 17;
 
 @interface RootViewController () <embKenBurnsDelegate>
 {
@@ -58,6 +62,21 @@
     [self createKenBurnView];
 }
 
+-(void)viewDidLayoutSubviews
+{
+	// create uiimageview
+	
+	//check hour
+	NSString *hour = [NSString currentHour]; // returns military time
+	
+	//then change image accordingly
+	if (([hour intValue]>morningTime) && ([hour intValue]<eveningTime)){ // 5 = 5am, 17 = 5pm
+
+		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
+	} else {
+		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.png" ofType:nil]];
+	}
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -87,7 +106,18 @@
 	
 	[self.view insertSubview:self.kenView belowSubview:_uiiv_vcLogo];
 	
-    UIImage *image = [UIImage imageNamed:@"grfx_launching.png"];
+    UIImage *image = [UIImage new];
+    
+    //check hour
+	NSString *hour = [NSString currentHour]; // returns military time
+	
+	//then change image accordingly
+	if (([hour intValue]>morningTime) && ([hour intValue]<eveningTime)){ // 5 = 5am, 17 = 5pm
+        
+		image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
+	} else {
+		image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.png" ofType:nil]];
+	}
     
     NSArray *arr_images = [[NSArray alloc] initWithObjects:image, nil];
     
