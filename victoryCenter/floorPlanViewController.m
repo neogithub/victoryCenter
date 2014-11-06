@@ -31,8 +31,6 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   UIView                          *uiv_floorIndicator;
 @property (nonatomic, strong)   NSMutableArray                  *arr_indicatorFrames;
 // Floor num & RSF. labels
-@property (nonatomic, strong)   UIView                          *uiv_labelsContainer;
-@property (nonatomic, strong)   UILabel                         *uil_floorNum;
 @property (nonatomic, strong)   UILabel                         *uil_floorRsf;
 // Control Button
 @property (nonatomic, strong)   UIButton                        *uib_backBtn;
@@ -192,23 +190,15 @@ static CGFloat  kPanelTitleHeight           = 46;
 
 - (void)createFloorPlanAndRsfLabels
 {
-    _uiv_labelsContainer = [[UIView alloc] initWithFrame:CGRectMake(45.0, 90.0, 200, 80)];
-    _uiv_labelsContainer.backgroundColor = [UIColor vcLightBlueAlpha];
-    [self.view addSubview: _uiv_labelsContainer];
-    
-    _uil_floorNum = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, 150.0, 40.0)];
-    _uil_floorNum.backgroundColor = [UIColor clearColor];
-    _uil_floorNum.text = _arr_titleText[pageIndex];
-    _uil_floorNum.textColor = [UIColor whiteColor];
-    _uil_floorNum.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
-    [_uiv_labelsContainer addSubview: _uil_floorNum];
-    
-    _uil_floorRsf = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 40.0, 150.0, 40.0)];
+    NSString *floorNum = _arr_titleText[pageIndex];
+    NSString *floorRsf = _arr_squareFeet[pageIndex];
+    NSString *labelText = [NSString stringWithFormat:@"%@: %@ RSF", floorNum, floorRsf];
+    _uil_floorRsf = [[UILabel alloc] initWithFrame:CGRectMake(120.0, 75.0, 300.0, 20.0)];
     _uil_floorRsf.backgroundColor = [UIColor clearColor];
-    _uil_floorRsf.text = _arr_squareFeet[pageIndex];
-    _uil_floorRsf.textColor = [UIColor whiteColor];
-    _uil_floorRsf.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
-    [_uiv_labelsContainer addSubview: _uil_floorRsf];
+    _uil_floorRsf.text = labelText;
+    _uil_floorRsf.textColor = [UIColor vcLightBlue];
+    _uil_floorRsf.font = [UIFont fontWithName:@"Raleway-Medium" size:14.0];
+    [self.view addSubview: _uil_floorRsf];
 }
 
 #pragma mark - Set up control Buttons
@@ -339,8 +329,10 @@ static CGFloat  kPanelTitleHeight           = 46;
         _uiv_floorIndicator.frame = [[_arr_indicatorFrames objectAtIndex:_currentPage] CGRectValue];
     }];
     
-    _uil_floorRsf.text = _arr_squareFeet[index];
-    _uil_floorNum.text = _arr_titleText[index];
+    NSString *floorNum = _arr_titleText[index];
+    NSString *floorRsf = _arr_squareFeet[index];
+    NSString *labelText = [NSString stringWithFormat:@"%@: %@ RSF", floorNum, floorRsf];
+    _uil_floorRsf.text = labelText;
 }
 
 #pragma mark set page index
