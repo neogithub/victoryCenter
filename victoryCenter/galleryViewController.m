@@ -773,6 +773,10 @@
 #pragma mark - Add Help view
 - (void)hideAndUnhideHelp:(NSNotification *)pNotification
 {
+    if (localGallery || _uiv_panoramicView) {
+        return;
+    }
+    
     if (_uiv_helpContianer) {
         [self fadeOutPopViews:nil];
     }
@@ -819,7 +823,7 @@
     for (int i = 0; i < _arr_helpText.count; i++) {
         NSString *contentMessage = nil;
         contentMessage = _arr_helpText[i];
-        UIColor *backgroundColor = [UIColor redColor];
+        UIColor *backgroundColor = [UIColor vcHelpBackgroundColor];
         UIColor *textColor = [UIColor whiteColor];
         
         CMPopTipView *popTipView;
@@ -836,7 +840,7 @@
         //popTipView.topMargin = 20.0f;
         //popTipView.pointerSize = 50.0f;
         popTipView.hasShadow = NO;
-        
+        popTipView.borderColor = [UIColor clearColor];
         if (backgroundColor && ![backgroundColor isEqual:[NSNull null]]) {
             popTipView.backgroundColor = backgroundColor;
         }
@@ -896,10 +900,10 @@
     [localGallery.view removeFromSuperview];
     localGallery.view = nil;
     
-    [localGallery removeFromParentViewController];
-    localGallery = nil;
     
     localImages = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"hideAndUnhideHelp" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
