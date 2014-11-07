@@ -365,7 +365,7 @@ static float kContactGap = 4;
     for (int i = 0; i < _arr_helpText.count; i++) {
         NSString *contentMessage = nil;
         contentMessage = _arr_helpText[i];
-        UIColor *backgroundColor = [UIColor redColor];
+        UIColor *backgroundColor = [UIColor vcHelpBackgroundColor];
         UIColor *textColor = [UIColor whiteColor];
         
         CMPopTipView *popTipView;
@@ -382,7 +382,7 @@ static float kContactGap = 4;
         //popTipView.topMargin = 20.0f;
         //popTipView.pointerSize = 50.0f;
         popTipView.hasShadow = NO;
-        
+        popTipView.borderColor = [UIColor clearColor];
         if (backgroundColor && ![backgroundColor isEqual:[NSNull null]]) {
             popTipView.backgroundColor = backgroundColor;
         }
@@ -439,6 +439,8 @@ static float kContactGap = 4;
     
     [_arr_contactCards removeAllObjects];
     _arr_contactCards = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"hideAndUnhideHelp" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
