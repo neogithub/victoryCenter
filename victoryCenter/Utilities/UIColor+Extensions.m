@@ -102,6 +102,10 @@
 	return [UIColor colorWithRed:43.0f/255.0f green:56.0f/255.0f blue:140.0f/255.0f alpha:1.0];
 }
 
++ (UIColor *)vcHelpBackgroundColor {
+    return [UIColor colorWithRed:0.0/255.0 green:98.0/255.0 blue:152.0/255.0 alpha:1.0];
+}
+
 + (UIColor *)randomColor {
     return [self colorWithRed:((float)rand() / RAND_MAX)
                         green:((float)rand() / RAND_MAX)
