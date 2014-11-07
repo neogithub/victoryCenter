@@ -139,7 +139,7 @@ static int eveningTime = 17;
         return;
     }
     _uib_menu.hidden = YES;
-    _uiv_toolsPanel.hidden = YES;
+//    _uiv_toolsPanel.hidden = YES;
     _uil_titleLabel.hidden = YES;
 }
 
@@ -152,7 +152,7 @@ static int eveningTime = 17;
     else
     {
         _uib_menu.hidden = NO;
-        _uiv_toolsPanel.hidden = NO;
+//        _uiv_toolsPanel.hidden = NO;
         _uil_titleLabel.hidden = NO;
     }
 }

@@ -648,7 +648,7 @@
     UIButton *uib_back = [UIButton buttonWithType:UIButtonTypeCustom];
     [uib_back setFrame:CGRectMake(0.0, 0.0, 44.0, 44.0)];
     uib_back.backgroundColor = [UIColor whiteColor];
-    [uib_back setImage:[UIImage imageNamed:@"grfx_galleryBack.jpg"] forState:UIControlStateNormal];
+    [uib_back setImage:[UIImage imageNamed:@"grfx_contactClose.jpg"] forState:UIControlStateNormal];
     [uib_back addTarget:self action:@selector(getBack) forControlEvents:UIControlEventTouchDown];
     [self.navigationController.navigationBar addSubview:uib_back];
     
