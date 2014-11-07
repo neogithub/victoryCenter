@@ -46,7 +46,9 @@
         self.motionManager.gyroUpdateInterval = 0.0;
 //        [self initControlBtns];
         [self initIndicator];
+        [self prepareHlepData];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
     return self;
 }
 
@@ -213,7 +215,7 @@
 
 #pragma mark - Add Help view
 - (void)hideAndUnhideHelp:(NSNotification *)pNotification
-{
+{    
     if (_uiv_helpContianer) {
         [self fadeOutPopViews:nil];
     }
@@ -257,7 +259,7 @@
     for (int i = 0; i < _arr_helpText.count; i++) {
         NSString *contentMessage = nil;
         contentMessage = _arr_helpText[i];
-        UIColor *backgroundColor = [UIColor redColor];
+        UIColor *backgroundColor = [UIColor vcHelpBackgroundColor];
         UIColor *textColor = [UIColor whiteColor];
         
         CMPopTipView *popTipView;
@@ -274,7 +276,7 @@
         //popTipView.topMargin = 20.0f;
         //popTipView.pointerSize = 50.0f;
         popTipView.hasShadow = NO;
-        
+        popTipView.borderColor = [UIColor clearColor];
         if (backgroundColor && ![backgroundColor isEqual:[NSNull null]]) {
             popTipView.backgroundColor = backgroundColor;
         }
@@ -316,7 +318,7 @@
 {
 	[self.visiblePopTipViews removeObject:popTipView];
 }
-
+#pragma mark - Cleaning memory
 - (void) removeFromSuperview
 {
     [self stopMotionManager];
@@ -326,6 +328,7 @@
     _arr_helpTargetViews = nil;
     [_arr_helpText removeAllObjects];
     _arr_helpText = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"hideAndUnhideHelp" object:nil];       
 }
 
 /*
