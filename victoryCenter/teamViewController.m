@@ -420,11 +420,6 @@ static float kCardsGap      = 12.0;
 
 - (void)dismissAllPopTipViews
 {
-//	while ([self.visiblePopTipViews count] > 0) {
-//		CMPopTipView *popTipView = [self.visiblePopTipViews objectAtIndex:0];
-//		[popTipView dismissAnimated:YES];
-//		[self.visiblePopTipViews removeObjectAtIndex:0];
-//	}
     [_uiv_helpContianer removeFromSuperview];
     _uiv_helpContianer = nil;
     for (CMPopTipView *popTipView in self.visiblePopTipViews) {
