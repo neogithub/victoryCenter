@@ -8,13 +8,20 @@
 
 #import "FGalleryViewController.h"
 #import "UIColor+Extensions.h"
+#import "CMPopTipView.h"
 #define kThumbnailSize 75
 #define kThumbnailSpacing 4
 #define kCaptionPadding 3
 #define kToolbarHeight 60
 
 
-@interface FGalleryViewController (Private)
+@interface FGalleryViewController ()<CMPopTipViewDelegate>
+
+// Help tip view
+@property (nonatomic, strong) NSMutableArray                *arr_helpText;
+@property (nonatomic, strong) NSMutableArray                *visiblePopTipViews;
+@property (nonatomic, strong) NSMutableArray                *arr_helpTargetViews;
+@property (nonatomic, strong) UIView                        *uiv_helpContianer;
 
 // general
 - (void)buildViews;
@@ -38,7 +45,7 @@
 - (void)positionScroller;
 - (void)positionToolbar;
 - (void)resizeThumbView;
-- (void)PositionCaption;
+//- (void)PositionCaption;
 // thumbnails
 - (void)toggleThumbnailViewWithAnimation:(BOOL)animation;
 - (void)showThumbnailViewWithAnimation:(BOOL)animation;
@@ -121,7 +128,10 @@
 //        self.edgesForExtendedLayout = UIRectEdgeNone;
 //        [[UINavigationBar appearance] setBackgroundColor:[UIColor clearColor]];
 //        [self.navigationController.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+        
+        [self prepareHlepData];
 	}
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
 	return self;
 }
 
@@ -295,6 +305,10 @@
     //    [[NSNotificationCenter defaultCenter] postNotificationName:@"backToGallery" object:self];
 
     [self.parentViewController.view removeFromSuperview];
+//    [self removeFromParentViewController];
+//    [self.view removeFromSuperview];
+//    self.view  = nil;
+//    self = nil;
     float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (systemVersion >= 7.0)
     {
@@ -349,6 +363,12 @@
     [_uib_seeAllButton release], _uib_seeAllButton = nil;
     [_uib_backButton release], _uib_backButton = nil;
     
+//    [self.view removeFromSuperview];
+//    self.view = nil;
+//    
+//    [self removeFromParentViewController];
+//    self = nil;
+    [self dealloc];
     [super viewDidUnload];
 }
 
@@ -520,6 +540,12 @@
 	
     [_prevButton release];
     _prevButton = nil;
+    
+//    [self.view removeFromSuperview];
+//    self.view = nil;
+//    
+//    [self removeFromParentViewController];
+//    self = nil;
 }
 
 
@@ -1331,6 +1357,113 @@
 	[self scrollingHasEnded];
 }
 
+#pragma mark - Add Help view
+- (void)hideAndUnhideHelp:(NSNotification *)pNotification
+{
+    if (_uiv_helpContianer) {
+        [self fadeOutPopViews:nil];
+    }
+    else {
+        [self loadHelpView];
+    }
+}
+
+- (void)prepareHlepData
+{
+    [_arr_helpText removeAllObjects];
+    _arr_helpText = nil;
+    _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                     @"Tap close button to retun gallery",
+                     @"Current page number. Swipe to load more",
+                     @"Double tap or pinch to zoom the image",
+                     nil];
+    
+    [_arr_helpTargetViews removeAllObjects];
+    _arr_helpTargetViews = nil;
+    UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
+    UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(512, 50, 1, 1)];
+    UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(512, 384, 1, 1)];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2,nil];
+}
+
+- (void)dismissAllPopTipViews
+{
+    [_uiv_helpContianer removeFromSuperview];
+    _uiv_helpContianer = nil;
+    for (CMPopTipView *popTipView in self.visiblePopTipViews) {
+        [popTipView dismissAnimated:YES];
+        [self.visiblePopTipViews removeObject:popTipView];
+    }
+}
+
+- (void)loadHelpView
+{
+	[self dismissAllPopTipViews];
+    _uiv_helpContianer = [[UIView alloc] initWithFrame:screenRect];
+    _uiv_helpContianer.alpha = 0.0;
+    for (int i = 0; i < _arr_helpText.count; i++) {
+        NSString *contentMessage = nil;
+        contentMessage = _arr_helpText[i];
+        UIColor *backgroundColor = [UIColor vcHelpBackgroundColor];
+        UIColor *textColor = [UIColor whiteColor];
+        
+        CMPopTipView *popTipView;
+        popTipView = [[CMPopTipView alloc] initWithMessage:contentMessage];
+        popTipView.delegate = self;
+        
+        /* Some options to try.
+         */
+        //popTipView.disableTapToDismiss = YES;
+        //popTipView.preferredPointDirection = PointDirectionUp;
+        //popTipView.hasGradientBackground = NO;
+        //popTipView.cornerRadius = 2.0;
+        //popTipView.sidePadding = 30.0f;
+        //popTipView.topMargin = 20.0f;
+        //popTipView.pointerSize = 50.0f;
+        popTipView.hasShadow = NO;
+        popTipView.borderColor = [UIColor clearColor];
+        if (backgroundColor && ![backgroundColor isEqual:[NSNull null]]) {
+            popTipView.backgroundColor = backgroundColor;
+        }
+        if (textColor && ![textColor isEqual:[NSNull null]]) {
+            popTipView.textColor = textColor;
+        }
+        
+        popTipView.animation = arc4random() % 2;
+        popTipView.has3DStyle = NO;
+        
+        popTipView.dismissTapAnywhere = NO;
+        //        [popTipView autoDismissAnimated:NO atTimeInterval:3.0];
+        [popTipView presentPointingAtView:_arr_helpTargetViews[i] inView:_uiv_helpContianer animated:YES];
+        
+        [self.visiblePopTipViews addObject:popTipView];
+    }
+    [self.view addSubview: _uiv_helpContianer];
+    UITapGestureRecognizer *tapOnHelp = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fadeOutPopViews:)];
+    tapOnHelp.numberOfTapsRequired = 1;
+    _uiv_helpContianer.userInteractionEnabled = YES;
+    [_uiv_helpContianer addGestureRecognizer: tapOnHelp];
+    [UIView animateWithDuration:0.33 animations:^{
+        _uiv_helpContianer.alpha = 1.0;
+    }];
+}
+
+- (void)fadeOutPopViews:(UIGestureRecognizer *)gesture
+{
+    [UIView animateWithDuration:0.33 animations:^{
+        _uiv_helpContianer.alpha = 0.0;
+    } completion:^(BOOL finished){
+        [self dismissAllPopTipViews];
+    }];
+}
+
+#pragma mark - CMPopTipViewDelegate methods
+
+- (void)popTipViewWasDismissedByUser:(CMPopTipView *)popTipView
+{
+	[self.visiblePopTipViews removeObject:popTipView];
+}
+
 
 #pragma mark - Memory Management Methods
 
@@ -1439,6 +1572,12 @@
     [_prevButton release];
     _prevButton = nil;
 	
+    [self.view removeFromSuperview];
+    self.view = nil;
+    
+    [self removeFromParentViewController];
+    self = nil;
+    
     [super dealloc];
 }
 
