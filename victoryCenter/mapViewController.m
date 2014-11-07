@@ -71,6 +71,7 @@ static float    kPanelBtnHeight             = 38.0;
     UIView                  *uiv_distanceInfoContainer;
     
     UIView                  *uiv_siteAmenInfo;
+    UIImageView             *uiiv_airPlane;
 }
 //Top root menu
 @property (weak, nonatomic) IBOutlet UIButton           *uib_city;
@@ -102,6 +103,9 @@ static float    kPanelBtnHeight             = 38.0;
 @property (nonatomic, strong) UIImageView               *uiiv_mapOverlay;
 @property (nonatomic, strong) UIImageView               *uiiv_vcLogo;
 @property (nonatomic, strong) UIImageView               *uiiv_tredartLogo;
+@property (nonatomic, strong) UIImageView               *uiiv_dart1Logo;
+@property (nonatomic, strong) UIImageView               *uiiv_dart2Logo;
+@property (nonatomic, strong) UIImageView               *uiiv_treLogo;
 //Draw path
 @property (nonatomic, strong) embDrawPath               *embPath;
 @property (nonatomic, strong) embDrawPath				*embDirectionPath;
@@ -198,21 +202,32 @@ static float    kPanelBtnHeight             = 38.0;
     //Set up logos image
     _uiiv_vcLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_victorycenter_logo.png"]];
     _uiiv_tredartLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_tredart_logo.png"]];
+    _uiiv_dart1Logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_dartLogo.png"]];
+    _uiiv_dart2Logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_dartLogo.png"]];
+    _uiiv_treLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_treLogo.png"]];
 	switch (index % 3) {
 		case 0:
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"City_base_map_.png"]];
             _uiiv_vcLogo.frame = CGRectMake(489.0, 374.0, _uiiv_vcLogo.frame.size.width, _uiiv_vcLogo.frame.size.height);
             _uiiv_tredartLogo.frame = CGRectMake(456.0, 308.0, _uiiv_tredartLogo.frame.size.width, _uiiv_tredartLogo.frame.size.height);
+            _uiiv_dart1Logo.frame = CGRectMake(338.0, 193.0, _uiiv_dart1Logo.frame.size.width, _uiiv_dart1Logo.frame.size.height);
+            _uiiv_dart2Logo.frame = CGRectMake(512.0, 446.0, _uiiv_dart2Logo.frame.size.width, _uiiv_dart2Logo.frame.size.height);
+            _uiiv_treLogo.frame = CGRectMake(470.0, 484.0, _uiiv_treLogo.frame.size.width, _uiiv_treLogo.frame.size.height);
 			break;
 		case 1:
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"Neighborhood_map.png"]];
             _uiiv_vcLogo.frame = CGRectMake(480.0, 428.0, _uiiv_vcLogo.frame.size.width, _uiiv_vcLogo.frame.size.height);
             _uiiv_tredartLogo.frame = CGRectMake(423.0, 288.0, _uiiv_tredartLogo.frame.size.width, _uiiv_tredartLogo.frame.size.height);
+            _uiiv_dart2Logo.frame = CGRectMake(537.0, 566.0, _uiiv_dart2Logo.frame.size.width, _uiiv_dart2Logo.frame.size.height);
+            _uiiv_treLogo.frame = CGRectMake(390.0, 610.0, _uiiv_treLogo.frame.size.width, _uiiv_treLogo.frame.size.height);
 			break;
 		case 2:
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"Site_Base map.png"]];
             _uiiv_vcLogo.frame = CGRectZero;
             _uiiv_tredartLogo.frame = CGRectZero;
+            _uiiv_dart1Logo.frame = CGRectZero;
+            _uiiv_dart2Logo.frame = CGRectZero;
+            _uiiv_treLogo.frame = CGRectZero;
 			break;
 		default:
 			break;
@@ -220,10 +235,16 @@ static float    kPanelBtnHeight             = 38.0;
     
     _uiiv_vcLogo.tag = 150;
     _uiiv_tredartLogo.tag = 160;
+    _uiiv_dart1Logo.tag = 161;
+    _uiiv_dart2Logo.tag = 162;
+    _uiiv_treLogo.tag = 163;
     
     [_uiv_mapContainer addSubview:_uiiv_mapImg];
     [_uiv_mapContainer insertSubview:_uiiv_vcLogo atIndex:11];
     [_uiv_mapContainer insertSubview:_uiiv_tredartLogo atIndex:12];
+    [_uiv_mapContainer insertSubview:_uiiv_dart1Logo atIndex:12];
+    [_uiv_mapContainer insertSubview:_uiiv_dart2Logo atIndex:12];
+    [_uiv_mapContainer insertSubview:_uiiv_treLogo atIndex:12];
 	return _uiv_mapContainer;
 }
 
@@ -562,12 +583,12 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)addCityAccessPanel
 {
     uiv_cityAccPanel = [self setUpAccessPanel];
-    [self addDistanceInfo];
+//    [self addDistanceInfo];
 }
 
 - (void)addDistanceInfo
 {
-    uiv_distanceInfoContainer = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 5*kPanelBtnHeight + kPanelTitleHeight+15, panle_w, 85)];
+    uiv_distanceInfoContainer = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 6*kPanelBtnHeight + kPanelTitleHeight+15, panle_w, 85)];
     uiv_distanceInfoContainer.backgroundColor = [UIColor clearColor];
     
     UIView *uiv_toLoveField = [[UIView alloc] initWithFrame:CGRectMake(0, 0, panle_w, 40)];
@@ -618,8 +639,8 @@ static float    kPanelBtnHeight             = 38.0;
         [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_neibAccPanel];
     }
     
-    uiv_distanceInfoContainer.transform = CGAffineTransformMakeTranslation(0, -500);
-    CGFloat duration = 1.0f;
+    uiv_distanceInfoContainer.transform = CGAffineTransformMakeTranslation(0, -100);
+    CGFloat duration = 0.5f;
     CGFloat damping = 0.8f;
     CGFloat velocity = 0.5f;
     // int to hold UIViewAnimationOption
@@ -672,7 +693,7 @@ static float    kPanelBtnHeight             = 38.0;
     }
     if (selectedIndex == 2) { // Tapped Access
         [self addNeibAccessPanel];
-        [self addDistanceInfo];
+//        [self addDistanceInfo];
     }
     if (selectedIndex == 3) { // Tapped Districits
         [self updateOverlayImage:@"Neighborhood_Districts_Overlay.png"];
@@ -971,9 +992,9 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (UIView *)setUpAccessPanel
 {
-    panel_h = 5*kPanelBtnHeight + kPanelTitleHeight;
+    panel_h = 6*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS N. TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", nil];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS N. TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", @"AIRPORTS", nil];
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:panel];
@@ -1102,6 +1123,8 @@ static float    kPanelBtnHeight             = 38.0;
         tmp.layer.borderColor = [UIColor vcButtonBorder].CGColor;
         tmp.selected = NO;
     }
+    uiiv_airPlane.image = [UIImage imageNamed:@"Plane_Icon_Blue.png"];
+    
     UIButton *tappedBtn = sender;
     tappedBtn.selected = YES;
     tappedBtn.backgroundColor = [UIColor vclightbluemenu];
@@ -1119,8 +1142,13 @@ static float    kPanelBtnHeight             = 38.0;
         CGPoint savedCenter = uiv_panelIndicator.center;
         uiv_panelIndicator.layer.cornerRadius = 14.0 / 2.0;
         uiv_panelIndicator.center = savedCenter;
+        if (tappedBtn.tag !=5) {
+            [tappedBtn.superview addSubview: uiv_panelIndicator];
+        }
         
-        [tappedBtn.superview addSubview: uiv_panelIndicator];
+    }
+    if (tappedBtn.tag == 5) {
+        uiiv_airPlane.image = [UIImage imageNamed:@"Plane_Icon_White.png"];
     }
 }
 
@@ -1132,7 +1160,9 @@ static float    kPanelBtnHeight             = 38.0;
     tappedBtn.layer.borderColor = [UIColor vcButtonBorder].CGColor;
     
     [self unselectAllPanelBtns];
-    
+    if (tappedBtn.tag == 5) {
+        uiiv_airPlane.image = [UIImage imageNamed:@"Plane_Icon_Blue.png"];
+    }
     [uiv_panelIndicator removeFromSuperview];
     uiv_panelIndicator = nil;
 }
@@ -1183,9 +1213,10 @@ static float    kPanelBtnHeight             = 38.0;
         uib_accOption.tag = i;
         [uib_accOption addTarget:self action:method forControlEvents:UIControlEventTouchUpInside];
         [uiv_optionContainer addSubview: uib_accOption];
+        UIView *uiv_Indicator;
         if (indicator) {
             CGRect frame = CGRectMake(19, uib_accOption.frame.origin.y + (uib_accOption.frame.size.height - 14)/2, 14, 14);
-            UIView *uiv_Indicator = [[UIView alloc] initWithFrame:frame];
+            uiv_Indicator = [[UIView alloc] initWithFrame:frame];
             uiv_Indicator.backgroundColor = [UIColor whiteColor];
             uiv_Indicator.layer.borderColor = [UIColor vcDarkBlue].CGColor;
             uiv_Indicator.layer.borderWidth = 2.0;
@@ -1194,6 +1225,13 @@ static float    kPanelBtnHeight             = 38.0;
             uiv_Indicator.center = savedCenter;
             uiv_Indicator.tag = 500+i;
             [uiv_optionContainer addSubview: uiv_Indicator];
+        }
+        
+        if ([arr_buttonTitles[i]  isEqual: @"AIRPORTS"]) {
+            uiiv_airPlane = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Plane_Icon_Blue.png"]];
+            uiiv_airPlane.frame = CGRectMake(16.0, uib_accOption.frame.origin.y + (uib_accOption.frame.size.height - 20)/2, 20, 20);
+            [uiv_optionContainer addSubview: uiiv_airPlane];
+            [uiv_Indicator removeFromSuperview];
         }
         [arr_panelBtnArray addObject: uib_accOption];
     }
@@ -1517,9 +1555,14 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark - Draw Path
 -(void)drawPathsFromBezierClass:(id)sender
 {
+    // clean up
+	[self removePaths];
+    if (uiv_distanceInfoContainer) {
+        [self removeDistanceLabels];
+    }
+    
     UIButton *tappedBtn = sender;
     if (tappedBtn.selected) {
-        [self removePaths];
         [self deHighLightPanelBtn:sender];
         for (UIButton *tmp in arr_panelBtnArray) {
             tmp.selected = NO;
@@ -1528,6 +1571,12 @@ static float    kPanelBtnHeight             = 38.0;
     }
     
     [self highLightPanelBtn:sender andIndicatorColor:[UIColor redColor] withIndicator:YES];
+    
+    if (tappedBtn.tag == 5) {
+        [self addDistanceInfo];
+        return;
+    }
+    
     [_arr_pathItems removeAllObjects];
     _arr_pathItems = nil;
 	_arr_pathItems = [[NSMutableArray alloc] init];
@@ -1539,9 +1588,6 @@ static float    kPanelBtnHeight             = 38.0;
     arr_directionItems2 = paths.bezierPaths;
     dirpaths = [[embDirections alloc] init];
     arr_directionItems = dirpaths.bezierPaths;
-    
-    // clean up
-	[self removePaths];
 	
 	// actual drawpath function
 	_embDirectionPath = [[embDrawPath alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
@@ -1856,6 +1902,16 @@ static float    kPanelBtnHeight             = 38.0;
 }
 
 #pragma mark - Remove items and release memory
+
+- (void)removeDistanceLabels
+{
+    [UIView animateWithDuration:0.2 animations:^{
+        uiv_distanceInfoContainer.transform = CGAffineTransformMakeTranslation(0.0, -200);
+    } completion:^(BOOL finished){
+        [uiv_distanceInfoContainer removeFromSuperview];
+        uiv_distanceInfoContainer = nil;
+    }];
+}
 
 - (void)removeOverviewPanel
 {
