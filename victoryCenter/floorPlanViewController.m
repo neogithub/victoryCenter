@@ -32,6 +32,8 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   NSMutableArray                  *arr_indicatorFrames;
 // Floor num & RSF. labels
 @property (nonatomic, strong)   UILabel                         *uil_floorRsf;
+// Key panel
+@property (nonatomic, strong)   UIImageView                     *uiiv_keyPanel;
 // Control Button
 @property (nonatomic, strong)   UIButton                        *uib_backBtn;
 // Pano image
@@ -136,9 +138,11 @@ static CGFloat  kPanelTitleHeight           = 46;
 
 - (void)createKeyPanel
 {
-    UIImageView *uiiv_keyPanel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_floorplan_keys.png"]];
-    uiiv_keyPanel.frame = CGRectMake(_uiv_btnContainer.frame.origin.x, _uiv_btnContainer.frame.origin.y + _uiv_btnContainer.frame.size.height+30, uiiv_keyPanel.frame.size.width, uiiv_keyPanel.frame.size.height);
-    [self.view addSubview: uiiv_keyPanel];
+    _uiiv_keyPanel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_floorplan_keys.png"]];
+    _uiiv_keyPanel.frame = CGRectMake(_uiv_btnContainer.frame.origin.x, _uiv_btnContainer.frame.origin.y + _uiv_btnContainer.frame.size.height + 30, _uiiv_keyPanel.frame.size.width, _uiiv_keyPanel.frame.size.height);
+    _uiiv_keyPanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    _uiiv_keyPanel.layer.borderWidth = 1.0;
+    [self.view addSubview: _uiiv_keyPanel];
 }
 
 #pragma mark - Set up side panel
@@ -190,14 +194,16 @@ static CGFloat  kPanelTitleHeight           = 46;
 
 - (void)createFloorPlanAndRsfLabels
 {
-    NSString *floorNum = _arr_titleText[pageIndex];
     NSString *floorRsf = _arr_squareFeet[pageIndex];
-    NSString *labelText = [NSString stringWithFormat:@"%@: %@ RSF", floorNum, floorRsf];
-    _uil_floorRsf = [[UILabel alloc] initWithFrame:CGRectMake(120.0, 75.0, 300.0, 20.0)];
-    _uil_floorRsf.backgroundColor = [UIColor clearColor];
+    NSString *labelText = [NSString stringWithFormat:@"RSF: %@",  floorRsf];
+    _uil_floorRsf = [[UILabel alloc] initWithFrame:CGRectMake(_uiiv_keyPanel.frame.origin.x, _uiiv_keyPanel.frame.origin.y + _uiiv_keyPanel.frame.size.height + 10, panle_w, 30.0)];
+    _uil_floorRsf.backgroundColor = [UIColor whiteColor];
+    _uil_floorRsf.layer.borderWidth = 1.0;
+    _uil_floorRsf.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     _uil_floorRsf.text = labelText;
     _uil_floorRsf.textColor = [UIColor vcLightBlue];
-    _uil_floorRsf.font = [UIFont fontWithName:@"Raleway-Medium" size:14.0];
+    _uil_floorRsf.textAlignment = NSTextAlignmentCenter;
+    _uil_floorRsf.font = [UIFont fontWithName:@"Raleway-Bold" size:13.0];
     [self.view addSubview: _uil_floorRsf];
 }
 
@@ -329,9 +335,8 @@ static CGFloat  kPanelTitleHeight           = 46;
         _uiv_floorIndicator.frame = [[_arr_indicatorFrames objectAtIndex:_currentPage] CGRectValue];
     }];
     
-    NSString *floorNum = _arr_titleText[index];
     NSString *floorRsf = _arr_squareFeet[index];
-    NSString *labelText = [NSString stringWithFormat:@"%@: %@ RSF", floorNum, floorRsf];
+    NSString *labelText = [NSString stringWithFormat:@"RSF: %@", floorRsf];
     _uil_floorRsf.text = labelText;
 }
 
