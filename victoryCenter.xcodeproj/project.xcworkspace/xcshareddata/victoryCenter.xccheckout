@@ -10,29 +10,29 @@
 	<string>victoryCenter</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>96A99E02-9549-4AAF-BFBA-919CA7E9674F</key>
-		<string>https://github.com/xiaohehu/victoryCenter.git</string>
+		<key>B5463C40AB4E2DC9D7C1E18B01B3BB37A95DE5F6</key>
+		<string>https://github.com/neogithub/victoryCenter.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>victoryCenter.xcodeproj/project.xcworkspace</string>
+	<string>victoryCenter.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>96A99E02-9549-4AAF-BFBA-919CA7E9674F</key>
+		<key>B5463C40AB4E2DC9D7C1E18B01B3BB37A95DE5F6</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/xiaohehu/victoryCenter.git</string>
+	<string>https://github.com/neogithub/victoryCenter.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>96A99E02-9549-4AAF-BFBA-919CA7E9674F</string>
+	<string>B5463C40AB4E2DC9D7C1E18B01B3BB37A95DE5F6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>96A99E02-9549-4AAF-BFBA-919CA7E9674F</string>
+			<string>B5463C40AB4E2DC9D7C1E18B01B3BB37A95DE5F6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>victoryCenter</string>
 		</dict>

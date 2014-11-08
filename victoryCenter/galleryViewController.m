@@ -773,7 +773,7 @@
 #pragma mark - Add Help view
 - (void)hideAndUnhideHelp:(NSNotification *)pNotification
 {
-    if (localGallery || _uiv_panoramicView) {
+    if (localGallery.galleryID || _uiv_panoramicView) {
         return;
     }
     
@@ -900,6 +900,8 @@
     [localGallery.view removeFromSuperview];
     localGallery.view = nil;
     
+    [localGallery removeFromParentViewController];
+    localGallery = nil;
     
     localImages = nil;
     

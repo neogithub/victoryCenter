@@ -466,86 +466,68 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    // remove KVO listener
+    [_container removeObserver:self forKeyPath:@"frame"];
     
-	self.view.frame = CGRectMake(0.0, 0.0, 1024, 768);
-    _isActive = YES;
-    
-    self.useThumbnailView = _useThumbnailView;
-	
-    // toggle into the thumb view if we should start there
-    if (_beginsInThumbnailView && _useThumbnailView) {
-        [self showThumbnailViewWithAnimation:NO];
-        [self loadAllThumbViewPhotos];
+    // Cancel all photo loaders in progress
+    NSArray *keys = [_photoLoaders allKeys];
+    NSUInteger i, count = [keys count];
+    for (i = 0; i < count; i++) {
+        FGalleryPhoto *photo = [_photoLoaders objectForKey:[keys objectAtIndex:i]];
+        photo.delegate = nil;
+        [photo unloadThumbnail];
+        [photo unloadFullsize];
     }
     
-	[self layoutViews];
-	
-	// update status bar to be see-through
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:animated];
-	[[UIApplication sharedApplication] setStatusBarHidden:YES];
-	// init with next on first run.
-	if( _currentIndex == -1 ) [self next];
-	else [self gotoImageByIndex:_currentIndex animated:NO];
-	
-	// eb addition
-	[self exitFullscreen];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
     self.galleryID = nil;
-	
-	_photoSource = nil;
-	
+    
+    _photoSource = nil;
+    
     [_caption release];
     _caption = nil;
-	
+    
     [_captionContainer release];
     _captionContainer = nil;
-	
+    
     [_container release];
     _container = nil;
-	
-    [_captionBgImg release];
-    _captionBgImg = nil;
     
     [_innerContainer release];
     _innerContainer = nil;
-	
+    
     [_toolbar release];
     _toolbar = nil;
-	
+    
     [_thumbsView release];
     _thumbsView = nil;
-	
+    
     [_scroller release];
     _scroller = nil;
-	
-	[_photoLoaders removeAllObjects];
+    
+    [_photoLoaders removeAllObjects];
     [_photoLoaders release];
     _photoLoaders = nil;
-	
-	[_barItems removeAllObjects];
-	[_barItems release];
-	_barItems = nil;
-	
-	[_photoThumbnailViews removeAllObjects];
+    
+    [_barItems removeAllObjects];
+    [_barItems release];
+    _barItems = nil;
+    
+    [_photoThumbnailViews removeAllObjects];
     [_photoThumbnailViews release];
     _photoThumbnailViews = nil;
-	
-	[_photoViews removeAllObjects];
+    
+    [_photoViews removeAllObjects];
     [_photoViews release];
     _photoViews = nil;
-	
+    
     [_nextButton release];
     _nextButton = nil;
-	
+    
     [_prevButton release];
     _prevButton = nil;
     
-//    [self.view removeFromSuperview];
-//    self.view = nil;
-//    
-//    [self removeFromParentViewController];
-//    self = nil;
 }
 
 
@@ -1510,74 +1492,68 @@
 
 - (void)dealloc {
 	
-	// remove KVO listener
-	[_container removeObserver:self forKeyPath:@"frame"];
-	
-	// Cancel all photo loaders in progress
-	NSArray *keys = [_photoLoaders allKeys];
-	NSUInteger i, count = [keys count];
-	for (i = 0; i < count; i++) {
-		FGalleryPhoto *photo = [_photoLoaders objectForKey:[keys objectAtIndex:i]];
-		photo.delegate = nil;
-		[photo unloadThumbnail];
-		[photo unloadFullsize];
-	}
-	
-	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-	
-	self.galleryID = nil;
-	
-	_photoSource = nil;
-	
-    [_caption release];
-    _caption = nil;
-	
-    [_captionContainer release];
-    _captionContainer = nil;
-	
-    [_container release];
-    _container = nil;
-	
-    [_innerContainer release];
-    _innerContainer = nil;
-	
-    [_toolbar release];
-    _toolbar = nil;
-	
-    [_thumbsView release];
-    _thumbsView = nil;
-	
-    [_scroller release];
-    _scroller = nil;
-	
-	[_photoLoaders removeAllObjects];
-    [_photoLoaders release];
-    _photoLoaders = nil;
-	
-	[_barItems removeAllObjects];
-	[_barItems release];
-	_barItems = nil;
-	
-	[_photoThumbnailViews removeAllObjects];
-    [_photoThumbnailViews release];
-    _photoThumbnailViews = nil;
-	
-	[_photoViews removeAllObjects];
-    [_photoViews release];
-    _photoViews = nil;
-	
-    [_nextButton release];
-    _nextButton = nil;
-	
-    [_prevButton release];
-    _prevButton = nil;
-	
-    [self.view removeFromSuperview];
-    self.view = nil;
-    
-    [self removeFromParentViewController];
-    self = nil;
-    
+//	// remove KVO listener
+//	[_container removeObserver:self forKeyPath:@"frame"];
+//	
+//	// Cancel all photo loaders in progress
+//	NSArray *keys = [_photoLoaders allKeys];
+//	NSUInteger i, count = [keys count];
+//	for (i = 0; i < count; i++) {
+//		FGalleryPhoto *photo = [_photoLoaders objectForKey:[keys objectAtIndex:i]];
+//		photo.delegate = nil;
+//		[photo unloadThumbnail];
+//		[photo unloadFullsize];
+//	}
+//	
+//	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+//	
+////	self.galleryID = nil;
+//	
+//	_photoSource = nil;
+//	
+//    [_caption release];
+//    _caption = nil;
+//	
+//    [_captionContainer release];
+//    _captionContainer = nil;
+//	
+//    [_container release];
+//    _container = nil;
+//	
+//    [_innerContainer release];
+//    _innerContainer = nil;
+//	
+//    [_toolbar release];
+//    _toolbar = nil;
+//	
+//    [_thumbsView release];
+//    _thumbsView = nil;
+//	
+//    [_scroller release];
+//    _scroller = nil;
+//	
+//	[_photoLoaders removeAllObjects];
+//    [_photoLoaders release];
+//    _photoLoaders = nil;
+//	
+//	[_barItems removeAllObjects];
+//	[_barItems release];
+//	_barItems = nil;
+//	
+//	[_photoThumbnailViews removeAllObjects];
+//    [_photoThumbnailViews release];
+//    _photoThumbnailViews = nil;
+//	
+//	[_photoViews removeAllObjects];
+//    [_photoViews release];
+//    _photoViews = nil;
+//	
+//    [_nextButton release];
+//    _nextButton = nil;
+//	
+//    [_prevButton release];
+//    _prevButton = nil;
+//    
     [super dealloc];
 }
 
