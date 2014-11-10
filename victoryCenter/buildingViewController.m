@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIButton               *uib_floorPlan;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_amenities;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_elevators;
+@property (weak, nonatomic) IBOutlet UILabel                *uil_parkingLabel;
+@property (weak, nonatomic) IBOutlet UILabel                *uil_lobbyLabel;
 //Floor plan
 @property (nonatomic, strong) floorPlanViewController       *floorPlan;
 
@@ -62,6 +64,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideBuildingMenu) name:@"hideBuildingTopMenu" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unhideBuildingMenu) name:@"unhideBuildingTopMenu" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetBuilding) name:@"tapOnTitle" object:nil];
+    
+    _uil_parkingLabel.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
+    _uil_parkingLabel.textColor = [UIColor whiteColor];
+    
+    _uil_lobbyLabel.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
+    _uil_lobbyLabel.textColor = [UIColor vcDarkBlue];
 }
 
 #pragma mark - Hide & unhide top menu 
@@ -203,7 +211,7 @@
             break;
         }
         case 2: {
-            [self loadFloorPlan:0];
+            [self loadFloorPlan:6];
             break;
         }
         case 3: {
@@ -359,7 +367,7 @@
     [_uiv_elevatorContainer addSubview: uil_lobby];
     //Floor number image
     UIImageView *uiiv_floorNum = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elevator_floorNum.png"]];
-    uiiv_floorNum.frame = CGRectMake(400, 98, uiiv_floorNum.frame.size.width, uiiv_floorNum.frame.size.height);
+    uiiv_floorNum.frame = CGRectMake(410, 98, uiiv_floorNum.frame.size.width, uiiv_floorNum.frame.size.height);
     [_uiv_elevatorContainer addSubview: uiiv_floorNum];
 }
 
@@ -387,22 +395,22 @@
     
     //Add Reset button to the panel
     UIButton *uib_resetEle = [UIButton buttonWithType:UIButtonTypeCustom];
-    uib_resetEle.frame = CGRectMake(100.0, 206.0, 100.0, 40.0);
-    uib_resetEle.backgroundColor = [UIColor clearColor];
+    uib_resetEle.frame = CGRectMake(120.0, 216.0, 80.0, 20.0);
+    uib_resetEle.backgroundColor = [UIColor vcLightBlue];
     [uib_resetEle setTitle:@"RESET" forState:UIControlStateNormal];
-    [uib_resetEle setTitleColor:[UIColor vcLightBlue] forState:UIControlStateNormal];
+    [uib_resetEle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [uib_resetEle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    [uib_resetEle setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 50, 10.0, 0.0)];
+//    [uib_resetEle setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 30, 10.0, 0.0)];
     [uib_resetEle addTarget:self action:@selector(resetAllEleImgs) forControlEvents:UIControlEventTouchUpInside];
     [uiv_ctrlPanel addSubview: uib_resetEle];
     
     UIButton *uib_showAll = [UIButton buttonWithType:UIButtonTypeCustom];
-    uib_showAll.frame = CGRectMake(0.0, 206.0, 100.0, 40.0);
-    uib_showAll.backgroundColor = [UIColor clearColor];
+    uib_showAll.frame = CGRectMake(0.0, 216.0, 80.0, 20.0);
+    uib_showAll.backgroundColor = [UIColor vcLightBlue];
     [uib_showAll setTitle:@"ALL" forState:UIControlStateNormal];
-    [uib_showAll setTitleColor:[UIColor vcLightBlue                                                                                                                                                         ] forState:UIControlStateNormal];
+    [uib_showAll setTitleColor:[UIColor whiteColor                                                                                                                                                         ] forState:UIControlStateNormal];
     [uib_showAll.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
-    [uib_showAll setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 10.0, 60.0)];
+//    [uib_showAll setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 10.0, 40.0)];
     [uib_showAll addTarget:self action:@selector(showAllEleImg) forControlEvents:UIControlEventTouchUpInside];
     [uiv_ctrlPanel addSubview: uib_showAll];
     
