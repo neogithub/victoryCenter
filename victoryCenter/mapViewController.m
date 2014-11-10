@@ -102,6 +102,7 @@ static float    kPanelBtnHeight             = 38.0;
 @property (nonatomic, strong) UIImageView               *uiiv_mapImg;
 @property (nonatomic, strong) UIImageView               *uiiv_mapOverlay;
 @property (nonatomic, strong) UIImageView               *uiiv_vcLogo;
+@property (nonatomic, strong) UIImageView               *uiiv_vcLogoFlag;
 @property (nonatomic, strong) UIImageView               *uiiv_tredartLogo;
 @property (nonatomic, strong) UIImageView               *uiiv_dart1Logo;
 @property (nonatomic, strong) UIImageView               *uiiv_dart2Logo;
@@ -245,7 +246,33 @@ static float    kPanelBtnHeight             = 38.0;
     [_uiv_mapContainer insertSubview:_uiiv_dart1Logo atIndex:12];
     [_uiv_mapContainer insertSubview:_uiiv_dart2Logo atIndex:12];
     [_uiv_mapContainer insertSubview:_uiiv_treLogo atIndex:12];
+    
+    UITapGestureRecognizer *tapOnVClogo = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnVCLogo:)];
+    tapOnVClogo.numberOfTapsRequired = 1;
+    _uiiv_vcLogo.userInteractionEnabled = YES;
+    [_uiiv_vcLogo addGestureRecognizer: tapOnVClogo];
+    
 	return _uiv_mapContainer;
+}
+
+- (void)tapOnVCLogo:(UIGestureRecognizer *)gesture
+{
+    if (_uiiv_vcLogoFlag) {
+        [_uiiv_vcLogoFlag removeFromSuperview];
+        _uiiv_vcLogoFlag = nil;
+        return;
+    }
+    
+    _uiiv_vcLogoFlag = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VictoryCenter_Flag.png"]];
+    CGRect logoFrame = _uiiv_vcLogo.frame;
+    _uiiv_vcLogoFlag.frame = CGRectMake(logoFrame.origin.x + logoFrame.size.width/2, logoFrame.origin.y - _uiiv_vcLogoFlag.frame.size.height, _uiiv_vcLogoFlag.frame.size.width, _uiiv_vcLogoFlag.frame.size.height);
+    _uiiv_vcLogoFlag.tag = 151;
+    
+    CGRect oldFrame = _uiiv_vcLogoFlag.frame;
+    _uiiv_vcLogoFlag.layer.anchorPoint = CGPointMake(0.0, 1.0);
+    _uiiv_vcLogoFlag.frame = oldFrame;
+    
+    [_uiv_mapContainer addSubview: _uiiv_vcLogoFlag];
 }
 
 -(void)animationOfMaps:(int)index
@@ -334,11 +361,11 @@ static float    kPanelBtnHeight             = 38.0;
 	// for(UIView *subview in [_uis_zooming subviews]) {
     for (UIView *dropPinView in _uiv_mapContainer.subviews) {
         if (dropPinView.tag >= 100) {
-            CGRect oldFrame = dropPinView.frame;
+//            CGRect oldFrame = dropPinView.frame;
             // 0.5 means the anchor is centered on the x axis. 1 means the anchor is at the bottom of the view. If you comment out this line, the pin's center will stay where it is regardless of how much you zoom. I have it so that the bottom of the pin stays fixed. This should help user RomeoF.
             //[dropPinView.layer setAnchorPoint:CGPointMake(0.5, 1)];
-            [dropPinView.layer setAnchorPoint:CGPointMake(0.5, 0.5)];
-            dropPinView.frame = oldFrame;
+//            [dropPinView.layer setAnchorPoint:CGPointMake(0.5, 0.5)];
+//            dropPinView.frame = oldFrame;
             // When you zoom in on scrollView, it gets a larger zoom scale value.
             // You transform the pin by scaling it by the inverse of this value.
             dropPinView.transform = CGAffineTransformMakeScale(1.0/scrollView.zoomScale, 1.0/scrollView.zoomScale);
@@ -632,12 +659,14 @@ static float    kPanelBtnHeight             = 38.0;
     
     [uiv_distanceInfoContainer addSubview: uiv_toLoveField];
     [uiv_distanceInfoContainer addSubview: uiv_toDall];
-    if (uiv_cityAccPanel) {
-        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_cityAccPanel];
-    }
-    if (uiv_neibAccPanel) {
-        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_neibAccPanel];
-    }
+//    if (uiv_cityAccPanel) {
+//        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_cityAccPanel];
+//    }
+//    if (uiv_neibAccPanel) {
+//        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_neibAccPanel];
+//    }
+    
+    [_uiv_mapContainer addSubview: uiv_distanceInfoContainer];
     
     uiv_distanceInfoContainer.transform = CGAffineTransformMakeTranslation(0, -100);
     CGFloat duration = 0.5f;
@@ -1494,6 +1523,7 @@ static float    kPanelBtnHeight             = 38.0;
     numLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     numLabel.textColor = textColor;
 	numLabel.text = [NSString stringWithFormat:@"%i",i%100];
+    numLabel.font = [UIFont systemFontOfSize:16];
 	[roundedView addSubview:numLabel];
     
     UITapGestureRecognizer *tapG = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hotspotTapped:)];
@@ -1517,19 +1547,24 @@ static float    kPanelBtnHeight             = 38.0;
 {
     // index%100 is the index of the hotspot in array
     // index/100 is the index of amentites' section
+    
+    UIColor *theColor = [arr_indicatorColors objectAtIndex:index/100-1];
+    
     if (_uiv_tappedHotspot) {
         _uiv_tappedHotspot.backgroundColor = [UIColor whiteColor];
         _uiv_tappedHotspot.layer.borderWidth = 3.0;
+        _uiv_tappedHotspot.layer.borderColor = theColor.CGColor;
         for (UILabel *tmp in [_uiv_tappedHotspot subviews]) {
-            tmp.textColor = [arr_indicatorColors objectAtIndex:index/100-1];
+            tmp.textColor = theColor;
         }
     }
     
     _uiv_tappedHotspot = [arr_HotSpotViewArray objectAtIndex:index%100];
     [_uiv_tappedHotspot removeFromSuperview];
     [_uiv_mapContainer insertSubview:_uiv_tappedHotspot belowSubview:_uiiv_vcLogo];
-    _uiv_tappedHotspot.backgroundColor = [arr_indicatorColors objectAtIndex:index/100-1];
-    _uiv_tappedHotspot.layer.borderWidth = 0.0;
+    _uiv_tappedHotspot.backgroundColor = theColor;
+    _uiv_tappedHotspot.layer.borderWidth = 3.0;
+    _uiv_tappedHotspot.layer.borderColor = [UIColor whiteColor].CGColor;
     for (UILabel *tmp in [_uiv_tappedHotspot subviews]) {
         tmp.textColor = [UIColor whiteColor];
     }
@@ -1906,7 +1941,7 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)removeDistanceLabels
 {
     [UIView animateWithDuration:0.2 animations:^{
-        uiv_distanceInfoContainer.transform = CGAffineTransformMakeTranslation(0.0, -200);
+        uiv_distanceInfoContainer.transform = CGAffineTransformMakeTranslation(0.0, -100);
     } completion:^(BOOL finished){
         [uiv_distanceInfoContainer removeFromSuperview];
         uiv_distanceInfoContainer = nil;
