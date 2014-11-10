@@ -15,6 +15,9 @@
 static float    panle_w                     = 156;
 static CGFloat  kPanelTitleHeight           = 46;
 @interface floorPlanViewController ()<UIPageViewControllerDelegate>
+{
+    BOOL            pageIsSet;
+}
 
 // Page View
 @property (nonatomic, readwrite)        NSInteger               currentPage;
@@ -54,7 +57,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 {
     self.view.frame = screenRect;
     _arr_titleText = [[NSArray alloc] initWithObjects: @"FLOOR 18 - 23", @"FLOOR 17", @"FLOOR 16", @"FLOOR 15", @"FLOOR 10 - 14", @"FLOOR 9", @"FLOOR 8",nil];
-    _arr_squareFeet = [[NSArray alloc] initWithObjects:@"100.0", @"101.0", @"102.0", @"103.0", @"104.0", @"105.0", @"106.0", @"107.0", nil];
+    _arr_squareFeet = [[NSArray alloc] initWithObjects:@"28,591 SF", @"28,337 SF", @"28,439 SF", @"28,694 SF", @"28,161 SF", @"29,750 SF", @"46,943 SF", nil];
     
     CGRect frame_18_23 = CGRectMake(42.0, 18.0, 93.0, 30.0);
     CGRect frame_17 = CGRectMake(42.0, 50.0, 93.0, 4.0);
@@ -66,8 +69,10 @@ static CGFloat  kPanelTitleHeight           = 46;
     _arr_indicatorFrames = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:frame_18_23], [NSValue valueWithCGRect:frame_17], [NSValue valueWithCGRect:frame_16], [NSValue valueWithCGRect:frame_15], [NSValue valueWithCGRect:frame_14_10], [NSValue valueWithCGRect:frame_9], [NSValue valueWithCGRect:frame_8], nil];
     
     _modelController = [[embModelController alloc] init];
+
     [self initPageView:pageIndex];
     _currentPage = pageIndex;
+
     [self createPanel];
     [self setCtrlBtns];
     [self createKeyPanel];
@@ -157,7 +162,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     _uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
     _uib_PanelTitle.frame = CGRectMake(0.0, 0.0, panle_w, kPanelTitleHeight);
     [_uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
-    [_uib_PanelTitle setTitle:_arr_titleText[pageIndex] forState:UIControlStateNormal];
+    [_uib_PanelTitle setTitle:_arr_titleText[_currentPage] forState:UIControlStateNormal];
     [_uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:16.0]];
     _uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 0);
@@ -183,7 +188,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     
     _uiv_floorIndicator = [[UIView alloc] initWithFrame:CGRectZero];
     _uiv_floorIndicator.backgroundColor = [UIColor vcDarkBlue];
-    _uiv_floorIndicator.frame = [[_arr_indicatorFrames objectAtIndex:pageIndex] CGRectValue];
+    _uiv_floorIndicator.frame = [[_arr_indicatorFrames objectAtIndex:_currentPage] CGRectValue];
     
     [_uiv_panel addSubview: uiiv_panelBld];
     [_uiv_panel addSubview: _uiiv_smallStack];
@@ -194,7 +199,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 
 - (void)createFloorPlanAndRsfLabels
 {
-    NSString *floorRsf = _arr_squareFeet[pageIndex];
+    NSString *floorRsf = _arr_squareFeet[_currentPage];
     NSString *labelText = [NSString stringWithFormat:@"RSF: %@",  floorRsf];
     _uil_floorRsf = [[UILabel alloc] initWithFrame:CGRectMake(_uiiv_keyPanel.frame.origin.x, _uiiv_keyPanel.frame.origin.y + _uiiv_keyPanel.frame.size.height + 10, panle_w, 30.0)];
     _uil_floorRsf.backgroundColor = [UIColor whiteColor];
