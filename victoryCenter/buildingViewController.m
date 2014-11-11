@@ -130,7 +130,7 @@
     _uiv_statImgContainer.transform = CGAffineTransformIdentity;
     
     [self removeFloorPlan];
-    
+    [self resetTopMenu];
     [_uiv_elevatorContainer removeFromSuperview];
     _uiv_elevatorContainer = nil;
     
@@ -211,7 +211,7 @@
             break;
         }
         case 2: {
-            [self loadFloorPlan:6];
+            [self loadFloorPlan:6];//load floor 8
             break;
         }
         case 3: {

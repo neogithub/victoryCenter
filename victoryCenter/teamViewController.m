@@ -40,6 +40,18 @@ static float kCardsGap      = 12.0;
 {
     self.view.frame = screenRect;
     [self prepareHlepData];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(![defaults objectForKey:@"firstTeam"])
+    {
+        [self performSelector:@selector(loadHelpViews) withObject:nil afterDelay:0.5];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"NO" forKey:@"firstTeam"];
 }
 
 - (void)viewDidLoad

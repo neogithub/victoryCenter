@@ -464,7 +464,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(![defaults objectForKey:@"firstFGallery"])
     {
-        [self loadHelpViews];
+        [self performSelector:@selector(loadHelpViews) withObject:nil afterDelay:0.5];
     }
 }
 

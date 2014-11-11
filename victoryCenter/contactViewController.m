@@ -46,7 +46,7 @@ static float kContactGap = 4;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(![defaults objectForKey:@"firstContact"])
     {
-        [self loadHelpViews];
+        [self performSelector:@selector(loadHelpViews) withObject:nil afterDelay:0.5];
     }
 }
 

@@ -273,6 +273,35 @@ static float    kPanelBtnHeight             = 38.0;
     _uiiv_vcLogoFlag.frame = oldFrame;
     
     [_uiv_mapContainer addSubview: _uiiv_vcLogoFlag];
+    
+//    if (_uiiv_vcLogoFlag) {
+//        
+//        [UIView animateWithDuration:0.2 animations:^{
+//            _uiiv_vcLogoFlag.transform = CGAffineTransformMakeScale(0.0, 0.0);
+//        } completion:^(BOOL finished){
+//            [_uiiv_vcLogoFlag removeFromSuperview];
+//            _uiiv_vcLogoFlag = nil;
+//            return;
+//        }];
+//        
+//    }
+//    else {
+//        _uiiv_vcLogoFlag = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VictoryCenter_Flag.png"]];
+//        CGRect logoFrame = _uiiv_vcLogo.frame;
+//        _uiiv_vcLogoFlag.frame = CGRectMake(logoFrame.origin.x + logoFrame.size.width/2, logoFrame.origin.y - _uiiv_vcLogoFlag.frame.size.height, _uiiv_vcLogoFlag.frame.size.width, _uiiv_vcLogoFlag.frame.size.height);
+//        _uiiv_vcLogoFlag.tag = 151;
+//        
+//        CGRect oldFrame = _uiiv_vcLogoFlag.frame;
+//        _uiiv_vcLogoFlag.layer.anchorPoint = CGPointMake(0.0, 1.0);
+//        _uiiv_vcLogoFlag.frame = oldFrame;
+//        _uiiv_vcLogoFlag.transform = CGAffineTransformMakeScale(0.0, 0.0);
+//        [_uiv_mapContainer addSubview: _uiiv_vcLogoFlag];
+//        [UIView animateWithDuration:0.2 animations:^{
+//            _uiiv_vcLogoFlag.transform = CGAffineTransformIdentity;
+//        } completion:^(BOOL finished){
+//            
+//        }];
+//    }
 }
 
 -(void)animationOfMaps:(int)index

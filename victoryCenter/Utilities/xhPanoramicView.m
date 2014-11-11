@@ -52,7 +52,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(![defaults objectForKey:@"firstPano"])
     {
-        [self loadHelpViews];
+        [self performSelector:@selector(loadHelpViews) withObject:nil afterDelay:0.5];
     }
     
     return self;
