@@ -334,7 +334,7 @@
     uiiv_highRiseEle.transform = CGAffineTransformMakeTranslation(0.0, uiiv_highRiseEle.frame.size.height);
     
     UIImageView *uiiv_parking = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_parking.png"]];
-    uiiv_parking.frame = CGRectMake(247, 534, uiiv_parking.frame.size.width, uiiv_parking.frame.size.height);
+    uiiv_parking.frame = CGRectMake(247, 564, uiiv_parking.frame.size.width, uiiv_parking.frame.size.height);
     uiiv_parking.transform = CGAffineTransformMakeTranslation(0.0, uiiv_parking.frame.size.height);
     
     UIImageView *uiiv_lobby = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_elavators_lobby.png"]];
