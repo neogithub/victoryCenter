@@ -191,6 +191,8 @@
 		8263B98C19EDACD700E70C1B /* embTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98A19EDACD700E70C1B /* embTableCell.xib */; };
 		8263B98E19EDC7EF00E70C1B /* hotspots.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98D19EDC7EF00E70C1B /* hotspots.plist */; };
 		827069951A125BA8001AC7E4 /* xhPopTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 827069941A125BA8001AC7E4 /* xhPopTipsView.m */; };
+		827069981A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */; };
+		827069991A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 827069971A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg */; };
 		82716A6819E434C10070A331 /* Districts_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6619E434C10070A331 /* Districts_overlay.png */; };
 		82716A6919E434C10070A331 /* Districts_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6719E434C10070A331 /* Districts_overlay@2x.png */; };
 		82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6A19E441390070A331 /* grfx_access_nav.png */; };
@@ -541,6 +543,8 @@
 		8263B98D19EDC7EF00E70C1B /* hotspots.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotspots.plist; sourceTree = "<group>"; };
 		827069931A125BA8001AC7E4 /* xhPopTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xhPopTipsView.h; sourceTree = "<group>"; };
 		827069941A125BA8001AC7E4 /* xhPopTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xhPopTipsView.m; sourceTree = "<group>"; };
+		827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_bldAmenities_bg.jpg; sourceTree = "<group>"; };
+		827069971A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_bldAmenities_bg@2x.jpg"; sourceTree = "<group>"; };
 		82716A6619E434C10070A331 /* Districts_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Districts_overlay.png; sourceTree = "<group>"; };
 		82716A6719E434C10070A331 /* Districts_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Districts_overlay@2x.png"; sourceTree = "<group>"; };
 		82716A6A19E441390070A331 /* grfx_access_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_access_nav.png; sourceTree = "<group>"; };
@@ -1159,6 +1163,8 @@
 		82A29E4319EC60E000AFAE1E /* Building */ = {
 			isa = PBXGroup;
 			children = (
+				827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */,
+				827069971A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg */,
 				82A29E4419EC60E000AFAE1E /* grfx_bldImg.png */,
 				82A29E4519EC60E000AFAE1E /* grfx_bldImg@2x.png */,
 				82A29E4619EC60E000AFAE1E /* grfx_bldStatsImg.png */,
@@ -1566,6 +1572,7 @@
 				82EA38C019E304AC0027394F /* neoscape_bug.mov in Resources */,
 				8263B98C19EDACD700E70C1B /* embTableCell.xib in Resources */,
 				82000B9E19E5963800AE2C70 /* team_duda_text@2x.png in Resources */,
+				827069991A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg in Resources */,
 				8224FDF519D46D90002B1B44 /* cap_bar_.png in Resources */,
 				82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */,
 				823D78AD19F1AD500096E62C /* grfx_compass@2x.png in Resources */,
@@ -1609,6 +1616,7 @@
 				82AB935019FEC97B00DD0B30 /* grfx_west_hs.png in Resources */,
 				82000B8A19E592A800AE2C70 /* team_cousins_logo@2x.png in Resources */,
 				824F368E19E6C47500267B44 /* thumb_20140802_downtown_60m_2pm_high-res.jpg in Resources */,
+				827069981A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg in Resources */,
 				824C196E19FA9DC400EA7613 /* grfx_floorplan9@2x.png in Resources */,
 				82AB934B19FEC97B00DD0B30 /* grfx_east_hs@2x.png in Resources */,
 				82627E2819E702EC0062FC0C /* grfx_retail_overlay@2x.png in Resources */,

@@ -246,8 +246,8 @@
     [_arr_helpText removeAllObjects];
     _arr_helpText = nil;
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
-                     @"Tap close button to retun gallery",
-                     @"Tap tilt to turn on the functionality",
+                     @"Tap close button to go back",
+                     @"Tap the icon to move the view by tilting iPad",
                      nil];
     
     [_arr_helpTargetViews removeAllObjects];

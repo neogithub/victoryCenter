@@ -33,6 +33,8 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   UIView                          *uiv_btnContainer;
 @property (nonatomic, strong)   UIView                          *uiv_floorIndicator;
 @property (nonatomic, strong)   NSMutableArray                  *arr_indicatorFrames;
+@property (nonatomic, strong)   UIButton                        *uib_upArrow;
+@property (nonatomic, strong)   UIButton                        *uib_downArrow;
 // Floor num & RSF. labels
 @property (nonatomic, strong)   UILabel                         *uil_floorRsf;
 // Key panel
@@ -225,20 +227,21 @@ static CGFloat  kPanelTitleHeight           = 46;
     [_uib_backBtn addTarget:self action:@selector(backBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
     [_uiv_btnContainer addSubview: _uib_backBtn];
     
-    UIButton *uib_upArrow = [UIButton buttonWithType:UIButtonTypeCustom];
-    uib_upArrow.frame = CGRectMake(0.0, 38, 74, 45);
-    [uib_upArrow setBackgroundImage:[UIImage imageNamed:@"grfx_floorUp.png"] forState:UIControlStateNormal];
-    uib_upArrow.tag = 7;
-    [uib_upArrow addTarget:self action:@selector(tapArrowBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_uiv_btnContainer addSubview: uib_upArrow];
+    _uib_upArrow = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_upArrow.frame = CGRectMake(0.0, 38, 74, 45);
+    [_uib_upArrow setBackgroundImage:[UIImage imageNamed:@"grfx_floorUp.png"] forState:UIControlStateNormal];
+    _uib_upArrow.tag = 7;
+    [_uib_upArrow addTarget:self action:@selector(tapArrowBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_uiv_btnContainer addSubview: _uib_upArrow];
     
-    UIButton *uib_downArrow = [UIButton buttonWithType:UIButtonTypeCustom];
-    uib_downArrow.frame = CGRectMake(80.0, 38, 74, 45);
-    [uib_downArrow setBackgroundImage:[UIImage imageNamed:@"grfx_floorDwon.png"] forState:UIControlStateNormal];
-    [uib_downArrow addTarget:self action:@selector(tapArrowBtn:) forControlEvents:UIControlEventTouchUpInside];
-    uib_downArrow.tag = 8;
-    [_uiv_btnContainer addSubview: uib_downArrow];
+    _uib_downArrow = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_downArrow.frame = CGRectMake(80.0, 38, 74, 45);
+    [_uib_downArrow setBackgroundImage:[UIImage imageNamed:@"grfx_floorDwon.png"] forState:UIControlStateNormal];
+    [_uib_downArrow addTarget:self action:@selector(tapArrowBtn:) forControlEvents:UIControlEventTouchUpInside];
+    _uib_downArrow.tag = 8;
+    [_uiv_btnContainer addSubview: _uib_downArrow];
     
+    [self enableArrowBtns];
     [self.view addSubview: _uiv_btnContainer];
 }
 
@@ -343,6 +346,19 @@ static CGFloat  kPanelTitleHeight           = 46;
     NSString *floorRsf = _arr_squareFeet[index];
     NSString *labelText = [NSString stringWithFormat:@"RSF: %@", floorRsf];
     _uil_floorRsf.text = labelText;
+    [self enableArrowBtns];
+}
+
+- (void)enableArrowBtns
+{
+    _uib_downArrow.enabled = YES;
+    _uib_upArrow.enabled = YES;
+    if (_currentPage == 0) {
+        _uib_upArrow.enabled = NO;
+    }
+    if (_currentPage == _arr_titleText.count-1) {
+        _uib_downArrow.enabled = NO;
+    }
 }
 
 #pragma mark set page index

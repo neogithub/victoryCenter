@@ -121,6 +121,10 @@
     }];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self fadeOutPopViews:nil];
+}
+
 #pragma mark - CMPopTipViewDelegate methods
 
 - (void)popTipViewWasDismissedByUser:(CMPopTipView *)popTipView

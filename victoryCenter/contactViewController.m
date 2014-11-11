@@ -354,7 +354,7 @@ static float kContactGap = 4;
     _arr_helpText = nil;
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
                      @"Tap close button to return",
-                     @"Tap cell send email",
+                     @"Tap box to send email",
                      nil];
     
     [_arr_helpTargetViews removeAllObjects];

@@ -152,8 +152,9 @@ static int eveningTime = 17;
     else
     {
         _uib_menu.hidden = NO;
-//        _uiv_toolsPanel.hidden = NO;
-        _uil_titleLabel.hidden = NO;
+        if (!self.kenView) {
+            _uil_titleLabel.hidden = NO;
+        }
     }
 }
 
@@ -558,6 +559,10 @@ static int eveningTime = 17;
         
     } else {
         [self.view insertSubview:_playerViewController.view aboveSubview:_uib_menu];
+        _playerViewController.view.alpha = 0.0;
+        [UIView animateWithDuration:0.33 animations:^{
+            _playerViewController.view.alpha = 1.0;
+        }];
         [_playerViewController.moviePlayer play];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
         [self performSelector:@selector(setMovieControlAvailable) withObject:nil afterDelay:1.0];
@@ -625,16 +630,23 @@ static int eveningTime = 17;
                                                         name:MPMoviePlayerPlaybackDidFinishNotification
                                                       object:moviePlayer];
         // Dismiss the view controller
-		[_playerViewController.view removeFromSuperview];
-		_playerViewController = nil;
-		
-		[[NSNotificationCenter defaultCenter]
-		 postNotificationName:@"unhideMenu"
-		 object:self];
+		[UIView animateWithDuration:0.33 animations:^{
+            _playerViewController.view.alpha = 0.0;
+        } completion:^(BOOL finished){
+            [_playerViewController.view removeFromSuperview];
+            _playerViewController = nil;
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"unhideMenu"
+             object:self];
+        }];  
         
     } else {
-		[_playerViewController.view removeFromSuperview];
-		_playerViewController = nil;
+		[UIView animateWithDuration:0.33 animations:^{
+            _playerViewController.view.alpha = 0.0;
+        } completion:^(BOOL finished){
+            [_playerViewController.view removeFromSuperview];
+            _playerViewController = nil;
+        }];
 	}
 	
 	if (external_wind) {
@@ -646,8 +658,12 @@ static int eveningTime = 17;
 														name:MPMovieDurationAvailableNotification
 													  object:_playerViewController.moviePlayer];
 	} else {
-		[_playerViewController.view removeFromSuperview];
-		_playerViewController = nil;
+		[UIView animateWithDuration:0.33 animations:^{
+            _playerViewController.view.alpha = 0.0;
+        } completion:^(BOOL finished){
+            [_playerViewController.view removeFromSuperview];
+            _playerViewController = nil;
+        }];
 	}
 }
 
