@@ -190,6 +190,7 @@
 		8263B98B19EDACD700E70C1B /* embTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8263B98919EDACD700E70C1B /* embTableCell.m */; };
 		8263B98C19EDACD700E70C1B /* embTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98A19EDACD700E70C1B /* embTableCell.xib */; };
 		8263B98E19EDC7EF00E70C1B /* hotspots.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98D19EDC7EF00E70C1B /* hotspots.plist */; };
+		827069951A125BA8001AC7E4 /* xhPopTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 827069941A125BA8001AC7E4 /* xhPopTipsView.m */; };
 		82716A6819E434C10070A331 /* Districts_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6619E434C10070A331 /* Districts_overlay.png */; };
 		82716A6919E434C10070A331 /* Districts_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6719E434C10070A331 /* Districts_overlay@2x.png */; };
 		82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6A19E441390070A331 /* grfx_access_nav.png */; };
@@ -538,6 +539,8 @@
 		8263B98919EDACD700E70C1B /* embTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embTableCell.m; sourceTree = "<group>"; };
 		8263B98A19EDACD700E70C1B /* embTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = embTableCell.xib; sourceTree = "<group>"; };
 		8263B98D19EDC7EF00E70C1B /* hotspots.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotspots.plist; sourceTree = "<group>"; };
+		827069931A125BA8001AC7E4 /* xhPopTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xhPopTipsView.h; sourceTree = "<group>"; };
+		827069941A125BA8001AC7E4 /* xhPopTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xhPopTipsView.m; sourceTree = "<group>"; };
 		82716A6619E434C10070A331 /* Districts_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Districts_overlay.png; sourceTree = "<group>"; };
 		82716A6719E434C10070A331 /* Districts_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Districts_overlay@2x.png"; sourceTree = "<group>"; };
 		82716A6A19E441390070A331 /* grfx_access_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_access_nav.png; sourceTree = "<group>"; };
@@ -1013,6 +1016,8 @@
 				825397691A097AA6000B6B7C /* embKenBurns.m */,
 				82D54B411A0BEE5B0055F338 /* neoCalendarUtilities.h */,
 				82D54B421A0BEE5B0055F338 /* neoCalendarUtilities.m */,
+				827069931A125BA8001AC7E4 /* xhPopTipsView.h */,
+				827069941A125BA8001AC7E4 /* xhPopTipsView.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1726,6 +1731,7 @@
 				82459E7119F6916900E03A8D /* contactViewController.m in Sources */,
 				82CE2FD619F06434006F7B0E /* KSLabel.m in Sources */,
 				8240131A19D1B58A00C501EE /* XHCustomSegue.m in Sources */,
+				827069951A125BA8001AC7E4 /* xhPopTipsView.m in Sources */,
 				82A805E119D2076300308BA1 /* mapViewController.m in Sources */,
 				824012F619D1AF5D00C501EE /* RootViewController.m in Sources */,
 				8224FE2C19D48656002B1B44 /* MPFoldNavPushSegue.m in Sources */,
