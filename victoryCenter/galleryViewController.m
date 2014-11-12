@@ -568,7 +568,8 @@
 		[mpControlsView removeFromSuperview];
 		[mpBackingView removeFromSuperview];
 		[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(monitorPlaybackTime) object:nil];
-		_playerViewController=nil;
+		[_playerViewController.view removeFromSuperview];
+        _playerViewController.view = nil;
 	}
 }
 
@@ -807,8 +808,8 @@
     _arr_helpText = nil;
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
                      @"Tap menu button to load main menu.",
-                     @"Tap top button to change section",
-                     @"Tap cell to open the content",
+                     @"Tap buttons to change sections",
+                     @"Tap image to view",
                      nil];
     
     [_arr_helpTargetViews removeAllObjects];

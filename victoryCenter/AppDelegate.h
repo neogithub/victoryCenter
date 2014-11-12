@@ -11,5 +11,8 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, strong) NSString *appendFilenameForExternal;
+@property (nonatomic,strong) UIScreen *external_disp;
+@property (nonatomic,strong) UIWindow *external_wind;
+@property (assign) BOOL extDisplayConnected;
 @end
