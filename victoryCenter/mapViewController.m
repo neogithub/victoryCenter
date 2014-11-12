@@ -836,6 +836,16 @@ static float    kPanelBtnHeight             = 38.0;
     _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 260.0)];
     _uiv_siteOverview.transform = CGAffineTransformMakeTranslation(0.0, -500);
     _uiv_siteOverview.alpha = 0.0;
+    
+    
+    UILabel *overViewTitle = [[UILabel alloc] initWithFrame:CGRectMake((_uiv_siteOverview.frame.size.width - 200)/2, 0.0, 200.0, 50.0)];
+    overViewTitle.backgroundColor = [UIColor clearColor];
+    overViewTitle.text = @"OVERVIEW";
+    overViewTitle.font = [UIFont fontWithName:@"Raleway-Bold" size:18.0];
+    overViewTitle.textColor = [UIColor vcDarkBlue];
+    overViewTitle.textAlignment = NSTextAlignmentCenter;
+    [_uiv_siteOverview addSubview: overViewTitle];
+    
     [_uiv_overviewContainer addSubview: _uiv_siteOverview];
     //        [self addCell];
     [self.view addSubview: _uiv_overviewContainer];
