@@ -59,7 +59,7 @@ static int eveningTime = 17;
 {
     self.view.frame = screenRect;
     [super viewWillAppear:animated];
-    [self createKenBurnView];
+    [self performSelector:@selector(createKenBurnView) withObject:nil afterDelay:3.0];
 }
 
 -(void)viewDidLayoutSubviews
@@ -595,8 +595,12 @@ static int eveningTime = 17;
 }
 
 -(void)doneButtonClick:(NSNotification*)aNotification{
-    [_playerViewController.view removeFromSuperview];
-    _playerViewController = nil;
+    [UIView animateWithDuration:0.33 animations:^{
+        _playerViewController.view.alpha = 0.0;
+    } completion:^(BOOL finished){
+        [_playerViewController.view removeFromSuperview];
+        _playerViewController = nil;
+    }];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
 }
 
@@ -687,13 +691,13 @@ static int eveningTime = 17;
 	progressIndicator.value = _playerViewController.moviePlayer.currentPlaybackTime / totalVideoTime;
 	totalElapsedTime = progressIndicator.value;
 	
-	CGFloat t = _playerViewController.moviePlayer.currentPlaybackTime;
+//	CGFloat t = _playerViewController.moviePlayer.currentPlaybackTime;
 	
-	NSMutableDictionary* userInfo = [NSMutableDictionary dictionary];
-	[userInfo setObject:[NSNumber numberWithInt:t] forKey:@"slidevalue"];
-	
-	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-	[nc postNotificationName:@"eRXReceived" object:self userInfo:userInfo];
+//	NSMutableDictionary* userInfo = [NSMutableDictionary dictionary];
+//	[userInfo setObject:[NSNumber numberWithInt:t] forKey:@"slidevalue"];
+//	
+//	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+//	[nc postNotificationName:@"eRXReceived" object:self userInfo:userInfo];
 	
 	//constantly keep checking if at the end of video:
 	if (totalVideoTime != 0 && _playerViewController.moviePlayer.currentPlaybackTime >= totalVideoTime - 0.1)
@@ -792,8 +796,10 @@ static int eveningTime = 17;
 -(void)playbackToggle {
 	if (_playerViewController.moviePlayer.playbackState == MPMoviePlaybackStatePlaying) {
 		[_playerViewController.moviePlayer pause];
+		[closeMovieButton setTitle:@"PLAY" forState:UIControlStateNormal];
 	} else {
 		[_playerViewController.moviePlayer play];
+		[closeMovieButton setTitle:@"PAUSE" forState:UIControlStateNormal];
 		[self monitorPlaybackTime];
 	}
 }
@@ -844,42 +850,44 @@ static int eveningTime = 17;
 		[mpControlsView removeFromSuperview];
 		[mpBackingView removeFromSuperview];
 		[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(monitorPlaybackTime) object:nil];
-		_playerViewController=nil;
+        [_playerViewController.view removeFromSuperview];
+        _playerViewController.view = nil;
+//		_playerViewController=nil;
 	}
 }
 
 #pragma mark External Screen Connection
 - (void)setUpScreenConnectionNotificationHandlers
 {
-//    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-//	
-//    [center addObserver:self selector:@selector(handleScreenDidConnectNotification:)
-//				   name:UIScreenDidConnectNotification object:nil];
-//    [center addObserver:self selector:@selector(handleScreenDidDisconnectNotification:)
-//				   name:UIScreenDidDisconnectNotification object:nil];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+	
+    [center addObserver:self selector:@selector(handleScreenDidConnectNotification:)
+				   name:UIScreenDidConnectNotification object:nil];
+    [center addObserver:self selector:@selector(handleScreenDidDisconnectNotification:)
+				   name:UIScreenDidDisconnectNotification object:nil];
 }
 
 - (void)handleScreenDidConnectNotification:(NSNotification*)aNotification
 {
-//    UIScreen *newScreen = [aNotification object];
-//    CGRect screenBounds = newScreen.bounds;
-//	
-//    if (!external_wind)
-//    {
-//        external_wind = [[UIWindow alloc] initWithFrame:screenBounds];
-//        external_wind.screen = newScreen;
-//        // Set the initial UI for the window.
-//    }
+    UIScreen *newScreen = [aNotification object];
+    CGRect screenBounds = newScreen.bounds;
+	
+    if (!external_wind)
+    {
+        external_wind = [[UIWindow alloc] initWithFrame:screenBounds];
+        external_wind.screen = newScreen;
+        // Set the initial UI for the window.
+    }
 }
 
 - (void)handleScreenDidDisconnectNotification:(NSNotification*)aNotification
 {
-//    if (external_wind)
-//    {
-//        // Hide and then delete the window.
-//        external_wind.hidden = YES;
-//        external_wind = nil;
-//    }
+    if (external_wind)
+    {
+        // Hide and then delete the window.
+        external_wind.hidden = YES;
+        external_wind = nil;
+    }
 }
 
 #pragma mark - Memory Warning & Cleaning
