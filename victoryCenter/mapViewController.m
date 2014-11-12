@@ -26,6 +26,7 @@
 #import "MapViewAnnotation.h"
 #import "embMapHotspotListViewController.h"
 #import "siteOverview.h"
+#import "xhPopTipsView.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -124,6 +125,10 @@ static float    kPanelBtnHeight             = 38.0;
 //Site map overview
 @property (nonatomic, strong) UIView                    *uiv_overviewContainer;
 @property (nonatomic, strong) siteOverview              *uiv_siteOverview;
+// Help tip view
+@property (nonatomic, strong) xhPopTipsView                 *uiv_helpView;
+@property (nonatomic, strong) NSMutableArray                *arr_helpText;
+@property (nonatomic, strong) NSMutableArray                *arr_helpTargetViews;
 @end
 
 @implementation mapViewController
@@ -136,6 +141,7 @@ static float    kPanelBtnHeight             = 38.0;
 {
     self.view.frame = screenRect;
     [self loadHotspotDict];
+    [self prepareHlepData];
 }
 
 - (void)loadHotspotDict
@@ -159,6 +165,7 @@ static float    kPanelBtnHeight             = 38.0;
     _uiv_siteSubMenu.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetLocation) name:@"tapOnTitle" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
 }
 
 - (void)resetLocation
@@ -1974,6 +1981,49 @@ static float    kPanelBtnHeight             = 38.0;
         }
     }
 }
+
+#pragma mark - Add Help view
+- (void)hideAndUnhideHelp:(NSNotification *)pNotification
+{
+    if (_uiv_helpView.onScreen) {
+        [UIView animateWithDuration:0.33 animations:^{
+            _uiv_helpView.alpha = 0.0;
+        } completion:^(BOOL finsihed){
+            [_uiv_helpView removeFromSuperview];
+            _uiv_helpView = nil;
+        }];
+    }
+    else {
+        [self loadHelpViews];
+    }
+}
+
+- (void)prepareHlepData
+{
+    [_arr_helpText removeAllObjects];
+    _arr_helpText = nil;
+    _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                     @"Help for this section is coming soon",
+                     nil];
+    
+    [_arr_helpTargetViews removeAllObjects];
+    _arr_helpTargetViews = nil;
+    UIButton *tmp = [[UIButton alloc] initWithFrame:CGRectMake(10.0, 700.0, 45.0, 45.0)];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:tmp, nil];
+}
+
+- (void)loadHelpViews
+{
+    if (_uiv_helpView) {
+        [_uiv_helpView removeFromSuperview];
+        _uiv_helpView = nil;
+    }
+    _uiv_helpView = [[xhPopTipsView alloc] initWithFrame:screenRect andText:_arr_helpText andViews:_arr_helpTargetViews];
+    [self.view addSubview: _uiv_helpView];
+}
+
+
+
 
 #pragma mark - Remove items and release memory
 

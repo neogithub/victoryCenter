@@ -11,6 +11,7 @@
 #import "embDataViewController.h"
 #import "UIColor+Extensions.h"
 #import "xhPanoramicView.h"
+#import "xhPopTipsView.h"
 
 static float    panle_w                     = 156;
 static CGFloat  kPanelTitleHeight           = 46;
@@ -43,6 +44,10 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   UIButton                        *uib_backBtn;
 // Pano image
 @property (nonatomic, strong)   xhPanoramicView                 *uiv_panoramicView;
+// Help tip view
+@property (nonatomic, strong) xhPopTipsView                 *uiv_helpView;
+@property (nonatomic, strong) NSMutableArray                *arr_helpText;
+@property (nonatomic, strong) NSMutableArray                *arr_helpTargetViews;
 @end
 
 @implementation floorPlanViewController
@@ -87,6 +92,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     [self setCtrlBtns];
     [self createKeyPanel];
     [self createFloorPlanAndRsfLabels];
+    [self prepareHlepData];
 }
 
 - (void)viewDidLoad
@@ -94,6 +100,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadPano:) name:@"loadPanoImage" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
 }
 
 #pragma mark - Prepare pano image
@@ -380,6 +387,47 @@ static CGFloat  kPanelTitleHeight           = 46;
     }
     return _modelController;
 }
+
+#pragma mark - Add Help view
+- (void)hideAndUnhideHelp:(NSNotification *)pNotification
+{
+    if (_uiv_helpView.onScreen) {
+        [UIView animateWithDuration:0.33 animations:^{
+            _uiv_helpView.alpha = 0.0;
+        } completion:^(BOOL finsihed){
+            [_uiv_helpView removeFromSuperview];
+            _uiv_helpView = nil;
+        }];
+    }
+    else {
+        [self loadHelpViews];
+    }
+}
+
+- (void)prepareHlepData
+{
+    [_arr_helpText removeAllObjects];
+    _arr_helpText = nil;
+    _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                     @"Help for this section is coming soon",
+                     nil];
+    
+    [_arr_helpTargetViews removeAllObjects];
+    _arr_helpTargetViews = nil;
+    UIButton *tmp = [[UIButton alloc] initWithFrame:CGRectMake(10.0, 700.0, 45.0, 45.0)];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:tmp, nil];
+}
+
+- (void)loadHelpViews
+{
+    if (_uiv_helpView) {
+        [_uiv_helpView removeFromSuperview];
+        _uiv_helpView = nil;
+    }
+    _uiv_helpView = [[xhPopTipsView alloc] initWithFrame:screenRect andText:_arr_helpText andViews:_arr_helpTargetViews];
+    [self.view addSubview: _uiv_helpView];
+}
+
 
 #pragma mark - Remove items from view and cleaning memory
 

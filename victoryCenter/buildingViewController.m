@@ -9,6 +9,8 @@
 #import "buildingViewController.h"
 #import "UIColor+Extensions.h"
 #import "floorPlanViewController.h"
+#import "xhPopTipsView.h"
+
 @interface buildingViewController ()
 {
 
@@ -44,6 +46,11 @@
 @property (nonatomic, strong) NSMutableArray                *arr_eleBtnArray;
 @property (nonatomic, strong) NSArray                       *arr_elevatroImgs;
 @property (nonatomic, strong) NSMutableArray                *arr_eleIndArray;
+// Help tip view
+@property (nonatomic, strong) xhPopTipsView                 *uiv_helpView;
+@property (nonatomic, strong) NSMutableArray                *arr_helpText;
+@property (nonatomic, strong) NSMutableArray                *arr_helpTargetViews;
+
 @end
 
 @implementation buildingViewController
@@ -51,6 +58,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.view.frame = screenRect;
+    [self prepareHlepData];
 }
 
 - (void)viewDidLoad
@@ -64,6 +72,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideBuildingMenu) name:@"hideBuildingTopMenu" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unhideBuildingMenu) name:@"unhideBuildingTopMenu" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetBuilding) name:@"tapOnTitle" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
     
     _uil_parkingLabel.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
     _uil_parkingLabel.textColor = [UIColor whiteColor];
@@ -591,6 +600,47 @@
         tmp.backgroundColor = arr_color[[_arr_eleIndArray indexOfObject:tmp]];
     }
 }
+
+#pragma mark - Add Help view
+- (void)hideAndUnhideHelp:(NSNotification *)pNotification
+{
+    if (_uiv_helpView.onScreen) {
+        [UIView animateWithDuration:0.33 animations:^{
+            _uiv_helpView.alpha = 0.0;
+        } completion:^(BOOL finsihed){
+            [_uiv_helpView removeFromSuperview];
+            _uiv_helpView = nil;
+        }];
+    }
+    else {
+        [self loadHelpViews];
+    }
+}
+
+- (void)prepareHlepData
+{
+    [_arr_helpText removeAllObjects];
+    _arr_helpText = nil;
+    _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                     @"Help for this section is coming soon",
+                     nil];
+    
+    [_arr_helpTargetViews removeAllObjects];
+    _arr_helpTargetViews = nil;
+    UIButton *tmp = [[UIButton alloc] initWithFrame:CGRectMake(10.0, 700.0, 45.0, 45.0)];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:tmp, nil];
+}
+
+- (void)loadHelpViews
+{
+    if (_uiv_helpView) {
+        [_uiv_helpView removeFromSuperview];
+        _uiv_helpView = nil;
+    }
+    _uiv_helpView = [[xhPopTipsView alloc] initWithFrame:screenRect andText:_arr_helpText andViews:_arr_helpTargetViews];
+    [self.view addSubview: _uiv_helpView];
+}
+
 
 #pragma mark - Memory cleaning & warning
 
