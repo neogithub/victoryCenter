@@ -24,7 +24,6 @@
 @property (nonatomic, strong) NSMutableArray                *arr_testFitBtns;
 @property (nonatomic, strong) NSMutableArray                *arr_testFitImgs;
 @property (nonatomic, strong) ebZoomingScrollView			*zoomingScroll;
-@property (nonatomic, strong) UIImage						*uii_Plan;
 @property (nonatomic, strong) UIView						*uiv_PlanDataContainer;
 @property (nonatomic, strong) UIImage						*uii_PlanData;
 @property (nonatomic, strong) UIImageView					*uiiv_PlanData;
@@ -51,9 +50,6 @@
 	// floor plans
 	_arr_floorplans = [[NSMutableArray alloc] init];
 	_dict = self.dataObject;
-	_floorplan = [_dict valueForKeyPath:@"floorplaninfo.floorplan"];
-	[_arr_floorplans addObject:[_floorplan objectAtIndex:0]];
-	
     self.view.backgroundColor = [UIColor vcBackGroundColor];
     [self loadDataAndView];
     
@@ -63,7 +59,6 @@
 #pragma mark - LAYOUT FLOOR PLAN DATA
 -(void)loadDataAndView
 {
-	_uii_Plan = [UIImage imageNamed:_floorplan[0]];
 	if (!_zoomingScroll) {
         CGRect theFrame = self.view.bounds;
         theFrame.origin.x = 35;
