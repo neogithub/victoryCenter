@@ -385,8 +385,8 @@ static float kCardsGap      = 12.0;
     UILabel *uil_version = [[UILabel alloc] initWithFrame:CGRectZero];
     NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
 	//NSString * build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
-	NSString *shortVresion = [version substringToIndex:3];
-	uil_version.text = [NSString stringWithFormat:@"2014 v%@",shortVresion];
+
+	uil_version.text = [NSString stringWithFormat:@"2014 v%@",version];
     uil_version.font = [UIFont fontWithName:@"Raleway-Medium" size:14.0];
     uil_version.textColor = [UIColor colorWithWhite:0.5 alpha:0.5];
     uil_version.textAlignment = NSTextAlignmentRight;
@@ -423,7 +423,7 @@ static float kCardsGap      = 12.0;
     _arr_helpText = nil;
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
                      @"Tap menu button to load main menu",
-                     @"Tap cell to load more detail info",
+                     @"Tap logo for more info",
                      nil];
     
     [_arr_helpTargetViews removeAllObjects];
