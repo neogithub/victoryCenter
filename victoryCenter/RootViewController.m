@@ -115,8 +115,23 @@ static int eveningTime = 17;
 	if (([hour intValue]>morningTime) && ([hour intValue]<eveningTime)){ // 5 = 5am, 17 = 5pm
         
 		image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"highway B1.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NW-FINAL Lighting Concept2.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SE-FINAL Lighting Concept2.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Street View B1.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 03 View from SE.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 04 Plaza View.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center View from plaza edits-sm.jpg" ofType:nil]];
+        
 	} else {
 		image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.png" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"highway B1.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NW-FINAL Lighting Concept2.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SE-FINAL Lighting Concept2.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Street View B1.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 03 View from SE.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 04 Plaza View.jpg" ofType:nil]];
+        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center View from plaza edits-sm.jpg" ofType:nil]];
 	}
     
     NSArray *arr_images = [[NSArray alloc] initWithObjects:image, nil];
