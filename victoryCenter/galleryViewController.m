@@ -92,7 +92,7 @@
     
     [self initTopBtn:_uib_all withTitle:@"ALL" andTag:4 andSelected:NO];
     [self initTopBtn:_uib_render withTitle:@"RENDERING" andTag:1 andSelected:YES];
-    [self initTopBtn:_uib_photo withTitle:@"PHOTOGRAPHY" andTag:2 andSelected:NO];
+    [self initTopBtn:_uib_photo withTitle:@"VIEWS" andTag:2 andSelected:NO];
     [self initTopBtn:_uib_video withTitle:@"VIDEO" andTag:3 andSelected:NO];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];

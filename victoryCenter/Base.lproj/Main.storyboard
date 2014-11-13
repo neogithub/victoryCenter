@@ -157,6 +157,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="uiiv_bgImg" destination="SyH-e2-EdK" id="8Dd-DF-0t6"/>
                         <outlet property="uitv_titleText" destination="7Yd-4L-xvr" id="wfA-LI-5yA"/>
                         <outlet property="uiv_titleContainer" destination="REH-RY-HP1" id="rCb-Ig-n1v"/>
                     </connections>

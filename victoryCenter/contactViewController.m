@@ -12,10 +12,13 @@
 #import "embEmailData.h"
 #import "CMPopTipView.h"
 #import "xhPopTipsView.h"
+#import "neoCalendarUtilities.h"
 
 static float kContactWidth = 233;
 static float kContactHeight = 100;
 static float kContactGap = 4;
+static int morningTime = 5;
+static int eveningTime = 17;
 
 @interface contactViewController ()<MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
 {
@@ -26,6 +29,7 @@ static float kContactGap = 4;
 }
 @property (weak, nonatomic) IBOutlet UIView                 *uiv_titleContainer;
 @property (weak, nonatomic) IBOutlet UITextView             *uitv_titleText;
+@property (weak, nonatomic) IBOutlet UIImageView *uiiv_bgImg;
 
 @property (nonatomic, strong) NSMutableArray                *arr_contactCards;
 @property (nonatomic, strong) embEmailData                  *emailData;
@@ -48,6 +52,22 @@ static float kContactGap = 4;
     {
         [self performSelector:@selector(loadHelpViews) withObject:nil afterDelay:0.5];
     }
+}
+
+-(void)viewDidLayoutSubviews
+{
+	// create uiimageview
+	
+	//check hour
+	NSString *hour = [NSString currentHour]; // returns military time
+	
+	//then change image accordingly
+	if (([hour intValue]>morningTime) && ([hour intValue]<eveningTime)){ // 5 = 5am, 17 = 5pm
+        
+		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
+	} else {
+		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.png" ofType:nil]];
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated

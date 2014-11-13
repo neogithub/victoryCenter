@@ -42,7 +42,8 @@
 }
 
 + (UIColor *)vcmediummenu {
-	return[UIColor colorWithRed:0.0000 green:0.4392 blue:0.6235 alpha:1];
+//	return[UIColor colorWithRed:0.0000 green:0.4392 blue:0.6235 alpha:1];
+    return[UIColor colorWithRed:24.0/255.0 green:111.0/255.0 blue:161.0/255.0 alpha:1];
 }
 
 + (UIColor *)vcDarkBlue {
