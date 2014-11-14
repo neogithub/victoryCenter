@@ -232,7 +232,7 @@ static float    kPanelBtnHeight             = 38.0;
 		case 2:
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"Site_Base map.png"]];
             _uiiv_vcLogo.frame = CGRectZero;
-            _uiiv_tredartLogo.frame = CGRectZero;
+            _uiiv_tredartLogo.frame = CGRectMake(205.0, 707.0, _uiiv_tredartLogo.frame.size.width, _uiiv_tredartLogo.frame.size.height);
             _uiiv_dart1Logo.frame = CGRectZero;
             _uiiv_dart2Logo.frame = CGRectZero;
             _uiiv_treLogo.frame = CGRectZero;
@@ -937,7 +937,7 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (void)createBottomInfoBox
 {
-    uiv_siteAmenInfo = [[UIView alloc] initWithFrame:CGRectMake(200.0, 700.0, 300.0, 55.0)];
+    uiv_siteAmenInfo = [[UIView alloc] initWithFrame:CGRectMake(350.0, 700.0, 460.0, 55.0)];
     uiv_siteAmenInfo.backgroundColor = [UIColor whiteColor];
     [self.view addSubview: uiv_siteAmenInfo];
     
@@ -945,26 +945,48 @@ static float    kPanelBtnHeight             = 38.0;
     uiv_leftBar.backgroundColor = [UIColor vcDarkBlue];
     [uiv_siteAmenInfo addSubview: uiv_leftBar];
     
-    UILabel *uil_existing =[[UILabel alloc] initWithFrame:CGRectMake(15.0, 5.0, 260, 15)];
+    UILabel *uil_existing =[[UILabel alloc] initWithFrame:CGRectMake(18.0, 5.0, 260, 15)];
     uil_existing.backgroundColor = [UIColor clearColor];
     [uil_existing setText:@"E - EXISTING"];
     [uil_existing setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
     [uil_existing setTextColor:[UIColor vcDarkBlue]];
     [uiv_siteAmenInfo addSubview: uil_existing];
     
-    UILabel *uil_changing = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 20.0, 260, 15)];
+    UILabel *uil_changing = [[UILabel alloc] initWithFrame:CGRectMake(18.0, 20.0, 260, 15)];
     uil_changing.backgroundColor = [UIColor clearColor];
     [uil_changing setText:@"E* - CONFIGURATION & RETAILER MAY CHANGE"];
     [uil_changing setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
     [uil_changing setTextColor:[UIColor vcDarkBlue]];
     [uiv_siteAmenInfo addSubview: uil_changing];
     
-    UILabel *uil_planing = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 35.0, 260, 15)];
+    UILabel *uil_planing = [[UILabel alloc] initWithFrame:CGRectMake(18.0, 35.0, 260, 15)];
     uil_planing.backgroundColor = [UIColor clearColor];
     [uil_planing setText:@"PL - PLANNED"];
     [uil_planing setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
     [uil_planing setTextColor:[UIColor vcDarkBlue]];
     [uiv_siteAmenInfo addSubview: uil_planing];
+    
+    UIImageView *uiiv_park = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"parking_icon.png"]];
+    uiiv_park.frame = CGRectMake(290, 5.0, 15, 15);
+    [uiv_siteAmenInfo addSubview: uiiv_park];
+    
+    UIImageView *uiiv_valet = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"valet_icon.png"]];
+    uiiv_valet.frame = CGRectMake(290, 35.0, 15, 15);
+    [uiv_siteAmenInfo addSubview: uiiv_valet];
+    
+    UILabel *uil_parking = [[UILabel alloc] initWithFrame:CGRectMake(318.0, 5.0, 100.0, 15.0)];
+    uil_parking.backgroundColor = [UIColor clearColor];
+    [uil_parking setText:@"PARKING"];
+    [uil_parking setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
+    [uil_parking setTextColor:[UIColor vcDarkBlue]];
+    [uiv_siteAmenInfo addSubview: uil_parking];
+    
+    UILabel *uil_valet = [[UILabel alloc] initWithFrame:CGRectMake(318.0, 35.0, 100.0, 15.0)];
+    uil_valet.backgroundColor = [UIColor clearColor];
+    [uil_valet setText:@"VALET PARKING"];
+    [uil_valet setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
+    [uil_valet setTextColor:[UIColor vcDarkBlue]];
+    [uiv_siteAmenInfo addSubview: uil_valet];
 }
 
 #pragma mark Actions for site amenities' buttons

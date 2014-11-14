@@ -270,6 +270,10 @@
 		82AB935119FEC97B00DD0B30 /* grfx_west_hs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82AB934919FEC97B00DD0B30 /* grfx_west_hs@2x.png */; };
 		82C06E7E1A165949000F969E /* grfx_launching_night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C06E7C1A165949000F969E /* grfx_launching_night.jpg */; };
 		82C06E7F1A165949000F969E /* grfx_launching_night@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C06E7D1A165949000F969E /* grfx_launching_night@2x.jpg */; };
+		82C06E841A16658F000F969E /* parking_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C06E801A16658F000F969E /* parking_icon.png */; };
+		82C06E851A16658F000F969E /* parking_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C06E811A16658F000F969E /* parking_icon@2x.png */; };
+		82C06E861A16658F000F969E /* valet_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C06E821A16658F000F969E /* valet_icon.png */; };
+		82C06E871A16658F000F969E /* valet_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C06E831A16658F000F969E /* valet_icon@2x.png */; };
 		82CBD72219F96FA10001191F /* grfx_elevator_floorNum.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */; };
 		82CBD72319F96FA10001191F /* grfx_elevator_floorNum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */; };
 		82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72419F980800001191F /* grfx_openMenuIcon.png */; };
@@ -648,6 +652,10 @@
 		82AB934919FEC97B00DD0B30 /* grfx_west_hs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_west_hs@2x.png"; sourceTree = "<group>"; };
 		82C06E7C1A165949000F969E /* grfx_launching_night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_launching_night.jpg; sourceTree = "<group>"; };
 		82C06E7D1A165949000F969E /* grfx_launching_night@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_launching_night@2x.jpg"; sourceTree = "<group>"; };
+		82C06E801A16658F000F969E /* parking_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parking_icon.png; sourceTree = "<group>"; };
+		82C06E811A16658F000F969E /* parking_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parking_icon@2x.png"; sourceTree = "<group>"; };
+		82C06E821A16658F000F969E /* valet_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = valet_icon.png; sourceTree = "<group>"; };
+		82C06E831A16658F000F969E /* valet_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "valet_icon@2x.png"; sourceTree = "<group>"; };
 		82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elevator_floorNum.png; sourceTree = "<group>"; };
 		82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elevator_floorNum@2x.png"; sourceTree = "<group>"; };
 		82CBD72419F980800001191F /* grfx_openMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_openMenuIcon.png; sourceTree = "<group>"; };
@@ -1236,6 +1244,10 @@
 		82A805C719D1F61E00308BA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				82C06E801A16658F000F969E /* parking_icon.png */,
+				82C06E811A16658F000F969E /* parking_icon@2x.png */,
+				82C06E821A16658F000F969E /* valet_icon.png */,
+				82C06E831A16658F000F969E /* valet_icon@2x.png */,
 				82D54B481A0BFD6C0055F338 /* Tilit_Icon_Off.png */,
 				82D54B491A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png */,
 				82D54B4A1A0BFD6C0055F338 /* Tilit_Icon_On.png */,
@@ -1503,6 +1515,7 @@
 				82A805D619D1FC1400308BA1 /* grfx_menuIcon.png in Resources */,
 				82A805CE19D1F61E00308BA1 /* grfx_helpIcon.png in Resources */,
 				82A21F6F1A02D3DE00BE8706 /* team_logoBtmBar_withPlus@2x.png in Resources */,
+				82C06E871A16658F000F969E /* valet_icon@2x.png in Resources */,
 				823DE6F71A0031CA0016CD3A /* grfx_floorDwon.png in Resources */,
 				821EE2481A13BB9100254B2A /* grfx_floorplan18@2x.png in Resources */,
 				824E10E31A0D5F5C00BDBDA6 /* Plane_Icon_Blue.png in Resources */,
@@ -1634,6 +1647,7 @@
 				82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */,
 				823D78AD19F1AD500096E62C /* grfx_compass@2x.png in Resources */,
 				82DC11FE19DAF2990057AE4F /* photo-gallery-right.png in Resources */,
+				82C06E841A16658F000F969E /* parking_icon.png in Resources */,
 				824F369319E6C47500267B44 /* thumb_20140802_view4_60m_02.jpg in Resources */,
 				824C196D19FA9DC400EA7613 /* grfx_floorplan9.png in Resources */,
 				82000B7B19E590AD00AE2C70 /* team_hines_logo.png in Resources */,
@@ -1666,8 +1680,10 @@
 				824F368B19E6C47500267B44 /* thumb_20140802_downtown_100m_6pm.jpg in Resources */,
 				82716A7119E45B940070A331 /* grfx_site_overview@2x.jpg in Resources */,
 				824C197519FAE5F600EA7613 /* grfx_launching.png in Resources */,
+				82C06E851A16658F000F969E /* parking_icon@2x.png in Resources */,
 				821EE25F1A13BC5300254B2A /* grfx_floorplan12.png in Resources */,
 				8239ED131A016FAC00B25EA2 /* grfx_victoryPark_logo@2x.png in Resources */,
+				82C06E861A16658F000F969E /* valet_icon.png in Resources */,
 				8263B98E19EDC7EF00E70C1B /* hotspots.plist in Resources */,
 				824E10EA1A0D688F00BDBDA6 /* VictoryCenter_Flag@2x.png in Resources */,
 				821EE2501A13BB9100254B2A /* grfx_floorplan22@2x.png in Resources */,
