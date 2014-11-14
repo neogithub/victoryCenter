@@ -66,7 +66,7 @@ static int eveningTime = 17;
         
 		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
 	} else {
-		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.png" ofType:nil]];
+		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.jpg" ofType:nil]];
 	}
 }
 

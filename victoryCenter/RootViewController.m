@@ -74,7 +74,7 @@ static int eveningTime = 17;
 
 		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
 	} else {
-		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.png" ofType:nil]];
+		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.jpg" ofType:nil]];
 	}
 }
 - (void)viewDidLoad
@@ -124,7 +124,7 @@ static int eveningTime = 17;
         image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center View from plaza edits-sm.jpg" ofType:nil]];
         
 	} else {
-		image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.png" ofType:nil]];
+		image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
         image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"highway B1.jpg" ofType:nil]];
         image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NW-FINAL Lighting Concept2.jpg" ofType:nil]];
         image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SE-FINAL Lighting Concept2.jpg" ofType:nil]];
