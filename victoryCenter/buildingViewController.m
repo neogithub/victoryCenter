@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIView                 *uiv_bldImgContainer;
 @property (weak, nonatomic) IBOutlet UIView                 *uiv_statImgContainer;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_statsClose;
+@property (weak, nonatomic) IBOutlet UIImageView            *uiiv_viewDiagram;
 
 @property (weak, nonatomic) IBOutlet UIButton               *uib_bldgStats;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_floorPlan;
@@ -131,6 +132,7 @@
 #pragma mark - Methods dealing with notifications
 - (void)resetBuilding
 {
+    _uiiv_viewDiagram.hidden = NO;
     _uiiv_bgImg.hidden = YES;
     _uiv_bldImgContainer.transform = CGAffineTransformIdentity;
     _uiv_bldImgContainer.hidden = NO;
@@ -188,6 +190,7 @@
 #pragma mark Actions of top menu
 - (void)tapOnTopBtns:(id)sender
 {
+    _uiiv_viewDiagram.hidden = YES;
     UIButton *tappedBtn = sender;
     
     if (tappedBtn.selected && tappedBtn.tag == 1) {
@@ -258,6 +261,7 @@
     } completion:^(BOOL finished){
         _uiv_statImgContainer.hidden = YES;
         [self resetTopMenu];
+        _uiiv_viewDiagram.hidden = NO;
     }];
 }
 

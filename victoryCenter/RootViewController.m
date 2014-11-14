@@ -66,16 +66,16 @@ static int eveningTime = 17;
 {
 	// create uiimageview
 	
-	//check hour
-	NSString *hour = [NSString currentHour]; // returns military time
-	
-	//then change image accordingly
-	if (([hour intValue]>morningTime) && ([hour intValue]<eveningTime)){ // 5 = 5am, 17 = 5pm
+//	//check hour
+//	NSString *hour = [NSString currentHour]; // returns military time
+//	
+//	//then change image accordingly
+//	if (([hour intValue]>morningTime) && ([hour intValue]<eveningTime)){ // 5 = 5am, 17 = 5pm
 
 		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
-	} else {
-		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.jpg" ofType:nil]];
-	}
+//	} else {
+//		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.jpg" ofType:nil]];
+//	}
 }
 - (void)viewDidLoad
 {

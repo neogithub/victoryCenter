@@ -14,7 +14,7 @@
 #import "xhPopTipsView.h"
 #import "neoCalendarUtilities.h"
 
-static float kContactWidth = 233;
+static float kContactWidth = 261;
 static float kContactHeight = 100;
 static float kContactGap = 4;
 static int morningTime = 5;
@@ -29,7 +29,7 @@ static int eveningTime = 17;
 }
 @property (weak, nonatomic) IBOutlet UIView                 *uiv_titleContainer;
 @property (weak, nonatomic) IBOutlet UITextView             *uitv_titleText;
-@property (weak, nonatomic) IBOutlet UIImageView *uiiv_bgImg;
+@property (weak, nonatomic) IBOutlet UIImageView            *uiiv_bgImg;
 
 @property (nonatomic, strong) NSMutableArray                *arr_contactCards;
 @property (nonatomic, strong) embEmailData                  *emailData;
@@ -129,7 +129,7 @@ static int eveningTime = 17;
 
 - (void)createContactCardwithName:(NSString *)name andPhone:(NSString *)phone andMobile:(NSString *)mobile andEmail:(NSString *)email andTag:(int)index
 {
-    UIView *uiv_contactCard = [[UIView alloc] initWithFrame:CGRectMake(752.0, 97.0 + (kContactGap + kContactHeight)*index, kContactWidth, kContactHeight)];
+    UIView *uiv_contactCard = [[UIView alloc] initWithFrame:CGRectMake(720.0, 169+4.0 + (kContactGap + kContactHeight)*index, kContactWidth, kContactHeight)];
     uiv_contactCard.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
     uiv_contactCard.tag = index+1;
     
@@ -380,7 +380,7 @@ static int eveningTime = 17;
     [_arr_helpTargetViews removeAllObjects];
     _arr_helpTargetViews = nil;
     UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
-    UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(860, 305, 233, 100)];
+    UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(860, 315, 233, 100)];
     _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp2, nil];
 }
 
