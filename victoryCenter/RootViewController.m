@@ -755,6 +755,8 @@ static int eveningTime = 17;
 	
 	[mpControlsView setBackgroundColor: [UIColor whiteColor]];
 	mpControlsView.alpha = 0.0;
+    mpControlsView.layer.borderWidth = 1.0;
+    mpControlsView.layer.borderColor = [UIColor vcDarkBlue].CGColor;
 	[self.view addSubview:mpControlsView];
 	
 	[UIView animateWithDuration:0.33
@@ -770,7 +772,7 @@ static int eveningTime = 17;
 	
 	closeMovieButton = [UIButton buttonWithType: UIButtonTypeCustom];
 	[closeMovieButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	[closeMovieButton setBackgroundColor:[UIColor darkGrayColor]];
+	[closeMovieButton setBackgroundColor:[UIColor vcLightBlue]];
 	[closeMovieButton setTitle:@"PAUSE" forState:UIControlStateNormal];
 	CGRect frame = CGRectMake (20, 30, 92, 32);
 	[closeMovieButton setFrame: frame];
@@ -779,8 +781,7 @@ static int eveningTime = 17;
 	
 	UIButton* closeMe = [UIButton buttonWithType: UIButtonTypeCustom];
 	[closeMe setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	[closeMe setBackgroundColor:[UIColor darkGrayColor]];
-	
+	[closeMe setBackgroundColor:[UIColor vcLightBlue]];
 	[closeMe setTitle:@"CLOSE" forState:UIControlStateNormal];
 	frame = CGRectMake (320, 30, 92, 32);
 	[closeMe setFrame: frame];
@@ -800,7 +801,7 @@ static int eveningTime = 17;
     progressIndicator = [[UISlider alloc] initWithFrame:frame];
     [progressIndicator addTarget:self action:@selector(playbackScrubber:) forControlEvents:UIControlEventValueChanged];
     [progressIndicator setBackgroundColor:[UIColor clearColor]];
-	progressIndicator.tintColor = [UIColor darkGrayColor];
+	progressIndicator.tintColor = [UIColor vcDarkBlue];
     progressIndicator.continuous = YES;
 	[mpControlsView addSubview:progressIndicator];
 	
