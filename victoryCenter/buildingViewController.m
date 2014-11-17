@@ -223,7 +223,7 @@
             break;
         }
         case 2: {
-            [self loadFloorPlan:6];//load floor 8
+            [self loadFloorPlan:14];//load floor 8
             break;
         }
         case 3: {
