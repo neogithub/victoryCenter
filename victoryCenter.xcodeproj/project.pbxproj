@@ -78,6 +78,8 @@
 		8224FE3319D4BD6E002B1B44 /* normal_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE2F19D4BD6E002B1B44 /* normal_frame@2x.png */; };
 		8224FE3419D4BD6E002B1B44 /* play_button_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE3019D4BD6E002B1B44 /* play_button_@2x.png */; };
 		8224FE3519D4BD6E002B1B44 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE3119D4BD6E002B1B44 /* play_button.png */; };
+		822F384B1A1A92FA0085500F /* grfx_floorplan1.png in Resources */ = {isa = PBXBuildFile; fileRef = 822F38491A1A92FA0085500F /* grfx_floorplan1.png */; };
+		822F384C1A1A92FA0085500F /* grfx_floorplan1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 822F384A1A1A92FA0085500F /* grfx_floorplan1@2x.png */; };
 		8239ED0F1A0168ED00B25EA2 /* siteOverview.m in Sources */ = {isa = PBXBuildFile; fileRef = 8239ED0E1A0168ED00B25EA2 /* siteOverview.m */; };
 		8239ED121A016FAC00B25EA2 /* grfx_victoryPark_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8239ED101A016FAC00B25EA2 /* grfx_victoryPark_logo.png */; };
 		8239ED131A016FAC00B25EA2 /* grfx_victoryPark_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8239ED111A016FAC00B25EA2 /* grfx_victoryPark_logo@2x.png */; };
@@ -439,6 +441,8 @@
 		8224FE2F19D4BD6E002B1B44 /* normal_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "normal_frame@2x.png"; sourceTree = "<group>"; };
 		8224FE3019D4BD6E002B1B44 /* play_button_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_button_@2x.png"; sourceTree = "<group>"; };
 		8224FE3119D4BD6E002B1B44 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
+		822F38491A1A92FA0085500F /* grfx_floorplan1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan1.png; sourceTree = "<group>"; };
+		822F384A1A1A92FA0085500F /* grfx_floorplan1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorplan1@2x.png"; sourceTree = "<group>"; };
 		8239ED0D1A0168ED00B25EA2 /* siteOverview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = siteOverview.h; sourceTree = "<group>"; };
 		8239ED0E1A0168ED00B25EA2 /* siteOverview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = siteOverview.m; sourceTree = "<group>"; };
 		8239ED101A016FAC00B25EA2 /* grfx_victoryPark_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_victoryPark_logo.png; sourceTree = "<group>"; };
@@ -1133,6 +1137,8 @@
 				824C195E19FA9DC400EA7613 /* grfx_floorplan8@2x.png */,
 				824C195F19FA9DC400EA7613 /* grfx_floorplan9.png */,
 				824C196019FA9DC400EA7613 /* grfx_floorplan9@2x.png */,
+				822F38491A1A92FA0085500F /* grfx_floorplan1.png */,
+				822F384A1A1A92FA0085500F /* grfx_floorplan1@2x.png */,
 				828041F21A07C1CF00847A80 /* tmp_testfit1.png */,
 				828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */,
 				828041F41A07C1CF00847A80 /* tmp_testfit2.png */,
@@ -1537,6 +1543,7 @@
 				82A29E4919EC60E000AFAE1E /* grfx_bldImg@2x.png in Resources */,
 				82DC11CB19DAEA940057AE4F /* 20140802_view4_100m_06-small.jpg in Resources */,
 				82DC11C519DAEA940057AE4F /* 20140802_downtown_100m_6pm.jpg in Resources */,
+				822F384B1A1A92FA0085500F /* grfx_floorplan1.png in Resources */,
 				824012F819D1AF5D00C501EE /* Images.xcassets in Resources */,
 				82DC11CF19DAEA940057AE4F /* 20140811_view3_100m_02.jpg in Resources */,
 				82C06E8F1A169F56000F969E /* grfx_view_diagram@2x.png in Resources */,
@@ -1767,6 +1774,7 @@
 				82000B7F19E590AD00AE2C70 /* team_hines_text.png in Resources */,
 				82A21F6A1A02C5D300BE8706 /* grfx_bldstat_close.png in Resources */,
 				823DE6F119FFE95A0016CD3A /* pano_opportunity_local_nav_frame.png in Resources */,
+				822F384C1A1A92FA0085500F /* grfx_floorplan1@2x.png in Resources */,
 				82DC11C319DAEA940057AE4F /* 20140802_downtown_100m_5pm.jpg in Resources */,
 				82DC11C919DAEA940057AE4F /* 20140802_view4_100m_01.jpg in Resources */,
 				82DC11FF19DAF2990057AE4F /* photo-gallery-right@2x.png in Resources */,

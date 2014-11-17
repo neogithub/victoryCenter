@@ -63,8 +63,8 @@ static CGFloat  kPanelTitleHeight           = 46;
 - (void)viewWillAppear:(BOOL)animated
 {
     self.view.frame = screenRect;
-    _arr_titleText = [[NSArray alloc] initWithObjects: @"FLOOR 23", @"FLOOR 22", @"FLOOR 21", @"FLOOR 20", @"FLOOR 19", @"FLOOR 18", @"FLOOR 17", @"FLOOR 16", @"FLOOR 15", @"FLOOR 14", @"FLOOR 12", @"FLOOR 11", @"FLOOR 10", @"FLOOR 9", @"FLOOR 8",nil];
-    _arr_squareFeet = [[NSArray alloc] initWithObjects:@"27,802 SF", @"27,957 SF", @"28,112 SF", @"28,276 SF", @"28,433 SF", @"28,591 SF", @"28,337 SF", @"28,439 SF", @"28,694 SF", @"28,853 SF", @"29,002 SF", @"29,161 SF", @"29,161 SF", @"29,750 SF", @"46,943 SF", nil];
+    _arr_titleText = [[NSArray alloc] initWithObjects: @"FLOOR 23", @"FLOOR 22", @"FLOOR 21", @"FLOOR 20", @"FLOOR 19", @"FLOOR 18", @"FLOOR 17", @"FLOOR 16", @"FLOOR 15", @"FLOOR 14", @"FLOOR 12", @"FLOOR 11", @"FLOOR 10", @"FLOOR 9", @"FLOOR 8", @"FLOOR 1", nil];
+    _arr_squareFeet = [[NSArray alloc] initWithObjects:@"27,802 SF", @"27,957 SF", @"28,112 SF", @"28,276 SF", @"28,433 SF", @"28,591 SF", @"28,337 SF", @"28,439 SF", @"28,694 SF", @"28,853 SF", @"29,002 SF", @"29,161 SF", @"29,161 SF", @"29,750 SF", @"46,943 SF", @"46,943 SF", nil];
     
     CGRect frame_23 = CGRectMake(42.0, 18.0, 93.0, 5.0);
     CGRect frame_22 = CGRectMake(42.0, 23.0, 93.0, 5.0);
@@ -81,7 +81,8 @@ static CGFloat  kPanelTitleHeight           = 46;
     CGRect frame_10 = CGRectMake(42.0, 78.0, 93.0, 5.0);
     CGRect frame_9 = CGRectMake(42.0, 83.0, 93.0, 5.0);
     CGRect frame_8 = CGRectMake(16.0, 92.0, 118.0, 4.0);
-    _arr_indicatorFrames = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:frame_23], [NSValue valueWithCGRect:frame_22], [NSValue valueWithCGRect:frame_21], [NSValue valueWithCGRect:frame_20], [NSValue valueWithCGRect:frame_19], [NSValue valueWithCGRect:frame_18], [NSValue valueWithCGRect:frame_17], [NSValue valueWithCGRect:frame_16], [NSValue valueWithCGRect:frame_15], [NSValue valueWithCGRect:frame_14], [NSValue valueWithCGRect:frame_12], [NSValue valueWithCGRect:frame_11], [NSValue valueWithCGRect:frame_10], [NSValue valueWithCGRect:frame_9], [NSValue valueWithCGRect:frame_8], nil];
+    CGRect frame_1 = CGRectMake(16.0, 130.0, 118.0, 4.0);
+    _arr_indicatorFrames = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:frame_23], [NSValue valueWithCGRect:frame_22], [NSValue valueWithCGRect:frame_21], [NSValue valueWithCGRect:frame_20], [NSValue valueWithCGRect:frame_19], [NSValue valueWithCGRect:frame_18], [NSValue valueWithCGRect:frame_17], [NSValue valueWithCGRect:frame_16], [NSValue valueWithCGRect:frame_15], [NSValue valueWithCGRect:frame_14], [NSValue valueWithCGRect:frame_12], [NSValue valueWithCGRect:frame_11], [NSValue valueWithCGRect:frame_10], [NSValue valueWithCGRect:frame_9], [NSValue valueWithCGRect:frame_8], [NSValue valueWithCGRect:frame_1], nil];
     
     _modelController = [[embModelController alloc] init];
 
