@@ -40,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIButton               *uib_10_14;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_9;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_8;
+@property (weak, nonatomic) IBOutlet UIButton               *uib_1;
 @property (nonatomic, strong) NSArray                       *arr_floorBtns;
 //Elevator
 @property (nonatomic, strong) UIView                        *uiv_elevatorContainer;
@@ -103,14 +104,15 @@
 
 - (void)groupBtns
 {
-    _uib_18_23.tag = 1;
-    _uib_17.tag = 2;
-    _uib_16.tag = 3;
-    _uib_15.tag = 4;
-    _uib_10_14.tag = 5;
-    _uib_9.tag = 6;
-    _uib_8.tag = 7;
-    _arr_floorBtns = [[NSArray alloc] initWithObjects:_uib_18_23, _uib_17, _uib_16, _uib_15, _uib_10_14, _uib_9, _uib_8, nil];
+    _uib_18_23.tag = 5;
+    _uib_17.tag = 6;
+    _uib_16.tag = 7;
+    _uib_15.tag = 8;
+    _uib_10_14.tag = 12;
+    _uib_9.tag = 13;
+    _uib_8.tag = 14;
+    _uib_1.tag = 15;
+    _arr_floorBtns = [[NSArray alloc] initWithObjects:_uib_18_23, _uib_17, _uib_16, _uib_15, _uib_10_14, _uib_9, _uib_8, _uib_1, nil];
 
     for (UIButton *tmp in _arr_floorBtns) {
         [tmp addTarget:self action:@selector(floorBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -120,7 +122,7 @@
 - (void)floorBtnTapped:(id)sender
 {
     UIButton *tappedBtn = sender;
-    int index = (int)tappedBtn.tag - 1;
+    int index = (int)tappedBtn.tag ;
     
     [self loadFloorPlan:index];
     
