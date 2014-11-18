@@ -11,10 +11,14 @@
 #import "floorPlanViewController.h"
 #import "xhPopTipsView.h"
 
+static float kOriginalStatHeight    = 45+36*3;
+
 @interface buildingViewController ()
 {
     NSMutableArray      *arr_panelBtnArray;
+    NSArray             *arr_statContent;
     UIView              *uiv_panelIndicator;
+    UIImageView         *uiiv_statContent;
 }
 
 @property (nonatomic, strong) NSMutableArray                *arr_topBtnsArray;
@@ -250,8 +254,10 @@
 
 - (void)setUpBuildingStats
 {
+    arr_statContent = [[NSArray alloc] initWithObjects:@"building_stats_office.png", @"building_stats_area.png", @"building_stats_amenities.png", nil];
     _uiv_bldStatsPanel = [[UIView alloc] init];
-    _uiv_bldStatsPanel = [self createPanelWithTitle:@"BUILDING STATS" andHeight:_uiv_statImgContainer.frame.size.height];
+    _uiv_bldStatsPanel.clipsToBounds = NO;
+    _uiv_bldStatsPanel = [self createPanelWithTitle:@"BUILDING STATS" andHeight:kOriginalStatHeight];
     [_uiv_statImgContainer addSubview: _uiv_bldStatsPanel];
     NSArray *titles = [[NSArray alloc] initWithObjects:@"OFFICE TOWER", @"AREA SUMMARY", @"AMENITIES",  nil];
     [self createBtnsForPanel:_uiv_bldStatsPanel withTitleArray:titles andTargetSel:@"loadStatsContent:" andEdgeInset:45 withIdicator:YES];
@@ -260,7 +266,7 @@
 - (UIView *)createPanelWithTitle:(NSString *)title andHeight:(float)panelH
 {
     UIView* uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 356, panelH)];
-    uiv_panel.backgroundColor = [UIColor redColor];
+    uiv_panel.backgroundColor = [UIColor clearColor];
     
     UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
     uib_PanelTitle.frame = CGRectMake(0.0, 0.0, 356, 45.0);
@@ -294,7 +300,7 @@
     uiv_optionContainer.layer.borderWidth = 1.0;
     uiv_optionContainer.frame = CGRectMake(0.0, 45, 356, panle.frame.size.height-45);
     uiv_optionContainer.tag = 102;
-    uiv_optionContainer.clipsToBounds = YES;
+    uiv_optionContainer.clipsToBounds = NO;
     
     SEL method = NSSelectorFromString(methodName);
     
@@ -359,9 +365,78 @@
     [tappedBtn.superview addSubview: uiv_panelIndicator];
 }
 
+- (void)deHighLightPanelBtn:(id)sender
+{
+    UIButton *tappedBtn = sender;
+    tappedBtn.backgroundColor = [UIColor whiteColor];
+    tappedBtn.layer.borderWidth = 1.0;
+    tappedBtn.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+    
+    [self unselectAllPanelBtns];
+    [uiv_panelIndicator removeFromSuperview];
+    uiv_panelIndicator = nil;
+}
+
+- (void)unselectAllPanelBtns
+{
+    for (UIButton *tmp in arr_panelBtnArray) {
+        tmp.selected = NO;
+    }
+}
+
 - (void)loadStatsContent:(id)sender
 {
+    UIButton *tappedBtn = sender;
+    if (tappedBtn.selected) {
+        [uiiv_statContent removeFromSuperview];
+        uiiv_statContent = nil;
+        [_uiv_bldStatsPanel viewWithTag:102].frame = CGRectMake(0.0, 45.0, _uiv_bldStatsPanel.frame.size.width, kOriginalStatHeight);
+         _uiv_bldStatsPanel.frame = CGRectMake(0.0, 0.0, _uiv_bldStatsPanel.frame.size.width, kOriginalStatHeight+uiiv_statContent.frame.size.height);
+        [self resetButtonsAndIndicators:[_uiv_bldStatsPanel viewWithTag:102]];
+        [self deHighLightPanelBtn: sender];
+        return;
+    }
+    [_uiv_bldStatsPanel viewWithTag:102].frame = CGRectMake(0.0, 45.0, _uiv_bldStatsPanel.frame.size.width, kOriginalStatHeight-45);
+    _uiv_bldStatsPanel.frame = CGRectMake(0.0, 0.0, _uiv_bldStatsPanel.frame.size.width, kOriginalStatHeight);
+    [self resetButtonsAndIndicators:[_uiv_bldStatsPanel viewWithTag:102]];
+    int index = (int)tappedBtn.tag;
+    [uiiv_statContent removeFromSuperview];
+    uiiv_statContent = nil;
+    uiiv_statContent = [[UIImageView alloc] initWithImage:[UIImage imageNamed:arr_statContent[index]]];
+    uiiv_statContent.frame = CGRectMake(0.0, 45+tappedBtn.frame.origin.y + tappedBtn.frame.size.height, uiiv_statContent.frame.size.width, uiiv_statContent.frame.size.height);
+    [_uiv_bldStatsPanel addSubview: uiiv_statContent];
+    [_uiv_bldStatsPanel viewWithTag:102].frame = CGRectMake(0.0, 45.0, _uiv_bldStatsPanel.frame.size.width, 36*3+uiiv_statContent.frame.size.height);
+    _uiv_bldStatsPanel.frame = CGRectMake(0.0, 0.0, _uiv_bldStatsPanel.frame.size.width, kOriginalStatHeight+uiiv_statContent.frame.size.height);
+    _uiv_bldStatsPanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    _uiv_bldStatsPanel.layer.borderWidth = 1.0;
+    for (UIButton *tmp in arr_panelBtnArray) {
+        if (tmp.tag > index) {
+            tmp.transform = CGAffineTransformMakeTranslation(0.0,uiiv_statContent.frame.size.height);
+        }
+    }
+    
+    for (UIView *tmp in [[_uiv_bldStatsPanel viewWithTag:102] subviews]) {
+        if (tmp.tag >=500) {
+            if (tmp.tag-500 > index) {
+                tmp.transform = CGAffineTransformMakeTranslation(0.0, uiiv_statContent.frame.size.height);
+            }
+        }
+    }
+    
+    [self highLightPanelBtn:tappedBtn andIndicatorColor:[UIColor vcLightBlue]];
+}
 
+- (void)resetButtonsAndIndicators:(UIView *)panel
+{
+    panel.frame = CGRectMake(0.0, 45.0, 356, 36*3);
+    for (UIButton *tmp in arr_panelBtnArray) {
+        tmp.transform = CGAffineTransformIdentity;
+    }
+    for (UIView *tmp in [[panel viewWithTag:102] subviews]) {
+        if (tmp.tag >=500) {
+            tmp.transform = CGAffineTransformIdentity;
+        }
+    }
 }
 
 - (IBAction)closeBldStats:(id)sender {

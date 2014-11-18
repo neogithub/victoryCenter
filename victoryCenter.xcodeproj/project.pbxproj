@@ -203,7 +203,6 @@
 		8260BA001A1BD202004C44B8 /* building_stats_area@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8260B9F91A1BD202004C44B8 /* building_stats_area@2x.png */; };
 		8260BA011A1BD202004C44B8 /* building_stats_office.png in Resources */ = {isa = PBXBuildFile; fileRef = 8260B9FA1A1BD202004C44B8 /* building_stats_office.png */; };
 		8260BA021A1BD202004C44B8 /* building_stats_office@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8260B9FB1A1BD202004C44B8 /* building_stats_office@2x.png */; };
-		8260BA031A1BD202004C44B8 /* grfx_bldAmenities_bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8260B9FC1A1BD202004C44B8 /* grfx_bldAmenities_bg@2x.jpg */; };
 		82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1919E702EC0062FC0C /* grfx_recreationg_overlay.png */; };
 		82627E2219E702EC0062FC0C /* grfx_recreationg_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1A19E702EC0062FC0C /* grfx_recreationg_overlay@2x.png */; };
 		82627E2319E702EC0062FC0C /* grfx_residential_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1B19E702EC0062FC0C /* grfx_residential_overlay.png */; };
@@ -593,7 +592,6 @@
 		8260B9F91A1BD202004C44B8 /* building_stats_area@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "building_stats_area@2x.png"; sourceTree = "<group>"; };
 		8260B9FA1A1BD202004C44B8 /* building_stats_office.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = building_stats_office.png; sourceTree = "<group>"; };
 		8260B9FB1A1BD202004C44B8 /* building_stats_office@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "building_stats_office@2x.png"; sourceTree = "<group>"; };
-		8260B9FC1A1BD202004C44B8 /* grfx_bldAmenities_bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_bldAmenities_bg@2x.jpg"; sourceTree = "<group>"; };
 		82627E1919E702EC0062FC0C /* grfx_recreationg_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_recreationg_overlay.png; sourceTree = "<group>"; };
 		82627E1A19E702EC0062FC0C /* grfx_recreationg_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_recreationg_overlay@2x.png"; sourceTree = "<group>"; };
 		82627E1B19E702EC0062FC0C /* grfx_residential_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_residential_overlay.png; sourceTree = "<group>"; };
@@ -1287,7 +1285,6 @@
 				8260B9F91A1BD202004C44B8 /* building_stats_area@2x.png */,
 				8260B9FA1A1BD202004C44B8 /* building_stats_office.png */,
 				8260B9FB1A1BD202004C44B8 /* building_stats_office@2x.png */,
-				8260B9FC1A1BD202004C44B8 /* grfx_bldAmenities_bg@2x.jpg */,
 				827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */,
 				827069971A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg */,
 				82A29E4419EC60E000AFAE1E /* grfx_bldImg.png */,
@@ -1739,7 +1736,6 @@
 				82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */,
 				82D54B4C1A0BFD6C0055F338 /* Tilit_Icon_Off.png in Resources */,
 				821EE2611A13BC5300254B2A /* grfx_floorplan14.png in Resources */,
-				8260BA031A1BD202004C44B8 /* grfx_bldAmenities_bg@2x.jpg in Resources */,
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
 				82DC11C719DAEA940057AE4F /* 20140802_downtown_60m_2pm.jpg in Resources */,
 				82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */,
