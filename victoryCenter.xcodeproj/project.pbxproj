@@ -195,6 +195,8 @@
 		8260B9E71A1B8A95004C44B8 /* CollapseClickArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8260B9E21A1B8A95004C44B8 /* CollapseClickArrow.m */; };
 		8260B9E81A1B8A95004C44B8 /* CollapseClickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8260B9E41A1B8A95004C44B8 /* CollapseClickCell.m */; };
 		8260B9E91A1B8A95004C44B8 /* CollapseClickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8260B9E51A1B8A95004C44B8 /* CollapseClickCell.xib */; };
+		8260B9EC1A1B8FFA004C44B8 /* grfx_stats_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8260B9EA1A1B8FFA004C44B8 /* grfx_stats_plus.png */; };
+		8260B9ED1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8260B9EB1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png */; };
 		82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1919E702EC0062FC0C /* grfx_recreationg_overlay.png */; };
 		82627E2219E702EC0062FC0C /* grfx_recreationg_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1A19E702EC0062FC0C /* grfx_recreationg_overlay@2x.png */; };
 		82627E2319E702EC0062FC0C /* grfx_residential_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1B19E702EC0062FC0C /* grfx_residential_overlay.png */; };
@@ -576,6 +578,8 @@
 		8260B9E31A1B8A95004C44B8 /* CollapseClickCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapseClickCell.h; sourceTree = "<group>"; };
 		8260B9E41A1B8A95004C44B8 /* CollapseClickCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapseClickCell.m; sourceTree = "<group>"; };
 		8260B9E51A1B8A95004C44B8 /* CollapseClickCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapseClickCell.xib; sourceTree = "<group>"; };
+		8260B9EA1A1B8FFA004C44B8 /* grfx_stats_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_stats_plus.png; sourceTree = "<group>"; };
+		8260B9EB1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_stats_plus@2x.png"; sourceTree = "<group>"; };
 		82627E1919E702EC0062FC0C /* grfx_recreationg_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_recreationg_overlay.png; sourceTree = "<group>"; };
 		82627E1A19E702EC0062FC0C /* grfx_recreationg_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_recreationg_overlay@2x.png"; sourceTree = "<group>"; };
 		82627E1B19E702EC0062FC0C /* grfx_residential_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_residential_overlay.png; sourceTree = "<group>"; };
@@ -1281,6 +1285,8 @@
 				825E5F8219F83FA300B77F7F /* grfx_elavators_parking@2x.png */,
 				82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */,
 				82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */,
+				8260B9EA1A1B8FFA004C44B8 /* grfx_stats_plus.png */,
+				8260B9EB1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png */,
 			);
 			path = Building;
 			sourceTree = "<group>";
@@ -1612,6 +1618,7 @@
 				82000B8B19E592A800AE2C70 /* team_cushman_logo.png in Resources */,
 				824C196619FA9DC400EA7613 /* grfx_floorplan16@2x.png in Resources */,
 				826078131A0130CA000DF24F /* grfx_logo@2x.png in Resources */,
+				8260B9ED1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png in Resources */,
 				828041F81A07C1CF00847A80 /* tmp_testfit2.png in Resources */,
 				824F369019E6C47500267B44 /* thumb_20140802_view4_100m_05.jpg in Resources */,
 				82DC11D219DAEA940057AE4F /* victory_center_138feet.jpg in Resources */,
@@ -1695,6 +1702,7 @@
 				82C06E8E1A169F56000F969E /* grfx_view_diagram.png in Resources */,
 				82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */,
 				823D78AD19F1AD500096E62C /* grfx_compass@2x.png in Resources */,
+				8260B9EC1A1B8FFA004C44B8 /* grfx_stats_plus.png in Resources */,
 				82DC11FE19DAF2990057AE4F /* photo-gallery-right.png in Resources */,
 				82C06E841A16658F000F969E /* parking_icon.png in Resources */,
 				824F369319E6C47500267B44 /* thumb_20140802_view4_60m_02.jpg in Resources */,
