@@ -191,6 +191,10 @@
 		825E5F8C19F8559700B77F7F /* Site_Base map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F8B19F8559700B77F7F /* Site_Base map@2x.png */; };
 		826078121A0130CA000DF24F /* grfx_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 826078101A0130CA000DF24F /* grfx_logo.png */; };
 		826078131A0130CA000DF24F /* grfx_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 826078111A0130CA000DF24F /* grfx_logo@2x.png */; };
+		8260B9E61A1B8A95004C44B8 /* CollapseClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 8260B9E01A1B8A95004C44B8 /* CollapseClick.m */; };
+		8260B9E71A1B8A95004C44B8 /* CollapseClickArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8260B9E21A1B8A95004C44B8 /* CollapseClickArrow.m */; };
+		8260B9E81A1B8A95004C44B8 /* CollapseClickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8260B9E41A1B8A95004C44B8 /* CollapseClickCell.m */; };
+		8260B9E91A1B8A95004C44B8 /* CollapseClickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8260B9E51A1B8A95004C44B8 /* CollapseClickCell.xib */; };
 		82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1919E702EC0062FC0C /* grfx_recreationg_overlay.png */; };
 		82627E2219E702EC0062FC0C /* grfx_recreationg_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1A19E702EC0062FC0C /* grfx_recreationg_overlay@2x.png */; };
 		82627E2319E702EC0062FC0C /* grfx_residential_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1B19E702EC0062FC0C /* grfx_residential_overlay.png */; };
@@ -565,6 +569,13 @@
 		825E5F8B19F8559700B77F7F /* Site_Base map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Site_Base map@2x.png"; sourceTree = "<group>"; };
 		826078101A0130CA000DF24F /* grfx_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_logo.png; sourceTree = "<group>"; };
 		826078111A0130CA000DF24F /* grfx_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_logo@2x.png"; sourceTree = "<group>"; };
+		8260B9DF1A1B8A95004C44B8 /* CollapseClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapseClick.h; sourceTree = "<group>"; };
+		8260B9E01A1B8A95004C44B8 /* CollapseClick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapseClick.m; sourceTree = "<group>"; };
+		8260B9E11A1B8A95004C44B8 /* CollapseClickArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapseClickArrow.h; sourceTree = "<group>"; };
+		8260B9E21A1B8A95004C44B8 /* CollapseClickArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapseClickArrow.m; sourceTree = "<group>"; };
+		8260B9E31A1B8A95004C44B8 /* CollapseClickCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapseClickCell.h; sourceTree = "<group>"; };
+		8260B9E41A1B8A95004C44B8 /* CollapseClickCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapseClickCell.m; sourceTree = "<group>"; };
+		8260B9E51A1B8A95004C44B8 /* CollapseClickCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapseClickCell.xib; sourceTree = "<group>"; };
 		82627E1919E702EC0062FC0C /* grfx_recreationg_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_recreationg_overlay.png; sourceTree = "<group>"; };
 		82627E1A19E702EC0062FC0C /* grfx_recreationg_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_recreationg_overlay@2x.png"; sourceTree = "<group>"; };
 		82627E1B19E702EC0062FC0C /* grfx_residential_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_residential_overlay.png; sourceTree = "<group>"; };
@@ -1049,6 +1060,7 @@
 		8240131719D1B52800C501EE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8260B9DE1A1B8A95004C44B8 /* CollapseClickDemo */,
 				82A29E3319EC4ED300AFAE1E /* Draw_Path */,
 				8224FE0D19D48656002B1B44 /* Thrid_party */,
 				82CE2FC419F05D6D006F7B0E /* Floorplan */,
@@ -1190,6 +1202,20 @@
 				824F368419E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg */,
 			);
 			path = Rendering_thumb;
+			sourceTree = "<group>";
+		};
+		8260B9DE1A1B8A95004C44B8 /* CollapseClickDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8260B9DF1A1B8A95004C44B8 /* CollapseClick.h */,
+				8260B9E01A1B8A95004C44B8 /* CollapseClick.m */,
+				8260B9E11A1B8A95004C44B8 /* CollapseClickArrow.h */,
+				8260B9E21A1B8A95004C44B8 /* CollapseClickArrow.m */,
+				8260B9E31A1B8A95004C44B8 /* CollapseClickCell.h */,
+				8260B9E41A1B8A95004C44B8 /* CollapseClickCell.m */,
+				8260B9E51A1B8A95004C44B8 /* CollapseClickCell.xib */,
+			);
+			path = CollapseClickDemo;
 			sourceTree = "<group>";
 		};
 		82716A6519E434C10070A331 /* overlays */ = {
@@ -1657,6 +1683,7 @@
 				82000B9D19E5963800AE2C70 /* team_duda_text.png in Resources */,
 				82DC11DC19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg in Resources */,
 				824F369519E6C47500267B44 /* thumb_20140811_view3_100m_02.jpg in Resources */,
+				8260B9E91A1B8A95004C44B8 /* CollapseClickCell.xib in Resources */,
 				82627E2319E702EC0062FC0C /* grfx_residential_overlay.png in Resources */,
 				8224FDF619D46D90002B1B44 /* cap_bar_@2x.png in Resources */,
 				824F369619E6C47500267B44 /* thumb_20140811_view3_100m_03.jpg in Resources */,
@@ -1840,6 +1867,7 @@
 				82D54B431A0BEE5B0055F338 /* neoCalendarUtilities.m in Sources */,
 				82459E7819F6C4C200E03A8D /* embEmailData.m in Sources */,
 				8224FE2919D48656002B1B44 /* MPFlipSegue.m in Sources */,
+				8260B9E71A1B8A95004C44B8 /* CollapseClickArrow.m in Sources */,
 				82459E7119F6916900E03A8D /* contactViewController.m in Sources */,
 				82CE2FD619F06434006F7B0E /* KSLabel.m in Sources */,
 				8240131A19D1B58A00C501EE /* XHCustomSegue.m in Sources */,
@@ -1848,6 +1876,8 @@
 				824012F619D1AF5D00C501EE /* RootViewController.m in Sources */,
 				8224FE2C19D48656002B1B44 /* MPFoldNavPushSegue.m in Sources */,
 				8239ED171A01863300B25EA2 /* CMPopTipView.m in Sources */,
+				8260B9E81A1B8A95004C44B8 /* CollapseClickCell.m in Sources */,
+				8260B9E61A1B8A95004C44B8 /* CollapseClick.m in Sources */,
 				82DAB03219D1EBA000F23668 /* UIColor+Extensions.m in Sources */,
 				82DAB03519D1ED5B00F23668 /* teamViewController.m in Sources */,
 				82A29E4119EC4ED300AFAE1E /* embDirections.m in Sources */,

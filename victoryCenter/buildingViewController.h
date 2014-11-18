@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CollapseClick.h"
 
-@interface buildingViewController : UIViewController
-
+@interface buildingViewController : UIViewController<CollapseClickDelegate>
+{
+    CollapseClick   *theCollapseClick;
+}
 @end
