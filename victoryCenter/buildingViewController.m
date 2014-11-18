@@ -13,7 +13,8 @@
 
 @interface buildingViewController ()
 {
-
+    NSMutableArray      *arr_panelBtnArray;
+    UIView              *uiv_panelIndicator;
 }
 
 @property (nonatomic, strong) NSMutableArray                *arr_topBtnsArray;
@@ -30,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton               *uib_elevators;
 @property (weak, nonatomic) IBOutlet UILabel                *uil_parkingLabel;
 @property (weak, nonatomic) IBOutlet UILabel                *uil_lobbyLabel;
+@property (nonatomic, strong) UIView                        *uiv_bldStatsPanel;
 //Floor plan
 @property (nonatomic, strong) floorPlanViewController       *floorPlan;
 
@@ -61,6 +63,7 @@
 {
     self.view.frame = screenRect;
     [self prepareHlepData];
+    [self setUpBuildingStats];
 }
 
 - (void)viewDidLoad
@@ -244,6 +247,123 @@
 }
 
 #pragma mark - Building Stats
+
+- (void)setUpBuildingStats
+{
+    _uiv_bldStatsPanel = [[UIView alloc] init];
+    _uiv_bldStatsPanel = [self createPanelWithTitle:@"BUILDING STATS" andHeight:_uiv_statImgContainer.frame.size.height];
+    [_uiv_statImgContainer addSubview: _uiv_bldStatsPanel];
+    NSArray *titles = [[NSArray alloc] initWithObjects:@"OFFICE TOWER", @"AREA SUMMARY", @"AMENITIES",  nil];
+    [self createBtnsForPanel:_uiv_bldStatsPanel withTitleArray:titles andTargetSel:@"loadStatsContent:" andEdgeInset:45 withIdicator:YES];
+}
+
+- (UIView *)createPanelWithTitle:(NSString *)title andHeight:(float)panelH
+{
+    UIView* uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 356, panelH)];
+    uiv_panel.backgroundColor = [UIColor redColor];
+    
+    UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_PanelTitle.frame = CGRectMake(0.0, 0.0, 356, 45.0);
+    [uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
+    [uib_PanelTitle setTitle:title forState:UIControlStateNormal];
+    [uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [uib_PanelTitle.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:18.0]];
+    uib_PanelTitle.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 8, 150);
+    uib_PanelTitle.tag = 101;
+    uib_PanelTitle.layer.borderWidth = 1.0;
+    uib_PanelTitle.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    uib_PanelTitle.userInteractionEnabled = NO;
+    [uiv_panel addSubview: uib_PanelTitle];
+    
+    UIButton *uib_closeStats = [UIButton buttonWithType:UIButtonTypeCustom];
+    uib_closeStats.frame = CGRectMake(322.0, -6.0, 40.0, 50.0);
+    [uib_closeStats setImage:[UIImage imageNamed:@"grfx_bldstat_close.png"] forState:UIControlStateNormal];
+    [uiv_panel addSubview: uib_closeStats];
+    [uib_closeStats addTarget:self action:@selector(closeBldStats:) forControlEvents:UIControlEventTouchUpInside];
+    return uiv_panel;
+}
+
+- (void)createBtnsForPanel:(UIView *)panle withTitleArray:(NSArray *)arr_buttonTitles andTargetSel:(NSString *)methodName andEdgeInset:(float)leftEdge withIdicator:(BOOL)indicator
+{
+    [arr_panelBtnArray removeAllObjects];
+    arr_panelBtnArray = nil;
+    arr_panelBtnArray = [[NSMutableArray alloc] init];
+    UIView *uiv_optionContainer = [[UIView alloc] init];
+    uiv_optionContainer.backgroundColor = [UIColor whiteColor];
+    uiv_optionContainer.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    uiv_optionContainer.layer.borderWidth = 1.0;
+    uiv_optionContainer.frame = CGRectMake(0.0, 45, 356, panle.frame.size.height-45);
+    uiv_optionContainer.tag = 102;
+    uiv_optionContainer.clipsToBounds = YES;
+    
+    SEL method = NSSelectorFromString(methodName);
+    
+    for (int i = 0; i < arr_buttonTitles.count; i++) {
+        UIButton *uib_accOption = [UIButton buttonWithType:UIButtonTypeCustom];
+        uib_accOption.frame = CGRectMake(0.0, i*36, 356, 36);
+        uib_accOption.backgroundColor = [UIColor whiteColor];
+        uib_accOption.layer.borderWidth = 1.0;
+        uib_accOption.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+        [uib_accOption setTitle:arr_buttonTitles[i] forState:UIControlStateNormal];
+        [uib_accOption setTitleColor:[UIColor vcDarkBlue] forState:UIControlStateNormal];
+        [uib_accOption.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:12.0]];
+        uib_accOption.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        uib_accOption.titleEdgeInsets = UIEdgeInsetsMake(3.0, leftEdge, 0.0, 0.0);
+        uib_accOption.tag = i;
+        [uib_accOption addTarget:self action:method forControlEvents:UIControlEventTouchUpInside];
+        [uiv_optionContainer addSubview: uib_accOption];
+        UIView *uiv_Indicator;
+        if (indicator) {
+            CGRect frame = CGRectMake(19, uib_accOption.frame.origin.y + (uib_accOption.frame.size.height - 14)/2, 14, 14);
+            uiv_Indicator = [[UIView alloc] initWithFrame:frame];
+            uiv_Indicator.backgroundColor = [UIColor whiteColor];
+            uiv_Indicator.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+            uiv_Indicator.layer.borderWidth = 2.0;
+            CGPoint savedCenter = uiv_Indicator.center;
+            uiv_Indicator.layer.cornerRadius = 14.0 / 2.0;
+            uiv_Indicator.center = savedCenter;
+            uiv_Indicator.tag = 500+i;
+            [uiv_optionContainer addSubview: uiv_Indicator];
+        }
+        [arr_panelBtnArray addObject: uib_accOption];
+    }
+    [panle insertSubview: uiv_optionContainer belowSubview:[panle viewWithTag:101]];
+}
+
+- (void)highLightPanelBtn:(id)sender andIndicatorColor:(UIColor *)color
+{
+    for (UIButton *tmp in arr_panelBtnArray) {
+        tmp.backgroundColor = [UIColor whiteColor];
+        tmp.layer.borderWidth = 1.0;
+        tmp.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+        tmp.selected = NO;
+    }
+    
+    UIButton *tappedBtn = sender;
+    tappedBtn.selected = YES;
+    tappedBtn.backgroundColor = [UIColor vclightbluemenu];
+    tappedBtn.layer.borderWidth = 1.0;
+    tappedBtn.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    
+    [uiv_panelIndicator removeFromSuperview];
+    uiv_panelIndicator = nil;
+    
+    CGRect frame = CGRectMake(19, tappedBtn.frame.origin.y + (tappedBtn.frame.size.height - 14)/2, 14, 14);
+    uiv_panelIndicator = [[UIView alloc] initWithFrame:frame];
+    uiv_panelIndicator.backgroundColor = color;
+    uiv_panelIndicator.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    uiv_panelIndicator.layer.borderWidth = 2.0;
+    CGPoint savedCenter = uiv_panelIndicator.center;
+    uiv_panelIndicator.layer.cornerRadius = 14.0 / 2.0;
+    uiv_panelIndicator.center = savedCenter;
+    [tappedBtn.superview addSubview: uiv_panelIndicator];
+}
+
+- (void)loadStatsContent:(id)sender
+{
+
+}
+
 - (IBAction)closeBldStats:(id)sender {
     [self resetBuildingImg:nil];
 }
