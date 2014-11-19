@@ -730,19 +730,19 @@
 
 - (void)positionScroller
 {
-	CGRect screenFrame = [[UIScreen mainScreen] bounds];
-	CGRect scrollerRect;
+//	CGRect screenFrame = [[UIScreen mainScreen] bounds];
+//	CGRect scrollerRect;
 	
-	if( self.interfaceOrientation == UIInterfaceOrientationPortrait || self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown )
-	{//portrait
-		scrollerRect = CGRectMake( 0, 0, screenFrame.size.width, screenFrame.size.height );
-	}
-	else
-	{//landscape
-		scrollerRect = screenRect;
-	}
+//	if( self.interfaceOrientation == UIInterfaceOrientationPortrait || self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown )
+//	{//portrait
+//		scrollerRect = CGRectMake( 0, 0, screenFrame.size.width, screenFrame.size.height );
+//	}
+//	else
+//	{//landscape
+//		scrollerRect = screenRect;
+//	}
 	
-	_scroller.frame = scrollerRect;
+	_scroller.frame = screenRect;
 }
 
 
