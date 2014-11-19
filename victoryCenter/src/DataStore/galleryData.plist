@@ -58,17 +58,10 @@
 				<array>
 					<string>20140716_view1_90 feet.jpg</string>
 					<string>20140716_view2_90 feet.jpg</string>
-					<string>20140802_downtown_100m_1pm.jpg</string>
 					<string>20140802_downtown_100m_1pm_high-res.jpg</string>
-					<string>20140802_downtown_100m_5pm.jpg</string>
 					<string>20140802_downtown_100m_5pm_high-res.jpg</string>
-					<string>20140802_downtown_100m_6pm.jpg</string>
 					<string>20140802_downtown_100m_6pm_high-res.jpg</string>
-					<string>20140802_downtown_60m_2pm.jpg</string>
-					<string>20140802_downtown_60m_2pm_high-res.jpg</string>
-					<string>20140802_view4_100m_01.jpg</string>
 					<string>20140802_view4_100m_05.jpg</string>
-					<string>20140802_view4_100m_06-small.jpg</string>
 					<string>20140802_view4_100m_06.jpg</string>
 					<string>20140802_view4_60m_02.jpg</string>
 					<string>20140811_view3_100m_01.jpg</string>
@@ -94,23 +87,9 @@
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
 				</array>
 				<key>captions</key>
 				<array>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
 					<string>Caption</string>
 					<string>Caption</string>
 					<string>Caption</string>
