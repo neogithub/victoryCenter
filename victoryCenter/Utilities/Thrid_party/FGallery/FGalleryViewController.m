@@ -739,7 +739,7 @@
 	}
 	else
 	{//landscape
-		scrollerRect = CGRectMake( 0, 0, screenFrame.size.height, screenFrame.size.width );
+		scrollerRect = screenRect;
 	}
 	
 	_scroller.frame = scrollerRect;
