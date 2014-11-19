@@ -206,7 +206,7 @@
     _scroller.pagingEnabled						= YES;
     _scroller.showsVerticalScrollIndicator		= NO;
     _scroller.showsHorizontalScrollIndicator	= NO;
-    
+
     // setup caption
     _captionContainer.backgroundColor			= [UIColor clearColor];
     _captionContainer.hidden					= YES;
@@ -712,19 +712,19 @@
 
 - (void)positionInnerContainer
 {
-	CGRect screenFrame = [[UIScreen mainScreen] bounds];
-	CGRect innerContainerRect;
+//	CGRect screenFrame = [[UIScreen mainScreen] bounds];
+//	CGRect innerContainerRect;
+//	
+//	if( self.interfaceOrientation == UIInterfaceOrientationPortrait || self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown )
+//	{//portrait
+//		innerContainerRect = CGRectMake( 0, _container.frame.size.height - screenFrame.size.height, _container.frame.size.width, screenFrame.size.height );
+//	}
+//	else
+//	{// landscape
+//		innerContainerRect = CGRectMake( 0, _container.frame.size.height - screenFrame.size.width, _container.frame.size.width, screenFrame.size.width );
+//	}
 	
-	if( self.interfaceOrientation == UIInterfaceOrientationPortrait || self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown )
-	{//portrait
-		innerContainerRect = CGRectMake( 0, _container.frame.size.height - screenFrame.size.height, _container.frame.size.width, screenFrame.size.height );
-	}
-	else
-	{// landscape
-		innerContainerRect = CGRectMake( 0, _container.frame.size.height - screenFrame.size.width, _container.frame.size.width, screenFrame.size.width );
-	}
-	
-	_innerContainer.frame = innerContainerRect;
+	_innerContainer.frame = screenRect;
 }
 
 
