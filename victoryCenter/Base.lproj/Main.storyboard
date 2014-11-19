@@ -408,7 +408,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" id="FAs-Xa-4zp" userLabel="View - Stats">
-                                <rect key="frame" x="-356" y="87" width="356" height="614"/>
+                                <rect key="frame" x="-371" y="87" width="371" height="614"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grfx_bldStatsImg.png" id="XQi-qA-bAp">

@@ -19,6 +19,7 @@ static float kOriginalStatHeight    = 45+36*3;
     NSArray             *arr_statContent;
     UIView              *uiv_panelIndicator;
     UIImageView         *uiiv_statContent;
+    int                 loadStats;
 }
 
 @property (nonatomic, strong) NSMutableArray                *arr_topBtnsArray;
@@ -68,6 +69,7 @@ static float kOriginalStatHeight    = 45+36*3;
     self.view.frame = screenRect;
     [self prepareHlepData];
     [self setUpBuildingStats];
+    loadStats = 0;
 }
 
 - (void)viewDidLoad
@@ -223,6 +225,13 @@ static float kOriginalStatHeight    = 45+36*3;
     _uiv_bldImgContainer.transform = CGAffineTransformIdentity;
     _uiv_statImgContainer.hidden = YES;
     _uiv_statImgContainer.alpha = 0.0;
+    [self resetButtonsAndIndicators:_uiv_bldStatsPanel];
+    [_uiv_bldStatsPanel viewWithTag:102].frame = CGRectMake(0.0, 45.0, 371, 3*36);
+    for (UIButton *tmp in arr_panelBtnArray) {
+        [self deHighLightPanelBtn:tmp];
+    }
+    [uiiv_statContent removeFromSuperview];
+    uiiv_statContent = nil;
     _uiv_statImgContainer.transform = CGAffineTransformIdentity;
     [self removeFloorPlan];
     
@@ -265,11 +274,11 @@ static float kOriginalStatHeight    = 45+36*3;
 
 - (UIView *)createPanelWithTitle:(NSString *)title andHeight:(float)panelH
 {
-    UIView* uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 356, panelH)];
+    UIView* uiv_panel = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 371, panelH)];
     uiv_panel.backgroundColor = [UIColor clearColor];
     
     UIButton *uib_PanelTitle = [UIButton buttonWithType:UIButtonTypeCustom];
-    uib_PanelTitle.frame = CGRectMake(0.0, 0.0, 356, 45.0);
+    uib_PanelTitle.frame = CGRectMake(0.0, 0.0, 371, 45.0);
     [uib_PanelTitle setBackgroundImage:[UIImage imageNamed:@"grfx_access_nav.png"] forState:UIControlStateNormal];
     [uib_PanelTitle setTitle:title forState:UIControlStateNormal];
     [uib_PanelTitle setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -282,7 +291,7 @@ static float kOriginalStatHeight    = 45+36*3;
     [uiv_panel addSubview: uib_PanelTitle];
     
     UIButton *uib_closeStats = [UIButton buttonWithType:UIButtonTypeCustom];
-    uib_closeStats.frame = CGRectMake(322.0, -6.0, 40.0, 50.0);
+    uib_closeStats.frame = CGRectMake(337.0, -6.0, 40.0, 50.0);
     [uib_closeStats setImage:[UIImage imageNamed:@"grfx_bldstat_close.png"] forState:UIControlStateNormal];
     [uiv_panel addSubview: uib_closeStats];
     [uib_closeStats addTarget:self action:@selector(closeBldStats:) forControlEvents:UIControlEventTouchUpInside];
@@ -298,15 +307,15 @@ static float kOriginalStatHeight    = 45+36*3;
     uiv_optionContainer.backgroundColor = [UIColor whiteColor];
     uiv_optionContainer.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     uiv_optionContainer.layer.borderWidth = 1.0;
-    uiv_optionContainer.frame = CGRectMake(0.0, 45, 356, panle.frame.size.height-45);
+    uiv_optionContainer.frame = CGRectMake(0.0, 45, 371, panle.frame.size.height-45);
     uiv_optionContainer.tag = 102;
-    uiv_optionContainer.clipsToBounds = NO;
+    uiv_optionContainer.clipsToBounds = YES;
     
     SEL method = NSSelectorFromString(methodName);
     
     for (int i = 0; i < arr_buttonTitles.count; i++) {
         UIButton *uib_accOption = [UIButton buttonWithType:UIButtonTypeCustom];
-        uib_accOption.frame = CGRectMake(0.0, i*36, 356, 36);
+        uib_accOption.frame = CGRectMake(0.0, i*36, 371, 36);
         uib_accOption.backgroundColor = [UIColor whiteColor];
         uib_accOption.layer.borderWidth = 1.0;
         uib_accOption.layer.borderColor = [UIColor vcButtonBorder].CGColor;
@@ -387,48 +396,84 @@ static float kOriginalStatHeight    = 45+36*3;
 - (void)loadStatsContent:(id)sender
 {
     UIButton *tappedBtn = sender;
+    UIView *buttonContianer = tappedBtn.superview; //[uiv_neibAmePanel viewWithTag:102];
+    UIView *thePanel = buttonContianer.superview;
     if (tappedBtn.selected) {
-        [uiiv_statContent removeFromSuperview];
-        uiiv_statContent = nil;
-        [_uiv_bldStatsPanel viewWithTag:102].frame = CGRectMake(0.0, 45.0, _uiv_bldStatsPanel.frame.size.width, kOriginalStatHeight);
-         _uiv_bldStatsPanel.frame = CGRectMake(0.0, 0.0, _uiv_bldStatsPanel.frame.size.width, kOriginalStatHeight+uiiv_statContent.frame.size.height);
-        [self resetButtonsAndIndicators:[_uiv_bldStatsPanel viewWithTag:102]];
-        [self deHighLightPanelBtn: sender];
-        return;
+        CGRect frame = buttonContianer.frame;
+        frame.size.height = 3*36;//4*kPanelBtnHeight;
+        [UIView animateWithDuration:0.33 animations:^{
+            [self resetButtonsAndIndicators:thePanel];
+            buttonContianer.frame = frame;
+        } completion:^(BOOL finished){
+            [self deHighLightPanelBtn:sender];
+            [uiiv_statContent removeFromSuperview];
+            uiiv_statContent = nil;
+            return;
+        }];
     }
-    [_uiv_bldStatsPanel viewWithTag:102].frame = CGRectMake(0.0, 45.0, _uiv_bldStatsPanel.frame.size.width, kOriginalStatHeight-45);
-    _uiv_bldStatsPanel.frame = CGRectMake(0.0, 0.0, _uiv_bldStatsPanel.frame.size.width, kOriginalStatHeight);
-    [self resetButtonsAndIndicators:[_uiv_bldStatsPanel viewWithTag:102]];
-    int index = (int)tappedBtn.tag;
+    else {
+        
+        //Check if panel is opened:
+        //Do the animation of shrink , change highlighted button and expension
+        if (buttonContianer.frame.size.height > 3*36) {
+            CGRect frame = buttonContianer.frame;
+            frame.size.height = 3*36;//4*kPanelBtnHeight;
+            [UIView animateWithDuration:0.33 animations:^{
+                [self resetButtonsAndIndicators:thePanel];
+                buttonContianer.frame = frame;
+            } completion:^(BOOL finished){
+                [self expandAmenityPanel:sender];
+            }];
+        }
+        else {
+            [self expandAmenityPanel:sender];
+        }
+    }
+}
+
+- (void)expandAmenityPanel:(id)sender
+{
+    UIButton *tappedBtn = sender;
+    //Get button's contianer
+    UIView *buttonContianer = tappedBtn.superview;//[uiv_neibAmePanel viewWithTag:102];
+    //Get the current panel
+    UIView *thePanel = buttonContianer.superview;
+    
+    //Update position of table view's position
     [uiiv_statContent removeFromSuperview];
     uiiv_statContent = nil;
-    uiiv_statContent = [[UIImageView alloc] initWithImage:[UIImage imageNamed:arr_statContent[index]]];
-    uiiv_statContent.frame = CGRectMake(0.0, 45+tappedBtn.frame.origin.y + tappedBtn.frame.size.height, uiiv_statContent.frame.size.width, uiiv_statContent.frame.size.height);
-    [_uiv_bldStatsPanel addSubview: uiiv_statContent];
-    [_uiv_bldStatsPanel viewWithTag:102].frame = CGRectMake(0.0, 45.0, _uiv_bldStatsPanel.frame.size.width, 36*3+uiiv_statContent.frame.size.height);
-    _uiv_bldStatsPanel.frame = CGRectMake(0.0, 0.0, _uiv_bldStatsPanel.frame.size.width, kOriginalStatHeight+uiiv_statContent.frame.size.height);
-    _uiv_bldStatsPanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
-    _uiv_bldStatsPanel.layer.borderWidth = 1.0;
-    for (UIButton *tmp in arr_panelBtnArray) {
-        if (tmp.tag > index) {
-            tmp.transform = CGAffineTransformMakeTranslation(0.0,uiiv_statContent.frame.size.height);
-        }
-    }
+    uiiv_statContent = [[UIImageView alloc] initWithImage:[UIImage imageNamed:arr_statContent[tappedBtn.tag]]];
+    UIButton *firstBtn = [arr_panelBtnArray objectAtIndex:0];
+    uiiv_statContent.frame = CGRectMake(0.0, 36*([sender tag] + 1), uiiv_statContent.frame.size.width, uiiv_statContent.frame.size.height);
     
-    for (UIView *tmp in [[_uiv_bldStatsPanel viewWithTag:102] subviews]) {
-        if (tmp.tag >=500) {
-            if (tmp.tag-500 > index) {
-                tmp.transform = CGAffineTransformMakeTranslation(0.0, uiiv_statContent.frame.size.height);
-            }
-        }
-    }
+    //Add table view under buttons' container
+    [buttonContianer insertSubview:uiiv_statContent aboveSubview:firstBtn];
     
-    [self highLightPanelBtn:tappedBtn andIndicatorColor:[UIColor vcLightBlue]];
+    //Update Amenities panel's height
+    CGRect oldFrame = thePanel.frame;
+    oldFrame.size.height = kOriginalStatHeight + uiiv_statContent.frame.size.height;  //kExpendedHeight;
+    thePanel.frame = oldFrame;
+    CGRect containerOldFrame = buttonContianer.frame;
+    containerOldFrame.size.height = oldFrame.size.height-45;
+    
+    CGFloat duration = 0.5f;
+    CGFloat damping = 0.7f;
+    CGFloat velocity = 1.0f;
+    // int to hold UIViewAnimationOption
+    NSInteger option;
+    option = UIViewAnimationCurveEaseInOut;
+    
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+        buttonContianer.frame = containerOldFrame;
+        [self rearrangeBtns:(int)[sender tag]];
+        [self rearrangeIndicator:(int)[sender tag] andInContainer:buttonContianer];
+        [self highLightPanelBtn:sender andIndicatorColor:[UIColor vcDarkBlue]];
+    } completion:^(BOOL finished){      }];
 }
 
 - (void)resetButtonsAndIndicators:(UIView *)panel
 {
-    panel.frame = CGRectMake(0.0, 45.0, 356, 36*3);
+    panel.frame = CGRectMake(0.0, 0.0, 371, kOriginalStatHeight);
     for (UIButton *tmp in arr_panelBtnArray) {
         tmp.transform = CGAffineTransformIdentity;
     }
@@ -438,6 +483,28 @@ static float kOriginalStatHeight    = 45+36*3;
         }
     }
 }
+
+// Move all buttons have bigger index to bottom panel
+- (void)rearrangeBtns:(int)index
+{
+    for (UIButton *tmp in arr_panelBtnArray) {
+        if (tmp.tag > index) {
+            tmp.transform = CGAffineTransformMakeTranslation(0.0, uiiv_statContent.frame.size.height);
+        }
+    }
+}
+// Move indicators to correct position
+- (void)rearrangeIndicator:(int)index andInContainer:(UIView *)container
+{
+    for (UIView *tmp in [[container viewWithTag:102] subviews]) {
+        if (tmp.tag >=500) {
+            if (tmp.tag-500 > index) {
+                tmp.transform = CGAffineTransformMakeTranslation(0.0, uiiv_statContent.frame.size.height);
+            }
+        }
+    }
+}
+
 
 - (IBAction)closeBldStats:(id)sender {
     [self resetBuildingImg:nil];
@@ -457,6 +524,13 @@ static float kOriginalStatHeight    = 45+36*3;
         _uiv_statImgContainer.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished){
         _uiv_statImgContainer.hidden = YES;
+        [self resetButtonsAndIndicators:_uiv_bldStatsPanel];
+        [_uiv_bldStatsPanel viewWithTag:102].frame = CGRectMake(0.0, 45.0, 371, 3*36);
+        for (UIButton *tmp in arr_panelBtnArray) {
+            [self deHighLightPanelBtn:tmp];
+        }
+        [uiiv_statContent removeFromSuperview];
+        uiiv_statContent = nil;
         [self resetTopMenu];
         _uiiv_viewDiagram.hidden = NO;
     }];
@@ -481,9 +555,15 @@ static float kOriginalStatHeight    = 45+36*3;
     
     [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping*1.0 initialSpringVelocity:velocity*0.8 options:option animations:^{
         _uiv_statImgContainer.alpha = 1.0;
-        _uiv_statImgContainer.transform = CGAffineTransformMakeTranslation(356, 0.0);
+        _uiv_statImgContainer.transform = CGAffineTransformMakeTranslation(371, 0.0);
         
-    } completion:^(BOOL finished){      }];
+    } completion:^(BOOL finished){
+        UIButton *tmp = arr_panelBtnArray[0];
+        if (loadStats == 0) {
+            [self loadStatsContent:tmp];
+        }
+        loadStats++;
+    }];
 }
 
 #pragma mark - Set up Floor plan view
