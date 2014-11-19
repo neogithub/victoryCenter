@@ -137,6 +137,8 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(285, 285)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [flowLayout setMinimumLineSpacing:22.0];
+    [flowLayout setMinimumInteritemSpacing:22.0];
 	[_uic_gallery setCollectionViewLayout:flowLayout animated:YES];
     [_uic_gallery scrollRectToVisible:CGRectMake(0.0, 0.0, _uic_gallery.frame.size.width, _uic_gallery.frame.size.height) animated:YES];
     [_uic_gallery reloadData];
