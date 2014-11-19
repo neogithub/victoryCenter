@@ -130,7 +130,7 @@ static int eveningTime = 17;
 - (void)createContactCardwithName:(NSString *)name andPhone:(NSString *)phone andMobile:(NSString *)mobile andEmail:(NSString *)email andTag:(int)index
 {
     UIView *uiv_contactCard = [[UIView alloc] initWithFrame:CGRectMake(720.0, 169+4.0 + (kContactGap + kContactHeight)*index, kContactWidth, kContactHeight)];
-    uiv_contactCard.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
+    uiv_contactCard.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.75];
     uiv_contactCard.tag = index+1;
     
     UILabel *uil_name = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 10.0, kContactWidth - 15, 25.0)];
