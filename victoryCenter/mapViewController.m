@@ -1658,177 +1658,177 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark - Draw Path
 -(void)drawPathsFromBezierClass:(id)sender
 {
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle: @""
-                               message: @"Proper derection coming soon."
-                              delegate: self
-                     cancelButtonTitle: @"OK"
-                     otherButtonTitles: nil];
-    alert.tag = 1;
-    [alert show];
+//    UIAlertView *alert =
+//    [[UIAlertView alloc] initWithTitle: @""
+//                               message: @"Proper derection coming soon."
+//                              delegate: self
+//                     cancelButtonTitle: @"OK"
+//                     otherButtonTitles: nil];
+//    alert.tag = 1;
+//    [alert show];
 
     
-//    // clean up
-//	[self removePaths];
-//    if (uiv_distanceInfoContainer) {
-//        [self removeDistanceLabels];
-//    }
-//    
-//    UIButton *tappedBtn = sender;
-//    if (tappedBtn.selected) {
-//        [self deHighLightPanelBtn:sender];
-//        for (UIButton *tmp in arr_panelBtnArray) {
-//            tmp.selected = NO;
-//        }
-//        return;
-//    }
-//    
-//    [self highLightPanelBtn:sender andIndicatorColor:[UIColor redColor] withIndicator:YES];
-//    
-//    if (tappedBtn.tag == 5) {
-//        [self addDistanceInfo];
-//        return;
-//    }
-//    
-//    [_arr_pathItems removeAllObjects];
-//    _arr_pathItems = nil;
-//	_arr_pathItems = [[NSMutableArray alloc] init];
-//    NSMutableArray *arr_directionItems = [[NSMutableArray alloc] init];
-//    NSMutableArray *arr_directionItems2 = [[NSMutableArray alloc] init];
-//	embBezierPaths *paths;
-//	embDirections *dirpaths;
-//    paths = [[embBezierPaths alloc] init];
-//    arr_directionItems2 = paths.bezierPaths;
-//    dirpaths = [[embDirections alloc] init];
-//    arr_directionItems = dirpaths.bezierPaths;
-//	
-//	// actual drawpath function
-//	_embDirectionPath = [[embDrawPath alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
-//	_embDirectionPath.delegate=self;
-//	//[_uiv_mapContainer insertSubview:_embDirectionPath atIndex:2];
-//	
-//	if (_uiiv_mapOverlay) {
-//		[_uiv_mapContainer insertSubview:_embDirectionPath aboveSubview:_uiiv_mapOverlay];
-//	} else {
-//		[_uiv_mapContainer insertSubview:_embDirectionPath belowSubview:_uiiv_vcLogo];
-//	}
-//    
-//	// loop # paths in a group
-//	int pathGrouping	= -1;
-//	int indexStart		= -1;
-//    
-//    if (_uiv_citySubMenu.hidden == NO) {
-//        switch ([sender tag]) {
-//			case 0:
-//				pathGrouping	= 1;
-//				indexStart		= 0;
-//				break;
-//				
-//			case 1:
-//				pathGrouping	= 1;
-//				indexStart		= 1;
-//				break;
-//				
-//			case 2:
-//				pathGrouping	= 1;
-//				indexStart		= 2;
-//				break;
-//				
-//			case 3:
-//				pathGrouping	= 3;
-//				indexStart		= 3;
-//				break;
-//				
-//			case 4:
-//				pathGrouping	= 1;
-//				indexStart		= 6;
-//				break;
-//			default:
-//				break;
-//		}
-//        _arr_pathItems = arr_directionItems;
-//    }
-//
-//    if (_uiv_neighborhoodSubMenu.hidden == NO) {
-//        switch ([sender tag]) {
-//			case 0:
-//				pathGrouping	= 1;
-//				indexStart		= 0;
-//				break;
-//				
-//			case 1:
-//				pathGrouping	= 3;
-//				indexStart		= 3;
-//				break;
-//				
-//			case 2:
-//				pathGrouping	= 1;
-//				indexStart		= 2;
-//				break;
-//				
-//			case 3:
-//				pathGrouping	= 3;
-//				indexStart		= 3;
-//				break;
-//				
-//			case 4:
-//				pathGrouping	= 1;
-//				indexStart		= 6;
-//				break;
-//			default:
-//				break;
-//		}
-//        _arr_pathItems = arr_directionItems;
-//    }
-//
-//    if (_uiv_siteSubMenu.hidden == NO) {
-//        switch ([sender tag]) {
-//			case 0:
-//				pathGrouping	= 3;
-//				indexStart		= 0;
-//				break;
-//				
-//			case 1:
-//				pathGrouping	= 3;
-//				indexStart		= 3;
-//				break;
-//				
-//			case 2:
-//				pathGrouping	= 2;
-//				indexStart		= 6;
-//				break;
-//				
-//			case 3:
-//				pathGrouping	= 3;
-//				indexStart		= 8;
-//				break;
-//				
-//			case 4:
-//				pathGrouping	= 3;
-//				indexStart		= 0;
-//				break;
-//			default:
-//				break;
-//		}
-//        _arr_pathItems = arr_directionItems2;
-//    }
-//
-//	for (int i=0; i<pathGrouping; i++) {
-//		embBezierPathItem *p = _arr_pathItems[indexStart+i];
-//		_embDirectionPath.myPath = p.embPath;
-//		_embDirectionPath.animationSpeed = 1.0;
-//		_embDirectionPath.pathStrokeColor = p.pathColor;
-//		_embDirectionPath.pathLineWidth = p.pathWidth;
-//		_embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
-//		_embDirectionPath.isTappable = NO;
-//        //        _embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
-//		if(!_dirpathsArray){
-//			_dirpathsArray = [[NSMutableArray alloc] init];
-//			[_dirpathsArray addObject:_embDirectionPath]; // for removal later
-//		}
-//		//[_dirpathsArray addObject:_embDirectionPath]; // for removal later
-//		[_embDirectionPath startAnimationFromIndex:i afterDelay:p.pathDelay];
-//	}
+    // clean up
+	[self removePaths];
+    if (uiv_distanceInfoContainer) {
+        [self removeDistanceLabels];
+    }
+    
+    UIButton *tappedBtn = sender;
+    if (tappedBtn.selected) {
+        [self deHighLightPanelBtn:sender];
+        for (UIButton *tmp in arr_panelBtnArray) {
+            tmp.selected = NO;
+        }
+        return;
+    }
+    
+    [self highLightPanelBtn:sender andIndicatorColor:[UIColor redColor] withIndicator:YES];
+    
+    if (tappedBtn.tag == 5) {
+        [self addDistanceInfo];
+        return;
+    }
+    
+    [_arr_pathItems removeAllObjects];
+    _arr_pathItems = nil;
+	_arr_pathItems = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_directionItems = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_directionItems2 = [[NSMutableArray alloc] init];
+	embBezierPaths *paths;
+	embDirections *dirpaths;
+    paths = [[embBezierPaths alloc] init];
+    arr_directionItems2 = paths.bezierPaths;
+    dirpaths = [[embDirections alloc] init];
+    arr_directionItems = dirpaths.bezierPaths;
+	
+	// actual drawpath function
+	_embDirectionPath = [[embDrawPath alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+	_embDirectionPath.delegate=self;
+	//[_uiv_mapContainer insertSubview:_embDirectionPath atIndex:2];
+	
+	if (_uiiv_mapOverlay) {
+		[_uiv_mapContainer insertSubview:_embDirectionPath aboveSubview:_uiiv_mapOverlay];
+	} else {
+		[_uiv_mapContainer insertSubview:_embDirectionPath belowSubview:_uiiv_vcLogo];
+	}
+    
+	// loop # paths in a group
+	int pathGrouping	= -1;
+	int indexStart		= -1;
+    
+    if (_uiv_citySubMenu.hidden == NO) {
+        switch ([sender tag]) {
+			case 0:
+				pathGrouping	= 1;
+				indexStart		= 1;
+				break;
+				
+			case 1:
+				pathGrouping	= 1;
+				indexStart		= 5;
+				break;
+				
+			case 2:
+				pathGrouping	= 1;
+				indexStart		= 2;
+				break;
+				
+			case 3:
+				pathGrouping	= 1;
+				indexStart		= 0;
+				break;
+				
+			case 4:
+				pathGrouping	= 1;
+				indexStart		= 6;
+				break;
+			default:
+				break;
+		}
+        _arr_pathItems = arr_directionItems;
+    }
+
+    if (_uiv_neighborhoodSubMenu.hidden == NO) {
+        switch ([sender tag]) {
+			case 0:
+				pathGrouping	= 1;
+				indexStart		= 0;
+				break;
+				
+			case 1:
+				pathGrouping	= 3;
+				indexStart		= 3;
+				break;
+				
+			case 2:
+				pathGrouping	= 1;
+				indexStart		= 2;
+				break;
+				
+			case 3:
+				pathGrouping	= 3;
+				indexStart		= 3;
+				break;
+				
+			case 4:
+				pathGrouping	= 1;
+				indexStart		= 6;
+				break;
+			default:
+				break;
+		}
+        _arr_pathItems = arr_directionItems;
+    }
+
+    if (_uiv_siteSubMenu.hidden == NO) {
+        switch ([sender tag]) {
+			case 0:
+				pathGrouping	= 3;
+				indexStart		= 0;
+				break;
+				
+			case 1:
+				pathGrouping	= 3;
+				indexStart		= 3;
+				break;
+				
+			case 2:
+				pathGrouping	= 2;
+				indexStart		= 6;
+				break;
+				
+			case 3:
+				pathGrouping	= 3;
+				indexStart		= 8;
+				break;
+				
+			case 4:
+				pathGrouping	= 3;
+				indexStart		= 0;
+				break;
+			default:
+				break;
+		}
+        _arr_pathItems = arr_directionItems2;
+    }
+
+	for (int i=0; i<pathGrouping; i++) {
+		embBezierPathItem *p = _arr_pathItems[indexStart+i];
+		_embDirectionPath.myPath = p.embPath;
+		_embDirectionPath.animationSpeed = 1.0;
+		_embDirectionPath.pathStrokeColor = p.pathColor;
+		_embDirectionPath.pathLineWidth = p.pathWidth;
+		_embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
+		_embDirectionPath.isTappable = NO;
+        //        _embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
+		if(!_dirpathsArray){
+			_dirpathsArray = [[NSMutableArray alloc] init];
+			[_dirpathsArray addObject:_embDirectionPath]; // for removal later
+		}
+		//[_dirpathsArray addObject:_embDirectionPath]; // for removal later
+		[_embDirectionPath startAnimationFromIndex:i afterDelay:p.pathDelay];
+	}
 }
 
 -(void)removePaths
