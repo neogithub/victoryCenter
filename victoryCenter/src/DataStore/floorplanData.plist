@@ -364,8 +364,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string>tmp_testfit1.png</string>
-					<string>tmp_testfit2.png</string>
+					<string>TEST_FIT_FLOOR19_OpenOffice.png</string>
+					<string>TEST_FIT_FLOOR19_ClosedOffice.png</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -973,8 +973,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string>tmp_testfit1.png</string>
-					<string>tmp_testfit2.png</string>
+					<string>TEST_FIT_FLOOR11_OpenOffice.png</string>
+					<string>TEST_FIT_FLOOR11_ClosedOffice.png</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -1234,8 +1234,8 @@
 				</array>
 				<key>testfits</key>
 				<array>
-					<string>tmp_testfit1.png</string>
-					<string>tmp_testfit2.png</string>
+					<string>TEST_FIT_FLOOR8_OpenOffice.png</string>
+					<string>TEST_FIT_FLOOR8_ClosedOffice.png</string>
 				</array>
 				<key>hotspots</key>
 				<array>
