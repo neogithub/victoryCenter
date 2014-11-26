@@ -142,6 +142,8 @@ static float    kPanelBtnHeight             = 38.0;
     self.view.frame = screenRect;
     [self loadHotspotDict];
     [self prepareHlepData];
+    
+    [self performSelector:@selector(popLogoFlagAnimation) withObject:nil afterDelay:0.5];
 }
 
 - (void)loadHotspotDict
@@ -264,51 +266,57 @@ static float    kPanelBtnHeight             = 38.0;
 
 - (void)tapOnVCLogo:(UIGestureRecognizer *)gesture
 {
-    if (_uiiv_vcLogoFlag) {
-        [_uiiv_vcLogoFlag removeFromSuperview];
-        _uiiv_vcLogoFlag = nil;
-        return;
-    }
-    
-    _uiiv_vcLogoFlag = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VictoryCenter_Flag.png"]];
-    CGRect logoFrame = _uiiv_vcLogo.frame;
-    _uiiv_vcLogoFlag.frame = CGRectMake(logoFrame.origin.x + logoFrame.size.width/2, logoFrame.origin.y - _uiiv_vcLogoFlag.frame.size.height, _uiiv_vcLogoFlag.frame.size.width, _uiiv_vcLogoFlag.frame.size.height);
-    _uiiv_vcLogoFlag.tag = 151;
-    
-    CGRect oldFrame = _uiiv_vcLogoFlag.frame;
-    _uiiv_vcLogoFlag.layer.anchorPoint = CGPointMake(0.0, 1.0);
-    _uiiv_vcLogoFlag.frame = oldFrame;
-    
-    [_uiv_mapContainer addSubview: _uiiv_vcLogoFlag];
-    
 //    if (_uiiv_vcLogoFlag) {
-//        
-//        [UIView animateWithDuration:0.2 animations:^{
-//            _uiiv_vcLogoFlag.transform = CGAffineTransformMakeScale(0.0, 0.0);
-//        } completion:^(BOOL finished){
-//            [_uiiv_vcLogoFlag removeFromSuperview];
-//            _uiiv_vcLogoFlag = nil;
-//            return;
-//        }];
-//        
+//        [_uiiv_vcLogoFlag removeFromSuperview];
+//        _uiiv_vcLogoFlag = nil;
+//        return;
 //    }
-//    else {
-//        _uiiv_vcLogoFlag = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VictoryCenter_Flag.png"]];
-//        CGRect logoFrame = _uiiv_vcLogo.frame;
-//        _uiiv_vcLogoFlag.frame = CGRectMake(logoFrame.origin.x + logoFrame.size.width/2, logoFrame.origin.y - _uiiv_vcLogoFlag.frame.size.height, _uiiv_vcLogoFlag.frame.size.width, _uiiv_vcLogoFlag.frame.size.height);
-//        _uiiv_vcLogoFlag.tag = 151;
-//        
-//        CGRect oldFrame = _uiiv_vcLogoFlag.frame;
-//        _uiiv_vcLogoFlag.layer.anchorPoint = CGPointMake(0.0, 1.0);
-//        _uiiv_vcLogoFlag.frame = oldFrame;
-//        _uiiv_vcLogoFlag.transform = CGAffineTransformMakeScale(0.0, 0.0);
-//        [_uiv_mapContainer addSubview: _uiiv_vcLogoFlag];
-//        [UIView animateWithDuration:0.2 animations:^{
-//            _uiiv_vcLogoFlag.transform = CGAffineTransformIdentity;
-//        } completion:^(BOOL finished){
-//            
-//        }];
-//    }
+//    
+//    _uiiv_vcLogoFlag = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VictoryCenter_Flag.png"]];
+//    CGRect logoFrame = _uiiv_vcLogo.frame;
+//    _uiiv_vcLogoFlag.frame = CGRectMake(logoFrame.origin.x + logoFrame.size.width/2, logoFrame.origin.y - _uiiv_vcLogoFlag.frame.size.height, _uiiv_vcLogoFlag.frame.size.width, _uiiv_vcLogoFlag.frame.size.height);
+//    _uiiv_vcLogoFlag.tag = 151;
+//    
+//    CGRect oldFrame = _uiiv_vcLogoFlag.frame;
+//    _uiiv_vcLogoFlag.layer.anchorPoint = CGPointMake(0.0, 1.0);
+//    _uiiv_vcLogoFlag.frame = oldFrame;
+//    
+//    [_uiv_mapContainer addSubview: _uiiv_vcLogoFlag];
+    
+    if (_uiiv_vcLogoFlag) {
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            _uiiv_vcLogoFlag.transform = CGAffineTransformMakeScale(0.0, 0.0);
+        } completion:^(BOOL finished){
+            [_uiiv_vcLogoFlag removeFromSuperview];
+            _uiiv_vcLogoFlag = nil;
+            return;
+        }];
+        
+    }
+    else {
+        _uiiv_vcLogoFlag = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VictoryCenter_Flag.png"]];
+        CGRect logoFrame = _uiiv_vcLogo.frame;
+        _uiiv_vcLogoFlag.frame = CGRectMake(logoFrame.origin.x + logoFrame.size.width/2, logoFrame.origin.y - _uiiv_vcLogoFlag.frame.size.height, _uiiv_vcLogoFlag.frame.size.width, _uiiv_vcLogoFlag.frame.size.height);
+        _uiiv_vcLogoFlag.tag = 151;
+        
+        CGRect oldFrame = _uiiv_vcLogoFlag.frame;
+        _uiiv_vcLogoFlag.layer.anchorPoint = CGPointMake(0.0, 1.0);
+        _uiiv_vcLogoFlag.frame = oldFrame;
+        _uiiv_vcLogoFlag.transform = CGAffineTransformMakeScale(0.0, 0.0);
+        [_uiv_mapContainer addSubview: _uiiv_vcLogoFlag];
+        [UIView animateWithDuration:0.3 animations:^{
+            _uiiv_vcLogoFlag.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished){
+            
+        }];
+    }
+}
+
+- (void)popLogoFlagAnimation
+{
+    [self performSelector:@selector(tapOnVCLogo:) withObject:nil afterDelay:0.0];
+    [self performSelector:@selector(tapOnVCLogo:) withObject:nil afterDelay:1.5];
 }
 
 -(void)animationOfMaps:(int)index
@@ -501,6 +509,7 @@ static float    kPanelBtnHeight             = 38.0;
             _uiv_neighborhoodSubMenu.hidden = YES;
             _uiv_siteSubMenu.hidden = YES;
             _uiv_mapSwitchContainer.hidden = NO;
+            [self performSelector:@selector(popLogoFlagAnimation) withObject:nil afterDelay:0.5];
             break;
         }
         case 1: { //Show Neighborhood's sub menu
@@ -508,6 +517,7 @@ static float    kPanelBtnHeight             = 38.0;
             _uiv_neighborhoodSubMenu.hidden = NO;
             _uiv_siteSubMenu.hidden = YES;
             _uiv_mapSwitchContainer.hidden = NO;
+            [self performSelector:@selector(popLogoFlagAnimation) withObject:nil afterDelay:0.5];
             break;
         }
         case 2: { //Show Site's sub menu
