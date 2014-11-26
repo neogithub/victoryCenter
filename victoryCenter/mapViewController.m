@@ -316,7 +316,7 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)popLogoFlagAnimation
 {
     [self performSelector:@selector(tapOnVCLogo:) withObject:nil afterDelay:0.0];
-    [self performSelector:@selector(tapOnVCLogo:) withObject:nil afterDelay:1.5];
+    [self performSelector:@selector(tapOnVCLogo:) withObject:nil afterDelay:2.5];
 }
 
 -(void)animationOfMaps:(int)index
