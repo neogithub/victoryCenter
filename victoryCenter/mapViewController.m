@@ -1256,10 +1256,14 @@ static float    kPanelBtnHeight             = 38.0;
         CGPoint savedCenter = uiv_panelIndicator.center;
         uiv_panelIndicator.layer.cornerRadius = 14.0 / 2.0;
         uiv_panelIndicator.center = savedCenter;
-//        if (tappedBtn.tag !=5) {
+        if (tappedBtn.tag !=5) {
             [tappedBtn.superview addSubview: uiv_panelIndicator];
-//        }
-        
+        }
+        if (tappedBtn.tag == 5 && [tappedBtn.titleLabel.text isEqualToString:@"VIEW ALL"]) {
+            [tappedBtn.superview addSubview: uiv_panelIndicator];
+        }
+
+    
     }
     if (tappedBtn.tag == 5) {
         uiiv_airPlane.image = [UIImage imageNamed:@"Plane_Icon_White.png"];
@@ -1712,8 +1716,8 @@ static float    kPanelBtnHeight             = 38.0;
 	_arr_pathItems = [[NSMutableArray alloc] init];
     NSMutableArray *arr_directionItems = [[NSMutableArray alloc] init];
     NSMutableArray *arr_directionItems2 = [[NSMutableArray alloc] init];
-	embBezierPaths *paths;
-	embDirections *dirpaths;
+	embBezierPaths *paths; //For site map
+	embDirections *dirpaths; // For city/neighborhood map
     paths = [[embBezierPaths alloc] init];
     arr_directionItems2 = paths.bezierPaths;
     dirpaths = [[embDirections alloc] init];
