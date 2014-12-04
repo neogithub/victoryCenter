@@ -1256,9 +1256,9 @@ static float    kPanelBtnHeight             = 38.0;
         CGPoint savedCenter = uiv_panelIndicator.center;
         uiv_panelIndicator.layer.cornerRadius = 14.0 / 2.0;
         uiv_panelIndicator.center = savedCenter;
-        if (tappedBtn.tag !=5) {
+//        if (tappedBtn.tag !=5) {
             [tappedBtn.superview addSubview: uiv_panelIndicator];
-        }
+//        }
         
     }
     if (tappedBtn.tag == 5) {
@@ -1331,7 +1331,7 @@ static float    kPanelBtnHeight             = 38.0;
         if (indicator) {
             CGRect frame = CGRectMake(19, uib_accOption.frame.origin.y + (uib_accOption.frame.size.height - 14)/2, 14, 14);
             uiv_Indicator = [[UIView alloc] initWithFrame:frame];
-            uiv_Indicator.backgroundColor = [UIColor whiteColor];
+            uiv_Indicator.backgroundColor = [UIColor clearColor];
             uiv_Indicator.layer.borderColor = [UIColor vcDarkBlue].CGColor;
             uiv_Indicator.layer.borderWidth = 2.0;
             CGPoint savedCenter = uiv_Indicator.center;
