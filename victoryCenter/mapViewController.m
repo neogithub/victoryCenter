@@ -526,7 +526,14 @@ static float    kPanelBtnHeight             = 38.0;
             _uiv_siteSubMenu.hidden = NO;
             _uiv_mapSwitchContainer.hidden = YES;
             [self creatBuildingBtn];
-            [self performSelector:@selector(tapSubMenu:) withObject:_uib_siteOverview afterDelay:0.4];
+            [self performSelector:@selector(tapSubMenu:) withObject:_uib_siteAmenities afterDelay:0.4];
+            
+            double delayInSeconds = 1.0;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                UIButton *tmp = [arr_panelBtnArray objectAtIndex: arr_panelBtnArray.count - 1];
+                [self performSelector:@selector(tapSiteAmenities:) withObject:tmp afterDelay:0.6];
+            });
             break;
         }
         default:
