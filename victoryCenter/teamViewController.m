@@ -58,7 +58,7 @@ static float kCardsGap      = 12.0;
 {
     [super viewDidLoad];
     _arr_cards = [[NSMutableArray alloc] init];
-    _arr_logoImg = [[NSArray alloc] initWithObjects:@"team_hines_logo.png", @"team_cushman_logo.png", @"team_duda_logo.png", @"team_hks_logo.png", @"team_cousins_logo.png", nil];
+    _arr_logoImg = [[NSArray alloc] initWithObjects:@"team_hines_logo.png", @"team_cousins_logo.png", @"team_cushman_logo.png", @"team_duda_logo.png", @"team_hks_logo.png", nil];
     [self createTextViews];
     for (int i = 0; i < _arr_logoImg.count; i++) {
         // input parameters:
