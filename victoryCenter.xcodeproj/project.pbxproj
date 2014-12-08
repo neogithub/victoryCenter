@@ -234,6 +234,13 @@
 		8263B98E19EDC7EF00E70C1B /* hotspots.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98D19EDC7EF00E70C1B /* hotspots.plist */; };
 		826873D31A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png in Resources */ = {isa = PBXBuildFile; fileRef = 826873D11A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png */; };
 		826873D41A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov in Resources */ = {isa = PBXBuildFile; fileRef = 826873D21A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov */; };
+		826873D71A36552F0013C960 /* buildingAmenities.m in Sources */ = {isa = PBXBuildFile; fileRef = 826873D61A36552F0013C960 /* buildingAmenities.m */; };
+		826873DF1A3657D20013C960 /* grfx_amen_conference.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826873D91A3657D20013C960 /* grfx_amen_conference.jpg */; };
+		826873E01A3657D20013C960 /* grfx_amen_conference@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826873DA1A3657D20013C960 /* grfx_amen_conference@2x.jpg */; };
+		826873E11A3657D20013C960 /* grfx_amen_dining.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826873DB1A3657D20013C960 /* grfx_amen_dining.jpg */; };
+		826873E21A3657D20013C960 /* grfx_amen_dining@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826873DC1A3657D20013C960 /* grfx_amen_dining@2x.jpg */; };
+		826873E31A3657D20013C960 /* grfx_amen_fitness.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826873DD1A3657D20013C960 /* grfx_amen_fitness.jpg */; };
+		826873E41A3657D20013C960 /* grfx_amen_fitness@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826873DE1A3657D20013C960 /* grfx_amen_fitness@2x.jpg */; };
 		827069951A125BA8001AC7E4 /* xhPopTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 827069941A125BA8001AC7E4 /* xhPopTipsView.m */; };
 		827069981A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */; };
 		827069991A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 827069971A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg */; };
@@ -633,6 +640,14 @@
 		8263B98D19EDC7EF00E70C1B /* hotspots.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotspots.plist; sourceTree = "<group>"; };
 		826873D11A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png; sourceTree = "<group>"; };
 		826873D21A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov; sourceTree = "<group>"; };
+		826873D51A36552F0013C960 /* buildingAmenities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buildingAmenities.h; sourceTree = "<group>"; };
+		826873D61A36552F0013C960 /* buildingAmenities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buildingAmenities.m; sourceTree = "<group>"; };
+		826873D91A3657D20013C960 /* grfx_amen_conference.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_amen_conference.jpg; sourceTree = "<group>"; };
+		826873DA1A3657D20013C960 /* grfx_amen_conference@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_amen_conference@2x.jpg"; sourceTree = "<group>"; };
+		826873DB1A3657D20013C960 /* grfx_amen_dining.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_amen_dining.jpg; sourceTree = "<group>"; };
+		826873DC1A3657D20013C960 /* grfx_amen_dining@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_amen_dining@2x.jpg"; sourceTree = "<group>"; };
+		826873DD1A3657D20013C960 /* grfx_amen_fitness.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_amen_fitness.jpg; sourceTree = "<group>"; };
+		826873DE1A3657D20013C960 /* grfx_amen_fitness@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_amen_fitness@2x.jpg"; sourceTree = "<group>"; };
 		827069931A125BA8001AC7E4 /* xhPopTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xhPopTipsView.h; sourceTree = "<group>"; };
 		827069941A125BA8001AC7E4 /* xhPopTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xhPopTipsView.m; sourceTree = "<group>"; };
 		827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_bldAmenities_bg.jpg; sourceTree = "<group>"; };
@@ -1050,6 +1065,8 @@
 				82CE2FD219F06350006F7B0E /* floorPlanViewController.m */,
 				82459E6F19F6916900E03A8D /* contactViewController.h */,
 				82459E7019F6916900E03A8D /* contactViewController.m */,
+				826873D51A36552F0013C960 /* buildingAmenities.h */,
+				826873D61A36552F0013C960 /* buildingAmenities.m */,
 				8240131B19D1C04800C501EE /* src */,
 				8240131719D1B52800C501EE /* Utilities */,
 				824012F719D1AF5D00C501EE /* Images.xcassets */,
@@ -1268,6 +1285,19 @@
 			path = CollapseClickDemo;
 			sourceTree = "<group>";
 		};
+		826873D81A3657D20013C960 /* Amenities */ = {
+			isa = PBXGroup;
+			children = (
+				826873D91A3657D20013C960 /* grfx_amen_conference.jpg */,
+				826873DA1A3657D20013C960 /* grfx_amen_conference@2x.jpg */,
+				826873DB1A3657D20013C960 /* grfx_amen_dining.jpg */,
+				826873DC1A3657D20013C960 /* grfx_amen_dining@2x.jpg */,
+				826873DD1A3657D20013C960 /* grfx_amen_fitness.jpg */,
+				826873DE1A3657D20013C960 /* grfx_amen_fitness@2x.jpg */,
+			);
+			path = Amenities;
+			sourceTree = "<group>";
+		};
 		82716A6519E434C10070A331 /* overlays */ = {
 			isa = PBXGroup;
 			children = (
@@ -1313,6 +1343,7 @@
 		82A29E4319EC60E000AFAE1E /* Building */ = {
 			isa = PBXGroup;
 			children = (
+				826873D81A3657D20013C960 /* Amenities */,
 				8260B9F61A1BD202004C44B8 /* building_stats_amenities.png */,
 				8260B9F71A1BD202004C44B8 /* building_stats_amenities@2x.png */,
 				8260B9F81A1BD202004C44B8 /* building_stats_area.png */,
@@ -1668,6 +1699,7 @@
 				82000B9019E592A800AE2C70 /* team_hks_logo@2x.png in Resources */,
 				82000B8B19E592A800AE2C70 /* team_cushman_logo.png in Resources */,
 				824C196619FA9DC400EA7613 /* grfx_floorplan16@2x.png in Resources */,
+				826873E01A3657D20013C960 /* grfx_amen_conference@2x.jpg in Resources */,
 				826078131A0130CA000DF24F /* grfx_logo@2x.png in Resources */,
 				8260BA021A1BD202004C44B8 /* building_stats_office@2x.png in Resources */,
 				8260B9ED1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png in Resources */,
@@ -1739,6 +1771,7 @@
 				825E5F8619F83FA300B77F7F /* grfx_elavators_lobby@2x.png in Resources */,
 				825E5F8519F83FA300B77F7F /* grfx_elavators_lobby.png in Resources */,
 				824F369419E6C47500267B44 /* thumb_20140811_view3_100m_01.jpg in Resources */,
+				826873E11A3657D20013C960 /* grfx_amen_dining.jpg in Resources */,
 				827492DE1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png in Resources */,
 				824F369E19E6C47500267B44 /* thumb_Victory Center 01 Highway View.jpg in Resources */,
 				82000B9D19E5963800AE2C70 /* team_duda_text.png in Resources */,
@@ -1759,6 +1792,7 @@
 				8260B9EC1A1B8FFA004C44B8 /* grfx_stats_plus.png in Resources */,
 				82DC11FE19DAF2990057AE4F /* photo-gallery-right.png in Resources */,
 				82C06E841A16658F000F969E /* parking_icon.png in Resources */,
+				826873E41A3657D20013C960 /* grfx_amen_fitness@2x.jpg in Resources */,
 				824F369319E6C47500267B44 /* thumb_20140802_view4_60m_02.jpg in Resources */,
 				824C196D19FA9DC400EA7613 /* grfx_floorplan9.png in Resources */,
 				82000B7B19E590AD00AE2C70 /* team_hines_logo.png in Resources */,
@@ -1770,6 +1804,7 @@
 				826873D31A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png in Resources */,
 				82D54B4C1A0BFD6C0055F338 /* Tilit_Icon_Off.png in Resources */,
 				821EE2611A13BC5300254B2A /* grfx_floorplan14.png in Resources */,
+				826873DF1A3657D20013C960 /* grfx_amen_conference.jpg in Resources */,
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
 				82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */,
 				825E5F8719F83FA300B77F7F /* grfx_elavators_low_rise.png in Resources */,
@@ -1842,6 +1877,7 @@
 				8224FDF119D46997002B1B44 /* galleryData.plist in Resources */,
 				8260B9FE1A1BD202004C44B8 /* building_stats_amenities@2x.png in Resources */,
 				82627E2419E702EC0062FC0C /* grfx_residential_overlay@2x.png in Resources */,
+				826873E21A3657D20013C960 /* grfx_amen_dining@2x.jpg in Resources */,
 				824C196B19FA9DC400EA7613 /* grfx_floorplan8.png in Resources */,
 				821EE24A1A13BB9100254B2A /* grfx_floorplan19@2x.png in Resources */,
 				82A4EF561A03D013004D22EE /* grfx_mailIcon.png in Resources */,
@@ -1877,6 +1913,7 @@
 				82A805D019D1F61E00308BA1 /* grfx_mialIcon.png in Resources */,
 				823DE6F91A0031CA0016CD3A /* grfx_floorUp.png in Resources */,
 				825E5F8419F83FA300B77F7F /* grf_elavators_high_rise@2x.png in Resources */,
+				826873E31A3657D20013C960 /* grfx_amen_fitness.jpg in Resources */,
 				82000BA419E5BADC00AE2C70 /* teamText.plist in Resources */,
 				821EE2491A13BB9100254B2A /* grfx_floorplan19.png in Resources */,
 				824C197219FAA3D700EA7613 /* grfx_floorplan24@2x.png in Resources */,
@@ -1941,6 +1978,7 @@
 				8240131A19D1B58A00C501EE /* XHCustomSegue.m in Sources */,
 				827069951A125BA8001AC7E4 /* xhPopTipsView.m in Sources */,
 				82A805E119D2076300308BA1 /* mapViewController.m in Sources */,
+				826873D71A36552F0013C960 /* buildingAmenities.m in Sources */,
 				824012F619D1AF5D00C501EE /* RootViewController.m in Sources */,
 				8224FE2C19D48656002B1B44 /* MPFoldNavPushSegue.m in Sources */,
 				8239ED171A01863300B25EA2 /* CMPopTipView.m in Sources */,

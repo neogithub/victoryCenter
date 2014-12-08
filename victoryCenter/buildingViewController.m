@@ -10,6 +10,7 @@
 #import "UIColor+Extensions.h"
 #import "floorPlanViewController.h"
 #import "xhPopTipsView.h"
+#import "buildingAmenities.h"
 
 static float kOriginalStatHeight    = 45+36*3;
 
@@ -245,9 +246,11 @@ static float kOriginalStatHeight    = 45+36*3;
             break;
         }
         case 3: {
-            _uiiv_bgImg.hidden = NO;
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldAmenities_bg" ofType:@"jpg"];
-            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
+//            _uiiv_bgImg.hidden = NO;
+//            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldAmenities_bg" ofType:@"jpg"];
+//            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
+            buildingAmenities *amenities = [[buildingAmenities alloc] initWithFrame:screenRect];
+            [self.view insertSubview:amenities belowSubview:_uib_bldgStats];
             break;
         }
         case 4: {
