@@ -232,6 +232,8 @@
 		8263B98B19EDACD700E70C1B /* embTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8263B98919EDACD700E70C1B /* embTableCell.m */; };
 		8263B98C19EDACD700E70C1B /* embTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98A19EDACD700E70C1B /* embTableCell.xib */; };
 		8263B98E19EDC7EF00E70C1B /* hotspots.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8263B98D19EDC7EF00E70C1B /* hotspots.plist */; };
+		826873D31A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png in Resources */ = {isa = PBXBuildFile; fileRef = 826873D11A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png */; };
+		826873D41A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov in Resources */ = {isa = PBXBuildFile; fileRef = 826873D21A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov */; };
 		827069951A125BA8001AC7E4 /* xhPopTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 827069941A125BA8001AC7E4 /* xhPopTipsView.m */; };
 		827069981A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */; };
 		827069991A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 827069971A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg */; };
@@ -629,6 +631,8 @@
 		8263B98919EDACD700E70C1B /* embTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embTableCell.m; sourceTree = "<group>"; };
 		8263B98A19EDACD700E70C1B /* embTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = embTableCell.xib; sourceTree = "<group>"; };
 		8263B98D19EDC7EF00E70C1B /* hotspots.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotspots.plist; sourceTree = "<group>"; };
+		826873D11A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png; sourceTree = "<group>"; };
+		826873D21A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov; sourceTree = "<group>"; };
 		827069931A125BA8001AC7E4 /* xhPopTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xhPopTipsView.h; sourceTree = "<group>"; };
 		827069941A125BA8001AC7E4 /* xhPopTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xhPopTipsView.m; sourceTree = "<group>"; };
 		827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_bldAmenities_bg.jpg; sourceTree = "<group>"; };
@@ -1509,6 +1513,8 @@
 			children = (
 				82EA38BF19E304AC0027394F /* neoscape_bug.mov */,
 				824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */,
+				826873D11A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png */,
+				826873D21A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov */,
 			);
 			path = film;
 			sourceTree = "<group>";
@@ -1679,6 +1685,7 @@
 				824C196819FA9DC400EA7613 /* grfx_floorplan17@2x.png in Resources */,
 				824F369219E6C47500267B44 /* thumb_20140802_view4_100m_06.jpg in Resources */,
 				824E10DC1A0D547B00BDBDA6 /* grfx_dartLogo@2x.png in Resources */,
+				826873D41A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov in Resources */,
 				82C06E7E1A165949000F969E /* grfx_launching_night.jpg in Resources */,
 				824C196319FA9DC400EA7613 /* grfx_floorplan15.png in Resources */,
 				825E5F8919F83FA300B77F7F /* grfx_elavators_parking.png in Resources */,
@@ -1760,6 +1767,7 @@
 				82000BA019E5963800AE2C70 /* team_hks_text@2x.png in Resources */,
 				824F369B19E6C47500267B44 /* thumb_NW-FINAL Lighting Concept2.jpg in Resources */,
 				82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */,
+				826873D31A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png in Resources */,
 				82D54B4C1A0BFD6C0055F338 /* Tilit_Icon_Off.png in Resources */,
 				821EE2611A13BC5300254B2A /* grfx_floorplan14.png in Resources */,
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
