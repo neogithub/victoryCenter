@@ -87,6 +87,7 @@ static int eveningTime = 17;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeContact:) name:@"removeContact" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doneButtonClick:) name:MPMoviePlayerPlaybackDidFinishNotification object:_playerViewController];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(swithToBuilding) name:@"switchToBuilding" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playMovieFromGallery:) name:@"playGalleryMovie" object:nil];
 }
 
 #pragma mark - Create KenBurn view
@@ -521,7 +522,17 @@ static int eveningTime = 17;
 - (IBAction)movieBtnTapped:(id)sender {
     
     NSString *url = [[NSBundle mainBundle] pathForResource:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD" ofType:@"mov"];
-    
+    [self playMovieWithName:url];
+}
+
+- (void)playMovieFromGallery:(NSNotification *)notification
+{
+    NSString *url = [notification.userInfo objectForKey:@"movieName"];
+    [self playMovieWithName:url];
+}
+
+- (void)playMovieWithName:(NSString *)url
+{
     if (_playerViewController) {
         [_playerViewController.view removeFromSuperview];
         _playerViewController = nil;
@@ -533,10 +544,10 @@ static int eveningTime = 17;
     _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleNone;
     [_playerViewController.moviePlayer setAllowsAirPlay:YES];
     _playerViewController.moviePlayer.repeatMode = MPMovieRepeatModeOne;
-//    [self.view insertSubview:_playerViewController.view aboveSubview:_uib_menu];
-//    [_playerViewController.moviePlayer play];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
-//    [self performSelector:@selector(setMovieControlAvailable) withObject:nil afterDelay:1.0];
+    //    [self.view insertSubview:_playerViewController.view aboveSubview:_uib_menu];
+    //    [_playerViewController.moviePlayer play];
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+    //    [self performSelector:@selector(setMovieControlAvailable) withObject:nil afterDelay:1.0];
     
     if (!external_wind) {
         [self setupExternalScreen];
@@ -601,7 +612,6 @@ static int eveningTime = 17;
                                                object:_playerViewController.moviePlayer];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
-
 }
 
 - (void)setMovieControlAvailable
