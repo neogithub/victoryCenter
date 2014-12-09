@@ -14,15 +14,15 @@
 				<string>rendering</string>
 				<key>items</key>
 				<array>
-					<string>highway B1.jpg</string>
-					<string>Street View B1.jpg</string>
-					<string>Victory Center 01 Highway View.jpg</string>
 					<string>Victory Center 02 W Hotel View.jpg</string>
-					<string>Victory Center 03 View from SE.jpg</string>
-					<string>Victory Center 04 Plaza View.jpg</string>
-					<string>Victory Center View from plaza edits-sm.jpg</string>
-					<string>NW-FINAL Lighting Concept2.jpg</string>
-					<string>SE-FINAL Lighting Concept2.jpg</string>
+					<string>Soutwest View of Victory Center.jpg</string>
+					<string>Southeast View of Victory Center.jpg</string>
+					<string>View of Victory Center and Dart Transit System.jpg</string>
+					<string>Victory Center_Street View-1.jpg</string>
+					<string>Victory Center_Highway View.jpg</string>
+					<string>View 04.jpg</string>
+					<string>Lobby Entry and Restuarant.jpg</string>
+					<string>Lobby View.jpg</string>
 				</array>
 				<key>frame</key>
 				<array>
@@ -38,15 +38,15 @@
 				</array>
 				<key>captions</key>
 				<array>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
-					<string>Caption</string>
+					<string>Victory Center 02 W Hotel View</string>
+					<string>Soutwest View of Victory Center</string>
+					<string>Southeast View of Victory Center</string>
+					<string>View of Victory Center and Dart Transit System</string>
+					<string>Victory Center_Street View-1</string>
+					<string>Victory Center_Highway View</string>
+					<string>View 04</string>
+					<string>Lobby Entry and Restuarant</string>
+					<string>Lobby View</string>
 				</array>
 			</dict>
 			<dict>

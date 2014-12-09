@@ -78,6 +78,24 @@
 		8224FE3319D4BD6E002B1B44 /* normal_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE2F19D4BD6E002B1B44 /* normal_frame@2x.png */; };
 		8224FE3419D4BD6E002B1B44 /* play_button_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE3019D4BD6E002B1B44 /* play_button_@2x.png */; };
 		8224FE3519D4BD6E002B1B44 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8224FE3119D4BD6E002B1B44 /* play_button.png */; };
+		822C90851A375621003944E8 /* Lobby Entry and Restuarant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C907C1A375621003944E8 /* Lobby Entry and Restuarant.jpg */; };
+		822C90861A375621003944E8 /* Lobby View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C907D1A375621003944E8 /* Lobby View.jpg */; };
+		822C90871A375621003944E8 /* Southeast View of Victory Center.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C907E1A375621003944E8 /* Southeast View of Victory Center.jpg */; };
+		822C90881A375621003944E8 /* Soutwest View of Victory Center.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C907F1A375621003944E8 /* Soutwest View of Victory Center.jpg */; };
+		822C90891A375621003944E8 /* Victory Center 02 W Hotel View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90801A375621003944E8 /* Victory Center 02 W Hotel View.jpg */; };
+		822C908A1A375621003944E8 /* Victory Center_Highway View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90811A375621003944E8 /* Victory Center_Highway View.jpg */; };
+		822C908B1A375621003944E8 /* Victory Center_Street View-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90821A375621003944E8 /* Victory Center_Street View-1.jpg */; };
+		822C908C1A375621003944E8 /* View 04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90831A375621003944E8 /* View 04.jpg */; };
+		822C908D1A375621003944E8 /* View of Victory Center and Dart Transit System.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90841A375621003944E8 /* View of Victory Center and Dart Transit System.jpg */; };
+		822C90971A375883003944E8 /* thumb_Lobby Entry and Restuarant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C908E1A375883003944E8 /* thumb_Lobby Entry and Restuarant.jpg */; };
+		822C90981A375883003944E8 /* thumb_Lobby View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C908F1A375883003944E8 /* thumb_Lobby View.jpg */; };
+		822C90991A375883003944E8 /* thumb_Southeast View of Victory Center.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90901A375883003944E8 /* thumb_Southeast View of Victory Center.jpg */; };
+		822C909A1A375883003944E8 /* thumb_Soutwest View of Victory Center.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90911A375883003944E8 /* thumb_Soutwest View of Victory Center.jpg */; };
+		822C909B1A375883003944E8 /* thumb_Victory Center 02 W Hotel View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90921A375883003944E8 /* thumb_Victory Center 02 W Hotel View.jpg */; };
+		822C909C1A375883003944E8 /* thumb_Victory Center_Highway View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90931A375883003944E8 /* thumb_Victory Center_Highway View.jpg */; };
+		822C909D1A375883003944E8 /* thumb_Victory Center_Street View-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90941A375883003944E8 /* thumb_Victory Center_Street View-1.jpg */; };
+		822C909E1A375883003944E8 /* thumb_View 04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90951A375883003944E8 /* thumb_View 04.jpg */; };
+		822C909F1A375883003944E8 /* thumb_View of Victory Center and Dart Transit System.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90961A375883003944E8 /* thumb_View of Victory Center and Dart Transit System.jpg */; };
 		822F384B1A1A92FA0085500F /* grfx_floorplan1.png in Resources */ = {isa = PBXBuildFile; fileRef = 822F38491A1A92FA0085500F /* grfx_floorplan1.png */; };
 		822F384C1A1A92FA0085500F /* grfx_floorplan1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 822F384A1A1A92FA0085500F /* grfx_floorplan1@2x.png */; };
 		8239ED0F1A0168ED00B25EA2 /* siteOverview.m in Sources */ = {isa = PBXBuildFile; fileRef = 8239ED0E1A0168ED00B25EA2 /* siteOverview.m */; };
@@ -167,15 +185,6 @@
 		824F369719E6C47500267B44 /* thumb_20140811_view3_100m_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F367819E6C47500267B44 /* thumb_20140811_view3_100m_04.jpg */; };
 		824F369819E6C47500267B44 /* thumb_victory_center_138feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F367919E6C47500267B44 /* thumb_victory_center_138feet.jpg */; };
 		824F369919E6C47500267B44 /* thumb_victory_center_278_feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F367A19E6C47500267B44 /* thumb_victory_center_278_feet.jpg */; };
-		824F369A19E6C47500267B44 /* thumb_highway B1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F367C19E6C47500267B44 /* thumb_highway B1.jpg */; };
-		824F369B19E6C47500267B44 /* thumb_NW-FINAL Lighting Concept2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F367D19E6C47500267B44 /* thumb_NW-FINAL Lighting Concept2.jpg */; };
-		824F369C19E6C47500267B44 /* thumb_SE-FINAL Lighting Concept2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F367E19E6C47500267B44 /* thumb_SE-FINAL Lighting Concept2.jpg */; };
-		824F369D19E6C47500267B44 /* thumb_Street View B1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F367F19E6C47500267B44 /* thumb_Street View B1.jpg */; };
-		824F369E19E6C47500267B44 /* thumb_Victory Center 01 Highway View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F368019E6C47500267B44 /* thumb_Victory Center 01 Highway View.jpg */; };
-		824F369F19E6C47500267B44 /* thumb_Victory Center 02 W Hotel View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F368119E6C47500267B44 /* thumb_Victory Center 02 W Hotel View.jpg */; };
-		824F36A019E6C47500267B44 /* thumb_Victory Center 03 View from SE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F368219E6C47500267B44 /* thumb_Victory Center 03 View from SE.jpg */; };
-		824F36A119E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F368319E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg */; };
-		824F36A219E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F368419E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg */; };
 		824F36A419E6C56E00267B44 /* thumb_neoscape_bug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */; };
 		8253976A1A097AA6000B6B7C /* embKenBurns.m in Sources */ = {isa = PBXBuildFile; fileRef = 825397691A097AA6000B6B7C /* embKenBurns.m */; };
 		82594C751A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_ClosedOffice.png in Resources */ = {isa = PBXBuildFile; fileRef = 82594C691A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_ClosedOffice.png */; };
@@ -347,15 +356,6 @@
 		82DC11D119DAEA940057AE4F /* 20140811_view3_100m_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B219DAEA940057AE4F /* 20140811_view3_100m_04.jpg */; };
 		82DC11D219DAEA940057AE4F /* victory_center_138feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B319DAEA940057AE4F /* victory_center_138feet.jpg */; };
 		82DC11D319DAEA940057AE4F /* victory_center_278_feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B419DAEA940057AE4F /* victory_center_278_feet.jpg */; };
-		82DC11D419DAEA940057AE4F /* highway B1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B619DAEA940057AE4F /* highway B1.jpg */; };
-		82DC11D519DAEA940057AE4F /* NW-FINAL Lighting Concept2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B719DAEA940057AE4F /* NW-FINAL Lighting Concept2.jpg */; };
-		82DC11D619DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B819DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg */; };
-		82DC11D719DAEA940057AE4F /* Street View B1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11B919DAEA940057AE4F /* Street View B1.jpg */; };
-		82DC11D819DAEA940057AE4F /* Victory Center 01 Highway View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BA19DAEA940057AE4F /* Victory Center 01 Highway View.jpg */; };
-		82DC11D919DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BB19DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg */; };
-		82DC11DA19DAEA940057AE4F /* Victory Center 03 View from SE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BC19DAEA940057AE4F /* Victory Center 03 View from SE.jpg */; };
-		82DC11DB19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BD19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg */; };
-		82DC11DC19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11BE19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg */; };
 		82DC11E519DAEE070057AE4F /* Neighborhood_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11DF19DAEE070057AE4F /* Neighborhood_map.png */; };
 		82DC11E619DAEE070057AE4F /* Neighborhood_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E019DAEE070057AE4F /* Neighborhood_map@2x.png */; };
 		82DC11E719DAEE070057AE4F /* City_base_map_.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11E119DAEE070057AE4F /* City_base_map_.png */; };
@@ -467,6 +467,24 @@
 		8224FE2F19D4BD6E002B1B44 /* normal_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "normal_frame@2x.png"; sourceTree = "<group>"; };
 		8224FE3019D4BD6E002B1B44 /* play_button_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_button_@2x.png"; sourceTree = "<group>"; };
 		8224FE3119D4BD6E002B1B44 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
+		822C907C1A375621003944E8 /* Lobby Entry and Restuarant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lobby Entry and Restuarant.jpg"; sourceTree = "<group>"; };
+		822C907D1A375621003944E8 /* Lobby View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lobby View.jpg"; sourceTree = "<group>"; };
+		822C907E1A375621003944E8 /* Southeast View of Victory Center.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Southeast View of Victory Center.jpg"; sourceTree = "<group>"; };
+		822C907F1A375621003944E8 /* Soutwest View of Victory Center.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Soutwest View of Victory Center.jpg"; sourceTree = "<group>"; };
+		822C90801A375621003944E8 /* Victory Center 02 W Hotel View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 02 W Hotel View.jpg"; sourceTree = "<group>"; };
+		822C90811A375621003944E8 /* Victory Center_Highway View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center_Highway View.jpg"; sourceTree = "<group>"; };
+		822C90821A375621003944E8 /* Victory Center_Street View-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center_Street View-1.jpg"; sourceTree = "<group>"; };
+		822C90831A375621003944E8 /* View 04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "View 04.jpg"; sourceTree = "<group>"; };
+		822C90841A375621003944E8 /* View of Victory Center and Dart Transit System.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "View of Victory Center and Dart Transit System.jpg"; sourceTree = "<group>"; };
+		822C908E1A375883003944E8 /* thumb_Lobby Entry and Restuarant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Lobby Entry and Restuarant.jpg"; sourceTree = "<group>"; };
+		822C908F1A375883003944E8 /* thumb_Lobby View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Lobby View.jpg"; sourceTree = "<group>"; };
+		822C90901A375883003944E8 /* thumb_Southeast View of Victory Center.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Southeast View of Victory Center.jpg"; sourceTree = "<group>"; };
+		822C90911A375883003944E8 /* thumb_Soutwest View of Victory Center.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Soutwest View of Victory Center.jpg"; sourceTree = "<group>"; };
+		822C90921A375883003944E8 /* thumb_Victory Center 02 W Hotel View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center 02 W Hotel View.jpg"; sourceTree = "<group>"; };
+		822C90931A375883003944E8 /* thumb_Victory Center_Highway View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center_Highway View.jpg"; sourceTree = "<group>"; };
+		822C90941A375883003944E8 /* thumb_Victory Center_Street View-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center_Street View-1.jpg"; sourceTree = "<group>"; };
+		822C90951A375883003944E8 /* thumb_View 04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_View 04.jpg"; sourceTree = "<group>"; };
+		822C90961A375883003944E8 /* thumb_View of Victory Center and Dart Transit System.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_View of Victory Center and Dart Transit System.jpg"; sourceTree = "<group>"; };
 		822F38491A1A92FA0085500F /* grfx_floorplan1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan1.png; sourceTree = "<group>"; };
 		822F384A1A1A92FA0085500F /* grfx_floorplan1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorplan1@2x.png"; sourceTree = "<group>"; };
 		8239ED0D1A0168ED00B25EA2 /* siteOverview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = siteOverview.h; sourceTree = "<group>"; };
@@ -566,15 +584,6 @@
 		824F367819E6C47500267B44 /* thumb_20140811_view3_100m_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_20140811_view3_100m_04.jpg; sourceTree = "<group>"; };
 		824F367919E6C47500267B44 /* thumb_victory_center_138feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_victory_center_138feet.jpg; sourceTree = "<group>"; };
 		824F367A19E6C47500267B44 /* thumb_victory_center_278_feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_victory_center_278_feet.jpg; sourceTree = "<group>"; };
-		824F367C19E6C47500267B44 /* thumb_highway B1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_highway B1.jpg"; sourceTree = "<group>"; };
-		824F367D19E6C47500267B44 /* thumb_NW-FINAL Lighting Concept2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_NW-FINAL Lighting Concept2.jpg"; sourceTree = "<group>"; };
-		824F367E19E6C47500267B44 /* thumb_SE-FINAL Lighting Concept2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_SE-FINAL Lighting Concept2.jpg"; sourceTree = "<group>"; };
-		824F367F19E6C47500267B44 /* thumb_Street View B1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Street View B1.jpg"; sourceTree = "<group>"; };
-		824F368019E6C47500267B44 /* thumb_Victory Center 01 Highway View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center 01 Highway View.jpg"; sourceTree = "<group>"; };
-		824F368119E6C47500267B44 /* thumb_Victory Center 02 W Hotel View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center 02 W Hotel View.jpg"; sourceTree = "<group>"; };
-		824F368219E6C47500267B44 /* thumb_Victory Center 03 View from SE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center 03 View from SE.jpg"; sourceTree = "<group>"; };
-		824F368319E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center 04 Plaza View.jpg"; sourceTree = "<group>"; };
-		824F368419E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Victory Center View from plaza edits-sm.jpg"; sourceTree = "<group>"; };
 		824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_neoscape_bug.jpg; sourceTree = "<group>"; };
 		825397681A097AA6000B6B7C /* embKenBurns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embKenBurns.h; sourceTree = "<group>"; };
 		825397691A097AA6000B6B7C /* embKenBurns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embKenBurns.m; sourceTree = "<group>"; };
@@ -774,15 +783,6 @@
 		82DC11B219DAEA940057AE4F /* 20140811_view3_100m_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20140811_view3_100m_04.jpg; sourceTree = "<group>"; };
 		82DC11B319DAEA940057AE4F /* victory_center_138feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = victory_center_138feet.jpg; sourceTree = "<group>"; };
 		82DC11B419DAEA940057AE4F /* victory_center_278_feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = victory_center_278_feet.jpg; sourceTree = "<group>"; };
-		82DC11B619DAEA940057AE4F /* highway B1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "highway B1.jpg"; sourceTree = "<group>"; };
-		82DC11B719DAEA940057AE4F /* NW-FINAL Lighting Concept2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "NW-FINAL Lighting Concept2.jpg"; sourceTree = "<group>"; };
-		82DC11B819DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SE-FINAL Lighting Concept2.jpg"; sourceTree = "<group>"; };
-		82DC11B919DAEA940057AE4F /* Street View B1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Street View B1.jpg"; sourceTree = "<group>"; };
-		82DC11BA19DAEA940057AE4F /* Victory Center 01 Highway View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 01 Highway View.jpg"; sourceTree = "<group>"; };
-		82DC11BB19DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 02 W Hotel View.jpg"; sourceTree = "<group>"; };
-		82DC11BC19DAEA940057AE4F /* Victory Center 03 View from SE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 03 View from SE.jpg"; sourceTree = "<group>"; };
-		82DC11BD19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center 04 Plaza View.jpg"; sourceTree = "<group>"; };
-		82DC11BE19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Victory Center View from plaza edits-sm.jpg"; sourceTree = "<group>"; };
 		82DC11DF19DAEE070057AE4F /* Neighborhood_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neighborhood_map.png; sourceTree = "<group>"; };
 		82DC11E019DAEE070057AE4F /* Neighborhood_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Neighborhood_map@2x.png"; sourceTree = "<group>"; };
 		82DC11E119DAEE070057AE4F /* City_base_map_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = City_base_map_.png; sourceTree = "<group>"; };
@@ -1239,15 +1239,15 @@
 		824F367B19E6C47500267B44 /* Rendering_thumb */ = {
 			isa = PBXGroup;
 			children = (
-				824F367C19E6C47500267B44 /* thumb_highway B1.jpg */,
-				824F367D19E6C47500267B44 /* thumb_NW-FINAL Lighting Concept2.jpg */,
-				824F367E19E6C47500267B44 /* thumb_SE-FINAL Lighting Concept2.jpg */,
-				824F367F19E6C47500267B44 /* thumb_Street View B1.jpg */,
-				824F368019E6C47500267B44 /* thumb_Victory Center 01 Highway View.jpg */,
-				824F368119E6C47500267B44 /* thumb_Victory Center 02 W Hotel View.jpg */,
-				824F368219E6C47500267B44 /* thumb_Victory Center 03 View from SE.jpg */,
-				824F368319E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg */,
-				824F368419E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg */,
+				822C908E1A375883003944E8 /* thumb_Lobby Entry and Restuarant.jpg */,
+				822C908F1A375883003944E8 /* thumb_Lobby View.jpg */,
+				822C90901A375883003944E8 /* thumb_Southeast View of Victory Center.jpg */,
+				822C90911A375883003944E8 /* thumb_Soutwest View of Victory Center.jpg */,
+				822C90921A375883003944E8 /* thumb_Victory Center 02 W Hotel View.jpg */,
+				822C90931A375883003944E8 /* thumb_Victory Center_Highway View.jpg */,
+				822C90941A375883003944E8 /* thumb_Victory Center_Street View-1.jpg */,
+				822C90951A375883003944E8 /* thumb_View 04.jpg */,
+				822C90961A375883003944E8 /* thumb_View of Victory Center and Dart Transit System.jpg */,
 			);
 			path = Rendering_thumb;
 			sourceTree = "<group>";
@@ -1485,15 +1485,15 @@
 		82DC11B519DAEA940057AE4F /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
-				82DC11B619DAEA940057AE4F /* highway B1.jpg */,
-				82DC11B719DAEA940057AE4F /* NW-FINAL Lighting Concept2.jpg */,
-				82DC11B819DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg */,
-				82DC11B919DAEA940057AE4F /* Street View B1.jpg */,
-				82DC11BA19DAEA940057AE4F /* Victory Center 01 Highway View.jpg */,
-				82DC11BB19DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg */,
-				82DC11BC19DAEA940057AE4F /* Victory Center 03 View from SE.jpg */,
-				82DC11BD19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg */,
-				82DC11BE19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg */,
+				822C907C1A375621003944E8 /* Lobby Entry and Restuarant.jpg */,
+				822C907D1A375621003944E8 /* Lobby View.jpg */,
+				822C907E1A375621003944E8 /* Southeast View of Victory Center.jpg */,
+				822C907F1A375621003944E8 /* Soutwest View of Victory Center.jpg */,
+				822C90801A375621003944E8 /* Victory Center 02 W Hotel View.jpg */,
+				822C90811A375621003944E8 /* Victory Center_Highway View.jpg */,
+				822C90821A375621003944E8 /* Victory Center_Street View-1.jpg */,
+				822C90831A375621003944E8 /* View 04.jpg */,
+				822C90841A375621003944E8 /* View of Victory Center and Dart Transit System.jpg */,
 			);
 			path = Rendering;
 			sourceTree = "<group>";
@@ -1631,6 +1631,7 @@
 			files = (
 				827492E51A0818F500F949E5 /* grfx_floorplan_keys.png in Resources */,
 				82DC11D019DAEA940057AE4F /* 20140811_view3_100m_03.jpg in Resources */,
+				822C90891A375621003944E8 /* Victory Center 02 W Hotel View.jpg in Resources */,
 				824E10E41A0D5F5C00BDBDA6 /* Plane_Icon_Blue@2x.png in Resources */,
 				82459E7519F6974A00E03A8D /* grfx_contactClose@2x.jpg in Resources */,
 				82000B8D19E592A800AE2C70 /* team_duda_logo.png in Resources */,
@@ -1644,31 +1645,32 @@
 				82A805D619D1FC1400308BA1 /* grfx_menuIcon.png in Resources */,
 				82A805CE19D1F61E00308BA1 /* grfx_helpIcon.png in Resources */,
 				82594C761A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_ClosedOffice@2x.png in Resources */,
+				822C90971A375883003944E8 /* thumb_Lobby Entry and Restuarant.jpg in Resources */,
 				8260BA011A1BD202004C44B8 /* building_stats_office.png in Resources */,
 				82A21F6F1A02D3DE00BE8706 /* team_logoBtmBar_withPlus@2x.png in Resources */,
 				82C06E871A16658F000F969E /* valet_icon@2x.png in Resources */,
 				823DE6F71A0031CA0016CD3A /* grfx_floorDwon.png in Resources */,
 				821EE2481A13BB9100254B2A /* grfx_floorplan18@2x.png in Resources */,
 				824E10E31A0D5F5C00BDBDA6 /* Plane_Icon_Blue.png in Resources */,
-				824F369D19E6C47500267B44 /* thumb_Street View B1.jpg in Resources */,
 				821EE24D1A13BB9100254B2A /* grfx_floorplan21.png in Resources */,
 				82A29E4819EC60E000AFAE1E /* grfx_bldImg.png in Resources */,
 				82A29E4919EC60E000AFAE1E /* grfx_bldImg@2x.png in Resources */,
 				822F384B1A1A92FA0085500F /* grfx_floorplan1.png in Resources */,
 				824012F819D1AF5D00C501EE /* Images.xcassets in Resources */,
+				822C90851A375621003944E8 /* Lobby Entry and Restuarant.jpg in Resources */,
 				82DC11CF19DAEA940057AE4F /* 20140811_view3_100m_02.jpg in Resources */,
 				82C06E8F1A169F56000F969E /* grfx_view_diagram@2x.png in Resources */,
 				8224FE0919D47097002B1B44 /* Raleway-Regular.otf in Resources */,
 				82D54B4F1A0BFD6C0055F338 /* Tilit_Icon_On@2x.png in Resources */,
 				82DC11E719DAEE070057AE4F /* City_base_map_.png in Resources */,
-				82DC11D919DAEA940057AE4F /* Victory Center 02 W Hotel View.jpg in Resources */,
+				822C908B1A375621003944E8 /* Victory Center_Street View-1.jpg in Resources */,
 				827492E21A080C7F00F949E5 /* grfx_smallStack@2x.png in Resources */,
 				824E10E51A0D5F5C00BDBDA6 /* Plane_Icon_White.png in Resources */,
 				821EE24C1A13BB9100254B2A /* grfx_floorplan20@2x.png in Resources */,
 				82AB934C19FEC97B00DD0B30 /* grfx_north_hs.png in Resources */,
 				82459E7E19F6D4AE00E03A8D /* grfx_homeBtn@2x.png in Resources */,
 				82CBD72319F96FA10001191F /* grfx_elevator_floorNum@2x.png in Resources */,
-				824F36A019E6C47500267B44 /* thumb_Victory Center 03 View from SE.jpg in Resources */,
+				822C908D1A375621003944E8 /* View of Victory Center and Dart Transit System.jpg in Resources */,
 				821EE25B1A13BC5300254B2A /* grfx_floorplan10.png in Resources */,
 				82000B7919E590AD00AE2C70 /* Team_bg.jpg in Resources */,
 				82A4EF571A03D013004D22EE /* grfx_mailIcon@2x.png in Resources */,
@@ -1681,9 +1683,7 @@
 				82C06E7F1A165949000F969E /* grfx_launching_night@2x.jpg in Resources */,
 				827492DD1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay.png in Resources */,
 				82A21F671A02B30A00BE8706 /* Access_overlay@2x.png in Resources */,
-				82DC11D619DAEA940057AE4F /* SE-FINAL Lighting Concept2.jpg in Resources */,
 				824F368C19E6C47500267B44 /* thumb_20140802_downtown_100m_6pm_high-res.jpg in Resources */,
-				82DC11D819DAEA940057AE4F /* Victory Center 01 Highway View.jpg in Resources */,
 				823DE6F81A0031CA0016CD3A /* grfx_floorDwon@2x.png in Resources */,
 				824F369719E6C47500267B44 /* thumb_20140811_view3_100m_04.jpg in Resources */,
 				82627E2719E702EC0062FC0C /* grfx_retail_overlay.png in Resources */,
@@ -1696,6 +1696,7 @@
 				82000B9919E5963800AE2C70 /* team_cousins_text.png in Resources */,
 				823DE6ED19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on.png in Resources */,
 				82594C7D1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR8_ClosedOffice.png in Resources */,
+				822C909B1A375883003944E8 /* thumb_Victory Center 02 W Hotel View.jpg in Resources */,
 				82000B9019E592A800AE2C70 /* team_hks_logo@2x.png in Resources */,
 				82000B8B19E592A800AE2C70 /* team_cushman_logo.png in Resources */,
 				824C196619FA9DC400EA7613 /* grfx_floorplan16@2x.png in Resources */,
@@ -1707,9 +1708,8 @@
 				824F369019E6C47500267B44 /* thumb_20140802_view4_100m_05.jpg in Resources */,
 				82DC11D219DAEA940057AE4F /* victory_center_138feet.jpg in Resources */,
 				824F368A19E6C47500267B44 /* thumb_20140802_downtown_100m_5pm_high-res.jpg in Resources */,
-				82DC11D419DAEA940057AE4F /* highway B1.jpg in Resources */,
 				82DC11C019DAEA940057AE4F /* 20140716_view2_90 feet.jpg in Resources */,
-				824F369C19E6C47500267B44 /* thumb_SE-FINAL Lighting Concept2.jpg in Resources */,
+				822C908A1A375621003944E8 /* Victory Center_Highway View.jpg in Resources */,
 				82459E7419F6974A00E03A8D /* grfx_contactClose.jpg in Resources */,
 				821EE25C1A13BC5300254B2A /* grfx_floorplan10@2x.png in Resources */,
 				82D54B4E1A0BFD6C0055F338 /* Tilit_Icon_On.png in Resources */,
@@ -1722,6 +1722,7 @@
 				824C196319FA9DC400EA7613 /* grfx_floorplan15.png in Resources */,
 				825E5F8919F83FA300B77F7F /* grfx_elavators_parking.png in Resources */,
 				825E5F7919F83CD200B77F7F /* grfx_elavators_stack_blank.png in Resources */,
+				822C90881A375621003944E8 /* Soutwest View of Victory Center.jpg in Resources */,
 				82CBD72719F980800001191F /* grfx_openMenuIcon@2x.png in Resources */,
 				82A21F6B1A02C5D300BE8706 /* grfx_bldstat_close@2x.png in Resources */,
 				82000B8E19E592A800AE2C70 /* team_duda_logo@2x.png in Resources */,
@@ -1740,17 +1741,16 @@
 				8224FE0619D47097002B1B44 /* Raleway-Heavy.otf in Resources */,
 				824C196C19FA9DC400EA7613 /* grfx_floorplan8@2x.png in Resources */,
 				825E5F8819F83FA300B77F7F /* grfx_elavators_low_rise@2x.png in Resources */,
-				82DC11DB19DAEA940057AE4F /* Victory Center 04 Plaza View.jpg in Resources */,
 				824C197619FAE5F600EA7613 /* grfx_launching@2x.png in Resources */,
 				824F368919E6C47500267B44 /* thumb_20140802_downtown_100m_5pm.jpg in Resources */,
 				82CBD72219F96FA10001191F /* grfx_elevator_floorNum.png in Resources */,
 				825E5F8C19F8559700B77F7F /* Site_Base map@2x.png in Resources */,
 				82000B9F19E5963800AE2C70 /* team_hks_text.png in Resources */,
-				82DC11DA19DAEA940057AE4F /* Victory Center 03 View from SE.jpg in Resources */,
 				82627E2C19E732870062FC0C /* Lightbox_overlay_BG.png in Resources */,
 				82A805D119D1F61E00308BA1 /* grfx_mialIcon@2x.png in Resources */,
 				823DE6FA1A0031CA0016CD3A /* grfx_floorUp@2x.png in Resources */,
 				82594C7C1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR19_OpenOffice@2x.png in Resources */,
+				822C90861A375621003944E8 /* Lobby View.jpg in Resources */,
 				824C197119FAA3D700EA7613 /* grfx_floorplan24.png in Resources */,
 				8224FE0719D47097002B1B44 /* Raleway-Light.otf in Resources */,
 				823DE6EE19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on@2x.png in Resources */,
@@ -1773,9 +1773,7 @@
 				824F369419E6C47500267B44 /* thumb_20140811_view3_100m_01.jpg in Resources */,
 				826873E11A3657D20013C960 /* grfx_amen_dining.jpg in Resources */,
 				827492DE1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png in Resources */,
-				824F369E19E6C47500267B44 /* thumb_Victory Center 01 Highway View.jpg in Resources */,
 				82000B9D19E5963800AE2C70 /* team_duda_text.png in Resources */,
-				82DC11DC19DAEA940057AE4F /* Victory Center View from plaza edits-sm.jpg in Resources */,
 				824F369519E6C47500267B44 /* thumb_20140811_view3_100m_02.jpg in Resources */,
 				8260B9E91A1B8A95004C44B8 /* CollapseClickCell.xib in Resources */,
 				82627E2319E702EC0062FC0C /* grfx_residential_overlay.png in Resources */,
@@ -1790,6 +1788,7 @@
 				82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */,
 				823D78AD19F1AD500096E62C /* grfx_compass@2x.png in Resources */,
 				8260B9EC1A1B8FFA004C44B8 /* grfx_stats_plus.png in Resources */,
+				822C909F1A375883003944E8 /* thumb_View of Victory Center and Dart Transit System.jpg in Resources */,
 				82DC11FE19DAF2990057AE4F /* photo-gallery-right.png in Resources */,
 				82C06E841A16658F000F969E /* parking_icon.png in Resources */,
 				826873E41A3657D20013C960 /* grfx_amen_fitness@2x.jpg in Resources */,
@@ -1797,9 +1796,9 @@
 				824C196D19FA9DC400EA7613 /* grfx_floorplan9.png in Resources */,
 				82000B7B19E590AD00AE2C70 /* team_hines_logo.png in Resources */,
 				82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */,
+				822C909D1A375883003944E8 /* thumb_Victory Center_Street View-1.jpg in Resources */,
 				828041F61A07C1CF00847A80 /* tmp_testfit1.png in Resources */,
 				82000BA019E5963800AE2C70 /* team_hks_text@2x.png in Resources */,
-				824F369B19E6C47500267B44 /* thumb_NW-FINAL Lighting Concept2.jpg in Resources */,
 				82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */,
 				826873D31A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png in Resources */,
 				82D54B4C1A0BFD6C0055F338 /* Tilit_Icon_Off.png in Resources */,
@@ -1808,6 +1807,7 @@
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
 				82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */,
 				825E5F8719F83FA300B77F7F /* grfx_elavators_low_rise.png in Resources */,
+				822C909E1A375883003944E8 /* thumb_View 04.jpg in Resources */,
 				82DC11E619DAEE070057AE4F /* Neighborhood_map@2x.png in Resources */,
 				82A21F631A028F3A00BE8706 /* gfrx_all_overlay@2x.png in Resources */,
 				82A21F6E1A02D3DE00BE8706 /* team_logoBtmBar_withPlus.png in Resources */,
@@ -1834,6 +1834,7 @@
 				82C06E861A16658F000F969E /* valet_icon.png in Resources */,
 				8263B98E19EDC7EF00E70C1B /* hotspots.plist in Resources */,
 				824E10EA1A0D688F00BDBDA6 /* VictoryCenter_Flag@2x.png in Resources */,
+				822C90871A375621003944E8 /* Southeast View of Victory Center.jpg in Resources */,
 				821EE2501A13BB9100254B2A /* grfx_floorplan22@2x.png in Resources */,
 				82AB935019FEC97B00DD0B30 /* grfx_west_hs.png in Resources */,
 				82594C7B1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR19_OpenOffice.png in Resources */,
@@ -1849,9 +1850,10 @@
 				82AB934F19FEC97B00DD0B30 /* grfx_south_hs@2x.png in Resources */,
 				82627E2219E702EC0062FC0C /* grfx_recreationg_overlay@2x.png in Resources */,
 				82000B7E19E590AD00AE2C70 /* team_logoBtmBar@2x.png in Resources */,
-				824F369F19E6C47500267B44 /* thumb_Victory Center 02 W Hotel View.jpg in Resources */,
 				824C194E19FA938500EA7613 /* grfx_tredart_logo.png in Resources */,
 				821EE2521A13BB9100254B2A /* grfx_floorplan23@2x.png in Resources */,
+				822C90991A375883003944E8 /* thumb_Southeast View of Victory Center.jpg in Resources */,
+				822C909C1A375883003944E8 /* thumb_Victory Center_Highway View.jpg in Resources */,
 				82716A6919E434C10070A331 /* Districts_overlay@2x.png in Resources */,
 				82DC11D119DAEA940057AE4F /* 20140811_view3_100m_04.jpg in Resources */,
 				82627E2B19E732870062FC0C /* Lightbox_overlay_BG_@2.png in Resources */,
@@ -1872,6 +1874,7 @@
 				8224FE3419D4BD6E002B1B44 /* play_button_@2x.png in Resources */,
 				82000B8F19E592A800AE2C70 /* team_hks_logo.png in Resources */,
 				82A805CF19D1F61E00308BA1 /* grfx_helpIcon@2x.png in Resources */,
+				822C909A1A375883003944E8 /* thumb_Soutwest View of Victory Center.jpg in Resources */,
 				824C196719FA9DC400EA7613 /* grfx_floorplan17.png in Resources */,
 				821EE25D1A13BC5300254B2A /* grfx_floorplan11.png in Resources */,
 				8224FDF119D46997002B1B44 /* galleryData.plist in Resources */,
@@ -1889,13 +1892,10 @@
 				82DC11CD19DAEA940057AE4F /* 20140802_view4_60m_02.jpg in Resources */,
 				825E5F8A19F83FA300B77F7F /* grfx_elavators_parking@2x.png in Resources */,
 				82D54B4D1A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png in Resources */,
-				824F36A219E6C47500267B44 /* thumb_Victory Center View from plaza edits-sm.jpg in Resources */,
-				82DC11D719DAEA940057AE4F /* Street View B1.jpg in Resources */,
 				82A29E4B19EC60E000AFAE1E /* grfx_bldStatsImg@2x.png in Resources */,
 				824C195019FA938500EA7613 /* grfx_victorycenter_logo.png in Resources */,
 				821EE2601A13BC5300254B2A /* grfx_floorplan12@2x.png in Resources */,
 				82DC11FB19DAF2990057AE4F /* photo-gallery-edit-caption.png in Resources */,
-				824F36A119E6C47500267B44 /* thumb_Victory Center 04 Plaza View.jpg in Resources */,
 				824E10DE1A0D547B00BDBDA6 /* grfx_treLogo@2x.png in Resources */,
 				824C196519FA9DC400EA7613 /* grfx_floorplan16.png in Resources */,
 				8224FE3319D4BD6E002B1B44 /* normal_frame@2x.png in Resources */,
@@ -1913,11 +1913,12 @@
 				82A805D019D1F61E00308BA1 /* grfx_mialIcon.png in Resources */,
 				823DE6F91A0031CA0016CD3A /* grfx_floorUp.png in Resources */,
 				825E5F8419F83FA300B77F7F /* grf_elavators_high_rise@2x.png in Resources */,
+				822C90981A375883003944E8 /* thumb_Lobby View.jpg in Resources */,
 				826873E31A3657D20013C960 /* grfx_amen_fitness.jpg in Resources */,
 				82000BA419E5BADC00AE2C70 /* teamText.plist in Resources */,
 				821EE2491A13BB9100254B2A /* grfx_floorplan19.png in Resources */,
 				824C197219FAA3D700EA7613 /* grfx_floorplan24@2x.png in Resources */,
-				824F369A19E6C47500267B44 /* thumb_highway B1.jpg in Resources */,
+				822C908C1A375621003944E8 /* View 04.jpg in Resources */,
 				82594C7A1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR19_ClosedOffice@2x.png in Resources */,
 				824012F319D1AF5D00C501EE /* Main.storyboard in Resources */,
 				823DE6EC19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_off@2x.png in Resources */,
@@ -1929,7 +1930,6 @@
 				824E10E91A0D688F00BDBDA6 /* VictoryCenter_Flag.png in Resources */,
 				82716A7019E45B940070A331 /* grfx_site_overview.jpg in Resources */,
 				821EE2511A13BB9100254B2A /* grfx_floorplan23.png in Resources */,
-				82DC11D519DAEA940057AE4F /* NW-FINAL Lighting Concept2.jpg in Resources */,
 				824F368719E6C47500267B44 /* thumb_20140802_downtown_100m_1pm.jpg in Resources */,
 				82000B8019E590AD00AE2C70 /* team_hines_text@2x.png in Resources */,
 				824E10DB1A0D547B00BDBDA6 /* grfx_dartLogo.png in Resources */,

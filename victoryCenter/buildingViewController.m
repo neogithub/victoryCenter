@@ -50,6 +50,10 @@ static float kOriginalStatHeight    = 45+36*3;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_8;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_1;
 @property (nonatomic, strong) NSArray                       *arr_floorBtns;
+
+//Amenities
+@property (nonatomic, strong) buildingAmenities             *amenities;
+
 //Elevator
 @property (nonatomic, strong) UIView                        *uiv_elevatorContainer;
 @property (nonatomic, strong) UIView                        *uiv_eleLayerConainer;
@@ -221,6 +225,8 @@ static float kOriginalStatHeight    = 45+36*3;
 {
     [_uiv_elevatorContainer removeFromSuperview];
     _uiv_elevatorContainer = nil;
+    [_amenities removeFromSuperview];
+    _amenities = nil;
     _uiiv_bgImg.hidden = YES;
     _uiv_bldImgContainer.hidden = YES;
     _uiv_bldImgContainer.transform = CGAffineTransformIdentity;
@@ -249,8 +255,8 @@ static float kOriginalStatHeight    = 45+36*3;
 //            _uiiv_bgImg.hidden = NO;
 //            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldAmenities_bg" ofType:@"jpg"];
 //            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
-            buildingAmenities *amenities = [[buildingAmenities alloc] initWithFrame:screenRect];
-            [self.view insertSubview:amenities belowSubview:_uib_bldgStats];
+            _amenities = [[buildingAmenities alloc] initWithFrame:screenRect];
+            [self.view insertSubview:_amenities belowSubview:_uib_bldgStats];
             break;
         }
         case 4: {
