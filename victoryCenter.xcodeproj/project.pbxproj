@@ -104,6 +104,44 @@
 		822C90AD1A377562003944E8 /* overview_cell3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90A51A377562003944E8 /* overview_cell3@2x.jpg */; };
 		822C90AE1A377562003944E8 /* overview_cell4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90A61A377562003944E8 /* overview_cell4.jpg */; };
 		822C90AF1A377562003944E8 /* overview_cell4@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90A71A377562003944E8 /* overview_cell4@2x.jpg */; };
+		822C90DC1A378851003944E8 /* 1012_01_27  05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90B21A378851003944E8 /* 1012_01_27  05.jpg */; };
+		822C90DD1A378851003944E8 /* 1012_01_27  21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90B31A378851003944E8 /* 1012_01_27  21.jpg */; };
+		822C90DE1A378851003944E8 /* 1012_01_27  22.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90B41A378851003944E8 /* 1012_01_27  22.jpg */; };
+		822C90DF1A378851003944E8 /* 1012_01_27  23.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90B51A378851003944E8 /* 1012_01_27  23.jpg */; };
+		822C90E01A378851003944E8 /* 1012_01_27  24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90B61A378851003944E8 /* 1012_01_27  24.jpg */; };
+		822C90E11A378851003944E8 /* 1012_01_27  25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90B71A378851003944E8 /* 1012_01_27  25.jpg */; };
+		822C90E21A378851003944E8 /* 1012_01_27  29.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90B81A378851003944E8 /* 1012_01_27  29.jpg */; };
+		822C90E31A378851003944E8 /* 1012_01_27  30.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90B91A378851003944E8 /* 1012_01_27  30.jpg */; };
+		822C90E41A378851003944E8 /* 37852 Hines  13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90BA1A378851003944E8 /* 37852 Hines  13.jpg */; };
+		822C90E51A378851003944E8 /* 37852 Hines  15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90BB1A378851003944E8 /* 37852 Hines  15.jpg */; };
+		822C90E61A378851003944E8 /* fitness_image 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90BD1A378851003944E8 /* fitness_image 1.jpg */; };
+		822C90E71A378851003944E8 /* fitness_image 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90BE1A378851003944E8 /* fitness_image 2.jpg */; };
+		822C90E81A378851003944E8 /* fitness_image 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90BF1A378851003944E8 /* fitness_image 3.jpg */; };
+		822C90E91A378851003944E8 /* fitness_image 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90C01A378851003944E8 /* fitness_image 4.jpg */; };
+		822C90EA1A378851003944E8 /* 601 travis 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90C21A378851003944E8 /* 601 travis 1.jpg */; };
+		822C90EB1A378851003944E8 /* 601 travis 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90C31A378851003944E8 /* 601 travis 2.jpg */; };
+		822C90EC1A378851003944E8 /* BG Group FT 12.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 822C90C41A378851003944E8 /* BG Group FT 12.JPG */; };
+		822C90ED1A378851003944E8 /* BG Group FT 4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 822C90C51A378851003944E8 /* BG Group FT 4.JPG */; };
+		822C90EE1A378851003944E8 /* Phoneix tower 37867  01 promo shot (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90C61A378851003944E8 /* Phoneix tower 37867  01 promo shot (1).jpg */; };
+		822C90EF1A378851003944E8 /* Phoneix tower 37867  01 promo shot (2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90C71A378851003944E8 /* Phoneix tower 37867  01 promo shot (2).jpg */; };
+		822C90F01A378851003944E8 /* Phoneix tower 37867  01 promo shot (3).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90C81A378851003944E8 /* Phoneix tower 37867  01 promo shot (3).jpg */; };
+		822C90F11A378851003944E8 /* Phoneix tower 37867  01 promo shot (4).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90C91A378851003944E8 /* Phoneix tower 37867  01 promo shot (4).jpg */; };
+		822C90F21A378851003944E8 /* Phoneix tower 37867  01 promo shot (5).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90CA1A378851003944E8 /* Phoneix tower 37867  01 promo shot (5).jpg */; };
+		822C90F31A378851003944E8 /* food_iamge 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90CD1A378851003944E8 /* food_iamge 1.jpg */; };
+		822C90F41A378851003944E8 /* food_image 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90CE1A378851003944E8 /* food_image 2.jpg */; };
+		822C90F51A378851003944E8 /* food_Image 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90CF1A378851003944E8 /* food_Image 3.jpg */; };
+		822C90F61A378851003944E8 /* food_image 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90D01A378851003944E8 /* food_image 4.jpg */; };
+		822C90F71A378851003944E8 /* food_image 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90D11A378851003944E8 /* food_image 5.jpg */; };
+		822C90F81A378851003944E8 /* food_image 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90D21A378851003944E8 /* food_image 6.jpg */; };
+		822C90F91A378851003944E8 /* food_image 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90D31A378851003944E8 /* food_image 7.jpg */; };
+		822C90FA1A378851003944E8 /* food_image 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90D41A378851003944E8 /* food_image 8.jpg */; };
+		822C90FB1A378851003944E8 /* food_image 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90D51A378851003944E8 /* food_image 9.jpg */; };
+		822C90FC1A378851003944E8 /* people_image 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90D71A378851003944E8 /* people_image 1.jpg */; };
+		822C90FD1A378851003944E8 /* people_image 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90D81A378851003944E8 /* people_image 3.jpg */; };
+		822C90FE1A378851003944E8 /* iStock_000017321919Large-X2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90D91A378851003944E8 /* iStock_000017321919Large-X2.jpg */; };
+		822C90FF1A378851003944E8 /* stock-photo-24442983-waitress-serving-food-to-couple-in-restaurant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90DA1A378851003944E8 /* stock-photo-24442983-waitress-serving-food-to-couple-in-restaurant.jpg */; };
+		822C91001A378851003944E8 /* stock-photo-8014487-businessmen-at-restaurant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 822C90DB1A378851003944E8 /* stock-photo-8014487-businessmen-at-restaurant.jpg */; };
+		822C91021A37887C003944E8 /* amenities_gallery.plist in Resources */ = {isa = PBXBuildFile; fileRef = 822C91011A37887C003944E8 /* amenities_gallery.plist */; };
 		822F384B1A1A92FA0085500F /* grfx_floorplan1.png in Resources */ = {isa = PBXBuildFile; fileRef = 822F38491A1A92FA0085500F /* grfx_floorplan1.png */; };
 		822F384C1A1A92FA0085500F /* grfx_floorplan1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 822F384A1A1A92FA0085500F /* grfx_floorplan1@2x.png */; };
 		8239ED0F1A0168ED00B25EA2 /* siteOverview.m in Sources */ = {isa = PBXBuildFile; fileRef = 8239ED0E1A0168ED00B25EA2 /* siteOverview.m */; };
@@ -501,6 +539,44 @@
 		822C90A51A377562003944E8 /* overview_cell3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "overview_cell3@2x.jpg"; sourceTree = "<group>"; };
 		822C90A61A377562003944E8 /* overview_cell4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = overview_cell4.jpg; sourceTree = "<group>"; };
 		822C90A71A377562003944E8 /* overview_cell4@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "overview_cell4@2x.jpg"; sourceTree = "<group>"; };
+		822C90B21A378851003944E8 /* 1012_01_27  05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1012_01_27  05.jpg"; sourceTree = "<group>"; };
+		822C90B31A378851003944E8 /* 1012_01_27  21.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1012_01_27  21.jpg"; sourceTree = "<group>"; };
+		822C90B41A378851003944E8 /* 1012_01_27  22.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1012_01_27  22.jpg"; sourceTree = "<group>"; };
+		822C90B51A378851003944E8 /* 1012_01_27  23.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1012_01_27  23.jpg"; sourceTree = "<group>"; };
+		822C90B61A378851003944E8 /* 1012_01_27  24.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1012_01_27  24.jpg"; sourceTree = "<group>"; };
+		822C90B71A378851003944E8 /* 1012_01_27  25.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1012_01_27  25.jpg"; sourceTree = "<group>"; };
+		822C90B81A378851003944E8 /* 1012_01_27  29.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1012_01_27  29.jpg"; sourceTree = "<group>"; };
+		822C90B91A378851003944E8 /* 1012_01_27  30.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1012_01_27  30.jpg"; sourceTree = "<group>"; };
+		822C90BA1A378851003944E8 /* 37852 Hines  13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "37852 Hines  13.jpg"; sourceTree = "<group>"; };
+		822C90BB1A378851003944E8 /* 37852 Hines  15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "37852 Hines  15.jpg"; sourceTree = "<group>"; };
+		822C90BD1A378851003944E8 /* fitness_image 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fitness_image 1.jpg"; sourceTree = "<group>"; };
+		822C90BE1A378851003944E8 /* fitness_image 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fitness_image 2.jpg"; sourceTree = "<group>"; };
+		822C90BF1A378851003944E8 /* fitness_image 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fitness_image 3.jpg"; sourceTree = "<group>"; };
+		822C90C01A378851003944E8 /* fitness_image 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fitness_image 4.jpg"; sourceTree = "<group>"; };
+		822C90C21A378851003944E8 /* 601 travis 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "601 travis 1.jpg"; sourceTree = "<group>"; };
+		822C90C31A378851003944E8 /* 601 travis 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "601 travis 2.jpg"; sourceTree = "<group>"; };
+		822C90C41A378851003944E8 /* BG Group FT 12.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "BG Group FT 12.JPG"; sourceTree = "<group>"; };
+		822C90C51A378851003944E8 /* BG Group FT 4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "BG Group FT 4.JPG"; sourceTree = "<group>"; };
+		822C90C61A378851003944E8 /* Phoneix tower 37867  01 promo shot (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Phoneix tower 37867  01 promo shot (1).jpg"; sourceTree = "<group>"; };
+		822C90C71A378851003944E8 /* Phoneix tower 37867  01 promo shot (2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Phoneix tower 37867  01 promo shot (2).jpg"; sourceTree = "<group>"; };
+		822C90C81A378851003944E8 /* Phoneix tower 37867  01 promo shot (3).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Phoneix tower 37867  01 promo shot (3).jpg"; sourceTree = "<group>"; };
+		822C90C91A378851003944E8 /* Phoneix tower 37867  01 promo shot (4).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Phoneix tower 37867  01 promo shot (4).jpg"; sourceTree = "<group>"; };
+		822C90CA1A378851003944E8 /* Phoneix tower 37867  01 promo shot (5).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Phoneix tower 37867  01 promo shot (5).jpg"; sourceTree = "<group>"; };
+		822C90CD1A378851003944E8 /* food_iamge 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "food_iamge 1.jpg"; sourceTree = "<group>"; };
+		822C90CE1A378851003944E8 /* food_image 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "food_image 2.jpg"; sourceTree = "<group>"; };
+		822C90CF1A378851003944E8 /* food_Image 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "food_Image 3.jpg"; sourceTree = "<group>"; };
+		822C90D01A378851003944E8 /* food_image 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "food_image 4.jpg"; sourceTree = "<group>"; };
+		822C90D11A378851003944E8 /* food_image 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "food_image 5.jpg"; sourceTree = "<group>"; };
+		822C90D21A378851003944E8 /* food_image 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "food_image 6.jpg"; sourceTree = "<group>"; };
+		822C90D31A378851003944E8 /* food_image 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "food_image 7.jpg"; sourceTree = "<group>"; };
+		822C90D41A378851003944E8 /* food_image 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "food_image 8.jpg"; sourceTree = "<group>"; };
+		822C90D51A378851003944E8 /* food_image 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "food_image 9.jpg"; sourceTree = "<group>"; };
+		822C90D71A378851003944E8 /* people_image 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "people_image 1.jpg"; sourceTree = "<group>"; };
+		822C90D81A378851003944E8 /* people_image 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "people_image 3.jpg"; sourceTree = "<group>"; };
+		822C90D91A378851003944E8 /* iStock_000017321919Large-X2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iStock_000017321919Large-X2.jpg"; sourceTree = "<group>"; };
+		822C90DA1A378851003944E8 /* stock-photo-24442983-waitress-serving-food-to-couple-in-restaurant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "stock-photo-24442983-waitress-serving-food-to-couple-in-restaurant.jpg"; sourceTree = "<group>"; };
+		822C90DB1A378851003944E8 /* stock-photo-8014487-businessmen-at-restaurant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "stock-photo-8014487-businessmen-at-restaurant.jpg"; sourceTree = "<group>"; };
+		822C91011A37887C003944E8 /* amenities_gallery.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = amenities_gallery.plist; sourceTree = "<group>"; };
 		822F38491A1A92FA0085500F /* grfx_floorplan1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan1.png; sourceTree = "<group>"; };
 		822F384A1A1A92FA0085500F /* grfx_floorplan1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorplan1@2x.png"; sourceTree = "<group>"; };
 		8239ED0D1A0168ED00B25EA2 /* siteOverview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = siteOverview.h; sourceTree = "<group>"; };
@@ -887,6 +963,7 @@
 				82000BA319E5BADC00AE2C70 /* teamText.plist */,
 				8263B98D19EDC7EF00E70C1B /* hotspots.plist */,
 				82CE2FD719F06C79006F7B0E /* floorplanData.plist */,
+				822C91011A37887C003944E8 /* amenities_gallery.plist */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -1024,6 +1101,98 @@
 				8224FE2419D48656002B1B44 /* MPFoldSegue.m */,
 			);
 			path = Segues;
+			sourceTree = "<group>";
+		};
+		822C90B01A378851003944E8 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				822C90B11A378851003944E8 /* Conference Center */,
+				822C90BC1A378851003944E8 /* fitness */,
+				822C90CB1A378851003944E8 /* Restuarant */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		822C90B11A378851003944E8 /* Conference Center */ = {
+			isa = PBXGroup;
+			children = (
+				822C90B21A378851003944E8 /* 1012_01_27  05.jpg */,
+				822C90B31A378851003944E8 /* 1012_01_27  21.jpg */,
+				822C90B41A378851003944E8 /* 1012_01_27  22.jpg */,
+				822C90B51A378851003944E8 /* 1012_01_27  23.jpg */,
+				822C90B61A378851003944E8 /* 1012_01_27  24.jpg */,
+				822C90B71A378851003944E8 /* 1012_01_27  25.jpg */,
+				822C90B81A378851003944E8 /* 1012_01_27  29.jpg */,
+				822C90B91A378851003944E8 /* 1012_01_27  30.jpg */,
+				822C90BA1A378851003944E8 /* 37852 Hines  13.jpg */,
+				822C90BB1A378851003944E8 /* 37852 Hines  15.jpg */,
+			);
+			path = "Conference Center";
+			sourceTree = "<group>";
+		};
+		822C90BC1A378851003944E8 /* fitness */ = {
+			isa = PBXGroup;
+			children = (
+				822C90BD1A378851003944E8 /* fitness_image 1.jpg */,
+				822C90BE1A378851003944E8 /* fitness_image 2.jpg */,
+				822C90BF1A378851003944E8 /* fitness_image 3.jpg */,
+				822C90C01A378851003944E8 /* fitness_image 4.jpg */,
+				822C90C11A378851003944E8 /* Property fitness centers */,
+			);
+			path = fitness;
+			sourceTree = "<group>";
+		};
+		822C90C11A378851003944E8 /* Property fitness centers */ = {
+			isa = PBXGroup;
+			children = (
+				822C90C21A378851003944E8 /* 601 travis 1.jpg */,
+				822C90C31A378851003944E8 /* 601 travis 2.jpg */,
+				822C90C41A378851003944E8 /* BG Group FT 12.JPG */,
+				822C90C51A378851003944E8 /* BG Group FT 4.JPG */,
+				822C90C61A378851003944E8 /* Phoneix tower 37867  01 promo shot (1).jpg */,
+				822C90C71A378851003944E8 /* Phoneix tower 37867  01 promo shot (2).jpg */,
+				822C90C81A378851003944E8 /* Phoneix tower 37867  01 promo shot (3).jpg */,
+				822C90C91A378851003944E8 /* Phoneix tower 37867  01 promo shot (4).jpg */,
+				822C90CA1A378851003944E8 /* Phoneix tower 37867  01 promo shot (5).jpg */,
+			);
+			path = "Property fitness centers";
+			sourceTree = "<group>";
+		};
+		822C90CB1A378851003944E8 /* Restuarant */ = {
+			isa = PBXGroup;
+			children = (
+				822C90CC1A378851003944E8 /* Food and interior */,
+				822C90D61A378851003944E8 /* People dining */,
+			);
+			path = Restuarant;
+			sourceTree = "<group>";
+		};
+		822C90CC1A378851003944E8 /* Food and interior */ = {
+			isa = PBXGroup;
+			children = (
+				822C90CD1A378851003944E8 /* food_iamge 1.jpg */,
+				822C90CE1A378851003944E8 /* food_image 2.jpg */,
+				822C90CF1A378851003944E8 /* food_Image 3.jpg */,
+				822C90D01A378851003944E8 /* food_image 4.jpg */,
+				822C90D11A378851003944E8 /* food_image 5.jpg */,
+				822C90D21A378851003944E8 /* food_image 6.jpg */,
+				822C90D31A378851003944E8 /* food_image 7.jpg */,
+				822C90D41A378851003944E8 /* food_image 8.jpg */,
+				822C90D51A378851003944E8 /* food_image 9.jpg */,
+			);
+			path = "Food and interior";
+			sourceTree = "<group>";
+		};
+		822C90D61A378851003944E8 /* People dining */ = {
+			isa = PBXGroup;
+			children = (
+				822C90D71A378851003944E8 /* people_image 1.jpg */,
+				822C90D81A378851003944E8 /* people_image 3.jpg */,
+				822C90D91A378851003944E8 /* iStock_000017321919Large-X2.jpg */,
+				822C90DA1A378851003944E8 /* stock-photo-24442983-waitress-serving-food-to-couple-in-restaurant.jpg */,
+				822C90DB1A378851003944E8 /* stock-photo-8014487-businessmen-at-restaurant.jpg */,
+			);
+			path = "People dining";
 			sourceTree = "<group>";
 		};
 		8239ED141A01863300B25EA2 /* PopTips */ = {
@@ -1312,6 +1481,7 @@
 		826873D81A3657D20013C960 /* Amenities */ = {
 			isa = PBXGroup;
 			children = (
+				822C90B01A378851003944E8 /* Content */,
 				826873D91A3657D20013C960 /* grfx_amen_conference.jpg */,
 				826873DA1A3657D20013C960 /* grfx_amen_conference@2x.jpg */,
 				826873DB1A3657D20013C960 /* grfx_amen_dining.jpg */,
@@ -1678,6 +1848,7 @@
 				821EE2481A13BB9100254B2A /* grfx_floorplan18@2x.png in Resources */,
 				824E10E31A0D5F5C00BDBDA6 /* Plane_Icon_Blue.png in Resources */,
 				821EE24D1A13BB9100254B2A /* grfx_floorplan21.png in Resources */,
+				822C90E61A378851003944E8 /* fitness_image 1.jpg in Resources */,
 				82A29E4819EC60E000AFAE1E /* grfx_bldImg.png in Resources */,
 				82A29E4919EC60E000AFAE1E /* grfx_bldImg@2x.png in Resources */,
 				822F384B1A1A92FA0085500F /* grfx_floorplan1.png in Resources */,
@@ -1695,12 +1866,14 @@
 				821EE24C1A13BB9100254B2A /* grfx_floorplan20@2x.png in Resources */,
 				82AB934C19FEC97B00DD0B30 /* grfx_north_hs.png in Resources */,
 				82459E7E19F6D4AE00E03A8D /* grfx_homeBtn@2x.png in Resources */,
+				822C90F21A378851003944E8 /* Phoneix tower 37867  01 promo shot (5).jpg in Resources */,
 				82CBD72319F96FA10001191F /* grfx_elevator_floorNum@2x.png in Resources */,
 				822C908D1A375621003944E8 /* View of Victory Center and Dart Transit System.jpg in Resources */,
 				821EE25B1A13BC5300254B2A /* grfx_floorplan10.png in Resources */,
 				82000B7919E590AD00AE2C70 /* Team_bg.jpg in Resources */,
 				82A4EF571A03D013004D22EE /* grfx_mailIcon@2x.png in Resources */,
 				82DC11CA19DAEA940057AE4F /* 20140802_view4_100m_05.jpg in Resources */,
+				822C90E31A378851003944E8 /* 1012_01_27  30.jpg in Resources */,
 				82DC11E519DAEE070057AE4F /* Neighborhood_map.png in Resources */,
 				824C196419FA9DC400EA7613 /* grfx_floorplan15@2x.png in Resources */,
 				82594C791A1FB2D400AC0AB4 /* TEST_FIT_FLOOR19_ClosedOffice.png in Resources */,
@@ -1713,6 +1886,7 @@
 				823DE6F81A0031CA0016CD3A /* grfx_floorDwon@2x.png in Resources */,
 				824F369719E6C47500267B44 /* thumb_20140811_view3_100m_04.jpg in Resources */,
 				82627E2719E702EC0062FC0C /* grfx_retail_overlay.png in Resources */,
+				822C91021A37887C003944E8 /* amenities_gallery.plist in Resources */,
 				824C195119FA938500EA7613 /* grfx_victorycenter_logo@2x.png in Resources */,
 				82CBD72A19F995120001191F /* grfx_site_parking.png in Resources */,
 				824F368F19E6C47500267B44 /* thumb_20140802_view4_100m_01.jpg in Resources */,
@@ -1722,17 +1896,25 @@
 				82000B9919E5963800AE2C70 /* team_cousins_text.png in Resources */,
 				823DE6ED19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on.png in Resources */,
 				82594C7D1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR8_ClosedOffice.png in Resources */,
+				822C90E71A378851003944E8 /* fitness_image 2.jpg in Resources */,
+				822C90ED1A378851003944E8 /* BG Group FT 4.JPG in Resources */,
 				822C909B1A375883003944E8 /* thumb_Victory Center 02 W Hotel View.jpg in Resources */,
 				82000B9019E592A800AE2C70 /* team_hks_logo@2x.png in Resources */,
 				82000B8B19E592A800AE2C70 /* team_cushman_logo.png in Resources */,
 				824C196619FA9DC400EA7613 /* grfx_floorplan16@2x.png in Resources */,
+				822C90F81A378851003944E8 /* food_image 6.jpg in Resources */,
+				822C90F41A378851003944E8 /* food_image 2.jpg in Resources */,
+				822C90E01A378851003944E8 /* 1012_01_27  24.jpg in Resources */,
 				826873E01A3657D20013C960 /* grfx_amen_conference@2x.jpg in Resources */,
+				822C90DF1A378851003944E8 /* 1012_01_27  23.jpg in Resources */,
 				826078131A0130CA000DF24F /* grfx_logo@2x.png in Resources */,
 				8260BA021A1BD202004C44B8 /* building_stats_office@2x.png in Resources */,
 				8260B9ED1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png in Resources */,
 				828041F81A07C1CF00847A80 /* tmp_testfit2.png in Resources */,
 				824F369019E6C47500267B44 /* thumb_20140802_view4_100m_05.jpg in Resources */,
 				82DC11D219DAEA940057AE4F /* victory_center_138feet.jpg in Resources */,
+				822C90E21A378851003944E8 /* 1012_01_27  29.jpg in Resources */,
+				822C90DD1A378851003944E8 /* 1012_01_27  21.jpg in Resources */,
 				824F368A19E6C47500267B44 /* thumb_20140802_downtown_100m_5pm_high-res.jpg in Resources */,
 				82DC11C019DAEA940057AE4F /* 20140716_view2_90 feet.jpg in Resources */,
 				822C908A1A375621003944E8 /* Victory Center_Highway View.jpg in Resources */,
@@ -1744,8 +1926,10 @@
 				824C196819FA9DC400EA7613 /* grfx_floorplan17@2x.png in Resources */,
 				824F369219E6C47500267B44 /* thumb_20140802_view4_100m_06.jpg in Resources */,
 				824E10DC1A0D547B00BDBDA6 /* grfx_dartLogo@2x.png in Resources */,
+				822C90E51A378851003944E8 /* 37852 Hines  15.jpg in Resources */,
 				826873D41A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov in Resources */,
 				82C06E7E1A165949000F969E /* grfx_launching_night.jpg in Resources */,
+				822C91001A378851003944E8 /* stock-photo-8014487-businessmen-at-restaurant.jpg in Resources */,
 				824C196319FA9DC400EA7613 /* grfx_floorplan15.png in Resources */,
 				825E5F8919F83FA300B77F7F /* grfx_elavators_parking.png in Resources */,
 				825E5F7919F83CD200B77F7F /* grfx_elavators_stack_blank.png in Resources */,
@@ -1760,6 +1944,7 @@
 				82C06E8B1A169B8E000F969E /* Logo_Header@2x.png in Resources */,
 				8260B9FF1A1BD202004C44B8 /* building_stats_area.png in Resources */,
 				82A21F661A02B30A00BE8706 /* Access_overlay.png in Resources */,
+				822C90E91A378851003944E8 /* fitness_image 4.jpg in Resources */,
 				827492E61A0818F500F949E5 /* grfx_floorplan_keys@2x.png in Resources */,
 				824F369919E6C47500267B44 /* thumb_victory_center_278_feet.jpg in Resources */,
 				821EE25E1A13BC5300254B2A /* grfx_floorplan11@2x.png in Resources */,
@@ -1774,6 +1959,7 @@
 				825E5F8C19F8559700B77F7F /* Site_Base map@2x.png in Resources */,
 				82000B9F19E5963800AE2C70 /* team_hks_text.png in Resources */,
 				82627E2C19E732870062FC0C /* Lightbox_overlay_BG.png in Resources */,
+				822C90FE1A378851003944E8 /* iStock_000017321919Large-X2.jpg in Resources */,
 				82A805D119D1F61E00308BA1 /* grfx_mialIcon@2x.png in Resources */,
 				823DE6FA1A0031CA0016CD3A /* grfx_floorUp@2x.png in Resources */,
 				82594C7C1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR19_OpenOffice@2x.png in Resources */,
@@ -1783,16 +1969,20 @@
 				823DE6EE19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on@2x.png in Resources */,
 				825E5F7A19F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png in Resources */,
 				8224FE0819D47097002B1B44 /* Raleway-Medium.otf in Resources */,
+				822C90F71A378851003944E8 /* food_image 5.jpg in Resources */,
 				82000B9B19E5963800AE2C70 /* team_cushman_text.png in Resources */,
 				824F369819E6C47500267B44 /* thumb_victory_center_138feet.jpg in Resources */,
 				82000B9A19E5963800AE2C70 /* team_cousins_text@2x.png in Resources */,
+				822C90EA1A378851003944E8 /* 601 travis 1.jpg in Resources */,
 				82CBD72B19F995120001191F /* grfx_site_parking@2x.png in Resources */,
 				828041F91A07C1CF00847A80 /* tmp_testfit2@2x.png in Resources */,
 				823D78AC19F1AD500096E62C /* grfx_compass.png in Resources */,
 				822C90AE1A377562003944E8 /* overview_cell4.jpg in Resources */,
 				824C194F19FA938500EA7613 /* grfx_tredart_logo@2x.png in Resources */,
 				82DC11CE19DAEA940057AE4F /* 20140811_view3_100m_01.jpg in Resources */,
+				822C90E41A378851003944E8 /* 37852 Hines  13.jpg in Resources */,
 				824012EA19D1AF5D00C501EE /* InfoPlist.strings in Resources */,
+				822C90F51A378851003944E8 /* food_Image 3.jpg in Resources */,
 				82AB934E19FEC97B00DD0B30 /* grfx_south_hs.png in Resources */,
 				8224FE0319D47097002B1B44 /* Raleway-Bold.otf in Resources */,
 				827492E11A080C7F00F949E5 /* grfx_smallStack.png in Resources */,
@@ -1800,8 +1990,11 @@
 				825E5F8519F83FA300B77F7F /* grfx_elavators_lobby.png in Resources */,
 				824F369419E6C47500267B44 /* thumb_20140811_view3_100m_01.jpg in Resources */,
 				826873E11A3657D20013C960 /* grfx_amen_dining.jpg in Resources */,
+				822C90F91A378851003944E8 /* food_image 7.jpg in Resources */,
+				822C90E11A378851003944E8 /* 1012_01_27  25.jpg in Resources */,
 				827492DE1A07FEDE00F949E5 /* Neighborhood_Districts_Overlay@2x.png in Resources */,
 				82000B9D19E5963800AE2C70 /* team_duda_text.png in Resources */,
+				822C90F01A378851003944E8 /* Phoneix tower 37867  01 promo shot (3).jpg in Resources */,
 				824F369519E6C47500267B44 /* thumb_20140811_view3_100m_02.jpg in Resources */,
 				8260B9E91A1B8A95004C44B8 /* CollapseClickCell.xib in Resources */,
 				82627E2319E702EC0062FC0C /* grfx_residential_overlay.png in Resources */,
@@ -1815,6 +2008,7 @@
 				827069991A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg in Resources */,
 				8224FDF519D46D90002B1B44 /* cap_bar_.png in Resources */,
 				82C06E8E1A169F56000F969E /* grfx_view_diagram.png in Resources */,
+				822C90EF1A378851003944E8 /* Phoneix tower 37867  01 promo shot (2).jpg in Resources */,
 				82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */,
 				823D78AD19F1AD500096E62C /* grfx_compass@2x.png in Resources */,
 				8260B9EC1A1B8FFA004C44B8 /* grfx_stats_plus.png in Resources */,
@@ -1865,9 +2059,12 @@
 				82C06E861A16658F000F969E /* valet_icon.png in Resources */,
 				8263B98E19EDC7EF00E70C1B /* hotspots.plist in Resources */,
 				824E10EA1A0D688F00BDBDA6 /* VictoryCenter_Flag@2x.png in Resources */,
+				822C90F61A378851003944E8 /* food_image 4.jpg in Resources */,
+				822C90DE1A378851003944E8 /* 1012_01_27  22.jpg in Resources */,
 				822C90871A375621003944E8 /* Southeast View of Victory Center.jpg in Resources */,
 				821EE2501A13BB9100254B2A /* grfx_floorplan22@2x.png in Resources */,
 				82AB935019FEC97B00DD0B30 /* grfx_west_hs.png in Resources */,
+				822C90F11A378851003944E8 /* Phoneix tower 37867  01 promo shot (4).jpg in Resources */,
 				82594C7B1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR19_OpenOffice.png in Resources */,
 				82000B8A19E592A800AE2C70 /* team_cousins_logo@2x.png in Resources */,
 				824F368E19E6C47500267B44 /* thumb_20140802_downtown_60m_2pm_high-res.jpg in Resources */,
@@ -1875,10 +2072,13 @@
 				82594C7F1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR8_OpenOffice.png in Resources */,
 				824C196E19FA9DC400EA7613 /* grfx_floorplan9@2x.png in Resources */,
 				82AB934B19FEC97B00DD0B30 /* grfx_east_hs@2x.png in Resources */,
+				822C90FB1A378851003944E8 /* food_image 9.jpg in Resources */,
 				82627E2819E702EC0062FC0C /* grfx_retail_overlay@2x.png in Resources */,
 				82AB934A19FEC97B00DD0B30 /* grfx_east_hs.png in Resources */,
 				82C06E8A1A169B8E000F969E /* Logo_Header.png in Resources */,
 				82AB934F19FEC97B00DD0B30 /* grfx_south_hs@2x.png in Resources */,
+				822C90FC1A378851003944E8 /* people_image 1.jpg in Resources */,
+				822C90DC1A378851003944E8 /* 1012_01_27  05.jpg in Resources */,
 				82627E2219E702EC0062FC0C /* grfx_recreationg_overlay@2x.png in Resources */,
 				82000B7E19E590AD00AE2C70 /* team_logoBtmBar@2x.png in Resources */,
 				824C194E19FA938500EA7613 /* grfx_tredart_logo.png in Resources */,
@@ -1902,14 +2102,17 @@
 				82DC11FC19DAF2990057AE4F /* photo-gallery-left.png in Resources */,
 				822C90AD1A377562003944E8 /* overview_cell3@2x.jpg in Resources */,
 				82000B8C19E592A800AE2C70 /* team_cushman_logo@2x.png in Resources */,
+				822C90EC1A378851003944E8 /* BG Group FT 12.JPG in Resources */,
 				8260B9FD1A1BD202004C44B8 /* building_stats_amenities.png in Resources */,
 				8224FE3419D4BD6E002B1B44 /* play_button_@2x.png in Resources */,
 				82000B8F19E592A800AE2C70 /* team_hks_logo.png in Resources */,
 				82A805CF19D1F61E00308BA1 /* grfx_helpIcon@2x.png in Resources */,
+				822C90EE1A378851003944E8 /* Phoneix tower 37867  01 promo shot (1).jpg in Resources */,
 				822C909A1A375883003944E8 /* thumb_Soutwest View of Victory Center.jpg in Resources */,
 				824C196719FA9DC400EA7613 /* grfx_floorplan17.png in Resources */,
 				821EE25D1A13BC5300254B2A /* grfx_floorplan11.png in Resources */,
 				8224FDF119D46997002B1B44 /* galleryData.plist in Resources */,
+				822C90FF1A378851003944E8 /* stock-photo-24442983-waitress-serving-food-to-couple-in-restaurant.jpg in Resources */,
 				8260B9FE1A1BD202004C44B8 /* building_stats_amenities@2x.png in Resources */,
 				82627E2419E702EC0062FC0C /* grfx_residential_overlay@2x.png in Resources */,
 				826873E21A3657D20013C960 /* grfx_amen_dining@2x.jpg in Resources */,
@@ -1932,7 +2135,9 @@
 				824C196519FA9DC400EA7613 /* grfx_floorplan16.png in Resources */,
 				8224FE3319D4BD6E002B1B44 /* normal_frame@2x.png in Resources */,
 				82DC11FD19DAF2990057AE4F /* photo-gallery-left@2x.png in Resources */,
+				822C90FD1A378851003944E8 /* people_image 3.jpg in Resources */,
 				821EE24B1A13BB9100254B2A /* grfx_floorplan20.png in Resources */,
+				822C90FA1A378851003944E8 /* food_image 8.jpg in Resources */,
 				82000B7F19E590AD00AE2C70 /* team_hines_text.png in Resources */,
 				82A21F6A1A02C5D300BE8706 /* grfx_bldstat_close.png in Resources */,
 				823DE6F119FFE95A0016CD3A /* pano_opportunity_local_nav_frame.png in Resources */,
@@ -1944,6 +2149,7 @@
 				82594C751A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_ClosedOffice.png in Resources */,
 				82A805D019D1F61E00308BA1 /* grfx_mialIcon.png in Resources */,
 				823DE6F91A0031CA0016CD3A /* grfx_floorUp.png in Resources */,
+				822C90EB1A378851003944E8 /* 601 travis 2.jpg in Resources */,
 				825E5F8419F83FA300B77F7F /* grf_elavators_high_rise@2x.png in Resources */,
 				822C90981A375883003944E8 /* thumb_Lobby View.jpg in Resources */,
 				826873E31A3657D20013C960 /* grfx_amen_fitness.jpg in Resources */,
@@ -1954,6 +2160,7 @@
 				82594C7A1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR19_ClosedOffice@2x.png in Resources */,
 				824012F319D1AF5D00C501EE /* Main.storyboard in Resources */,
 				823DE6EC19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_off@2x.png in Resources */,
+				822C90F31A378851003944E8 /* food_iamge 1.jpg in Resources */,
 				82DC11D319DAEA940057AE4F /* victory_center_278_feet.jpg in Resources */,
 				821EE24F1A13BB9100254B2A /* grfx_floorplan22.png in Resources */,
 				8224FE3519D4BD6E002B1B44 /* play_button.png in Resources */,
@@ -1965,6 +2172,7 @@
 				824F368719E6C47500267B44 /* thumb_20140802_downtown_100m_1pm.jpg in Resources */,
 				82000B8019E590AD00AE2C70 /* team_hines_text@2x.png in Resources */,
 				824E10DB1A0D547B00BDBDA6 /* grfx_dartLogo.png in Resources */,
+				822C90E81A378851003944E8 /* fitness_image 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
