@@ -88,6 +88,7 @@ static int eveningTime = 17;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doneButtonClick:) name:MPMoviePlayerPlaybackDidFinishNotification object:_playerViewController];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(swithToBuilding) name:@"switchToBuilding" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playMovieFromGallery:) name:@"playGalleryMovie" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFGallery:) name:@"loadFGallery" object:nil];
 }
 
 #pragma mark - Create KenBurn view
@@ -835,7 +836,72 @@ static int eveningTime = 17;
 	_playerViewController.moviePlayer.currentPlaybackTime = totalVideoTime*progressIndicator.value;
 }
 
-#pragma mark Help Button Action
+#pragma mark - Load FGallery
+- (void)loadFGallery:(NSNotification *)notification
+{
+    NSArray *arr_images = [notification.userInfo objectForKey:@"images"];
+    NSArray *arr_caption = [notification.userInfo objectForKey:@"caption"];
+    int index = [[notification.userInfo objectForKey:@"startIndex"] integerValue];
+    NSString *galleryTitle = [notification.userInfo objectForKey:@"title"];
+    
+    localImages =  arr_images;
+    localCaptions = arr_caption;
+    //[self imageViewer:sender];
+    UINavigationController *fGalleryNavigationController = [[UINavigationController alloc] init];
+    fGalleryNavigationController.view.frame = self.view.frame;
+    localGallery = [[FGalleryViewController alloc] initWithPhotoSource:self];
+    localGallery.startingIndex = index;
+    localGallery.galleryTitle = galleryTitle;
+    [fGalleryNavigationController addChildViewController:localGallery];
+    [fGalleryNavigationController.view addSubview:localGallery.view];
+    [self addChildViewController:fGalleryNavigationController];
+//    [self.view insertSubview:fGalleryNavigationController.view belowSubview:_uiv_toolsPanel];
+    [self.view addSubview:fGalleryNavigationController.view];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+}
+
+#pragma mark FGalleryViewControllerDelegate Methods
+- (int)numberOfPhotosForPhotoGallery:(FGalleryViewController *)gallery
+{
+    int num;
+	num = (int)[localImages count];
+	return num;
+}
+
+- (FGalleryPhotoSourceType)photoGallery:(FGalleryViewController *)gallery sourceTypeForPhotoAtIndex:(NSUInteger)index
+{
+	if( gallery == localGallery ) {
+		return FGalleryPhotoSourceTypeLocal;
+	}
+	else return FGalleryPhotoSourceTypeNetwork;
+}
+
+- (NSString*)photoGallery:(FGalleryViewController *)gallery captionForPhotoAtIndex:(NSUInteger)index
+{
+    NSString *caption;
+    if( gallery == localGallery ) {
+        caption = [localCaptions objectAtIndex:index];
+    }
+	return caption;
+}
+
+- (NSString*)photoGallery:(FGalleryViewController*)gallery filePathForPhotoSize:(FGalleryPhotoSize)size atIndex:(NSUInteger)index {
+    return [localImages objectAtIndex:index];
+}
+
+- (void)handleTrashButtonTouch:(id)sender {
+
+}
+
+- (void)handleEditCaptionButtonTouch:(id)sender {
+    // here we could implement some code to change the caption for a stored image
+}
+
+-(void)imageViewer:(id)sender {
+
+}
+
+#pragma mark - Help Button Action
 - (IBAction)helpBtnTapped:(id)sender {
 //    UIAlertView *alert =
 //    [[UIAlertView alloc] initWithTitle: @""

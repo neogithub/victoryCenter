@@ -326,16 +326,9 @@
     
     localImages =  arr_AllImgs;
     localCaptions = [NSArray arrayWithArray:[arr_AlbumCaption subarrayWithRange:NSMakeRange(0, arr_AllImgs.count)]];
-    //[self imageViewer:sender];
-    UINavigationController *fGalleryNavigationController = [[UINavigationController alloc] init];
-    fGalleryNavigationController.view.frame = self.view.frame;
-    localGallery = [[FGalleryViewController alloc] initWithPhotoSource:self];
-    localGallery.startingIndex = index;
-    localGallery.galleryTitle = galleryTitle;
-    [fGalleryNavigationController addChildViewController:localGallery];
-    [fGalleryNavigationController.view addSubview:localGallery.view];
-    [self addChildViewController:fGalleryNavigationController];
-    [self.view addSubview:fGalleryNavigationController.view];
+    
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_AllImgs, @"images", localCaptions, @"caption", [NSNumber numberWithInt:index], @"startIndex", galleryTitle, @"title", nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"loadFGallery" object:nil userInfo:dictionary];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
 }
 
@@ -372,81 +365,9 @@
     }
 }
 
-#pragma mark - FGalleryViewControllerDelegate Methods
-- (int)numberOfPhotosForPhotoGallery:(FGalleryViewController *)gallery
-{
-    int num;
-    //    if( gallery == localGallery ) {
-    //		num = [localImages count];
-    //	}
-    //	else if( gallery == networkGallery ) {
-    //		num = [networkImages count];
-    //	}
-	num = (int)[localImages count];
-	return num;
-}
-
-- (FGalleryPhotoSourceType)photoGallery:(FGalleryViewController *)gallery sourceTypeForPhotoAtIndex:(NSUInteger)index
-{
-	if( gallery == localGallery ) {
-		return FGalleryPhotoSourceTypeLocal;
-	}
-	else return FGalleryPhotoSourceTypeNetwork;
-}
-
-- (NSString*)photoGallery:(FGalleryViewController *)gallery captionForPhotoAtIndex:(NSUInteger)index
-{
-    NSString *caption;
-    if( gallery == localGallery ) {
-        caption = [localCaptions objectAtIndex:index];
-    }
-	//    else if( gallery == networkGallery ) {
-	//        caption = [networkCaptions objectAtIndex:index];
-	//    }
-	return caption;
-}
-
-- (NSString*)photoGallery:(FGalleryViewController*)gallery filePathForPhotoSize:(FGalleryPhotoSize)size atIndex:(NSUInteger)index {
-    return [localImages objectAtIndex:index];
-}
-
-- (void)handleTrashButtonTouch:(id)sender {
-    // here we could remove images from our local array storage and tell the gallery to remove that image
-    // ex:
-    //[localGallery removeImageAtIndex:[localGallery currentIndex]];
-}
-
-- (void)handleEditCaptionButtonTouch:(id)sender {
-    // here we could implement some code to change the caption for a stored image
-}
-
--(void)imageViewer:(id)sender {
-	
-    //	UIButton *tmpBtn = (UIButton*)sender;
-    //
-    //	galleryNameString = tmpBtn.titleLabel.text;
-    //	tmpBtn.alpha = 0.6;
-    //
-    //	GalleryImagesViewController *vc = [[GalleryImagesViewController alloc] initWithGallery:[Gallery galleryNamed:galleryNameString]];
-    //	[vc goToPageAtIndex:0 animated:NO];
-    //
-    //	CATransition* transition = [CATransition animation];
-    //	transition.duration = 0.33;
-    //	transition.type = kCATransitionFade;
-    //	transition.subtype = kCATransitionFromTop;
-    //
-    //	[self.navigationController.view.layer
-    //	 addAnimation:transition forKey:kCATransition];
-    //	[self.navigationController pushViewController:vc animated:NO];
-}
-
 #pragma mark - Add Help view
 - (void)hideAndUnhideHelp:(NSNotification *)pNotification
-{
-    if (localGallery.galleryID || _uiv_panoramicView) {
-        return;
-    }
-    
+{    
     if (_uiv_helpView.onScreen) {
         [UIView animateWithDuration:0.33 animations:^{
             _uiv_helpView.alpha = 0.0;
@@ -498,12 +419,6 @@
     
     [_uic_gallery removeFromSuperview];
     _uic_gallery = nil;
-    
-    [localGallery.view removeFromSuperview];
-    localGallery.view = nil;
-    
-    [localGallery removeFromParentViewController];
-    localGallery = nil;
     
     localImages = nil;
     

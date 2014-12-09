@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "FGalleryViewController.h"
 
-@interface galleryViewController : UIViewController <FGalleryViewControllerDelegate>
+@interface galleryViewController : UIViewController
 {
-    // fgallery
-	FGalleryViewController	*localGallery;
 	NSArray					*localCaptions;
     NSArray					*localImages;
 }
