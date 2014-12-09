@@ -93,7 +93,12 @@
 
 - (void)tapCell:(id)sender
 {
-    NSLog(@"Tapped cell is %i", (int)[sender tag]);
+//    NSLog(@"Tapped cell is %i", (int)[sender tag]);
+    NSString *url = [[NSBundle mainBundle]
+                     pathForResource:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD"
+                     ofType:@"mov"];
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:url, @"movieName", nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"playGalleryMovie" object:nil userInfo:dictionary];
 }
 
 /*
