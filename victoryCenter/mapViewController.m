@@ -849,8 +849,8 @@ static float    kPanelBtnHeight             = 38.0;
     [_uiv_overviewContainer addGestureRecognizer: tapOnOverview];
     _uiv_overviewContainer.userInteractionEnabled = YES;
     
-    //        _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 360.0)];
-    _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 260.0)];
+    _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 360.0)];
+//    _uiv_siteOverview = [[siteOverview alloc] initWithFrame:CGRectMake(68.0, 170.0, 888.0, 260.0)];
     _uiv_siteOverview.transform = CGAffineTransformMakeTranslation(0.0, -500);
     _uiv_siteOverview.alpha = 0.0;
     

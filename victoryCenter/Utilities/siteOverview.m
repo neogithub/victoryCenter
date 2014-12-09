@@ -29,6 +29,7 @@
     
     [self addVpLogo];
     [self addVpText];
+    [self addCell];
 }
 
 - (void)addVpLogo
@@ -66,8 +67,14 @@
     [arr_cells removeAllObjects];
     arr_cells = nil;
     arr_cells = [[NSMutableArray alloc] init];
+    NSArray *arr_cellImages = [[NSArray alloc] initWithObjects:
+                               @"overview_cell1.jpg",
+                               @"overview_cell2.jpg",
+                               @"overview_cell3.jpg",
+                               @"overview_cell4.jpg",
+                               nil];
     for (int i = 0; i < 4; i++) {
-        UIButton *uib_cell = [self createCellwithFrame:CGRectMake(41 + i*(25 + 184), 220, 184, 117) andImage:@"grfx_compass.png" andTag:i];
+        UIButton *uib_cell = [self createCellwithFrame:CGRectMake(41 + i*(25 + 184), 220, 184, 117) andImage:arr_cellImages[i] andTag:i];
         [arr_cells addObject: uib_cell];
         [self addSubview: uib_cell];
     }
@@ -86,7 +93,7 @@
 
 - (void)tapCell:(id)sender
 {
-
+    NSLog(@"Tapped cell is %i", (int)[sender tag]);
 }
 
 /*
