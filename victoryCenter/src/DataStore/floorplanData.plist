@@ -19,6 +19,10 @@
 					<string>tmp_testfit1.png</string>
 					<string>tmp_testfit2.png</string>
 				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
+				</array>
 				<key>hotspots</key>
 				<array>
 					<dict>
@@ -105,6 +109,10 @@
 				<array>
 					<string>tmp_testfit1.png</string>
 					<string>tmp_testfit2.png</string>
+				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -193,6 +201,10 @@
 					<string>tmp_testfit1.png</string>
 					<string>tmp_testfit2.png</string>
 				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
+				</array>
 				<key>hotspots</key>
 				<array>
 					<dict>
@@ -279,6 +291,10 @@
 				<array>
 					<string>tmp_testfit1.png</string>
 					<string>tmp_testfit2.png</string>
+				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -367,6 +383,12 @@
 					<string>TEST_FIT_FLOOR19_OpenOffice.png</string>
 					<string>TEST_FIT_FLOOR19_ClosedOffice.png</string>
 				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
+					<string>OPEN PLAN</string>
+					<string>CLOSE PLAN</string>
+				</array>
 				<key>hotspots</key>
 				<array>
 					<dict>
@@ -453,6 +475,10 @@
 				<array>
 					<string>tmp_testfit1.png</string>
 					<string>tmp_testfit2.png</string>
+				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -541,6 +567,10 @@
 					<string>TEST_FIT_FLOOR11_OpenOffice.png</string>
 					<string>TEST_FIT_FLOOR11_ClosedOffice.png</string>
 				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
+				</array>
 				<key>hotspots</key>
 				<array>
 					<dict>
@@ -627,6 +657,10 @@
 				<array>
 					<string>TEST_FIT_FLOOR11_OpenOffice.png</string>
 					<string>TEST_FIT_FLOOR11_ClosedOffice.png</string>
+				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -715,6 +749,10 @@
 					<string>TEST_FIT_FLOOR11_OpenOffice.png</string>
 					<string>TEST_FIT_FLOOR11_ClosedOffice.png</string>
 				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
+				</array>
 				<key>hotspots</key>
 				<array>
 					<dict>
@@ -801,6 +839,10 @@
 				<array>
 					<string>TEST_FIT_FLOOR11_OpenOffice.png</string>
 					<string>TEST_FIT_FLOOR11_ClosedOffice.png</string>
+				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -889,6 +931,10 @@
 					<string>TEST_FIT_FLOOR11_OpenOffice.png</string>
 					<string>TEST_FIT_FLOOR11_ClosedOffice.png</string>
 				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
+				</array>
 				<key>hotspots</key>
 				<array>
 					<dict>
@@ -975,6 +1021,12 @@
 				<array>
 					<string>TEST_FIT_FLOOR11_OpenOffice.png</string>
 					<string>TEST_FIT_FLOOR11_ClosedOffice.png</string>
+				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
+					<string>OPEN PLAN</string>
+					<string>CLOSE PLAN</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -1063,6 +1115,10 @@
 					<string>tmp_testfit1.png</string>
 					<string>tmp_testfit2.png</string>
 				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
+				</array>
 				<key>hotspots</key>
 				<array>
 					<dict>
@@ -1149,6 +1205,10 @@
 				<array>
 					<string>tmp_testfit1.png</string>
 					<string>tmp_testfit2.png</string>
+				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -1237,6 +1297,12 @@
 					<string>TEST_FIT_FLOOR8_OpenOffice.png</string>
 					<string>TEST_FIT_FLOOR8_ClosedOffice.png</string>
 				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
+					<string>OPEN PLAN</string>
+					<string>CLOSE PLAN</string>
+				</array>
 				<key>hotspots</key>
 				<array/>
 			</dict>
@@ -1258,6 +1324,10 @@
 				<array>
 					<string>tmp_testfit1.png</string>
 					<string>tmp_testfit2.png</string>
+				</array>
+				<key>testfitBtns</key>
+				<array>
+					<string>CORE &amp; SHELL</string>
 				</array>
 				<key>hotspots</key>
 				<array/>

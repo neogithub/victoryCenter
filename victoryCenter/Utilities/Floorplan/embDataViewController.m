@@ -180,7 +180,11 @@
 - (void)loadTestFitBtns
 {
     uiv_testFitButtonHolder = [[UIView alloc] initWithFrame:CGRectMake(272.0, 710.0, 470.0, 40.0)];
-    NSArray *arr_btnTitles = [[NSArray alloc] initWithObjects:@"CORE & SHELL", @"OPEN PLAN", @"CLOSE PLAN", nil];
+//    NSArray *arr_btnTitles = [[NSArray alloc] initWithObjects:@"CORE & SHELL", @"OPEN PLAN", @"CLOSE PLAN", nil];
+    NSArray *arr_btnTitles = [[NSArray alloc] initWithArray:_dict[@"floorplaninfo"][0][@"testfitBtns"]];
+    if (arr_btnTitles.count == 1) {
+        return;
+    }
     CGFloat btnWidth = 156;
     [arr_testFitBtnArray removeAllObjects];
     arr_testFitBtnArray = nil;
