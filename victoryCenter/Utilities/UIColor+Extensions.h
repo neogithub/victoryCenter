@@ -29,6 +29,7 @@
 + (UIColor *)vcBackGroundColor;
 + (UIColor *)vcPanelBackgroundColor;
 + (UIColor *)vcHelpBackgroundColor;
++ (UIColor *)vcPathColor;
 //+ (UIColor *)vpShadowBlue;
 //+ (UIColor *)vpYellow;
 //+ (UIColor *)vpTextBlue;

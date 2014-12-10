@@ -100,8 +100,8 @@
 	[polyPaths addObject:path];
 	
 	shapeLayer.path = path.CGPath;
-	
-	shapeLayer.strokeColor = [UIColor redColor].CGColor;
+
+	shapeLayer.strokeColor = [UIColor vcPathColor].CGColor;
 	shapeLayer.fillColor = _pathFillColor.CGColor;
 	shapeLayer.lineWidth = _pathLineWidth;
 	shapeLayer.lineJoin = kCALineJoinRound;

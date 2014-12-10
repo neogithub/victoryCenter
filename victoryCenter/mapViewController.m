@@ -1742,12 +1742,12 @@ static float    kPanelBtnHeight             = 38.0;
         switch ([sender tag]) {
 			case 0:
 				pathGrouping	= 1;
-				indexStart		= 1;
+				indexStart		= 0;
 				break;
 				
 			case 1:
 				pathGrouping	= 1;
-				indexStart		= 5;
+				indexStart		= 1;
 				break;
 				
 			case 2:
@@ -1756,13 +1756,13 @@ static float    kPanelBtnHeight             = 38.0;
 				break;
 				
 			case 3:
-				pathGrouping	= 1;
-				indexStart		= 0;
+				pathGrouping	= 2;
+				indexStart		= 3;
 				break;
 				
 			case 4:
 				pathGrouping	= 1;
-				indexStart		= 6;
+				indexStart		= 5;
 				break;
 			default:
 				break;
@@ -1774,27 +1774,27 @@ static float    kPanelBtnHeight             = 38.0;
         switch ([sender tag]) {
 			case 0:
 				pathGrouping	= 1;
-				indexStart		= 0;
+				indexStart		= 6;
 				break;
 				
 			case 1:
-				pathGrouping	= 3;
-				indexStart		= 3;
+				pathGrouping	= 1;
+				indexStart		= 7;
 				break;
 				
 			case 2:
 				pathGrouping	= 1;
-				indexStart		= 2;
+				indexStart		= 8;
 				break;
 				
 			case 3:
-				pathGrouping	= 3;
-				indexStart		= 3;
+				pathGrouping	= 1;
+				indexStart		= 9;
 				break;
 				
 			case 4:
 				pathGrouping	= 1;
-				indexStart		= 6;
+				indexStart		= 10;
 				break;
 			default:
 				break;

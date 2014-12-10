@@ -114,14 +114,17 @@
 				<key>items</key>
 				<array>
 					<string>Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png</string>
+					<string>Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png</string>
 				</array>
 				<key>frame</key>
 				<array>
 					<string>play_button.png</string>
+					<string>play_button.png</string>
 				</array>
 				<key>captions</key>
 				<array>
-					<string>Caption</string>
+					<string>Victory Center Overview</string>
+					<string>Victory Park Overview</string>
 				</array>
 			</dict>
 		</array>
