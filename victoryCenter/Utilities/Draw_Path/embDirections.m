@@ -149,7 +149,8 @@
         [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(457, 126) controlPoint1: CGPointMake(574.52, 55.66) controlPoint2: CGPointMake(494.91, 94.42)];
         [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(436, 186) controlPoint1: CGPointMake(447.39, 134.01) controlPoint2: CGPointMake(436, 164.78)];
         [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(539, 357) controlPoint1: CGPointMake(436, 204.37) controlPoint2: CGPointMake(519, 308)];
-        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(489, 385) controlPoint1: CGPointMake(546.22, 374.69) controlPoint2: CGPointMake(489, 385)];
+        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(544, 424) controlPoint1: CGPointMake(546.22, 374.69) controlPoint2: CGPointMake(552, 417)];
+        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(505, 445) controlPoint1: CGPointMake(536, 431) controlPoint2: CGPointMake(505, 445)];
         neighborhood_KatyRailPath.lineCapStyle = kCGLineCapRound;
         
         //// Neighborhood_I35_1 Drawing
