@@ -169,7 +169,7 @@ static int eveningTime = 17;
     else
     {
         _uib_menu.hidden = NO;
-        if (!self.kenView) {
+        if (self.kenView.alpha == 0) {
             _uil_titleLabel.hidden = NO;
         }
     }
