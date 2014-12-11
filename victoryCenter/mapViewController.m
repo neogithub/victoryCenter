@@ -774,6 +774,7 @@ static float    kPanelBtnHeight             = 38.0;
         [self addNeibAmenitiesPanel];
     }
     if (selectedIndex == 2) { // Tapped Access
+        [self updateOverlayImage:@"Neigh_Access.png"];
         [self addNeibAccessPanel];
 //        [self addDistanceInfo];
     }
