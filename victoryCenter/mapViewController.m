@@ -1705,7 +1705,7 @@ static float    kPanelBtnHeight             = 38.0;
         return;
     }
     
-    [self highLightPanelBtn:sender andIndicatorColor:[UIColor redColor] withIndicator:YES];
+    [self highLightPanelBtn:sender andIndicatorColor:[UIColor vcPathColor] withIndicator:YES];
     
     if (tappedBtn.tag == 5) {
         [self addDistanceInfo];
@@ -1806,28 +1806,28 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_siteSubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
-				pathGrouping	= 3;
+				pathGrouping	= 1;
 				indexStart		= 0;
 				break;
 				
 			case 1:
-				pathGrouping	= 3;
-				indexStart		= 3;
+				pathGrouping	= 1;
+				indexStart		= 1;
 				break;
 				
 			case 2:
-				pathGrouping	= 2;
-				indexStart		= 6;
+				pathGrouping	= 1;
+				indexStart		= 0;
 				break;
 				
 			case 3:
-				pathGrouping	= 3;
-				indexStart		= 8;
+				pathGrouping	= 2;
+				indexStart		= 2;
 				break;
 				
 			case 4:
-				pathGrouping	= 3;
-				indexStart		= 0;
+				pathGrouping	= 1;
+				indexStart		= 3;
 				break;
 			default:
 				break;
