@@ -256,10 +256,18 @@
 - (void)openFilm:(int)index
 {
     NSString *oldfileName = [arr_AllFlms objectAtIndex: index];
+    NSString *extension = [NSString new];
+    if (index == 0) {
+        extension = @"mp4";
+    }
+    else {
+        extension = @"mov";
+    }
+    
     NSString *name = [oldfileName substringWithRange:NSMakeRange(0, oldfileName.length-4)];
     NSString *url = [[NSBundle mainBundle]
                      pathForResource:name
-                     ofType:@"mov"];
+                     ofType:extension];
     
     NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:url,@"movieName", nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"playGalleryMovie" object:nil userInfo:dictionary];

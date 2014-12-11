@@ -228,6 +228,8 @@
 		82599B711A3A2ADE00397362 /* thumb_restaurant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82599B631A3A2ADE00397362 /* thumb_restaurant.jpg */; };
 		82599B721A3A2ADE00397362 /* thumb_restaurant&conference2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82599B641A3A2ADE00397362 /* thumb_restaurant&conference2.jpg */; };
 		82599B731A3A2ADE00397362 /* thumb_restaurant_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82599B651A3A2ADE00397362 /* thumb_restaurant_image.jpg */; };
+		82599B761A3A374C00397362 /* Duda_Paine_Victory_Park.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 82599B741A3A374C00397362 /* Duda_Paine_Victory_Park.mp4 */; };
+		82599B771A3A374C00397362 /* thumb_Duda_Paine_Victory_Park.png in Resources */ = {isa = PBXBuildFile; fileRef = 82599B751A3A374C00397362 /* thumb_Duda_Paine_Victory_Park.png */; };
 		825E5F7919F83CD200B77F7F /* grfx_elavators_stack_blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7719F83CD200B77F7F /* grfx_elavators_stack_blank.png */; };
 		825E5F7A19F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7819F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png */; };
 		825E5F8319F83FA300B77F7F /* grf_elavators_high_rise.png in Resources */ = {isa = PBXBuildFile; fileRef = 825E5F7B19F83FA300B77F7F /* grf_elavators_high_rise.png */; };
@@ -654,6 +656,8 @@
 		82599B631A3A2ADE00397362 /* thumb_restaurant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_restaurant.jpg; sourceTree = "<group>"; };
 		82599B641A3A2ADE00397362 /* thumb_restaurant&conference2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_restaurant&conference2.jpg"; sourceTree = "<group>"; };
 		82599B651A3A2ADE00397362 /* thumb_restaurant_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_restaurant_image.jpg; sourceTree = "<group>"; };
+		82599B741A3A374C00397362 /* Duda_Paine_Victory_Park.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Duda_Paine_Victory_Park.mp4; sourceTree = "<group>"; };
+		82599B751A3A374C00397362 /* thumb_Duda_Paine_Victory_Park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_Duda_Paine_Victory_Park.png; sourceTree = "<group>"; };
 		825E5F7719F83CD200B77F7F /* grfx_elavators_stack_blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elavators_stack_blank.png; sourceTree = "<group>"; };
 		825E5F7819F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elavators_stack_blank@2x.png"; sourceTree = "<group>"; };
 		825E5F7B19F83FA300B77F7F /* grf_elavators_high_rise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grf_elavators_high_rise.png; sourceTree = "<group>"; };
@@ -1637,6 +1641,8 @@
 				824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */,
 				826873D11A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png */,
 				826873D21A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov */,
+				82599B741A3A374C00397362 /* Duda_Paine_Victory_Park.mp4 */,
+				82599B751A3A374C00397362 /* thumb_Duda_Paine_Victory_Park.png */,
 			);
 			path = film;
 			sourceTree = "<group>";
@@ -1909,6 +1915,7 @@
 				821EE2611A13BC5300254B2A /* grfx_floorplan14.png in Resources */,
 				8224FE0B19D47097002B1B44 /* Raleway-Thin.otf in Resources */,
 				82599B6C1A3A2ADE00397362 /* restaurant_image.jpg in Resources */,
+				82599B771A3A374C00397362 /* thumb_Duda_Paine_Victory_Park.png in Resources */,
 				82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */,
 				825E5F8719F83FA300B77F7F /* grfx_elavators_low_rise.png in Resources */,
 				822C909E1A375883003944E8 /* thumb_View 04.jpg in Resources */,
@@ -1957,6 +1964,7 @@
 				82000B7E19E590AD00AE2C70 /* team_logoBtmBar@2x.png in Resources */,
 				824C194E19FA938500EA7613 /* grfx_tredart_logo.png in Resources */,
 				82599B691A3A2ADE00397362 /* fitness_image.jpg in Resources */,
+				82599B761A3A374C00397362 /* Duda_Paine_Victory_Park.mp4 in Resources */,
 				821EE2521A13BB9100254B2A /* grfx_floorplan23@2x.png in Resources */,
 				822C90991A375883003944E8 /* thumb_Southeast View of Victory Center.jpg in Resources */,
 				822C909C1A375883003944E8 /* thumb_Victory Center_Highway View.jpg in Resources */,
