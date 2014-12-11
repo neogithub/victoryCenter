@@ -61,13 +61,14 @@
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [flowLayout setMinimumLineSpacing:10.0];
     [flowLayout setMinimumInteritemSpacing:10.0];
-    uic_gallery = [[UICollectionView alloc] initWithFrame:CGRectMake(79.0, 127.0, 884.0, 560.0) collectionViewLayout:flowLayout];
+    uic_gallery = [[UICollectionView alloc] initWithFrame:CGRectMake(79.0, 100.0, 884.0, 580.0) collectionViewLayout:flowLayout];
     uic_gallery.backgroundColor = [UIColor clearColor];
     [uic_gallery registerClass:[CVCell class] forCellWithReuseIdentifier:@"cvCell"];
     [uic_gallery registerClass:[amenitiesHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SupplementaryView"];
     uic_gallery.delegate = self;
     uic_gallery.dataSource = self;
     uic_gallery.alpha = 0.0;
+    uic_gallery.showsVerticalScrollIndicator = NO;
     [self addSubview: uic_gallery];
     [UIView animateWithDuration:0.33
                      animations:^{
