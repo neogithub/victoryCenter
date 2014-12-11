@@ -1789,13 +1789,13 @@ static float    kPanelBtnHeight             = 38.0;
 				break;
 				
 			case 3:
-				pathGrouping	= 1;
+				pathGrouping	= 2;
 				indexStart		= 9;
 				break;
 				
 			case 4:
 				pathGrouping	= 1;
-				indexStart		= 10;
+				indexStart		= 11;
 				break;
 			default:
 				break;

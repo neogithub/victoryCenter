@@ -124,81 +124,73 @@
         UIBezierPath* neighborhood_tollwayPath = UIBezierPath.bezierPath;
         [neighborhood_tollwayPath moveToPoint: CGPointMake(368.5, 0.5)];
         [neighborhood_tollwayPath addCurveToPoint: CGPointMake(388, 83) controlPoint1: CGPointMake(370.37, 9.84) controlPoint2: CGPointMake(377.02, 46.99)];
-        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(411.5, 163.5) controlPoint1: CGPointMake(400.53, 124.1) controlPoint2: CGPointMake(411.5, 163.5)];
-        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(421.5, 208.5) controlPoint1: CGPointMake(411.5, 163.5) controlPoint2: CGPointMake(418, 190)];
-        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(425, 254) controlPoint1: CGPointMake(425, 227) controlPoint2: CGPointMake(421.5, 224.5)];
-        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(452, 372) controlPoint1: CGPointMake(427.02, 271.04) controlPoint2: CGPointMake(439.5, 326.55)];
-        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(470, 443) controlPoint1: CGPointMake(461.14, 405.22) controlPoint2: CGPointMake(463, 403)];
-        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(476, 525) controlPoint1: CGPointMake(477, 483) controlPoint2: CGPointMake(473, 510)];
-        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(518, 521) controlPoint1: CGPointMake(477.26, 531.28) controlPoint2: CGPointMake(501.26, 528.87)];
-        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(547, 474) controlPoint1: CGPointMake(541.22, 510.08) controlPoint2: CGPointMake(545, 499)];
-        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(547, 423) controlPoint1: CGPointMake(549, 449) controlPoint2: CGPointMake(547, 423)];
+        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(414, 171) controlPoint1: CGPointMake(400.53, 124.1) controlPoint2: CGPointMake(402, 147)];
+        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(468, 243) controlPoint1: CGPointMake(426, 195) controlPoint2: CGPointMake(456.01, 228.61)];
+        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(533, 344) controlPoint1: CGPointMake(488, 267) controlPoint2: CGPointMake(529.25, 337.12)];
+        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(547, 423) controlPoint1: CGPointMake(539, 355) controlPoint2: CGPointMake(553, 415)];
+        [neighborhood_tollwayPath addCurveToPoint: CGPointMake(497, 443) controlPoint1: CGPointMake(541, 431) controlPoint2: CGPointMake(497, 443)];
+        neighborhood_tollwayPath.lineCapStyle = kCGLineCapRound;
         
         //// Neighborhood_Wooddall Drawing
         UIBezierPath* neighborhood_WooddallPath = UIBezierPath.bezierPath;
-        [neighborhood_WooddallPath moveToPoint: CGPointMake(874, 16)];
-        [neighborhood_WooddallPath addCurveToPoint: CGPointMake(881, 208) controlPoint1: CGPointMake(878, 76) controlPoint2: CGPointMake(881, 208)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(851, 233)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(670, 400)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(578, 488)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(567, 500)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(562, 506)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(555, 516)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(544, 526)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(544, 488)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(544, 466)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(544, 426)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(544, 400)];
-        [neighborhood_WooddallPath addLineToPoint: CGPointMake(540, 385)];
+        [neighborhood_WooddallPath moveToPoint: CGPointMake(874, 1)];
+        [neighborhood_WooddallPath addCurveToPoint: CGPointMake(882, 185) controlPoint1: CGPointMake(878, 61) controlPoint2: CGPointMake(884, 167)];
+        [neighborhood_WooddallPath addCurveToPoint: CGPointMake(790, 272) controlPoint1: CGPointMake(881.11, 193.01) controlPoint2: CGPointMake(836.42, 229.54)];
+        [neighborhood_WooddallPath addCurveToPoint: CGPointMake(578, 473) controlPoint1: CGPointMake(732.08, 324.98) controlPoint2: CGPointMake(601, 449)];
+        [neighborhood_WooddallPath addCurveToPoint: CGPointMake(544, 511) controlPoint1: CGPointMake(555, 497) controlPoint2: CGPointMake(546.75, 518)];
+        [neighborhood_WooddallPath addCurveToPoint: CGPointMake(544, 424) controlPoint1: CGPointMake(541.25, 504) controlPoint2: CGPointMake(543, 446)];
+        [neighborhood_WooddallPath addCurveToPoint: CGPointMake(497, 443) controlPoint1: CGPointMake(545, 402) controlPoint2: CGPointMake(497, 443)];
+        neighborhood_WooddallPath.lineCapStyle = kCGLineCapRound;
 
         //// Neighborhood_KatyRail Drawing
         UIBezierPath* neighborhood_KatyRailPath = UIBezierPath.bezierPath;
-        [neighborhood_KatyRailPath moveToPoint: CGPointMake(646, 16)];
-        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(620, 42) controlPoint1: CGPointMake(637.63, 25.01) controlPoint2: CGPointMake(628.34, 35.33)];
-        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(538, 89) controlPoint1: CGPointMake(602.42, 56.06) controlPoint2: CGPointMake(538, 89)];
-        [neighborhood_KatyRailPath addLineToPoint: CGPointMake(509, 108)];
-        [neighborhood_KatyRailPath addLineToPoint: CGPointMake(460, 142)];
-        [neighborhood_KatyRailPath addLineToPoint: CGPointMake(447, 155)];
-        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(440, 169) controlPoint1: CGPointMake(447, 155) controlPoint2: CGPointMake(440, 168)];
-        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(437, 184) controlPoint1: CGPointMake(440, 170) controlPoint2: CGPointMake(437, 183)];
-        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(437, 206) controlPoint1: CGPointMake(437, 185) controlPoint2: CGPointMake(437, 206)];
-        [neighborhood_KatyRailPath addLineToPoint: CGPointMake(440, 215)];
-        [neighborhood_KatyRailPath addLineToPoint: CGPointMake(447, 229)];
-        [neighborhood_KatyRailPath addLineToPoint: CGPointMake(460, 248)];
-        [neighborhood_KatyRailPath addLineToPoint: CGPointMake(485, 283)];
-        [neighborhood_KatyRailPath addLineToPoint: CGPointMake(509, 318)];
-        [neighborhood_KatyRailPath addLineToPoint: CGPointMake(533, 364)];
-        [neighborhood_KatyRailPath addLineToPoint: CGPointMake(538, 379)];
+        [neighborhood_KatyRailPath moveToPoint: CGPointMake(644, -2)];
+        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(616, 28) controlPoint1: CGPointMake(641.94, 0.22) controlPoint2: CGPointMake(637, 14)];
+        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(457, 126) controlPoint1: CGPointMake(574.52, 55.66) controlPoint2: CGPointMake(494.91, 94.42)];
+        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(436, 186) controlPoint1: CGPointMake(447.39, 134.01) controlPoint2: CGPointMake(436, 164.78)];
+        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(539, 357) controlPoint1: CGPointMake(436, 204.37) controlPoint2: CGPointMake(519, 308)];
+        [neighborhood_KatyRailPath addCurveToPoint: CGPointMake(489, 385) controlPoint1: CGPointMake(546.22, 374.69) controlPoint2: CGPointMake(489, 385)];
+        neighborhood_KatyRailPath.lineCapStyle = kCGLineCapRound;
         
-        UIBezierPath* neighborhood_I35Path = UIBezierPath.bezierPath;
-        [neighborhood_I35Path moveToPoint: CGPointMake(0, 16)];
-        [neighborhood_I35Path addCurveToPoint: CGPointMake(49, 32) controlPoint1: CGPointMake(36.5, 27.5) controlPoint2: CGPointMake(49, 32)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(124, 53)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(176, 65)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(197, 69)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(205, 71)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(213, 74)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(248, 92)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(275, 107)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(367, 171)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(382, 184)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(395, 199)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(409, 224)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(421, 258)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(435, 318)];
-        [neighborhood_I35Path addLineToPoint: CGPointMake(457, 408)];
+        //// Neighborhood_I35_1 Drawing
+        UIBezierPath* neighborhood_I35_1Path = UIBezierPath.bezierPath;
+        [neighborhood_I35_1Path moveToPoint: CGPointMake(0, 1)];
+        [neighborhood_I35_1Path addCurveToPoint: CGPointMake(105, 32) controlPoint1: CGPointMake(22.02, 7.94) controlPoint2: CGPointMake(59.39, 21.26)];
+        [neighborhood_I35_1Path addCurveToPoint: CGPointMake(214, 60) controlPoint1: CGPointMake(134.99, 39.06) controlPoint2: CGPointMake(178.3, 44.93)];
+        [neighborhood_I35_1Path addCurveToPoint: CGPointMake(396, 185) controlPoint1: CGPointMake(304, 98) controlPoint2: CGPointMake(381, 163)];
+        [neighborhood_I35_1Path addCurveToPoint: CGPointMake(427, 268) controlPoint1: CGPointMake(402.18, 194.06) controlPoint2: CGPointMake(416.59, 229.29)];
+        [neighborhood_I35_1Path addCurveToPoint: CGPointMake(457, 393) controlPoint1: CGPointMake(441.86, 323.24) controlPoint2: CGPointMake(452.88, 385.94)];
+        [neighborhood_I35_1Path addCurveToPoint: CGPointMake(534, 372) controlPoint1: CGPointMake(464, 405) controlPoint2: CGPointMake(527, 371)];
+        [neighborhood_I35_1Path addCurveToPoint: CGPointMake(547, 423) controlPoint1: CGPointMake(541, 373) controlPoint2: CGPointMake(548, 415)];
+        [neighborhood_I35_1Path addCurveToPoint: CGPointMake(497, 443) controlPoint1: CGPointMake(546, 431) controlPoint2: CGPointMake(497, 443)];
+        neighborhood_I35_1Path.lineCapStyle = kCGLineCapRound;
         
+        //// Neighborhood_I35_2 Drawing
+        UIBezierPath* neighborhood_I35_2Path = UIBezierPath.bezierPath;
+        [neighborhood_I35_2Path moveToPoint: CGPointMake(0, 1)];
+        [neighborhood_I35_2Path addCurveToPoint: CGPointMake(105, 32) controlPoint1: CGPointMake(22.02, 7.94) controlPoint2: CGPointMake(59.39, 21.26)];
+        [neighborhood_I35_2Path addCurveToPoint: CGPointMake(214, 60) controlPoint1: CGPointMake(134.99, 39.06) controlPoint2: CGPointMake(178.3, 44.93)];
+        [neighborhood_I35_2Path addCurveToPoint: CGPointMake(396, 185) controlPoint1: CGPointMake(304, 98) controlPoint2: CGPointMake(381, 163)];
+        [neighborhood_I35_2Path addCurveToPoint: CGPointMake(427, 268) controlPoint1: CGPointMake(402.18, 194.06) controlPoint2: CGPointMake(416.59, 229.29)];
+        [neighborhood_I35_2Path addCurveToPoint: CGPointMake(469, 434) controlPoint1: CGPointMake(435.6, 299.97) controlPoint2: CGPointMake(451.14, 374.92)];
+        [neighborhood_I35_2Path addCurveToPoint: CGPointMake(477, 491) controlPoint1: CGPointMake(482, 477) controlPoint2: CGPointMake(468, 491)];
+        [neighborhood_I35_2Path addCurveToPoint: CGPointMake(544, 482) controlPoint1: CGPointMake(513, 491) controlPoint2: CGPointMake(539, 483)];
+        [neighborhood_I35_2Path addCurveToPoint: CGPointMake(547, 423) controlPoint1: CGPointMake(549, 481) controlPoint2: CGPointMake(549, 431)];
+        [neighborhood_I35_2Path addCurveToPoint: CGPointMake(497, 443) controlPoint1: CGPointMake(545, 415) controlPoint2: CGPointMake(497, 443)];
+        neighborhood_I35_2Path.lineCapStyle = kCGLineCapRound;
+        
+        //// Neighhorhood_I30 Drawing
         UIBezierPath* neighhorhood_I30Path = UIBezierPath.bezierPath;
-        [neighhorhood_I30Path moveToPoint: CGPointMake(476, 784)];
-        [neighhorhood_I30Path addCurveToPoint: CGPointMake(479.45, 774.37) controlPoint1: CGPointMake(477.41, 780.2) controlPoint2: CGPointMake(478.81, 776.97)];
-        [neighhorhood_I30Path addCurveToPoint: CGPointMake(485, 755) controlPoint1: CGPointMake(480.76, 769.05) controlPoint2: CGPointMake(483.66, 761.13)];
-        [neighhorhood_I30Path addCurveToPoint: CGPointMake(482, 700) controlPoint1: CGPointMake(485.75, 751.55) controlPoint2: CGPointMake(483.96, 722.94)];
-        [neighhorhood_I30Path addCurveToPoint: CGPointMake(479, 668) controlPoint1: CGPointMake(480.66, 684.23) controlPoint2: CGPointMake(479, 668)];
-        [neighhorhood_I30Path addLineToPoint: CGPointMake(476, 561)];
-        [neighhorhood_I30Path addLineToPoint: CGPointMake(474, 495)];
-        [neighhorhood_I30Path addLineToPoint: CGPointMake(472, 468)];
-        [neighhorhood_I30Path addLineToPoint: CGPointMake(469, 449)];
-        [neighhorhood_I30Path addLineToPoint: CGPointMake(455, 397)];
+        [neighhorhood_I30Path moveToPoint: CGPointMake(476, 769)];
+        [neighhorhood_I30Path addCurveToPoint: CGPointMake(479.45, 759.37) controlPoint1: CGPointMake(477.41, 765.2) controlPoint2: CGPointMake(478.81, 761.97)];
+        [neighhorhood_I30Path addCurveToPoint: CGPointMake(485, 732) controlPoint1: CGPointMake(480.76, 754.05) controlPoint2: CGPointMake(481.45, 751.53)];
+        [neighhorhood_I30Path addCurveToPoint: CGPointMake(482, 685) controlPoint1: CGPointMake(487, 721) controlPoint2: CGPointMake(483.96, 707.94)];
+        [neighhorhood_I30Path addCurveToPoint: CGPointMake(476, 527) controlPoint1: CGPointMake(481.03, 673.61) controlPoint2: CGPointMake(474, 525)];
+        [neighhorhood_I30Path addCurveToPoint: CGPointMake(509, 522) controlPoint1: CGPointMake(476.97, 527.97) controlPoint2: CGPointMake(492.77, 526.1)];
+        [neighhorhood_I30Path addCurveToPoint: CGPointMake(544, 499) controlPoint1: CGPointMake(526.27, 517.64) controlPoint2: CGPointMake(539, 506)];
+        [neighhorhood_I30Path addCurveToPoint: CGPointMake(544, 428) controlPoint1: CGPointMake(549, 492) controlPoint2: CGPointMake(546, 436)];
+        [neighhorhood_I30Path addCurveToPoint: CGPointMake(497, 443) controlPoint1: CGPointMake(542, 420) controlPoint2: CGPointMake(497, 443)];
+        neighhorhood_I30Path.lineCapStyle = kCGLineCapRound;
 
 		// END COPY FROM PAINT CODE
 
@@ -286,7 +278,15 @@
 		pathItem.pathColor = pathBlue;
 		pathItem.pathSpeed = pathSpeed;
 		pathItem.pathWidth = pathWidth;
-		pathItem.embPath = neighborhood_I35Path;
+		pathItem.embPath = neighborhood_I35_1Path;
+		[_bezierPaths addObject:pathItem];
+        
+        pathItem = [[embBezierPathItem alloc] init];
+		pathItem.pathDelay = 1.0;
+		pathItem.pathColor = pathBlue;
+		pathItem.pathSpeed = pathSpeed;
+		pathItem.pathWidth = pathWidth;
+		pathItem.embPath = neighborhood_I35_2Path;
 		[_bezierPaths addObject:pathItem];
         
         pathItem = [[embBezierPathItem alloc] init];
