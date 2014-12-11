@@ -15,13 +15,13 @@
 		
 		// setup
 		_bezierPaths = [[NSMutableArray alloc] init];
-		UIBezierPath *reversePath;
-
-		UIColor *pathRed = [UIColor colorWithRed:235.0f/255.0f
-										   green:199.0f/255.0f
-											blue:113.0f/255.0f
-										   alpha:1.0];
-		
+//		UIBezierPath *reversePath;
+//
+//		UIColor *pathRed = [UIColor colorWithRed:235.0f/255.0f
+//										   green:199.0f/255.0f
+//											blue:113.0f/255.0f
+//										   alpha:1.0];
+//		
 		
 		
 		UIColor *pathBlue = [UIColor colorWithRed:235/255.0f

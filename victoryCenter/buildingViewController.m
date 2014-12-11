@@ -11,6 +11,7 @@
 #import "floorPlanViewController.h"
 #import "xhPopTipsView.h"
 #import "buildingAmenities.h"
+#import "ameniteisGallery.h"
 
 static float kOriginalStatHeight    = 45+36*3;
 
@@ -53,6 +54,7 @@ static float kOriginalStatHeight    = 45+36*3;
 
 //Amenities
 @property (nonatomic, strong) buildingAmenities             *amenities;
+@property (nonatomic, strong) ameniteisGallery              *amenitiesGallery;
 
 //Elevator
 @property (nonatomic, strong) UIView                        *uiv_elevatorContainer;
@@ -227,6 +229,8 @@ static float kOriginalStatHeight    = 45+36*3;
     _uiv_elevatorContainer = nil;
     [_amenities removeFromSuperview];
     _amenities = nil;
+    [_amenitiesGallery removeFromSuperview];
+    _amenitiesGallery = nil;
     _uiiv_bgImg.hidden = YES;
     _uiv_bldImgContainer.hidden = YES;
     _uiv_bldImgContainer.transform = CGAffineTransformIdentity;
@@ -255,8 +259,10 @@ static float kOriginalStatHeight    = 45+36*3;
 //            _uiiv_bgImg.hidden = NO;
 //            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldAmenities_bg" ofType:@"jpg"];
 //            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
-            _amenities = [[buildingAmenities alloc] initWithFrame:screenRect];
-            [self.view insertSubview:_amenities belowSubview:_uib_bldgStats];
+//            _amenities = [[buildingAmenities alloc] initWithFrame:screenRect];
+//            [self.view insertSubview:_amenities belowSubview:_uib_bldgStats];
+            _amenitiesGallery = [[ameniteisGallery alloc] initWithFrame:screenRect];
+            [self.view insertSubview:_amenitiesGallery belowSubview:_uib_bldgStats];
             break;
         }
         case 4: {
@@ -947,6 +953,9 @@ static float kOriginalStatHeight    = 45+36*3;
     
     [_uib_amenities removeFromSuperview];
     _uib_amenities = nil;
+    
+    [_amenitiesGallery removeFromSuperview];
+    _amenitiesGallery = nil;
     
     [_uib_elevators removeFromSuperview];
     _uib_elevators = nil;
