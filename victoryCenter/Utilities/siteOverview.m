@@ -93,12 +93,42 @@
 
 - (void)tapCell:(id)sender
 {
-//    NSLog(@"Tapped cell is %i", (int)[sender tag]);
-    NSString *url = [[NSBundle mainBundle]
-                     pathForResource:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD"
-                     ofType:@"mov"];
-    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:url, @"movieName", nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"playGalleryMovie" object:nil userInfo:dictionary];
+    NSLog(@"Tapped cell is %i", (int)[sender tag]);
+    if ((int)[sender tag] == 0) {
+        NSString *url = [[NSBundle mainBundle]
+                         pathForResource:@"Duda_Paine_Victory_Park"
+                         ofType:@"mp4"];
+        NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:url, @"movieName", nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"playGalleryMovie" object:nil userInfo:dictionary];
+        return;
+    }
+    NSMutableArray *arr_image = [[NSMutableArray alloc] init];
+    if ((int)[sender tag] == 1) { // LIVE
+        [arr_image addObjectsFromArray:[[NSArray alloc] initWithObjects:
+                                        @"SkyHouse Dallas_072913.jpg",
+                                        @"W Hotel.jpg",
+                                        nil]];
+    }
+    if ((int)[sender tag] == 2) { // WORK
+        [arr_image addObjectsFromArray:[[NSArray alloc] initWithObjects:
+                                        @"SkyHouse Dallas_072913.jpg",
+                                        @"W Hotel.jpg",
+                                        nil]];
+    }
+    if ((int)[sender tag] == 3) { // PLAY
+        [arr_image addObjectsFromArray:[[NSArray alloc] initWithObjects:
+                                        @"american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg",
+                                        @"arpeggio.jpg",
+                                        @"dallas_2013_fearings_creditdcvb_4.jpg",
+                                        @"dallas_klydewarrenpark_creditdcvb_2.jpg",
+                                        @"House of Blues_Night.jpg",
+                                        @"KATY TRAILS.jpg",
+                                        @"perot-museum-of-nature-and-science---mark-knight-photography.jpg",
+                                        nil]];
+    }
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_image, @"images", [NSNumber numberWithInt:0], @"startIndex", nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"loadFGallery" object:nil userInfo:dictionary];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
 }
 
 /*

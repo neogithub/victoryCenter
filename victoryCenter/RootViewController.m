@@ -522,7 +522,7 @@ static int eveningTime = 17;
 #pragma mark Movie Button Action
 - (IBAction)movieBtnTapped:(id)sender {
     
-    NSString *url = [[NSBundle mainBundle] pathForResource:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD" ofType:@"mov"];
+    NSString *url = [[NSBundle mainBundle] pathForResource:@"Duda_Paine_Victory_Park" ofType:@"mp4"];
     [self playMovieWithName:url];
 }
 

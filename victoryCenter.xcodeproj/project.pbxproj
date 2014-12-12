@@ -294,6 +294,15 @@
 		828041F71A07C1CF00847A80 /* tmp_testfit1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */; };
 		828041F81A07C1CF00847A80 /* tmp_testfit2.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F41A07C1CF00847A80 /* tmp_testfit2.png */; };
 		828041F91A07C1CF00847A80 /* tmp_testfit2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F51A07C1CF00847A80 /* tmp_testfit2@2x.png */; };
+		8294BB271A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB1C1A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg */; };
+		8294BB281A3B708200EDD0EB /* W Hotel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB1D1A3B708200EDD0EB /* W Hotel.jpg */; };
+		8294BB291A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB1F1A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg */; };
+		8294BB2A1A3B708200EDD0EB /* arpeggio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB201A3B708200EDD0EB /* arpeggio.jpg */; };
+		8294BB2B1A3B708200EDD0EB /* dallas_2013_fearings_creditdcvb_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB211A3B708200EDD0EB /* dallas_2013_fearings_creditdcvb_4.jpg */; };
+		8294BB2C1A3B708200EDD0EB /* dallas_klydewarrenpark_creditdcvb_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB221A3B708200EDD0EB /* dallas_klydewarrenpark_creditdcvb_2.jpg */; };
+		8294BB2D1A3B708200EDD0EB /* House of Blues_Night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB231A3B708200EDD0EB /* House of Blues_Night.jpg */; };
+		8294BB2E1A3B708200EDD0EB /* KATY TRAILS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB241A3B708200EDD0EB /* KATY TRAILS.jpg */; };
+		8294BB2F1A3B708200EDD0EB /* perot-museum-of-nature-and-science---mark-knight-photography.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB251A3B708200EDD0EB /* perot-museum-of-nature-and-science---mark-knight-photography.jpg */; };
 		8297BD2A19F5760D0046CB65 /* grfx_galleryCap.png in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2819F5760D0046CB65 /* grfx_galleryCap.png */; };
 		8297BD2B19F5760D0046CB65 /* grfx_galleryCap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8297BD2919F5760D0046CB65 /* grfx_galleryCap@2x.png */; };
 		82A21F621A028F3A00BE8706 /* gfrx_all_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A21F601A028F3A00BE8706 /* gfrx_all_overlay.png */; };
@@ -730,6 +739,15 @@
 		828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp_testfit1@2x.png"; sourceTree = "<group>"; };
 		828041F41A07C1CF00847A80 /* tmp_testfit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_testfit2.png; sourceTree = "<group>"; };
 		828041F51A07C1CF00847A80 /* tmp_testfit2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp_testfit2@2x.png"; sourceTree = "<group>"; };
+		8294BB1C1A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SkyHouse Dallas_072913.jpg"; sourceTree = "<group>"; };
+		8294BB1D1A3B708200EDD0EB /* W Hotel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "W Hotel.jpg"; sourceTree = "<group>"; };
+		8294BB1F1A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg"; sourceTree = "<group>"; };
+		8294BB201A3B708200EDD0EB /* arpeggio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arpeggio.jpg; sourceTree = "<group>"; };
+		8294BB211A3B708200EDD0EB /* dallas_2013_fearings_creditdcvb_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dallas_2013_fearings_creditdcvb_4.jpg; sourceTree = "<group>"; };
+		8294BB221A3B708200EDD0EB /* dallas_klydewarrenpark_creditdcvb_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dallas_klydewarrenpark_creditdcvb_2.jpg; sourceTree = "<group>"; };
+		8294BB231A3B708200EDD0EB /* House of Blues_Night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "House of Blues_Night.jpg"; sourceTree = "<group>"; };
+		8294BB241A3B708200EDD0EB /* KATY TRAILS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "KATY TRAILS.jpg"; sourceTree = "<group>"; };
+		8294BB251A3B708200EDD0EB /* perot-museum-of-nature-and-science---mark-knight-photography.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "perot-museum-of-nature-and-science---mark-knight-photography.jpg"; sourceTree = "<group>"; };
 		8297BD2819F5760D0046CB65 /* grfx_galleryCap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_galleryCap.png; sourceTree = "<group>"; };
 		8297BD2919F5760D0046CB65 /* grfx_galleryCap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_galleryCap@2x.png"; sourceTree = "<group>"; };
 		82A21F601A028F3A00BE8706 /* gfrx_all_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gfrx_all_overlay.png; sourceTree = "<group>"; };
@@ -1418,6 +1436,46 @@
 			path = overlays;
 			sourceTree = "<group>";
 		};
+		8294BB1A1A3B708200EDD0EB /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				8294BB1B1A3B708200EDD0EB /* Live */,
+				8294BB1E1A3B708200EDD0EB /* Play */,
+				8294BB261A3B708200EDD0EB /* Work */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		8294BB1B1A3B708200EDD0EB /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				8294BB1C1A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg */,
+				8294BB1D1A3B708200EDD0EB /* W Hotel.jpg */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		8294BB1E1A3B708200EDD0EB /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				8294BB1F1A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg */,
+				8294BB201A3B708200EDD0EB /* arpeggio.jpg */,
+				8294BB211A3B708200EDD0EB /* dallas_2013_fearings_creditdcvb_4.jpg */,
+				8294BB221A3B708200EDD0EB /* dallas_klydewarrenpark_creditdcvb_2.jpg */,
+				8294BB231A3B708200EDD0EB /* House of Blues_Night.jpg */,
+				8294BB241A3B708200EDD0EB /* KATY TRAILS.jpg */,
+				8294BB251A3B708200EDD0EB /* perot-museum-of-nature-and-science---mark-knight-photography.jpg */,
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		8294BB261A3B708200EDD0EB /* Work */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Work;
+			sourceTree = "<group>";
+		};
 		82A29E3319EC4ED300AFAE1E /* Draw_Path */ = {
 			isa = PBXGroup;
 			children = (
@@ -1596,6 +1654,7 @@
 		82DC11DD19DAEE070057AE4F /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				8294BB1A1A3B708200EDD0EB /* Overview */,
 				82716A6519E434C10070A331 /* overlays */,
 				82DC11DE19DAEE070057AE4F /* maps */,
 			);
@@ -1731,6 +1790,7 @@
 				822C90891A375621003944E8 /* Victory Center 02 W Hotel View.jpg in Resources */,
 				824E10E41A0D5F5C00BDBDA6 /* Plane_Icon_Blue@2x.png in Resources */,
 				82459E7519F6974A00E03A8D /* grfx_contactClose@2x.jpg in Resources */,
+				8294BB281A3B708200EDD0EB /* W Hotel.jpg in Resources */,
 				82000B8D19E592A800AE2C70 /* team_duda_logo.png in Resources */,
 				8297BD2B19F5760D0046CB65 /* grfx_galleryCap@2x.png in Resources */,
 				824F368619E6C47500267B44 /* thumb_20140716_view2_90 feet.jpg in Resources */,
@@ -1775,9 +1835,11 @@
 				82000B7919E590AD00AE2C70 /* Team_bg.jpg in Resources */,
 				82A4EF571A03D013004D22EE /* grfx_mailIcon@2x.png in Resources */,
 				82DC11CA19DAEA940057AE4F /* 20140802_view4_100m_05.jpg in Resources */,
+				8294BB291A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg in Resources */,
 				82DC11E519DAEE070057AE4F /* Neighborhood_map.png in Resources */,
 				824C196419FA9DC400EA7613 /* grfx_floorplan15@2x.png in Resources */,
 				82594C791A1FB2D400AC0AB4 /* TEST_FIT_FLOOR19_ClosedOffice.png in Resources */,
+				8294BB2C1A3B708200EDD0EB /* dallas_klydewarrenpark_creditdcvb_2.jpg in Resources */,
 				826078121A0130CA000DF24F /* grfx_logo.png in Resources */,
 				82DC11E819DAEE070057AE4F /* City_base_map_@2x.png in Resources */,
 				82C06E7F1A165949000F969E /* grfx_launching_night@2x.jpg in Resources */,
@@ -1799,6 +1861,7 @@
 				823DE6ED19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on.png in Resources */,
 				82594C7D1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR8_ClosedOffice.png in Resources */,
 				822C909B1A375883003944E8 /* thumb_Victory Center 02 W Hotel View.jpg in Resources */,
+				8294BB2B1A3B708200EDD0EB /* dallas_2013_fearings_creditdcvb_4.jpg in Resources */,
 				82000B9019E592A800AE2C70 /* team_hks_logo@2x.png in Resources */,
 				82000B8B19E592A800AE2C70 /* team_cushman_logo.png in Resources */,
 				82599B731A3A2ADE00397362 /* thumb_restaurant_image.jpg in Resources */,
@@ -1809,6 +1872,7 @@
 				82599B491A39D95D00397362 /* Neigh_Access.png in Resources */,
 				8260B9ED1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png in Resources */,
 				828041F81A07C1CF00847A80 /* tmp_testfit2.png in Resources */,
+				8294BB2A1A3B708200EDD0EB /* arpeggio.jpg in Resources */,
 				824F369019E6C47500267B44 /* thumb_20140802_view4_100m_05.jpg in Resources */,
 				82DC11D219DAEA940057AE4F /* victory_center_138feet.jpg in Resources */,
 				824F368A19E6C47500267B44 /* thumb_20140802_downtown_100m_5pm_high-res.jpg in Resources */,
@@ -1855,6 +1919,7 @@
 				82000B9F19E5963800AE2C70 /* team_hks_text.png in Resources */,
 				82627E2C19E732870062FC0C /* Lightbox_overlay_BG.png in Resources */,
 				82A805D119D1F61E00308BA1 /* grfx_mialIcon@2x.png in Resources */,
+				8294BB2F1A3B708200EDD0EB /* perot-museum-of-nature-and-science---mark-knight-photography.jpg in Resources */,
 				823DE6FA1A0031CA0016CD3A /* grfx_floorUp@2x.png in Resources */,
 				82594C7C1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR19_OpenOffice@2x.png in Resources */,
 				822C90861A375621003944E8 /* Lobby View.jpg in Resources */,
@@ -1864,6 +1929,7 @@
 				825E5F7A19F83CD200B77F7F /* grfx_elavators_stack_blank@2x.png in Resources */,
 				8224FE0819D47097002B1B44 /* Raleway-Medium.otf in Resources */,
 				82000B9B19E5963800AE2C70 /* team_cushman_text.png in Resources */,
+				8294BB271A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg in Resources */,
 				824F369819E6C47500267B44 /* thumb_victory_center_138feet.jpg in Resources */,
 				82000B9A19E5963800AE2C70 /* team_cousins_text@2x.png in Resources */,
 				82CBD72B19F995120001191F /* grfx_site_parking@2x.png in Resources */,
@@ -1926,6 +1992,7 @@
 				824F368D19E6C47500267B44 /* thumb_20140802_downtown_60m_2pm.jpg in Resources */,
 				82DC11C619DAEA940057AE4F /* 20140802_downtown_100m_6pm_high-res.jpg in Resources */,
 				82594C801A1FB2D400AC0AB4 /* TEST_FIT_FLOOR8_OpenOffice@2x.png in Resources */,
+				8294BB2E1A3B708200EDD0EB /* KATY TRAILS.jpg in Resources */,
 				82AB934D19FEC97B00DD0B30 /* grfx_north_hs@2x.png in Resources */,
 				828041F71A07C1CF00847A80 /* tmp_testfit1@2x.png in Resources */,
 				824F368519E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg in Resources */,
@@ -2013,6 +2080,7 @@
 				821EE2601A13BC5300254B2A /* grfx_floorplan12@2x.png in Resources */,
 				82599B721A3A2ADE00397362 /* thumb_restaurant&conference.jpg in Resources */,
 				82DC11FB19DAF2990057AE4F /* photo-gallery-edit-caption.png in Resources */,
+				8294BB2D1A3B708200EDD0EB /* House of Blues_Night.jpg in Resources */,
 				824E10DE1A0D547B00BDBDA6 /* grfx_treLogo@2x.png in Resources */,
 				824C196519FA9DC400EA7613 /* grfx_floorplan16.png in Resources */,
 				8224FE3319D4BD6E002B1B44 /* normal_frame@2x.png in Resources */,
