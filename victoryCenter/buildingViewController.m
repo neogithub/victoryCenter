@@ -460,6 +460,10 @@ static float kOriginalStatHeight    = 45+36*3;
     uiiv_statContent = [[UIImageView alloc] initWithImage:[UIImage imageNamed:arr_statContent[tappedBtn.tag]]];
     UIButton *firstBtn = [arr_panelBtnArray objectAtIndex:0];
     uiiv_statContent.frame = CGRectMake(0.0, 36*([sender tag] + 1), uiiv_statContent.frame.size.width, uiiv_statContent.frame.size.height);
+    if ((int)[sender tag] == 2) {
+        uiiv_statContent.userInteractionEnabled = YES;
+        [self addOptionBtns:uiiv_statContent];
+    }
     
     //Add table view under buttons' container
     [buttonContianer insertSubview:uiiv_statContent aboveSubview:firstBtn];
@@ -579,6 +583,25 @@ static float kOriginalStatHeight    = 45+36*3;
         }
         loadStats++;
     }];
+}
+
+- (void)addOptionBtns:(UIView *)container
+{
+    NSLog(@"the container is %@", [container description]);
+    UIButton *uib_tmp =[UIButton buttonWithType:UIButtonTypeCustom];
+    uib_tmp.frame = CGRectMake(0.0, 0.0, 100.0, 50.0);
+    uib_tmp.backgroundColor = [UIColor redColor];
+    [uib_tmp addTarget:self action:@selector(tapOnAmenitiesBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [container addSubview: uib_tmp];
+}
+
+- (void)tapOnAmenitiesBtn:(id)sender
+{
+    NSArray *arr_image = [[NSArray alloc] initWithObjects:@"restaurant_image.jpg", @"restaurant.jpg", @"restaurant&conference.jpg", nil];
+    
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_image, @"images", [NSNumber numberWithInt:0], @"startIndex", nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"loadFGallery" object:nil userInfo:dictionary];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
 }
 
 #pragma mark - Set up Floor plan view
