@@ -297,6 +297,12 @@ static int eveningTime = 17;
 		[button setTag:i+1];
         button.layer.borderColor = button.backgroundColor.CGColor;
         button.layer.borderWidth = 1.5;
+        
+        button.layer.shadowOffset = CGSizeMake(0, -20);
+        button.layer.shadowRadius = 20;
+        button.layer.shadowOpacity = 1.0;
+        button.layer.shadowColor = [UIColor blackColor].CGColor;
+        
 		[_arr_menuButtons addObject:button];
 		[_uiv_menuPanel insertSubview:button atIndex:0];
 		button.alpha = 0.0;
@@ -451,11 +457,7 @@ static int eveningTime = 17;
 												  [UIView animateWithDuration:0.3/1.5 animations:^{
 													  _uib_menu.transform = CGAffineTransformMakeTranslation(370, 0);
 												  } completion:nil];
-												  
-												  
-												  
 											  }];
-							 
 							 ii += 1;
 						 }
 						 
