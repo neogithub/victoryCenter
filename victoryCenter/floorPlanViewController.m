@@ -168,7 +168,11 @@ static CGFloat  kPanelTitleHeight           = 46;
     _uiiv_keyPanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     _uiiv_keyPanel.layer.borderWidth = 1.0;
     _uiiv_keyPanel.alpha = 0.8;
+    _uiiv_keyPanel.hidden = YES;
     [self.view addSubview: _uiiv_keyPanel];
+    if (_currentPage == 1 || _currentPage == 11 || _currentPage == 14 ) {
+        _uiiv_keyPanel.hidden = NO;
+    }
 }
 
 #pragma mark - Set up side panel
@@ -378,6 +382,13 @@ static CGFloat  kPanelTitleHeight           = 46;
     _uil_floorTitle.text = _arr_titleText[index];
     _uil_floorRsf.text = labelText;
     [self enableArrowBtns];
+    
+    if (_currentPage == 1 || _currentPage == 11 || _currentPage == 14 ) {
+        _uiiv_keyPanel.hidden = NO;
+    }
+    else {
+        _uiiv_keyPanel.hidden = YES;
+    }
 }
 
 - (void)enableArrowBtns
