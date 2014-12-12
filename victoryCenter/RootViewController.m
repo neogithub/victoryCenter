@@ -841,7 +841,7 @@ static int eveningTime = 17;
 {
     NSArray *arr_images = [notification.userInfo objectForKey:@"images"];
     NSArray *arr_caption = [notification.userInfo objectForKey:@"caption"];
-    int index = [[notification.userInfo objectForKey:@"startIndex"] integerValue];
+    int index = (int)[[notification.userInfo objectForKey:@"startIndex"] integerValue];
     NSString *galleryTitle = [notification.userInfo objectForKey:@"title"];
     
     localImages =  arr_images;

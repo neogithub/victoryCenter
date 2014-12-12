@@ -37,6 +37,8 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   UIButton                        *uib_upArrow;
 @property (nonatomic, strong)   UIButton                        *uib_downArrow;
 // Floor num & RSF. labels
+@property (nonatomic, strong)   UIView                          *uiv_floorTitleContainer;
+@property (nonatomic, strong)   UILabel                         *uil_floorTitle;
 @property (nonatomic, strong)   UILabel                         *uil_floorRsf;
 // Key panel
 @property (nonatomic, strong)   UIImageView                     *uiiv_keyPanel;
@@ -64,7 +66,7 @@ static CGFloat  kPanelTitleHeight           = 46;
 {
     self.view.frame = screenRect;
     _arr_titleText = [[NSArray alloc] initWithObjects: @"FLOOR 23", @"FLOOR 22", @"FLOOR 21", @"FLOOR 20", @"FLOOR 19", @"FLOOR 18", @"FLOOR 17", @"FLOOR 16", @"FLOOR 15", @"FLOOR 14", @"FLOOR 12", @"FLOOR 11", @"FLOOR 10", @"FLOOR 9", @"FLOOR 8", @"FLOOR 1", nil];
-    _arr_squareFeet = [[NSArray alloc] initWithObjects:@"27,802 SF", @"27,957 SF", @"28,112 SF", @"28,276 SF", @"28,433 SF", @"28,591 SF", @"28,337 SF", @"28,439 SF", @"28,694 SF", @"28,853 SF", @"29,002 SF", @"29,161 SF", @"29,161 SF", @"29,750 SF", @"46,943 SF", @"46,943 SF", nil];
+    _arr_squareFeet = [[NSArray alloc] initWithObjects:@"27,802", @"27,957", @"28,112", @"28,276", @"28,433", @"28,591", @"28,337 ", @"28,439", @"28,694", @"28,853", @"29,002", @"29,161", @"29,161", @"29,750", @"46,943", @"46,943", nil];
     
     CGRect frame_23 = CGRectMake(42.0, 18.0, 93.0, 5.0);
     CGRect frame_22 = CGRectMake(42.0, 23.0, 93.0, 5.0);
@@ -218,18 +220,28 @@ static CGFloat  kPanelTitleHeight           = 46;
 
 - (void)createFloorPlanAndRsfLabels
 {
-    NSString *floorRsf = _arr_squareFeet[_currentPage];
-    NSString *floorNum = _arr_titleText[_currentPage];
-    NSString *labelText = [NSString stringWithFormat:@"%@: %@ RSF", floorNum, floorRsf];
-    _uil_floorRsf = [[UILabel alloc] initWithFrame:CGRectMake(45, 130, 200, 30.0)];
-    _uil_floorRsf.backgroundColor = [UIColor whiteColor];
-    _uil_floorRsf.layer.borderWidth = 1.0;
-    _uil_floorRsf.layer.borderColor = [UIColor vcDarkBlue].CGColor;
-    _uil_floorRsf.text = labelText;
-    _uil_floorRsf.textColor = [UIColor vcLightBlue];
+    _uiv_floorTitleContainer = [[UIView alloc] initWithFrame:CGRectMake(31, 97, 168, 58)];
+    _uiv_floorTitleContainer.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview: _uiv_floorTitleContainer];
+    
+    UIView *uiv_leftBar = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 13.0, 58.0)];
+    uiv_leftBar.backgroundColor = [UIColor vcdarkmenu];
+    [_uiv_floorTitleContainer addSubview: uiv_leftBar];
+    
+    _uil_floorTitle = [[UILabel alloc] initWithFrame:CGRectMake(13.0, 0.0, 140.0, 32)];
+    _uil_floorTitle.text = _arr_titleText[_currentPage];
+    _uil_floorTitle.font = [UIFont fontWithName:@"Raleway-Bold" size:16.0];
+    _uil_floorTitle.textColor = [UIColor vcDarkBlue];
+    _uil_floorTitle.textAlignment = NSTextAlignmentCenter;
+    [_uiv_floorTitleContainer addSubview: _uil_floorTitle];
+    
+    _uil_floorRsf = [[UILabel alloc] initWithFrame:CGRectMake(13.0, 32.0, 150.0, 26.0)];
+    _uil_floorRsf.text = [NSString stringWithFormat:@"RSF: %@", _arr_squareFeet[_currentPage]];
+//    _uil_floorRsf.font = [UIFont fontWithName:@"Raleway-Bold" size:13.0];
+    _uil_floorRsf.font = [UIFont boldSystemFontOfSize:13.0];
+    _uil_floorRsf.textColor = [UIColor vcDarkBlue];
     _uil_floorRsf.textAlignment = NSTextAlignmentCenter;
-    _uil_floorRsf.font = [UIFont fontWithName:@"Raleway-Bold" size:13.0];
-    [self.view addSubview: _uil_floorRsf];
+    [_uiv_floorTitleContainer addSubview: _uil_floorRsf];
 }
 
 #pragma mark - Set up control Buttons
@@ -363,6 +375,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     
     NSString *floorRsf = _arr_squareFeet[index];
     NSString *labelText = [NSString stringWithFormat:@"RSF: %@", floorRsf];
+    _uil_floorTitle.text = _arr_titleText[index];
     _uil_floorRsf.text = labelText;
     [self enableArrowBtns];
 }

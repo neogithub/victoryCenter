@@ -197,7 +197,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_images, @"images", [NSNumber numberWithInt:indexPath.row], @"startIndex", nil];
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_images, @"images", [NSNumber numberWithInt:(int)indexPath.row], @"startIndex", nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"loadFGallery" object:nil userInfo:dictionary];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
 }

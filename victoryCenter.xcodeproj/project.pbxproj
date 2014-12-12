@@ -226,7 +226,7 @@
 		82599B6F1A3A2ADE00397362 /* thumb_fitness2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82599B611A3A2ADE00397362 /* thumb_fitness2.jpg */; };
 		82599B701A3A2ADE00397362 /* thumb_fitness_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82599B621A3A2ADE00397362 /* thumb_fitness_image.jpg */; };
 		82599B711A3A2ADE00397362 /* thumb_restaurant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82599B631A3A2ADE00397362 /* thumb_restaurant.jpg */; };
-		82599B721A3A2ADE00397362 /* thumb_restaurant&conference2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82599B641A3A2ADE00397362 /* thumb_restaurant&conference2.jpg */; };
+		82599B721A3A2ADE00397362 /* thumb_restaurant&conference.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82599B641A3A2ADE00397362 /* thumb_restaurant&conference.jpg */; };
 		82599B731A3A2ADE00397362 /* thumb_restaurant_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82599B651A3A2ADE00397362 /* thumb_restaurant_image.jpg */; };
 		82599B761A3A374C00397362 /* Duda_Paine_Victory_Park.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 82599B741A3A374C00397362 /* Duda_Paine_Victory_Park.mp4 */; };
 		82599B771A3A374C00397362 /* thumb_Duda_Paine_Victory_Park.png in Resources */ = {isa = PBXBuildFile; fileRef = 82599B751A3A374C00397362 /* thumb_Duda_Paine_Victory_Park.png */; };
@@ -654,7 +654,7 @@
 		82599B611A3A2ADE00397362 /* thumb_fitness2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_fitness2.jpg; sourceTree = "<group>"; };
 		82599B621A3A2ADE00397362 /* thumb_fitness_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_fitness_image.jpg; sourceTree = "<group>"; };
 		82599B631A3A2ADE00397362 /* thumb_restaurant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_restaurant.jpg; sourceTree = "<group>"; };
-		82599B641A3A2ADE00397362 /* thumb_restaurant&conference2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_restaurant&conference2.jpg"; sourceTree = "<group>"; };
+		82599B641A3A2ADE00397362 /* thumb_restaurant&conference.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_restaurant&conference.jpg"; sourceTree = "<group>"; };
 		82599B651A3A2ADE00397362 /* thumb_restaurant_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_restaurant_image.jpg; sourceTree = "<group>"; };
 		82599B741A3A374C00397362 /* Duda_Paine_Victory_Park.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Duda_Paine_Victory_Park.mp4; sourceTree = "<group>"; };
 		82599B751A3A374C00397362 /* thumb_Duda_Paine_Victory_Park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_Duda_Paine_Victory_Park.png; sourceTree = "<group>"; };
@@ -1363,7 +1363,7 @@
 				82599B611A3A2ADE00397362 /* thumb_fitness2.jpg */,
 				82599B621A3A2ADE00397362 /* thumb_fitness_image.jpg */,
 				82599B631A3A2ADE00397362 /* thumb_restaurant.jpg */,
-				82599B641A3A2ADE00397362 /* thumb_restaurant&conference2.jpg */,
+				82599B641A3A2ADE00397362 /* thumb_restaurant&conference.jpg */,
 				82599B651A3A2ADE00397362 /* thumb_restaurant_image.jpg */,
 			);
 			path = thumbs;
@@ -2011,7 +2011,7 @@
 				82A29E4B19EC60E000AFAE1E /* grfx_bldStatsImg@2x.png in Resources */,
 				824C195019FA938500EA7613 /* grfx_victorycenter_logo.png in Resources */,
 				821EE2601A13BC5300254B2A /* grfx_floorplan12@2x.png in Resources */,
-				82599B721A3A2ADE00397362 /* thumb_restaurant&conference2.jpg in Resources */,
+				82599B721A3A2ADE00397362 /* thumb_restaurant&conference.jpg in Resources */,
 				82DC11FB19DAF2990057AE4F /* photo-gallery-edit-caption.png in Resources */,
 				824E10DE1A0D547B00BDBDA6 /* grfx_treLogo@2x.png in Resources */,
 				824C196519FA9DC400EA7613 /* grfx_floorplan16.png in Resources */,

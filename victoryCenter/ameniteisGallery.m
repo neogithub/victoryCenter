@@ -137,7 +137,7 @@
     NSDictionary *dict_tmp = arr_rawData[indexPath.section];
     NSArray *arr_image = [dict_tmp objectForKey:@"content"];
     
-    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_image, @"images", [NSNumber numberWithInt:indexPath.row], @"startIndex", nil];
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_image, @"images", [NSNumber numberWithInt:(int)indexPath.row], @"startIndex", nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"loadFGallery" object:nil userInfo:dictionary];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
 }

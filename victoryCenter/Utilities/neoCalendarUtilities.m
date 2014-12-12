@@ -19,7 +19,7 @@
 	//NSLog(@"hour %i",hour);
 	//NSInteger minute = [components minute];
 	//NSLog(@"minute %i",minute);
-	NSString *neoHour = [NSString stringWithFormat:@"%i",hour];
+	NSString *neoHour = [NSString stringWithFormat:@"%i", (int)hour];
 	return neoHour;
 }
 
