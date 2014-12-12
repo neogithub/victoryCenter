@@ -298,7 +298,7 @@ static int eveningTime = 17;
         button.layer.borderColor = button.backgroundColor.CGColor;
         button.layer.borderWidth = 1.5;
         
-        button.layer.shadowOffset = CGSizeMake(0, -20);
+        button.layer.shadowOffset = CGSizeMake(0, -5);
         button.layer.shadowRadius = 20;
         button.layer.shadowOpacity = 1.0;
         button.layer.shadowColor = [UIColor blackColor].CGColor;
