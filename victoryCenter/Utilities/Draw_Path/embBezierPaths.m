@@ -51,10 +51,10 @@
         //// Woodall_Rodgers_1 Drawing
         UIBezierPath* woodall_Rodgers_1Path = UIBezierPath.bezierPath;
         [woodall_Rodgers_1Path moveToPoint: CGPointMake(866, 1)];
-        [woodall_Rodgers_1Path addCurveToPoint: CGPointMake(964, 183) controlPoint1: CGPointMake(866, 1) controlPoint2: CGPointMake(973.5, 170.5)];
-        [woodall_Rodgers_1Path addCurveToPoint: CGPointMake(747, 307) controlPoint1: CGPointMake(954.5, 195.5) controlPoint2: CGPointMake(750, 302)];
-        [woodall_Rodgers_1Path addCurveToPoint: CGPointMake(721, 454) controlPoint1: CGPointMake(744, 312) controlPoint2: CGPointMake(735, 395)];
-        [woodall_Rodgers_1Path addCurveToPoint: CGPointMake(712, 584) controlPoint1: CGPointMake(706.08, 516.89) controlPoint2: CGPointMake(712, 584)];
+        [woodall_Rodgers_1Path addCurveToPoint: CGPointMake(975, 194) controlPoint1: CGPointMake(866, 1) controlPoint2: CGPointMake(984.5, 181.5)];
+        [woodall_Rodgers_1Path addCurveToPoint: CGPointMake(756, 318) controlPoint1: CGPointMake(965.5, 206.5) controlPoint2: CGPointMake(759, 313)];
+        [woodall_Rodgers_1Path addCurveToPoint: CGPointMake(720, 459) controlPoint1: CGPointMake(753, 323) controlPoint2: CGPointMake(732, 399)];
+        [woodall_Rodgers_1Path addCurveToPoint: CGPointMake(712, 584) controlPoint1: CGPointMake(707.21, 522.96) controlPoint2: CGPointMake(712, 584)];
         woodall_Rodgers_1Path.lineCapStyle = kCGLineCapRound;
         
         //// I35_2 Drawing
