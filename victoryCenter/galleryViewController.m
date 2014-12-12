@@ -257,11 +257,11 @@
 {
     NSString *oldfileName = [arr_AllFlms objectAtIndex: index];
     NSString *extension = [NSString new];
-    if (index == 0) {
-        extension = @"mp4";
+    if (index == 1) {
+        extension = @"mov";
     }
     else {
-        extension = @"mov";
+        extension = @"mp4";
     }
     
     NSString *name = [oldfileName substringWithRange:NSMakeRange(0, oldfileName.length-4)];
@@ -269,7 +269,7 @@
                      pathForResource:name
                      ofType:extension];
     
-    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:url,@"movieName", nil];
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:url, @"movieName", nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"playGalleryMovie" object:nil userInfo:dictionary];
 }
 

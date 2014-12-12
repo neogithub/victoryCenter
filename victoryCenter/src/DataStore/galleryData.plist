@@ -115,9 +115,19 @@
 				<array>
 					<string>Duda_Paine_Victory_Park.png</string>
 					<string>Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png</string>
+					<string>Victory_Center_Fly_Over.png</string>
+					<string>Street_View_Approach.png</string>
+					<string>Low-Rise_Office_Floor.png</string>
+					<string>Lobby_Level_night.png</string>
+					<string>High-Rise_Office_Floor.png</string>
 				</array>
 				<key>frame</key>
 				<array>
+					<string>play_button.png</string>
+					<string>play_button.png</string>
+					<string>play_button.png</string>
+					<string>play_button.png</string>
+					<string>play_button.png</string>
 					<string>play_button.png</string>
 					<string>play_button.png</string>
 				</array>
@@ -125,6 +135,11 @@
 				<array>
 					<string>Victory Center Overview</string>
 					<string>Victory Park Overview</string>
+					<string>Victory Center Fly Over</string>
+					<string>Street View Approach</string>
+					<string>Low-Rise Office Floor</string>
+					<string>Lobby Level night</string>
+					<string>High-Rise Office Floor</string>
 				</array>
 			</dict>
 		</array>
