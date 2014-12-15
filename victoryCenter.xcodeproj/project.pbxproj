@@ -379,6 +379,7 @@
 		82CE2FD319F06350006F7B0E /* floorPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FD219F06350006F7B0E /* floorPlanViewController.m */; };
 		82CE2FD619F06434006F7B0E /* KSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FD519F06434006F7B0E /* KSLabel.m */; };
 		82CE2FD819F06C79006F7B0E /* floorplanData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82CE2FD719F06C79006F7B0E /* floorplanData.plist */; };
+		82CEEB351A3F3F2E007D4BA9 /* deli_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82CEEB341A3F3F2D007D4BA9 /* deli_image.jpg */; };
 		82D54B431A0BEE5B0055F338 /* neoCalendarUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D54B421A0BEE5B0055F338 /* neoCalendarUtilities.m */; };
 		82D54B4C1A0BFD6C0055F338 /* Tilit_Icon_Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D54B481A0BFD6C0055F338 /* Tilit_Icon_Off.png */; };
 		82D54B4D1A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D54B491A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png */; };
@@ -850,6 +851,7 @@
 		82CE2FD419F06434006F7B0E /* KSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSLabel.h; sourceTree = "<group>"; };
 		82CE2FD519F06434006F7B0E /* KSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSLabel.m; sourceTree = "<group>"; };
 		82CE2FD719F06C79006F7B0E /* floorplanData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = floorplanData.plist; sourceTree = "<group>"; };
+		82CEEB341A3F3F2D007D4BA9 /* deli_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deli_image.jpg; sourceTree = "<group>"; };
 		82D54B411A0BEE5B0055F338 /* neoCalendarUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neoCalendarUtilities.h; sourceTree = "<group>"; };
 		82D54B421A0BEE5B0055F338 /* neoCalendarUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = neoCalendarUtilities.m; sourceTree = "<group>"; };
 		82D54B481A0BFD6C0055F338 /* Tilit_Icon_Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tilit_Icon_Off.png; sourceTree = "<group>"; };
@@ -1381,6 +1383,7 @@
 		82599B561A3A2ADE00397362 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				82CEEB341A3F3F2D007D4BA9 /* deli_image.jpg */,
 				82599B571A3A2ADE00397362 /* conference_image.jpg */,
 				82599B581A3A2ADE00397362 /* fitness&conference.jpg */,
 				82599B591A3A2ADE00397362 /* fitness2.jpg */,
@@ -1828,6 +1831,7 @@
 				824F369119E6C47500267B44 /* thumb_20140802_view4_100m_06-small.jpg in Resources */,
 				82594C7E1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR8_ClosedOffice@2x.png in Resources */,
 				82CE2FD819F06C79006F7B0E /* floorplanData.plist in Resources */,
+				82CEEB351A3F3F2E007D4BA9 /* deli_image.jpg in Resources */,
 				82DC11E919DAEE070057AE4F /* Site_Base map.png in Resources */,
 				821EE24E1A13BB9100254B2A /* grfx_floorplan21@2x.png in Resources */,
 				82A805D619D1FC1400308BA1 /* grfx_menuIcon.png in Resources */,

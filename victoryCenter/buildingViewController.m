@@ -22,6 +22,7 @@ static float kOriginalStatHeight    = 45+36*3;
     UIView              *uiv_panelIndicator;
     UIImageView         *uiiv_statContent;
     int                 loadStats;
+    NSArray             *arr_bldStatsImages;
 }
 
 @property (nonatomic, strong) NSMutableArray                *arr_topBtnsArray;
@@ -41,7 +42,6 @@ static float kOriginalStatHeight    = 45+36*3;
 @property (nonatomic, strong) UIView                        *uiv_bldStatsPanel;
 //Floor plan
 @property (nonatomic, strong) floorPlanViewController       *floorPlan;
-
 @property (weak, nonatomic) IBOutlet UIButton               *uib_18_23;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_17;
 @property (weak, nonatomic) IBOutlet UIButton               *uib_16;
@@ -285,6 +285,15 @@ static float kOriginalStatHeight    = 45+36*3;
     [_uiv_statImgContainer addSubview: _uiv_bldStatsPanel];
     NSArray *titles = [[NSArray alloc] initWithObjects:@"OFFICE TOWER", @"AREA SUMMARY", @"AMENITIES",  nil];
     [self createBtnsForPanel:_uiv_bldStatsPanel withTitleArray:titles andTargetSel:@"loadStatsContent:" andEdgeInset:45 withIdicator:YES];
+    
+    NSArray *arr_fitnessImages = [[NSArray alloc] initWithObjects:@"fitness_image.jpg", @"fitness2.jpg", @"fitness&conference.jpg", nil];
+    NSArray *arr_deliImage = [[NSArray alloc] initWithObjects:@"deli_image.jpg", nil];
+    NSArray *arr_conference = [[NSArray alloc] initWithObjects:@"conference_image.jpg", @"fitness&conference.jpg", @"restaurant&conference.jpg", nil];
+    NSArray *arr_resturant = [[NSArray alloc] initWithObjects:@"restaurant_image.jpg", @"restaurant.jpg", @"restaurant&conference.jpg", nil];
+    NSArray *arr_courtyardImage = [[NSArray alloc] initWithObjects:@"View 04.jpg", nil];
+    
+    arr_bldStatsImages = [[NSArray alloc] initWithObjects:arr_fitnessImages, arr_deliImage, arr_conference, arr_resturant, arr_courtyardImage, nil];
+    
 }
 
 - (UIView *)createPanelWithTitle:(NSString *)title andHeight:(float)panelH
@@ -587,17 +596,28 @@ static float kOriginalStatHeight    = 45+36*3;
 
 - (void)addOptionBtns:(UIView *)container
 {
-    NSLog(@"the container is %@", [container description]);
-    UIButton *uib_tmp =[UIButton buttonWithType:UIButtonTypeCustom];
-    uib_tmp.frame = CGRectMake(0.0, 0.0, 100.0, 50.0);
-    uib_tmp.backgroundColor = [UIColor redColor];
-    [uib_tmp addTarget:self action:@selector(tapOnAmenitiesBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [container addSubview: uib_tmp];
+    for (int i = 0; i < 5; i++) {
+        CGRect btnFrame = CGRectZero;
+        if (i < 3) {
+            btnFrame = CGRectMake(0.0, 32.0*i, 371.0, 32.0);
+        }else {
+            btnFrame = CGRectMake(0.0, 33.0*(i + 1), 371.0, 32.0);
+        }
+        
+        UIButton *uib_tmp =[UIButton buttonWithType:UIButtonTypeCustom];
+        uib_tmp.frame = btnFrame;
+        uib_tmp.backgroundColor = [UIColor clearColor];
+        uib_tmp.tag = i;
+        [uib_tmp addTarget:self action:@selector(tapOnAmenitiesBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [container addSubview: uib_tmp];
+    }
 }
 
 - (void)tapOnAmenitiesBtn:(id)sender
 {
-    NSArray *arr_image = [[NSArray alloc] initWithObjects:@"restaurant_image.jpg", @"restaurant.jpg", @"restaurant&conference.jpg", nil];
+    int index = (int)[sender tag];
+    
+    NSArray *arr_image = [[NSArray alloc] initWithArray:arr_bldStatsImages[index]];
     
     NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_image, @"images", [NSNumber numberWithInt:0], @"startIndex", nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"loadFGallery" object:nil userInfo:dictionary];

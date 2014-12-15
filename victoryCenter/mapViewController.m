@@ -492,8 +492,8 @@ static float    kPanelBtnHeight             = 38.0;
         // Remove all panels
         [self removeAllPanels];
         [self removeOverviewPanel];
-        [self updateTopBtns:tappedBtn];
         [self animationOfMaps:(int)tappedBtn.tag];
+        [self updateTopBtns:tappedBtn];
         [self updateSubMenu:(int)tappedBtn.tag];
     }
 }
