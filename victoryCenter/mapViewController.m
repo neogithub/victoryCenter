@@ -222,7 +222,7 @@ static float    kPanelBtnHeight             = 38.0;
             _uiiv_tredartLogo.frame = CGRectMake(456.0, 308.0, _uiiv_tredartLogo.frame.size.width, _uiiv_tredartLogo.frame.size.height);
             _uiiv_dart1Logo.frame = CGRectMake(338.0, 193.0, _uiiv_dart1Logo.frame.size.width, _uiiv_dart1Logo.frame.size.height);
             _uiiv_dart2Logo.frame = CGRectMake(512.0, 446.0, _uiiv_dart2Logo.frame.size.width, _uiiv_dart2Logo.frame.size.height);
-            _uiiv_treLogo.frame = CGRectMake(470.0, 484.0, _uiiv_treLogo.frame.size.width, _uiiv_treLogo.frame.size.height);
+            _uiiv_treLogo.frame = CGRectMake(450.0, 460.0, _uiiv_treLogo.frame.size.width, _uiiv_treLogo.frame.size.height);
 			break;
 		case 1:
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"Neighborhood_map.png"]];
@@ -285,7 +285,7 @@ static float    kPanelBtnHeight             = 38.0;
     
     if (_uiiv_vcLogoFlag) {
         
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             _uiiv_vcLogoFlag.transform = CGAffineTransformMakeScale(0.0, 0.0);
         } completion:^(BOOL finished){
             [_uiiv_vcLogoFlag removeFromSuperview];
@@ -305,7 +305,7 @@ static float    kPanelBtnHeight             = 38.0;
         _uiiv_vcLogoFlag.frame = oldFrame;
         _uiiv_vcLogoFlag.transform = CGAffineTransformMakeScale(0.0, 0.0);
         [_uiv_mapContainer addSubview: _uiiv_vcLogoFlag];
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             _uiiv_vcLogoFlag.transform = CGAffineTransformIdentity;
         } completion:^(BOOL finished){
             
@@ -341,7 +341,9 @@ static float    kPanelBtnHeight             = 38.0;
 									duration:[MPFoldTransition defaultDuration]
 									   style:forwards? [self foldStyle]	: MPFoldStyleFlipFoldBit([self foldStyle])
 							transitionAction:MPTransitionActionAddRemove
-								  completion:^(BOOL finished) {   }
+								  completion:^(BOOL finished) {
+                                      if (index < 2) {        }
+                                  }
 		 ];
 	}
 }
@@ -491,9 +493,10 @@ static float    kPanelBtnHeight             = 38.0;
     {
         // Remove all panels
         [self removeAllPanels];
+        [self performSelector:@selector(removeOverlay) withObject:nil afterDelay:0.1];
         [self removeOverviewPanel];
-        [self animationOfMaps:(int)tappedBtn.tag];
         [self updateTopBtns:tappedBtn];
+        [self animationOfMaps:(int)tappedBtn.tag];
         [self updateSubMenu:(int)tappedBtn.tag];
     }
 }
@@ -509,7 +512,7 @@ static float    kPanelBtnHeight             = 38.0;
             _uiv_neighborhoodSubMenu.hidden = YES;
             _uiv_siteSubMenu.hidden = YES;
             _uiv_mapSwitchContainer.hidden = NO;
-            [self performSelector:@selector(popLogoFlagAnimation) withObject:nil afterDelay:0.5];
+            [self performSelector:@selector(popLogoFlagAnimation) withObject:nil afterDelay:0.31];
             break;
         }
         case 1: { //Show Neighborhood's sub menu
@@ -517,7 +520,7 @@ static float    kPanelBtnHeight             = 38.0;
             _uiv_neighborhoodSubMenu.hidden = NO;
             _uiv_siteSubMenu.hidden = YES;
             _uiv_mapSwitchContainer.hidden = NO;
-            [self performSelector:@selector(popLogoFlagAnimation) withObject:nil afterDelay:0.5];
+            [self performSelector:@selector(popLogoFlagAnimation) withObject:nil afterDelay:0.31];
             break;
         }
         case 2: { //Show Site's sub menu
@@ -528,11 +531,11 @@ static float    kPanelBtnHeight             = 38.0;
             [self creatBuildingBtn];
             [self performSelector:@selector(tapSubMenu:) withObject:_uib_siteAmenities afterDelay:0.4];
             
-            double delayInSeconds = 1.0;
+            double delayInSeconds = 0.5;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 UIButton *tmp = [arr_panelBtnArray objectAtIndex: arr_panelBtnArray.count - 1];
-                [self performSelector:@selector(tapSiteAmenities:) withObject:tmp afterDelay:0.6];
+                [self performSelector:@selector(tapSiteAmenities:) withObject:tmp afterDelay:0.0];
             });
             break;
         }
