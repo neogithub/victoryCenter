@@ -56,6 +56,9 @@
 				<string>photography</string>
 				<key>items</key>
 				<array>
+					<string>View of Victory Park - Higway view.jpg</string>
+					<string>View of Victory Park - Olive Street View.jpg</string>
+					<string>View of Victory Park - Victory Avenue.jpg</string>
 					<string>20140716_view1_90 feet.jpg</string>
 					<string>20140716_view2_90 feet.jpg</string>
 					<string>20140802_downtown_100m_1pm_high-res.jpg</string>
@@ -87,9 +90,15 @@
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
 				</array>
 				<key>captions</key>
 				<array>
+					<string>Highway View</string>
+					<string>Olive Street View</string>
+					<string>Victory Avenue View</string>
 					<string>Caption</string>
 					<string>Caption</string>
 					<string>Caption</string>

@@ -380,6 +380,12 @@
 		82CE2FD619F06434006F7B0E /* KSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CE2FD519F06434006F7B0E /* KSLabel.m */; };
 		82CE2FD819F06C79006F7B0E /* floorplanData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82CE2FD719F06C79006F7B0E /* floorplanData.plist */; };
 		82CEEB351A3F3F2E007D4BA9 /* deli_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82CEEB341A3F3F2D007D4BA9 /* deli_image.jpg */; };
+		82CEEB391A3F8C55007D4BA9 /* View of Victory Park - Higway view.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82CEEB361A3F8C55007D4BA9 /* View of Victory Park - Higway view.jpg */; };
+		82CEEB3A1A3F8C55007D4BA9 /* View of Victory Park - Olive Street View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82CEEB371A3F8C55007D4BA9 /* View of Victory Park - Olive Street View.jpg */; };
+		82CEEB3B1A3F8C55007D4BA9 /* View of Victory Park - Victory Avenue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82CEEB381A3F8C55007D4BA9 /* View of Victory Park - Victory Avenue.jpg */; };
+		82CEEB3F1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Higway view.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82CEEB3C1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Higway view.jpg */; };
+		82CEEB401A3F8D4C007D4BA9 /* thumb_View of Victory Park - Olive Street View.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82CEEB3D1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Olive Street View.jpg */; };
+		82CEEB411A3F8D4C007D4BA9 /* thumb_View of Victory Park - Victory Avenue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82CEEB3E1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Victory Avenue.jpg */; };
 		82D54B431A0BEE5B0055F338 /* neoCalendarUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D54B421A0BEE5B0055F338 /* neoCalendarUtilities.m */; };
 		82D54B4C1A0BFD6C0055F338 /* Tilit_Icon_Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D54B481A0BFD6C0055F338 /* Tilit_Icon_Off.png */; };
 		82D54B4D1A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D54B491A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png */; };
@@ -852,6 +858,12 @@
 		82CE2FD519F06434006F7B0E /* KSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSLabel.m; sourceTree = "<group>"; };
 		82CE2FD719F06C79006F7B0E /* floorplanData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = floorplanData.plist; sourceTree = "<group>"; };
 		82CEEB341A3F3F2D007D4BA9 /* deli_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deli_image.jpg; sourceTree = "<group>"; };
+		82CEEB361A3F8C55007D4BA9 /* View of Victory Park - Higway view.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "View of Victory Park - Higway view.jpg"; sourceTree = "<group>"; };
+		82CEEB371A3F8C55007D4BA9 /* View of Victory Park - Olive Street View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "View of Victory Park - Olive Street View.jpg"; sourceTree = "<group>"; };
+		82CEEB381A3F8C55007D4BA9 /* View of Victory Park - Victory Avenue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "View of Victory Park - Victory Avenue.jpg"; sourceTree = "<group>"; };
+		82CEEB3C1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Higway view.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_View of Victory Park - Higway view.jpg"; sourceTree = "<group>"; };
+		82CEEB3D1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Olive Street View.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_View of Victory Park - Olive Street View.jpg"; sourceTree = "<group>"; };
+		82CEEB3E1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Victory Avenue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_View of Victory Park - Victory Avenue.jpg"; sourceTree = "<group>"; };
 		82D54B411A0BEE5B0055F338 /* neoCalendarUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neoCalendarUtilities.h; sourceTree = "<group>"; };
 		82D54B421A0BEE5B0055F338 /* neoCalendarUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = neoCalendarUtilities.m; sourceTree = "<group>"; };
 		82D54B481A0BFD6C0055F338 /* Tilit_Icon_Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tilit_Icon_Off.png; sourceTree = "<group>"; };
@@ -1320,6 +1332,9 @@
 		824F366519E6C47500267B44 /* Drone_shots_thumb */ = {
 			isa = PBXGroup;
 			children = (
+				82CEEB3C1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Higway view.jpg */,
+				82CEEB3D1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Olive Street View.jpg */,
+				82CEEB3E1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Victory Avenue.jpg */,
 				824F366619E6C47500267B44 /* thumb_20140716_view1_90 feet.jpg */,
 				824F366719E6C47500267B44 /* thumb_20140716_view2_90 feet.jpg */,
 				824F366819E6C47500267B44 /* thumb_20140802_downtown_100m_1pm.jpg */,
@@ -1640,6 +1655,9 @@
 		82DC119F19DAEA940057AE4F /* Drone_shots */ = {
 			isa = PBXGroup;
 			children = (
+				82CEEB361A3F8C55007D4BA9 /* View of Victory Park - Higway view.jpg */,
+				82CEEB371A3F8C55007D4BA9 /* View of Victory Park - Olive Street View.jpg */,
+				82CEEB381A3F8C55007D4BA9 /* View of Victory Park - Victory Avenue.jpg */,
 				82DC11A019DAEA940057AE4F /* 20140716_view1_90 feet.jpg */,
 				82DC11A119DAEA940057AE4F /* 20140716_view2_90 feet.jpg */,
 				82DC11A319DAEA940057AE4F /* 20140802_downtown_100m_1pm_high-res.jpg */,
@@ -1897,6 +1915,7 @@
 				82000B9919E5963800AE2C70 /* team_cousins_text.png in Resources */,
 				823DE6ED19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_on.png in Resources */,
 				82594C7D1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR8_ClosedOffice.png in Resources */,
+				82CEEB3A1A3F8C55007D4BA9 /* View of Victory Park - Olive Street View.jpg in Resources */,
 				822C909B1A375883003944E8 /* thumb_Victory Center 02 W Hotel View.jpg in Resources */,
 				8294BB2B1A3B708200EDD0EB /* dallas_2013_fearings_creditdcvb_4.jpg in Resources */,
 				82000B9019E592A800AE2C70 /* team_hks_logo@2x.png in Resources */,
@@ -1988,6 +2007,8 @@
 				8294BB3A1A3B857E00EDD0EB /* thumb_Low-Rise_Office_Floor.png in Resources */,
 				82000B9D19E5963800AE2C70 /* team_duda_text.png in Resources */,
 				824F369519E6C47500267B44 /* thumb_20140811_view3_100m_02.jpg in Resources */,
+				82CEEB391A3F8C55007D4BA9 /* View of Victory Park - Higway view.jpg in Resources */,
+				82CEEB411A3F8D4C007D4BA9 /* thumb_View of Victory Park - Victory Avenue.jpg in Resources */,
 				8260B9E91A1B8A95004C44B8 /* CollapseClickCell.xib in Resources */,
 				82627E2319E702EC0062FC0C /* grfx_residential_overlay.png in Resources */,
 				822C90AB1A377562003944E8 /* overview_cell2@2x.jpg in Resources */,
@@ -2015,6 +2036,7 @@
 				82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */,
 				822C909D1A375883003944E8 /* thumb_Victory Center_Street View-1.jpg in Resources */,
 				828041F61A07C1CF00847A80 /* tmp_testfit1.png in Resources */,
+				82CEEB3F1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Higway view.jpg in Resources */,
 				82000BA019E5963800AE2C70 /* team_hks_text@2x.png in Resources */,
 				82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */,
 				826873D31A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png in Resources */,
@@ -2070,6 +2092,7 @@
 				82AB934A19FEC97B00DD0B30 /* grfx_east_hs.png in Resources */,
 				82C06E8A1A169B8E000F969E /* Logo_Header.png in Resources */,
 				82AB934F19FEC97B00DD0B30 /* grfx_south_hs@2x.png in Resources */,
+				82CEEB3B1A3F8C55007D4BA9 /* View of Victory Park - Victory Avenue.jpg in Resources */,
 				82627E2219E702EC0062FC0C /* grfx_recreationg_overlay@2x.png in Resources */,
 				82000B7E19E590AD00AE2C70 /* team_logoBtmBar@2x.png in Resources */,
 				824C194E19FA938500EA7613 /* grfx_tredart_logo.png in Resources */,
@@ -2112,6 +2135,7 @@
 				8224FE0A19D47097002B1B44 /* Raleway-SemiBold.otf in Resources */,
 				82000B7C19E590AD00AE2C70 /* team_hines_logo@2x.png in Resources */,
 				82000B9C19E5963800AE2C70 /* team_cushman_text@2x.png in Resources */,
+				82CEEB401A3F8D4C007D4BA9 /* thumb_View of Victory Park - Olive Street View.jpg in Resources */,
 				82599B4A1A39D95E00397362 /* Neigh_Access@2x.png in Resources */,
 				82DC120019DAF2990057AE4F /* photo-gallery-trashcan.png in Resources */,
 				821EE2621A13BC5300254B2A /* grfx_floorplan14@2x.png in Resources */,
