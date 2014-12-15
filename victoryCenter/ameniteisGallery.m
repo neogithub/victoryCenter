@@ -57,11 +57,11 @@
 - (void)createCollectionView
 {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [flowLayout setItemSize:CGSizeMake(165, 165)];
+    [flowLayout setItemSize:CGSizeMake(260, 165)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [flowLayout setMinimumLineSpacing:10.0];
     [flowLayout setMinimumInteritemSpacing:10.0];
-    uic_gallery = [[UICollectionView alloc] initWithFrame:CGRectMake(79.0, 100.0, 884.0, 580.0) collectionViewLayout:flowLayout];
+    uic_gallery = [[UICollectionView alloc] initWithFrame:CGRectMake(70.0, 100.0, 884.0, 580.0) collectionViewLayout:flowLayout];
     uic_gallery.backgroundColor = [UIColor clearColor];
     [uic_gallery registerClass:[CVCell class] forCellWithReuseIdentifier:@"cvCell"];
     [uic_gallery registerClass:[amenitiesHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SupplementaryView"];
@@ -129,6 +129,7 @@
     cell.titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:13];
     cell.cellThumb.image = [UIImage imageNamed:[NSString stringWithFormat:@"thumb_%@",arr_image[indexPath.row]]];
     cell.imgFrame.image = [UIImage imageNamed:@"normal_frame.png"];
+    cell.imgFrame.contentMode = UIViewContentModeScaleToFill;
     return cell;
 }
 
