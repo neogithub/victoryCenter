@@ -36,6 +36,9 @@
 @property (nonatomic, strong) NSMutableArray                *arr_testFitTenant;
 @property (nonatomic, strong) NSMutableArray                *arr_hotspotImg;
 @property (nonatomic, strong) NSMutableArray                *arr_hotspotCaption;
+
+// Key panel
+@property (nonatomic, strong)   UIImageView                     *uiiv_keyPanel;
 @end
 
 @implementation embDataViewController
@@ -54,6 +57,8 @@
     [self loadDataAndView];
     
     [self loadTestFitBtns];
+    
+    [self createKeyPanel];
 }
 
 #pragma mark - LAYOUT FLOOR PLAN DATA
@@ -167,8 +172,21 @@
 - (void)neoHotspotsView:(neoHotspotsView *)hotspot didSelectItemAtIndex:(NSInteger)index
 {
     NSString *image = _arr_hotspotImg[index];
+    float offset = 0.0;
+    switch (index) {
+        case 0:
+            offset = 350.0;
+            break;
+        case 1:
+            offset = 1174.0;
+            break;
+        case 2:
+            offset = 2150.0;
+        default:
+            break;
+    }
     if ([image length]) {
-        NSDictionary* dict = [NSDictionary dictionaryWithObjects:@[_arr_hotspotImg[index],_arr_hotspotCaption[index]] forKeys:@[@"imageName" ,@"title"]];
+        NSDictionary* dict = [NSDictionary dictionaryWithObjects:@[_arr_hotspotImg[index],_arr_hotspotCaption[index], [NSNumber numberWithFloat:offset]] forKeys:@[@"imageName" ,@"title", @"offset"]];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"loadPanoImage"
                                                             object:self
                                                           userInfo:dict];
@@ -223,21 +241,37 @@
         case 0:{
             NSString *planName = _dict[@"floorplaninfo"][0][@"floorinfo"][0];
             [self loadInImge:planName];
+            _uiiv_keyPanel.hidden = YES;
             break;
         }
         case 1:{
             NSString *planName = _dict[@"floorplaninfo"][0][@"testfits"][0];
             [self loadInImge:planName];
+            _uiiv_keyPanel.hidden = NO;
             break;
         }
         case 2:{
             NSString *planName = _dict[@"floorplaninfo"][0][@"testfits"][1];
             [self loadInImge:planName];
+            _uiiv_keyPanel.hidden = NO;
             break;
         }
         default:
             break;
     }
+}
+
+#pragma mark - Set up Keys panel
+
+- (void)createKeyPanel
+{
+    _uiiv_keyPanel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_floorplan_keys.png"]];
+    _uiiv_keyPanel.frame = CGRectMake(850, 298, 156, 195);
+    _uiiv_keyPanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
+    _uiiv_keyPanel.layer.borderWidth = 1.0;
+    _uiiv_keyPanel.alpha = 0.8;
+    _uiiv_keyPanel.hidden = YES;
+    [self.view addSubview: _uiiv_keyPanel];
 }
 
 #pragma mark - BOILERPLATE
@@ -252,7 +286,15 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    
+
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    if (arr_testFitBtnArray.count > 1) {
+        UIButton *tmp = arr_testFitBtnArray[0];
+        [self tapTestFit:tmp];
+    }
 }
 
 - (void)didReceiveMemoryWarning

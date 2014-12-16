@@ -23,6 +23,7 @@ static float kOriginalStatHeight    = 45+36*3;
     UIImageView         *uiiv_statContent;
     int                 loadStats;
     NSArray             *arr_bldStatsImages;
+    BOOL                loadedPanoView;
 }
 
 @property (nonatomic, strong) NSMutableArray                *arr_topBtnsArray;
@@ -77,6 +78,7 @@ static float kOriginalStatHeight    = 45+36*3;
     [self prepareHlepData];
     [self setUpBuildingStats];
     loadStats = 0;
+    loadedPanoView = NO;
 }
 
 - (void)viewDidLoad
@@ -91,12 +93,25 @@ static float kOriginalStatHeight    = 45+36*3;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unhideBuildingMenu) name:@"unhideBuildingTopMenu" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetBuilding) name:@"tapOnTitle" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadedPano:) name:@"loadFloorView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removePano:) name:@"removeFloorView" object:nil];
     
     _uil_parkingLabel.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
     _uil_parkingLabel.textColor = [UIColor whiteColor];
     
     _uil_lobbyLabel.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
     _uil_lobbyLabel.textColor = [UIColor vcDarkBlue];
+}
+
+#pragma mark - Hide & unhide help view form building
+- (void)loadedPano:(NSNotification *)notification
+{
+    loadedPanoView = YES;
+}
+
+- (void)removePano:(NSNotification *)notification
+{
+    loadedPanoView = NO;
 }
 
 #pragma mark - Hide & unhide top menu 
@@ -1062,6 +1077,10 @@ static float kOriginalStatHeight    = 45+36*3;
 
 - (void)loadHelpViews
 {
+    if (loadedPanoView) {
+        return;
+    }
+    
     if (_uiv_helpView) {
         [_uiv_helpView removeFromSuperview];
         _uiv_helpView = nil;

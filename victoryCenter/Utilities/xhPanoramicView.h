@@ -12,12 +12,14 @@
 @interface xhPanoramicView : UIView <UIScrollViewDelegate> {
     float       imageWidth;
     float       imageHeight;
+    BOOL        withDirection;
 }
 
 
 @property (strong, nonatomic) CMMotionManager   *motionManager;
 @property (nonatomic,strong)  UIScrollView      *uis_panoramic;
+@property (nonatomic, readwrite)    float       offSetValue;
 
-- (id)initWithFrame:(CGRect)frame andImageName:(NSString *)imageName;
+- (id)initWithFrame:(CGRect)frame andImageName:(NSString *)imageName andDirection:(BOOL)direction;
 -(void)stopMotionManager;
 @end

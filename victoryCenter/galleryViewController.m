@@ -283,7 +283,7 @@
     }
     NSString *imageName = [arr_AllPhotos objectAtIndex: index];
     if (imageName) {
-        _uiv_panoramicView = [[xhPanoramicView alloc] initWithFrame:self.view.bounds andImageName:imageName];
+        _uiv_panoramicView = [[xhPanoramicView alloc] initWithFrame:self.view.bounds andImageName:imageName andDirection:NO];
         [self setPanoCloseAndTitle:nil];
         [self.view addSubview:_uiv_panoramicView];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];

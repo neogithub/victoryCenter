@@ -40,16 +40,14 @@ static CGFloat  kPanelTitleHeight           = 46;
 @property (nonatomic, strong)   UIView                          *uiv_floorTitleContainer;
 @property (nonatomic, strong)   UILabel                         *uil_floorTitle;
 @property (nonatomic, strong)   UILabel                         *uil_floorRsf;
-// Key panel
-@property (nonatomic, strong)   UIImageView                     *uiiv_keyPanel;
 // Control Button
 @property (nonatomic, strong)   UIButton                        *uib_backBtn;
 // Pano image
 @property (nonatomic, strong)   xhPanoramicView                 *uiv_panoramicView;
 // Help tip view
-@property (nonatomic, strong) xhPopTipsView                 *uiv_helpView;
-@property (nonatomic, strong) NSMutableArray                *arr_helpText;
-@property (nonatomic, strong) NSMutableArray                *arr_helpTargetViews;
+@property (nonatomic, strong) xhPopTipsView                     *uiv_helpView;
+@property (nonatomic, strong) NSMutableArray                    *arr_helpText;
+@property (nonatomic, strong) NSMutableArray                    *arr_helpTargetViews;
 @end
 
 @implementation floorPlanViewController
@@ -93,7 +91,6 @@ static CGFloat  kPanelTitleHeight           = 46;
 
     [self createPanel];
     [self setCtrlBtns];
-    [self createKeyPanel];
     [self createFloorPlanAndRsfLabels];
     [self prepareHlepData];
 }
@@ -112,17 +109,20 @@ static CGFloat  kPanelTitleHeight           = 46;
     NSDictionary *dict = notification.userInfo;
     NSString *imageName = [dict objectForKey:@"imageName"];
     NSString *panoTitle = [dict objectForKey:@"title"];
+    float offset = [[dict objectForKey:@"offset"] floatValue];
     if (_uiv_panoramicView) {
         [_uiv_panoramicView removeFromSuperview];
         _uiv_panoramicView = nil;
     }
     
     if (imageName) {
-        _uiv_panoramicView = [[xhPanoramicView alloc] initWithFrame:self.view.bounds andImageName:imageName];
+        _uiv_panoramicView = [[xhPanoramicView alloc] initWithFrame:self.view.bounds andImageName:imageName andDirection:YES];
         [self setPanoCloseAndTitle:panoTitle];
+        _uiv_panoramicView.offSetValue = offset;
         [self.view addSubview:_uiv_panoramicView];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"hideBuildingTopMenu" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadFloorView" object:nil];
     }
 }
 
@@ -155,23 +155,8 @@ static CGFloat  kPanelTitleHeight           = 46;
             _uiv_panoramicView = nil;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideBuildingTopMenu" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"removeFloorView" object:nil];
         }];
-    }
-}
-
-#pragma mark - Set up Keys panel
-
-- (void)createKeyPanel
-{
-    _uiiv_keyPanel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_floorplan_keys.png"]];
-    _uiiv_keyPanel.frame = CGRectMake(_uiv_btnContainer.frame.origin.x, _uiv_btnContainer.frame.origin.y + _uiv_btnContainer.frame.size.height + 30, _uiiv_keyPanel.frame.size.width, _uiiv_keyPanel.frame.size.height);
-    _uiiv_keyPanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
-    _uiiv_keyPanel.layer.borderWidth = 1.0;
-    _uiiv_keyPanel.alpha = 0.8;
-    _uiiv_keyPanel.hidden = YES;
-    [self.view addSubview: _uiiv_keyPanel];
-    if (_currentPage == 1 || _currentPage == 11 || _currentPage == 14 ) {
-        _uiiv_keyPanel.hidden = NO;
     }
 }
 
@@ -382,13 +367,6 @@ static CGFloat  kPanelTitleHeight           = 46;
     _uil_floorTitle.text = _arr_titleText[index];
     _uil_floorRsf.text = labelText;
     [self enableArrowBtns];
-    
-    if (_currentPage == 1 || _currentPage == 11 || _currentPage == 14 ) {
-        _uiiv_keyPanel.hidden = NO;
-    }
-    else {
-        _uiiv_keyPanel.hidden = YES;
-    }
 }
 
 - (void)enableArrowBtns

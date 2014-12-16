@@ -26,8 +26,9 @@
 
 @implementation xhPanoramicView
 @synthesize uis_panoramic;
+@synthesize offSetValue;
 
-- (id)initWithFrame:(CGRect)frame andImageName:(NSString *)imageName
+- (id)initWithFrame:(CGRect)frame andImageName:(NSString *)imageName andDirection:(BOOL)direction
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -38,6 +39,7 @@
         _contentImage = [UIImage imageWithContentsOfFile:filePath];
         imageWidth = _contentImage.size.width;
         imageHeight = _contentImage.size.height;
+        withDirection = direction;
         [self initScrollView];
         
         self.motionManager = [[CMMotionManager alloc] init];
@@ -62,6 +64,10 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"NO" forKey:@"firstPano"];
+    
+    if (offSetValue > 0.0) {
+        [uis_panoramic scrollRectToVisible:CGRectMake(offSetValue, 0.0, self.frame.size.width, self.frame.size.height) animated:NO];
+    }
 }
 
 -(void)initScrollView {
@@ -100,6 +106,37 @@
     [_uiv_indicatorContainer addSubview:_uiiv_smallPano];
     [_uiv_indicatorContainer addSubview:_uib_smallFrame];
     _uiv_indicatorContainer.frame = CGRectMake(1024 - _uiiv_smallPano.frame.size.width - 30, 50.0, _uiiv_smallPano.frame.size.width, 68);
+    
+    if (withDirection) {
+        UILabel *north = [[UILabel alloc] initWithFrame:CGRectMake(40.0, 20.0, 20.0, 15)];;
+        north.backgroundColor = [UIColor clearColor];
+        north.text = @"N";
+        north.textAlignment = NSTextAlignmentCenter;
+        north.textColor = [UIColor whiteColor];
+        
+        UILabel *east = [[UILabel alloc] initWithFrame:CGRectMake(90.0, 20.0, 20.0, 15)];;
+        east.backgroundColor = [UIColor clearColor];
+        east.text = @"E";
+        east.textAlignment = NSTextAlignmentCenter;
+        east.textColor = [UIColor whiteColor];
+        
+        UILabel *south = [[UILabel alloc] initWithFrame:CGRectMake(140.0, 20.0, 20.0, 15)];;
+        south.backgroundColor = [UIColor clearColor];
+        south.text = @"S";
+        south.textAlignment = NSTextAlignmentCenter;
+        south.textColor = [UIColor whiteColor];
+        
+        UILabel *west = [[UILabel alloc] initWithFrame:CGRectMake(170.0, 20.0, 20.0, 15)];;
+        west.backgroundColor = [UIColor clearColor];
+        west.text = @"W";
+        west.textAlignment = NSTextAlignmentCenter;
+        west.textColor = [UIColor whiteColor];
+        
+        [_uiv_indicatorContainer addSubview: north];
+        [_uiv_indicatorContainer addSubview: east];
+        [_uiv_indicatorContainer addSubview: south];
+        [_uiv_indicatorContainer addSubview: west];
+    }
 }
 
 #pragma mark - Resize the image to fit top indicator

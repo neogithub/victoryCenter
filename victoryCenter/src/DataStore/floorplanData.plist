@@ -35,11 +35,43 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>HIGH LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string>victory_center_138feet.jpg</string>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
 					</dict>
 				</array>
 			</dict>
@@ -78,11 +110,43 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>HIGH LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string>victory_center_138feet.jpg</string>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
 					</dict>
 				</array>
 			</dict>
@@ -121,11 +185,43 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>HIGH LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string>victory_center_138feet.jpg</string>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
 					</dict>
 				</array>
 			</dict>
@@ -164,11 +260,43 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>HIGH LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string>victory_center_138feet.jpg</string>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
 					</dict>
 				</array>
 			</dict>
@@ -209,11 +337,43 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>HIGH LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string>victory_center_138feet.jpg</string>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
 					</dict>
 				</array>
 			</dict>
@@ -252,11 +412,43 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>HIGH LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string>victory_center_138feet.jpg</string>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
 					</dict>
 				</array>
 			</dict>
@@ -295,11 +487,43 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>HIGH LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
-						<string>victory_center_138feet.jpg</string>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>HIGH LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_278_feet.jpg</string>
 					</dict>
 				</array>
 			</dict>
@@ -338,7 +562,39 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
@@ -381,7 +637,39 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
@@ -424,7 +712,39 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
@@ -467,7 +787,39 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
@@ -512,7 +864,39 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
@@ -555,7 +939,39 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
@@ -598,7 +1014,39 @@
 						<key>angle</key>
 						<string>0</string>
 						<key>caption</key>
-						<string>NORTH VIEW</string>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_east_hs.png</string>
+						<key>xy</key>
+						<string>750,350</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
+						<key>RGB</key>
+						<string></string>
+						<key>fileName</key>
+						<string>victory_center_138feet.jpg</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>image</string>
+						<key>background</key>
+						<string>grfx_south_hs.png</string>
+						<key>xy</key>
+						<string>465,530</string>
+						<key>angle</key>
+						<string>0</string>
+						<key>caption</key>
+						<string>LOW LEVEL VIEW</string>
 						<key>RGB</key>
 						<string></string>
 						<key>fileName</key>
