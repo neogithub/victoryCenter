@@ -2060,13 +2060,26 @@ static float    kPanelBtnHeight             = 38.0;
     [_arr_helpText removeAllObjects];
     _arr_helpText = nil;
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
-                     @"Help for this section is coming soon",
+                     @"Tap menu button to load main menu",
+                     @"Tap buttons to change sections",
+                     @"Tap table cell to load content",
+                     @"Tap to change map's type",
+                     @"Pich to zoom in and out map",
                      nil];
     
     [_arr_helpTargetViews removeAllObjects];
     _arr_helpTargetViews = nil;
-    UIButton *tmp = [[UIButton alloc] initWithFrame:CGRectMake(10.0, 700.0, 45.0, 45.0)];
-    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:tmp, nil];
+    // Home Button
+    UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
+    // Top menu Button
+    UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(423.0, 0.0, 130.0, 34.0)];
+    // Top dropped sub menu
+    UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(288.0, 94.0, 1.0, 1.0)];
+    // Bottom map's type buttons
+    UIView *tmp3 = [[UIView alloc] initWithFrame:CGRectMake(515.0, 715.0, 1.0, 1.0)];
+    // Pinch to zoom
+    UIView *tmp4 = [[UIView alloc] initWithFrame:CGRectMake(500.0, 420.0, 1.0, 1.0)];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, tmp3, tmp4, nil];
 }
 
 - (void)loadHelpViews
