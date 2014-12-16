@@ -165,6 +165,8 @@ static float kOriginalStatHeight    = 45+36*3;
     
     [_uiv_eleLayerConainer removeFromSuperview];
     _uiv_eleLayerConainer = nil;
+    
+    [self prepareHlepData];
 }
 
 #pragma mark - Set up Top menu buttons
@@ -225,6 +227,9 @@ static float kOriginalStatHeight    = 45+36*3;
 
 - (void)updateContent:(int)index
 {
+    // Update help view's data
+    [self updateHelpData:index];
+    
     [_uiv_elevatorContainer removeFromSuperview];
     _uiv_elevatorContainer = nil;
     [_amenities removeFromSuperview];
@@ -961,13 +966,98 @@ static float kOriginalStatHeight    = 45+36*3;
     [_arr_helpText removeAllObjects];
     _arr_helpText = nil;
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
-                     @"Help for this section is coming soon",
+                     @"Tap menu button to load main menu",
+                     @"Tap buttons to change sections",
                      nil];
     
     [_arr_helpTargetViews removeAllObjects];
     _arr_helpTargetViews = nil;
-    UIButton *tmp = [[UIButton alloc] initWithFrame:CGRectMake(10.0, 700.0, 45.0, 45.0)];
-    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:tmp, nil];
+    // Home Button
+    UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
+    // Top menu Button
+    UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(423.0, 0.0, 130.0, 34.0)];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, nil];
+}
+
+- (void)updateHelpData:(int)index
+{
+    [_arr_helpText removeAllObjects];
+    _arr_helpText = nil;
+    
+    [_arr_helpTargetViews removeAllObjects];
+    _arr_helpTargetViews = nil;
+    
+    switch (index) {
+        case 1:
+        {
+            _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                             @"Tap menu button to load main menu",
+                             @"Tap buttons to change sections",
+                             @"Tap table's cell to open the content (Amenities's cells are tappable)",
+                             nil];
+            // Home Button
+            UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
+            // Top menu Button
+            UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(423.0, 0.0, 130.0, 34.0)];
+            // Table Cell
+            UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(200, 300, 1, 1)];
+            _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, nil];
+            break;
+        }
+        case 2:
+        {
+            _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                             @"Tap menu button to load main menu",
+                             @"Tap buttons to change sections",
+                             @"Swipe up and down to change floor, pinch to zoom in and out",
+                             @"Tap arrow button to change floor",
+                             nil];
+            // Home Button
+            UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
+            // Top menu Button
+            UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(423.0, 0.0, 130.0, 34.0)];
+            // Floor plan image
+            UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(450, 300, 1, 1)];
+            // Arrow buttons
+            UIView *tmp3 = [[UIView alloc] initWithFrame:CGRectMake(880, 260, 233, 1)];
+            _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, tmp3, nil];
+            break;
+        }
+        case 3:
+        {
+            _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                             @"Tap menu button to load main menu",
+                             @"Tap buttons to change sections",
+                             @"Tap cell to load gallery",
+                             nil];
+            // Home Button
+            UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
+            // Top menu Button
+            UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(423.0, 0.0, 130.0, 34.0)];
+            // Gallery Cell
+            UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(450, 300, 1, 1)];
+            _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, nil];
+            break;
+        }
+        case 4:
+        {
+            _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                             @"Tap menu button to load main menu",
+                             @"Tap buttons to change sections",
+                             @"Tap cell to load elevators",
+                             nil];
+            // Home Button
+            UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
+            // Top menu Button
+            UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(423.0, 0.0, 130.0, 34.0)];
+            // Gallery Cell
+            UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(200, 260, 1, 1)];
+            _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, nil];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 - (void)loadHelpViews

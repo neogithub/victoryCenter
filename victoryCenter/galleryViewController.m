@@ -394,7 +394,7 @@
     [_arr_helpText removeAllObjects];
     _arr_helpText = nil;
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
-                     @"Tap menu button to load main menu.",
+                     @"Tap menu button to load main menu",
                      @"Tap buttons to change sections",
                      @"Tap image to view",
                      nil];
