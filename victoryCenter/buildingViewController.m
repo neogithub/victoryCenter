@@ -160,6 +160,7 @@ static float kOriginalStatHeight    = 45+36*3;
     [self resetTopMenu];
     _uib_floorPlan.backgroundColor = [UIColor vcDarkBlue];
     _uib_floorPlan.selected = YES;
+    [self updateHelpData:2];
 }
 
 #pragma mark - Methods dealing with notifications
@@ -581,6 +582,7 @@ static float kOriginalStatHeight    = 45+36*3;
         uiiv_statContent = nil;
         [self resetTopMenu];
         _uiiv_viewDiagram.hidden = NO;
+        [self prepareHlepData];
     }];
 }
 
@@ -981,8 +983,9 @@ static float kOriginalStatHeight    = 45+36*3;
     [_arr_helpText removeAllObjects];
     _arr_helpText = nil;
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
-                     @"Tap menu button to load main menu",
+                     @"Tap to load main menu",
                      @"Tap buttons to change sections",
+                     @"Tap a floor grouping to load the lowest floor within that group",
                      nil];
     
     [_arr_helpTargetViews removeAllObjects];
@@ -991,7 +994,9 @@ static float kOriginalStatHeight    = 45+36*3;
     UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
     // Top menu Button
     UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(423.0, 0.0, 130.0, 34.0)];
-    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, nil];
+    // Top menu Button
+    UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(523.0, 200.0, 130.0, 34.0)];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, nil];
 }
 
 - (void)updateHelpData:(int)index
@@ -1008,7 +1013,7 @@ static float kOriginalStatHeight    = 45+36*3;
             _arr_helpText = [[NSMutableArray alloc] initWithObjects:
                              @"Tap menu button to load main menu",
                              @"Tap buttons to change sections",
-                             @"Tap table's cell to open the content (Amenities's cells are tappable)",
+                             @"Tap Section title to expand. Tap Amenity rows for gallery images",
                              nil];
             // Home Button
             UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
@@ -1022,10 +1027,11 @@ static float kOriginalStatHeight    = 45+36*3;
         case 2:
         {
             _arr_helpText = [[NSMutableArray alloc] initWithObjects:
-                             @"Tap menu button to load main menu",
+                             @"Tap to load main menu",
                              @"Tap buttons to change sections",
                              @"Swipe up and down to change floor, pinch to zoom in and out",
                              @"Tap arrow button to change floor",
+                             @"Tap Back to Stack to reload the stack",
                              nil];
             // Home Button
             UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
@@ -1035,15 +1041,17 @@ static float kOriginalStatHeight    = 45+36*3;
             UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(450, 300, 1, 1)];
             // Arrow buttons
             UIView *tmp3 = [[UIView alloc] initWithFrame:CGRectMake(880, 260, 233, 1)];
-            _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, tmp3, nil];
+            // Arrow buttons
+            UIView *tmp4 = [[UIView alloc] initWithFrame:CGRectMake(880, 180, 233, 1)];
+            _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, tmp3, tmp4, nil];
             break;
         }
         case 3:
         {
             _arr_helpText = [[NSMutableArray alloc] initWithObjects:
-                             @"Tap menu button to load main menu",
+                             @"Tap to load main menu",
                              @"Tap buttons to change sections",
-                             @"Tap cell to load gallery",
+                             @"Tap thumbnail to load gallery",
                              nil];
             // Home Button
             UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
@@ -1057,9 +1065,9 @@ static float kOriginalStatHeight    = 45+36*3;
         case 4:
         {
             _arr_helpText = [[NSMutableArray alloc] initWithObjects:
-                             @"Tap menu button to load main menu",
+                             @"Tap to load main menu",
                              @"Tap buttons to change sections",
-                             @"Tap cell to load elevators",
+                             @"Tap titles to view elevators",
                              nil];
             // Home Button
             UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];

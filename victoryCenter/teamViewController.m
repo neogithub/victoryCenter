@@ -422,7 +422,7 @@ static float kCardsGap      = 12.0;
     [_arr_helpText removeAllObjects];
     _arr_helpText = nil;
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
-                     @"Tap menu button to load main menu",
+                     @"Tap to load main menu",
                      @"Tap logo for more info",
                      nil];
     

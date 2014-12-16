@@ -13,6 +13,7 @@
 #import "contactViewController.h"
 #import "embKenBurns.h"
 #import "neoCalendarUtilities.h"
+#import "xhPopTipsView.h"
 
 static int morningTime = 5;
 static int eveningTime = 17;
@@ -47,6 +48,10 @@ static int eveningTime = 17;
 @property (nonatomic, strong) contactViewController             *contactVC;
 
 @property (nonatomic, retain) embKenBurns                       *kenView;
+// Help tip view
+@property (nonatomic, strong) xhPopTipsView                 *uiv_helpView;
+@property (nonatomic, strong) NSMutableArray                *arr_helpText;
+@property (nonatomic, strong) NSMutableArray                *arr_helpTargetViews;
 @end
 
 @implementation RootViewController
@@ -905,6 +910,35 @@ static int eveningTime = 17;
 }
 
 #pragma mark - Help Button Action
+
+- (void)prepareHlepData
+{
+    [_arr_helpText removeAllObjects];
+    _arr_helpText = nil;
+    _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                     @"Reset button to reset entire app",
+                     @"Tap buttons to load sections",
+                     nil];
+    
+    [_arr_helpTargetViews removeAllObjects];
+    _arr_helpTargetViews = nil;
+    UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
+    //Top menu Button
+    UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(223.0, 200.0, 130.0, 34.0)];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, nil];
+}
+
+- (void)loadHelpViews
+{
+    [self prepareHlepData];
+    if (_uiv_helpView) {
+        [_uiv_helpView removeFromSuperview];
+        _uiv_helpView = nil;
+    }
+    _uiv_helpView = [[xhPopTipsView alloc] initWithFrame:screenRect andText:_arr_helpText andViews:_arr_helpTargetViews];
+    [self.view addSubview: _uiv_helpView];
+}
+
 - (IBAction)helpBtnTapped:(id)sender {
 //    UIAlertView *alert =
 //    [[UIAlertView alloc] initWithTitle: @""
@@ -915,7 +949,12 @@ static int eveningTime = 17;
 //    alert.tag = 1;
 //    [alert show];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideAndUnhideHelp" object:nil];
+    if (_uil_titleLabel.hidden) {
+        [self loadHelpViews];
+    }
+    else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"hideAndUnhideHelp" object:nil];
+    }
 }
 
 #pragma mark - External Screen

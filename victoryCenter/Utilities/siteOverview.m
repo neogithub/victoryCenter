@@ -97,8 +97,8 @@
     NSLog(@"Tapped cell is %i", (int)[sender tag]);
     if ((int)[sender tag] == 0) {
         NSString *url = [[NSBundle mainBundle]
-                         pathForResource:@"Duda_Paine_Victory_Park"
-                         ofType:@"mp4"];
+                         pathForResource:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD"
+                         ofType:@"mov"];
         NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:url, @"movieName", nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"playGalleryMovie" object:nil userInfo:dictionary];
         return;
