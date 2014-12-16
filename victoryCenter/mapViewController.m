@@ -218,7 +218,7 @@ static float    kPanelBtnHeight             = 38.0;
 	switch (index % 3) {
 		case 0:
             [_uiiv_mapImg setImage:[UIImage imageNamed:@"City_base_map_.png"]];
-            _uiiv_vcLogo.frame = CGRectMake(489.0, 374.0, _uiiv_vcLogo.frame.size.width, _uiiv_vcLogo.frame.size.height);
+            _uiiv_vcLogo.frame = CGRectMake(489.0, 385.0, _uiiv_vcLogo.frame.size.width, _uiiv_vcLogo.frame.size.height);
             _uiiv_tredartLogo.frame = CGRectMake(456.0, 308.0, _uiiv_tredartLogo.frame.size.width, _uiiv_tredartLogo.frame.size.height);
             _uiiv_dart1Logo.frame = CGRectMake(338.0, 193.0, _uiiv_dart1Logo.frame.size.width, _uiiv_dart1Logo.frame.size.height);
             _uiiv_dart2Logo.frame = CGRectMake(512.0, 446.0, _uiiv_dart2Logo.frame.size.width, _uiiv_dart2Logo.frame.size.height);
@@ -715,14 +715,16 @@ static float    kPanelBtnHeight             = 38.0;
     
     [uiv_distanceInfoContainer addSubview: uiv_toLoveField];
     [uiv_distanceInfoContainer addSubview: uiv_toDall];
-//    if (uiv_cityAccPanel) {
-//        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_cityAccPanel];
-//    }
-//    if (uiv_neibAccPanel) {
-//        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_neibAccPanel];
-//    }
-    
-    [_uiv_mapContainer addSubview: uiv_distanceInfoContainer];
+    if (uiv_cityAccPanel) {
+        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_cityAccPanel];
+    }
+    if (uiv_neibAccPanel) {
+        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_neibAccPanel];
+    }
+    if (uiv_siteAccPanel) {
+        [self.view insertSubview:uiv_distanceInfoContainer belowSubview:uiv_siteAccPanel];
+    }
+//    [_uiv_mapContainer addSubview: uiv_distanceInfoContainer];
     
     uiv_distanceInfoContainer.transform = CGAffineTransformMakeTranslation(0, -100);
     CGFloat duration = 0.5f;
@@ -735,7 +737,76 @@ static float    kPanelBtnHeight             = 38.0;
     [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
         uiv_distanceInfoContainer.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished){      }];
+    
+    UITapGestureRecognizer *tapOnAirDistance = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAirDistance:)];
+    tapOnAirDistance.numberOfTapsRequired = 1;
+    uiv_distanceInfoContainer.userInteractionEnabled = YES;
+    [uiv_distanceInfoContainer addGestureRecognizer: tapOnAirDistance];
+}
 
+- (void)tapAirDistance:(UIGestureRecognizer *)gesture
+{
+    [_arr_pathItems removeAllObjects];
+    _arr_pathItems = nil;
+    _arr_pathItems = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_directionItems = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_directionItems2 = [[NSMutableArray alloc] init];
+    embBezierPaths *paths; //For site map
+    embDirections *dirpaths; // For city/neighborhood map
+    paths = [[embBezierPaths alloc] init];
+    arr_directionItems2 = paths.bezierPaths;
+    dirpaths = [[embDirections alloc] init];
+    arr_directionItems = dirpaths.bezierPaths;
+    
+    // actual drawpath function
+    _embDirectionPath = [[embDrawPath alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+    _embDirectionPath.delegate=self;
+    //[_uiv_mapContainer insertSubview:_embDirectionPath atIndex:2];
+    
+    if (_uiiv_mapOverlay) {
+        [_uiv_mapContainer insertSubview:_embDirectionPath aboveSubview:_uiiv_mapOverlay];
+    } else {
+        [_uiv_mapContainer insertSubview:_embDirectionPath belowSubview:_uiiv_vcLogo];
+    }
+    
+    // loop # paths in a group
+    int pathGrouping	= -1;
+    int indexStart		= -1;
+    
+    if (_uiv_citySubMenu.hidden == NO) {
+        pathGrouping	= 1;
+        indexStart		= 12;
+        _arr_pathItems = arr_directionItems;
+    }
+    
+    if (_uiv_neighborhoodSubMenu.hidden == NO) {
+        pathGrouping	= 1;
+        indexStart		= 13;
+        _arr_pathItems = arr_directionItems;
+    }
+    
+    if (_uiv_siteSubMenu.hidden == NO) {
+        pathGrouping	= 1;
+        indexStart		= 4;
+        _arr_pathItems = arr_directionItems2;
+    }
+    
+    for (int i=0; i<pathGrouping; i++) {
+        embBezierPathItem *p = _arr_pathItems[indexStart+i];
+        _embDirectionPath.myPath = p.embPath;
+        _embDirectionPath.animationSpeed = 1.0;
+        _embDirectionPath.pathStrokeColor = p.pathColor;
+        _embDirectionPath.pathLineWidth = p.pathWidth;
+        _embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
+        _embDirectionPath.isTappable = NO;
+        //        _embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
+        if(!_dirpathsArray){
+            _dirpathsArray = [[NSMutableArray alloc] init];
+            [_dirpathsArray addObject:_embDirectionPath]; // for removal later
+        }
+        //[_dirpathsArray addObject:_embDirectionPath]; // for removal later
+        [_embDirectionPath startAnimationFromIndex:i afterDelay:p.pathDelay];
+    }
 }
 
 #pragma mark City Amenities panel
@@ -2124,17 +2195,17 @@ static float    kPanelBtnHeight             = 38.0;
     [uiv_cityAccPanel removeFromSuperview];
     uiv_cityAccPanel = nil;
     
-    [uiv_cityAmePanel removeFromSuperview];
-    uiv_cityAmePanel = nil;
-    
     [uiv_neibAccPanel removeFromSuperview];
-    uiv_cityAccPanel = nil;
-    
-    [uiv_neibAmePanel removeFromSuperview];
-    uiv_neibAmePanel = nil;
+    uiv_neibAccPanel = nil;
     
     [uiv_siteAccPanel removeFromSuperview];
     uiv_siteAccPanel = nil;
+    
+    [uiv_cityAmePanel removeFromSuperview];
+    uiv_cityAmePanel = nil;
+    
+    [uiv_neibAmePanel removeFromSuperview];
+    uiv_neibAmePanel = nil;
     
     [uiv_siteAmePanel removeFromSuperview];
     uiv_siteAmePanel = nil;

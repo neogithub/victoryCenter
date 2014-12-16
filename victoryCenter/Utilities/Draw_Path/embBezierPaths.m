@@ -74,6 +74,16 @@
         [i35_3Path addCurveToPoint: CGPointMake(712, 581) controlPoint1: CGPointMake(711.54, 519.83) controlPoint2: CGPointMake(712, 581)];
         i35_3Path.lineCapStyle = kCGLineCapRound;
 		
+        //// Site_to_airport Drawing
+        UIBezierPath* site_to_airportPath = UIBezierPath.bezierPath;
+        [site_to_airportPath moveToPoint: CGPointMake(712, 581)];
+        [site_to_airportPath addCurveToPoint: CGPointMake(720, 459) controlPoint1: CGPointMake(712, 581) controlPoint2: CGPointMake(711.54, 519.83)];
+        [site_to_airportPath addCurveToPoint: CGPointMake(750, 337) controlPoint1: CGPointMake(728.14, 400.51) controlPoint2: CGPointMake(745.1, 342.39)];
+        [site_to_airportPath addCurveToPoint: CGPointMake(894, 396) controlPoint1: CGPointMake(760, 326) controlPoint2: CGPointMake(882, 383)];
+        [site_to_airportPath addCurveToPoint: CGPointMake(881, 671) controlPoint1: CGPointMake(906, 409) controlPoint2: CGPointMake(857, 499)];
+        [site_to_airportPath addCurveToPoint: CGPointMake(963, 768) controlPoint1: CGPointMake(887, 714) controlPoint2: CGPointMake(963, 768)];
+        site_to_airportPath.lineCapStyle = kCGLineCapRound;
+        
 		// END COPY FROM PAINT CODE
 
 		
@@ -112,6 +122,15 @@
 		pathItem.pathWidth = pathWidth;
 		pathItem.embPath = i35_3Path;
 		[_bezierPaths addObject:pathItem];
+        
+        pathItem = [[embBezierPathItem alloc] init];
+        pathItem.pathDelay = 1.0;
+        pathItem.pathColor = pathBlue;
+        pathItem.pathSpeed = pathSpeed;
+        pathItem.pathWidth = pathWidth;
+        pathItem.embPath = site_to_airportPath;
+        [_bezierPaths addObject:pathItem];
+
 
 	}
 	
