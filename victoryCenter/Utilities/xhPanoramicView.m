@@ -219,13 +219,16 @@
     CGPoint offset = uis_panoramic.contentOffset;
 //    NSLog(@"%f",acceleration.y);
     
-    offset.x = offset.x+acceleration.y;
+    offset.x = offset.x+acceleration.y*10;
 
     if (offset.x < 0) {
         offset.x = 0;
     }
-    if (offset.x > (uis_panoramic.contentSize.width - self.frame.size.width)) {
+    else if (offset.x > (uis_panoramic.contentSize.width - self.frame.size.width)) {
         offset.x = (uis_panoramic.contentSize.width - self.frame.size.width);
+    }
+    else {
+        offset.x = offset.x;
     }
     [uis_panoramic setContentOffset:offset];
     
@@ -236,13 +239,16 @@
     CGPoint offset = uis_panoramic.contentOffset;
 //    NSLog(@"%f",rotation.x);
     
-    offset.x = offset.x+rotation.x;
+    offset.x = offset.x+rotation.x*10;
     
     if (offset.x < 0) {
         offset.x = 0;
     }
-    if (offset.x >  (uis_panoramic.contentSize.width - self.frame.size.width)) {
-        offset.x =  (uis_panoramic.contentSize.width - self.frame.size.width);
+    else if (offset.x > (uis_panoramic.contentSize.width - self.frame.size.width)) {
+        offset.x = (uis_panoramic.contentSize.width - self.frame.size.width);
+    }
+    else {
+        offset.x = offset.x;
     }
     
     [uis_panoramic setContentOffset:offset];
