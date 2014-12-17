@@ -89,7 +89,7 @@
     
     [self initTopBtn:_uib_all withTitle:@"ALL" andTag:4 andSelected:NO];
     [self initTopBtn:_uib_render withTitle:@"RENDERING" andTag:1 andSelected:YES];
-    [self initTopBtn:_uib_photo withTitle:@"VIEWS" andTag:2 andSelected:NO];
+    [self initTopBtn:_uib_photo withTitle:@"VICTORY PARK" andTag:2 andSelected:NO];
     [self initTopBtn:_uib_video withTitle:@"VIDEO" andTag:3 andSelected:NO];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
@@ -157,6 +157,12 @@
 - (void)updateGalleryData:(int)index
 {
     [self clearAllDataCollection];
+    NSString *path = [[NSBundle mainBundle] pathForResource:
+                      @"galleryData" ofType:@"plist"];
+    // Build the array from the plist
+    NSMutableArray *rawArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    arr_AlbumData = [[NSMutableArray alloc] init];
+    [arr_AlbumData addObject:[rawArray objectAtIndex:0]];
     NSDictionary *raw_Dict = [[NSDictionary alloc] initWithDictionary:[arr_AlbumData objectAtIndex:0]];
     NSMutableArray *arr_secInfo = [[NSMutableArray alloc] initWithArray:[raw_Dict objectForKey:@"sectioninfo"]];
     if (index == 4) {
@@ -164,10 +170,29 @@
             NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[i]];
             [self addItemsAndFramesAndCapions:itemDic];
         }
+        return;
+    }
+    else if (index == 2) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:
+                          @"galleryData" ofType:@"plist"];
+        // Build the array from the plist
+        NSMutableArray *rawArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
+        [arr_AlbumData removeAllObjects];
+        arr_AlbumData = nil;
+        arr_AlbumData = [[NSMutableArray alloc] init];
+        [arr_AlbumData addObject:[rawArray objectAtIndex:1]];
+        NSDictionary *raw_Dict2 = [[NSDictionary alloc] initWithDictionary:[arr_AlbumData objectAtIndex:0]];
+        NSMutableArray *arr_secInfo2 = [[NSMutableArray alloc] initWithArray:[raw_Dict2 objectForKey:@"sectioninfo"]];
+        for (int i = 0; i < [arr_secInfo2 count]; i++) {
+            NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo2[i]];
+            [self addItemsAndFramesAndCapions:itemDic];
+        }
+        return;
     }
     else {
         NSDictionary *itemDic = [[NSDictionary alloc] initWithDictionary:arr_secInfo[index-1]];
         [self addItemsAndFramesAndCapions:itemDic];
+        return;
     }
 }
 
@@ -257,7 +282,7 @@
 {
     NSString *oldfileName = [arr_AllFlms objectAtIndex: index];
     NSString *extension = [NSString new];
-    if (index == 1) {
+    if ([oldfileName isEqualToString:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png"]) {
         extension = @"mov";
     }
     else {
@@ -364,8 +389,16 @@
     }
     
     if (_uib_photo.selected) {
-//        NSLog(@"\n\n PHOTOGRAPHY");
-        [self loadPanoImage:rowIndex];
+//        [self loadPanoImage:rowIndex];
+        if (rowIndex < arr_AllPhotos.count) {
+            [self loadPanoImage:rowIndex];
+            return;
+        }
+        else {
+            [self openFilm:rowIndex - (int)arr_AllPhotos.count];
+            return;
+        }
+
     }
     
     if (_uib_video.selected) {

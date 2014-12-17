@@ -111,5 +111,54 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>SectionName</key>
+		<string>Rendering2</string>
+		<key>sectioninfo</key>
+		<array>
+			<dict>
+				<key>albumtype</key>
+				<string>photo</string>
+				<key>category</key>
+				<string>photography</string>
+				<key>items</key>
+				<array>
+					<string>View of Victory Park - Higway view.jpg</string>
+					<string>View of Victory Park - Olive Street View.jpg</string>
+					<string>View of Victory Park - Victory Avenue.jpg</string>
+				</array>
+				<key>frame</key>
+				<array>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+				</array>
+				<key>captions</key>
+				<array>
+					<string>Highway View</string>
+					<string>Olive Street View</string>
+					<string>Victory Avenue View</string>
+				</array>
+			</dict>
+			<dict>
+				<key>albumtype</key>
+				<string>film</string>
+				<key>category</key>
+				<string>video</string>
+				<key>items</key>
+				<array>
+					<string>Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png</string>
+				</array>
+				<key>frame</key>
+				<array>
+					<string>play_button.png</string>
+				</array>
+				<key>captions</key>
+				<array>
+					<string>Victory Park Overview</string>
+				</array>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>
