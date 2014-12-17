@@ -104,11 +104,18 @@
         return;
     }
     NSMutableArray *arr_image = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_caption = [[NSMutableArray alloc] init];
+    NSString *title = [NSString new];
     if ((int)[sender tag] == 1) { // LIVE
         [arr_image addObjectsFromArray:[[NSArray alloc] initWithObjects:
                                         @"SkyHouse Dallas_072913.jpg",
                                         @"W Hotel.jpg",
                                         nil]];
+        [arr_caption addObjectsFromArray:[[NSArray alloc] initWithObjects:
+                                        @"SkyHouse Dallas",
+                                        @"W Hotel",
+                                        nil]];
+        title = @"LIVE";
     }
     if ((int)[sender tag] == 2) { // WORK
         [arr_image addObjectsFromArray:[[NSArray alloc] initWithObjects:
@@ -117,6 +124,13 @@
                                         @"Lobby Entry and Restuarant.jpg",
                                         @"Lobby View.jpg",
                                         nil]];
+        [arr_caption addObjectsFromArray:[[NSArray alloc] initWithObjects:
+                                          @"Victory Center W Hotel View",
+                                          @"Courtyard View",
+                                          @"Lobby Entry and Restaurant",
+                                          @"Lobby View",
+                                          nil]];
+        title = @"WORK";
     }
     if ((int)[sender tag] == 3) { // PLAY
         [arr_image addObjectsFromArray:[[NSArray alloc] initWithObjects:
@@ -128,8 +142,18 @@
                                         @"KATY TRAILS.jpg",
                                         @"perot-museum-of-nature-and-science---mark-knight-photography.jpg",
                                         nil]];
+        [arr_caption addObjectsFromArray:[[NSArray alloc] initWithObjects:
+                                          @"American Airlines Center",
+                                          @"Arpeggio",
+                                          @"Fine Dining Options",
+                                          @"Klyde Warren Park",
+                                          @"House of Blues",
+                                          @"Katy Trail",
+                                          @"Perot Museum of Nature and Science",
+                                          nil]];
+        title = @"PLAY";
     }
-    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_image, @"images", [NSNumber numberWithInt:0], @"startIndex", nil];
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_image, @"images", [NSNumber numberWithInt:0], @"startIndex", arr_caption, @"caption", title, @"title",nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"loadFGallery" object:nil userInfo:dictionary];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
 }
