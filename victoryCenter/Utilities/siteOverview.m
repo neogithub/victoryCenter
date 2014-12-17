@@ -112,8 +112,10 @@
     }
     if ((int)[sender tag] == 2) { // WORK
         [arr_image addObjectsFromArray:[[NSArray alloc] initWithObjects:
-                                        @"SkyHouse Dallas_072913.jpg",
-                                        @"W Hotel.jpg",
+                                        @"Victory Center 02 W Hotel View.jpg",
+                                        @"View 04.jpg",
+                                        @"Lobby Entry and Restuarant.jpg",
+                                        @"Lobby View.jpg",
                                         nil]];
     }
     if ((int)[sender tag] == 3) { // PLAY

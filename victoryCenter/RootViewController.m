@@ -112,36 +112,16 @@ static int eveningTime = 17;
 	self.kenView.alpha=0.0;
 	
 	[self.view insertSubview:self.kenView belowSubview:_uiiv_vcLogo];
-	
-    UIImage *image = [UIImage new];
     
-    //check hour
-	NSString *hour = [NSString currentHour]; // returns military time
-	
-	//then change image accordingly
-	if (([hour intValue]>morningTime) && ([hour intValue]<eveningTime)){ // 5 = 5am, 17 = 5pm
-        
-		image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"highway B1.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NW-FINAL Lighting Concept2.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SE-FINAL Lighting Concept2.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Street View B1.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 03 View from SE.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 04 Plaza View.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center View from plaza edits-sm.jpg" ofType:nil]];
-        
-	} else {
-		image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"highway B1.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NW-FINAL Lighting Concept2.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SE-FINAL Lighting Concept2.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Street View B1.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 03 View from SE.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 04 Plaza View.jpg" ofType:nil]];
-        image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center View from plaza edits-sm.jpg" ofType:nil]];
-	}
+		UIImage *image1 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
+        UIImage *image2 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 02 W Hotel View.jpg" ofType:nil]];
+        UIImage *image3 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Soutwest View of Victory Center.jpg" ofType:nil]];
+        UIImage *image4 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Southeast View of Victory Center.jpg" ofType:nil]];
+        UIImage *image5 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"View of Victory Center and Dart Transit System.jpg" ofType:nil]];
+        UIImage *image6 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center_Street View-1.jpg" ofType:nil]];
+        UIImage *image7 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center_Highway View.jpg" ofType:nil]];
     
-    NSArray *arr_images = [[NSArray alloc] initWithObjects:image, nil];
+    NSArray *arr_images = [[NSArray alloc] initWithObjects:image1, image2, image3, image4, image5, image6, image7, nil];
     
 	[UIView animateWithDuration:0.33
 					 animations:^{  self.kenView.alpha=1.0;  }
