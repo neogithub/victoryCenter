@@ -112,7 +112,99 @@
     if (withDirection) {
         [self addFloorDirectionLabel];
     }
-    NSLog(@"the image name is \n %@", inputFileName);
+//1st View
+    if ([inputFileName isEqualToString:@"View of Victory Park - Higway view"]) {
+        UILabel *north = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 20.0, 20.0, 15)];;
+        north.backgroundColor = [UIColor clearColor];
+        north.text = @"N";
+        north.textAlignment = NSTextAlignmentCenter;
+        north.textColor = [UIColor whiteColor];
+        
+        UILabel *east = [[UILabel alloc] initWithFrame:CGRectMake(45.0, 20.0, 20.0, 15)];;
+        east.backgroundColor = [UIColor clearColor];
+        east.text = @"E";
+        east.textAlignment = NSTextAlignmentCenter;
+        east.textColor = [UIColor whiteColor];
+        
+        UILabel *south = [[UILabel alloc] initWithFrame:CGRectMake(75.0, 20.0, 20.0, 15)];;
+        south.backgroundColor = [UIColor clearColor];
+        south.text = @"S";
+        south.textAlignment = NSTextAlignmentCenter;
+        south.textColor = [UIColor whiteColor];
+        
+        UILabel *west = [[UILabel alloc] initWithFrame:CGRectMake(105.0, 20.0, 20.0, 15)];;
+        west.backgroundColor = [UIColor clearColor];
+        west.text = @"W";
+        west.textAlignment = NSTextAlignmentCenter;
+        west.textColor = [UIColor whiteColor];
+        
+        [_uiv_indicatorContainer addSubview: north];
+        [_uiv_indicatorContainer addSubview: east];
+        [_uiv_indicatorContainer addSubview: south];
+        [_uiv_indicatorContainer addSubview: west];
+    }
+//2nd View
+    if ([inputFileName isEqualToString:@"View of Victory Park - Olive Street View"]) {
+        UILabel *north = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 20.0, 20.0, 15)];;
+        north.backgroundColor = [UIColor clearColor];
+        north.text = @"N";
+        north.textAlignment = NSTextAlignmentCenter;
+        north.textColor = [UIColor whiteColor];
+        
+        UILabel *east = [[UILabel alloc] initWithFrame:CGRectMake(70.0, 20.0, 20.0, 15)];;
+        east.backgroundColor = [UIColor clearColor];
+        east.text = @"E";
+        east.textAlignment = NSTextAlignmentCenter;
+        east.textColor = [UIColor whiteColor];
+        
+//        UILabel *south = [[UILabel alloc] initWithFrame:CGRectMake(140.0, 20.0, 20.0, 15)];;
+//        south.backgroundColor = [UIColor clearColor];
+//        south.text = @"S";
+//        south.textAlignment = NSTextAlignmentCenter;
+//        south.textColor = [UIColor whiteColor];
+//        
+//        UILabel *west = [[UILabel alloc] initWithFrame:CGRectMake(170.0, 20.0, 20.0, 15)];;
+//        west.backgroundColor = [UIColor clearColor];
+//        west.text = @"W";
+//        west.textAlignment = NSTextAlignmentCenter;
+//        west.textColor = [UIColor whiteColor];
+        
+        [_uiv_indicatorContainer addSubview: north];
+        [_uiv_indicatorContainer addSubview: east];
+//        [_uiv_indicatorContainer addSubview: south];
+//        [_uiv_indicatorContainer addSubview: west];
+    }
+//3rd View
+    if ([inputFileName isEqualToString:@"View of Victory Park - Victory Avenue"]) {
+        UILabel *north = [[UILabel alloc] initWithFrame:CGRectMake(25.0, 25.0, 20.0, 15)];;
+        north.backgroundColor = [UIColor clearColor];
+        north.text = @"N";
+        north.textAlignment = NSTextAlignmentCenter;
+        north.textColor = [UIColor whiteColor];
+        
+//        UILabel *east = [[UILabel alloc] initWithFrame:CGRectMake(90.0, 20.0, 20.0, 15)];;
+//        east.backgroundColor = [UIColor clearColor];
+//        east.text = @"E";
+//        east.textAlignment = NSTextAlignmentCenter;
+//        east.textColor = [UIColor whiteColor];
+//        
+//        UILabel *south = [[UILabel alloc] initWithFrame:CGRectMake(140.0, 20.0, 20.0, 15)];;
+//        south.backgroundColor = [UIColor clearColor];
+//        south.text = @"S";
+//        south.textAlignment = NSTextAlignmentCenter;
+//        south.textColor = [UIColor whiteColor];
+//        
+//        UILabel *west = [[UILabel alloc] initWithFrame:CGRectMake(170.0, 20.0, 20.0, 15)];;
+//        west.backgroundColor = [UIColor clearColor];
+//        west.text = @"W";
+//        west.textAlignment = NSTextAlignmentCenter;
+//        west.textColor = [UIColor whiteColor];
+        
+        [_uiv_indicatorContainer addSubview: north];
+//        [_uiv_indicatorContainer addSubview: east];
+//        [_uiv_indicatorContainer addSubview: south];
+//        [_uiv_indicatorContainer addSubview: west];
+    }
 }
 
 - (void)addFloorDirectionLabel
