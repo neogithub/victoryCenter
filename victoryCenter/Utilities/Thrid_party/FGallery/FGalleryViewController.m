@@ -295,6 +295,9 @@
         titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:20];
         titleLabel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
         titleLabel.text = _galleryTitle;
+        if (_galleryTitle.length > 12) {
+            titleLabel.font = [UIFont fontWithName:@"Raleway-Medium" size:15];
+        }
         
         [self.navigationController.navigationBar addSubview: titleLabel];
     }

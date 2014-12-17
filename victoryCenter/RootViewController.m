@@ -15,9 +15,6 @@
 #import "neoCalendarUtilities.h"
 #import "xhPopTipsView.h"
 
-static int morningTime = 5;
-static int eveningTime = 17;
-
 @interface RootViewController () <embKenBurnsDelegate>
 {
     UIScreen				*external_disp;

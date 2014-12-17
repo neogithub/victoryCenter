@@ -638,10 +638,34 @@ static float kOriginalStatHeight    = 45+36*3;
 - (void)tapOnAmenitiesBtn:(id)sender
 {
     int index = (int)[sender tag];
-    
+    NSString *caption = [NSString new];
+    switch (index) {
+        case 0:
+            caption = @"Fitness";
+            break;
+        case 1:
+            caption = @"Deli";
+            break;
+        case 2:
+            caption = @"Conference Center";
+            break;
+        case 3:
+            caption = @"Restaurant";
+            break;
+        case 4:
+            caption = @"Courtyard";
+            break;
+        default:
+            break;
+    }
     NSArray *arr_image = [[NSArray alloc] initWithArray:arr_bldStatsImages[index]];
+    NSMutableArray *arr_caption = [[NSMutableArray alloc] init];
+    for (int i = 0; i< arr_image.count; i++) {
+        [arr_caption addObject: caption];
+    }
     
-    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_image, @"images", [NSNumber numberWithInt:0], @"startIndex", nil];
+    
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arr_image, @"images", [NSNumber numberWithInt:0], @"startIndex",[caption uppercaseString], @"title", arr_caption, @"caption", nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"loadFGallery" object:nil userInfo:dictionary];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
 }
