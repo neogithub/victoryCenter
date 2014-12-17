@@ -32,10 +32,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        inputFileName = [NSString new];
         // Initialization code
         NSString *fileName = [[imageName lastPathComponent] stringByDeletingPathExtension];
         NSString *fileExt = [imageName pathExtension];
         NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExt];
+        inputFileName = fileName;
         _contentImage = [UIImage imageWithContentsOfFile:filePath];
         imageWidth = _contentImage.size.width;
         imageHeight = _contentImage.size.height;
@@ -108,35 +110,41 @@
     _uiv_indicatorContainer.frame = CGRectMake(1024 - _uiiv_smallPano.frame.size.width - 30, 50.0, _uiiv_smallPano.frame.size.width, 68);
     
     if (withDirection) {
-        UILabel *north = [[UILabel alloc] initWithFrame:CGRectMake(40.0, 20.0, 20.0, 15)];;
-        north.backgroundColor = [UIColor clearColor];
-        north.text = @"N";
-        north.textAlignment = NSTextAlignmentCenter;
-        north.textColor = [UIColor whiteColor];
-        
-        UILabel *east = [[UILabel alloc] initWithFrame:CGRectMake(90.0, 20.0, 20.0, 15)];;
-        east.backgroundColor = [UIColor clearColor];
-        east.text = @"E";
-        east.textAlignment = NSTextAlignmentCenter;
-        east.textColor = [UIColor whiteColor];
-        
-        UILabel *south = [[UILabel alloc] initWithFrame:CGRectMake(140.0, 20.0, 20.0, 15)];;
-        south.backgroundColor = [UIColor clearColor];
-        south.text = @"S";
-        south.textAlignment = NSTextAlignmentCenter;
-        south.textColor = [UIColor whiteColor];
-        
-        UILabel *west = [[UILabel alloc] initWithFrame:CGRectMake(170.0, 20.0, 20.0, 15)];;
-        west.backgroundColor = [UIColor clearColor];
-        west.text = @"W";
-        west.textAlignment = NSTextAlignmentCenter;
-        west.textColor = [UIColor whiteColor];
-        
-        [_uiv_indicatorContainer addSubview: north];
-        [_uiv_indicatorContainer addSubview: east];
-        [_uiv_indicatorContainer addSubview: south];
-        [_uiv_indicatorContainer addSubview: west];
+        [self addFloorDirectionLabel];
     }
+    NSLog(@"the image name is \n %@", inputFileName);
+}
+
+- (void)addFloorDirectionLabel
+{
+    UILabel *north = [[UILabel alloc] initWithFrame:CGRectMake(40.0, 20.0, 20.0, 15)];;
+    north.backgroundColor = [UIColor clearColor];
+    north.text = @"N";
+    north.textAlignment = NSTextAlignmentCenter;
+    north.textColor = [UIColor whiteColor];
+    
+    UILabel *east = [[UILabel alloc] initWithFrame:CGRectMake(90.0, 20.0, 20.0, 15)];;
+    east.backgroundColor = [UIColor clearColor];
+    east.text = @"E";
+    east.textAlignment = NSTextAlignmentCenter;
+    east.textColor = [UIColor whiteColor];
+    
+    UILabel *south = [[UILabel alloc] initWithFrame:CGRectMake(140.0, 20.0, 20.0, 15)];;
+    south.backgroundColor = [UIColor clearColor];
+    south.text = @"S";
+    south.textAlignment = NSTextAlignmentCenter;
+    south.textColor = [UIColor whiteColor];
+    
+    UILabel *west = [[UILabel alloc] initWithFrame:CGRectMake(170.0, 20.0, 20.0, 15)];;
+    west.backgroundColor = [UIColor clearColor];
+    west.text = @"W";
+    west.textAlignment = NSTextAlignmentCenter;
+    west.textColor = [UIColor whiteColor];
+    
+    [_uiv_indicatorContainer addSubview: north];
+    [_uiv_indicatorContainer addSubview: east];
+    [_uiv_indicatorContainer addSubview: south];
+    [_uiv_indicatorContainer addSubview: west];
 }
 
 #pragma mark - Resize the image to fit top indicator

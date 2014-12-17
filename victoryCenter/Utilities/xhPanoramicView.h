@@ -13,6 +13,8 @@
     float       imageWidth;
     float       imageHeight;
     BOOL        withDirection;
+    
+    NSString    *inputFileName;
 }
 
 
