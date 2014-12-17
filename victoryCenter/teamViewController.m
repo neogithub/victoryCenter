@@ -13,8 +13,8 @@
 static float kDropSpeed		= 0.33;
 static float kAnimaDelay	= 0.2;
 static float kCardWidth     = 183.0;
-static float kCardsGap      = 12.0;
-
+//static float kCardsGap      = 12.0;
+static float kCardsGap      = 30.0;
 @interface teamViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView            *uiiv_teamBg;
@@ -58,14 +58,16 @@ static float kCardsGap      = 12.0;
 {
     [super viewDidLoad];
     _arr_cards = [[NSMutableArray alloc] init];
-    _arr_logoImg = [[NSArray alloc] initWithObjects:@"team_hines_logo.png", @"team_cousins_logo.png", @"team_cushman_logo.png", @"team_duda_logo.png", @"team_hks_logo.png", nil];
+//    _arr_logoImg = [[NSArray alloc] initWithObjects:@"team_hines_logo.png", @"team_cousins_logo.png", @"team_cushman_logo.png", @"team_duda_logo.png", @"team_hks_logo.png", nil];
+        _arr_logoImg = [[NSArray alloc] initWithObjects:@"team_hines_logo.png", @"team_cousins_logo.png", @"team_cushman_logo.png", nil];
     [self createTextViews];
     for (int i = 0; i < _arr_logoImg.count; i++) {
         // input parameters:
         // 1. name of logo image
         // 2. name of text image
         // 3. x value of the card
-        [self createItemBox:_arr_logoImg[i] andText:_arr_teamTextView[i] andX:(30 + i * (kCardsGap + kCardWidth)) andTag:i];
+//        [self createItemBox:_arr_logoImg[i] andText:_arr_teamTextView[i] andX:(30 + i * (kCardsGap + kCardWidth)) andTag:i];
+        [self createItemBox:_arr_logoImg[i] andText:_arr_teamTextView[i] andX:(208 + i * (kCardsGap + kCardWidth)) andTag:i];
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
