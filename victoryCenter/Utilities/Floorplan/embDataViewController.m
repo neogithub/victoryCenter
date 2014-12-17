@@ -266,7 +266,7 @@
 - (void)createKeyPanel
 {
     _uiiv_keyPanel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_floorplan_keys.png"]];
-    _uiiv_keyPanel.frame = CGRectMake(850, 298, 156, 195);
+    _uiiv_keyPanel.frame = CGRectMake(850, 298, 156, 344);
     _uiiv_keyPanel.layer.borderColor = [UIColor vcDarkBlue].CGColor;
     _uiiv_keyPanel.layer.borderWidth = 1.0;
     _uiiv_keyPanel.alpha = 0.8;
