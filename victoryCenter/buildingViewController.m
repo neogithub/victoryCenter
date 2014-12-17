@@ -93,8 +93,8 @@ static float kOriginalStatHeight    = 45+36*3;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unhideBuildingMenu) name:@"unhideBuildingTopMenu" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetBuilding) name:@"tapOnTitle" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadedPano:) name:@"loadFloorView" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removePano:) name:@"removeFloorView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadedPano:) name:@"loadPanoView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removePano:) name:@"removePanoView" object:nil];
     
     _uil_parkingLabel.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
     _uil_parkingLabel.textColor = [UIColor whiteColor];

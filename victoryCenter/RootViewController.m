@@ -26,6 +26,7 @@
 	NSTimeInterval              totalVideoTime;
     NSTimeInterval				totalElapsedTime;
 	UISlider                    *progressIndicator;
+    BOOL                        loadedPno;
 }
 @property (weak, nonatomic) IBOutlet UIImageView                *uiiv_bgImg;
 @property (weak, nonatomic) IBOutlet UIImageView                *uiiv_vcLogo;
@@ -62,6 +63,7 @@
     self.view.frame = screenRect;
     [super viewWillAppear:animated];
     [self performSelector:@selector(createKenBurnView) withObject:nil afterDelay:3.0];
+    loadedPno = NO;
 }
 
 -(void)viewDidLayoutSubviews
@@ -91,6 +93,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(swithToBuilding) name:@"switchToBuilding" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playMovieFromGallery:) name:@"playGalleryMovie" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFGallery:) name:@"loadFGallery" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadedPano:) name:@"loadPanoView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removePano:) name:@"removePanoView" object:nil];
 }
 
 #pragma mark - Create KenBurn view
@@ -131,6 +135,16 @@
 }
 
 #pragma mark - Deal with notificaiton
+- (void)loadedPano:(NSNotification *)notification
+{
+    loadedPno = YES;
+}
+
+- (void)removePano:(NSNotification *)notification
+{
+    loadedPno = NO;
+}
+
 - (void)hideHomeBtn:(NSNotification *)notification
 {
     if (_contactVC.view)
@@ -926,7 +940,7 @@
 //    alert.tag = 1;
 //    [alert show];
     
-    if (_uil_titleLabel.hidden) {
+    if (_uil_titleLabel.hidden && loadedPno == NO) {
         [self loadHelpViews];
     }
     else {

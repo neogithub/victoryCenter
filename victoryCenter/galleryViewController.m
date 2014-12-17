@@ -312,6 +312,7 @@
         [self setPanoCloseAndTitle:nil];
         [self.view addSubview:_uiv_panoramicView];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadPanoView" object:nil];
     }
 }
 
@@ -343,6 +344,7 @@
             [_uiv_panoramicView removeFromSuperview];
             _uiv_panoramicView = nil;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"removePanoView" object:nil];
         }];
     }
 }
@@ -416,6 +418,9 @@
             [_uiv_helpView removeFromSuperview];
             _uiv_helpView = nil;
         }];
+    }
+    else if (_uiv_panoramicView){
+        return;
     }
     else {
         [self loadHelpViews];

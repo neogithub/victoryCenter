@@ -122,7 +122,7 @@ static CGFloat  kPanelTitleHeight           = 46;
         [self.view addSubview:_uiv_panoramicView];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"hideBuildingTopMenu" object:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadFloorView" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadPanoView" object:nil];
     }
 }
 
@@ -155,7 +155,7 @@ static CGFloat  kPanelTitleHeight           = 46;
             _uiv_panoramicView = nil;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideHomeButton" object:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideBuildingTopMenu" object:nil];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"removeFloorView" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"removePanoView" object:nil];
         }];
     }
 }
