@@ -234,6 +234,29 @@
         neighborhood_To_airportPath.lineCapStyle = kCGLineCapRound;
 
         
+        //// City_To_LoveField Drawing
+        UIBezierPath* city_To_LoveFieldPath = UIBezierPath.bezierPath;
+        [city_To_LoveFieldPath moveToPoint: CGPointMake(506, 399)];
+        [city_To_LoveFieldPath addCurveToPoint: CGPointMake(523, 395) controlPoint1: CGPointMake(506, 399) controlPoint2: CGPointMake(523.62, 402.13)];
+        [city_To_LoveFieldPath addCurveToPoint: CGPointMake(501, 330) controlPoint1: CGPointMake(521.5, 377.75) controlPoint2: CGPointMake(505.48, 336.5)];
+        [city_To_LoveFieldPath addCurveToPoint: CGPointMake(465, 273) controlPoint1: CGPointMake(495.74, 322.37) controlPoint2: CGPointMake(467.16, 277.86)];
+        [city_To_LoveFieldPath addCurveToPoint: CGPointMake(451, 224) controlPoint1: CGPointMake(461, 264) controlPoint2: CGPointMake(457.69, 259.7)];
+        [city_To_LoveFieldPath addCurveToPoint: CGPointMake(437, 136) controlPoint1: CGPointMake(444.11, 187.22) controlPoint2: CGPointMake(436.96, 149.23)];
+        [city_To_LoveFieldPath addCurveToPoint: CGPointMake(445.5, 66.5) controlPoint1: CGPointMake(437.07, 109.93) controlPoint2: CGPointMake(445.5, 66.5)];
+        [city_To_LoveFieldPath addLineToPoint: CGPointMake(450.5, -0.5)];
+        city_To_LoveFieldPath.lineCapStyle = kCGLineCapRound;
+        
+        //// Neighborhood_To_LoveField Drawing
+        UIBezierPath* neighborhood_To_LoveFieldPath = UIBezierPath.bezierPath;
+        [neighborhood_To_LoveFieldPath moveToPoint: CGPointMake(497.5, 447)];
+        [neighborhood_To_LoveFieldPath addCurveToPoint: CGPointMake(547, 443) controlPoint1: CGPointMake(497.5, 447) controlPoint2: CGPointMake(541, 451)];
+        [neighborhood_To_LoveFieldPath addCurveToPoint: CGPointMake(533, 344) controlPoint1: CGPointMake(553, 435) controlPoint2: CGPointMake(539, 355)];
+        [neighborhood_To_LoveFieldPath addCurveToPoint: CGPointMake(468, 243) controlPoint1: CGPointMake(529.25, 337.12) controlPoint2: CGPointMake(488, 267)];
+        [neighborhood_To_LoveFieldPath addCurveToPoint: CGPointMake(414, 171) controlPoint1: CGPointMake(456.01, 228.61) controlPoint2: CGPointMake(426, 195)];
+        [neighborhood_To_LoveFieldPath addCurveToPoint: CGPointMake(388, 83) controlPoint1: CGPointMake(402, 147) controlPoint2: CGPointMake(400.53, 124.1)];
+        [neighborhood_To_LoveFieldPath addCurveToPoint: CGPointMake(368.5, 0.5) controlPoint1: CGPointMake(377.02, 46.99) controlPoint2: CGPointMake(370.37, 9.84)];
+        neighborhood_To_LoveFieldPath.lineCapStyle = kCGLineCapRound;
+        
 		// END COPY FROM PAINT CODE
 
 		
@@ -353,6 +376,22 @@
         pathItem.pathSpeed = pathSpeed;
         pathItem.pathWidth = pathWidth;
         pathItem.embPath = neighborhood_To_airportPath;
+        [_bezierPaths addObject:pathItem];
+        
+        pathItem = [[embBezierPathItem alloc] init];
+        pathItem.pathDelay = 1.0;
+        pathItem.pathColor = pathBlue;
+        pathItem.pathSpeed = pathSpeed;
+        pathItem.pathWidth = pathWidth;
+        pathItem.embPath = city_To_LoveFieldPath;
+        [_bezierPaths addObject:pathItem];
+        
+        pathItem = [[embBezierPathItem alloc] init];
+        pathItem.pathDelay = 1.0;
+        pathItem.pathColor = pathBlue;
+        pathItem.pathSpeed = pathSpeed;
+        pathItem.pathWidth = pathWidth;
+        pathItem.embPath = neighborhood_To_LoveFieldPath;
         [_bezierPaths addObject:pathItem];
         //NEIGHBORHOOD LEVEL
 	

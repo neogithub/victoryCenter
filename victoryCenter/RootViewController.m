@@ -530,12 +530,7 @@
                                                     cancelButtonTitle:nil
                                                destructiveButtonTitle:nil
                                                     otherButtonTitles:  @"Victory Center Overview",
-                                                                        @"Victory Park Overview",
-                                                                        @"Victory Center Fly Over",
-                                                                        @"Street View Approach",
-                                                                        @"Low-Rise Office Floor",
-                                                                        @"Lobby Level Night",
-                                                                        @"High-Rise Office Floor", nil];
+                                                                        @"Victory Park Overview", nil];
     
     actionSheet.tag = 100;
     
@@ -553,29 +548,15 @@
     switch (buttonIndex) {
         case 0:
             url = [[NSBundle mainBundle] pathForResource:@"Duda_Paine_Victory_Park" ofType:@"mp4"];
+            [self playMovieWithName:url];
             break;
         case 1:
             url = [[NSBundle mainBundle] pathForResource:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD" ofType:@"mov"];
-            break;
-        case 2:
-            url = [[NSBundle mainBundle] pathForResource:@"Victory_Center_Fly_Over" ofType:@"mp4"];
-            break;
-        case 3:
-            url = [[NSBundle mainBundle] pathForResource:@"Street_View_Approach" ofType:@"mp4"];
-            break;
-        case 4:
-            url = [[NSBundle mainBundle] pathForResource:@"Low-Rise_Office_Floor" ofType:@"mp4"];
-            break;
-        case 5:
-            url = [[NSBundle mainBundle] pathForResource:@"Lobby_Level_night" ofType:@"mp4"];
-            break;
-        case 6:
-            url = [[NSBundle mainBundle] pathForResource:@"High-Rise_Office_Floor" ofType:@"mp4"];
+            [self playMovieWithName:url];
             break;
         default:
             break;
     }
-    [self playMovieWithName:url];
 }
 
 - (void)playMovieFromGallery:(NSNotification *)notification

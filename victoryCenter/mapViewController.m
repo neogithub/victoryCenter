@@ -675,6 +675,7 @@ static float    kPanelBtnHeight             = 38.0;
     uiv_distanceInfoContainer.backgroundColor = [UIColor clearColor];
     
     UIView *uiv_toLoveField = [[UIView alloc] initWithFrame:CGRectMake(0, 0, panle_w, 40)];
+    uiv_toLoveField.tag = 11;
     uiv_toLoveField.backgroundColor = [UIColor vcDarkBlue];
     UILabel *uil_toLoveField = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, panle_w - 20, 20)];
     uil_toLoveField.backgroundColor = [UIColor clearColor];
@@ -694,6 +695,7 @@ static float    kPanelBtnHeight             = 38.0;
     [uiv_toLoveField addSubview: uil_toLoveField1];
     
     UIView *uiv_toDall = [[UIView alloc] initWithFrame:CGRectMake(0, uiv_toLoveField.frame.size.height +  5, panle_w, 40)];
+    uiv_toDall.tag = 12;
     uiv_toDall.backgroundColor = [UIColor vcDarkBlue];
     
     UILabel *uil_toDall = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, panle_w - 20, 20)];
@@ -741,11 +743,18 @@ static float    kPanelBtnHeight             = 38.0;
     UITapGestureRecognizer *tapOnAirDistance = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAirDistance:)];
     tapOnAirDistance.numberOfTapsRequired = 1;
     uiv_distanceInfoContainer.userInteractionEnabled = YES;
-    [uiv_distanceInfoContainer addGestureRecognizer: tapOnAirDistance];
+    [uiv_toDall addGestureRecognizer: tapOnAirDistance];
+    
+    UITapGestureRecognizer *tapOnLoveField = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAirDistance:)];
+    tapOnLoveField.numberOfTapsRequired = 1;
+    uiv_distanceInfoContainer.userInteractionEnabled = YES;
+    [uiv_toLoveField addGestureRecognizer: tapOnLoveField];
 }
 
 - (void)tapAirDistance:(UIGestureRecognizer *)gesture
 {
+    [self removePaths];
+    
     [_arr_pathItems removeAllObjects];
     _arr_pathItems = nil;
     _arr_pathItems = [[NSMutableArray alloc] init];
@@ -774,14 +783,26 @@ static float    kPanelBtnHeight             = 38.0;
     int indexStart		= -1;
     
     if (_uiv_citySubMenu.hidden == NO) {
-        pathGrouping	= 1;
-        indexStart		= 12;
+        if (gesture.view.tag == 12) {
+            pathGrouping	= 1;
+            indexStart		= 12;
+        }
+        else {
+            pathGrouping	= 1;
+            indexStart		= 14;
+        }
         _arr_pathItems = arr_directionItems;
     }
     
     if (_uiv_neighborhoodSubMenu.hidden == NO) {
-        pathGrouping	= 1;
-        indexStart		= 13;
+        if (gesture.view.tag == 12) {
+            pathGrouping	= 1;
+            indexStart		= 13;
+        }
+        else {
+            pathGrouping	= 1;
+            indexStart		= 15;
+        }
         _arr_pathItems = arr_directionItems;
     }
     
