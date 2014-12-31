@@ -15,7 +15,7 @@
 #import "neoCalendarUtilities.h"
 #import "xhPopTipsView.h"
 
-@interface RootViewController () <embKenBurnsDelegate>
+@interface RootViewController () <embKenBurnsDelegate, UIActionSheetDelegate>
 {
     UIScreen				*external_disp;
     UIWindow				*external_wind;
@@ -525,7 +525,56 @@
 #pragma mark Movie Button Action
 - (IBAction)movieBtnTapped:(id)sender {
     
-    NSString *url = [[NSBundle mainBundle] pathForResource:@"Duda_Paine_Victory_Park" ofType:@"mp4"];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Please choose a movie"
+                                                             delegate:self
+                                                    cancelButtonTitle:nil
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:  @"Victory Center Overview",
+                                                                        @"Victory Park Overview",
+                                                                        @"Victory Center Fly Over",
+                                                                        @"Street View Approach",
+                                                                        @"Low-Rise Office Floor",
+                                                                        @"Lobby Level Night",
+                                                                        @"High-Rise Office Floor", nil];
+    
+    actionSheet.tag = 100;
+    
+    CGRect frame = CGRectMake(64, 714, 40, 40);
+    
+    [actionSheet showFromRect:frame inView:self.view animated:YES];
+    
+//    NSString *url = [[NSBundle mainBundle] pathForResource:@"Duda_Paine_Victory_Park" ofType:@"mp4"];
+//    [self playMovieWithName:url];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *url;
+    switch (buttonIndex) {
+        case 0:
+            url = [[NSBundle mainBundle] pathForResource:@"Duda_Paine_Victory_Park" ofType:@"mp4"];
+            break;
+        case 1:
+            url = [[NSBundle mainBundle] pathForResource:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD" ofType:@"mov"];
+            break;
+        case 2:
+            url = [[NSBundle mainBundle] pathForResource:@"Victory_Center_Fly_Over" ofType:@"mp4"];
+            break;
+        case 3:
+            url = [[NSBundle mainBundle] pathForResource:@"Street_View_Approach" ofType:@"mp4"];
+            break;
+        case 4:
+            url = [[NSBundle mainBundle] pathForResource:@"Low-Rise_Office_Floor" ofType:@"mp4"];
+            break;
+        case 5:
+            url = [[NSBundle mainBundle] pathForResource:@"Lobby_Level_night" ofType:@"mp4"];
+            break;
+        case 6:
+            url = [[NSBundle mainBundle] pathForResource:@"High-Rise_Office_Floor" ofType:@"mp4"];
+            break;
+        default:
+            break;
+    }
     [self playMovieWithName:url];
 }
 
