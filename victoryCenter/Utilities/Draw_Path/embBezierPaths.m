@@ -84,6 +84,17 @@
         [site_to_airportPath addCurveToPoint: CGPointMake(963, 768) controlPoint1: CGPointMake(887, 714) controlPoint2: CGPointMake(963, 768)];
         site_to_airportPath.lineCapStyle = kCGLineCapRound;
         
+        
+        //// Site_to_loveField Drawing
+        UIBezierPath* site_to_loveFieldPath = UIBezierPath.bezierPath;
+        [site_to_loveFieldPath moveToPoint: CGPointMake(712, 581)];
+        [site_to_loveFieldPath addCurveToPoint: CGPointMake(720, 459) controlPoint1: CGPointMake(712, 581) controlPoint2: CGPointMake(711.54, 519.83)];
+        [site_to_loveFieldPath addCurveToPoint: CGPointMake(750, 337) controlPoint1: CGPointMake(728.14, 400.51) controlPoint2: CGPointMake(745.1, 342.39)];
+        [site_to_loveFieldPath addCurveToPoint: CGPointMake(558, 273) controlPoint1: CGPointMake(754.49, 332.06) controlPoint2: CGPointMake(661.92, 297.16)];
+        [site_to_loveFieldPath addCurveToPoint: CGPointMake(278, 220) controlPoint1: CGPointMake(430.43, 243.35) controlPoint2: CGPointMake(366, 237)];
+        [site_to_loveFieldPath addCurveToPoint: CGPointMake(106, 217) controlPoint1: CGPointMake(190, 203) controlPoint2: CGPointMake(106, 217)];
+        [site_to_loveFieldPath addLineToPoint: CGPointMake(-4, 255)];
+        site_to_loveFieldPath.lineCapStyle = kCGLineCapRound;
 		// END COPY FROM PAINT CODE
 
 		
@@ -130,8 +141,14 @@
         pathItem.pathWidth = pathWidth;
         pathItem.embPath = site_to_airportPath;
         [_bezierPaths addObject:pathItem];
-
-
+        
+        pathItem = [[embBezierPathItem alloc] init];
+        pathItem.pathDelay = 1.0;
+        pathItem.pathColor = pathBlue;
+        pathItem.pathSpeed = pathSpeed;
+        pathItem.pathWidth = pathWidth;
+        pathItem.embPath = site_to_loveFieldPath;
+        [_bezierPaths addObject:pathItem];
 	}
 	
 	return self;

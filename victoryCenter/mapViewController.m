@@ -807,8 +807,14 @@ static float    kPanelBtnHeight             = 38.0;
     }
     
     if (_uiv_siteSubMenu.hidden == NO) {
-        pathGrouping	= 1;
-        indexStart		= 4;
+        if (gesture.view.tag == 12) {
+            pathGrouping	= 1;
+            indexStart		= 4;
+        }
+        else {
+            pathGrouping	= 1;
+            indexStart		= 5;
+        }
         _arr_pathItems = arr_directionItems2;
     }
     
