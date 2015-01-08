@@ -215,7 +215,13 @@
         [uib_testfit setTitle:arr_btnTitles[i] forState:UIControlStateSelected];
         [uib_testfit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [uib_testfit setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-        [uib_testfit.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+        NSString *title = arr_btnTitles[i];
+        if (title.length > 15) {
+            [uib_testfit.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:13.0]];
+        }
+        else {
+            [uib_testfit.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:14.0]];
+        }
         uib_testfit.tag = i;
         
         if (i == 0) {
