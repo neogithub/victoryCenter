@@ -114,7 +114,7 @@
 	
 	[self.view insertSubview:self.kenView belowSubview:_uiiv_vcLogo];
     
-		UIImage *image1 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
+//		UIImage *image1 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
         UIImage *image2 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 02 W Hotel View.jpg" ofType:nil]];
         UIImage *image3 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Soutwest View of Victory Center.jpg" ofType:nil]];
         UIImage *image4 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Southeast View of Victory Center.jpg" ofType:nil]];
@@ -122,7 +122,7 @@
         UIImage *image6 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center_Street View-1.jpg" ofType:nil]];
         UIImage *image7 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center_Highway View.jpg" ofType:nil]];
     
-    NSArray *arr_images = [[NSArray alloc] initWithObjects:image1, image2, image3, image4, image5, image6, image7, nil];
+    NSArray *arr_images = [[NSArray alloc] initWithObjects: image3, image4, image5, image6, image7, image2, nil];
     
 	[UIView animateWithDuration:0.33
 					 animations:^{  self.kenView.alpha=1.0;  }

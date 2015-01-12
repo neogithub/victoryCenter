@@ -369,7 +369,7 @@ static float kCardsGap      = 30.0;
     [uil_neoLogo setText:@"DESIGNED BY NEOSCAPE®"];
     [uil_neoLogo setTextAlignment:NSTextAlignmentCenter];
     uil_neoLogo.font = [UIFont fontWithName:@"Raleway-Medium" size:12.0];
-    [uil_neoLogo setTextColor:[UIColor grayColor]];
+    [uil_neoLogo setTextColor:[UIColor colorWithWhite:1.0 alpha:0.6]];
 	// uil_neoLogo.alpha = 0.7;
     [uiv_neoContainer addSubview: uil_neoLogo];
 

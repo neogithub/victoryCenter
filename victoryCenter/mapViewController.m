@@ -755,6 +755,12 @@ static float    kPanelBtnHeight             = 38.0;
 {
     [self removePaths];
     
+    for (UIView *tmp in uiv_distanceInfoContainer.subviews) {
+        tmp.alpha = 1.0;
+    }
+    
+    gesture.view.alpha = 0.6;
+    
     [_arr_pathItems removeAllObjects];
     _arr_pathItems = nil;
     _arr_pathItems = [[NSMutableArray alloc] init];
