@@ -380,7 +380,7 @@ static int eveningTime = 17;
     [_arr_helpTargetViews removeAllObjects];
     _arr_helpTargetViews = nil;
     UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
-    UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(860, 315, 233, 100)];
+    UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(850, 315, 233, 100)];
     _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp2, nil];
 }
 

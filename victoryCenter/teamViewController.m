@@ -388,7 +388,7 @@ static float kCardsGap      = 30.0;
     NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
 	//NSString * build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
 
-	uil_version.text = [NSString stringWithFormat:@"2014 v%@",version];
+	uil_version.text = [NSString stringWithFormat:@"2015 v%@",version];
     uil_version.font = [UIFont fontWithName:@"Raleway-Medium" size:14.0];
     uil_version.textColor = [UIColor colorWithWhite:0.5 alpha:0.5];
     uil_version.textAlignment = NSTextAlignmentRight;
