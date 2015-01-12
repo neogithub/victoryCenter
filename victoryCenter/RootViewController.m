@@ -537,9 +537,6 @@
     CGRect frame = CGRectMake(64, 714, 40, 40);
     
     [actionSheet showFromRect:frame inView:self.view animated:YES];
-    
-//    NSString *url = [[NSBundle mainBundle] pathForResource:@"Duda_Paine_Victory_Park" ofType:@"mp4"];
-//    [self playMovieWithName:url];
 }
 
 - (void)willPresentActionSheet:(UIActionSheet *)actionSheet

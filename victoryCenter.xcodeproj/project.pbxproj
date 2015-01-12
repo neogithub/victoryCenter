@@ -175,7 +175,6 @@
 		824E10EA1A0D688F00BDBDA6 /* VictoryCenter_Flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 824E10E81A0D688F00BDBDA6 /* VictoryCenter_Flag@2x.png */; };
 		824F369819E6C47500267B44 /* thumb_victory_center_138feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F367919E6C47500267B44 /* thumb_victory_center_138feet.jpg */; };
 		824F369919E6C47500267B44 /* thumb_victory_center_278_feet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F367A19E6C47500267B44 /* thumb_victory_center_278_feet.jpg */; };
-		824F36A419E6C56E00267B44 /* thumb_neoscape_bug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */; };
 		8253976A1A097AA6000B6B7C /* embKenBurns.m in Sources */ = {isa = PBXBuildFile; fileRef = 825397691A097AA6000B6B7C /* embKenBurns.m */; };
 		82594C751A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_ClosedOffice.png in Resources */ = {isa = PBXBuildFile; fileRef = 82594C691A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_ClosedOffice.png */; };
 		82594C761A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_ClosedOffice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82594C6A1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_ClosedOffice@2x.png */; };
@@ -269,10 +268,6 @@
 		827492E21A080C7F00F949E5 /* grfx_smallStack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E01A080C7F00F949E5 /* grfx_smallStack@2x.png */; };
 		827492E51A0818F500F949E5 /* grfx_floorplan_keys.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E31A0818F500F949E5 /* grfx_floorplan_keys.png */; };
 		827492E61A0818F500F949E5 /* grfx_floorplan_keys@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E41A0818F500F949E5 /* grfx_floorplan_keys@2x.png */; };
-		828041F61A07C1CF00847A80 /* tmp_testfit1.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F21A07C1CF00847A80 /* tmp_testfit1.png */; };
-		828041F71A07C1CF00847A80 /* tmp_testfit1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */; };
-		828041F81A07C1CF00847A80 /* tmp_testfit2.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F41A07C1CF00847A80 /* tmp_testfit2.png */; };
-		828041F91A07C1CF00847A80 /* tmp_testfit2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 828041F51A07C1CF00847A80 /* tmp_testfit2@2x.png */; };
 		8294BB271A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB1C1A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg */; };
 		8294BB281A3B708200EDD0EB /* W Hotel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB1D1A3B708200EDD0EB /* W Hotel.jpg */; };
 		8294BB291A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB1F1A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg */; };
@@ -388,7 +383,6 @@
 		82DC11FE19DAF2990057AE4F /* photo-gallery-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11F519DAF2990057AE4F /* photo-gallery-right.png */; };
 		82DC11FF19DAF2990057AE4F /* photo-gallery-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11F619DAF2990057AE4F /* photo-gallery-right@2x.png */; };
 		82DC120019DAF2990057AE4F /* photo-gallery-trashcan.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11F719DAF2990057AE4F /* photo-gallery-trashcan.png */; };
-		82EA38C019E304AC0027394F /* neoscape_bug.mov in Resources */ = {isa = PBXBuildFile; fileRef = 82EA38BF19E304AC0027394F /* neoscape_bug.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -592,7 +586,6 @@
 		824E10E81A0D688F00BDBDA6 /* VictoryCenter_Flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VictoryCenter_Flag@2x.png"; sourceTree = "<group>"; };
 		824F367919E6C47500267B44 /* thumb_victory_center_138feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_victory_center_138feet.jpg; sourceTree = "<group>"; };
 		824F367A19E6C47500267B44 /* thumb_victory_center_278_feet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_victory_center_278_feet.jpg; sourceTree = "<group>"; };
-		824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_neoscape_bug.jpg; sourceTree = "<group>"; };
 		825397681A097AA6000B6B7C /* embKenBurns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embKenBurns.h; sourceTree = "<group>"; };
 		825397691A097AA6000B6B7C /* embKenBurns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embKenBurns.m; sourceTree = "<group>"; };
 		82594C691A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_ClosedOffice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TEST_FIT_FLOOR11_ClosedOffice.png; sourceTree = "<group>"; };
@@ -698,10 +691,6 @@
 		827492E01A080C7F00F949E5 /* grfx_smallStack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_smallStack@2x.png"; sourceTree = "<group>"; };
 		827492E31A0818F500F949E5 /* grfx_floorplan_keys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan_keys.png; sourceTree = "<group>"; };
 		827492E41A0818F500F949E5 /* grfx_floorplan_keys@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorplan_keys@2x.png"; sourceTree = "<group>"; };
-		828041F21A07C1CF00847A80 /* tmp_testfit1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_testfit1.png; sourceTree = "<group>"; };
-		828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp_testfit1@2x.png"; sourceTree = "<group>"; };
-		828041F41A07C1CF00847A80 /* tmp_testfit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_testfit2.png; sourceTree = "<group>"; };
-		828041F51A07C1CF00847A80 /* tmp_testfit2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp_testfit2@2x.png"; sourceTree = "<group>"; };
 		8294BB1C1A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SkyHouse Dallas_072913.jpg"; sourceTree = "<group>"; };
 		8294BB1D1A3B708200EDD0EB /* W Hotel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "W Hotel.jpg"; sourceTree = "<group>"; };
 		8294BB1F1A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg"; sourceTree = "<group>"; };
@@ -839,7 +828,6 @@
 		82DC11F519DAF2990057AE4F /* photo-gallery-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-right.png"; sourceTree = "<group>"; };
 		82DC11F619DAF2990057AE4F /* photo-gallery-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-right@2x.png"; sourceTree = "<group>"; };
 		82DC11F719DAF2990057AE4F /* photo-gallery-trashcan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-trashcan.png"; sourceTree = "<group>"; };
-		82EA38BF19E304AC0027394F /* neoscape_bug.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = neoscape_bug.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1253,10 +1241,6 @@
 				824C196019FA9DC400EA7613 /* grfx_floorplan9@2x.png */,
 				822F38491A1A92FA0085500F /* grfx_floorplan1.png */,
 				822F384A1A1A92FA0085500F /* grfx_floorplan1@2x.png */,
-				828041F21A07C1CF00847A80 /* tmp_testfit1.png */,
-				828041F31A07C1CF00847A80 /* tmp_testfit1@2x.png */,
-				828041F41A07C1CF00847A80 /* tmp_testfit2.png */,
-				828041F51A07C1CF00847A80 /* tmp_testfit2@2x.png */,
 				82594C681A1FB2D400AC0AB4 /* Testfit */,
 				82AB934119FEC97B00DD0B30 /* floorplan_hotspot */,
 			);
@@ -1644,12 +1628,10 @@
 				8294BB471A3B8D6900EDD0EB /* Street_View_Approach.mp4 */,
 				8294BB481A3B8D6900EDD0EB /* Victory_Center_Fly_Over.mp4 */,
 				82599B741A3A374C00397362 /* Duda_Paine_Victory_Park.mp4 */,
-				82EA38BF19E304AC0027394F /* neoscape_bug.mov */,
 				82599B751A3A374C00397362 /* thumb_Duda_Paine_Victory_Park.png */,
 				8294BB381A3B857E00EDD0EB /* thumb_High-Rise_Office_Floor.png */,
 				8294BB361A3B857E00EDD0EB /* thumb_Lobby_Level_night.png */,
 				8294BB351A3B857E00EDD0EB /* thumb_Low-Rise_Office_Floor.png */,
-				824F36A319E6C56E00267B44 /* thumb_neoscape_bug.jpg */,
 				8294BB391A3B857E00EDD0EB /* thumb_Street_View_Approach.png */,
 				826873D11A3646400013C960 /* thumb_Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png */,
 				8294BB371A3B857E00EDD0EB /* thumb_Victory_Center_Fly_Over.png */,
@@ -1821,7 +1803,6 @@
 				8260BA021A1BD202004C44B8 /* building_stats_office@2x.png in Resources */,
 				82599B491A39D95D00397362 /* Neigh_Access.png in Resources */,
 				8260B9ED1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png in Resources */,
-				828041F81A07C1CF00847A80 /* tmp_testfit2.png in Resources */,
 				8294BB2A1A3B708200EDD0EB /* arpeggio.jpg in Resources */,
 				82DC11D219DAEA940057AE4F /* victory_center_138feet.jpg in Resources */,
 				822C908A1A375621003944E8 /* Victory Center_Highway View.jpg in Resources */,
@@ -1878,7 +1859,6 @@
 				824F369819E6C47500267B44 /* thumb_victory_center_138feet.jpg in Resources */,
 				82000B9A19E5963800AE2C70 /* team_cousins_text@2x.png in Resources */,
 				82CBD72B19F995120001191F /* grfx_site_parking@2x.png in Resources */,
-				828041F91A07C1CF00847A80 /* tmp_testfit2@2x.png in Resources */,
 				823D78AC19F1AD500096E62C /* grfx_compass.png in Resources */,
 				822C90AE1A377562003944E8 /* overview_cell4.jpg in Resources */,
 				824C194F19FA938500EA7613 /* grfx_tredart_logo@2x.png in Resources */,
@@ -1898,7 +1878,6 @@
 				822C90AB1A377562003944E8 /* overview_cell2@2x.jpg in Resources */,
 				8294BB4A1A3B8D6900EDD0EB /* Lobby_Level_night.mp4 in Resources */,
 				8224FDF619D46D90002B1B44 /* cap_bar_@2x.png in Resources */,
-				82EA38C019E304AC0027394F /* neoscape_bug.mov in Resources */,
 				8263B98C19EDACD700E70C1B /* embTableCell.xib in Resources */,
 				82000B9E19E5963800AE2C70 /* team_duda_text@2x.png in Resources */,
 				822C90AC1A377562003944E8 /* overview_cell3.jpg in Resources */,
@@ -1916,7 +1895,6 @@
 				82000B7B19E590AD00AE2C70 /* team_hines_logo.png in Resources */,
 				82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */,
 				822C909D1A375883003944E8 /* thumb_Victory Center_Street View-1.jpg in Resources */,
-				828041F61A07C1CF00847A80 /* tmp_testfit1.png in Resources */,
 				82CEEB3F1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Higway view.jpg in Resources */,
 				82000BA019E5963800AE2C70 /* team_hks_text@2x.png in Resources */,
 				82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */,
@@ -1936,7 +1914,6 @@
 				82594C801A1FB2D400AC0AB4 /* TEST_FIT_FLOOR8_OpenOffice@2x.png in Resources */,
 				8294BB2E1A3B708200EDD0EB /* KATY TRAILS.jpg in Resources */,
 				82AB934D19FEC97B00DD0B30 /* grfx_north_hs@2x.png in Resources */,
-				828041F71A07C1CF00847A80 /* tmp_testfit1@2x.png in Resources */,
 				82A805D219D1F61E00308BA1 /* grfx_movieIcon.png in Resources */,
 				82716A6D19E441390070A331 /* grfx_access_nav@2x.png in Resources */,
 				824E10E61A0D5F5C00BDBDA6 /* Plane_Icon_White@2x.png in Resources */,
@@ -1983,7 +1960,6 @@
 				8224FE0519D47097002B1B44 /* Raleway-ExtraLight.otf in Resources */,
 				82000B7A19E590AD00AE2C70 /* Team_bg@2x.jpg in Resources */,
 				82A21F621A028F3A00BE8706 /* gfrx_all_overlay.png in Resources */,
-				824F36A419E6C56E00267B44 /* thumb_neoscape_bug.jpg in Resources */,
 				82A805D319D1F61E00308BA1 /* grfx_movieIcon@2x.png in Resources */,
 				8297BD2A19F5760D0046CB65 /* grfx_galleryCap.png in Resources */,
 				82716A6819E434C10070A331 /* Districts_overlay.png in Resources */,
