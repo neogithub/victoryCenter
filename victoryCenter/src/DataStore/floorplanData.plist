@@ -1097,15 +1097,10 @@
 					<string>grfx_floorplan1.png</string>
 				</array>
 				<key>testfits</key>
-				<array>
-					<string>TEST_FIT_FLOOR11_OpenOffice.png</string>
-					<string>TEST_FIT_FLOOR11_OpenOffice.png</string>
-				</array>
+				<array/>
 				<key>testfitBtns</key>
 				<array>
 					<string>CORE &amp; SHELL</string>
-					<string>RESTAURANT</string>
-					<string>CONFERENCE CENTER</string>
 				</array>
 				<key>hotspots</key>
 				<array/>

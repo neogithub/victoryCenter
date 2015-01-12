@@ -12,7 +12,6 @@
 		<key>content</key>
 		<array>
 			<string>conference_image.jpg</string>
-			<string>fitness&amp;conference.jpg</string>
 			<string>restaurant&amp;conference.jpg</string>
 		</array>
 	</dict>
@@ -40,7 +39,6 @@
 		<key>content</key>
 		<array>
 			<string>restaurant_image.jpg</string>
-			<string>restaurant.jpg</string>
 			<string>restaurant&amp;conference.jpg</string>
 		</array>
 	</dict>
