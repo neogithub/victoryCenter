@@ -951,6 +951,9 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_siteOverview) {
         [self removeOverviewPanel];
     }
+    
+    [self overViewHelp];
+    
     _uiv_overviewContainer = [[UIView alloc] initWithFrame:screenRect];
     _uiv_overviewContainer.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4];
     UITapGestureRecognizer *tapOnOverview = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(moveOutOverview:)];
@@ -995,6 +998,7 @@ static float    kPanelBtnHeight             = 38.0;
     } completion:^(BOOL finished){
         [self removeOverviewPanel];
         [self resetSubMenus];
+        [self prepareHlepData];
     }];
 }
 
@@ -2196,7 +2200,6 @@ static float    kPanelBtnHeight             = 38.0;
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
                      @"Tap to load main menu",
                      @"Tap section titles to change sections. Tap subtitles to change that sections content",
-                     @"Tap to change map's type",
                      @"Tap to zoom in and out map",
                      @"Tap to load more info",
                      nil];
@@ -2213,7 +2216,34 @@ static float    kPanelBtnHeight             = 38.0;
     UIView *tmp4 = [[UIView alloc] initWithFrame:CGRectMake(500.0, 420.0, 1.0, 1.0)];
     // Pinch to zoom
     UIView *tmp5 = [[UIView alloc] initWithFrame:CGRectMake(800.0, 220.0, 1.0, 1.0)];
-    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp3, tmp4, tmp5, nil];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp4, tmp5, nil];
+    
+    if (_uiv_siteSubMenu.hidden) {
+        [_arr_helpTargetViews addObject:tmp3];
+        [_arr_helpText addObject:@"Tap to change map's type"];
+    }
+}
+
+- (void)overViewHelp
+{
+    [_arr_helpText removeAllObjects];
+    _arr_helpText = nil;
+    _arr_helpText = [[NSMutableArray alloc] initWithObjects:
+                     @"Tap to load main menu",
+                     @"Tap section titles to change sections. Tap subtitles to change that sections content",
+                     @"Tap image to load gallery",
+                     nil];
+    
+    [_arr_helpTargetViews removeAllObjects];
+    _arr_helpTargetViews = nil;
+    // Home Button
+    UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
+    // Top menu Button
+    UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(523.0, 0.0, 130.0, 34.0)];
+    // Pinch to zoom
+    UIView *tmp4 = [[UIView alloc] initWithFrame:CGRectMake(450.0, 420.0, 1.0, 1.0)];
+
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1,  tmp4, nil];
 }
 
 - (void)loadHelpViews
