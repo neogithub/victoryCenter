@@ -12,6 +12,7 @@
 @interface xhPopTipsView : UIView <CMPopTipViewDelegate>
 
 @property (nonatomic, readwrite) BOOL       onScreen;
+@property (nonatomic, readwrite) int        pointDirection;
 
 - (id)initWithFrame:(CGRect)frame andText:(NSArray *)helpText andViews:(NSArray *)viewArray;
 

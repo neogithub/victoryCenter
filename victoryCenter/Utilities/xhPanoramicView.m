@@ -391,14 +391,16 @@
     _arr_helpText = [[NSMutableArray alloc] initWithObjects:
                      @"Tap close button to go back",
                      @"Tap the icon to move the view by tilting iPad",
+                     @"Swipe left and right to view more",
                      nil];
     
     [_arr_helpTargetViews removeAllObjects];
     _arr_helpTargetViews = nil;
     UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
     UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(_uiv_indicatorContainer.frame.origin.x + 20, _uiv_indicatorContainer.frame.origin.y+_uiv_indicatorContainer.frame.size.height, 1, 1)];
+    UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(500.0, 360.0, 130.0, 34.0)];
 //    UIView *tmp2 = [[UIView alloc] initWithFrame:frame];
-    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, nil];
+    _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, nil];
 }
 
 - (void)loadHelpViews

@@ -469,7 +469,8 @@
 	CGPoint containerRelativeOrigin = [superview convertPoint:containerView.frame.origin toView:superview];
     
 	CGFloat pointerY;	// Y coordinate of pointer target (within containerView)
-	
+    
+	NSLog(@"%f\n\n%f", targetRelativeOrigin.y, containerView.bounds.size.height);
     
     if (targetRelativeOrigin.y+targetView.bounds.size.height < containerRelativeOrigin.y) {
         pointerY = 0.0;

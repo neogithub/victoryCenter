@@ -1019,7 +1019,7 @@ static float kOriginalStatHeight    = 45+36*3;
     // Top menu Button
     UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(423.0, 0.0, 130.0, 34.0)];
     // Top menu Button
-    UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(523.0, 200.0, 130.0, 34.0)];
+    UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(455.0, 180.0, 130.0, 34.0)];
     _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, nil];
 }
 
@@ -1066,7 +1066,7 @@ static float kOriginalStatHeight    = 45+36*3;
             // Arrow buttons
             UIView *tmp3 = [[UIView alloc] initWithFrame:CGRectMake(880, 260, 233, 1)];
             // Arrow buttons
-            UIView *tmp4 = [[UIView alloc] initWithFrame:CGRectMake(880, 180, 233, 1)];
+            UIView *tmp4 = [[UIView alloc] initWithFrame:CGRectMake(930, 190, 1, 1)];
             _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, tmp3, tmp4, nil];
             break;
         }
@@ -1075,14 +1075,14 @@ static float kOriginalStatHeight    = 45+36*3;
             _arr_helpText = [[NSMutableArray alloc] initWithObjects:
                              @"Tap to load main menu",
                              @"Tap buttons to change sections",
-                             @"Tap thumbnail to load gallery",
+                             @"Tap image to load gallery",
                              nil];
             // Home Button
             UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 45.0, 45.0)];
             // Top menu Button
             UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(423.0, 0.0, 130.0, 34.0)];
             // Gallery Cell
-            UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(450, 300, 1, 1)];
+            UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(520, 360, 1, 1)];
             _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, nil];
             break;
         }
@@ -1098,7 +1098,7 @@ static float kOriginalStatHeight    = 45+36*3;
             // Top menu Button
             UIView *tmp1 = [[UIView alloc] initWithFrame:CGRectMake(423.0, 0.0, 130.0, 34.0)];
             // Gallery Cell
-            UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(200, 260, 1, 1)];
+            UIView *tmp2 = [[UIView alloc] initWithFrame:CGRectMake(165, 320, 1, 1)];
             _arr_helpTargetViews = [[NSMutableArray alloc] initWithObjects:homeBtn, tmp1, tmp2, nil];
             break;
         }

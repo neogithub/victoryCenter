@@ -18,6 +18,7 @@
 @end
 
 @implementation xhPopTipsView
+@synthesize pointDirection;
 
 - (id)initWithFrame:(CGRect)frame andText:(NSArray *)helpText andViews:(NSArray *)viewArray
 {
@@ -72,7 +73,6 @@
         CMPopTipView *popTipView;
         popTipView = [[CMPopTipView alloc] initWithMessage:contentMessage];
         popTipView.delegate = self;
-        
         /* Some options to try.
          */
         //popTipView.disableTapToDismiss = YES;
