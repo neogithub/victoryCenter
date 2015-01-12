@@ -975,7 +975,7 @@
 //    alert.tag = 1;
 //    [alert show];
     
-    if (_uil_titleLabel.hidden && loadedPno == NO) {
+    if (_uil_titleLabel.hidden && loadedPno == NO && _contactVC.view == nil) {
         [self loadHelpViews];
     }
     else {
