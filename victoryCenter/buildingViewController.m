@@ -309,8 +309,8 @@ static float kOriginalStatHeight    = 45+36*3;
     
     NSArray *arr_fitnessImages = [[NSArray alloc] initWithObjects:@"fitness_image.jpg", @"fitness2.jpg", @"fitness&conference.jpg", nil];
     NSArray *arr_deliImage = [[NSArray alloc] initWithObjects:@"deli_image.jpg", nil];
-    NSArray *arr_conference = [[NSArray alloc] initWithObjects:@"conference_image.jpg", @"fitness&conference.jpg", @"restaurant&conference.jpg", nil];
-    NSArray *arr_resturant = [[NSArray alloc] initWithObjects:@"restaurant_image.jpg", @"restaurant.jpg", @"restaurant&conference.jpg", nil];
+    NSArray *arr_conference = [[NSArray alloc] initWithObjects:@"conference_image.jpg", @"restaurant&conference.jpg", nil];
+    NSArray *arr_resturant = [[NSArray alloc] initWithObjects:@"restaurant_image.jpg", @"restaurant&conference.jpg", nil];
     NSArray *arr_courtyardImage = [[NSArray alloc] initWithObjects:@"View 04.jpg", nil];
     
     arr_bldStatsImages = [[NSArray alloc] initWithObjects:arr_fitnessImages, arr_deliImage, arr_conference, arr_resturant, arr_courtyardImage, nil];

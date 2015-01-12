@@ -257,8 +257,6 @@
 		826873D41A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov in Resources */ = {isa = PBXBuildFile; fileRef = 826873D21A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov */; };
 		826873D71A36552F0013C960 /* buildingAmenities.m in Sources */ = {isa = PBXBuildFile; fileRef = 826873D61A36552F0013C960 /* buildingAmenities.m */; };
 		827069951A125BA8001AC7E4 /* xhPopTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 827069941A125BA8001AC7E4 /* xhPopTipsView.m */; };
-		827069981A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */; };
-		827069991A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 827069971A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg */; };
 		82716A6819E434C10070A331 /* Districts_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6619E434C10070A331 /* Districts_overlay.png */; };
 		82716A6919E434C10070A331 /* Districts_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6719E434C10070A331 /* Districts_overlay@2x.png */; };
 		82716A6C19E441390070A331 /* grfx_access_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 82716A6A19E441390070A331 /* grfx_access_nav.png */; };
@@ -688,8 +686,6 @@
 		826873D61A36552F0013C960 /* buildingAmenities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buildingAmenities.m; sourceTree = "<group>"; };
 		827069931A125BA8001AC7E4 /* xhPopTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xhPopTipsView.h; sourceTree = "<group>"; };
 		827069941A125BA8001AC7E4 /* xhPopTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xhPopTipsView.m; sourceTree = "<group>"; };
-		827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_bldAmenities_bg.jpg; sourceTree = "<group>"; };
-		827069971A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_bldAmenities_bg@2x.jpg"; sourceTree = "<group>"; };
 		82716A6619E434C10070A331 /* Districts_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Districts_overlay.png; sourceTree = "<group>"; };
 		82716A6719E434C10070A331 /* Districts_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Districts_overlay@2x.png"; sourceTree = "<group>"; };
 		82716A6A19E441390070A331 /* grfx_access_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_access_nav.png; sourceTree = "<group>"; };
@@ -1460,8 +1456,6 @@
 				8260B9F91A1BD202004C44B8 /* building_stats_area@2x.png */,
 				8260B9FA1A1BD202004C44B8 /* building_stats_office.png */,
 				8260B9FB1A1BD202004C44B8 /* building_stats_office@2x.png */,
-				827069961A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg */,
-				827069971A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg */,
 				82A29E4419EC60E000AFAE1E /* grfx_bldImg.png */,
 				82A29E4519EC60E000AFAE1E /* grfx_bldImg@2x.png */,
 				82A29E4619EC60E000AFAE1E /* grfx_bldStatsImg.png */,
@@ -1908,7 +1902,6 @@
 				8263B98C19EDACD700E70C1B /* embTableCell.xib in Resources */,
 				82000B9E19E5963800AE2C70 /* team_duda_text@2x.png in Resources */,
 				822C90AC1A377562003944E8 /* overview_cell3.jpg in Resources */,
-				827069991A12C0F1001AC7E4 /* grfx_bldAmenities_bg@2x.jpg in Resources */,
 				8224FDF519D46D90002B1B44 /* cap_bar_.png in Resources */,
 				82C06E8E1A169F56000F969E /* grfx_view_diagram.png in Resources */,
 				82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */,
@@ -1966,7 +1959,6 @@
 				82AB935019FEC97B00DD0B30 /* grfx_west_hs.png in Resources */,
 				82594C7B1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR19_OpenOffice.png in Resources */,
 				82000B8A19E592A800AE2C70 /* team_cousins_logo@2x.png in Resources */,
-				827069981A12C0F1001AC7E4 /* grfx_bldAmenities_bg.jpg in Resources */,
 				82594C7F1A1FB2D400AC0AB4 /* TEST_FIT_FLOOR8_OpenOffice.png in Resources */,
 				824C196E19FA9DC400EA7613 /* grfx_floorplan9@2x.png in Resources */,
 				82AB934B19FEC97B00DD0B30 /* grfx_east_hs@2x.png in Resources */,
