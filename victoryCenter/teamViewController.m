@@ -164,6 +164,10 @@ static float kCardsGap      = 30.0;
 {
     UIView *tmp = gesture.view;
     int index = (int)tmp.tag%50;
+    if (index == 2) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadContact" object:nil];
+        return;
+    }
     
     if (_uiv_teamDetailContainer) {
         [_uiv_teamDetailContainer removeFromSuperview];
