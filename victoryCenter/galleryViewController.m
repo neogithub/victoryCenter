@@ -392,12 +392,12 @@
     
     if (_uib_photo.selected) {
 //        [self loadPanoImage:rowIndex];
-        if (rowIndex < arr_AllPhotos.count) {
-            [self loadPanoImage:rowIndex];
+        if (rowIndex < arr_AllImgs.count) {
+            [self openFGallery:rowIndex];
             return;
         }
         else {
-            [self openFilm:rowIndex - (int)arr_AllPhotos.count];
+            [self openFilm:rowIndex - (int)arr_AllImgs.count];
             return;
         }
 
