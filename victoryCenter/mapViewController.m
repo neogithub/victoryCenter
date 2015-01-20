@@ -679,7 +679,7 @@ static float    kPanelBtnHeight             = 38.0;
     uiv_toLoveField.backgroundColor = [UIColor vcDarkBlue];
     UILabel *uil_toLoveField = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, panle_w - 20, 20)];
     uil_toLoveField.backgroundColor = [UIColor clearColor];
-    uil_toLoveField.text = @"Victory Center to Love Field:";
+    uil_toLoveField.text = @"Victory Center to Dallas Love Field:";
     uil_toLoveField.textColor = [UIColor whiteColor];
     [uil_toLoveField setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
     [uil_toLoveField setTextAlignment:NSTextAlignmentLeft];
@@ -700,14 +700,14 @@ static float    kPanelBtnHeight             = 38.0;
     
     UILabel *uil_toDall = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, panle_w - 20, 20)];
     uil_toDall.backgroundColor = [UIColor vcDarkBlue];
-    uil_toDall.text = @"Victory Center to Dall/Fort Worth";
+    uil_toDall.text = @"Victory Center to DFW International";
     uil_toDall.textColor = [UIColor whiteColor];
     [uil_toDall setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
     [uil_toDall setTextAlignment:NSTextAlignmentLeft];
     
     UILabel *uil_toDall1 = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 18.0, panle_w - 20, 20)];
     uil_toDall1.backgroundColor = [UIColor vcDarkBlue];
-    uil_toDall1.text = @"International: 21 miles, 25-28 minutes";
+    uil_toDall1.text = @"Airport: 21 miles, 25-28 minutes";
     uil_toDall1.textColor = [UIColor whiteColor];
     [uil_toDall1 setFont:[UIFont fontWithName:@"Raleway-Bold" size:11.0]];
     [uil_toDall1 setTextAlignment:NSTextAlignmentLeft];
@@ -1056,7 +1056,7 @@ static float    kPanelBtnHeight             = 38.0;
     
     panel_h = 6*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", @"PARKING", @"VIEW ALL", nil];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"RETAIL", @"RESIDENTIAL", @"DINING", @"PARKING", @"VIEW ALL", nil];
     
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"tapSiteAmenities:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
@@ -1237,7 +1237,7 @@ static float    kPanelBtnHeight             = 38.0;
     
     panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", nil];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"RETAIL", @"RESIDENTIAL", @"DINING", nil];
     
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];

@@ -95,6 +95,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFGallery:) name:@"loadFGallery" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadedPano:) name:@"loadPanoView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removePano:) name:@"removePanoView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mailBtnTapped:) name:@"loadContact" object:nil];
 }
 
 #pragma mark - Create KenBurn view
