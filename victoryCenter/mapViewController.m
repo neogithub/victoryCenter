@@ -791,11 +791,11 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_citySubMenu.hidden == NO) {
         if (gesture.view.tag == 12) {
             pathGrouping	= 1;
-            indexStart		= 12;
+            indexStart		= 24;
         }
         else {
             pathGrouping	= 1;
-            indexStart		= 14;
+            indexStart		= 26;
         }
         _arr_pathItems = arr_directionItems;
     }
@@ -803,11 +803,11 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_neighborhoodSubMenu.hidden == NO) {
         if (gesture.view.tag == 12) {
             pathGrouping	= 1;
-            indexStart		= 13;
+            indexStart		= 25;
         }
         else {
             pathGrouping	= 1;
-            indexStart		= 15;
+            indexStart		= 27;
         }
         _arr_pathItems = arr_directionItems;
     }
@@ -815,11 +815,11 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_siteSubMenu.hidden == NO) {
         if (gesture.view.tag == 12) {
             pathGrouping	= 1;
-            indexStart		= 4;
+            indexStart		= 8;
         }
         else {
             pathGrouping	= 1;
-            indexStart		= 5;
+            indexStart		= 9;
         }
         _arr_pathItems = arr_directionItems2;
     }
@@ -1237,7 +1237,7 @@ static float    kPanelBtnHeight             = 38.0;
     
     panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"RETAIL", @"RESIDENTIAL", @"DINING", nil];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", nil];
     
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
@@ -1859,28 +1859,28 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_citySubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
-				pathGrouping	= 1;
+				pathGrouping	= 2;
 				indexStart		= 0;
 				break;
 				
 			case 1:
-				pathGrouping	= 1;
-				indexStart		= 1;
-				break;
-				
-			case 2:
-				pathGrouping	= 1;
+				pathGrouping	= 2;
 				indexStart		= 2;
 				break;
 				
-			case 3:
+			case 2:
 				pathGrouping	= 2;
-				indexStart		= 3;
+				indexStart		= 4;
+				break;
+				
+			case 3:
+				pathGrouping	= 4;
+				indexStart		= 6;
 				break;
 				
 			case 4:
-				pathGrouping	= 1;
-				indexStart		= 5;
+				pathGrouping	= 2;
+				indexStart		= 10;
 				break;
 			default:
 				break;
@@ -1891,28 +1891,28 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_neighborhoodSubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
-				pathGrouping	= 1;
-				indexStart		= 6;
+				pathGrouping	= 2;
+				indexStart		= 12;
 				break;
 				
 			case 1:
-				pathGrouping	= 1;
-				indexStart		= 7;
+				pathGrouping	= 2;
+				indexStart		= 14;
 				break;
 				
 			case 2:
-				pathGrouping	= 1;
-				indexStart		= 8;
+				pathGrouping	= 2;
+				indexStart		= 16;
 				break;
 				
 			case 3:
-				pathGrouping	= 2;
-				indexStart		= 9;
+				pathGrouping	= 4;
+				indexStart		= 18;
 				break;
 				
 			case 4:
-				pathGrouping	= 1;
-				indexStart		= 11;
+				pathGrouping	= 2;
+				indexStart		= 22;
 				break;
 			default:
 				break;
@@ -1923,28 +1923,28 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_siteSubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
-				pathGrouping	= 1;
+				pathGrouping	= 2;
 				indexStart		= 0;
 				break;
 				
 			case 1:
-				pathGrouping	= 1;
-				indexStart		= 1;
-				break;
-				
-			case 2:
-				pathGrouping	= 1;
-				indexStart		= 0;
-				break;
-				
-			case 3:
 				pathGrouping	= 2;
 				indexStart		= 2;
 				break;
 				
+			case 2:
+				pathGrouping	= 2;
+				indexStart		= 0;
+				break;
+				
+			case 3:
+				pathGrouping	= 4;
+				indexStart		= 4;
+				break;
+				
 			case 4:
-				pathGrouping	= 1;
-				indexStart		= 3;
+				pathGrouping	= 2;
+				indexStart		= 6;
 				break;
 			default:
 				break;
@@ -1956,7 +1956,7 @@ static float    kPanelBtnHeight             = 38.0;
 		embBezierPathItem *p = _arr_pathItems[indexStart+i];
 		_embDirectionPath.myPath = p.embPath;
 		_embDirectionPath.animationSpeed = 1.0;
-		_embDirectionPath.pathStrokeColor = p.pathColor;
+        _embDirectionPath.pathStrokeColor = p.pathColor;
 		_embDirectionPath.pathLineWidth = p.pathWidth;
 		_embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
 		_embDirectionPath.isTappable = NO;

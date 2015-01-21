@@ -101,7 +101,7 @@
 	
 	shapeLayer.path = path.CGPath;
 
-	shapeLayer.strokeColor = [UIColor vcPathColor].CGColor;
+	shapeLayer.strokeColor = _pathStrokeColor.CGColor;
 	shapeLayer.fillColor = _pathFillColor.CGColor;
 	shapeLayer.lineWidth = _pathLineWidth;
 	shapeLayer.lineJoin = kCALineJoinRound;

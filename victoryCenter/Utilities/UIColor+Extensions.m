@@ -111,6 +111,10 @@
     return [UIColor colorWithRed:102.0/255.0 green:160.0/255.0 blue:193.0/255.0 alpha:1.0];
 }
 
++ (UIColor *)vcOutPathColor {
+    return [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
+}
+
 + (UIColor *)randomColor {
     return [self colorWithRed:((float)rand() / RAND_MAX)
                         green:((float)rand() / RAND_MAX)

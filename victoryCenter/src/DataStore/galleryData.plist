@@ -51,26 +51,56 @@
 			</dict>
 			<dict>
 				<key>albumtype</key>
-				<string>photo</string>
+				<string>image</string>
 				<key>category</key>
-				<string>photography</string>
+				<string>rendering</string>
 				<key>items</key>
 				<array>
-					<string>View of Victory Park - Higway view.jpg</string>
-					<string>View of Victory Park - Olive Street View.jpg</string>
-					<string>View of Victory Park - Victory Avenue.jpg</string>
+					<string>TM_VictoryPark_view01.jpg</string>
+					<string>TM_VictoryPark_view02.jpg</string>
+					<string>TM_VictoryPark_view03.jpg</string>
+					<string>TM_VictoryPark_view04.jpg</string>
+					<string>SkyHouse Dallas_072913.jpg</string>
+					<string>W Hotel.jpg</string>
+					<string>american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg</string>
+					<string>arpeggio.jpg</string>
+					<string>dallas_2013_fearings_creditdcvb_4.jpg</string>
+					<string>dallas_klydewarrenpark_creditdcvb_2.jpg</string>
+					<string>House of Blues_Night.jpg</string>
+					<string>KATY TRAILS.jpg</string>
+					<string>perot-museum-of-nature-and-science---mark-knight-photography.jpg</string>
 				</array>
 				<key>frame</key>
 				<array>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
 				</array>
 				<key>captions</key>
 				<array>
-					<string>Highway View</string>
-					<string>Olive Street View</string>
-					<string>Victory Avenue View</string>
+					<string>Victory Park Rendering</string>
+					<string>Victory Park Rendering</string>
+					<string>Victory Park Rendering</string>
+					<string>Victory Park Rendering</string>
+					<string>SkyHouse Dallas</string>
+					<string>W Hotel</string>
+					<string>American Airlines Center</string>
+					<string>Arpeggio</string>
+					<string>Fine Dining Options</string>
+					<string>Klyde Warren Park</string>
+					<string>House of Blues</string>
+					<string>Katy Trail</string>
+					<string>Perot Museum of Nature and Science</string>
 				</array>
 			</dict>
 			<dict>
