@@ -88,13 +88,14 @@ extern NSArray *arrHotSpots;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *str = [_tableData objectAtIndex:indexPath.row];
+    NSString *str = [[_tableData objectAtIndex:indexPath.row] uppercaseString];
     CGRect textRect = [str boundingRectWithSize:CGSizeMake(170, MAXFLOAT)
                                          options:NSStringDrawingUsesLineFragmentOrigin
                                       attributes:@{NSFontAttributeName:[UIFont fontWithName:kFontName size:kFontSize]}
                                          context:nil];
     CGSize size = textRect.size;
     return size.height+8;
+    
 }
 
 
@@ -134,7 +135,7 @@ extern NSArray *arrHotSpots;
         }
 
     }
-    NSString *str = [_tableData objectAtIndex:indexPath.row];
+    NSString *str = [[_tableData objectAtIndex:indexPath.row] uppercaseString];
     CGRect textRect = [str boundingRectWithSize:CGSizeMake(170, MAXFLOAT)
                                         options:NSStringDrawingUsesLineFragmentOrigin
                                      attributes:@{NSFontAttributeName:[UIFont fontWithName:kFontName size:kFontSize]}
@@ -143,7 +144,7 @@ extern NSArray *arrHotSpots;
     cell.uil_tableLabel.frame = CGRectMake(cell.uil_tableLabel.frame.origin.x, cell.uil_tableLabel.frame.origin.y+4, size.width, size.height);
     cell.uil_tableLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.uil_tableLabel.numberOfLines = 0;
-    cell.uil_tableLabel.text = [_tableData objectAtIndex:indexPath.row];
+    cell.uil_tableLabel.text = [[_tableData objectAtIndex:indexPath.row] uppercaseString];
     cell.uil_tableLabel.font = [UIFont fontWithName:kFontName size:kFontSize];
     cell.uil_tableLabel.textColor = [UIColor vcDarkBlue];
     [cell.uil_tableLabel sizeToFit];

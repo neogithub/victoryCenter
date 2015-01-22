@@ -112,7 +112,7 @@
 }
 
 + (UIColor *)vcOutPathColor {
-    return [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
+    return [UIColor colorWithRed:239.0/255.0 green:111.0/255.0 blue:112.0/255.0 alpha:1.0];
 }
 
 + (UIColor *)randomColor {

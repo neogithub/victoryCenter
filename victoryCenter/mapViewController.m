@@ -73,6 +73,7 @@ static float    kPanelBtnHeight             = 38.0;
     
     UIView                  *uiv_siteAmenInfo;
     UIImageView             *uiiv_airPlane;
+    UIImageView             *uiiv_pathKey;
 }
 //Top root menu
 @property (weak, nonatomic) IBOutlet UIButton           *uib_city;
@@ -1228,6 +1229,15 @@ static float    kPanelBtnHeight             = 38.0;
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
     [self animateThePanel:panel];
+    
+    uiiv_pathKey = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_pathKey.jpg"]];
+    uiiv_pathKey.frame = CGRectMake(733, 390, uiiv_pathKey.frame.size.width, uiiv_pathKey.frame.size.height);
+    [self.view insertSubview:uiiv_pathKey belowSubview:_uiv_siteSubMenu];
+    uiiv_pathKey.alpha = 0.0;
+    [UIView animateWithDuration:0.5 animations:^{
+        uiiv_pathKey.alpha = 1.0;
+    }];
+    
     return panel;
 }
 
@@ -1237,7 +1247,7 @@ static float    kPanelBtnHeight             = 38.0;
     
     panel_h = 4*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"DINING", nil];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RESIDENTIAL", @"RESTAURANTS", nil];
     
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"loadHotspotTable:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
@@ -2286,6 +2296,9 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)removeAllPanels
 {
     [self prepareHlepData];
+    
+    [uiiv_pathKey removeFromSuperview];
+    uiiv_pathKey = nil;
     
     [uiv_cityAccPanel removeFromSuperview];
     uiv_cityAccPanel = nil;
