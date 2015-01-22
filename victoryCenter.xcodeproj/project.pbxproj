@@ -359,6 +359,8 @@
 		82C06E8F1A169F56000F969E /* grfx_view_diagram@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C06E8D1A169F56000F969E /* grfx_view_diagram@2x.png */; };
 		82C676E01A71487A008F9873 /* grfx_pathKey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C676DE1A71487A008F9873 /* grfx_pathKey.jpg */; };
 		82C676E11A71487A008F9873 /* grfx_pathKey@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C676DF1A71487A008F9873 /* grfx_pathKey@2x.jpg */; };
+		82C676E31A7197FA008F9873 /* Amenities Slidshow final.mov in Resources */ = {isa = PBXBuildFile; fileRef = 82C676E21A7197FA008F9873 /* Amenities Slidshow final.mov */; };
+		82C676E51A719879008F9873 /* thumb_Amenities Slidshow final.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C676E41A719879008F9873 /* thumb_Amenities Slidshow final.png */; };
 		82CBD72219F96FA10001191F /* grfx_elevator_floorNum.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */; };
 		82CBD72319F96FA10001191F /* grfx_elevator_floorNum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */; };
 		82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CBD72419F980800001191F /* grfx_openMenuIcon.png */; };
@@ -811,6 +813,8 @@
 		82C06E8D1A169F56000F969E /* grfx_view_diagram@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_view_diagram@2x.png"; sourceTree = "<group>"; };
 		82C676DE1A71487A008F9873 /* grfx_pathKey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_pathKey.jpg; sourceTree = "<group>"; };
 		82C676DF1A71487A008F9873 /* grfx_pathKey@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_pathKey@2x.jpg"; sourceTree = "<group>"; };
+		82C676E21A7197FA008F9873 /* Amenities Slidshow final.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "Amenities Slidshow final.mov"; sourceTree = "<group>"; };
+		82C676E41A719879008F9873 /* thumb_Amenities Slidshow final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb_Amenities Slidshow final.png"; sourceTree = "<group>"; };
 		82CBD72019F96FA10001191F /* grfx_elevator_floorNum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_elevator_floorNum.png; sourceTree = "<group>"; };
 		82CBD72119F96FA10001191F /* grfx_elevator_floorNum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_elevator_floorNum@2x.png"; sourceTree = "<group>"; };
 		82CBD72419F980800001191F /* grfx_openMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_openMenuIcon.png; sourceTree = "<group>"; };
@@ -1711,12 +1715,14 @@
 		82EA38BE19E304AC0027394F /* film */ = {
 			isa = PBXGroup;
 			children = (
+				82C676E21A7197FA008F9873 /* Amenities Slidshow final.mov */,
 				8294BB441A3B8D6900EDD0EB /* High-Rise_Office_Floor.mp4 */,
 				8294BB451A3B8D6900EDD0EB /* Lobby_Level_night.mp4 */,
 				8294BB461A3B8D6900EDD0EB /* Low-Rise_Office_Floor.mp4 */,
 				8294BB471A3B8D6900EDD0EB /* Street_View_Approach.mp4 */,
 				8294BB481A3B8D6900EDD0EB /* Victory_Center_Fly_Over.mp4 */,
 				82599B741A3A374C00397362 /* Duda_Paine_Victory_Park.mp4 */,
+				82C676E41A719879008F9873 /* thumb_Amenities Slidshow final.png */,
 				82599B751A3A374C00397362 /* thumb_Duda_Paine_Victory_Park.png */,
 				8294BB381A3B857E00EDD0EB /* thumb_High-Rise_Office_Floor.png */,
 				8294BB361A3B857E00EDD0EB /* thumb_Lobby_Level_night.png */,
@@ -1896,6 +1902,7 @@
 				82599B551A3A256B00397362 /* CVCell.xib in Resources */,
 				826078131A0130CA000DF24F /* grfx_logo@2x.png in Resources */,
 				8260BA021A1BD202004C44B8 /* building_stats_office@2x.png in Resources */,
+				82C676E51A719879008F9873 /* thumb_Amenities Slidshow final.png in Resources */,
 				82599B491A39D95D00397362 /* Neigh_Access.png in Resources */,
 				8260B9ED1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png in Resources */,
 				8294BB2A1A3B708200EDD0EB /* arpeggio.jpg in Resources */,
@@ -2110,6 +2117,7 @@
 				8212C2951A6EA3E900D8C67F /* thumb_TM_VictoryPark_view01.jpg in Resources */,
 				823DE6F119FFE95A0016CD3A /* pano_opportunity_local_nav_frame.png in Resources */,
 				82594C781A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_OpenOffice@2x.png in Resources */,
+				82C676E31A7197FA008F9873 /* Amenities Slidshow final.mov in Resources */,
 				8294BB491A3B8D6900EDD0EB /* High-Rise_Office_Floor.mp4 in Resources */,
 				822F384C1A1A92FA0085500F /* grfx_floorplan1@2x.png in Resources */,
 				82DC11FF19DAF2990057AE4F /* photo-gallery-right@2x.png in Resources */,

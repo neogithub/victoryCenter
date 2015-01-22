@@ -117,9 +117,11 @@
 					<string>Low-Rise_Office_Floor.png</string>
 					<string>Lobby_Level_night.png</string>
 					<string>High-Rise_Office_Floor.png</string>
+					<string>Amenities Slidshow final.png</string>
 				</array>
 				<key>frame</key>
 				<array>
+					<string>play_button.png</string>
 					<string>play_button.png</string>
 					<string>play_button.png</string>
 					<string>play_button.png</string>
@@ -137,6 +139,7 @@
 					<string>Low-Rise Office Floor</string>
 					<string>Lobby Level Night</string>
 					<string>High-Rise Office Floor</string>
+					<string>Amenities Overview</string>
 				</array>
 			</dict>
 		</array>

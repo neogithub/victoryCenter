@@ -282,7 +282,7 @@
 {
     NSString *oldfileName = [arr_AllFlms objectAtIndex: index];
     NSString *extension = [NSString new];
-    if ([oldfileName isEqualToString:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png"]) {
+    if ([oldfileName isEqualToString:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.png"] ||[oldfileName isEqualToString:@"Amenities Slidshow final.png"] ) {
         extension = @"mov";
     }
     else {

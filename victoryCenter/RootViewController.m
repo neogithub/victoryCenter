@@ -528,10 +528,11 @@
     
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Please choose a movie"
                                                              delegate:self
-                                                    cancelButtonTitle:nil
+                                                    cancelButtonTitle:@""
                                                destructiveButtonTitle:nil
                                                     otherButtonTitles:  @"Victory Center Overview",
-                                                                        @"Victory Park Overview", nil];
+                                                                        @"Victory Park Overview",
+                                                                        @"Amenities Overview", nil];
     
     actionSheet.tag = 100;
     
@@ -561,6 +562,10 @@
             break;
         case 1:
             url = [[NSBundle mainBundle] pathForResource:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD" ofType:@"mov"];
+            [self playMovieWithName:url];
+            break;
+        case 2:
+            url = [[NSBundle mainBundle] pathForResource:@"Amenities Slidshow final" ofType:@"mov"];
             [self playMovieWithName:url];
             break;
         default:
