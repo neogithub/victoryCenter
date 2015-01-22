@@ -739,6 +739,7 @@ static float    kPanelBtnHeight             = 38.0;
     
     [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
         uiv_distanceInfoContainer.transform = CGAffineTransformIdentity;
+        uiiv_pathKey.transform = CGAffineTransformMakeTranslation(0.0, 100);
     } completion:^(BOOL finished){      }];
     
     UITapGestureRecognizer *tapOnAirDistance = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAirDistance:)];
@@ -1231,12 +1232,22 @@ static float    kPanelBtnHeight             = 38.0;
     [self animateThePanel:panel];
     
     uiiv_pathKey = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_pathKey.jpg"]];
-    uiiv_pathKey.frame = CGRectMake(733, 390, uiiv_pathKey.frame.size.width, uiiv_pathKey.frame.size.height);
+    uiiv_pathKey.frame = CGRectMake(733, 290, uiiv_pathKey.frame.size.width, uiiv_pathKey.frame.size.height);
     [self.view insertSubview:uiiv_pathKey belowSubview:_uiv_siteSubMenu];
-    uiiv_pathKey.alpha = 0.0;
-    [UIView animateWithDuration:0.5 animations:^{
-        uiiv_pathKey.alpha = 1.0;
-    }];
+
+    uiiv_pathKey.transform = CGAffineTransformMakeTranslation(0.0, -uiiv_pathKey.frame.origin.y - uiiv_pathKey.frame.size.height);
+    // Animation for the overview image
+    CGFloat duration = 0.5f;
+    CGFloat damping = 0.75f;
+    CGFloat velocity = 0.5f;
+    // int to hold UIViewAnimationOption
+    NSInteger option;
+    option = UIViewAnimationCurveEaseInOut;
+    
+    [UIView animateWithDuration:duration*2 delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:option animations:^{
+        uiiv_pathKey.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished){      }];
+
     
     return panel;
 }
@@ -2275,6 +2286,7 @@ static float    kPanelBtnHeight             = 38.0;
 {
     [UIView animateWithDuration:0.2 animations:^{
         uiv_distanceInfoContainer.transform = CGAffineTransformMakeTranslation(0.0, -100);
+        uiiv_pathKey.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished){
         [uiv_distanceInfoContainer removeFromSuperview];
         uiv_distanceInfoContainer = nil;
