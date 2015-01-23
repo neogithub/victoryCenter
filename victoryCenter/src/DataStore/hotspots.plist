@@ -23,7 +23,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>733,426</string>
+					<string>707,398</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
@@ -33,7 +33,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>689,384</string>
+					<string>681,373</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
@@ -53,7 +53,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>711,405</string>
+					<string>743,401</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
@@ -73,17 +73,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>569,574</string>
-					<key>background</key>
-					<string>hotspot_fine_dining_BG.png</string>
-					<key>name</key>
-					<string>West End Marketplace</string>
-				</dict>
-				<dict>
-					<key>type</key>
-					<string>static</string>
-					<key>xy</key>
-					<string>727,728</string>
+					<string>755,738</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
@@ -194,7 +184,7 @@
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Stoneleigh</string>
+					<string>The Stoneleigh</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -255,6 +245,26 @@
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
 					<string>Dallas Marriott City Center</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>99,68</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>Hilton Anatole</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>212,95</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>Marriott Courtyard</string>
 				</dict>
 			</array>
 		</dict>
@@ -351,7 +361,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>511,469</string>
+					<string>562,456</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -514,7 +524,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>56,616</string>
+					<string>23,613</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -526,7 +536,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>106,547</string>
+					<string>58,613</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -538,7 +548,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>106,581</string>
+					<string>73,581</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -550,7 +560,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>21,614</string>
+					<string>108,582</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -562,7 +572,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>21,581</string>
+					<string>107,549</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -574,7 +584,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>273,190</string>
+					<string>294,153</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -586,7 +596,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>299,224</string>
+					<string>329,170</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -598,7 +608,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>284,254</string>
+					<string>313,201</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -610,7 +620,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>334,480</string>
+					<string>356,457</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -622,7 +632,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>318,193</string>
+					<string>294,231</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -634,7 +644,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>525,429</string>
+					<string>527,429</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -646,7 +656,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>510,360</string>
+					<string>511,359</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -658,7 +668,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>520,392</string>
+					<string>520,394</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -682,7 +692,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>570,250</string>
+					<string>605,242</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -694,7 +704,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>574,282</string>
+					<string>597,294</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -706,7 +716,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>607,245</string>
+					<string>630,219</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -718,7 +728,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>632,277</string>
+					<string>635,251</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -730,7 +740,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>632,180</string>
+					<string>634,184</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -742,7 +752,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>626,134</string>
+					<string>575,125</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -754,7 +764,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>657,205</string>
+					<string>665,213</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -766,7 +776,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>677,301</string>
+					<string>666,323</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -778,7 +788,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>657,240</string>
+					<string>666,246</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -790,7 +800,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>683,271</string>
+					<string>651,283</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -802,7 +812,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>694,236</string>
+					<string>687,266</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -814,7 +824,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>590,139</string>
+					<string>599,149</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -826,7 +836,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>642,377</string>
+					<string>620,379</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -838,7 +848,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>677,343</string>
+					<string>689,345</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -850,7 +860,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>570,202</string>
+					<string>585,220</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -932,16 +942,6 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>533,443</string>
-					<key>background</key>
-					<string>hotspot_fine_dining_BG.png</string>
-					<key>name</key>
-					<string>West End Marketplace</string>
-				</dict>
-				<dict>
-					<key>type</key>
-					<string>static</string>
-					<key>xy</key>
 					<string>586,527</string>
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
@@ -976,7 +976,7 @@
 					<key>background</key>
 					<string>hotspot_fine_dining_BG.png</string>
 					<key>name</key>
-					<string>Reunion Towe</string>
+					<string>Reunion Tower</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -1019,7 +1019,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>511,347</string>
+					<string>505,355</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
@@ -1029,7 +1029,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>526,312</string>
+					<string>522,309</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
@@ -1049,11 +1049,11 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>542,290</string>
+					<string>535,288</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
-					<string>Stoneleigh</string>
+					<string>The Stoneleigh</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -1089,7 +1089,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>601,469</string>
+					<string>596,457</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
@@ -1099,7 +1099,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>569,514</string>
+					<string>564,511</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
@@ -1109,7 +1109,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>648,370</string>
+					<string>643,383</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
@@ -1119,7 +1119,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>272,222</string>
+					<string>245,204</string>
 					<key>background</key>
 					<string>hotspot_causal_dinning_BG.png</string>
 					<key>name</key>
@@ -1413,7 +1413,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>322,470</string>
+					<string>291,464</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1425,7 +1425,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>349,454</string>
+					<string>305,466</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1437,7 +1437,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>343,470</string>
+					<string>308,449</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1449,7 +1449,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>299,470</string>
+					<string>334,448</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1461,7 +1461,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>284,462</string>
+					<string>334,435</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1473,7 +1473,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>397,285</string>
+					<string>409,272</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1485,7 +1485,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>414,317</string>
+					<string>435,288</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1497,7 +1497,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>419,347</string>
+					<string>427,300</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1509,7 +1509,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>434,397</string>
+					<string>439,400</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1521,7 +1521,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>427,304</string>
+					<string>417,314</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1533,7 +1533,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>518,396</string>
+					<string>514,396</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1545,7 +1545,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>510,358</string>
+					<string>510,363</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1557,7 +1557,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>515,376</string>
+					<string>514,377</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1569,7 +1569,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>518,414</string>
+					<string>513,409</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1581,7 +1581,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>529,307</string>
+					<string>546,314</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1593,7 +1593,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>533,327</string>
+					<string>545,335</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1605,7 +1605,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>555,274</string>
+					<string>555,303</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1617,7 +1617,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>562,304</string>
+					<string>559,310</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1629,7 +1629,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>547,253</string>
+					<string>553,283</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1641,7 +1641,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>562,238</string>
+					<string>533,262</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1653,7 +1653,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>579,274</string>
+					<string>570,300</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1665,7 +1665,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>559,345</string>
+					<string>573,348</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1677,7 +1677,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>587,306</string>
+					<string>574,309</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1689,7 +1689,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>590,326</string>
+					<string>571,320</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1701,7 +1701,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>611,297</string>
+					<string>582,319</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1713,7 +1713,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>529,244</string>
+					<string>542,270</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1725,7 +1725,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>544,361</string>
+					<string>558,339</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1737,7 +1737,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>592,368</string>
+					<string>580,356</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1749,7 +1749,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>585,380</string>
+					<string>576,362</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>

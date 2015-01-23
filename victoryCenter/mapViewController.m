@@ -852,7 +852,7 @@ static float    kPanelBtnHeight             = 38.0;
     //Set up indicator's color array
     [arr_indicatorColors removeAllObjects];
     arr_indicatorColors = nil;
-    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRestaurant], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRecreation], nil];
+    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRecreation], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRestaurant], nil];
 }
 
 #pragma  mark - Neighborhood Submenu
@@ -901,7 +901,7 @@ static float    kPanelBtnHeight             = 38.0;
     //Set up indicator's color array
     [arr_indicatorColors removeAllObjects];
     arr_indicatorColors = nil;
-    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRestaurant], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRecreation], nil];
+    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRecreation], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRestaurant], nil];
 }
 
 #pragma mark Add panel for neighborhood access
@@ -1058,7 +1058,7 @@ static float    kPanelBtnHeight             = 38.0;
     
     panel_h = 6*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"RETAIL", @"RESIDENTIAL", @"DINING", @"PARKING", @"VIEW ALL", nil];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"RETAIL", @"RESIDENTIAL", @"RESTAURANTS", @"PARKING", @"VIEW ALL", nil];
     
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"tapSiteAmenities:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
