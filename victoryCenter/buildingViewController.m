@@ -621,9 +621,9 @@ static float kOriginalStatHeight    = 45+36*3;
     for (int i = 0; i < 5; i++) {
         CGRect btnFrame = CGRectZero;
         if (i < 3) {
-            btnFrame = CGRectMake(0.0, 32.0*i, 371.0, 32.0);
+            btnFrame = CGRectMake(0.0, 20.0*i, 371.0, 20.0);
         }else {
-            btnFrame = CGRectMake(0.0, 33.0*(i + 1), 371.0, 32.0);
+            btnFrame = CGRectMake(0.0, 20.0*(i + 1), 371.0, 20.0);
         }
         
         UIButton *uib_tmp =[UIButton buttonWithType:UIButtonTypeCustom];

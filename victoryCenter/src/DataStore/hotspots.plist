@@ -397,7 +397,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>254,214</string>
+					<string>256,218</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1286,7 +1286,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>401,291</string>
+					<string>401,290</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1394,7 +1394,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>592,337</string>
+					<string>604,360</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>

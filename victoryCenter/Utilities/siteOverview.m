@@ -110,10 +110,12 @@
         [arr_image addObjectsFromArray:[[NSArray alloc] initWithObjects:
                                         @"SkyHouse Dallas_072913.jpg",
                                         @"W Hotel.jpg",
+                                        @"arpeggio.jpg",
                                         nil]];
         [arr_caption addObjectsFromArray:[[NSArray alloc] initWithObjects:
                                         @"SkyHouse Dallas",
                                         @"W Hotel",
+                                        @"Arpeggio",
                                         nil]];
         title = @"LIVE";
     }
@@ -135,7 +137,6 @@
     if ((int)[sender tag] == 3) { // PLAY
         [arr_image addObjectsFromArray:[[NSArray alloc] initWithObjects:
                                         @"american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg",
-                                        @"arpeggio.jpg",
                                         @"dallas_2013_fearings_creditdcvb_4.jpg",
                                         @"dallas_klydewarrenpark_creditdcvb_2.jpg",
                                         @"House of Blues_Night.jpg",
@@ -144,7 +145,6 @@
                                         nil]];
         [arr_caption addObjectsFromArray:[[NSArray alloc] initWithObjects:
                                           @"American Airlines Center",
-                                          @"Arpeggio",
                                           @"Fine Dining Options",
                                           @"Klyde Warren Park",
                                           @"House of Blues",
