@@ -1821,6 +1821,25 @@
 		</dict>
 		<dict>
 			<key>category</key>
+			<string>ACCOMMODATIONS1</string>
+			<key>hotspots</key>
+			<array>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>427,300</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>W Hotel</string>
+					<key>units</key>
+					<string>129</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>category</key>
 			<string>ACCOMMODATIONS</string>
 			<key>hotspots</key>
 			<array>

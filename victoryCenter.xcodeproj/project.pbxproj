@@ -285,6 +285,8 @@
 		827492E21A080C7F00F949E5 /* grfx_smallStack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E01A080C7F00F949E5 /* grfx_smallStack@2x.png */; };
 		827492E51A0818F500F949E5 /* grfx_floorplan_keys.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E31A0818F500F949E5 /* grfx_floorplan_keys.png */; };
 		827492E61A0818F500F949E5 /* grfx_floorplan_keys@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E41A0818F500F949E5 /* grfx_floorplan_keys@2x.png */; };
+		829031021AB08BAC008AA4E3 /* grfx_accommodation_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 829031001AB08BAC008AA4E3 /* grfx_accommodation_overlay.png */; };
+		829031031AB08BAC008AA4E3 /* grfx_accommodation_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829031011AB08BAC008AA4E3 /* grfx_accommodation_overlay@2x.png */; };
 		8294BB271A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB1C1A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg */; };
 		8294BB281A3B708200EDD0EB /* W Hotel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB1D1A3B708200EDD0EB /* W Hotel.jpg */; };
 		8294BB291A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB1F1A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg */; };
@@ -729,6 +731,8 @@
 		827492E01A080C7F00F949E5 /* grfx_smallStack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_smallStack@2x.png"; sourceTree = "<group>"; };
 		827492E31A0818F500F949E5 /* grfx_floorplan_keys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan_keys.png; sourceTree = "<group>"; };
 		827492E41A0818F500F949E5 /* grfx_floorplan_keys@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorplan_keys@2x.png"; sourceTree = "<group>"; };
+		829031001AB08BAC008AA4E3 /* grfx_accommodation_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_accommodation_overlay.png; sourceTree = "<group>"; };
+		829031011AB08BAC008AA4E3 /* grfx_accommodation_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_accommodation_overlay@2x.png"; sourceTree = "<group>"; };
 		8294BB1C1A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SkyHouse Dallas_072913.jpg"; sourceTree = "<group>"; };
 		8294BB1D1A3B708200EDD0EB /* W Hotel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "W Hotel.jpg"; sourceTree = "<group>"; };
 		8294BB1F1A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg"; sourceTree = "<group>"; };
@@ -1458,6 +1462,8 @@
 				82CBD72919F995120001191F /* grfx_site_parking@2x.png */,
 				82A21F601A028F3A00BE8706 /* gfrx_all_overlay.png */,
 				82A21F611A028F3A00BE8706 /* gfrx_all_overlay@2x.png */,
+				829031001AB08BAC008AA4E3 /* grfx_accommodation_overlay.png */,
+				829031011AB08BAC008AA4E3 /* grfx_accommodation_overlay@2x.png */,
 			);
 			path = overlays;
 			sourceTree = "<group>";
@@ -2143,8 +2149,10 @@
 				8224FE3519D4BD6E002B1B44 /* play_button.png in Resources */,
 				823DE6F219FFE95A0016CD3A /* pano_opportunity_local_nav_frame@2x.png in Resources */,
 				824E10E91A0D688F00BDBDA6 /* VictoryCenter_Flag.png in Resources */,
+				829031031AB08BAC008AA4E3 /* grfx_accommodation_overlay@2x.png in Resources */,
 				82716A7019E45B940070A331 /* grfx_site_overview.jpg in Resources */,
 				82599B661A3A2ADE00397362 /* conference_image.jpg in Resources */,
+				829031021AB08BAC008AA4E3 /* grfx_accommodation_overlay.png in Resources */,
 				821EE2511A13BB9100254B2A /* grfx_floorplan23.png in Resources */,
 				82000B8019E590AD00AE2C70 /* team_hines_text@2x.png in Resources */,
 				824E10DB1A0D547B00BDBDA6 /* grfx_dartLogo.png in Resources */,

@@ -1042,12 +1042,12 @@ static float    kPanelBtnHeight             = 38.0;
     //Set up overlay's array
     [arr_overlayArray removeAllObjects];
     arr_overlayArray = nil;
-    arr_overlayArray = [[NSMutableArray alloc] initWithObjects:@"grfx_recreationg_overlay.png", @"grfx_retail_overlay.png", @"grfx_residential_overlay.png", @"grfx_restaurant_overlay.png", @"grfx_site_parking.png", @"gfrx_all_overlay.png", nil];
+    arr_overlayArray = [[NSMutableArray alloc] initWithObjects:@"grfx_recreationg_overlay.png", @"grfx_accommodation_overlay.png", @"grfx_retail_overlay.png", @"grfx_residential_overlay.png", @"grfx_restaurant_overlay.png", @"grfx_site_parking.png", @"gfrx_all_overlay.png", nil];
     
     //Set up indicator's color array
     [arr_indicatorColors removeAllObjects];
     arr_indicatorColors = nil;
-    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRecreation], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRestaurant], [UIColor vcDarkBlue], [UIColor vcDarkBlue], nil];
+    arr_indicatorColors = [[NSMutableArray alloc] initWithObjects:[UIColor vcSiteRecreation], [UIColor vcSiteAccommodation], [UIColor vcSiteRetail], [UIColor vcSiteResidentail], [UIColor vcSiteRestaurant], [UIColor vcDarkBlue], [UIColor vcDarkBlue], nil];
 }
 
 #pragma mark Create Site Amenities' panel
@@ -1056,9 +1056,9 @@ static float    kPanelBtnHeight             = 38.0;
 {
     [self updateHelpData];
     
-    panel_h = 6*kPanelBtnHeight + kPanelTitleHeight;
+    panel_h = 7*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"AMENITIES" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"RETAIL", @"RESIDENTIAL", @"RESTAURANTS", @"PARKING", @"VIEW ALL", nil];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"RECREATION", @"ACCOMMODATIONS", @"RETAIL", @"RESIDENTIAL", @"RESTAURANTS", @"PARKING", @"VIEW ALL", nil];
     
     [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"tapSiteAmenities:" andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];

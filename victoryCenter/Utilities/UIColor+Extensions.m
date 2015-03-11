@@ -115,6 +115,10 @@
     return [UIColor colorWithRed:239.0/255.0 green:111.0/255.0 blue:112.0/255.0 alpha:1.0];
 }
 
++ (UIColor *)vcSiteAccommodation {
+    return [UIColor colorWithRed:245.0/255.0 green:196.0/255.0 blue:0.0/255.0 alpha:1.0];
+}
+
 + (UIColor *)randomColor {
     return [self colorWithRed:((float)rand() / RAND_MAX)
                         green:((float)rand() / RAND_MAX)
