@@ -1129,7 +1129,7 @@ static float    kPanelBtnHeight             = 38.0;
     CGRect oriFrame = buttonContianer.frame;
     oriFrame.size.height = panel_h - kPanelTitleHeight;
     UIButton *tappedBtn = sender;
-    if (tappedBtn.tag < 4) {
+    if (tappedBtn.tag < 5) {
         if (tappedBtn.selected) {
             [self loadHotspotTable:sender];
             [UIView animateWithDuration:0.3 animations:^{
@@ -1398,7 +1398,7 @@ static float    kPanelBtnHeight             = 38.0;
         if (tappedBtn.tag !=5) {
             [tappedBtn.superview addSubview: uiv_panelIndicator];
         }
-        if (tappedBtn.tag == 5 && [tappedBtn.titleLabel.text isEqualToString:@"VIEW ALL"]) {
+        if (tappedBtn.tag == 5 || [tappedBtn.titleLabel.text isEqualToString:@"VIEW ALL"]) {
             [tappedBtn.superview addSubview: uiv_panelIndicator];
         }
 
