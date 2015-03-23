@@ -530,9 +530,11 @@
                                                              delegate:self
                                                     cancelButtonTitle:@""
                                                destructiveButtonTitle:nil
-                                                    otherButtonTitles:  @"Victory Center Overview",
+                                                    otherButtonTitles:  @"Make Victory Yours",
+                                                                        @"Victory Center Overview",
                                                                         @"Victory Park Overview",
-                                                                        @"Amenities Overview", nil];
+                                                                        @"Amenities Overview",
+                                                                         nil];
     
     actionSheet.tag = 100;
     
@@ -556,16 +558,20 @@
 {
     NSString *url;
     switch (buttonIndex) {
-        case 0:
+        case 1:
             url = [[NSBundle mainBundle] pathForResource:@"Duda_Paine_Victory_Park" ofType:@"mp4"];
             [self playMovieWithName:url];
             break;
-        case 1:
+        case 2:
             url = [[NSBundle mainBundle] pathForResource:@"Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD" ofType:@"mov"];
             [self playMovieWithName:url];
             break;
-        case 2:
+        case 3:
             url = [[NSBundle mainBundle] pathForResource:@"Amenities Slidshow final" ofType:@"mov"];
+            [self playMovieWithName:url];
+            break;
+        case 0:
+            url = [[NSBundle mainBundle] pathForResource:@"Make_Victory_Yours_Final" ofType:@"mp4"];
             [self playMovieWithName:url];
             break;
         default:
