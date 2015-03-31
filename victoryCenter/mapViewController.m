@@ -20,6 +20,7 @@
 #import "UIColor+Extensions.h"
 #import "embDrawPath.h"
 #import "embBezierPaths.h"
+#import "direction_Neighborhood.h"
 #import "embDirections.h"
 #import "embBlockPaths.h"
 #import <MapKit/MapKit.h>
@@ -766,14 +767,18 @@ static float    kPanelBtnHeight             = 38.0;
     [_arr_pathItems removeAllObjects];
     _arr_pathItems = nil;
     _arr_pathItems = [[NSMutableArray alloc] init];
-    NSMutableArray *arr_directionItems = [[NSMutableArray alloc] init];
-    NSMutableArray *arr_directionItems2 = [[NSMutableArray alloc] init];
-    embBezierPaths *paths; //For site map
-    embDirections *dirpaths; // For city/neighborhood map
-    paths = [[embBezierPaths alloc] init];
-    arr_directionItems2 = paths.bezierPaths;
-    dirpaths = [[embDirections alloc] init];
-    arr_directionItems = dirpaths.bezierPaths;
+    NSMutableArray *arr_directionItemsCity = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_directionItemsSite = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_directionItemsNeig = [[NSMutableArray alloc] init];
+    embBezierPaths *sitePath; //For site map
+    embDirections *cityPath; //For city
+    direction_Neighborhood *neighborPath; //For neighborhood map
+    sitePath = [[embBezierPaths alloc] init];
+    arr_directionItemsSite = sitePath.bezierPaths;
+    cityPath = [[embDirections alloc] init];
+    arr_directionItemsCity = cityPath.bezierPaths;
+    neighborPath = [[direction_Neighborhood alloc] init];
+    arr_directionItemsNeig = neighborPath.bezierPaths;
     
     // actual drawpath function
     _embDirectionPath = [[embDrawPath alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
@@ -793,37 +798,37 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_citySubMenu.hidden == NO) {
         if (gesture.view.tag == 12) {
             pathGrouping	= 1;
-            indexStart		= 24;
+            indexStart		= 22;
         }
         else {
             pathGrouping	= 1;
-            indexStart		= 26;
+            indexStart		= 23;
         }
-        _arr_pathItems = arr_directionItems;
+        _arr_pathItems = arr_directionItemsCity;
     }
     
     if (_uiv_neighborhoodSubMenu.hidden == NO) {
         if (gesture.view.tag == 12) {
             pathGrouping	= 1;
-            indexStart		= 25;
+            indexStart		= 21;
         }
         else {
             pathGrouping	= 1;
-            indexStart		= 27;
+            indexStart		= 22;
         }
-        _arr_pathItems = arr_directionItems;
+        _arr_pathItems = arr_directionItemsNeig;
     }
     
     if (_uiv_siteSubMenu.hidden == NO) {
         if (gesture.view.tag == 12) {
             pathGrouping	= 1;
-            indexStart		= 8;
+            indexStart		= 16;
         }
         else {
             pathGrouping	= 1;
-            indexStart		= 9;
+            indexStart		= 17;
         }
-        _arr_pathItems = arr_directionItems2;
+        _arr_pathItems = arr_directionItemsSite;
     }
     
     for (int i=0; i<pathGrouping; i++) {
@@ -1406,6 +1411,7 @@ static float    kPanelBtnHeight             = 38.0;
     }
     if (tappedBtn.tag == 5) {
         uiiv_airPlane.image = [UIImage imageNamed:@"Plane_Icon_White.png"];
+        uiv_panelIndicator.hidden = YES;
     }
 }
 
@@ -1853,15 +1859,18 @@ static float    kPanelBtnHeight             = 38.0;
     [_arr_pathItems removeAllObjects];
     _arr_pathItems = nil;
 	_arr_pathItems = [[NSMutableArray alloc] init];
-    NSMutableArray *arr_directionItems = [[NSMutableArray alloc] init];
-    NSMutableArray *arr_directionItems2 = [[NSMutableArray alloc] init];
-	embBezierPaths *paths; //For site map
-	embDirections *dirpaths; // For city/neighborhood map
-    paths = [[embBezierPaths alloc] init];
-    arr_directionItems2 = paths.bezierPaths;
-    dirpaths = [[embDirections alloc] init];
-    arr_directionItems = dirpaths.bezierPaths;
-	
+    NSMutableArray *arr_directionItemsCity = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_directionItemsSite = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_directionItemsNeig = [[NSMutableArray alloc] init];
+	embBezierPaths *sitePath; //For site map
+	embDirections *cityPath; //For city
+    direction_Neighborhood *neighborPath; //For neighborhood map
+    sitePath = [[embBezierPaths alloc] init];
+    arr_directionItemsSite = sitePath.bezierPaths;
+    cityPath = [[embDirections alloc] init];
+    arr_directionItemsCity = cityPath.bezierPaths;
+    neighborPath = [[direction_Neighborhood alloc] init];
+    arr_directionItemsNeig = neighborPath.bezierPaths;
 	// actual drawpath function
 	_embDirectionPath = [[embDrawPath alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
 	_embDirectionPath.delegate=self;
@@ -1880,103 +1889,103 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_citySubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
-				pathGrouping	= 2;
+				pathGrouping	= 5;
 				indexStart		= 0;
 				break;
 				
 			case 1:
-				pathGrouping	= 2;
-				indexStart		= 2;
+				pathGrouping	= 4;
+				indexStart		= 5;
 				break;
 				
 			case 2:
 				pathGrouping	= 2;
-				indexStart		= 4;
+				indexStart		= 9;
 				break;
 				
 			case 3:
-				pathGrouping	= 4;
-				indexStart		= 6;
+				pathGrouping	= 7;
+				indexStart		= 11;
 				break;
 				
 			case 4:
-				pathGrouping	= 2;
-				indexStart		= 10;
+				pathGrouping	= 4;
+				indexStart		= 18;
 				break;
 			default:
 				break;
 		}
-        _arr_pathItems = arr_directionItems;
+        _arr_pathItems = arr_directionItemsCity;
     }
 
     if (_uiv_neighborhoodSubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
-				pathGrouping	= 2;
-				indexStart		= 12;
+				pathGrouping	= 5;
+				indexStart		= 0;
 				break;
 				
 			case 1:
-				pathGrouping	= 2;
-				indexStart		= 14;
+				pathGrouping	= 4;
+				indexStart		= 5;
 				break;
 				
 			case 2:
 				pathGrouping	= 2;
-				indexStart		= 16;
+				indexStart		= 9;
 				break;
 				
 			case 3:
-				pathGrouping	= 4;
-				indexStart		= 18;
+				pathGrouping	= 7;
+				indexStart		= 11;
 				break;
 				
 			case 4:
-				pathGrouping	= 2;
-				indexStart		= 22;
+				pathGrouping	= 3;
+				indexStart		= 18;
 				break;
 			default:
 				break;
 		}
-        _arr_pathItems = arr_directionItems;
+        _arr_pathItems = arr_directionItemsNeig;
     }
 
     if (_uiv_siteSubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
-				pathGrouping	= 2;
+				pathGrouping	= 5;
 				indexStart		= 0;
 				break;
 				
 			case 1:
-				pathGrouping	= 2;
-				indexStart		= 2;
+				pathGrouping	= 4;
+				indexStart		= 5;
 				break;
 				
 			case 2:
 				pathGrouping	= 2;
-				indexStart		= 0;
+				indexStart		= 9;
 				break;
 				
 			case 3:
-				pathGrouping	= 4;
-				indexStart		= 4;
+				pathGrouping	= 5;
+				indexStart		= 11;
 				break;
 				
 			case 4:
-				pathGrouping	= 2;
-				indexStart		= 6;
+				pathGrouping	= 5;
+				indexStart		= 11;
 				break;
 			default:
 				break;
 		}
-        _arr_pathItems = arr_directionItems2;
+        _arr_pathItems = arr_directionItemsSite;
     }
 
 	for (int i=0; i<pathGrouping; i++) {
 		embBezierPathItem *p = _arr_pathItems[indexStart+i];
 		_embDirectionPath.myPath = p.embPath;
-		_embDirectionPath.animationSpeed = 1.0;
+		_embDirectionPath.animationSpeed = p.pathSpeed;
         _embDirectionPath.pathStrokeColor = p.pathColor;
 		_embDirectionPath.pathLineWidth = p.pathWidth;
 		_embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];

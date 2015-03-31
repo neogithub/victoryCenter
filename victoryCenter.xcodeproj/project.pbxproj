@@ -50,6 +50,7 @@
 		8212C2AA1A6EA4E900D8C67F /* thumb_House of Blues_Night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8212C2A11A6EA4E900D8C67F /* thumb_House of Blues_Night.jpg */; };
 		8212C2AB1A6EA4E900D8C67F /* thumb_KATY TRAILS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8212C2A21A6EA4E900D8C67F /* thumb_KATY TRAILS.jpg */; };
 		8212C2AC1A6EA4E900D8C67F /* thumb_perot-museum-of-nature-and-science---mark-knight-photography.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8212C2A31A6EA4E900D8C67F /* thumb_perot-museum-of-nature-and-science---mark-knight-photography.jpg */; };
+		8213D3631ACB06960068FCC7 /* direction_Neighborhood.m in Sources */ = {isa = PBXBuildFile; fileRef = 8213D3621ACB06960068FCC7 /* direction_Neighborhood.m */; };
 		821EE2471A13BB9100254B2A /* grfx_floorplan18.png in Resources */ = {isa = PBXBuildFile; fileRef = 821EE23B1A13BB9100254B2A /* grfx_floorplan18.png */; };
 		821EE2481A13BB9100254B2A /* grfx_floorplan18@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 821EE23C1A13BB9100254B2A /* grfx_floorplan18@2x.png */; };
 		821EE2491A13BB9100254B2A /* grfx_floorplan19.png in Resources */ = {isa = PBXBuildFile; fileRef = 821EE23D1A13BB9100254B2A /* grfx_floorplan19.png */; };
@@ -466,6 +467,8 @@
 		8212C2A11A6EA4E900D8C67F /* thumb_House of Blues_Night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_House of Blues_Night.jpg"; sourceTree = "<group>"; };
 		8212C2A21A6EA4E900D8C67F /* thumb_KATY TRAILS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_KATY TRAILS.jpg"; sourceTree = "<group>"; };
 		8212C2A31A6EA4E900D8C67F /* thumb_perot-museum-of-nature-and-science---mark-knight-photography.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_perot-museum-of-nature-and-science---mark-knight-photography.jpg"; sourceTree = "<group>"; };
+		8213D3611ACB06960068FCC7 /* direction_Neighborhood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = direction_Neighborhood.h; sourceTree = "<group>"; };
+		8213D3621ACB06960068FCC7 /* direction_Neighborhood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = direction_Neighborhood.m; sourceTree = "<group>"; };
 		821EE23B1A13BB9100254B2A /* grfx_floorplan18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan18.png; sourceTree = "<group>"; };
 		821EE23C1A13BB9100254B2A /* grfx_floorplan18@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorplan18@2x.png"; sourceTree = "<group>"; };
 		821EE23D1A13BB9100254B2A /* grfx_floorplan19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan19.png; sourceTree = "<group>"; };
@@ -1531,6 +1534,8 @@
 				82A29E3919EC4ED300AFAE1E /* embBlockPaths.m */,
 				82A29E3A19EC4ED300AFAE1E /* embDirections.h */,
 				82A29E3B19EC4ED300AFAE1E /* embDirections.m */,
+				8213D3611ACB06960068FCC7 /* direction_Neighborhood.h */,
+				8213D3621ACB06960068FCC7 /* direction_Neighborhood.m */,
 				82A29E3C19EC4ED300AFAE1E /* embDrawPath.h */,
 				82A29E3D19EC4ED300AFAE1E /* embDrawPath.m */,
 			);
@@ -2237,6 +2242,7 @@
 				82DC11F819DAF2990057AE4F /* FGalleryPhoto.m in Sources */,
 				8263B98219ED790C00E70C1B /* MapViewAnnotation.m in Sources */,
 				824012EC19D1AF5D00C501EE /* main.m in Sources */,
+				8213D3631ACB06960068FCC7 /* direction_Neighborhood.m in Sources */,
 				8253976A1A097AA6000B6B7C /* embKenBurns.m in Sources */,
 				82AB934019FE83DB00DD0B30 /* xhPanoramicView.m in Sources */,
 				8263B98B19EDACD700E70C1B /* embTableCell.m in Sources */,
