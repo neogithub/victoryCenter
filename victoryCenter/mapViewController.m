@@ -696,6 +696,7 @@ static float    kPanelBtnHeight             = 38.0;
     [uiv_toLoveField addSubview: uil_toLoveField];
     [uiv_toLoveField addSubview: uil_toLoveField1];
     
+    //Tag == 12 Site to Dallas International Airport
     UIView *uiv_toDall = [[UIView alloc] initWithFrame:CGRectMake(0, uiv_toLoveField.frame.size.height +  5, panle_w, 40)];
     uiv_toDall.tag = 12;
     uiv_toDall.backgroundColor = [UIColor vcDarkBlue];
