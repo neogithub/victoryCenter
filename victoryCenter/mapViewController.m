@@ -668,6 +668,9 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)addCityAccessPanel
 {
     uiv_cityAccPanel = [self setUpAccessPanel];
+    for (UIButton *tmpBtn in [uiv_cityAccPanel subviews]) {
+        tmpBtn.backgroundColor = [UIColor redColor];
+    }
 //    [self addDistanceInfo];
 }
 
@@ -1232,9 +1235,28 @@ static float    kPanelBtnHeight             = 38.0;
     
     panel_h = 6*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
-    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"FROM DALLAS N. TOLLWAY", @"FROM WOODALL RODGERS", @"FROM KATY TRAIL", @"FROM I-35", @"FROM I-30", @"AIRPORTS", nil];
-    [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:@"drawPathsFromBezierClass:" andEdgeInset:45.0 withIdicator:YES];
+    NSArray *arr_buttonTitles = [[NSArray alloc] initWithObjects:@"DALLAS N. TOLLWAY", @"WOODALL RODGERS", @"KATY TRAIL", @"I-35", @"I-30", @"AIRPORTS", nil];
+    [self createBtnsForPanel:panel withTitleArray:arr_buttonTitles andTargetSel:nil andEdgeInset:45.0 withIdicator:YES];
     [self.view insertSubview:panel belowSubview:_uiv_siteSubMenu];
+    for (UIButton *tmpBtn in [[panel viewWithTag:102] subviews]) {
+        if (tmpBtn.tag < 5) {
+            if (tmpBtn.titleLabel.text.length > 5) {
+                [tmpBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:8.0]];
+            }
+            UIButton *uib_in = [UIButton buttonWithType:UIButtonTypeCustom];
+            uib_in.frame = CGRectMake(128.0, 0.0, 49, tmpBtn.frame.size.height);
+            uib_in.backgroundColor = [UIColor vcPathColor];
+            [tmpBtn addSubview: uib_in];
+            uib_in.tag = tmpBtn.tag * 2;
+            [uib_in addTarget: self action:@selector(drawPathsFromBezierClass:) forControlEvents:UIControlEventTouchUpInside];
+            UIButton *uib_out = [UIButton buttonWithType:UIButtonTypeCustom];
+            uib_out.frame = CGRectMake(128+49, 0.0, 490, tmpBtn.frame.size.height);
+            uib_out.backgroundColor = [UIColor vcOutPathColor];
+            [tmpBtn addSubview: uib_out];
+            uib_out.tag = tmpBtn.tag * 2 + 1;
+            [uib_out addTarget: self action:@selector(drawPathsFromBezierClass:) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
     [self animateThePanel:panel];
     
     uiiv_pathKey = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grfx_pathKey.jpg"]];
@@ -1494,8 +1516,10 @@ static float    kPanelBtnHeight             = 38.0;
         if ([arr_buttonTitles[i]  isEqual: @"AIRPORTS"]) {
             uiiv_airPlane = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Plane_Icon_Blue.png"]];
             uiiv_airPlane.frame = CGRectMake(16.0, uib_accOption.frame.origin.y + (uib_accOption.frame.size.height - 20)/2, 20, 20);
+            uiiv_airPlane.tag = 500+i;
             [uiv_optionContainer addSubview: uiiv_airPlane];
             [uiv_Indicator removeFromSuperview];
+            [uib_accOption addTarget:self action:@selector(addDistanceInfo) forControlEvents:UIControlEventTouchUpInside];
         }
         [arr_panelBtnArray addObject: uib_accOption];
     }
@@ -1825,16 +1849,6 @@ static float    kPanelBtnHeight             = 38.0;
 #pragma mark - Draw Path
 -(void)drawPathsFromBezierClass:(id)sender
 {
-//    UIAlertView *alert =
-//    [[UIAlertView alloc] initWithTitle: @""
-//                               message: @"Proper derection coming soon."
-//                              delegate: self
-//                     cancelButtonTitle: @"OK"
-//                     otherButtonTitles: nil];
-//    alert.tag = 1;
-//    [alert show];
-
-    
     // clean up
 	[self removePaths];
     if (uiv_distanceInfoContainer) {
@@ -1843,19 +1857,19 @@ static float    kPanelBtnHeight             = 38.0;
     
     UIButton *tappedBtn = sender;
     if (tappedBtn.selected) {
-        [self deHighLightPanelBtn:sender];
+        [self deHighLightPanelBtn:[sender superview]];
         for (UIButton *tmp in arr_panelBtnArray) {
             tmp.selected = NO;
         }
         return;
     }
     
-    [self highLightPanelBtn:sender andIndicatorColor:[UIColor vcPathColor] withIndicator:YES];
+    [self highLightPanelBtn:[sender superview] andIndicatorColor:[UIColor vcPathColor] withIndicator:YES];
     
-    if (tappedBtn.tag == 5) {
-        [self addDistanceInfo];
-        return;
-    }
+//    if (tappedBtn.tag == 5) {
+//        [self addDistanceInfo];
+//        return;
+//    }
     
     [_arr_pathItems removeAllObjects];
     _arr_pathItems = nil;
@@ -1890,29 +1904,49 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_citySubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
-				pathGrouping	= 5;
+				pathGrouping	= 3;
 				indexStart		= 0;
 				break;
 				
 			case 1:
-				pathGrouping	= 4;
-				indexStart		= 5;
+				pathGrouping	= 2;
+				indexStart		= 3;
 				break;
 				
 			case 2:
 				pathGrouping	= 2;
-				indexStart		= 9;
+				indexStart		= 5;
 				break;
 				
 			case 3:
-				pathGrouping	= 7;
-				indexStart		= 11;
+				pathGrouping	= 2;
+				indexStart		= 7;
 				break;
 				
 			case 4:
-				pathGrouping	= 4;
-				indexStart		= 18;
+				pathGrouping	= 1;
+				indexStart		= 9;
 				break;
+            case 5:
+                pathGrouping	= 1;
+                indexStart		= 10;
+                break;
+            case 6:
+                pathGrouping	= 4;
+                indexStart		= 11;
+                break;
+            case 7:
+                pathGrouping	= 3;
+                indexStart		= 15;
+                break;
+            case 8:
+                pathGrouping	= 2;
+                indexStart		= 18;
+                break;
+            case 9:
+                pathGrouping	= 2;
+                indexStart		= 20;
+                break;
 			default:
 				break;
 		}
@@ -1922,29 +1956,49 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_neighborhoodSubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
-				pathGrouping	= 5;
+				pathGrouping	= 3;
 				indexStart		= 0;
 				break;
 				
 			case 1:
-				pathGrouping	= 4;
-				indexStart		= 5;
+				pathGrouping	= 2;
+				indexStart		= 3;
 				break;
 				
 			case 2:
 				pathGrouping	= 2;
-				indexStart		= 9;
+				indexStart		= 5;
 				break;
 				
 			case 3:
-				pathGrouping	= 7;
-				indexStart		= 11;
+				pathGrouping	= 2;
+				indexStart		= 7;
 				break;
 				
 			case 4:
-				pathGrouping	= 3;
-				indexStart		= 18;
+				pathGrouping	= 1;
+				indexStart		= 9;
 				break;
+            case 5:
+                pathGrouping	= 1;
+                indexStart		= 10;
+                break;
+            case 6:
+                pathGrouping	= 4;
+                indexStart		= 11;
+                break;
+            case 7:
+                pathGrouping	= 3;
+                indexStart		= 15;
+                break;
+            case 8:
+                pathGrouping	= 2;
+                indexStart		= 18;
+                break;
+            case 9:
+                pathGrouping	= 1;
+                indexStart		= 20;
+                break;
 			default:
 				break;
 		}
@@ -1954,29 +2008,54 @@ static float    kPanelBtnHeight             = 38.0;
     if (_uiv_siteSubMenu.hidden == NO) {
         switch ([sender tag]) {
 			case 0:
-				pathGrouping	= 5;
+				pathGrouping	= 3;
 				indexStart		= 0;
 				break;
 				
 			case 1:
-				pathGrouping	= 4;
-				indexStart		= 5;
+				pathGrouping	= 2;
+				indexStart		= 3;
 				break;
 				
 			case 2:
 				pathGrouping	= 2;
-				indexStart		= 9;
+				indexStart		= 5;
 				break;
 				
 			case 3:
-				pathGrouping	= 5;
-				indexStart		= 11;
+				pathGrouping	= 2;
+				indexStart		= 7;
 				break;
 				
 			case 4:
-				pathGrouping	= 5;
-				indexStart		= 11;
+				pathGrouping	= 1;
+				indexStart		= 9;
 				break;
+                
+            case 5:
+                pathGrouping	= 1;
+                indexStart		= 10;
+                break;
+                
+            case 6:
+                pathGrouping	= 3;
+                indexStart		= 11;
+                break;
+                
+            case 7:
+                pathGrouping	= 2;
+                indexStart		= 14;
+                break;
+                
+            case 8:
+                pathGrouping	= 3;
+                indexStart		= 11;
+                break;
+                
+            case 9:
+                pathGrouping	= 2;
+                indexStart		= 14;
+                break;
 			default:
 				break;
 		}

@@ -24,7 +24,7 @@
 		CGFloat pathWidth = 7.0;
 		CGFloat pathSpeed = 3.5;
         CGFloat inDelay = 1.0;
-        CGFloat outDelay = 4.0;
+        CGFloat outDelay = 1.0;
 
 		// Bezier paths created in paintcode
 		// COPY FROM PAINTCODE
@@ -183,9 +183,9 @@
         //// Out_I35_2 Drawing
         //14
         UIBezierPath* out_I35_2Path = UIBezierPath.bezierPath;
-        [out_I35_2Path moveToPoint: CGPointMake(706, 581)];
-        [out_I35_2Path addCurveToPoint: CGPointMake(706, 532) controlPoint1: CGPointMake(706, 581) controlPoint2: CGPointMake(693.17, 553.38)];
-        [out_I35_2Path addCurveToPoint: CGPointMake(871, 532) controlPoint1: CGPointMake(718, 512) controlPoint2: CGPointMake(849, 533)];
+        [out_I35_2Path moveToPoint: CGPointMake(715, 588)];
+        [out_I35_2Path addCurveToPoint: CGPointMake(715, 532) controlPoint1: CGPointMake(721, 575) controlPoint2: CGPointMake(713.93, 556.59)];
+        [out_I35_2Path addCurveToPoint: CGPointMake(871, 532) controlPoint1: CGPointMake(716, 509) controlPoint2: CGPointMake(849, 533)];
         [out_I35_2Path addCurveToPoint: CGPointMake(879, 460) controlPoint1: CGPointMake(882.28, 531.49) controlPoint2: CGPointMake(872.99, 493.94)];
         [out_I35_2Path addCurveToPoint: CGPointMake(906, 399) controlPoint1: CGPointMake(884.71, 427.75) controlPoint2: CGPointMake(883, 417)];
         [out_I35_2Path addCurveToPoint: CGPointMake(1024, 334) controlPoint1: CGPointMake(929, 381) controlPoint2: CGPointMake(1024, 334)];
@@ -200,7 +200,7 @@
         [out_I35_3Path addCurveToPoint: CGPointMake(719, 308) controlPoint1: CGPointMake(724.61, 406.83) controlPoint2: CGPointMake(759, 342)];
         [out_I35_3Path addCurveToPoint: CGPointMake(249, 220) controlPoint1: CGPointMake(703.02, 294.42) controlPoint2: CGPointMake(436.19, 240.94)];
         [out_I35_3Path addCurveToPoint: CGPointMake(75, 220) controlPoint1: CGPointMake(165.02, 210.61) controlPoint2: CGPointMake(97.12, 215.15)];
-        [out_I35_3Path addCurveToPoint: CGPointMake(16, 231) controlPoint1: CGPointMake(49.17, 225.66) controlPoint2: CGPointMake(33.92, 231.03)];
+        [out_I35_3Path addCurveToPoint: CGPointMake(-4, 255) controlPoint1: CGPointMake(49.17, 225.66) controlPoint2: CGPointMake(14, 248)];
         out_I35_3Path.lineCapStyle = kCGLineCapRound;
         
         //// Site_to_airport Drawing
