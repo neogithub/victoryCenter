@@ -52,6 +52,7 @@ static float    kPanelBtnHeight             = 38.0;
     NSMutableArray          *arr_overlayArray;
     NSMutableArray          *arr_indicatorColors;
     NSMutableArray          *arr_cells;
+    NSMutableArray          *arr_accessBtnArray;
     //Hotspot data
     NSDictionary            *dict_HotSpotsRaw;
     NSMutableArray          *arr_HotSpotsRaw;
@@ -668,14 +669,25 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)addCityAccessPanel
 {
     uiv_cityAccPanel = [self setUpAccessPanel];
-    for (UIButton *tmpBtn in [uiv_cityAccPanel subviews]) {
-        tmpBtn.backgroundColor = [UIColor redColor];
-    }
 //    [self addDistanceInfo];
 }
 
-- (void)addDistanceInfo
+- (void)addDistanceInfo:(id)sender
 {
+    [uiv_distanceInfoContainer removeFromSuperview];
+    uiv_distanceInfoContainer = nil;
+    [self removePaths];
+    for (UIButton *tmpBtn in arr_accessBtnArray) {
+        tmpBtn.backgroundColor = [UIColor clearColor];
+        tmpBtn.selected = NO;
+    }
+    for (UIButton *tmpBtn2 in [[sender superview] subviews]) {
+        tmpBtn2.backgroundColor = [UIColor clearColor];
+        tmpBtn2.layer.borderColor = [UIColor vcButtonBorder].CGColor;
+    }
+    
+    [self highLightPanelBtn:sender andIndicatorColor:[UIColor vcPathColor] withIndicator:YES];
+    
     uiv_distanceInfoContainer = [[UIView alloc] initWithFrame:CGRectMake(panle_x, 6*kPanelBtnHeight + kPanelTitleHeight+15, panle_w, 85)];
     uiv_distanceInfoContainer.backgroundColor = [UIColor clearColor];
     
@@ -838,7 +850,7 @@ static float    kPanelBtnHeight             = 38.0;
     for (int i=0; i<pathGrouping; i++) {
         embBezierPathItem *p = _arr_pathItems[indexStart+i];
         _embDirectionPath.myPath = p.embPath;
-        _embDirectionPath.animationSpeed = 1.0;
+        _embDirectionPath.animationSpeed = p.pathSpeed;
         _embDirectionPath.pathStrokeColor = p.pathColor;
         _embDirectionPath.pathLineWidth = p.pathWidth;
         _embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
@@ -1232,6 +1244,9 @@ static float    kPanelBtnHeight             = 38.0;
 - (UIView *)setUpAccessPanel
 {
     [self updateHelpData];
+    [arr_accessBtnArray removeAllObjects];
+    arr_accessBtnArray = nil;
+    arr_accessBtnArray = [[NSMutableArray alloc] init];
     
     panel_h = 6*kPanelBtnHeight + kPanelTitleHeight;
     UIView *panel = [self createPanelWithTitle:@"ACCESS" andHeight:panel_h];
@@ -1241,21 +1256,38 @@ static float    kPanelBtnHeight             = 38.0;
     for (UIButton *tmpBtn in [[panel viewWithTag:102] subviews]) {
         if (tmpBtn.tag < 5) {
             if (tmpBtn.titleLabel.text.length > 5) {
-                [tmpBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:8.0]];
+                [tmpBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:10.0]];
             }
             UIButton *uib_in = [UIButton buttonWithType:UIButtonTypeCustom];
-            uib_in.frame = CGRectMake(128.0, 0.0, 49, tmpBtn.frame.size.height);
-            uib_in.backgroundColor = [UIColor vcPathColor];
+            uib_in.frame = CGRectMake(150.0, 0.0, 35, tmpBtn.frame.size.height);
+            uib_in.backgroundColor = [UIColor clearColor];
             [tmpBtn addSubview: uib_in];
             uib_in.tag = tmpBtn.tag * 2;
+            [uib_in setTitle:@"IN." forState:UIControlStateNormal];
+            [uib_in.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:15.0]];
+            uib_in.titleEdgeInsets = UIEdgeInsetsMake(0.0, 4.0, 0.0, 0.0);
+            [uib_in setTitleColor:[UIColor vcPathColor] forState:UIControlStateNormal];
+            [uib_in setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
             [uib_in addTarget: self action:@selector(drawPathsFromBezierClass:) forControlEvents:UIControlEventTouchUpInside];
+            
             UIButton *uib_out = [UIButton buttonWithType:UIButtonTypeCustom];
-            uib_out.frame = CGRectMake(128+49, 0.0, 490, tmpBtn.frame.size.height);
-            uib_out.backgroundColor = [UIColor vcOutPathColor];
+            uib_out.frame = CGRectMake(128+63, 0.0, 35, tmpBtn.frame.size.height);
+            uib_out.backgroundColor = [UIColor clearColor];
             [tmpBtn addSubview: uib_out];
             uib_out.tag = tmpBtn.tag * 2 + 1;
+            [uib_out setTitle:@"EG." forState:UIControlStateNormal];
+            [uib_out.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:15.0]];
+            uib_out.titleEdgeInsets = UIEdgeInsetsMake(0.0, 4.0, 0.0, 0.0);
+            [uib_out.titleLabel setTextAlignment:NSTextAlignmentCenter];
+            [uib_out setTitleColor:[UIColor vcOutPathColor] forState:UIControlStateNormal];
+            [uib_out setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
             [uib_out addTarget: self action:@selector(drawPathsFromBezierClass:) forControlEvents:UIControlEventTouchUpInside];
+            [arr_accessBtnArray addObject: uib_in];
+            [arr_accessBtnArray addObject:uib_out];
         }
+    }
+    for (UIView *tmpView in [[panel viewWithTag:102] subviews]) {
+        tmpView.transform = CGAffineTransformMakeTranslation(-9.0, 0.0);
     }
     [self animateThePanel:panel];
     
@@ -1414,8 +1446,15 @@ static float    kPanelBtnHeight             = 38.0;
     
     [uiv_panelIndicator removeFromSuperview];
     uiv_panelIndicator = nil;
+    
+    //Change highlighted indicator position if it's access panel
+    float x_value =  19.0;
+    if (uiv_cityAccPanel || uiv_neibAccPanel || uiv_siteAccPanel) {
+        x_value = 10.0;
+    }
+    
     if (indicator) {
-        CGRect frame = CGRectMake(19, tappedBtn.frame.origin.y + (tappedBtn.frame.size.height - 14)/2, 14, 14);
+        CGRect frame = CGRectMake(x_value, tappedBtn.frame.origin.y + (tappedBtn.frame.size.height - 14)/2, 14, 14);
         uiv_panelIndicator = [[UIView alloc] initWithFrame:frame];
         uiv_panelIndicator.backgroundColor = color;
         uiv_panelIndicator.layer.borderColor = [UIColor vcDarkBlue].CGColor;
@@ -1487,7 +1526,7 @@ static float    kPanelBtnHeight             = 38.0;
     
     for (int i = 0; i < arr_buttonTitles.count; i++) {
         UIButton *uib_accOption = [UIButton buttonWithType:UIButtonTypeCustom];
-        uib_accOption.frame = CGRectMake(0.0, i*kPanelBtnHeight, panle_w, kPanelBtnHeight);
+        uib_accOption.frame = CGRectMake(0.0, i*kPanelBtnHeight, panle_w+10, kPanelBtnHeight);
         uib_accOption.backgroundColor = [UIColor whiteColor];
         uib_accOption.layer.borderWidth = 1.0;
         uib_accOption.layer.borderColor = [UIColor vcButtonBorder].CGColor;
@@ -1519,7 +1558,7 @@ static float    kPanelBtnHeight             = 38.0;
             uiiv_airPlane.tag = 500+i;
             [uiv_optionContainer addSubview: uiiv_airPlane];
             [uiv_Indicator removeFromSuperview];
-            [uib_accOption addTarget:self action:@selector(addDistanceInfo) forControlEvents:UIControlEventTouchUpInside];
+            [uib_accOption addTarget:self action:@selector(addDistanceInfo:) forControlEvents:UIControlEventTouchUpInside];
         }
         [arr_panelBtnArray addObject: uib_accOption];
     }
@@ -1855,14 +1894,24 @@ static float    kPanelBtnHeight             = 38.0;
         [self removeDistanceLabels];
     }
     
-    UIButton *tappedBtn = sender;
-    if (tappedBtn.selected) {
-        [self deHighLightPanelBtn:[sender superview]];
-        for (UIButton *tmp in arr_panelBtnArray) {
-            tmp.selected = NO;
-        }
-        return;
+    for (UIButton *allBtn in arr_accessBtnArray) {
+        allBtn.selected = NO;
+        allBtn.backgroundColor = [UIColor clearColor];
     }
+    
+    UIButton *tappedBtn = sender;
+    tappedBtn.selected = YES;
+    if (tappedBtn.tag%2 == 0)
+        tappedBtn.backgroundColor = [UIColor vcPathColor];
+    else
+        tappedBtn.backgroundColor = [UIColor vcOutPathColor];
+//    if (tappedBtn.selected) {
+//        [self deHighLightPanelBtn:[sender superview]];
+//        for (UIButton *tmp in arr_panelBtnArray) {
+//            tmp.selected = NO;
+//        }
+//        return;
+//    }
     
     [self highLightPanelBtn:[sender superview] andIndicatorColor:[UIColor vcPathColor] withIndicator:YES];
     

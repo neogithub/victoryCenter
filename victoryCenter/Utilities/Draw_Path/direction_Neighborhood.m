@@ -22,8 +22,8 @@
         
         CGFloat pathWidth = 7.0;
         CGFloat pathSpeed = 3.0;
-        CGFloat inDelay = 1.0;
-        CGFloat outDelay = 1.0;
+        CGFloat inDelay = 0.0;
+        CGFloat outDelay = 0.0;
         
         // Bezier paths created in paintcode
         // COPY FROM PAINTCODE
@@ -265,8 +265,8 @@
         //// OutNeighborhood_I35_3 Drawing
         //17
         UIBezierPath* outNeighborhood_I35_3Path = UIBezierPath.bezierPath;
-        [outNeighborhood_I35_3Path moveToPoint: CGPointMake(495, 450)];
-        [outNeighborhood_I35_3Path addCurveToPoint: CGPointMake(510.5, 450.5) controlPoint1: CGPointMake(495, 450) controlPoint2: CGPointMake(508, 449)];
+        [outNeighborhood_I35_3Path moveToPoint: CGPointMake(491, 443)];
+        [outNeighborhood_I35_3Path addCurveToPoint: CGPointMake(510.5, 450.5) controlPoint1: CGPointMake(491, 443) controlPoint2: CGPointMake(508, 449)];
         [outNeighborhood_I35_3Path addCurveToPoint: CGPointMake(516, 484) controlPoint1: CGPointMake(513, 452) controlPoint2: CGPointMake(514, 482)];
         [outNeighborhood_I35_3Path addCurveToPoint: CGPointMake(563, 484) controlPoint1: CGPointMake(518, 486) controlPoint2: CGPointMake(564, 475)];
         [outNeighborhood_I35_3Path addCurveToPoint: CGPointMake(529, 526) controlPoint1: CGPointMake(562.49, 488.58) controlPoint2: CGPointMake(549.96, 512.44)];

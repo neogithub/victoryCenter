@@ -23,8 +23,8 @@
 		
 		CGFloat pathWidth = 7.0;
 		CGFloat pathSpeed = 3.0;
-        CGFloat inDelay = 1.0;
-        CGFloat outDelay = 1.0;
+        CGFloat inDelay = 0.0;
+        CGFloat outDelay = 0.0;
 
 		// Bezier paths created in paintcode
 		// COPY FROM PAINTCODE
