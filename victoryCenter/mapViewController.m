@@ -1263,11 +1263,12 @@ static float    kPanelBtnHeight             = 38.0;
             uib_in.backgroundColor = [UIColor clearColor];
             [tmpBtn addSubview: uib_in];
             uib_in.tag = tmpBtn.tag * 2;
-            [uib_in setTitle:@"IN." forState:UIControlStateNormal];
+//            [uib_in setTitle:@"IN." forState:UIControlStateNormal];
+            [uib_in setImage:[UIImage imageNamed:@"grfx_inBtn.png"] forState:UIControlStateNormal];
             [uib_in.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:15.0]];
             uib_in.titleEdgeInsets = UIEdgeInsetsMake(0.0, 4.0, 0.0, 0.0);
-            [uib_in setTitleColor:[UIColor vcPathColor] forState:UIControlStateNormal];
-            [uib_in setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+//            [uib_in setTitleColor:[UIColor vcPathColor] forState:UIControlStateNormal];
+//            [uib_in setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
             [uib_in addTarget: self action:@selector(drawPathsFromBezierClass:) forControlEvents:UIControlEventTouchUpInside];
             
             UIButton *uib_out = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1275,15 +1276,20 @@ static float    kPanelBtnHeight             = 38.0;
             uib_out.backgroundColor = [UIColor clearColor];
             [tmpBtn addSubview: uib_out];
             uib_out.tag = tmpBtn.tag * 2 + 1;
-            [uib_out setTitle:@"EG." forState:UIControlStateNormal];
+//            [uib_out setTitle:@"EG." forState:UIControlStateNormal];
+            [uib_out setImage:[UIImage imageNamed:@"grfx_egBtn.png"] forState:UIControlStateNormal];
             [uib_out.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:15.0]];
             uib_out.titleEdgeInsets = UIEdgeInsetsMake(0.0, 4.0, 0.0, 0.0);
             [uib_out.titleLabel setTextAlignment:NSTextAlignmentCenter];
-            [uib_out setTitleColor:[UIColor vcOutPathColor] forState:UIControlStateNormal];
-            [uib_out setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+//            [uib_out setTitleColor:[UIColor vcOutPathColor] forState:UIControlStateNormal];
+//            [uib_out setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
             [uib_out addTarget: self action:@selector(drawPathsFromBezierClass:) forControlEvents:UIControlEventTouchUpInside];
             [arr_accessBtnArray addObject: uib_in];
             [arr_accessBtnArray addObject:uib_out];
+        }
+        if (tmpBtn.tag == 5)
+        {
+            [tmpBtn.titleLabel setFont:[UIFont fontWithName:@"Raleway-Bold" size:10.0]];
         }
     }
     for (UIView *tmpView in [[panel viewWithTag:102] subviews]) {
@@ -1901,10 +1907,12 @@ static float    kPanelBtnHeight             = 38.0;
     
     UIButton *tappedBtn = sender;
     tappedBtn.selected = YES;
-    if (tappedBtn.tag%2 == 0)
-        tappedBtn.backgroundColor = [UIColor vcPathColor];
-    else
-        tappedBtn.backgroundColor = [UIColor vcOutPathColor];
+//    if (tappedBtn.tag%2 == 0)
+    tappedBtn.backgroundColor = [UIColor colorWithRed:209.0/255.0 green:219.0/255.0 blue:233.0/255.0 alpha:1.0];
+//    else
+//        tappedBtn.backgroundColor = [UIColor vcOutPathColor];
+    
+    
 //    if (tappedBtn.selected) {
 //        [self deHighLightPanelBtn:[sender superview]];
 //        for (UIButton *tmp in arr_panelBtnArray) {

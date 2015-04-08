@@ -285,6 +285,10 @@
 		827492E21A080C7F00F949E5 /* grfx_smallStack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E01A080C7F00F949E5 /* grfx_smallStack@2x.png */; };
 		827492E51A0818F500F949E5 /* grfx_floorplan_keys.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E31A0818F500F949E5 /* grfx_floorplan_keys.png */; };
 		827492E61A0818F500F949E5 /* grfx_floorplan_keys@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827492E41A0818F500F949E5 /* grfx_floorplan_keys@2x.png */; };
+		8276C4C21AD5A90F006C4047 /* grfx_egBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8276C4BE1AD5A90F006C4047 /* grfx_egBtn.png */; };
+		8276C4C31AD5A90F006C4047 /* grfx_egBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8276C4BF1AD5A90F006C4047 /* grfx_egBtn@2x.png */; };
+		8276C4C41AD5A90F006C4047 /* grfx_inBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8276C4C01AD5A90F006C4047 /* grfx_inBtn.png */; };
+		8276C4C51AD5A90F006C4047 /* grfx_inBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8276C4C11AD5A90F006C4047 /* grfx_inBtn@2x.png */; };
 		829031021AB08BAC008AA4E3 /* grfx_accommodation_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 829031001AB08BAC008AA4E3 /* grfx_accommodation_overlay.png */; };
 		829031031AB08BAC008AA4E3 /* grfx_accommodation_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829031011AB08BAC008AA4E3 /* grfx_accommodation_overlay@2x.png */; };
 		8294BB271A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8294BB1C1A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg */; };
@@ -737,6 +741,10 @@
 		827492E01A080C7F00F949E5 /* grfx_smallStack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_smallStack@2x.png"; sourceTree = "<group>"; };
 		827492E31A0818F500F949E5 /* grfx_floorplan_keys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_floorplan_keys.png; sourceTree = "<group>"; };
 		827492E41A0818F500F949E5 /* grfx_floorplan_keys@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_floorplan_keys@2x.png"; sourceTree = "<group>"; };
+		8276C4BE1AD5A90F006C4047 /* grfx_egBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_egBtn.png; sourceTree = "<group>"; };
+		8276C4BF1AD5A90F006C4047 /* grfx_egBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_egBtn@2x.png"; sourceTree = "<group>"; };
+		8276C4C01AD5A90F006C4047 /* grfx_inBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_inBtn.png; sourceTree = "<group>"; };
+		8276C4C11AD5A90F006C4047 /* grfx_inBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_inBtn@2x.png"; sourceTree = "<group>"; };
 		829031001AB08BAC008AA4E3 /* grfx_accommodation_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grfx_accommodation_overlay.png; sourceTree = "<group>"; };
 		829031011AB08BAC008AA4E3 /* grfx_accommodation_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx_accommodation_overlay@2x.png"; sourceTree = "<group>"; };
 		8294BB1C1A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SkyHouse Dallas_072913.jpg"; sourceTree = "<group>"; };
@@ -1577,6 +1585,10 @@
 		82A805C719D1F61E00308BA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8276C4BE1AD5A90F006C4047 /* grfx_egBtn.png */,
+				8276C4BF1AD5A90F006C4047 /* grfx_egBtn@2x.png */,
+				8276C4C01AD5A90F006C4047 /* grfx_inBtn.png */,
+				8276C4C11AD5A90F006C4047 /* grfx_inBtn@2x.png */,
 				82C06E801A16658F000F969E /* parking_icon.png */,
 				82C06E811A16658F000F969E /* parking_icon@2x.png */,
 				82C06E821A16658F000F969E /* valet_icon.png */,
@@ -1885,6 +1897,7 @@
 				82CBD72319F96FA10001191F /* grfx_elevator_floorNum@2x.png in Resources */,
 				822C908D1A375621003944E8 /* View of Victory Center and Dart Transit System.jpg in Resources */,
 				82599B711A3A2ADE00397362 /* thumb_restaurant.jpg in Resources */,
+				8276C4C31AD5A90F006C4047 /* grfx_egBtn@2x.png in Resources */,
 				821EE25B1A13BC5300254B2A /* grfx_floorplan10.png in Resources */,
 				8212C2A81A6EA4E900D8C67F /* thumb_dallas_2013_fearings_creditdcvb_4.jpg in Resources */,
 				82000B7919E590AD00AE2C70 /* Team_bg.jpg in Resources */,
@@ -1944,6 +1957,7 @@
 				826873D41A3646400013C960 /* Trademark_VictoryPark_FinalCut_040114_for_mac_HD_HD.mov in Resources */,
 				82C06E7E1A165949000F969E /* grfx_launching_night.jpg in Resources */,
 				824C196319FA9DC400EA7613 /* grfx_floorplan15.png in Resources */,
+				8276C4C41AD5A90F006C4047 /* grfx_inBtn.png in Resources */,
 				825E5F8919F83FA300B77F7F /* grfx_elavators_parking.png in Resources */,
 				825E5F7919F83CD200B77F7F /* grfx_elavators_stack_blank.png in Resources */,
 				822C90881A375621003944E8 /* Soutwest View of Victory Center.jpg in Resources */,
@@ -1988,6 +2002,7 @@
 				8294BB271A3B708200EDD0EB /* SkyHouse Dallas_072913.jpg in Resources */,
 				824F369819E6C47500267B44 /* thumb_victory_center_138feet.jpg in Resources */,
 				82000B9A19E5963800AE2C70 /* team_cousins_text@2x.png in Resources */,
+				8276C4C21AD5A90F006C4047 /* grfx_egBtn.png in Resources */,
 				82CBD72B19F995120001191F /* grfx_site_parking@2x.png in Resources */,
 				823D78AC19F1AD500096E62C /* grfx_compass.png in Resources */,
 				822C90AE1A377562003944E8 /* overview_cell4.jpg in Resources */,
@@ -2137,6 +2152,7 @@
 				824C196519FA9DC400EA7613 /* grfx_floorplan16.png in Resources */,
 				8224FE3319D4BD6E002B1B44 /* normal_frame@2x.png in Resources */,
 				82DC11FD19DAF2990057AE4F /* photo-gallery-left@2x.png in Resources */,
+				8276C4C51AD5A90F006C4047 /* grfx_inBtn@2x.png in Resources */,
 				8212C2AB1A6EA4E900D8C67F /* thumb_KATY TRAILS.jpg in Resources */,
 				821EE24B1A13BB9100254B2A /* grfx_floorplan20.png in Resources */,
 				82000B7F19E590AD00AE2C70 /* team_hines_text.png in Resources */,
