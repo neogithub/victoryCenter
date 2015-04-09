@@ -101,9 +101,6 @@
         [outDallasNorthTollWay2Path addCurveToPoint: CGPointMake(555, 333) controlPoint1: CGPointMake(524, 361) controlPoint2: CGPointMake(553, 337)];
         [outDallasNorthTollWay2Path addCurveToPoint: CGPointMake(502, 273) controlPoint1: CGPointMake(557, 329) controlPoint2: CGPointMake(508, 276)];
         [outDallasNorthTollWay2Path addCurveToPoint: CGPointMake(461, 264) controlPoint1: CGPointMake(496, 270) controlPoint2: CGPointMake(464, 269)];
-        [outDallasNorthTollWay2Path addCurveToPoint: CGPointMake(444, 204.5) controlPoint1: CGPointMake(458, 259) controlPoint2: CGPointMake(448, 222.5)];
-        [outDallasNorthTollWay2Path addCurveToPoint: CGPointMake(437, 125) controlPoint1: CGPointMake(440, 186.5) controlPoint2: CGPointMake(436, 143)];
-        [outDallasNorthTollWay2Path addCurveToPoint: CGPointMake(451, -1) controlPoint1: CGPointMake(438, 107) controlPoint2: CGPointMake(451, -1)];
         
         //// FromWoodallRogers1 Drawing
         //5
@@ -152,9 +149,6 @@
         [outWoodallRogers2Path addCurveToPoint: CGPointMake(520, 365) controlPoint1: CGPointMake(522, 394) controlPoint2: CGPointMake(518, 368)];
         [outWoodallRogers2Path addCurveToPoint: CGPointMake(535, 357) controlPoint1: CGPointMake(522, 362) controlPoint2: CGPointMake(531, 353)];
         [outWoodallRogers2Path addCurveToPoint: CGPointMake(553, 392) controlPoint1: CGPointMake(539, 361) controlPoint2: CGPointMake(550, 391)];
-        [outWoodallRogers2Path addCurveToPoint: CGPointMake(664, 288) controlPoint1: CGPointMake(556, 393) controlPoint2: CGPointMake(662.72, 291.84)];
-        [outWoodallRogers2Path addCurveToPoint: CGPointMake(659, 165) controlPoint1: CGPointMake(666, 282) controlPoint2: CGPointMake(657.68, 172.94)];
-        [outWoodallRogers2Path addCurveToPoint: CGPointMake(730, -3) controlPoint1: CGPointMake(661, 153) controlPoint2: CGPointMake(730, -3)];
         outWoodallRogers2Path.lineCapStyle = kCGLineCapRound;
         
         //// FromKatyTrail Drawing
@@ -248,9 +242,10 @@
         //// OutI35_1 Drawing
         //15
         UIBezierPath* outI35_1Path = UIBezierPath.bezierPath;
-        [outI35_1Path moveToPoint: CGPointMake(500, 396)];
-        [outI35_1Path addCurveToPoint: CGPointMake(521, 398) controlPoint1: CGPointMake(500, 396) controlPoint2: CGPointMake(520, 402)];
-        [outI35_1Path addCurveToPoint: CGPointMake(509, 339) controlPoint1: CGPointMake(522, 394) controlPoint2: CGPointMake(526, 361)];
+        [outI35_1Path moveToPoint: CGPointMake(500, 394)];
+        [outI35_1Path addCurveToPoint: CGPointMake(509, 394) controlPoint1: CGPointMake(500, 394) controlPoint2: CGPointMake(503.35, 394.58)];
+        [outI35_1Path addCurveToPoint: CGPointMake(521, 391) controlPoint1: CGPointMake(514.1, 393.48) controlPoint2: CGPointMake(520.53, 392.9)];
+        [outI35_1Path addCurveToPoint: CGPointMake(509, 339) controlPoint1: CGPointMake(522, 387) controlPoint2: CGPointMake(526, 361)];
         [outI35_1Path addCurveToPoint: CGPointMake(473, 297) controlPoint1: CGPointMake(498.86, 325.88) controlPoint2: CGPointMake(486.83, 309.75)];
         [outI35_1Path addCurveToPoint: CGPointMake(443, 274) controlPoint1: CGPointMake(459.8, 284.82) controlPoint2: CGPointMake(453, 281)];
         [outI35_1Path addCurveToPoint: CGPointMake(375, 233) controlPoint1: CGPointMake(403, 246) controlPoint2: CGPointMake(387.19, 237.06)];
@@ -264,28 +259,22 @@
         //16
         UIBezierPath* outI35_2Path = UIBezierPath.bezierPath;
         [outI35_2Path moveToPoint: CGPointMake(500, 394)];
-        [outI35_2Path addCurveToPoint: CGPointMake(520, 394) controlPoint1: CGPointMake(500, 394) controlPoint2: CGPointMake(515.28, 393.89)];
-        [outI35_2Path addCurveToPoint: CGPointMake(525, 405) controlPoint1: CGPointMake(523.8, 394.09) controlPoint2: CGPointMake(525.6, 399.58)];
+        [outI35_2Path addCurveToPoint: CGPointMake(517, 394) controlPoint1: CGPointMake(500, 394) controlPoint2: CGPointMake(512.28, 393.89)];
+        [outI35_2Path addCurveToPoint: CGPointMake(525, 405) controlPoint1: CGPointMake(520.8, 394.09) controlPoint2: CGPointMake(525.6, 399.58)];
         [outI35_2Path addCurveToPoint: CGPointMake(523, 427) controlPoint1: CGPointMake(524, 414) controlPoint2: CGPointMake(525.87, 425.94)];
         [outI35_2Path addCurveToPoint: CGPointMake(493, 437) controlPoint1: CGPointMake(516.25, 429.5) controlPoint2: CGPointMake(495, 442)];
         [outI35_2Path addCurveToPoint: CGPointMake(489, 396) controlPoint1: CGPointMake(491, 432) controlPoint2: CGPointMake(492.58, 414.67)];
-        [outI35_2Path addCurveToPoint: CGPointMake(463, 293) controlPoint1: CGPointMake(481.26, 355.67) controlPoint2: CGPointMake(466.42, 297.1)];
-        [outI35_2Path addCurveToPoint: CGPointMake(382, 236) controlPoint1: CGPointMake(443.53, 269.64) controlPoint2: CGPointMake(394.19, 240.06)];
-        [outI35_2Path addCurveToPoint: CGPointMake(262, 195) controlPoint1: CGPointMake(372.11, 232.7) controlPoint2: CGPointMake(317, 227)];
-        [outI35_2Path addCurveToPoint: CGPointMake(132, 125) controlPoint1: CGPointMake(223.73, 172.73) controlPoint2: CGPointMake(174.27, 127.46)];
-        [outI35_2Path addCurveToPoint: CGPointMake(42, 116) controlPoint1: CGPointMake(97.47, 122.99) controlPoint2: CGPointMake(68.13, 123.59)];
-        [outI35_2Path addCurveToPoint: CGPointMake(0, 83) controlPoint1: CGPointMake(11, 107) controlPoint2: CGPointMake(0, 83)];
+        [outI35_2Path addCurveToPoint: CGPointMake(462, 288) controlPoint1: CGPointMake(481.26, 355.67) controlPoint2: CGPointMake(465.42, 292.1)];
         outI35_2Path.lineCapStyle = kCGLineCapRound;
         
         //// OutI35_3 Drawing
         //17
         UIBezierPath* outI35_3Path = UIBezierPath.bezierPath;
-        [outI35_3Path moveToPoint: CGPointMake(499, 395)];
-        [outI35_3Path addCurveToPoint: CGPointMake(523, 399) controlPoint1: CGPointMake(499, 395) controlPoint2: CGPointMake(517, 393.5)];
-        [outI35_3Path addCurveToPoint: CGPointMake(529, 413) controlPoint1: CGPointMake(529, 404.5) controlPoint2: CGPointMake(529.5, 410.5)];
-        [outI35_3Path addCurveToPoint: CGPointMake(521, 429) controlPoint1: CGPointMake(528.75, 414.25) controlPoint2: CGPointMake(528.45, 423.43)];
-        [outI35_3Path addCurveToPoint: CGPointMake(493, 437) controlPoint1: CGPointMake(513.58, 434.55) controlPoint2: CGPointMake(494, 435.5)];
-        [outI35_3Path addCurveToPoint: CGPointMake(495, 492) controlPoint1: CGPointMake(491, 440) controlPoint2: CGPointMake(495, 492)];
+        [outI35_3Path moveToPoint: CGPointMake(497, 394.5)];
+        [outI35_3Path addCurveToPoint: CGPointMake(521, 396) controlPoint1: CGPointMake(497, 394.5) controlPoint2: CGPointMake(515, 390.5)];
+        [outI35_3Path addCurveToPoint: CGPointMake(525, 423) controlPoint1: CGPointMake(527, 401.5) controlPoint2: CGPointMake(524, 415)];
+        [outI35_3Path addCurveToPoint: CGPointMake(493, 439) controlPoint1: CGPointMake(526, 430.97) controlPoint2: CGPointMake(493.5, 438)];
+        [outI35_3Path addCurveToPoint: CGPointMake(495, 492) controlPoint1: CGPointMake(492, 441) controlPoint2: CGPointMake(495, 492)];
         [outI35_3Path addCurveToPoint: CGPointMake(497, 520) controlPoint1: CGPointMake(495, 492) controlPoint2: CGPointMake(495, 513)];
         [outI35_3Path addCurveToPoint: CGPointMake(515, 551) controlPoint1: CGPointMake(499, 527) controlPoint2: CGPointMake(504.25, 538.25)];
         [outI35_3Path addCurveToPoint: CGPointMake(556, 588) controlPoint1: CGPointMake(525.75, 563.75) controlPoint2: CGPointMake(552, 577)];
