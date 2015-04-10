@@ -84,13 +84,15 @@
         [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(506, 401) controlPoint1: CGPointMake(495, 399) controlPoint2: CGPointMake(504, 398)];
         [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(508, 416) controlPoint1: CGPointMake(508, 404) controlPoint2: CGPointMake(506, 414)];
         [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(527, 418) controlPoint1: CGPointMake(510, 418) controlPoint2: CGPointMake(522, 415)];
-        [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(493, 437) controlPoint1: CGPointMake(532, 421) controlPoint2: CGPointMake(498, 441)];
+        [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(512, 434) controlPoint1: CGPointMake(529.64, 419.59) controlPoint2: CGPointMake(521.1, 428.97)];
+        [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(493, 437) controlPoint1: CGPointMake(503.87, 438.49) controlPoint2: CGPointMake(495.36, 438.89)];
         [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(489, 396) controlPoint1: CGPointMake(491.33, 435.67) controlPoint2: CGPointMake(492.5, 410.01)];
         [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(465, 285) controlPoint1: CGPointMake(482, 368) controlPoint2: CGPointMake(466, 291)];
         [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(456, 247) controlPoint1: CGPointMake(463.5, 276) controlPoint2: CGPointMake(459, 254)];
         [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(437, 157) controlPoint1: CGPointMake(453, 240) controlPoint2: CGPointMake(437, 161)];
         [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(437, 125) controlPoint1: CGPointMake(437, 153) controlPoint2: CGPointMake(437, 133)];
-        [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(451, -1) controlPoint1: CGPointMake(437, 117) controlPoint2: CGPointMake(451, -1)];
+        [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(444, 72) controlPoint1: CGPointMake(437, 121.59) controlPoint2: CGPointMake(441.08, 97.75)];
+        [outDallasNorthTollWay1Path addCurveToPoint: CGPointMake(451, -1) controlPoint1: CGPointMake(447.93, 37.39) controlPoint2: CGPointMake(451, -1)];
         
         //// OutDallasNorthTollWay2 Drawing
         //4
@@ -198,13 +200,8 @@
         //// FromI35_2 Drawing
         //12
         UIBezierPath* fromI35_2Path = UIBezierPath.bezierPath;
-        [fromI35_2Path moveToPoint: CGPointMake(-3, 78)];
-        [fromI35_2Path addCurveToPoint: CGPointMake(48, 118) controlPoint1: CGPointMake(-3, 78) controlPoint2: CGPointMake(15, 113)];
-        [fromI35_2Path addCurveToPoint: CGPointMake(132, 125) controlPoint1: CGPointMake(75.81, 122.21) controlPoint2: CGPointMake(97.47, 122.99)];
-        [fromI35_2Path addCurveToPoint: CGPointMake(262, 195) controlPoint1: CGPointMake(174.27, 127.46) controlPoint2: CGPointMake(224.07, 174.41)];
-        [fromI35_2Path addCurveToPoint: CGPointMake(382, 236) controlPoint1: CGPointMake(316.5, 224.59) controlPoint2: CGPointMake(372.11, 232.7)];
-        [fromI35_2Path addCurveToPoint: CGPointMake(463, 293) controlPoint1: CGPointMake(394.19, 240.06) controlPoint2: CGPointMake(443.53, 269.64)];
-        [fromI35_2Path addCurveToPoint: CGPointMake(490, 399) controlPoint1: CGPointMake(466.42, 297.1) controlPoint2: CGPointMake(482.26, 358.67)];
+        [fromI35_2Path moveToPoint: CGPointMake(461, 290)];
+        [fromI35_2Path addCurveToPoint: CGPointMake(490, 399) controlPoint1: CGPointMake(466, 292) controlPoint2: CGPointMake(482.26, 358.67)];
         [fromI35_2Path addCurveToPoint: CGPointMake(493, 432) controlPoint1: CGPointMake(493.58, 417.67) controlPoint2: CGPointMake(491, 427)];
         [fromI35_2Path addCurveToPoint: CGPointMake(520, 423) controlPoint1: CGPointMake(495, 437) controlPoint2: CGPointMake(513.25, 425.5)];
         [fromI35_2Path addCurveToPoint: CGPointMake(522, 404) controlPoint1: CGPointMake(522.87, 421.94) controlPoint2: CGPointMake(521, 413)];
@@ -215,12 +212,7 @@
         //// FromI35_3 Drawing
         //13
         UIBezierPath* fromI35_3Path = UIBezierPath.bezierPath;
-        [fromI35_3Path moveToPoint: CGPointMake(515, 768)];
-        [fromI35_3Path addCurveToPoint: CGPointMake(509, 696) controlPoint1: CGPointMake(515, 768) controlPoint2: CGPointMake(508, 708)];
-        [fromI35_3Path addCurveToPoint: CGPointMake(559, 600) controlPoint1: CGPointMake(510, 684) controlPoint2: CGPointMake(560, 624)];
-        [fromI35_3Path addCurveToPoint: CGPointMake(515, 551) controlPoint1: CGPointMake(558, 576) controlPoint2: CGPointMake(523, 560)];
-        [fromI35_3Path addCurveToPoint: CGPointMake(495, 511) controlPoint1: CGPointMake(507, 542) controlPoint2: CGPointMake(498, 528)];
-        [fromI35_3Path addCurveToPoint: CGPointMake(493, 420) controlPoint1: CGPointMake(492, 494) controlPoint2: CGPointMake(490, 425)];
+        [fromI35_3Path moveToPoint: CGPointMake(493, 420)];
         [fromI35_3Path addCurveToPoint: CGPointMake(521, 415) controlPoint1: CGPointMake(496, 415) controlPoint2: CGPointMake(518, 419)];
         [fromI35_3Path addCurveToPoint: CGPointMake(521, 398) controlPoint1: CGPointMake(524, 411) controlPoint2: CGPointMake(523, 400)];
         [fromI35_3Path addCurveToPoint: CGPointMake(501, 398) controlPoint1: CGPointMake(519, 396) controlPoint2: CGPointMake(501, 398)];
@@ -232,10 +224,10 @@
         [fromI35_4Path addCurveToPoint: CGPointMake(509, 696) controlPoint1: CGPointMake(515, 768) controlPoint2: CGPointMake(508, 708)];
         [fromI35_4Path addCurveToPoint: CGPointMake(559, 600) controlPoint1: CGPointMake(510, 684) controlPoint2: CGPointMake(560, 624)];
         [fromI35_4Path addCurveToPoint: CGPointMake(515, 551) controlPoint1: CGPointMake(558, 576) controlPoint2: CGPointMake(523, 560)];
-        [fromI35_4Path addCurveToPoint: CGPointMake(495, 511) controlPoint1: CGPointMake(507, 542) controlPoint2: CGPointMake(498, 528)];
-        [fromI35_4Path addCurveToPoint: CGPointMake(492, 408) controlPoint1: CGPointMake(492, 494) controlPoint2: CGPointMake(495, 431)];
-        [fromI35_4Path addCurveToPoint: CGPointMake(470, 313) controlPoint1: CGPointMake(489, 385) controlPoint2: CGPointMake(469, 322)];
-        [fromI35_4Path addCurveToPoint: CGPointMake(489, 332) controlPoint1: CGPointMake(471, 304) controlPoint2: CGPointMake(479.75, 311)];
+        [fromI35_4Path addCurveToPoint: CGPointMake(496, 511) controlPoint1: CGPointMake(507, 542) controlPoint2: CGPointMake(499, 528)];
+        [fromI35_4Path addCurveToPoint: CGPointMake(492, 408) controlPoint1: CGPointMake(493, 494) controlPoint2: CGPointMake(494, 431)];
+        [fromI35_4Path addCurveToPoint: CGPointMake(470, 313) controlPoint1: CGPointMake(490, 385) controlPoint2: CGPointMake(468, 321)];
+        [fromI35_4Path addCurveToPoint: CGPointMake(489, 332) controlPoint1: CGPointMake(472, 305) controlPoint2: CGPointMake(479.75, 311)];
         [fromI35_4Path addCurveToPoint: CGPointMake(507, 397) controlPoint1: CGPointMake(498.25, 353) controlPoint2: CGPointMake(509, 394)];
         [fromI35_4Path addCurveToPoint: CGPointMake(498, 399) controlPoint1: CGPointMake(505, 400) controlPoint2: CGPointMake(498, 399)];
         
@@ -440,7 +432,7 @@
 		pathItem = [[embBezierPathItem alloc] init];
 		pathItem.pathDelay = outDelay;
 		pathItem.pathColor = outPathColor;
-		pathItem.pathSpeed = pathSpeed;
+        pathItem.pathSpeed = 2.0;//pathSpeed;
 		pathItem.pathWidth = pathWidth;
 		pathItem.embPath = outDallasNorthTollWay2Path;
 		[_bezierPaths addObject:pathItem];
@@ -476,7 +468,7 @@
         pathItem = [[embBezierPathItem alloc] init];
 		pathItem.pathDelay = outDelay;
 		pathItem.pathColor = outPathColor;
-		pathItem.pathSpeed = pathSpeed;
+        pathItem.pathSpeed = 1.0;//pathSpeed;
 		pathItem.pathWidth = pathWidth;
 		pathItem.embPath = outWoodallRogers2Path;
 		[_bezierPaths addObject:pathItem];
@@ -512,18 +504,18 @@
         
         //12
         pathItem = [[embBezierPathItem alloc] init];
-		pathItem.pathDelay = inDelay;
+        pathItem.pathDelay = 2.3;//inDelay;
 		pathItem.pathColor = inPathColor;
-		pathItem.pathSpeed = pathSpeed;
+        pathItem.pathSpeed = 1.0;//pathSpeed;
 		pathItem.pathWidth = pathWidth;
 		pathItem.embPath = fromI35_2Path;
 		[_bezierPaths addObject:pathItem];
         
         //13
         pathItem = [[embBezierPathItem alloc] init];
-        pathItem.pathDelay = inDelay;
+        pathItem.pathDelay = 2.0;//inDelay;
         pathItem.pathColor = inPathColor;
-        pathItem.pathSpeed = pathSpeed;
+        pathItem.pathSpeed = 1.0;//pathSpeed;
         pathItem.pathWidth = pathWidth;
         pathItem.embPath = fromI35_3Path;
         [_bezierPaths addObject:pathItem];
@@ -550,7 +542,7 @@
         pathItem = [[embBezierPathItem alloc] init];
 		pathItem.pathDelay = outDelay;
 		pathItem.pathColor = outPathColor;
-		pathItem.pathSpeed = pathSpeed;
+        pathItem.pathSpeed = 1.0;//pathSpeed;
 		pathItem.pathWidth = pathWidth;
 		pathItem.embPath = outI35_2Path;
 		[_bezierPaths addObject:pathItem];
