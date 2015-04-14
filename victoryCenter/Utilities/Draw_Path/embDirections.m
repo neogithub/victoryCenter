@@ -595,7 +595,7 @@
         //22
         pathItem = [[embBezierPathItem alloc] init];
 		pathItem.pathDelay = inDelay;
-		pathItem.pathColor = inPathColor;
+		pathItem.pathColor = outPathColor;
 		pathItem.pathSpeed = pathSpeed;
 		pathItem.pathWidth = pathWidth;
 		pathItem.embPath = city_To_AirPortPath;
@@ -604,7 +604,7 @@
         //23
         pathItem = [[embBezierPathItem alloc] init];
         pathItem.pathDelay = inDelay;
-        pathItem.pathColor = inPathColor;
+        pathItem.pathColor = outPathColor;
         pathItem.pathSpeed = pathSpeed;
         pathItem.pathWidth = pathWidth;
         pathItem.embPath = city_To_LoveFieldPath;
