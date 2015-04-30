@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MPFoldEnumerations.h"
 #import "MPFlipEnumerations.h"
+#import "GAITrackedViewController.h"
 
 enum
 {
@@ -16,7 +17,7 @@ enum
 	MPTransitionModeFlip
 } typedef MPTransitionMode;
 
-@interface mapViewController : UIViewController
+@interface mapViewController : GAITrackedViewController
 
 @property (assign, nonatomic) MPTransitionMode          mode;
 @property (assign, nonatomic) NSUInteger                style;

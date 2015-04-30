@@ -97,7 +97,7 @@
     [self insertSubview:_uiv_indicatorContainer aboveSubview:uis_panoramic];
     
     _uiiv_smallPano = [[UIImageView alloc] initWithImage:[self adjustImageSizeWhenCropping:_contentImage]];
-    _uiiv_smallPano.frame = CGRectMake(0.0, abs(68 - _uiiv_smallPano.frame.size.height)/2, _uiiv_smallPano.frame.size.width, _uiiv_smallPano.frame.size.height);
+    _uiiv_smallPano.frame = CGRectMake(0.0, fabsf(68 - _uiiv_smallPano.frame.size.height)/2, _uiiv_smallPano.frame.size.width, _uiiv_smallPano.frame.size.height);
     UIImage *frameImge = [UIImage imageNamed:@"Tilit_Icon_Off.png"];
     _uib_smallFrame = [UIButton buttonWithType:UIButtonTypeCustom];
     _uib_smallFrame.frame = CGRectMake(-18.0, (68 - frameImge.size.height)/2, frameImge.size.width, frameImge.size.height);

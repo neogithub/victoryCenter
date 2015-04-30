@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FGalleryViewController.h"
+#import "GAITrackedViewController.h"
 
-@interface RootViewController : UIViewController <FGalleryViewControllerDelegate>
+@interface RootViewController : GAITrackedViewController <FGalleryViewControllerDelegate>
 {
     // fgallery
 	FGalleryViewController	*localGallery;

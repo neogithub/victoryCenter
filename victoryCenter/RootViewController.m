@@ -14,6 +14,7 @@
 #import "embKenBurns.h"
 #import "neoCalendarUtilities.h"
 #import "xhPopTipsView.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface RootViewController () <embKenBurnsDelegate, UIActionSheetDelegate>
 {
@@ -64,6 +65,10 @@
     [super viewWillAppear:animated];
     [self performSelector:@selector(createKenBurnView) withObject:nil afterDelay:3.0];
     loadedPno = NO;
+    
+//    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//    [tracker set:kGAIScreenName value:@"Victory Center Root View"];
+//    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 -(void)viewDidLayoutSubviews
@@ -96,6 +101,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadedPano:) name:@"loadPanoView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removePano:) name:@"removePanoView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mailBtnTapped:) name:@"loadContact" object:nil];
+    self.screenName = @"Victory Center Root View";
 }
 
 #pragma mark - Create KenBurn view

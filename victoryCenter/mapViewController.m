@@ -28,6 +28,7 @@
 #import "embMapHotspotListViewController.h"
 #import "siteOverview.h"
 #import "xhPopTipsView.h"
+#import "GAIDictionaryBuilder.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -147,6 +148,10 @@ static float    kPanelBtnHeight             = 38.0;
     [self prepareHlepData];
     
     [self performSelector:@selector(popLogoFlagAnimation) withObject:nil afterDelay:0.5];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Victory Center Map View"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)loadHotspotDict
@@ -171,6 +176,7 @@ static float    kPanelBtnHeight             = 38.0;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetLocation) name:@"tapOnTitle" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
+    self.screenName = @"Victory Center Map View";
 }
 
 - (void)resetLocation
@@ -483,6 +489,17 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)tapMapTopMenu:(id)sender
 {
     UIButton *tappedBtn = sender;
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Vicotry Center Map"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"touch"
+                                                           label:[tappedBtn.titleLabel text]
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
+    
+    
     if (tappedBtn.selected)
     {
         [self removeOverviewPanel];
