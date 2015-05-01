@@ -80,6 +80,10 @@ static float kOriginalStatHeight    = 45+36*3;
     [self setUpBuildingStats];
     loadStats = 0;
     loadedPanoView = NO;
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Victory Center Building View"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)viewDidLoad
@@ -102,6 +106,8 @@ static float kOriginalStatHeight    = 45+36*3;
     
     _uil_lobbyLabel.font = [UIFont fontWithName:@"Raleway-Bold" size:14.0];
     _uil_lobbyLabel.textColor = [UIColor vcDarkBlue];
+    
+    self.screenName = @"Victory Center Building View";
 }
 
 #pragma mark - Hide & unhide help view form building

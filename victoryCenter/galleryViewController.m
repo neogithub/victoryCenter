@@ -12,6 +12,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "xhPanoramicView.h"
 #import "xhPopTipsView.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface galleryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 {
@@ -67,6 +68,10 @@
     {
         [self performSelector:@selector(loadHelpViews) withObject:nil afterDelay:0.5];
     }
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Victory Center Gallery View"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -80,6 +85,7 @@
     [super viewDidLoad];
     [self loadGalleryData];
     [self setTopButtons];
+    self.screenName = @"Victory Center Gallery View";
 }
 
 #pragma mark - Set top buttons

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FGalleryViewController.h"
+#import "GAITrackedViewController.h"
 
-@interface galleryViewController : UIViewController
+@interface galleryViewController : GAITrackedViewController
 {
 	NSArray					*localCaptions;
     NSArray					*localImages;

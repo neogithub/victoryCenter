@@ -13,6 +13,7 @@
 #import "CMPopTipView.h"
 #import "xhPopTipsView.h"
 #import "neoCalendarUtilities.h"
+#import "GAIDictionaryBuilder.h"
 
 static float kContactWidth = 261;
 static float kContactHeight = 100;
@@ -52,6 +53,10 @@ static int eveningTime = 17;
     {
         [self performSelector:@selector(loadHelpViews) withObject:nil afterDelay:0.5];
     }
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Victory Center Contract View"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 -(void)viewDidLayoutSubviews
@@ -85,6 +90,7 @@ static int eveningTime = 17;
     [self setContactCardsGroup];
     [self performSelector:@selector(animateContactCards) withObject:nil afterDelay:0.5];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
+    self.screenName = @"Victory Center Contract View";
 }
 
 #pragma  mark - Set top left title label

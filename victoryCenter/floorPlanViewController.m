@@ -12,6 +12,7 @@
 #import "UIColor+Extensions.h"
 #import "xhPanoramicView.h"
 #import "xhPopTipsView.h"
+#import "GAIDictionaryBuilder.h"
 
 static float    panle_w                     = 156;
 static CGFloat  kPanelTitleHeight           = 46;
@@ -125,6 +126,10 @@ static CGFloat  kPanelTitleHeight           = 46;
     [self setCtrlBtns];
     [self createFloorPlanAndRsfLabels];
     [self prepareHlepData];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Victory Center FloorPlan View"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)viewDidLoad
@@ -133,6 +138,7 @@ static CGFloat  kPanelTitleHeight           = 46;
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadPano:) name:@"loadPanoImage" object:nil];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
+    self.screenName = @"Victory Center Building View";
 }
 
 #pragma mark - Prepare pano image

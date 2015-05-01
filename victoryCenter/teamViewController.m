@@ -9,6 +9,7 @@
 #import "teamViewController.h"
 #import "UIColor+Extensions.h"
 #import "xhPopTipsView.h"
+#import "GAIDictionaryBuilder.h"
 
 static float kDropSpeed		= 0.33;
 static float kAnimaDelay	= 0.2;
@@ -46,6 +47,9 @@ static float kCardsGap      = 30.0;
     {
         [self performSelector:@selector(loadHelpViews) withObject:nil afterDelay:0.5];
     }
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Victory Center Team View"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -71,6 +75,8 @@ static float kCardsGap      = 30.0;
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
+    
+    self.screenName = @"Victory Center Team View";
 }
 
 - (void)createTextViews

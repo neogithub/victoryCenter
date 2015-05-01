@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface contactViewController : UIViewController
+@interface contactViewController : GAITrackedViewController
 
 @end

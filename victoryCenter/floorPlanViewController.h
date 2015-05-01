@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface floorPlanViewController : UIViewController
+@interface floorPlanViewController : GAITrackedViewController
 
 @property (nonatomic, readwrite) int pageIndex;
 
