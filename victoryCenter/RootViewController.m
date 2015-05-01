@@ -229,6 +229,15 @@
     NSArray *arr_vcTitle = [[NSArray alloc] initWithObjects:@"BUILDING", @"LOCATION", @"GALLERY", @"TEAM", nil];
 
     vcIdentifier = [arr_identifier objectAtIndex:[sender tag] - 1];
+    
+    // Add Google Analytics to check loaded Section
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Vicotry Root View"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
+                                                          action:@"touch"
+                                                           label:vcIdentifier
+                                                           value:nil] build]];
+    
 	__block UIView *tmp = [self.view viewWithTag:1000];
     [UIView animateWithDuration:0.33 animations:^{
         tmp.alpha = 0.0;

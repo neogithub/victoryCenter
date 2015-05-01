@@ -491,9 +491,8 @@ static float    kPanelBtnHeight             = 38.0;
     UIButton *tappedBtn = sender;
     
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    
     [tracker set:kGAIScreenName value:@"Vicotry Center Map"];
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
                                                           action:@"touch"
                                                            label:[tappedBtn.titleLabel text]
                                                            value:nil] build]];
@@ -653,6 +652,14 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)handleCitySubMenu:(id)sender
 {
     UIButton *tappedBtn = sender;
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Vicotry Center Map"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
+                                                          action:@"touch"
+                                                           label:[NSString stringWithFormat:@"City - %@", [tappedBtn.titleLabel text]]
+                                                           value:nil] build]];
+    
     if (tappedBtn.selected) {
         [self deHiliteSubMenu:_uiv_citySubMenu];
         [self removeOverlay];
@@ -898,6 +905,14 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)handleNeibSubMenu:(id)sender
 {
     UIButton *tappedBtn = sender;
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Vicotry Center Map"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
+                                                          action:@"touch"
+                                                           label:[NSString stringWithFormat:@"City - %@", [tappedBtn.titleLabel text]]
+                                                           value:nil] build]];
+    
     if (tappedBtn.selected) {
         [self deHiliteSubMenu:_uiv_neighborhoodSubMenu];
         [self removeOverlay];
@@ -953,6 +968,14 @@ static float    kPanelBtnHeight             = 38.0;
 - (void)handleSiteSubMenu:(id)sender
 {
     UIButton *tappedBtn = sender;
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Vicotry Center Map"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
+                                                          action:@"touch"
+                                                           label:[NSString stringWithFormat:@"City - %@", [tappedBtn.titleLabel text]]
+                                                           value:nil] build]];
+    
     if (tappedBtn.selected) {
         [self deHiliteSubMenu:_uiv_siteSubMenu];
         [self removeOverlay];

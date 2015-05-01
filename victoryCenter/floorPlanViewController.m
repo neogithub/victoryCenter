@@ -63,8 +63,40 @@ static CGFloat  kPanelTitleHeight           = 46;
 - (void)viewWillAppear:(BOOL)animated
 {
     self.view.frame = screenRect;
-    _arr_titleText = [[NSArray alloc] initWithObjects: @"FLOOR 23", @"FLOOR 22", @"FLOOR 21", @"FLOOR 20", @"FLOOR 19", @"FLOOR 18", @"FLOOR 17", @"FLOOR 16", @"FLOOR 15", @"FLOOR 14", @"FLOOR 12", @"FLOOR 11", @"FLOOR 10", @"FLOOR 9", @"FLOOR 8", @"FLOOR 1", nil];
-    _arr_squareFeet = [[NSArray alloc] initWithObjects:@"27,802", @"27,957", @"28,112", @"28,276", @"28,433", @"28,591", @"28,337 ", @"28,439", @"28,694", @"28,853", @"29,002", @"29,161", @"29,161", @"29,750", @"45,571", @"7,976", nil];
+    _arr_titleText = [[NSArray alloc] initWithObjects:
+                      @"FLOOR 23",
+                      @"FLOOR 22",
+                      @"FLOOR 21",
+                      @"FLOOR 20",
+                      @"FLOOR 19",
+                      @"FLOOR 18",
+                      @"FLOOR 17",
+                      @"FLOOR 16",
+                      @"FLOOR 15",
+                      @"FLOOR 14",
+                      @"FLOOR 12",
+                      @"FLOOR 11",
+                      @"FLOOR 10",
+                      @"FLOOR 9",
+                      @"FLOOR 8",
+                      @"FLOOR 1", nil];
+    _arr_squareFeet = [[NSArray alloc] initWithObjects:
+                       @"27,802",
+                       @"27,957",
+                       @"28,112",
+                       @"28,276",
+                       @"28,433",
+                       @"28,591",
+                       @"28,337",
+                       @"28,439",
+                       @"28,694",
+                       @"28,853",
+                       @"29,002",
+                       @"29,161",
+                       @"29,161",
+                       @"29,750",
+                       @"45,571",
+                       @"7,976", nil];
     
     CGRect frame_23 = CGRectMake(42.0, 17.0, 93.0, 6.0);
     CGRect frame_22 = CGRectMake(42.0, 22.0, 93.0, 6.0);

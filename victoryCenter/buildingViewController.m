@@ -12,6 +12,7 @@
 #import "xhPopTipsView.h"
 #import "buildingAmenities.h"
 #import "ameniteisGallery.h"
+#import "GAIDictionaryBuilder.h"
 
 static float kOriginalStatHeight    = 45+36*3;
 
@@ -228,6 +229,13 @@ static float kOriginalStatHeight    = 45+36*3;
 {
     _uiiv_viewDiagram.hidden = YES;
     UIButton *tappedBtn = sender;
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Vicotry Center Building"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
+                                                          action:@"touch"
+                                                           label:[tappedBtn.titleLabel text]
+                                                           value:nil] build]];
     
     if (tappedBtn.selected && tappedBtn.tag == 1) {
         [self resetBuildingImg:nil];
