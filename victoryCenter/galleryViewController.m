@@ -123,6 +123,14 @@
 - (void)tapOnTopBtns:(id)sender
 {
     UIButton *tappedBtn = sender;
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Vicotry Center Gallery"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
+                                                          action:@"touch"
+                                                           label:[NSString stringWithFormat:@"Gallery - %@", [tappedBtn.titleLabel text]]
+                                                           value:nil] build]];
+    
     for (UIButton *tmp in arr_topBtnArray) {
         tmp.selected = NO;
         [tmp setBackgroundColor:[UIColor vcLightBlue]];

@@ -910,7 +910,7 @@ static float    kPanelBtnHeight             = 38.0;
     [tracker set:kGAIScreenName value:@"Vicotry Center Map"];
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
                                                           action:@"touch"
-                                                           label:[NSString stringWithFormat:@"City - %@", [tappedBtn.titleLabel text]]
+                                                           label:[NSString stringWithFormat:@"Neighborhood - %@", [tappedBtn.titleLabel text]]
                                                            value:nil] build]];
     
     if (tappedBtn.selected) {
@@ -973,7 +973,7 @@ static float    kPanelBtnHeight             = 38.0;
     [tracker set:kGAIScreenName value:@"Vicotry Center Map"];
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
                                                           action:@"touch"
-                                                           label:[NSString stringWithFormat:@"City - %@", [tappedBtn.titleLabel text]]
+                                                           label:[NSString stringWithFormat:@"Site - %@", [tappedBtn.titleLabel text]]
                                                            value:nil] build]];
     
     if (tappedBtn.selected) {
