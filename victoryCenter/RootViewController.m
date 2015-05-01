@@ -607,6 +607,13 @@
         _playerViewController = nil;
     }
     
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//    [tracker set:kGAIScreenName value:@"Vicotry Center Movie"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
+                                                          action:@"touch"
+                                                           label:@"Play Movie"
+                                                           value:nil] build]];
+    
     _playerViewController = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL fileURLWithPath:url]];
     _playerViewController.view.frame = self.view.bounds;//CGRectMake(0, 0, 1024, 768);
     _playerViewController.view.alpha=1.0;
@@ -1009,6 +1016,13 @@
 //                     otherButtonTitles: nil];
 //    alert.tag = 1;
 //    [alert show];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    //    [tracker set:kGAIScreenName value:@"Vicotry Center Movie"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
+                                                          action:@"touch"
+                                                           label:@"Load Help"
+                                                           value:nil] build]];
     
     if (_uil_titleLabel.hidden && loadedPno == NO && _contactVC.view == nil) {
         [self loadHelpViews];
