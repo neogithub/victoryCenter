@@ -420,6 +420,8 @@
 		82DC11FE19DAF2990057AE4F /* photo-gallery-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11F519DAF2990057AE4F /* photo-gallery-right.png */; };
 		82DC11FF19DAF2990057AE4F /* photo-gallery-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11F619DAF2990057AE4F /* photo-gallery-right@2x.png */; };
 		82DC120019DAF2990057AE4F /* photo-gallery-trashcan.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11F719DAF2990057AE4F /* photo-gallery-trashcan.png */; };
+		82F486381B014E1600C5EBAF /* thumb_amenities_floorplan_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82F486371B014E1600C5EBAF /* thumb_amenities_floorplan_image.jpg */; };
+		82F4863A1B014E3A00C5EBAF /* amenities_floorplan_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82F486391B014E3A00C5EBAF /* amenities_floorplan_image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -912,6 +914,8 @@
 		82DC11F519DAF2990057AE4F /* photo-gallery-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-right.png"; sourceTree = "<group>"; };
 		82DC11F619DAF2990057AE4F /* photo-gallery-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-right@2x.png"; sourceTree = "<group>"; };
 		82DC11F719DAF2990057AE4F /* photo-gallery-trashcan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-trashcan.png"; sourceTree = "<group>"; };
+		82F486371B014E1600C5EBAF /* thumb_amenities_floorplan_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_amenities_floorplan_image.jpg; sourceTree = "<group>"; };
+		82F486391B014E3A00C5EBAF /* amenities_floorplan_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amenities_floorplan_image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1449,6 +1453,7 @@
 		82599B561A3A2ADE00397362 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				82F486391B014E3A00C5EBAF /* amenities_floorplan_image.jpg */,
 				82CEEB341A3F3F2D007D4BA9 /* deli_image.jpg */,
 				82599B571A3A2ADE00397362 /* conference_image.jpg */,
 				82599B581A3A2ADE00397362 /* fitness&conference.jpg */,
@@ -1465,6 +1470,7 @@
 		82599B5E1A3A2ADE00397362 /* thumbs */ = {
 			isa = PBXGroup;
 			children = (
+				82F486371B014E1600C5EBAF /* thumb_amenities_floorplan_image.jpg */,
 				82599B5F1A3A2ADE00397362 /* thumb_conference_image.jpg */,
 				82599B601A3A2ADE00397362 /* thumb_fitness&conference.jpg */,
 				82599B611A3A2ADE00397362 /* thumb_fitness2.jpg */,
@@ -2162,6 +2168,7 @@
 				82A805CF19D1F61E00308BA1 /* grfx_helpIcon@2x.png in Resources */,
 				822C909A1A375883003944E8 /* thumb_Soutwest View of Victory Center.jpg in Resources */,
 				824C196719FA9DC400EA7613 /* grfx_floorplan17.png in Resources */,
+				82F4863A1B014E3A00C5EBAF /* amenities_floorplan_image.jpg in Resources */,
 				821EE25D1A13BC5300254B2A /* grfx_floorplan11.png in Resources */,
 				8224FDF119D46997002B1B44 /* galleryData.plist in Resources */,
 				8260B9FE1A1BD202004C44B8 /* building_stats_amenities@2x.png in Resources */,
@@ -2181,6 +2188,7 @@
 				82D54B4D1A0BFD6C0055F338 /* Tilit_Icon_Off@2x.png in Resources */,
 				82A29E4B19EC60E000AFAE1E /* grfx_bldStatsImg@2x.png in Resources */,
 				824C195019FA938500EA7613 /* grfx_victorycenter_logo.png in Resources */,
+				82F486381B014E1600C5EBAF /* thumb_amenities_floorplan_image.jpg in Resources */,
 				821EE2601A13BC5300254B2A /* grfx_floorplan12@2x.png in Resources */,
 				82599B721A3A2ADE00397362 /* thumb_restaurant&conference.jpg in Resources */,
 				82DC11FB19DAF2990057AE4F /* photo-gallery-edit-caption.png in Resources */,

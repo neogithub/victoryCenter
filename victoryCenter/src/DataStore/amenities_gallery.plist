@@ -12,7 +12,7 @@
 		<key>content</key>
 		<array>
 			<string>conference_image.jpg</string>
-			<string>restaurant&amp;conference.jpg</string>
+			<string>amenities_floorplan_image.jpg</string>
 		</array>
 	</dict>
 	<dict>
@@ -37,7 +37,7 @@
 		<key>content</key>
 		<array>
 			<string>restaurant_image.jpg</string>
-			<string>restaurant&amp;conference.jpg</string>
+			<string>amenities_floorplan_image.jpg</string>
 		</array>
 	</dict>
 </array>
