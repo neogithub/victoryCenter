@@ -291,11 +291,6 @@ static float kOriginalStatHeight    = 45+36*3;
             break;
         }
         case 3: {
-//            _uiiv_bgImg.hidden = NO;
-//            NSString *url = [[NSBundle mainBundle] pathForResource:@"grfx_bldAmenities_bg" ofType:@"jpg"];
-//            _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:url];
-//            _amenities = [[buildingAmenities alloc] initWithFrame:screenRect];
-//            [self.view insertSubview:_amenities belowSubview:_uib_bldgStats];
             _amenitiesGallery = [[ameniteisGallery alloc] initWithFrame:screenRect];
             [self.view insertSubview:_amenitiesGallery belowSubview:_uib_bldgStats];
             break;

@@ -1947,26 +1947,10 @@ static float    kPanelBtnHeight             = 38.0;
     
     UIButton *tappedBtn = sender;
     tappedBtn.selected = YES;
-//    if (tappedBtn.tag%2 == 0)
+
     tappedBtn.backgroundColor = [UIColor colorWithRed:209.0/255.0 green:219.0/255.0 blue:233.0/255.0 alpha:1.0];
-//    else
-//        tappedBtn.backgroundColor = [UIColor vcOutPathColor];
-    
-    
-//    if (tappedBtn.selected) {
-//        [self deHighLightPanelBtn:[sender superview]];
-//        for (UIButton *tmp in arr_panelBtnArray) {
-//            tmp.selected = NO;
-//        }
-//        return;
-//    }
     
     [self highLightPanelBtn:[sender superview] andIndicatorColor:[UIColor vcPathColor] withIndicator:YES];
-    
-//    if (tappedBtn.tag == 5) {
-//        [self addDistanceInfo];
-//        return;
-//    }
     
     [_arr_pathItems removeAllObjects];
     _arr_pathItems = nil;
@@ -1986,7 +1970,6 @@ static float    kPanelBtnHeight             = 38.0;
 	// actual drawpath function
 	_embDirectionPath = [[embDrawPath alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
 	_embDirectionPath.delegate=self;
-	//[_uiv_mapContainer insertSubview:_embDirectionPath atIndex:2];
 	
 	if (_uiiv_mapOverlay) {
 		[_uiv_mapContainer insertSubview:_embDirectionPath aboveSubview:_uiiv_mapOverlay];
@@ -2167,12 +2150,10 @@ static float    kPanelBtnHeight             = 38.0;
 		_embDirectionPath.pathLineWidth = p.pathWidth;
 		_embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
 		_embDirectionPath.isTappable = NO;
-        //        _embDirectionPath.pathCapImage = [UIImage imageNamed:@"arrow.png"];
 		if(!_dirpathsArray){
 			_dirpathsArray = [[NSMutableArray alloc] init];
 			[_dirpathsArray addObject:_embDirectionPath]; // for removal later
 		}
-		//[_dirpathsArray addObject:_embDirectionPath]; // for removal later
 		[_embDirectionPath startAnimationFromIndex:i afterDelay:p.pathDelay];
 	}
 }

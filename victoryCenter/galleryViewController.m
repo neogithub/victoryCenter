@@ -337,16 +337,6 @@
     [uib_panoClose setBackgroundImage:[UIImage imageNamed:@"grfx_contactClose.jpg"] forState:UIControlStateNormal];
     [uib_panoClose addTarget:self action:@selector(removePano:) forControlEvents:UIControlEventTouchUpInside];
     [_uiv_panoramicView addSubview: uib_panoClose];
-    
-//    UILabel *uil_title = [[UILabel alloc] initWithFrame:CGRectMake(42.0, 0.0, 180.0, 44.0)];
-//    uil_title.text = title;
-//    uil_title.textColor = [UIColor vcDarkBlue];
-//    [uil_title setTextAlignment:NSTextAlignmentCenter];
-//    uil_title.layer.borderColor = [UIColor vcDarkBlue].CGColor;
-//    uil_title.layer.borderWidth = 1.0;
-//    uil_title.backgroundColor = [UIColor whiteColor];
-//    [uil_title setFont:[UIFont fontWithName:@"Raleway-Bold" size:20]];
-//    [_uiv_panoramicView addSubview: uil_title];
 }
 
 - (void)removePano:(id)sender

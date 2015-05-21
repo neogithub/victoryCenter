@@ -66,25 +66,15 @@
     [self performSelector:@selector(createKenBurnView) withObject:nil afterDelay:3.0];
     loadedPno = NO;
     
-//    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//    [tracker set:kGAIScreenName value:@"Victory Center Root View"];
-//    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Victory Center Root View"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 -(void)viewDidLayoutSubviews
 {
-	// create uiimageview
-	
-//	//check hour
-//	NSString *hour = [NSString currentHour]; // returns military time
-//	
-//	//then change image accordingly
-//	if (([hour intValue]>morningTime) && ([hour intValue]<eveningTime)){ // 5 = 5am, 17 = 5pm
 
-		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
-//	} else {
-//		_uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching_night.jpg" ofType:nil]];
-//	}
+    _uiiv_bgImg.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
 }
 - (void)viewDidLoad
 {
@@ -121,7 +111,6 @@
 	
 	[self.view insertSubview:self.kenView belowSubview:_uiiv_vcLogo];
     
-//		UIImage *image1 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"grfx_launching.png" ofType:nil]];
         UIImage *image2 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Victory Center 02 W Hotel View.jpg" ofType:nil]];
         UIImage *image3 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Soutwest View of Victory Center.jpg" ofType:nil]];
         UIImage *image4 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Southeast View of Victory Center.jpg" ofType:nil]];
@@ -159,7 +148,6 @@
         return;
     }
     _uib_menu.hidden = YES;
-//    _uiv_toolsPanel.hidden = YES;
     _uil_titleLabel.hidden = YES;
 }
 
@@ -172,9 +160,6 @@
     else
     {
         _uib_menu.hidden = NO;
-//        if (self.kenView.alpha == 0) {
-//            _uil_titleLabel.hidden = NO;
-//        }
         for (UIView *tmp in [self.view subviews]) {
             if (tmp.tag == 1000) {
                 _uil_titleLabel.hidden = NO;
@@ -509,10 +494,6 @@
     CGRect frame = screenRect;
     frame.origin.y = 768.0;
     
-//    if (_uiv_menuPanel) {
-//        _uiv_menuPanel.hidden = YES;
-//        _uiv_leftFillerPanel.hidden = YES;
-//    }   
     [self.view insertSubview: _contactVC.view belowSubview:_uiv_toolsPanel];
     _uib_menu.hidden = YES;
     _uib_mailBtn.enabled = NO;
@@ -608,7 +589,6 @@
     }
     
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//    [tracker set:kGAIScreenName value:@"Vicotry Center Movie"];
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
                                                           action:@"touch"
                                                            label:@"Play Movie"
@@ -620,10 +600,6 @@
     _playerViewController.moviePlayer.controlStyle = MPMovieControlStyleNone;
     [_playerViewController.moviePlayer setAllowsAirPlay:YES];
     _playerViewController.moviePlayer.repeatMode = MPMovieRepeatModeOne;
-    //    [self.view insertSubview:_playerViewController.view aboveSubview:_uib_menu];
-    //    [_playerViewController.moviePlayer play];
-    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideHomeButton" object:nil];
-    //    [self performSelector:@selector(setMovieControlAvailable) withObject:nil afterDelay:1.0];
     
     if (!external_wind) {
         [self setupExternalScreen];
@@ -786,19 +762,9 @@
 													name:MPMovieDurationAvailableNotification
 												  object:_playerViewController.moviePlayer];
     
-//	[progressIndicator addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:NULL];
-    
 	
 	progressIndicator.value = _playerViewController.moviePlayer.currentPlaybackTime / totalVideoTime;
 	totalElapsedTime = progressIndicator.value;
-	
-//	CGFloat t = _playerViewController.moviePlayer.currentPlaybackTime;
-	
-//	NSMutableDictionary* userInfo = [NSMutableDictionary dictionary];
-//	[userInfo setObject:[NSNumber numberWithInt:t] forKey:@"slidevalue"];
-//	
-//	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-//	[nc postNotificationName:@"eRXReceived" object:self userInfo:userInfo];
 	
 	//constantly keep checking if at the end of video:
 	if (totalVideoTime != 0 && _playerViewController.moviePlayer.currentPlaybackTime >= totalVideoTime - 0.1)
@@ -819,17 +785,11 @@
 	[mpControlsView removeFromSuperview];
 	[mpBackingView removeFromSuperview];
 	
-    //	if (external_wind) {
-    //		uib_film.enabled = NO;
-    //	}
-	
 	// Create a category view and add it to the window.
 	if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
 		mpControlsView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 435, 88)];
 		mpBackingView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 1024, 768)];
 	}
-	
-	//mpBackingView.center = self.view.center;
 	
 	[mpBackingView setBackgroundColor: [UIColor whiteColor]];
 	mpBackingView.alpha = 0.0;
@@ -921,11 +881,9 @@
     
     localImages =  arr_images;
     localCaptions = arr_caption;
-    //[self imageViewer:sender];
     UINavigationController *fGalleryNavigationController = [[UINavigationController alloc] init];
     fGalleryNavigationController.view.frame = screenRect;
     localGallery = [[FGalleryViewController alloc] initWithPhotoSource:self];
-//    localGallery.view.frame = screenRect;
     localGallery.startingIndex = index;
     localGallery.galleryTitle = galleryTitle;
     [fGalleryNavigationController addChildViewController:localGallery];
@@ -1008,14 +966,6 @@
 }
 
 - (IBAction)helpBtnTapped:(id)sender {
-//    UIAlertView *alert =
-//    [[UIAlertView alloc] initWithTitle: @""
-//                               message: @"Help Coming Soon"
-//                              delegate: self
-//                     cancelButtonTitle: @"OK"
-//                     otherButtonTitles: nil];
-//    alert.tag = 1;
-//    [alert show];
     
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     //    [tracker set:kGAIScreenName value:@"Vicotry Center Movie"];
@@ -1061,7 +1011,6 @@
 		[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(monitorPlaybackTime) object:nil];
         [_playerViewController.view removeFromSuperview];
         _playerViewController.view = nil;
-//		_playerViewController=nil;
 	}
 }
 
