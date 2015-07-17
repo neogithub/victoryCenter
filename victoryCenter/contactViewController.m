@@ -121,10 +121,10 @@ static int eveningTime = 17;
 - (void)setContactCardsGroup
 {
     _arr_contactCards = [[NSMutableArray alloc] init];
-    arr_names = [[NSArray alloc] initWithObjects:@"BILL BROKAW", @"CYNTHIA COWEN", @"MARK DICKENSON", nil];
-    arr_phone = [[NSArray alloc] initWithObjects:@"T: +1 (972) 663-9618", @"T: +1 (972) 663-9617", @"T: +1 (972) 663-9699", nil];
-    arr_mobile = [[NSArray alloc] initWithObjects:@"M: +1 (214) 802-2455", @"M: +1 (214) 538-2106", @"M: +1 (214) 796-1336", nil];
-    arr_email = [[NSArray alloc] initWithObjects:@"bill.brokaw@cushwake.com", @"cynthia.cowen@cushwake.com", @"mark.dickenson@cushwake.com", nil];
+    arr_names = [[NSArray alloc] initWithObjects:@"CYNTHIA COWEN", @"MARK DICKENSON", nil];
+    arr_phone = [[NSArray alloc] initWithObjects:@"T: +1 (972) 663-9617", @"T: +1 (972) 663-9699", nil];
+    arr_mobile = [[NSArray alloc] initWithObjects:@"M: +1 (214) 538-2106", @"M: +1 (214) 796-1336", nil];
+    arr_email = [[NSArray alloc] initWithObjects:@"cynthia.cowen@cushwake.com", @"mark.dickenson@cushwake.com", nil];
     
     for (int i = 0; i < arr_email.count; i++) {
         [self createContactCardwithName:arr_names[i] andPhone:arr_phone[i] andMobile:arr_mobile[i] andEmail:arr_email[i] andTag:i];
