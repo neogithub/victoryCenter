@@ -121,13 +121,13 @@ static int eveningTime = 17;
 - (void)setContactCardsGroup
 {
     _arr_contactCards = [[NSMutableArray alloc] init];
-    arr_names = [[NSArray alloc] initWithObjects:@"CYNTHIA COWEN", @"MARK DICKENSON", nil];
-    arr_phone = [[NSArray alloc] initWithObjects:@"T: +1 (972) 663-9617", @"T: +1 (972) 663-9699", nil];
-    arr_mobile = [[NSArray alloc] initWithObjects:@"M: +1 (214) 538-2106", @"M: +1 (214) 796-1336", nil];
-    arr_email = [[NSArray alloc] initWithObjects:@"cynthia.cowen@cushwake.com", @"mark.dickenson@cushwake.com", nil];
+    arr_names = [[NSArray alloc] initWithObjects:@"Johnny Johnson", @"Trey Smith", nil];
+    arr_phone = [[NSArray alloc] initWithObjects:@"T: +1 (972) 692-1753", @"T: +1 (972) 692-1755", nil];
+    arr_mobile = [[NSArray alloc] initWithObjects:@"M: +1 (214) 282-1536", @"M: +1 (214) 282-2975", nil];
+    arr_email = [[NSArray alloc] initWithObjects:@"johnny.johnson@cushwake.com", @"trey.smith@cushwake.com", nil];
     
     for (int i = 0; i < arr_email.count; i++) {
-        [self createContactCardwithName:arr_names[i] andPhone:arr_phone[i] andMobile:arr_mobile[i] andEmail:arr_email[i] andTag:i];
+        [self createContactCardwithName:[arr_names[i]uppercaseString] andPhone:arr_phone[i] andMobile:arr_mobile[i] andEmail:arr_email[i] andTag:i];
     }
 }
 
@@ -188,7 +188,7 @@ static int eveningTime = 17;
 - (void)tapOnCard:(UIGestureRecognizer *)gesture
 {
     int index = (int)gesture.view.tag;
-    NSString *emailAddress = arr_email[index-1];
+    NSString *emailAddress = [arr_email[index-1] uppercaseString];
     NSLog(@"The view is %@", gesture.view.description);
     _emailData = [[embEmailData alloc] init];
     _emailData.to =[[NSArray alloc] initWithObjects:emailAddress, nil];
