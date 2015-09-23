@@ -322,8 +322,8 @@
 				<key>testfitBtns</key>
 				<array>
 					<string>CORE &amp; SHELL</string>
-					<string>OPEN PLAN</string>
-					<string>CLOSE PLAN</string>
+					<string>OPEN OFFICE</string>
+					<string>CLOSE OFFICE</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -849,8 +849,8 @@
 				<key>testfitBtns</key>
 				<array>
 					<string>CORE &amp; SHELL</string>
-					<string>OPEN PLAN</string>
-					<string>CLOSE PLAN</string>
+					<string>OPEN OFFICE</string>
+					<string>CLOSE OFFICE</string>
 				</array>
 				<key>hotspots</key>
 				<array>
@@ -1076,8 +1076,8 @@
 				<key>testfitBtns</key>
 				<array>
 					<string>CORE &amp; SHELL</string>
-					<string>OPEN PLAN</string>
-					<string>CLOSE PLAN</string>
+					<string>OPEN OFFICE</string>
+					<string>CLOSE OFFICE</string>
 				</array>
 				<key>hotspots</key>
 				<array/>
