@@ -23,9 +23,17 @@
 					<string>View 04.jpg</string>
 					<string>Lobby Entry and Restuarant.jpg</string>
 					<string>Lobby View.jpg</string>
+					<string>Exterior  Horizontal no Logo.jpg</string>
+					<string>Exterior no Logo.jpg</string>
+					<string>View A no Logo.jpg</string>
+					<string>view B no Logo.jpg</string>
 				</array>
 				<key>frame</key>
 				<array>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
@@ -47,6 +55,10 @@
 					<string>Courtyard View</string>
 					<string>Lobby Entry and Restaurant</string>
 					<string>Lobby View</string>
+					<string>Exterior</string>
+					<string>Exterior</string>
+					<string>View A</string>
+					<string>View B</string>
 				</array>
 			</dict>
 			<dict>
@@ -60,6 +72,10 @@
 					<string>TM_VictoryPark_view02.jpg</string>
 					<string>TM_VictoryPark_view03.jpg</string>
 					<string>TM_VictoryPark_view04.jpg</string>
+					<string>VP_VictoryPark_AAC.jpg</string>
+					<string>VP_VictoryPark_Houston.jpg</string>
+					<string>VP_VictoryPark_North.jpg</string>
+					<string>VP_VictoryPark_South.jpg</string>
 					<string>SkyHouse Dallas_072913.jpg</string>
 					<string>W Hotel.jpg</string>
 					<string>american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg</string>
@@ -85,9 +101,17 @@
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
 				</array>
 				<key>captions</key>
 				<array>
+					<string>Victory Park Rendering</string>
+					<string>Victory Park Rendering</string>
+					<string>Victory Park Rendering</string>
+					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
@@ -163,6 +187,10 @@
 					<string>TM_VictoryPark_view02.jpg</string>
 					<string>TM_VictoryPark_view03.jpg</string>
 					<string>TM_VictoryPark_view04.jpg</string>
+					<string>VP_VictoryPark_AAC.jpg</string>
+					<string>VP_VictoryPark_Houston.jpg</string>
+					<string>VP_VictoryPark_North.jpg</string>
+					<string>VP_VictoryPark_South.jpg</string>
 					<string>SkyHouse Dallas_072913.jpg</string>
 					<string>W Hotel.jpg</string>
 					<string>american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg</string>
@@ -188,9 +216,17 @@
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
+					<string>normal_frame.png</string>
 				</array>
 				<key>captions</key>
 				<array>
+					<string>Victory Park Rendering</string>
+					<string>Victory Park Rendering</string>
+					<string>Victory Park Rendering</string>
+					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>

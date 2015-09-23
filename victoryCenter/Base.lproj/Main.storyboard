@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -65,6 +65,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oE4-pI-K5v" userLabel="Button - Movie">
+                                <rect key="frame" x="813" y="638" width="191" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="grfx_home_playBtn.jpg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playMainFilm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9oS-Oi-Okm"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gBW-pQ-0as" userLabel="Button - Menu">
                                 <rect key="frame" x="0.0" y="0.0" width="44" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -87,6 +97,7 @@
                         <outlet property="uib_mailBtn" destination="gzd-ze-aRE" id="MkP-hp-TlG"/>
                         <outlet property="uib_menu" destination="gBW-pQ-0as" id="9uN-2g-I38"/>
                         <outlet property="uib_movieBtn" destination="j71-NV-ATp" id="hNo-x1-gYE"/>
+                        <outlet property="uib_playMainFilm" destination="oE4-pI-K5v" id="YN5-GT-TLs"/>
                         <outlet property="uiiv_bgImg" destination="Iyi-gi-qCd" id="xcT-kJ-GJL"/>
                         <outlet property="uiiv_vcLogo" destination="Ltm-cH-X4c" id="C8J-Fi-F2q"/>
                         <outlet property="uil_titleLabel" destination="SZb-ak-fCC" id="Sgy-WR-Dj0"/>
@@ -734,6 +745,7 @@
         <image name="grfx_bldstat_close.png" width="29" height="56"/>
         <image name="grfx_contactClose.jpg" width="44" height="44"/>
         <image name="grfx_helpIcon.png" width="36" height="36"/>
+        <image name="grfx_home_playBtn.jpg" width="191" height="110"/>
         <image name="grfx_launching.png" width="1024" height="768"/>
         <image name="grfx_logo.png" width="163" height="69"/>
         <image name="grfx_menuIcon.png" width="44" height="43"/>
@@ -741,9 +753,4 @@
         <image name="grfx_movieIcon.png" width="36" height="36"/>
         <image name="grfx_view_diagram.png" width="202" height="185"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>

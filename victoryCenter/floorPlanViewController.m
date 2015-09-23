@@ -97,7 +97,7 @@ static CGFloat  kPanelTitleHeight           = 46;
                        @"29,161",
                        @"29,750",
                        @"45,571",
-                       @"7,976", nil];
+                       @"8,900", nil];
     
     CGRect frame_23 = CGRectMake(42.0, 17.0, 93.0, 6.0);
     CGRect frame_22 = CGRectMake(42.0, 22.0, 93.0, 6.0);

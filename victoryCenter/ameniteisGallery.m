@@ -79,7 +79,7 @@
 #pragma mark - Collection Delegate Methods
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 3;
+    return arr_rawData.count;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

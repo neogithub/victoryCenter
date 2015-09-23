@@ -422,6 +422,27 @@
 		82DC120019DAF2990057AE4F /* photo-gallery-trashcan.png in Resources */ = {isa = PBXBuildFile; fileRef = 82DC11F719DAF2990057AE4F /* photo-gallery-trashcan.png */; };
 		82F486381B014E1600C5EBAF /* thumb_amenities_floorplan_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82F486371B014E1600C5EBAF /* thumb_amenities_floorplan_image.jpg */; };
 		82F4863A1B014E3A00C5EBAF /* amenities_floorplan_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82F486391B014E3A00C5EBAF /* amenities_floorplan_image.jpg */; };
+		889F07EF1BB2FBB800CBD979 /* thumb_deli_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F07EE1BB2FBB800CBD979 /* thumb_deli_image.jpg */; };
+		889F07F21BB3068800CBD979 /* grfx_home_playBtn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F07F01BB3068800CBD979 /* grfx_home_playBtn.jpg */; };
+		889F07F31BB3068800CBD979 /* grfx_home_playBtn@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F07F11BB3068800CBD979 /* grfx_home_playBtn@2x.jpg */; };
+		889F07F51BB30BC200CBD979 /* conference2_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F07F41BB30BC200CBD979 /* conference2_image.jpg */; };
+		889F07F71BB30CAF00CBD979 /* thumb_conference2_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F07F61BB30CAF00CBD979 /* thumb_conference2_image.jpg */; };
+		889F07FC1BB3161400CBD979 /* VP_VictoryPark_AAC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F07F81BB3161400CBD979 /* VP_VictoryPark_AAC.jpg */; };
+		889F07FD1BB3161400CBD979 /* VP_VictoryPark_Houston.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F07F91BB3161400CBD979 /* VP_VictoryPark_Houston.jpg */; };
+		889F07FE1BB3161400CBD979 /* VP_VictoryPark_North.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F07FA1BB3161400CBD979 /* VP_VictoryPark_North.jpg */; };
+		889F07FF1BB3161400CBD979 /* VP_VictoryPark_South.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F07FB1BB3161400CBD979 /* VP_VictoryPark_South.jpg */; };
+		889F08041BB3184B00CBD979 /* thumb_VP_VictoryPark_AAC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F08001BB3184B00CBD979 /* thumb_VP_VictoryPark_AAC.jpg */; };
+		889F08051BB3184B00CBD979 /* thumb_VP_VictoryPark_Houston.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F08011BB3184B00CBD979 /* thumb_VP_VictoryPark_Houston.jpg */; };
+		889F08061BB3184B00CBD979 /* thumb_VP_VictoryPark_North.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F08021BB3184B00CBD979 /* thumb_VP_VictoryPark_North.jpg */; };
+		889F08071BB3184B00CBD979 /* thumb_VP_VictoryPark_South.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F08031BB3184B00CBD979 /* thumb_VP_VictoryPark_South.jpg */; };
+		889F080C1BB31B0B00CBD979 /* Exterior  Horizontal no Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F08081BB31B0B00CBD979 /* Exterior  Horizontal no Logo.jpg */; };
+		889F080D1BB31B0B00CBD979 /* Exterior no Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F08091BB31B0B00CBD979 /* Exterior no Logo.jpg */; };
+		889F080E1BB31B0B00CBD979 /* View A no Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F080A1BB31B0B00CBD979 /* View A no Logo.jpg */; };
+		889F080F1BB31B0B00CBD979 /* view B no Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F080B1BB31B0B00CBD979 /* view B no Logo.jpg */; };
+		889F081C1BB31E5000CBD979 /* thumb_Exterior  Horizontal no Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F08181BB31E5000CBD979 /* thumb_Exterior  Horizontal no Logo.jpg */; };
+		889F081D1BB31E5000CBD979 /* thumb_Exterior no Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F08191BB31E5000CBD979 /* thumb_Exterior no Logo.jpg */; };
+		889F081E1BB31E5000CBD979 /* thumb_View A no Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F081A1BB31E5000CBD979 /* thumb_View A no Logo.jpg */; };
+		889F081F1BB31E5000CBD979 /* thumb_view B no Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 889F081B1BB31E5000CBD979 /* thumb_view B no Logo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -916,6 +937,27 @@
 		82DC11F719DAF2990057AE4F /* photo-gallery-trashcan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-trashcan.png"; sourceTree = "<group>"; };
 		82F486371B014E1600C5EBAF /* thumb_amenities_floorplan_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_amenities_floorplan_image.jpg; sourceTree = "<group>"; };
 		82F486391B014E3A00C5EBAF /* amenities_floorplan_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amenities_floorplan_image.jpg; sourceTree = "<group>"; };
+		889F07EE1BB2FBB800CBD979 /* thumb_deli_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_deli_image.jpg; sourceTree = "<group>"; };
+		889F07F01BB3068800CBD979 /* grfx_home_playBtn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grfx_home_playBtn.jpg; sourceTree = "<group>"; };
+		889F07F11BB3068800CBD979 /* grfx_home_playBtn@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grfx_home_playBtn@2x.jpg"; sourceTree = "<group>"; };
+		889F07F41BB30BC200CBD979 /* conference2_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = conference2_image.jpg; sourceTree = "<group>"; };
+		889F07F61BB30CAF00CBD979 /* thumb_conference2_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_conference2_image.jpg; sourceTree = "<group>"; };
+		889F07F81BB3161400CBD979 /* VP_VictoryPark_AAC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VP_VictoryPark_AAC.jpg; sourceTree = "<group>"; };
+		889F07F91BB3161400CBD979 /* VP_VictoryPark_Houston.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VP_VictoryPark_Houston.jpg; sourceTree = "<group>"; };
+		889F07FA1BB3161400CBD979 /* VP_VictoryPark_North.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VP_VictoryPark_North.jpg; sourceTree = "<group>"; };
+		889F07FB1BB3161400CBD979 /* VP_VictoryPark_South.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VP_VictoryPark_South.jpg; sourceTree = "<group>"; };
+		889F08001BB3184B00CBD979 /* thumb_VP_VictoryPark_AAC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_VP_VictoryPark_AAC.jpg; sourceTree = "<group>"; };
+		889F08011BB3184B00CBD979 /* thumb_VP_VictoryPark_Houston.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_VP_VictoryPark_Houston.jpg; sourceTree = "<group>"; };
+		889F08021BB3184B00CBD979 /* thumb_VP_VictoryPark_North.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_VP_VictoryPark_North.jpg; sourceTree = "<group>"; };
+		889F08031BB3184B00CBD979 /* thumb_VP_VictoryPark_South.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_VP_VictoryPark_South.jpg; sourceTree = "<group>"; };
+		889F08081BB31B0B00CBD979 /* Exterior  Horizontal no Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Exterior  Horizontal no Logo.jpg"; sourceTree = "<group>"; };
+		889F08091BB31B0B00CBD979 /* Exterior no Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Exterior no Logo.jpg"; sourceTree = "<group>"; };
+		889F080A1BB31B0B00CBD979 /* View A no Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "View A no Logo.jpg"; sourceTree = "<group>"; };
+		889F080B1BB31B0B00CBD979 /* view B no Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "view B no Logo.jpg"; sourceTree = "<group>"; };
+		889F08181BB31E5000CBD979 /* thumb_Exterior  Horizontal no Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Exterior  Horizontal no Logo.jpg"; sourceTree = "<group>"; };
+		889F08191BB31E5000CBD979 /* thumb_Exterior no Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_Exterior no Logo.jpg"; sourceTree = "<group>"; };
+		889F081A1BB31E5000CBD979 /* thumb_View A no Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_View A no Logo.jpg"; sourceTree = "<group>"; };
+		889F081B1BB31E5000CBD979 /* thumb_view B no Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb_view B no Logo.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -987,6 +1029,10 @@
 		8212C2871A6E9F7F00D8C67F /* vp_rendering */ = {
 			isa = PBXGroup;
 			children = (
+				889F07F81BB3161400CBD979 /* VP_VictoryPark_AAC.jpg */,
+				889F07F91BB3161400CBD979 /* VP_VictoryPark_Houston.jpg */,
+				889F07FA1BB3161400CBD979 /* VP_VictoryPark_North.jpg */,
+				889F07FB1BB3161400CBD979 /* VP_VictoryPark_South.jpg */,
 				8212C2881A6E9F7F00D8C67F /* TM_VictoryPark_view01.jpg */,
 				8212C2891A6E9F7F00D8C67F /* TM_VictoryPark_view02.jpg */,
 				8212C28A1A6E9F7F00D8C67F /* TM_VictoryPark_view03.jpg */,
@@ -1002,6 +1048,10 @@
 				8212C2921A6EA3E900D8C67F /* thumb_TM_VictoryPark_view02.jpg */,
 				8212C2931A6EA3E900D8C67F /* thumb_TM_VictoryPark_view03.jpg */,
 				8212C2941A6EA3E900D8C67F /* thumb_TM_VictoryPark_view04.jpg */,
+				889F08001BB3184B00CBD979 /* thumb_VP_VictoryPark_AAC.jpg */,
+				889F08011BB3184B00CBD979 /* thumb_VP_VictoryPark_Houston.jpg */,
+				889F08021BB3184B00CBD979 /* thumb_VP_VictoryPark_North.jpg */,
+				889F08031BB3184B00CBD979 /* thumb_VP_VictoryPark_South.jpg */,
 			);
 			path = vp_rendering_thumb;
 			sourceTree = "<group>";
@@ -1418,6 +1468,10 @@
 		824F367B19E6C47500267B44 /* Rendering_thumb */ = {
 			isa = PBXGroup;
 			children = (
+				889F08181BB31E5000CBD979 /* thumb_Exterior  Horizontal no Logo.jpg */,
+				889F08191BB31E5000CBD979 /* thumb_Exterior no Logo.jpg */,
+				889F081A1BB31E5000CBD979 /* thumb_View A no Logo.jpg */,
+				889F081B1BB31E5000CBD979 /* thumb_view B no Logo.jpg */,
 				822C908E1A375883003944E8 /* thumb_Lobby Entry and Restuarant.jpg */,
 				822C908F1A375883003944E8 /* thumb_Lobby View.jpg */,
 				822C90901A375883003944E8 /* thumb_Southeast View of Victory Center.jpg */,
@@ -1456,6 +1510,7 @@
 				82F486391B014E3A00C5EBAF /* amenities_floorplan_image.jpg */,
 				82CEEB341A3F3F2D007D4BA9 /* deli_image.jpg */,
 				82599B571A3A2ADE00397362 /* conference_image.jpg */,
+				889F07F41BB30BC200CBD979 /* conference2_image.jpg */,
 				82599B581A3A2ADE00397362 /* fitness&conference.jpg */,
 				82599B591A3A2ADE00397362 /* fitness2.jpg */,
 				82599B5A1A3A2ADE00397362 /* fitness_image.jpg */,
@@ -1472,6 +1527,8 @@
 			children = (
 				82F486371B014E1600C5EBAF /* thumb_amenities_floorplan_image.jpg */,
 				82599B5F1A3A2ADE00397362 /* thumb_conference_image.jpg */,
+				889F07F61BB30CAF00CBD979 /* thumb_conference2_image.jpg */,
+				889F07EE1BB2FBB800CBD979 /* thumb_deli_image.jpg */,
 				82599B601A3A2ADE00397362 /* thumb_fitness&conference.jpg */,
 				82599B611A3A2ADE00397362 /* thumb_fitness2.jpg */,
 				82599B621A3A2ADE00397362 /* thumb_fitness_image.jpg */,
@@ -1629,6 +1686,8 @@
 		82A805C719D1F61E00308BA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				889F07F01BB3068800CBD979 /* grfx_home_playBtn.jpg */,
+				889F07F11BB3068800CBD979 /* grfx_home_playBtn@2x.jpg */,
 				8276C4BE1AD5A90F006C4047 /* grfx_egBtn.png */,
 				8276C4BF1AD5A90F006C4047 /* grfx_egBtn@2x.png */,
 				8276C4C01AD5A90F006C4047 /* grfx_inBtn.png */,
@@ -1734,6 +1793,10 @@
 		82DC11B519DAEA940057AE4F /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
+				889F08081BB31B0B00CBD979 /* Exterior  Horizontal no Logo.jpg */,
+				889F08091BB31B0B00CBD979 /* Exterior no Logo.jpg */,
+				889F080A1BB31B0B00CBD979 /* View A no Logo.jpg */,
+				889F080B1BB31B0B00CBD979 /* view B no Logo.jpg */,
 				822C907C1A375621003944E8 /* Lobby Entry and Restuarant.jpg */,
 				822C907D1A375621003944E8 /* Lobby View.jpg */,
 				822C907E1A375621003944E8 /* Southeast View of Victory Center.jpg */,
@@ -1862,7 +1925,7 @@
 				ORGANIZATIONNAME = Neoscape;
 				TargetAttributes = {
 					824012DB19D1AF5D00C501EE = {
-						DevelopmentTeam = 9734648496;
+						DevelopmentTeam = 97VHU5A6BJ;
 					};
 					824012FC19D1AF5D00C501EE = {
 						TestTargetID = 824012DB19D1AF5D00C501EE;
@@ -1898,6 +1961,7 @@
 				824E10E41A0D5F5C00BDBDA6 /* Plane_Icon_Blue@2x.png in Resources */,
 				8212C2961A6EA3E900D8C67F /* thumb_TM_VictoryPark_view02.jpg in Resources */,
 				82459E7519F6974A00E03A8D /* grfx_contactClose@2x.jpg in Resources */,
+				889F08061BB3184B00CBD979 /* thumb_VP_VictoryPark_North.jpg in Resources */,
 				8294BB4C1A3B8D6900EDD0EB /* Street_View_Approach.mp4 in Resources */,
 				8294BB281A3B708200EDD0EB /* W Hotel.jpg in Resources */,
 				82000B8D19E592A800AE2C70 /* team_duda_logo.png in Resources */,
@@ -1941,10 +2005,12 @@
 				82CBD72319F96FA10001191F /* grfx_elevator_floorNum@2x.png in Resources */,
 				822C908D1A375621003944E8 /* View of Victory Center and Dart Transit System.jpg in Resources */,
 				82599B711A3A2ADE00397362 /* thumb_restaurant.jpg in Resources */,
+				889F080F1BB31B0B00CBD979 /* view B no Logo.jpg in Resources */,
 				8276C4C31AD5A90F006C4047 /* grfx_egBtn@2x.png in Resources */,
 				821EE25B1A13BC5300254B2A /* grfx_floorplan10.png in Resources */,
 				8212C2A81A6EA4E900D8C67F /* thumb_dallas_2013_fearings_creditdcvb_4.jpg in Resources */,
 				82000B7919E590AD00AE2C70 /* Team_bg.jpg in Resources */,
+				889F07F51BB30BC200CBD979 /* conference2_image.jpg in Resources */,
 				82A4EF571A03D013004D22EE /* grfx_mailIcon@2x.png in Resources */,
 				8294BB291A3B708200EDD0EB /* american airlines - BIGDNYE_PhotoCredit_Stephanie_Alexander.jpg in Resources */,
 				82DC11E519DAEE070057AE4F /* Neighborhood_map.png in Resources */,
@@ -1959,6 +2025,7 @@
 				8212C28C1A6E9F7F00D8C67F /* TM_VictoryPark_view01.jpg in Resources */,
 				82A21F671A02B30A00BE8706 /* Access_overlay@2x.png in Resources */,
 				823DE6F81A0031CA0016CD3A /* grfx_floorDwon@2x.png in Resources */,
+				889F081E1BB31E5000CBD979 /* thumb_View A no Logo.jpg in Resources */,
 				82627E2719E702EC0062FC0C /* grfx_retail_overlay.png in Resources */,
 				822C91021A37887C003944E8 /* amenities_gallery.plist in Resources */,
 				824C195119FA938500EA7613 /* grfx_victorycenter_logo@2x.png in Resources */,
@@ -1988,11 +2055,13 @@
 				8260B9ED1A1B8FFA004C44B8 /* grfx_stats_plus@2x.png in Resources */,
 				8294BB2A1A3B708200EDD0EB /* arpeggio.jpg in Resources */,
 				82DC11D219DAEA940057AE4F /* victory_center_138feet.jpg in Resources */,
+				889F080E1BB31B0B00CBD979 /* View A no Logo.jpg in Resources */,
 				822C908A1A375621003944E8 /* Victory Center_Highway View.jpg in Resources */,
 				82459E7419F6974A00E03A8D /* grfx_contactClose.jpg in Resources */,
 				821EE25C1A13BC5300254B2A /* grfx_floorplan10@2x.png in Resources */,
 				82D54B4E1A0BFD6C0055F338 /* Tilit_Icon_On.png in Resources */,
 				822C90AA1A377562003944E8 /* overview_cell2.jpg in Resources */,
+				889F08041BB3184B00CBD979 /* thumb_VP_VictoryPark_AAC.jpg in Resources */,
 				8263B98719EDAC8900E70C1B /* embMapHotspotListViewController.xib in Resources */,
 				82D7DBCC1AC0B62000A13DC1 /* play_button_color@2x.png in Resources */,
 				82599B6A1A3A2ADE00397362 /* restaurant&conference.jpg in Resources */,
@@ -2030,6 +2099,7 @@
 				82627E2C19E732870062FC0C /* Lightbox_overlay_BG.png in Resources */,
 				8212C28D1A6E9F7F00D8C67F /* TM_VictoryPark_view02.jpg in Resources */,
 				82A805D119D1F61E00308BA1 /* grfx_mialIcon@2x.png in Resources */,
+				889F081F1BB31E5000CBD979 /* thumb_view B no Logo.jpg in Resources */,
 				8294BB3E1A3B857E00EDD0EB /* thumb_Street_View_Approach.png in Resources */,
 				8294BB2F1A3B708200EDD0EB /* perot-museum-of-nature-and-science---mark-knight-photography.jpg in Resources */,
 				823DE6FA1A0031CA0016CD3A /* grfx_floorUp@2x.png in Resources */,
@@ -2047,6 +2117,7 @@
 				824F369819E6C47500267B44 /* thumb_victory_center_138feet.jpg in Resources */,
 				82000B9A19E5963800AE2C70 /* team_cousins_text@2x.png in Resources */,
 				8276C4C21AD5A90F006C4047 /* grfx_egBtn.png in Resources */,
+				889F07EF1BB2FBB800CBD979 /* thumb_deli_image.jpg in Resources */,
 				82CBD72B19F995120001191F /* grfx_site_parking@2x.png in Resources */,
 				823D78AC19F1AD500096E62C /* grfx_compass.png in Resources */,
 				822C90AE1A377562003944E8 /* overview_cell4.jpg in Resources */,
@@ -2073,6 +2144,7 @@
 				82000B9E19E5963800AE2C70 /* team_duda_text@2x.png in Resources */,
 				822C90AC1A377562003944E8 /* overview_cell3.jpg in Resources */,
 				8224FDF519D46D90002B1B44 /* cap_bar_.png in Resources */,
+				889F08071BB3184B00CBD979 /* thumb_VP_VictoryPark_South.jpg in Resources */,
 				82C06E8E1A169F56000F969E /* grfx_view_diagram.png in Resources */,
 				82A805D719D1FC1400308BA1 /* grfx_menuIcon@2x.png in Resources */,
 				823D78AD19F1AD500096E62C /* grfx_compass@2x.png in Resources */,
@@ -2086,6 +2158,7 @@
 				82000B7B19E590AD00AE2C70 /* team_hines_logo.png in Resources */,
 				82627E2119E702EC0062FC0C /* grfx_recreationg_overlay.png in Resources */,
 				822C909D1A375883003944E8 /* thumb_Victory Center_Street View-1.jpg in Resources */,
+				889F08051BB3184B00CBD979 /* thumb_VP_VictoryPark_Houston.jpg in Resources */,
 				82CEEB3F1A3F8D4C007D4BA9 /* thumb_View of Victory Park - Higway view.jpg in Resources */,
 				82000BA019E5963800AE2C70 /* team_hks_text@2x.png in Resources */,
 				82CBD72619F980800001191F /* grfx_openMenuIcon.png in Resources */,
@@ -2103,6 +2176,7 @@
 				82A21F631A028F3A00BE8706 /* gfrx_all_overlay@2x.png in Resources */,
 				82A21F6E1A02D3DE00BE8706 /* team_logoBtmBar_withPlus.png in Resources */,
 				8212C2981A6EA3E900D8C67F /* thumb_TM_VictoryPark_view04.jpg in Resources */,
+				889F081C1BB31E5000CBD979 /* thumb_Exterior  Horizontal no Logo.jpg in Resources */,
 				82594C801A1FB2D400AC0AB4 /* TEST_FIT_FLOOR8_OpenOffice@2x.png in Resources */,
 				8294BB2E1A3B708200EDD0EB /* KATY TRAILS.jpg in Resources */,
 				82D7DBC41AC05BF600A13DC1 /* Make_Victory_Yours_Final.mp4 in Resources */,
@@ -2138,6 +2212,7 @@
 				82627E2819E702EC0062FC0C /* grfx_retail_overlay@2x.png in Resources */,
 				8294BB4B1A3B8D6900EDD0EB /* Low-Rise_Office_Floor.mp4 in Resources */,
 				82AB934A19FEC97B00DD0B30 /* grfx_east_hs.png in Resources */,
+				889F07FD1BB3161400CBD979 /* VP_VictoryPark_Houston.jpg in Resources */,
 				82C06E8A1A169B8E000F969E /* Logo_Header.png in Resources */,
 				82AB934F19FEC97B00DD0B30 /* grfx_south_hs@2x.png in Resources */,
 				82CEEB3B1A3F8C55007D4BA9 /* View of Victory Park - Victory Avenue.jpg in Resources */,
@@ -2161,14 +2236,17 @@
 				8297BD2A19F5760D0046CB65 /* grfx_galleryCap.png in Resources */,
 				82716A6819E434C10070A331 /* Districts_overlay.png in Resources */,
 				82DC11FC19DAF2990057AE4F /* photo-gallery-left.png in Resources */,
+				889F080D1BB31B0B00CBD979 /* Exterior no Logo.jpg in Resources */,
 				822C90AD1A377562003944E8 /* overview_cell3@2x.jpg in Resources */,
 				82000B8C19E592A800AE2C70 /* team_cushman_logo@2x.png in Resources */,
 				8260B9FD1A1BD202004C44B8 /* building_stats_amenities.png in Resources */,
 				82000B8F19E592A800AE2C70 /* team_hks_logo.png in Resources */,
 				82A805CF19D1F61E00308BA1 /* grfx_helpIcon@2x.png in Resources */,
+				889F07FC1BB3161400CBD979 /* VP_VictoryPark_AAC.jpg in Resources */,
 				822C909A1A375883003944E8 /* thumb_Soutwest View of Victory Center.jpg in Resources */,
 				824C196719FA9DC400EA7613 /* grfx_floorplan17.png in Resources */,
 				82F4863A1B014E3A00C5EBAF /* amenities_floorplan_image.jpg in Resources */,
+				889F07FE1BB3161400CBD979 /* VP_VictoryPark_North.jpg in Resources */,
 				821EE25D1A13BC5300254B2A /* grfx_floorplan11.png in Resources */,
 				8224FDF119D46997002B1B44 /* galleryData.plist in Resources */,
 				8260B9FE1A1BD202004C44B8 /* building_stats_amenities@2x.png in Resources */,
@@ -2178,6 +2256,7 @@
 				8212C2971A6EA3E900D8C67F /* thumb_TM_VictoryPark_view03.jpg in Resources */,
 				82A4EF561A03D013004D22EE /* grfx_mailIcon.png in Resources */,
 				8224FE0A19D47097002B1B44 /* Raleway-SemiBold.otf in Resources */,
+				889F07FF1BB3161400CBD979 /* VP_VictoryPark_South.jpg in Resources */,
 				82000B7C19E590AD00AE2C70 /* team_hines_logo@2x.png in Resources */,
 				82000B9C19E5963800AE2C70 /* team_cushman_text@2x.png in Resources */,
 				82CEEB401A3F8D4C007D4BA9 /* thumb_View of Victory Park - Olive Street View.jpg in Resources */,
@@ -2211,7 +2290,10 @@
 				822F384C1A1A92FA0085500F /* grfx_floorplan1@2x.png in Resources */,
 				82DC11FF19DAF2990057AE4F /* photo-gallery-right@2x.png in Resources */,
 				82AB935119FEC97B00DD0B30 /* grfx_west_hs@2x.png in Resources */,
+				889F07F31BB3068800CBD979 /* grfx_home_playBtn@2x.jpg in Resources */,
 				82C676E01A71487A008F9873 /* grfx_pathKey.jpg in Resources */,
+				889F080C1BB31B0B00CBD979 /* Exterior  Horizontal no Logo.jpg in Resources */,
+				889F081D1BB31E5000CBD979 /* thumb_Exterior no Logo.jpg in Resources */,
 				82000B8919E592A800AE2C70 /* team_cousins_logo.png in Resources */,
 				82594C751A1FB2D400AC0AB4 /* TEST_FIT_FLOOR11_ClosedOffice.png in Resources */,
 				82599B6D1A3A2ADE00397362 /* thumb_conference_image.jpg in Resources */,
@@ -2219,6 +2301,7 @@
 				823DE6F91A0031CA0016CD3A /* grfx_floorUp.png in Resources */,
 				825E5F8419F83FA300B77F7F /* grf_elavators_high_rise@2x.png in Resources */,
 				822C90981A375883003944E8 /* thumb_Lobby View.jpg in Resources */,
+				889F07F71BB30CAF00CBD979 /* thumb_conference2_image.jpg in Resources */,
 				82000BA419E5BADC00AE2C70 /* teamText.plist in Resources */,
 				821EE2491A13BB9100254B2A /* grfx_floorplan19.png in Resources */,
 				824C197219FAA3D700EA7613 /* grfx_floorplan24@2x.png in Resources */,
@@ -2228,6 +2311,7 @@
 				824012F319D1AF5D00C501EE /* Main.storyboard in Resources */,
 				823DE6EC19FFE8E10016CD3A /* pano_opportunity_local_button_gesture_off@2x.png in Resources */,
 				82DC11D319DAEA940057AE4F /* victory_center_278_feet.jpg in Resources */,
+				889F07F21BB3068800CBD979 /* grfx_home_playBtn.jpg in Resources */,
 				821EE24F1A13BB9100254B2A /* grfx_floorplan22.png in Resources */,
 				8224FE3519D4BD6E002B1B44 /* play_button.png in Resources */,
 				823DE6F219FFE95A0016CD3A /* pano_opportunity_local_nav_frame@2x.png in Resources */,
@@ -2376,6 +2460,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2418,6 +2503,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Inc. (9734648496)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Inc. (9734648496)";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2449,7 +2535,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.neoscape.victoryCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neoenterprise.victoryCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -2461,7 +2547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Inc. (9734648496)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Inc. (9734648496)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "victoryCenter/victoryCenter-Prefix.pch";
@@ -2471,7 +2557,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.neoscape.victoryCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neoenterprise.victoryCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "851fc4b7-9f71-4144-b196-d3c4b236841b";
 				WRAPPER_EXTENSION = app;
@@ -2524,6 +2610,86 @@
 			};
 			name = Release;
 		};
+		8819D6B81BB32DBA00015AF5 /* Enterprise */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Incorporated";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Incorporated";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "ac7e9baa-2c52-4e22-9cf0-21224a54a4e7";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Enterprise;
+		};
+		8819D6B91BB32DBA00015AF5 /* Enterprise */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Incorporated";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Incorporated";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "victoryCenter/victoryCenter-Prefix.pch";
+				INFOPLIST_FILE = "victoryCenter/victoryCenter-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neoenterprise.victoryCenter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ac7e9baa-2c52-4e22-9cf0-21224a54a4e7";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Enterprise;
+		};
+		8819D6BA1BB32DBA00015AF5 /* Enterprise */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/victoryCenter.app/victoryCenter";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Incorporated";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Incorporated";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "victoryCenter/victoryCenter-Prefix.pch";
+				INFOPLIST_FILE = "victoryCenterTests/victoryCenterTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Neoscape.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ac7e9baa-2c52-4e22-9cf0-21224a54a4e7";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Enterprise;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2532,6 +2698,7 @@
 			buildConfigurations = (
 				8240130C19D1AF5D00C501EE /* Debug */,
 				8240130D19D1AF5D00C501EE /* Release */,
+				8819D6B81BB32DBA00015AF5 /* Enterprise */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2541,6 +2708,7 @@
 			buildConfigurations = (
 				8240130F19D1AF5D00C501EE /* Debug */,
 				8240131019D1AF5D00C501EE /* Release */,
+				8819D6B91BB32DBA00015AF5 /* Enterprise */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2550,6 +2718,7 @@
 			buildConfigurations = (
 				8240131219D1AF5D00C501EE /* Debug */,
 				8240131319D1AF5D00C501EE /* Release */,
+				8819D6BA1BB32DBA00015AF5 /* Enterprise */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

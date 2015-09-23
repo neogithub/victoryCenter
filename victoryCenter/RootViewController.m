@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton                   *uib_helpBtn;
 @property (weak, nonatomic) IBOutlet UIButton                   *uib_movieBtn;
 @property (weak, nonatomic) IBOutlet UIButton                   *uib_mailBtn;
+@property (weak, nonatomic) IBOutlet UIButton *uib_playMainFilm;
 
 @property (weak, nonatomic) IBOutlet UIButton                   *uib_menu;
 @property (strong, nonatomic) IBOutlet UIView                   *uiv_toolsPanel;
@@ -64,6 +65,8 @@
     self.view.frame = screenRect;
     [super viewWillAppear:animated];
     [self performSelector:@selector(createKenBurnView) withObject:nil afterDelay:3.0];
+    [self mainFilmButtonIsHidden:NO];
+
     loadedPno = NO;
     
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
@@ -96,7 +99,7 @@
 
 #pragma mark - Create KenBurn view
 
-- (void) createKenBurnView
+- (void)createKenBurnView
 {
     if (self.kenView) {
         [self.kenView removeFromSuperview];
@@ -200,6 +203,8 @@
 #pragma mark - Load VC
 -(void)loadVC:(id)sender
 {
+    [self mainFilmButtonIsHidden:YES];
+
     if (self.kenView) {
         [UIView animateWithDuration:0.2 animations:^{
             self.kenView.alpha = 0.0;
@@ -338,12 +343,14 @@
 		_uiv_leftFillerPanel.transform = CGAffineTransformConcat(s, t);
 		[self animateMenuOnScreen];
 		_uib_menu.transform = CGAffineTransformMakeTranslation(0, -50);
+        
 		
 	} completion:^(BOOL completed)
 	 {
 		 // animate the menu buttons
 		 _uib_menu.transform = CGAffineTransformMakeTranslation(370, -50);
          [_uib_menu setImage:[UIImage imageNamed:@"grfx_openMenuIcon.png"] forState:UIControlStateNormal];
+         [self mainFilmButtonIsHidden:NO];
 	 }];
 }
 
@@ -387,7 +394,8 @@
 											  
 											  _uib_menu.transform = CGAffineTransformMakeTranslation(370, -50);
 											  
-											  
+                                              [self mainFilmButtonIsHidden:YES];
+
 											  
 											  
 										  }
@@ -483,12 +491,21 @@
         tmp = nil;
         
         [self createKenBurnView];
-        
+        [self mainFilmButtonIsHidden:NO];
+
     }];
 }
 
-#pragma mark - Bottomleft buttons' actions
+#pragma mark - Main Menu Film Button Visibility
+-(void)mainFilmButtonIsHidden:(BOOL)visible
+{
+    self.uib_playMainFilm.hidden = visible;
+}
+
+#pragma mark - Bottom buttons' actions
 #pragma mark Mail Button Action
+
+
 - (IBAction)mailBtnTapped:(id)sender {   
     _contactVC = [self.storyboard instantiateViewControllerWithIdentifier:@"contactViewController"];
     CGRect frame = screenRect;
@@ -573,6 +590,12 @@
         default:
             break;
     }
+}
+
+-(IBAction)playMainFilm:(id)sender
+{
+    UIActionSheet*sheet;
+    [self actionSheet:sheet clickedButtonAtIndex:0];
 }
 
 - (void)playMovieFromGallery:(NSNotification *)notification
