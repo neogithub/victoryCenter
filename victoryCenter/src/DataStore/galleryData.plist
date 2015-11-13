@@ -69,8 +69,6 @@
 				<key>items</key>
 				<array>
 					<string>TM_VictoryPark_view01.jpg</string>
-					<string>TM_VictoryPark_view02.jpg</string>
-					<string>TM_VictoryPark_view03.jpg</string>
 					<string>TM_VictoryPark_view04.jpg</string>
 					<string>VP_VictoryPark_AAC.jpg</string>
 					<string>VP_VictoryPark_Houston.jpg</string>
@@ -103,13 +101,9 @@
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
 				</array>
 				<key>captions</key>
 				<array>
-					<string>Victory Park Rendering</string>
-					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
@@ -184,8 +178,6 @@
 				<key>items</key>
 				<array>
 					<string>TM_VictoryPark_view01.jpg</string>
-					<string>TM_VictoryPark_view02.jpg</string>
-					<string>TM_VictoryPark_view03.jpg</string>
 					<string>TM_VictoryPark_view04.jpg</string>
 					<string>VP_VictoryPark_AAC.jpg</string>
 					<string>VP_VictoryPark_Houston.jpg</string>
@@ -218,13 +210,9 @@
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
 					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
-					<string>normal_frame.png</string>
 				</array>
 				<key>captions</key>
 				<array>
-					<string>Victory Park Rendering</string>
-					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
 					<string>Victory Park Rendering</string>
