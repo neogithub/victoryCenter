@@ -8,6 +8,9 @@
 
 #import "neoHotspotsView.h"
 #import "KSLabel.h"
+
+#define kcanLabelsBeDragged NO
+
 //Change Size of Arrow Here!
 static int arwPic = 30;
 
@@ -18,6 +21,36 @@ static int arwPic = 30;
 @synthesize bgColor, timeRotate, str_labelText, uil_caption;
 @synthesize tagOfHs, str_typeOfHs;
 @synthesize labelAlignment;
+
+- (void)labelDragged:(UIPanGestureRecognizer *)gesture
+{
+    if (kcanLabelsBeDragged) {
+        UILabel *label = (UILabel *)gesture.view;
+        CGPoint translation = [gesture translationInView:label];
+        
+        // move label
+        label.center = CGPointMake(label.center.x + translation.x,
+                                   label.center.y + translation.y);
+        
+        [gesture setTranslation:CGPointZero inView:label];
+        
+        if (gesture.state == UIGestureRecognizerStateEnded)
+        {
+            [self alertLabelCenter];
+        }
+    }
+}
+
+-(void)alertLabelCenter
+{
+    NSLog(@"");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hotspot X,Y"
+                                                    message:NSStringFromCGPoint(self.frame.origin)
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 
 #pragma -mark Setting parameters
 // Get parameter for time of rotate animation
@@ -161,6 +194,9 @@ static int arwPic = 30;
     self = [super initWithFrame:frame];
     if (self)
     {
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(labelDragged:)];
+        [self addGestureRecognizer:pan];
+        
         [self initHotspotImgView];
         timeRotate = 0.0;
         withArw = YES;

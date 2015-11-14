@@ -499,7 +499,10 @@
 #pragma mark - Main Menu Film Button Visibility
 -(void)mainFilmButtonIsHidden:(BOOL)visible
 {
-    self.uib_playMainFilm.hidden = visible;
+    [UIView animateWithDuration:0.33f animations:^(void){
+        self.uib_playMainFilm.alpha = !visible;
+        // NO means 0, YES means 1
+    }];
 }
 
 #pragma mark - Bottom buttons' actions
@@ -611,6 +614,8 @@
         _playerViewController = nil;
     }
     
+    [self mainFilmButtonIsHidden:YES];
+    
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Interaction"
                                                           action:@"touch"
@@ -697,6 +702,7 @@
 -(void)doneButtonClick:(NSNotification*)aNotification{
     [UIView animateWithDuration:0.33 animations:^{
         _playerViewController.view.alpha = 0.0;
+        [self mainFilmButtonIsHidden:NO];
     } completion:^(BOOL finished){
         [_playerViewController.view removeFromSuperview];
         _playerViewController = nil;

@@ -301,7 +301,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>529,445</string>
+					<string>535,445</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -397,7 +397,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>256,218</string>
+					<string>475,300</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -510,6 +510,42 @@
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
 					<string>Museum Tower</string>
+					<key>units</key>
+					<string>425</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>450,175</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>Alexan</string>
+					<key>units</key>
+					<string>425</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>502,333</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>The Ascent</string>
+					<key>units</key>
+					<string>425</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>521,445</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>(TBD) Lennar</string>
 					<key>units</key>
 					<string>425</string>
 				</dict>
@@ -1286,7 +1322,7 @@
 					<key>type</key>
 					<string>static</string>
 					<key>xy</key>
-					<string>401,290</string>
+					<string>485,319</string>
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
@@ -1399,6 +1435,42 @@
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
 					<string>Museum Tower</string>
+					<key>units</key>
+					<string>425</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>480,282</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>Alexan</string>
+					<key>units</key>
+					<string>425</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>507,342</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>The Ascent</string>
+					<key>units</key>
+					<string>425</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>518,396</string>
+					<key>background</key>
+					<string>hotspot_hotel_BG.png</string>
+					<key>name</key>
+					<string>(TBD) Lennar</string>
 					<key>units</key>
 					<string>425</string>
 				</dict>
@@ -1883,6 +1955,76 @@
 					<key>name</key>
 					<string>V.O.D. Boutique</string>
 				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>624,468</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>Cinepolis Luxury Cinemas</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>374,292</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>Classic Pilates</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>481,345</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>Joanne Czech Esthetician</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>496,305</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>Read Between the Lines</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>225,229</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>Simply Elegant Dallas</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>144,290.5</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>The Hangar - Fan Shop</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>static</string>
+					<key>xy</key>
+					<string>839,404</string>
+					<key>background</key>
+					<string>hotspot_causal_dinning_BG.png</string>
+					<key>name</key>
+					<string>Victory Crossfit</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -1994,7 +2136,7 @@
 					<key>background</key>
 					<string>hotspot_hotel_BG.png</string>
 					<key>name</key>
-					<string>TBD</string>
+					<string>TBD (Lennar)</string>
 					<key>units</key>
 					<string>336</string>
 				</dict>
@@ -2125,6 +2267,36 @@
 					<key>units</key>
 					<string>267</string>
 				</dict>
+                <dict>
+                    <key>type</key>
+                    <string>static</string>
+                    <key>xy</key>
+                    <string>405,329</string>
+                    <key>background</key>
+                    <string>hotspot_causal_dinning_BG.png</string>
+                    <key>name</key>
+                    <string>Buda Juice</string>
+                </dict>
+                <dict>
+                    <key>type</key>
+                    <string>static</string>
+                    <key>xy</key>
+                    <string>840,423</string>
+                    <key>background</key>
+                    <string>hotspot_causal_dinning_BG.png</string>
+                    <key>name</key>
+                    <string>Buzzbrews</string>
+                </dict>
+                <dict>
+                    <key>type</key>
+                    <string>static</string>
+                    <key>xy</key>
+                    <string>466,343</string>
+                    <key>background</key>
+                    <string>hotspot_causal_dinning_BG.png</string>
+                    <key>name</key>
+                    <string>Jimmy John&apos;s</string>
+                </dict>
 			</array>
 		</dict>
 	</array>

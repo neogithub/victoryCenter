@@ -140,6 +140,37 @@ static float    kPanelBtnHeight             = 38.0;
 @synthesize mode = _mode;
 @synthesize foldStyle = _foldStyle;
 
+#define kcanLabelsBeDragged YES
+
+- (void)labelDragged:(UIPanGestureRecognizer *)gesture
+{
+    if (kcanLabelsBeDragged) {
+        UILabel *label = (UILabel *)gesture.view;
+        CGPoint translation = [gesture translationInView:label];
+        
+        // move label
+        label.center = CGPointMake(label.center.x + translation.x,
+                                   label.center.y + translation.y);
+        
+        [gesture setTranslation:CGPointZero inView:label];
+        
+        if (gesture.state == UIGestureRecognizerStateEnded)
+        {
+            [self alertLabelCenter:label.center];
+        }
+    }
+}
+
+-(void)alertLabelCenter:(CGPoint)center
+{
+    NSLog(@"");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hotspot X,Y"
+                                                    message:NSStringFromCGPoint(center)
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -177,6 +208,7 @@ static float    kPanelBtnHeight             = 38.0;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetLocation) name:@"tapOnTitle" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAndUnhideHelp:) name:@"hideAndUnhideHelp" object:nil];
     self.screenName = @"Victory Center Map View";
+
 }
 
 - (void)resetLocation
@@ -1848,8 +1880,13 @@ static float    kPanelBtnHeight             = 38.0;
         hotspotView.tag=i + 100*(index+1);
         [arr_HotSpotViewArray addObject: hotspotView];
         [_uiv_mapContainer insertSubview:hotspotView belowSubview:_uiiv_vcLogo];
+        
+        
+
+
     }
     
+
 }
 
 - (void)setHotspotRoundedView:(UIView *)roundedView toDiameter:(float)newSize num:(int)i andColor:(UIColor *)textColor
@@ -1875,6 +1912,9 @@ static float    kPanelBtnHeight             = 38.0;
 	[tapG setDelegate:self];
 	[roundedView addGestureRecognizer:tapG];
     roundedView.userInteractionEnabled = YES;
+    
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(labelDragged:)];
+    [roundedView addGestureRecognizer:pan];
 }
 
 - (void)hotspotTapped:(UIGestureRecognizer *)gesture
